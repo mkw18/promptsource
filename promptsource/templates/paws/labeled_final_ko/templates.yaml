@@ -1,0 +1,156 @@
+dataset: paws
+subset: labeled_final_ko
+templates:
+  0be7cecd-b427-4ec9-9b0e-666d6dae0063: !Template
+    answer_choices: "\uC544\uB2C8 ||| \uC608"
+    id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
+    jinja: "\uB2E4\uC74C \uB450 \uBB38\uC7A5\uC774 \uC11C\uB85C \uC5ED\uC124\uC801\
+      \uC778\uC9C0 \uC5EC\uBD80\uB97C \uACB0\uC815\uD558\uC2ED\uC2DC\uC624.\n\uBB38\
+      \uC7A5 1 : {{sentence1}}\nSent 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: task_description-no-label
+    reference: Generalized prompt format, task_description-input.
+  472fe5eb-b499-4952-a930-f72f4ca9ed43: !Template
+    answer_choices: "\uC544\uB2C8 ||| \uC608"
+    id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
+    jinja: "\uBB38\uC7A5 1 : {{sentence1}}\n\uBB38\uC7A5 2 : {{sentence2}}\nQuestion:\
+      \ Do Sentence 1 and Sentence 2 express the same meaning? Yes or No? \n||| \n\
+      {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Meaning
+    reference: Natural question
+  4c8d4e4c-eae4-45f6-bdf0-d132ae198d09: !Template
+    answer_choices: No ||| Yes
+    id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
+    jinja: "{{sentence1}}\n\uB2E4\uC74C \uBB38\uC7A5\uC758 \uC5ED\uC124\uC785\uB2C8\
+      \uAE4C?\n{{sentence2}}?\n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context-question-no-label
+    reference: Generalized prompt format, context-question without any label
+  678400f8-1a5c-4a40-b5ef-abeaa41e20ec: !Template
+    answer_choices: "\uC544\uB2C8 ||| \uC608"
+    id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
+    jinja: "\uBB38\uC7A5 1 : {{sentence1}}\n\uBB38\uC7A5 2 : {{sentence2}}\n\uC9C8\
+      \uBB38 : \uBB38\uC7A5 1\uC744 \uBB38\uC7A5 2\uB85C \uB2E4\uC2DC \uC791\uC131\
+      \uD560 \uC218 \uC788\uC2B5\uB2C8\uAE4C? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Rewrite-no-label
+    reference: Natural Question without label
+  7c205a61-64d4-4673-bb8e-bfa77562eede: !Template
+    answer_choices: "\uC544\uB2C8 ||| \uC608"
+    id: 7c205a61-64d4-4673-bb8e-bfa77562eede
+    jinja: "{{sentence1}}\n\uB2E4\uC74C \uBB38\uC7A5\uC758 \uC5ED\uC124\uC785\uB2C8\
+      \uAE4C?\n{{sentence2}}?\n\uC608 \uD639\uC740 \uC544\uB2C8\uC624.\n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context-question
+    reference: Generalized prompt format, context-question
+  8c259e88-7646-4a50-a4ca-90393920f281: !Template
+    answer_choices: "\uC544\uB2C8 ||| \uC608"
+    id: 8c259e88-7646-4a50-a4ca-90393920f281
+    jinja: "\uBB38\uC7A5 1 : {{sentence1}}\n\uBB38\uC7A5 2 : {{sentence2}}\n\uC9C8\
+      \uBB38 : \uBB38\uC7A5 \uC81C 1 \uBB38\uC7A5 \uBB38\uC7A5 2\uB294?\uC608 \uD639\
+      \uC740 \uC544\uB2C8\uC624? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Concatenation
+    reference: Concatenation of sentence 1 and sentence 2
+  a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
+    answer_choices: null
+    id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
+    jinja: "{% if label == 1 %} \n\uBB38\uC7A5\uC758 \uC5ED\uC124 : {{sentence1}}\
+      \ \n||| \n{{sentence2}} \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: paraphrase-task
+    reference: Create a generative paraphrase task
+  a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076: !Template
+    answer_choices: "\uC544\uB2C8 ||| \uC608"
+    id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
+    jinja: "\uBB38\uC7A5 1 : {{sentence1}}\n\uBB38\uC7A5 2 : {{sentence2}}\n\uC9C8\
+      \uBB38 : \uBB38\uC7A5 \uC81C 1 \uBB38\uC7A5 \uBB38\uC7A5 2\uB294? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Concatenation-no-label
+    reference: Concatenation of sentence 1 and sentence 2 without any label
+  d5239f5f-2014-47c9-a0c1-4896f76f82a4: !Template
+    answer_choices: "\uC544\uB2C8 ||| \uC608"
+    id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
+    jinja: "\uBB38\uC7A5 1 : {{sentence1}}\n\uBB38\uC7A5 2 : {{sentence2}}\n\uC9C8\
+      \uBB38 : \uBB38\uC7A5 1\uACFC \uBB38\uC7A5 2\uB294 \uAC19\uC740 \uC758\uBBF8\
+      \uB97C \uD45C\uD604\uD569\uB2C8\uAE4C? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Meaning-no-label
+    reference: Natural question without label
+  d9911dad-75fe-4506-9843-3a46ba5e49be: !Template
+    answer_choices: "\uAC70\uC9D3 ||| \uC9C4\uC2E4"
+    id: d9911dad-75fe-4506-9843-3a46ba5e49be
+    jinja: "{{sentence1}} \uC758\uBB38: {{sentence2}} \uCC38 \uB610\uB294 \uAC70\uC9D3\
+      ? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: PAWS-ANLI GPT3
+    reference: ANLI prompt format from Table G7 in the GPT3 paper
+  dd52359b-dc56-4241-8179-c98c636f0335: !Template
+    answer_choices: "\uC544\uB2C8 ||| \uC608"
+    id: dd52359b-dc56-4241-8179-c98c636f0335
+    jinja: "\uBB38\uC7A5 1 : {{sentence1}}\n\uBB38\uC7A5 2 : {{sentence2}}\n\uC9C8\
+      \uBB38 : \uBB38\uC7A5 1\uC744 \uBB38\uC7A5 2\uB85C \uB2E4\uC2DC \uC791\uC131\
+      \uD560 \uC218 \uC788\uC2B5\uB2C8\uAE4C?\uC608 \uD639\uC740 \uC544\uB2C8\uC624\
+      ? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Rewrite
+    reference: Natural Question
+  f0866713-c59a-4c5d-a307-95e80a935f99: !Template
+    answer_choices: "\uC544\uB2C8 ||| \uC608"
+    id: f0866713-c59a-4c5d-a307-95e80a935f99
+    jinja: "{{sentence1}} \uC758\uBB38: {{sentence2}} \uC5ED\uC124\uC801\uC774\uB4E0\
+      \ \uC544\uB2C8\uB4E0?\n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: PAWS-ANLI GPT3-no-label
+    reference: ANLI prompt format from Table G7 in the GPT3 paper. Additionally added
+      task information without any label.

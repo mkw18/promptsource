@@ -1,0 +1,95 @@
+dataset: adversarial_qa
+subset: droberta_ta
+templates:
+  00755780-f3c0-44b4-b159-8f3873cdb163: !Template
+    answer_choices: null
+    id: 00755780-f3c0-44b4-b159-8f3873cdb163
+    jinja: "\u0BAE\u0BBE\u0BA3\u0BB5\u0BB0\u0BCD\u0B95\u0BB3\u0BBF\u0BA9\u0BCD \u0BAA\
+      \u0BA4\u0BCD\u0BA4\u0BBF\u0BAF\u0BC8\u0BAA\u0BCD \u0BAA\u0B9F\u0BBF\u0BA4\u0BCD\
+      \u0BA4\u0BC1 \u0B85\u0BA4\u0BC8\u0BAA\u0BCD \u0BAA\u0BB1\u0BCD\u0BB1\u0BBF\u0BAF\
+      \ \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BB3\u0BC1\u0B95\u0BCD\u0B95\u0BC1\
+      \ \u0BAA\u0BA4\u0BBF\u0BB2\u0BB3\u0BBF\u0B95\u0BCD\u0B95\u0BC1\u0BAE\u0BCD \u0BA4\
+      \u0BBF\u0BB1\u0BA9\u0BC8 \u0BA8\u0BBE\u0BA9\u0BCD \u0B9A\u0BCB\u0BA4\u0BBF\u0B95\
+      \u0BCD\u0B95 \u0BB5\u0BBF\u0BB0\u0BC1\u0BAE\u0BCD\u0BAA\u0BC1\u0B95\u0BBF\u0BB1\
+      \u0BC7\u0BA9\u0BCD.\u0BA4\u0BAF\u0BB5\u0BC1\u0B9A\u0BC6\u0BAF\u0BCD\u0BA4\u0BC1\
+      \ \u0BAA\u0BA4\u0BCD\u0BA4\u0BBF\u0B95\u0BCD\u0B95\u0BC1 \u0B92\u0BB0\u0BC1\
+      \ \u0BA8\u0BB2\u0BCD\u0BB2 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0BAF\u0BC8\u0B95\
+      \u0BCD \u0B95\u0BCA\u0BA3\u0BCD\u0B9F\u0BC1 \u0BB5\u0BB0 \u0BAE\u0BC1\u0B9F\u0BBF\
+      \u0BAF\u0BC1\u0BAE\u0BBE? {A}}} |||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  3b2459cc-6600-443c-abf8-8f60c34cd993: !Template
+    answer_choices: null
+    id: 3b2459cc-6600-443c-abf8-8f60c34cd993
+    jinja: "{% if metadata.split != \"test\" %}\n\"{{question}}\" \u0B8E\u0BA9\u0BCD\
+      \u0BB1 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BCD\u0B95\u0BBE\u0BA9 \u0BAA\
+      \u0BA4\u0BBF\u0BB2\u0BCD {{a} in \u0B87\u0BB2\u0BCD \u0B89\u0BB3\u0BCD\u0BB3\
+      \u0BA4\u0BC1 \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC8 \u0BA8\u0BBE\u0BA9\u0BCD \u0B85\
+      \u0BB1\u0BBF\u0BB5\u0BC7\u0BA9\u0BCD.\u0B85\u0BA4\u0BC1 \u0B8E\u0BA9\u0BCD\u0BA9\
+      \u0BB5\u0BC6\u0BA9\u0BCD\u0BB1\u0BC1 \u0B9A\u0BCA\u0BB2\u0BCD\u0BB2 \u0BAE\u0BC1\
+      \u0B9F\u0BBF\u0BAF\u0BC1\u0BAE\u0BBE? |||\n\n{{answers.text | choice}}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  5bdb1815-5c6f-49a3-ad1d-367344420703: !Template
+    answer_choices: null
+    id: 5bdb1815-5c6f-49a3-ad1d-367344420703
+    jinja: "{% if metadata.split != \"test\" %}\n\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\
+      : \"{{question}}\"\n\n\u0B9A\u0BC2\u0BB4\u0BB2\u0BCD: \"{{context}}\"\n\n\u0BAA\
+      \u0BA4\u0BBF\u0BB2\u0BCD:\n|||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'
+  a0872cde-2f19-4ae6-919a-868da47bfbc3: !Template
+    answer_choices: null
+    id: a0872cde-2f19-4ae6-919a-868da47bfbc3
+    jinja: "{% if metadata.split != \"test\" %}\n\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\
+      \u0BC1\u0BAE\u0BCD \u0B9A\u0BC2\u0BB4\u0BB2\u0BBF\u0BB2\u0BCD \u0B87\u0BB0\u0BC1\
+      \u0BA8\u0BCD\u0BA4\u0BC1 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BCD\u0B95\
+      \u0BBE\u0BA9 \u0BAA\u0BA4\u0BBF\u0BB2\u0BC8\u0BAA\u0BCD \u0BAA\u0BBF\u0BB0\u0BBF\
+      \u0BA4\u0BCD\u0BA4\u0BC6\u0B9F\u0BC1\u0B95\u0BCD\u0B95\u0BB5\u0BC1\u0BAE\u0BCD\
+      .\n\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: {{question}}\n\u0B9A\u0BC2\u0BB4\u0BB2\
+      \u0BCD: {{context}}|||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  a64d5a15-68e2-4d1c-b30a-ca8250c860f3: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860f3
+    jinja: "{% if metadata.split != \"test\" %}\n\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\
+      \u0BC1\u0BAE\u0BCD \u0BAA\u0BA4\u0BCD\u0BA4\u0BBF\u0BAF\u0BBF\u0BB2\u0BCD \u0B95\
+      \u0BCA\u0B9F\u0BC1\u0B95\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BC1\
+      \u0BB3\u0BCD\u0BB3\u0BA4\u0BC1\n\n\"{{context}}\",\n\n\u0BAA\u0BBF\u0BA9\u0BCD\
+      \u0BB5\u0BB0\u0BC1\u0BAE\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BCD\
+      \u0B95\u0BC1 \u0BAA\u0BA4\u0BBF\u0BB2\u0BB3\u0BBF\u0B95\u0BCD\u0B95\u0BB5\u0BC1\
+      \u0BAE\u0BCD.\u0B89\u0BB0\u0BC8\u0B95\u0BCD\u0B95\u0BC1\u0BB3\u0BCD \u0BAA\u0BA4\
+      \u0BBF\u0BB2\u0BCD \u0B89\u0BB3\u0BCD\u0BB3\u0BA4\u0BC1 \u0B8E\u0BA9\u0BCD\u0BAA\
+      \u0BA4\u0BC8 \u0BA8\u0BBF\u0BA9\u0BC8\u0BB5\u0BBF\u0BB2\u0BCD \u0B95\u0BCA\u0BB3\
+      \u0BCD\u0B95.\n\n\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: {{question}} |||\n{{answers.text\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'

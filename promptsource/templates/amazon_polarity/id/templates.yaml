@@ -1,0 +1,175 @@
+dataset: amazon_polarity
+subset: id
+templates:
+  1e90a24a-1182-43dd-9445-22f2e56e5761: !Template
+    answer_choices: Negatif ||| Positif
+    id: 1e90a24a-1182-43dd-9445-22f2e56e5761
+    jinja: 'Judul: {{title}}
+
+      Tinjauan: {{content}}
+
+      Apakah ulasannya positif atau negatif? |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review
+    reference: ''
+  3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
+    answer_choices: Tidak ||| Ya
+    id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
+    jinja: 'Berdasarkan ulasan ini, akankah pengguna merekomendasikan produk ini?
+
+      ===
+
+      Tinjauan: {{content}}
+
+      Menjawab: |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: User_recommend_this_product
+    reference: 'Reformulation equivalent to sent analysis: would the user recommend
+      this product?'
+  592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
+    answer_choices: Tidak ||| Ya
+    id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
+    jinja: 'Apakah ulasan produk ini positif?
+
+      Judul: {{title}}
+
+      Tinjauan: {{content}}
+
+      Menjawab: |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_product_review_positive
+    reference: ''
+  745b9c05-10df-4a7e-81ad-1b88cefcb166: !Template
+    answer_choices: Ya ||| Tidak
+    id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
+    jinja: 'Judul: {{title}}
+
+      Tinjauan: {{content}}
+
+      Apakah ulasan produk ini negatif?|||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review_negative
+    reference: ''
+  8abb5377-5dd3-4402-92a5-0d81adb6a325: !Template
+    answer_choices: Negatif ||| Positif
+    id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
+    jinja: 'Judul: {{title}}
+
+      Tinjauan: {{content}}
+
+      Apakah tinjauan produk ini menyampaikan sentimen negatif atau positif?|||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: convey_negative_or_positive_sentiment
+    reference: ''
+  9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
+    answer_choices: Negatif ||| Positif
+    id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
+    jinja: 'Apakah ada nada negatif atau positif untuk ulasan produk ini?
+
+      ===
+
+      Judul: {{title}}
+
+      Tinjauan: {{content}}
+
+      Menjawab: |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: negative_or_positive_tone
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
+    answer_choices: tidak puas ||| puas
+    id: b13369e8-0500-4e93-90d4-8e6814bfb97b
+    jinja: 'Berikut adalah ulasan yang ditinggalkan oleh pelanggan pada suatu produk.Apakah
+      Anda akan mengatakan dia {{answer_choices[1]}} atau {{answer_choices[0]}}?
+
+      Judul: {{title}}
+
+      Tinjauan: {{content}}
+
+      |||
+
+      {{answer_choices[label]}} '
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: user_satisfied
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
+    answer_choices: mengurangi ||| meningkat
+    id: b13369e8-0500-4e93-90d4-8e6814bfb98b
+    jinja: 'Anda sedang mempertimbangkan apakah akan membeli produk.Anda melihat ulasannya.Apakah
+      ulasan berikut {{answer_choices[0]}} atau {{answer_choices[1]}} peluang Anda
+      membeli produk?
+
+      Judul ulasan: {{title}}
+
+      Ulasan Produk: {{content}}
+
+      |||
+
+      {{answer_choices[label]}} '
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: would_you_buy
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
+    answer_choices: tidak menarik ||| menyanjung
+    id: b13369e8-0500-4e93-90d4-8e6814bfb99b
+    jinja: 'Judul: {{title}}
+
+      Ulasan Produk: {{content}}
+
+      Apakah Anda mengatakan ulasan ini menggambarkan produk dalam {{answer_choices[1]}}
+      atau {{answer_choices[0]}} cahaya?
+
+      |||
+
+      {{answer_choices[label]}} '
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: flattering_or_not
+    reference: ''

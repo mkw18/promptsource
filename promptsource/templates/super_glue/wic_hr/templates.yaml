@@ -1,0 +1,144 @@
+dataset: super_glue
+subset: wic_hr
+templates:
+  14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
+    answer_choices: Ne ||| Da
+    id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
+    jinja: "Ima li rije\u010D \"{{word}}\" isto zna\u010Denje u ove dvije re\u010D\
+      enice? Da ne?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning-with-label
+    reference: Generalized question-context format with label
+  3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
+    answer_choices: Ne ||| Da
+    id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
+    jinja: "Ima li rije\u010D \"{{word}}\" isto zna\u010Denje u ove dvije re\u010D\
+      enice?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning
+    reference: Generalized question-context format
+  611d13dc-d414-4b9b-9204-e4f325e859e7: !Template
+    answer_choices: Ne ||| Da
+    id: 611d13dc-d414-4b9b-9204-e4f325e859e7
+    jinja: "Doma\u0107a zada\u0107a\n\nOdlu\u010Dite koristi li se rije\u010D \"{{word}}\"\
+      \ s istim zna\u010Denjem u dvije sljede\u0107e re\u010Denice. Odgovor da ili\
+      \ ne.\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: grammar_homework
+    reference: ''
+  725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
+    answer_choices: "La\u017Ean ||| Pravi"
+    id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
+    jinja: "Re\u010Denica a: {{sentence1}}\nRe\u010Denica b: {{sentence2}}\n\n\"{{word}}\"\
+      \ ima sli\u010Dno zna\u010Denje u re\u010Denicama A i B. Istina ili la\u017E\
+      ?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: affirmation_true_or_false
+    reference: ''
+  c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6: !Template
+    answer_choices: Ne ||| Da
+    id: c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6
+    jinja: '{{sentence1}}
+
+      {{sentence2}}
+
+      Pitanje: Is the word ''{{word}}'' used in the same sense in the two sentences
+      above?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf
+  ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
+    answer_choices: Ne ||| Da
+    id: ce8b5a93-1841-4897-84db-b100f1c84f4b
+    jinja: "Re\u010Denica 1: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\n\nUtvrdite\
+      \ koristi li se rije\u010D \"{{word}}\" u istom smislu u obje re\u010Denice.\
+      \ Da ili ne?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same_sense
+    reference: ''
+  cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
+    answer_choices: Ne ||| Da
+    id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
+    jinja: "Utvrdite koristi li se rije\u010D '{{word}}' na isti na\u010Din u dvije\
+      \ re\u010Denice u nastavku. \n{{sentence1}}\n{{sentence2}}\n||| {% if label\
+      \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context
+    reference: Generalized question-context format
+  d9e1db2a-ab0b-4621-bb41-01d5788d3873: !Template
+    answer_choices: Ne ||| Da
+    id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
+    jinja: "{{sentence1}}\n{{sentence2}}\nPitanje: Koristi li se rije\u010D '{{word}}'\
+      \ u istom smislu u dvije gore navedene re\u010Denice? Da ne?\n||| {% if label\
+      \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt-with-label
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf add additional
+      label
+  dd2080cf-3117-49ba-9aff-c988a21fdb69: !Template
+    answer_choices: Ne ||| Da
+    id: dd2080cf-3117-49ba-9aff-c988a21fdb69
+    jinja: "Rije\u010D \"{{word}}\" ima vi\u0161e zna\u010Denja. Ima li isto zna\u010D\
+      enje u re\u010Denicama 1 i 2? Da ili ne?\n\nRe\u010Denica 1: {{sentence1}}\n\
+      Re\u010Denica 2: {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: polysemous
+    reference: ''
+  f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
+    answer_choices: Ne ||| Da
+    id: f934a96d-fe4d-4075-aa47-5595b9a604c7
+    jinja: "{{sentence1}}\n{{sentence2}}\nSli\u010Dan osje\u0107aj {{word}}?\n|||\
+      \ {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: similar-sense
+    reference: Following https://arxiv.org/abs/2105.11447, https://github.com/ethanjperez/true_few_shot/tree/main/templates.super_glue

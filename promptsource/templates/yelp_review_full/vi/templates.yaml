@@ -1,0 +1,88 @@
+dataset: yelp_review_full
+subset: vi
+templates:
+  135fcd11-9fcc-4b55-bf1b-9b76290d0f6b: !Template
+    answer_choices: 1 sao ||| 2 sao ||| 3 sao ||| 4 sao ||| 5 sao
+    id: 135fcd11-9fcc-4b55-bf1b-9b76290d0f6b
+    jinja: "{{ text }}\nV\xEC v\u1EADy, t\xF4i mu\u1ED1n cho n\xF3 ||| {{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: so_i_would
+    reference: ''
+  27b6bc81-bb1c-467b-91c0-22a4d6a19f44: !Template
+    answer_choices: 1 sao ||| 2 sao ||| 3 sao ||| 4 sao ||| 5 sao
+    id: 27b6bc81-bb1c-467b-91c0-22a4d6a19f44
+    jinja: "{{ text }}\n===\nD\u1EF1a tr\xEAn \u0111\xF3, \u0111\xE1nh gi\xE1 c\u1EE7\
+      a t\xF4i l\xE0 ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based_on_that
+    reference: ''
+  29fc6386-90b3-4976-b249-26e49fe7c924: !Template
+    answer_choices: 1 sao ||| 2 sao ||| 3 sao ||| 4 sao ||| 5 sao
+    id: 29fc6386-90b3-4976-b249-26e49fe7c924
+    jinja: "\u0110\xE1nh gi\xE1 v\u0103n b\u1EA3n:\n{{ text }}\n\nSao: |||\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_star
+    reference: simulating webpage
+  2a57af86-e25a-4572-ba9e-aa921842c04b: !Template
+    answer_choices: 1 sao ||| 2 sao ||| 3 sao ||| 4 sao ||| 5 sao
+    id: 2a57af86-e25a-4572-ba9e-aa921842c04b
+    jinja: "{{ text }} \u0110\xE1nh gi\xE1 c\u1EE7a t\xF4i cho n\u01A1i n\xE0y l\xE0\
+      \ ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: this_place
+    reference: ''
+  4dd990b3-7201-4cba-bb9a-baa462d68b1a: !Template
+    answer_choices: 1 ||| 2 ||| 3 ||| 4 ||| 5
+    id: 4dd990b3-7201-4cba-bb9a-baa462d68b1a
+    jinja: "\u0110\xE1nh gi\xE1 v\u0103n b\u1EA3n:\n{{ text }}\n\n\u0110i\u1EC3m \u0111\
+      \xE1nh gi\xE1 (t\u1EEB 1 \u0111\u1EBFn 5): |||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_score
+    reference: Simulating webpage
+  6d4bfb59-4260-40a5-9da5-e061720bd430: !Template
+    answer_choices: 1 ||| 2 ||| 3 ||| 4 ||| 5
+    id: 6d4bfb59-4260-40a5-9da5-e061720bd430
+    jinja: "Ki\u1EC3m tra l\u1EA1i: {{text}}\nTr\xEAn thang \u0111i\u1EC3m t\u1EEB\
+      \ 1 \u0111\u1EBFn 5, t\xF4i s\u1EBD cung c\u1EA5p cho s\u1EA3n ph\u1EA9m n\xE0\
+      y ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: on_a_scale
+    reference: ''
+  e8091beb-c0fa-490d-9e0c-32eb6907dbc0: !Template
+    answer_choices: 1 sao ||| 2 sao ||| 3 sao ||| 4 sao ||| 5 sao
+    id: e8091beb-c0fa-490d-9e0c-32eb6907dbc0
+    jinja: "\u0110\xE1nh gi\xE1 v\u0103n b\u1EA3n:\n{{ text }}\n\n\u0110\xE1nh gi\xE1\
+      \ \u0111\xE1nh gi\xE1: |||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_rating
+    reference: It's simulating the format of a webpage.

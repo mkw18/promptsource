@@ -1,0 +1,78 @@
+dataset: dream
+subset: hi
+templates:
+  024906f3-2503-451f-a0ce-2c9faf90e6c5: !Template
+    answer_choices: null
+    id: 024906f3-2503-451f-a0ce-2c9faf90e6c5
+    jinja: "\u0928\u0940\u091A\u0947 \u0915\u0940 \u092C\u093E\u0924\u091A\u0940\u0924\
+      \ \u092A\u0922\u093C\u0947\u0902\u0964\n\n{{dialogue[:-1] | join(\"\\n\\n\"\
+      )}}\n\n\u0936\u094D\u0930\u094B\u0924\u093E \u0915\u094D\u092F\u093E \u0915\u0939\
+      \u0947\u0902\u0917\u0947?\n|||\n{{dialogue[-1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate-last-utterance
+    reference: ''
+  5c53fe97-b8b9-4c91-bd75-b3f8e056bd01: !Template
+    answer_choices: null
+    id: 5c53fe97-b8b9-4c91-bd75-b3f8e056bd01
+    jinja: "\u092A\u094D\u0930\u0936\u094D\u0928 \"{{question}}\" \u0914\u0930 \u0909\
+      \u0924\u094D\u0924\u0930 \"{{answer}}\" \u0915\u094B \u0926\u0947\u0916\u0924\
+      \u0947 \u0939\u0941\u090F, \u090F\u0915 \u0935\u093E\u0930\u094D\u0924\u093E\
+      \u0932\u093E\u092A \u0932\u093F\u0916\u0947\u0902 \u091C\u094B \u0939\u094B\
+      \ \u0938\u0915\u0924\u093E \u0939\u0948\u0964\n|||\n{{dialogue | join(\"\\n\\\
+      n\")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: answer-to-dialogue
+    reference: ''
+  70865a35-1db3-45bc-8b08-baf1d9d0be9d: !Template
+    answer_choices: null
+    id: 70865a35-1db3-45bc-8b08-baf1d9d0be9d
+    jinja: "{{dialogue[1:] | join(\"\\n\\n\")}}\n\n\u0907\u0938 \u092C\u093E\u0924\
+      \u091A\u0940\u0924 \u0938\u0947 \u092A\u0939\u0932\u0947 \u0915\u094D\u092F\u093E\
+      \ \u0915\u0939\u093E \u0917\u092F\u093E \u0925\u093E?\n|||\n{{dialogue[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate-first-utterance
+    reference: ''
+  8f962580-1611-4982-b567-05939c5012ff: !Template
+    answer_choices: '{{choice | join("|||")}}'
+    id: 8f962580-1611-4982-b567-05939c5012ff
+    jinja: "\u0935\u093E\u0930\u094D\u0924\u093E:\n\n{{dialogue | join(\"\\n\\n\"\
+      )}}\n\n\u092A\u094D\u0930\u0936\u094D\u0928: {{question}} \n\n- {{answer_choices[0]}}\n\
+      \n- {{answer_choices[1]}}\n\n- {{answer_choices[2]}}\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: baseline
+    reference: https://dataset.org/dream/
+  d4687975-664d-46ac-b13b-482a35a61ab3: !Template
+    answer_choices: '{{choice | join("|||")}}'
+    id: d4687975-664d-46ac-b13b-482a35a61ab3
+    jinja: "\u0928\u093F\u092E\u094D\u0928\u0932\u093F\u0916\u093F\u0924 \u092C\u093E\
+      \u0924\u091A\u0940\u0924 \u092A\u0922\u093C\u0947\u0902 \u0914\u0930 \u092A\u094D\
+      \u0930\u0936\u094D\u0928 \u0915\u093E \u0909\u0924\u094D\u0924\u0930 \u0926\u0947\
+      \u0902\u0964\n\n{{dialogue | join(\"\\n\\n\")}}\n\n\u092A\u094D\u0930\u0936\u094D\
+      \u0928: {{question}} \n\n- {{answer_choices[0]}}\n\n- {{answer_choices[1]}}\n\
+      \n- {{answer_choices[2]}}\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: read_the_following_conversation_and_answer_the_question
+    reference: ''

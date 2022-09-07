@@ -1,0 +1,147 @@
+dataset: duorc
+subset: SelfRC_ko
+templates:
+  1f544641-ba15-44ef-bfcd-c951d320eb9a: !Template
+    answer_choices: null
+    id: 1f544641-ba15-44ef-bfcd-c951d320eb9a
+    jinja: "{% if no_answer == false%}\n\uB2E4\uC74C \uB2F5\uBCC0\uC774\uC788\uB294\
+      \ \uC9C8\uBB38\uC744 \uC0DD\uC131\uD558\uC2ED\uC2DC\uC624. \n{{answers|choice}}\
+      \ \n\uB2E4\uC74C \uC601\uD654 \uD50C\uB86F\uC758 \uACBD\uC6B0 : \n{{plot}}\n\
+      |||\n{{question}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question_by_answer
+    reference: Given the passage and the answer, generate a question which has that
+      answer.
+  289254d0-e382-4c9d-9638-984c01fe7391: !Template
+    answer_choices: null
+    id: 289254d0-e382-4c9d-9638-984c01fe7391
+    jinja: "\uB098\uB294 \uC601\uD654 \uAC10\uB3C5\uC774\uACE0 \uBC29\uAE08 \uB2E4\
+      \uC74C \uC601\uD654 \uC904\uAC70\uB9AC\uB97C \uBC1B\uC558\uC2B5\uB2C8\uB2E4\
+      .\uC774 \uC9C8\uBB38\uC5D0 \uB300\uB2F5\uD558\uB3C4\uB85D \uB3C4\uC640 \uC8FC\
+      \uC2DC\uACA0\uC2B5\uB2C8\uAE4C?\uADF8\uB807\uC9C0 \uC54A\uB2E4\uBA74 \uAE00\uC744\
+      \ \uC4F0\uBA74 \uC54C\uB824\uC8FC\uC138\uC694 \"{{\"\uB300\uB2F5 \uD560 \uC218\
+      \ \uC5C6\uC2B5\uB2C8\uB2E4\"}}\".\n\n\uD50C\uB86F \uC81C\uBAA9 : {{title}}\n\
+      \uC601\uD654 \uD50C\uB86F : {{plot}}\n\uB0B4 \uC9C8\uBB38: {{question}}\n|||\n\
+      {% if no_answer %}\n\uB300\uB2F5 \uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4\n{%\
+      \ else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: movie_director
+    reference: ''
+  606e9fc0-d07d-45e6-a828-b786fd3a10da: !Template
+    answer_choices: null
+    id: 606e9fc0-d07d-45e6-a828-b786fd3a10da
+    jinja: "\uC601\uD654 \uD50C\uB86F\uC5D0\uC11C \uB2E4\uC74C \uC9C8\uBB38\uC5D0\
+      \ \uB300\uD55C \uB2F5\uC744 \uCD94\uCD9C\uD558\uC2ED\uC2DC\uC624.\uC9C8\uBB38\
+      \uC5D0 \uB2F5\uD560 \uC218\uC5C6\uB294 \uACBD\uC6B0 \uCD9C\uB825\uD558\uC2ED\
+      \uC2DC\uC624 \"{{\"\uB300\uB2F5 \uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4\"}}\"\
+      .\n\uC758\uBB38: {{question}}\n\uC81C\uBAA9: {{title}}\n\uC601\uD654 \uD50C\uB86F\
+      \ : {{plot}}\n|||\n{% if no_answer %}\n\uB300\uB2F5 \uD560 \uC218 \uC5C6\uC2B5\
+      \uB2C8\uB2E4\n{% else %}\n{{answers | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: extract_answer
+    reference: ''
+  af62f222-a8d2-439f-9586-52e0279d25cc: !Template
+    answer_choices: null
+    id: af62f222-a8d2-439f-9586-52e0279d25cc
+    jinja: "\uB2E4\uC74C \uC601\uD654 \uD50C\uB86F\uC5D0 \uB300\uD55C \uC9C8\uBB38\
+      \uC744 \uC0DD\uC131\uD558\uC2ED\uC2DC\uC624. {{ plot }}\n|||\n{{ question }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: Given the plot, generate a question.
+  c1829c38-eae3-49a9-a047-f89316f58140: !Template
+    answer_choices: null
+    id: c1829c38-eae3-49a9-a047-f89316f58140
+    jinja: "\uC774 \uC601\uD654 \uD50C\uB86F\uC5D0 \uB300\uD55C \uB2E4\uC74C \uC9C8\
+      \uBB38\uC5D0 \uB2F5\uD558\uC2ED\uC2DC\uC624.\uB300\uB2F5 \uD560 \uC218\uC5C6\
+      \uB294 \uACBD\uC6B0 \uCD9C\uB825\uD558\uC2ED\uC2DC\uC624 \"{{\"\uB300\uB2F5\uC774\
+      \ \uC5C6\uC2B5\uB2C8\uB2E4\"}}\".\n\n\uC758\uBB38: {{question}}\n\uC601\uD654\
+      \ \uD50C\uB86F \uC81C\uBAA9 : {{title}}\n\uC601\uD654 \uD50C\uB86F : {{plot}}\n\
+      |||\n{% if no_answer %}\n\uB300\uB2F5\uC774 \uC5C6\uC2B5\uB2C8\uB2E4\n{% else\
+      \ %}\n{{answers | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question
+    reference: ''
+  c76b38f1-b47a-4354-960d-58d2f0974d14: !Template
+    answer_choices: null
+    id: c76b38f1-b47a-4354-960d-58d2f0974d14
+    jinja: "{% if no_answer == false%}\n\uC774 \uC8FC\uC704\uC5D0 \uC601\uD654 \uD50C\
+      \uB86F \uAD6C\uCD95 : {{ question }} {{answers|choice}}\n|||\n{{ plot }}\n{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: build_story_around_qa
+    reference: Given the question-answer pair, generate a relevant plot.
+  c917a801-28fe-4c78-93d8-8e43897aa613: !Template
+    answer_choices: null
+    id: c917a801-28fe-4c78-93d8-8e43897aa613
+    jinja: "\uC758\uBB38: {{question}}\n\uB2F5\uC774 \uC5C6\uC73C\uBA74 \uCD9C\uB825\
+      \uD558\uC2ED\uC2DC\uC624 \"{{\"\uB2F5\uBCC0\uC744 \uC81C\uACF5\uD558\uAE30\uC5D0\
+      \ \uC815\uBCF4\uAC00 \uCDA9\uBD84\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.\"}}\"\
+      .\n\uC601\uD654 \uC81C\uBAA9: {{title}}\n\uBB38\uB9E5: {{plot}}\n|||\n{% if\
+      \ no_answer %}\n\uB2F5\uBCC0\uC744 \uC81C\uACF5\uD558\uAE30\uC5D0 \uC815\uBCF4\
+      \uAC00 \uCDA9\uBD84\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.\n{% else %}\n{{answers|choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_answering
+    reference: Given a passage and a question, generate an answer.
+  d486ac96-de6b-403a-8628-5adb23252194: !Template
+    answer_choices: null
+    id: d486ac96-de6b-403a-8628-5adb23252194
+    jinja: "\uB2E4\uC74C \uC601\uD654 \uD50C\uB86F\uC5D0 \uB300\uD55C \uC601\uD654\
+      \ \uC81C\uBAA9\uC744 \uC81C\uC548\uD558\uC2ED\uC2DC\uC624. {{plot}}\n|||\n{{title}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: title_generation
+    reference: Given the plot for the movie, suggest a title.
+  f64279e3-dc9b-4480-9aa6-72d9d1ca2287: !Template
+    answer_choices: null
+    id: f64279e3-dc9b-4480-9aa6-72d9d1ca2287
+    jinja: "\uB098\uB294\uC774 \uC601\uD654 \uC81C\uC548\uC5D0 \uD22C\uC790 \uD560\
+      \ \uAC00\uCE58\uAC00 \uC788\uB294\uC9C0 \uACB0\uC815\uD558\uB824\uACE0 \uB178\
+      \uB825\uD558\uACE0\uC788\uB2E4.\uBA87 \uAC00\uC9C0 \uC9C8\uBB38\uC5D0 \uB300\
+      \uB2F5\uD558\uB3C4\uB85D \uB3C4\uC640 \uC904 \uC218 \uC788\uC2B5\uB2C8\uAE4C\
+      ?\uD560 \uC218 \uC5C6\uB2E4\uBA74 \uB9D0 \uD574\uC8FC\uC138\uC694 \"{{\"\uC544\
+      \uB2C8\uC694\"}}\".\n\n\uC758\uBB38: {{question}}\n\uC601\uD654 \uC81C\uBAA9\
+      : {{title}}\n\uC601\uD654 \uD50C\uB86F : {{plot}}\n|||\n{% if no_answer %}\n\
+      \uC544\uB2C8\uC694\n{% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: decide_worth_it
+    reference: ''

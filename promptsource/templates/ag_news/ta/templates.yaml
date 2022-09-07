@@ -1,0 +1,94 @@
+dataset: ag_news
+subset: ta
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: உலக அரசியல் ||| விளையாட்டு ||| வணிக ||| அறிவியல் மற்றும் தொழில்நுட்பம்
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "இந்த செய்திக் கட்டுரையை எந்த லேபிள் சிறப்பாக விவரிக்கிறது?\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: உலக அரசியல் ||| விளையாட்டு ||| வணிக ||| அறிவியல் மற்றும் தொழில்நுட்பம்
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "இது {{\"உலக அரசியல், விளையாட்டு, வணிகம் அல்லது அறிவியல் மற்றும்\
+      \ தொழில்நுட்பம்\"}} தொடர்பான செய்தியா?\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: அரசியல்வாதி ||| தடகள வீரர் ||| வணிக நிர்வாகி ||| விஞ்ஞானி
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: 'பின்வரும் கட்டுரையை {{"அரசியல்வாதி"}}, {{"தடகள வீரர்"}}, {{"வணிக நிர்வாகி"}} 
+      அல்லது {{"விஞ்ஞானி"}} ஆகியோருக்குப் பரிந்துரைக்கிறீர்களா?
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: உலக செய்திகள் ||| விளையாட்டு ||| வணிகம் ||| அறிவியல் மற்றும் தொழில்நுட்பம்
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\nசெய்தித்தாளின் பின்வரும் எந்தப் பிரிவுகளில் இந்தக் கட்டுரை வெளிவரலாம்?\
+      \ {{\"உலகச் செய்திகள்\"}}, {{\"விளையாட்டு\"}}, {{\"வணிகம்\"}}, அல்லது {{\"அறிவியல் மற்றும் தொழில்நுட்பம்\"\
+      }}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: உலக செய்திகள் ||| விளையாட்டு ||| வணிகம் ||| அறிவியல் மற்றும் தொழில்நுட்பம்
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\nசெய்தித்தாளின் எந்தப் பிரிவில் இந்தக் கட்டுரை வெளிவரலாம்? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: உலக அரசியல் ||| விளையாட்டு ||| வணிகம் ||| அறிவியல் மற்றும் தொழில்நுட்பம்
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \nஇது {{\"உலக அரசியல், விளையாட்டு, வணிகம் அல்லது அறிவியல் மற்றும்\
+      \ தொழில்நுட்பம்\"}} தொடர்பான செய்தியா? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: உலக அரசியல் ||| விளையாட்டு ||| வணிகம் ||| அறிவியல் மற்றும் தொழில்நுட்பம்
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \nஇந்த செய்திக் கட்டுரையை எந்த லேபிள் சிறப்பாக விவரிக்கிறது? ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

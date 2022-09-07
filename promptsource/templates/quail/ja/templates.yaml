@@ -1,0 +1,203 @@
+dataset: quail
+subset: ja
+templates:
+  01870e5a-39d0-4485-a453-893d46c82736: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 01870e5a-39d0-4485-a453-893d46c82736
+    jinja: "{{ context }}\n\u8CEA\u554F\uFF1A {{ question }}\n\u30AA\u30D7\u30B7\u30E7\
+      \u30F3\uFF1A\n{% for k in range(answers | length) %}\n{{'. '.join([answer_choices[k],\
+      \ answers[k]])}}\n{% endfor %}\n===\n\u6B63\u89E3\u306F\u3067\u3059\n|||\n{{\
+      \ answer_choices[correct_answer_id] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_question_answer_description_id
+    reference: ''
+  1225d6c7-4d4c-46ab-9a65-a8fa87826906: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: 1225d6c7-4d4c-46ab-9a65-a8fa87826906
+    jinja: "{{ context }}\n\u8CEA\u554F\uFF1A {{ question }}\n\u30AA\u30D7\u30B7\u30E7\
+      \u30F3\uFF1A\n- {{ answer_choices | join(\" \\n - \") }}\n===\n\u6B63\u89E3\u306F\
+      \u3067\u3059\n|||\n{{ answer_choices[correct_answer_id] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_question_answer_description_text
+    reference: ''
+  38caa4e6-28b9-4476-8609-b66c83679fcc: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 38caa4e6-28b9-4476-8609-b66c83679fcc
+    jinja: "\u6B21\u306E\u30B3\u30F3\u30C6\u30AD\u30B9\u30C8\u3092\u8AAD\u3093\u3067\
+      \u3001\u8CEA\u554F\u306B\u7B54\u3048\u308B\u6B63\u3057\u3044\u30AA\u30D7\u30B7\
+      \u30E7\u30F3\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002\n\u74B0\
+      \u5883\uFF1A {{ context }}\n\u8CEA\u554F\uFF1A {{ question }}\n\u30AA\u30D7\u30B7\
+      \u30E7\u30F3\uFF1A\n{% for k in range(answers | length) %}\n{{'. '.join([answer_choices[k],\
+      \ answers[k]])}}\n{% endfor %}\n|||\n{{ answer_choices[correct_answer_id] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_context_question_answer_id
+    reference: ''
+  7186e352-adfa-4c16-8eda-d9fcccb6293e: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: 7186e352-adfa-4c16-8eda-d9fcccb6293e
+    jinja: "{{ context }}\n{{ question }}\n\u6B21\u306E\u30AA\u30D7\u30B7\u30E7\u30F3\
+      \u304B\u3089\u6B63\u89E3\u3092\u9078\u629E\u3057\u307E\u3059\u3002\n- {{ answer_choices\
+      \ | join(\"\\n- \") }}\n|||\n{{ answer_choices[correct_answer_id] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_question_description_answer_text
+    reference: ''
+  773d1dad-ccc7-4f5d-936b-c43b2d3eedf7: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: 773d1dad-ccc7-4f5d-936b-c43b2d3eedf7
+    jinja: "{{ context }}\n\u8CEA\u554F\uFF1A {{ question }}\n===\n\u4E0A\u8A18\u306E\
+      \u8CEA\u554F\u306B\u5BFE\u3059\u308B\u7B54\u3048\u306F\u3067\u3059\n|||\n{{\
+      \ answer_choices[correct_answer_id] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: context_question_description_text
+    reference: ''
+  7b0ce9fa-6aa0-4210-ab6c-1edd4b2f43df: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: 7b0ce9fa-6aa0-4210-ab6c-1edd4b2f43df
+    jinja: "{{ context }}\n\u4E0A\u8A18\u306E\u30B3\u30F3\u30C6\u30AD\u30B9\u30C8\u306B\
+      \u3088\u308B\u3068\u3001\u6B21\u306E\u8CEA\u554F\u306B\u7B54\u3048\u3066\u304F\
+      \u3060\u3055\u3044\u3002\n{{ question }}\n|||\n{{ answer_choices[correct_answer_id]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: context_description_question_text
+    reference: ''
+  7c9c7cec-12c1-4005-a9a1-a027e472d949: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 7c9c7cec-12c1-4005-a9a1-a027e472d949
+    jinja: "{{ context }}\n{{ question }}\n\u6B21\u306E\u30AA\u30D7\u30B7\u30E7\u30F3\
+      \u304B\u3089\u6B63\u89E3\u3092\u9078\u629E\u3057\u307E\u3059\u3002\n{% for k\
+      \ in range(answers | length) %}\n{{'. '.join([answer_choices[k], answers[k]])}}\n\
+      {% endfor %}\n|||\n{{ answer_choices[correct_answer_id] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_question_description_answer_id
+    reference: ''
+  80fe7668-d088-4432-98bd-9df022a62b5b: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 80fe7668-d088-4432-98bd-9df022a62b5b
+    jinja: '{{ context }}
+
+      {{ question }}
+
+      {% for k in range(answers | length) %}
+
+      {{''. ''.join([answer_choices[k], answers[k]])}}
+
+      {% endfor %}
+
+      |||
+
+      {{ answer_choices[correct_answer_id] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: no_prompt_id
+    reference: ''
+  88d0056d-e736-405f-85aa-155474fde51a: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 88d0056d-e736-405f-85aa-155474fde51a
+    jinja: "{{ context }}\n\u4E0A\u8A18\u306E\u30B3\u30F3\u30C6\u30AD\u30B9\u30C8\u306B\
+      \u3088\u308B\u3068\u3001\u6B21\u306E\u8CEA\u554F\u306B\u7B54\u3048\u308B\u6B63\
+      \u3057\u3044\u30AA\u30D7\u30B7\u30E7\u30F3\u3092\u9078\u629E\u3057\u3066\u304F\
+      \u3060\u3055\u3044\u3002\n\u8CEA\u554F\uFF1A {{ question }}\n\u30AA\u30D7\u30B7\
+      \u30E7\u30F3\uFF1A\n{% for k in range(answers | length) %}\n{{'. '.join([answer_choices[k],\
+      \ answers[k]])}}\n{% endfor %}\n|||\n{{ answer_choices[correct_answer_id] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_description_question_answer_id
+    reference: ''
+  a071e73e-5fda-45b5-8a6a-b56e477a6aee: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: a071e73e-5fda-45b5-8a6a-b56e477a6aee
+    jinja: "Read the following context and answer the question.\n\u74B0\u5883\uFF1A\
+      \ {{ context }}\n\u8CEA\u554F\uFF1A {{ question }}\n\u7B54\u3048\uFF1A\n|||\n\
+      {{ answer_choices[correct_answer_id] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: description_context_question_text
+    reference: ''
+  cb57451d-2a1c-4db1-a352-9f50d835b327: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: cb57451d-2a1c-4db1-a352-9f50d835b327
+    jinja: '{{ context }}
+
+      {{ question }}
+
+      - {{ answer_choices | join("\n- ") }}
+
+      |||
+
+      {{ answer_choices[correct_answer_id] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: no_prompt_text
+    reference: ''
+  ea0ba07f-bb89-42dc-b1e8-4fe6008297b2: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: ea0ba07f-bb89-42dc-b1e8-4fe6008297b2
+    jinja: "{{ context }}\n\u4E0A\u8A18\u306E\u30B3\u30F3\u30C6\u30AD\u30B9\u30C8\u306B\
+      \u3088\u308B\u3068\u3001\u6B21\u306E\u8CEA\u554F\u306B\u7B54\u3048\u308B\u6B63\
+      \u3057\u3044\u30AA\u30D7\u30B7\u30E7\u30F3\u3092\u9078\u629E\u3057\u3066\u304F\
+      \u3060\u3055\u3044\u3002\n\u8CEA\u554F\uFF1A {{ question }}\n\u30AA\u30D7\u30B7\
+      \u30E7\u30F3\uFF1A\n- {{ answer_choices | join(\"\\n- \") }}\n|||\n{{ answer_choices[correct_answer_id]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_description_question_answer_text
+    reference: ''
+  f374c2ca-952a-47ab-8420-cb5fb2c693d9: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: f374c2ca-952a-47ab-8420-cb5fb2c693d9
+    jinja: "\u6B21\u306E\u30B3\u30F3\u30C6\u30AD\u30B9\u30C8\u3092\u8AAD\u3093\u3067\
+      \u3001\u8CEA\u554F\u306B\u7B54\u3048\u308B\u6B63\u3057\u3044\u30AA\u30D7\u30B7\
+      \u30E7\u30F3\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002\n\u74B0\
+      \u5883\uFF1A {{ context }}\n\u8CEA\u554F\uFF1A {{ question }}\n\u30AA\u30D7\u30B7\
+      \u30E7\u30F3\uFF1A\n- {{ answer_choices | join(\"\\n- \") }}\n|||\n{{ answer_choices[correct_answer_id]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_context_question_answer_text
+    reference: ''

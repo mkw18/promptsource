@@ -1,0 +1,132 @@
+dataset: duorc
+subset: ParaphraseRC_es
+templates:
+  09adcadd-fa7b-4154-91cb-fe822bf8e00e: !Template
+    answer_choices: null
+    id: 09adcadd-fa7b-4154-91cb-fe822bf8e00e
+    jinja: "{% if no_answer == false%}\nConstruye una trama de pel\xEDcula alrededor\
+      \ de esto: {{ question }} {{answers|choice}}\n|||\n{{ plot }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: build_story_around_qa
+    reference: Given the question-answer pair, generate a relevant plot.
+  0c7049c0-750a-46b7-af38-dd1e9fcb5217: !Template
+    answer_choices: null
+    id: 0c7049c0-750a-46b7-af38-dd1e9fcb5217
+    jinja: "Estoy tratando de decidir si vale la pena invertir en esta propuesta de\
+      \ pel\xEDcula.\xBFMe pueden ayudar a responder algunas preguntas?Si no puede,\
+      \ por favor diga \"{{\"No, no puedo\"}}\".\n\nPregunta: {{question}}\nT\xED\
+      tulo de la pel\xEDcula: {{title}}\nTrama de la pel\xEDcula: {{plot}}\n|||\n\
+      {% if no_answer %}\nNo, no puedo\n{% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: decide_worth_it
+    reference: ''
+  594d0551-d737-4680-a7a5-8393acc6dbb7: !Template
+    answer_choices: null
+    id: 594d0551-d737-4680-a7a5-8393acc6dbb7
+    jinja: "Pregunta: {{question}}\nSi no hay respuesta, por favor salga \"{{\"Informaci\xF3\
+      n insuficiente para proporcionar una respuesta.\"}}\".\nT\xEDtulo de la pel\xED\
+      cula: {{title}}\nContexto: {{plot}}\n|||\n{% if no_answer %}\nInformaci\xF3\
+      n insuficiente para proporcionar una respuesta.\n{% else %}\n{{answers|choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_answering
+    reference: Given a passage and a question, generate an answer.
+  805f121a-6bd4-4803-9428-ea733f385add: !Template
+    answer_choices: null
+    id: 805f121a-6bd4-4803-9428-ea733f385add
+    jinja: "Soy director de cine y acabo de recibir la siguiente trama de cine.\xBF\
+      Podr\xEDas ayudarme a responder esta pregunta?Si no, h\xE1gamelo saber escribiendo\
+      \ \"{{\"No respondiendo\"}}\".\n\nT\xEDtulo de la trama: {{title}}\nTrama de\
+      \ la pel\xEDcula: {{plot}}\nMi pregunta: {{question}}\n|||\n{% if no_answer\
+      \ %}\nNo respondiendo\n{% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: movie_director
+    reference: ''
+  842e346b-2d26-43a2-9a3a-9154f04eb76a: !Template
+    answer_choices: null
+    id: 842e346b-2d26-43a2-9a3a-9154f04eb76a
+    jinja: "Genere una pregunta sobre la siguiente trama de la pel\xEDcula: {{ plot\
+      \ }}\n|||\n{{ question }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: Given the plot, generate a question.
+  945053f7-6ad3-4c08-b7dd-5413564f7467: !Template
+    answer_choices: null
+    id: 945053f7-6ad3-4c08-b7dd-5413564f7467
+    jinja: "Extraiga la respuesta a la siguiente pregunta de la trama de la pel\xED\
+      cula.Si la pregunta no es responsable, por favor salga \"{{\"No puedo responder\"\
+      }}\".\nPregunta: {{question}}\nT\xEDtulo: {{title}}\nTrama de la pel\xEDcula:\
+      \ {{plot}}\n|||\n{% if no_answer %}\nNo puedo responder\n{% else %}\n{{answers\
+      \ | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: extract_answer
+    reference: ''
+  a8597645-cfed-4f54-ba0d-c23eaafaa131: !Template
+    answer_choices: null
+    id: a8597645-cfed-4f54-ba0d-c23eaafaa131
+    jinja: "Sugerir un t\xEDtulo de pel\xEDcula para la siguiente trama de la pel\xED\
+      cula: {{plot}}\n|||\n{{title}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: title_generation
+    reference: Given the plot for the movie, suggest a title.
+  c6f75398-a993-44d6-a494-78961a7dc1b7: !Template
+    answer_choices: null
+    id: c6f75398-a993-44d6-a494-78961a7dc1b7
+    jinja: "Responda la siguiente pregunta sobre esta trama de la pel\xEDcula.Si no\
+      \ tiene respuesta, por favor salga \"{{\"Sin respuesta\"}}\".\n\nPregunta: {{question}}\n\
+      T\xEDtulo de la trama de la pel\xEDcula: {{title}}\nTrama de la pel\xEDcula:\
+      \ {{plot}}\n|||\n{% if no_answer %}\nSin respuesta\n{% else %}\n{{answers |\
+      \ choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question
+    reference: ''
+  ce3649d8-fd90-4a77-8819-4eb20b1c83a9: !Template
+    answer_choices: null
+    id: ce3649d8-fd90-4a77-8819-4eb20b1c83a9
+    jinja: "{% if no_answer == false%}\nGenere una pregunta que tenga la siguiente\
+      \ respuesta: \n{{answers|choice}} \nPara la siguiente trama de la pel\xEDcula:\
+      \ \n{{plot}}\n|||\n{{question}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question_by_answer
+    reference: Given the passage and the answer, generate a question which has that
+      answer.

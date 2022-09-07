@@ -1,0 +1,225 @@
+dataset: duorc
+subset: ParaphraseRC_nl
+templates:
+  09adcadd-fa7b-4154-91cb-fe822bf8e00e: !Template
+    answer_choices: null
+    id: 09adcadd-fa7b-4154-91cb-fe822bf8e00e
+    jinja: '{% if no_answer == false%}
+
+      Bouw hier een filmplot rond: {{ question }} {{answers|choice}}
+
+      |||
+
+      {{ plot }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: build_story_around_qa
+    reference: Given the question-answer pair, generate a relevant plot.
+  0c7049c0-750a-46b7-af38-dd1e9fcb5217: !Template
+    answer_choices: null
+    id: 0c7049c0-750a-46b7-af38-dd1e9fcb5217
+    jinja: 'Ik probeer te beslissen of het de moeite waard is om te investeren in
+      dit filmvoorstel.Kun je me helpen een paar vragen te beantwoorden?Als je dat
+      niet kunt, zeg dan "{{"Nee, ik kan het niet"}}".
+
+
+      Vraag: {{question}}
+
+      Film titel: {{title}}
+
+      Filmplot: {{plot}}
+
+      |||
+
+      {% if no_answer %}
+
+      Nee, ik kan het niet
+
+      {% else %}
+
+      {{answers|choice}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: decide_worth_it
+    reference: ''
+  594d0551-d737-4680-a7a5-8393acc6dbb7: !Template
+    answer_choices: null
+    id: 594d0551-d737-4680-a7a5-8393acc6dbb7
+    jinja: 'Vraag: {{question}}
+
+      Als er geen antwoord is, voer dan uit "{{"Onvoldoende informatie om een antwoord
+      te geven."}}".
+
+      Film titel: {{title}}
+
+      Context: {{plot}}
+
+      |||
+
+      {% if no_answer %}
+
+      Onvoldoende informatie om een antwoord te geven.
+
+      {% else %}
+
+      {{answers|choice}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_answering
+    reference: Given a passage and a question, generate an answer.
+  805f121a-6bd4-4803-9428-ea733f385add: !Template
+    answer_choices: null
+    id: 805f121a-6bd4-4803-9428-ea733f385add
+    jinja: 'Ik ben een filmregisseur en ik heb zojuist de volgende filmplot ontvangen.Kunt
+      u mij helpen deze vraag te beantwoorden?Zo niet, laat het me weten door te schrijven
+      "{{"Niet verantwoordelijk"}}".
+
+
+      Plot -titel: {{title}}
+
+      Filmplot: {{plot}}
+
+      Mijn vraag: {{question}}
+
+      |||
+
+      {% if no_answer %}
+
+      Niet verantwoordelijk
+
+      {% else %}
+
+      {{answers|choice}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: movie_director
+    reference: ''
+  842e346b-2d26-43a2-9a3a-9154f04eb76a: !Template
+    answer_choices: null
+    id: 842e346b-2d26-43a2-9a3a-9154f04eb76a
+    jinja: 'Genereer een vraag over de volgende filmplot: {{ plot }}
+
+      |||
+
+      {{ question }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: Given the plot, generate a question.
+  945053f7-6ad3-4c08-b7dd-5413564f7467: !Template
+    answer_choices: null
+    id: 945053f7-6ad3-4c08-b7dd-5413564f7467
+    jinja: 'Pak het antwoord uit op de volgende vraag uit de filmplot.Als de vraag
+      niet beantwoordt, voer dan uit "{{"Kan geen antwoorden"}}".
+
+      Vraag: {{question}}
+
+      Titel: {{title}}
+
+      Filmplot: {{plot}}
+
+      |||
+
+      {% if no_answer %}
+
+      Kan geen antwoorden
+
+      {% else %}
+
+      {{answers | choice }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: extract_answer
+    reference: ''
+  a8597645-cfed-4f54-ba0d-c23eaafaa131: !Template
+    answer_choices: null
+    id: a8597645-cfed-4f54-ba0d-c23eaafaa131
+    jinja: 'Stel een filmtitel voor voor de volgende filmplot: {{plot}}
+
+      |||
+
+      {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: title_generation
+    reference: Given the plot for the movie, suggest a title.
+  c6f75398-a993-44d6-a494-78961a7dc1b7: !Template
+    answer_choices: null
+    id: c6f75398-a993-44d6-a494-78961a7dc1b7
+    jinja: 'Beantwoord de volgende vraag over deze filmplot.Als het onwevenbaar is,
+      voer dan uit "{{"Geen antwoord"}}".
+
+
+      Vraag: {{question}}
+
+      Filmplottitel: {{title}}
+
+      Filmplot: {{plot}}
+
+      |||
+
+      {% if no_answer %}
+
+      Geen antwoord
+
+      {% else %}
+
+      {{answers | choice }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question
+    reference: ''
+  ce3649d8-fd90-4a77-8819-4eb20b1c83a9: !Template
+    answer_choices: null
+    id: ce3649d8-fd90-4a77-8819-4eb20b1c83a9
+    jinja: "{% if no_answer == false%}\nGenereer een vraag die het volgende antwoord\
+      \ heeft: \n{{answers|choice}} \nVoor de volgende filmplot: \n{{plot}}\n|||\n\
+      {{question}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question_by_answer
+    reference: Given the passage and the answer, generate a question which has that
+      answer.

@@ -1,0 +1,91 @@
+dataset: social_i_qa
+subset: fr
+templates:
+  605691e9-df59-415d-a622-530734c7df38: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 605691e9-df59-415d-a622-530734c7df38
+    jinja: "j'ai entendu \xE7a {{context}}\n\nEt je me demandais {{question}}\n\n\
+      |||\n\n{{answer_choices[label | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: I was wondering
+    reference: ''
+  666f415b-e3ac-47bf-a79b-19024c4a4143: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 666f415b-e3ac-47bf-a79b-19024c4a4143
+    jinja: "{{context}}\n\nCompte tenu du contexte: {{question}}\n\nDes r\xE9ponses\
+      \ possibles: {{answer_choices | join(\", \")}}\n\n|||\n\n{{answer_choices[label\
+      \ | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate answer
+    reference: ''
+  991f78cc-82d3-482f-b1de-f37a7179a316: !Template
+    answer_choices: Oui ||| Non
+    id: 991f78cc-82d3-482f-b1de-f37a7179a316
+    jinja: "{% set random_answer_id = range(0,2) | choice%}\n{% set answers = [answerA,\
+      \ answerB, answerC] %}\n{{context}}\n\n\xC9tant donn\xE9 la question \"{{question}}\"\
+      , est-ce que \"{{answers[random_answer_id]}}\" est une r\xE9ponse valide?\n\n\
+      |||\n\n{% if (label | int) - 1 == random_answer_id %}\n    Oui\n{% else %}\n\
+      \    Non\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Check if a random answer is valid or not
+    reference: ''
+  b980667e-b4ca-44ce-aba9-5b47d3ccf406: !Template
+    answer_choices: null
+    id: b980667e-b4ca-44ce-aba9-5b47d3ccf406
+    jinja: "{{context}}\n\n\xC9tant donn\xE9 que la r\xE9ponse \xE0 une question est\
+      \ \"{{{\"1\": answerA, \"2\": answerB, \"3\": answerC}[label]}}\", quelle est\
+      \ la question?\n\n|||\n\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Generate the question from the answer
+    reference: ''
+  cbad777f-5794-4d71-bf3d-54da6043e5f1: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: cbad777f-5794-4d71-bf3d-54da6043e5f1
+    jinja: '{{context}}
+
+
+      Compte tenu du contexte: {{question}}
+
+
+      |||
+
+
+      {{answer_choices[label | int - 1]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Generate answer
+    reference: ''
+  e2316120-2461-4664-943d-962a85008e23: !Template
+    answer_choices: A ||| B ||| C
+    id: e2316120-2461-4664-943d-962a85008e23
+    jinja: "Le contexte: {{context}}\n\nQuestion: {{question}}\n\nLaquelle de ces\
+      \ r\xE9ponses r\xE9pond le mieux \xE0 la question selon le contexte?\n\nA: {{answerA}}\n\
+      \nB: {{answerB}}\n\nC: {{answerC}}\n\n|||\n\n{{{\"1\": \"A\", \"2\": \"B\",\
+      \ \"3\": \"C\"}[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate index
+    reference: ''

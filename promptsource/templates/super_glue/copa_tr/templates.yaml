@@ -1,0 +1,162 @@
+dataset: super_glue
+subset: copa_tr
+templates:
+  0edd8660-f299-4819-a5ac-633c11177228: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 0edd8660-f299-4819-a5ac-633c11177228
+    jinja: "Egzersiz yapmak: En makul alternatifi se\xE7in.\n\n{{ premise }} {% if\
+      \ question == \"cause\" %} \xE7\xFCnk\xFC... {% else %} b\xF6yle... {% endif\
+      \ %}\n- {{choice1}}\n- {{choice2}} ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: exercise
+    reference: ''
+  150789fe-e309-47a1-82c9-0a4dc2c6b12b: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 150789fe-e309-47a1-82c9-0a4dc2c6b12b
+    jinja: "{% if question == \"effect\" %} \n{{ premise }} Bundan sonra ne olabilir,\
+      \ \"{{ answer_choices[0] }}\" veya \"{{ answer_choices[1] }}\"? ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{%endif%}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "\u2026What could happen next, C1 or C2?"
+    reference: ''
+  4d879cbe-2fd7-424a-9d78-3f5200313fba: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 4d879cbe-2fd7-424a-9d78-3f5200313fba
+    jinja: "{{ premise }} \n\n\u0130ki se\xE7enek aras\u0131nda teredd\xFCt ediyorum.\
+      \ Daha muhtemel se\xE7meme yard\u0131m et {% if question == \"cause\" %} neden:\
+      \ {% else %} Efekt: {% endif %}\n- {{choice1}}\n- {{choice2}} ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: i_am_hesitating
+    reference: ''
+  66ea075e-4d03-4a78-b1fa-9a5228cf0c9d: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 66ea075e-4d03-4a78-b1fa-9a5228cf0c9d
+    jinja: "{{ premise }} {% if question == \"cause\" %} Bu oldu \xE7\xFCnk\xFC...\
+      \ {% else %} Sonu\xE7 olarak... {% endif %}\nDaha akla yatk\u0131n se\xE7ene\u011F\
+      i se\xE7meme yard\u0131m edin:\n- {{choice1}}\n- {{choice2}} ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: plausible_alternatives
+    reference: ''
+  744047dc-1298-45a2-8d68-d67e3f834ded: !Template
+    answer_choices: '{{choice1 }} ||| {{choice2}}'
+    id: 744047dc-1298-45a2-8d68-d67e3f834ded
+    jinja: "{{A veya b}}? {{ premise }} {% if question == \"cause\" %} \xE7\xFCnk\xFC\
+      \ {% else %} b\xF6yle {% endif %} ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "C1 or C2? premise, so/because\u2026"
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  84da62c2-9440-4cfc-bdd4-d70c65e33a82: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 84da62c2-9440-4cfc-bdd4-d70c65e33a82
+    jinja: "{% if question == \"effect\" %} \n{{ premise }} Sonu\xE7 olarak, \"{{\
+      \ answer_choices[0] }}\" veya \"{{ answer_choices[1] }}\"? ||| {% if label !=\
+      \ -1 %}{{ answer_choices[label] }}{%endif%}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "\u2026As a result, C1 or C2?"
+    reference: ''
+  8ce80f8a-239e-4393-892c-f63dbb0d9929: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 8ce80f8a-239e-4393-892c-f63dbb0d9929
+    jinja: "{{ premise }} \n\nEn iyi se\xE7enek nedir?\n- {{choice1}}\n- {{choice2}}\n\
+      \nAr\u0131yoruz {% if question == \"cause\" %} bir sebep {% else %} bir etki\
+      \ {% endif %}\n||| {% if label != -1 %}{{answer_choices[label]}}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: best_option
+    reference: ''
+  8cf2ba73-aee5-4651-b5d4-b1b88afe4abb: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 8cf2ba73-aee5-4651-b5d4-b1b88afe4abb
+    jinja: "{% if question == \"cause\" %} \n{{ premise }} Hangisi \"{{ answer_choices[0]\
+      \ }}\" veya \"{{ answer_choices[1] }}\" neden olabilir? ||| {% if label != -1\
+      \ %}{{ answer_choices[label] }}{%endif%}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "\u2026which may be caused by"
+    reference: ''
+  a1f9951e-2b6b-4530-9636-9cdf4c1658c5: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: a1f9951e-2b6b-4530-9636-9cdf4c1658c5
+    jinja: "Daha olas\u0131 devam\u0131 a\u015Fa\u011F\u0131daki c\xFCmleye se\xE7\
+      in:\n{{ premise }} {% if question == \"cause\" %} Sonucunda: {% else %} sonu\xE7\
+      \ olarak: {% endif %}\n- {{choice1}}\n- {{choice2}} ||| {% if label != -1 %}{{\
+      \ answer_choices[label] }}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: more likely
+    reference: ''
+  a61d8c21-da25-47bf-b5fe-14a8edd650af: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: a61d8c21-da25-47bf-b5fe-14a8edd650af
+    jinja: "{{ premise }}\n\nEn akla yatk\u0131n olan\u0131 se\xE7in {% if question\
+      \ == \"cause\" %} neden: {% else %} Efekt: {% endif %}\n- {{choice1}}\n- {{choice2}}\
+      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: cause_effect
+    reference: ''
+  a8bf11c3-bea2-45ba-a533-957d8bee5e2e: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: a8bf11c3-bea2-45ba-a533-957d8bee5e2e
+    jinja: "{% if question == \"cause\" %} \n{{ premise }} Neden? Niye? {{A veya b}}?\
+      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "\u2026why? C1 or C2"
+    reference: ''
+  f32348cd-d3cb-4619-87b9-e24f99c78567: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: f32348cd-d3cb-4619-87b9-e24f99c78567
+    jinja: "{{ premise }} {% if question == \"cause\" %} \xE7\xFCnk\xFC... {% else\
+      \ %} b\xF6yle... {% endif %}\nAras\u0131nda se\xE7im yapmak:\n- {{choice1}}\n\
+      - {{choice2}} ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose
+    reference: ''

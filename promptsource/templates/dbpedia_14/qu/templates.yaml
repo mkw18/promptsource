@@ -1,0 +1,73 @@
+dataset: dbpedia_14
+subset: qu
+templates:
+  824ecb55-ecad-40c2-8033-f2fa0add2ddf: !Template
+    answer_choices: Empresa ||| Yachay Wasi ||| Artista ||| Atleta ||| Oficinayuq |||
+      Medio De Transporte ||| Wasi wasi ||| Lugar Natural ||| Ayllu llaqta ||| Uywa |||
+      Yura ||| Álbum ||| Película ||| Qillqasqa Llamkay
+    id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
+    jinja: '{{content}} Huk lista categoríakuna qusqa: {{"empresa, institución educativa, 
+      artista, atleta, titular de oficina, medio de transporte, edificio, lugar natural, 
+      pueblo, animal, planta, álbum, película o trabajo escrito"}}, ima categoría ruwan 
+      chay parrafo pertenecen a? ||| {{ answer_choices[label] }}
+
+
+      '
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_list_what_category_does_the_paragraph_belong_to
+    reference: ''
+  8eda7e71-6734-486f-b883-e99d3f14c0bf: !Template
+    answer_choices: Empresa ||| Yachay Wasi ||| Artista ||| Atleta ||| Oficinayuq |||
+      Medio De Transporte ||| Wasi wasi ||| Lugar Natural ||| Ayllu llaqta ||| Uywa |||
+      Yura ||| Álbum ||| Película ||| Qillqasqa Llamkay
+    id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
+    jinja: Kay qatiq qillqasqapaq huk categoría nisqa akllay. Chay akllanakuna kanku - {{"empresa, 
+      institución educativa, artista, atleta, titular de oficina, medio de transporte, edificio, 
+      lugar natural, pueblo, animal, planta, álbum, película utaq qillqasqa llamkay"}}.
+      {{title}} - {{content}} ||| {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_one_category_for_the_following_text
+    reference: ''
+  9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67: !Template
+    answer_choices: Empresa ||| Yachay Wasi ||| Artista ||| Atleta ||| Oficinayuq |||
+      Medio De Transporte ||| Wasi wasi ||| Lugar Natural ||| Ayllu llaqta ||| Uywa |||
+      Yura ||| Álbum ||| Película ||| Qillqasqa Llamkay
+    id: 9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67
+    jinja: '{{title}} - {{content}} Huk akllana categoríakuna qusqa {{"empresa, institución 
+      educativa, artista, atleta, oficinayuq, medio de transporte, wasi, natural lugar, ayllu, 
+      uywa, planta, álbum, pelicula utaq qillqasqa llamk'ay"}}, qillqasqa mayqinmanta riman 
+      huk? ||| {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: 'given_a_choice_of_categories '
+    reference: ''
+  f72fa410-3278-4f62-91f0-f9edf4a4e792: !Template
+    answer_choices: Empresa ||| Yachay Wasi ||| Artista ||| Atleta ||| Oficinayuq |||
+      Medio De Transporte ||| Wasi wasi ||| Lugar Natural ||| Ayllu llaqta ||| Uywa |||
+      Yura ||| Álbum ||| Película ||| Qillqasqa Llamkay
+    id: f72fa410-3278-4f62-91f0-f9edf4a4e792
+    jinja: '"{{title}}", dado una lista de categorías: {{"empresa, institución educativa, 
+      artista, atleta, titular de oficina, medio de transporte, edificio, lugar natural, 
+      pueblo, animal, planta, álbum, película o trabajo escrito"}}, ima categoría ruwan 
+      chay título pertenecen a? ||| {{ answer_choices[label] }}
+
+
+      '
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_a_list_of_category_what_does_the_title_belong_to
+    reference: ''

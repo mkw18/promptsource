@@ -1,0 +1,71 @@
+dataset: app_reviews
+subset: fr
+templates:
+  2da8f134-58db-4f9d-b3b0-8c6b50693ab5: !Template
+    answer_choices: Pas du tout ||| Non ||| Peut-être ||| Oui ||| Absolument
+    id: 2da8f134-58db-4f9d-b3b0-8c6b50693ab5
+    jinja: 'Compte tenu de cet avis : "{{review}}"
+
+      Recommanderiez-vous cette application à un ami ? {{answer_choices[0]}}, {{answer_choices[1]}},
+      {{answer_choices[2]}}, {{answer_choices[3]}} ou {{answer_choices[4]}} ?
+
+      |||
+
+      {{answer_choices[star-1]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: categorize_rating_using_review
+    reference: Given the review, return a categorical answer.
+  8086b434-a75e-45a4-87fb-4364601e2e05: !Template
+    answer_choices: null
+    id: 8086b434-a75e-45a4-87fb-4364601e2e05
+    jinja: 'Générez un avis {{star}} étoiles (1 étant le plus bas et 5 le plus élevé) sur une 
+      application avec le package {{package_name}}.
+
+      |||
+
+      {{review}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: generate_review
+    reference: Generate a review from the rating.
+  9746ce4b-ac58-4dfb-9783-d77c95cb62cf: !Template
+    answer_choices: "\u2605 ||| \u2605\u2605 ||| \u2605\u2605\u2605 ||| \u2605\u2605\
+      \u2605\u2605 ||| \u2605\u2605\u2605\u2605\u2605"
+    id: 9746ce4b-ac58-4dfb-9783-d77c95cb62cf
+    jinja: "Quelle serait la note de cet avis (\u2605 étant la plus basse et \u2605\u2605\u2605\u2605\u2605 étant la\
+      \ plus élevée) ? \"{{review}}\"\n|||\n\
+      {{answer_choices[star-1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: convert_to_star_rating
+    reference: Given the review, generate a star rating.
+  d34e1413-2699-4701-baa2-05d931d012ba: !Template
+    answer_choices: null
+    id: d34e1413-2699-4701-baa2-05d931d012ba
+    jinja: 'Sur une échelle de 1 à 5 (1 étant le moins favorable et 5 le plus favorable), 
+      comment évaluez-vous cet avis ? "{{review}}"
+
+      |||
+
+      {{star}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: convert_to_rating
+    reference: Convert review to rating

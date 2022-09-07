@@ -1,0 +1,137 @@
+dataset: super_glue
+subset: multirc_zh
+templates:
+  2d95962b-a545-41ae-8d76-07ee6704ef65: !Template
+    answer_choices: "\u4E0D ||| \u662F\u7684"
+    id: 2d95962b-a545-41ae-8d76-07ee6704ef65
+    jinja: "{{paragraph}}\n\n\u95EE\u9898\uFF1A {{question}}\n\u6211\u627E\u5230\u4E86\
+      \u8FD9\u4E2A\u7B54\u6848\u201C {{answer}}\u201D\u3002 \u90A3\u662F\u5BF9\u7684\
+      \u5417\uFF1F \u662F\u8FD8\u662F\u4E0D\u662F\uFF1F\n|||\n{% if label != -1 %}{{answer_choices[label]}}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: found_this_answer
+    reference: ''
+  42d47df9-09de-4691-8e49-7cfadd636cdd: !Template
+    answer_choices: "\u4E0D ||| \u662F\u7684"
+    id: 42d47df9-09de-4691-8e49-7cfadd636cdd
+    jinja: "{{ paragraph }}\n\u6839\u636E\u4EE5\u524D\u7684\u6BB5\u843D {{ question\
+      \ }} \n\u201C {{answer}}\u201D\u662F\u6B63\u786E\u7684\u7B54\u6848\u5417\uFF1F\
+      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "is\u2026 a correct answer?"
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  431a5c97-af33-4053-83c8-afb0dfc04448: !Template
+    answer_choices: "\u4E0D ||| \u662F\u7684"
+    id: 431a5c97-af33-4053-83c8-afb0dfc04448
+    jinja: "{{paragraph}}\n\u95EE\u9898\uFF1A {{question}}\n\n\u6211\u6B63\u5728\u5BF9\
+      \u5B66\u751F\u7684\u7EC3\u4E60\u8FDB\u884C\u8BC4\u5206\u3002 \u7B54\u6848\u662F\
+      \u201C {{answer}}\u201D\u6B63\u786E\u5417\uFF1F\n|||\n{% if label != -1 %}{{answer_choices[label]}}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: grading
+    reference: ''
+  4fc9e1ea-7451-4dba-a2cb-ce870e35ef8b: !Template
+    answer_choices: "\u4E0D ||| \u662F\u7684"
+    id: 4fc9e1ea-7451-4dba-a2cb-ce870e35ef8b
+    jinja: "{{ paragraph }}\n{{ question }} \n\u56DE\u7B54\u201C {{answer}}\u201D\u4F1A\
+      \u5F88\u597D\u5417\uFF1F ||| {% if label != -1 %}{{ answer_choices[label] }}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "Would it be good to answer\u2026"
+    reference: ''
+  59a2d847-27f3-4002-a125-cf9a291b3098: !Template
+    answer_choices: "\u4E0D ||| \u662F\u7684"
+    id: 59a2d847-27f3-4002-a125-cf9a291b3098
+    jinja: "{{ paragraph }}\n\u95EE\u9898\uFF1A {{ question }} \n\u662F{{answer}}\u5417\
+      \uFF1F ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "paragraph\u2026 question\u2026 is it\u2026 ?"
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  7bf537ea-ff8d-44c7-8fc9-305b35e3be66: !Template
+    answer_choices: "\u4E0D ||| \u662F\u7684"
+    id: 7bf537ea-ff8d-44c7-8fc9-305b35e3be66
+    jinja: "{{paragraph}}\n\n\u786E\u5B9A\u201C {{answer}}\u201D\u662F\u5426\u662F\
+      \u4EE5\u4E0B\u95EE\u9898\u7684\u6709\u6548\u7B54\u6848\uFF1A {{question}}\n\u56DE\
+      \u7B54\u662F\u6216\u5426\u3002\n|||\n{% if label != -1 %}{{answer_choices[label]}}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: decide_valid
+    reference: ''
+  7d878b89-2774-429a-82fb-ac801379e3ae: !Template
+    answer_choices: "\u4E0D ||| \u662F\u7684"
+    id: 7d878b89-2774-429a-82fb-ac801379e3ae
+    jinja: "{{ paragraph }}\n\u95EE\u9898\uFF1A {{ question }} \n\u6B63\u786E\u7B54\
+      \u6848{{answer}}\u5417\uFF1F ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "is the correct answer\u2026"
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  ae9b2b0b-1731-4370-adcc-36c4a959490d: !Template
+    answer_choices: "\u4E0D ||| \u662F\u7684"
+    id: ae9b2b0b-1731-4370-adcc-36c4a959490d
+    jinja: "\u201C {{answer}}\u201D\u662F\u5BF9\u4EE5\u4E0B\u95EE\u9898\u7684\u6B63\
+      \u786E\u7B54\u6848\u5417\uFF1F\n\u95EE\u9898\uFF1A {{question}}\n\n\u4F9D\u9760\
+      \u4EE5\u4E0B\u6587\u672C\uFF1A {{paragraph}}\n|||\n{% if label != -1 %}{{answer_choices[label]}}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: correct
+    reference: ''
+  b63fd1c3-b4a6-43c3-8429-6a389235b2a4: !Template
+    answer_choices: "\u4E0D ||| \u662F\u7684"
+    id: b63fd1c3-b4a6-43c3-8429-6a389235b2a4
+    jinja: "{{paragraph}}\n\n\u95EE\u9898\uFF1A {{question}}\n\u6211\u8BA4\u4E3A\u201C\
+      \ {{answer}}\u201D\u662F\u4E00\u4E2A\u6709\u6548\u7684\u7B54\u6848\u3002 \u4F60\
+      \u80FD\u786E\u8BA4\u5417\uFF1F \u662F\u8FD8\u662F\u4E0D\u662F\uFF1F\n|||\n{%\
+      \ if label != -1 %}{{answer_choices[label]}}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: confirm
+    reference: ''
+  d2d78b88-8845-45b5-935a-6451da00b285: !Template
+    answer_choices: "\u4E0D ||| \u662F\u7684"
+    id: d2d78b88-8845-45b5-935a-6451da00b285
+    jinja: "{{ paragraph }}\n{{ question }} \n\u6211\u8981\u8BF4\u201C {{answer}}\u201D\
+      \u3002 \u542C\u8D77\u6765\u5BF9\u5417\uFF1F ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "I was going to say\u2026"
+    reference: ''

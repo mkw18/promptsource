@@ -1,0 +1,71 @@
+dataset: quarel
+subset: da
+templates:
+  5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
+    jinja: "Sp\xF8rgsm\xE5l: {{question}}\n\nBrug ikke {{\"a\"}} og {{\"b\"}} til\
+      \ at besvare sp\xF8rgsm\xE5let, men v\xE6lg i stedet mellem \"{{answer_choices[0]}}\"\
+      \ og \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: do_not_use
+    reference: ''
+  5b5f9d29-0ad5-4bb9-831a-11fcb115c10d: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
+    jinja: "Her er en logisk test: {{question}}\n\nV\xE6lg svaret mellem \"{{answer_choices[0]}}\"\
+      \ og \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: logic_test
+    reference: ''
+  63c58389-605a-42b9-85a6-a2586a954a92: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 63c58389-605a-42b9-85a6-a2586a954a92
+    jinja: 'Her er en novelle: {{question}}.
+
+
+      Hvad er det mest sensiske svar mellem "{{answer_choices[0]}}" og "{{answer_choices[1]}}"?
+
+      |||
+
+      {{answer_choices[answer_index]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: heres_a_story
+    reference: ''
+  73a7adbb-41b1-4b4d-b378-d7e17d030a6f: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 73a7adbb-41b1-4b4d-b378-d7e17d030a6f
+    jinja: "V\xE6lg mellem \"{{answer_choices[0]}}\" og \"{{answer_choices[1]}}\"\
+      .\nSp\xF8rgsm\xE5l: {{question}}\n|||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: choose_between
+    reference: ''
+  92013fab-5387-44d4-bf0f-e29a31bcafb6: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 92013fab-5387-44d4-bf0f-e29a31bcafb6
+    jinja: "Jeg tester mine studerendes logik.\nHvad er svaret, de skal v\xE6lge mellem\
+      \ \"{{answer_choices[0]}}\" og \"{{answer_choices[1]}}\"?\nLogik test: {{question}}\n\
+      |||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: testing_students
+    reference: ''

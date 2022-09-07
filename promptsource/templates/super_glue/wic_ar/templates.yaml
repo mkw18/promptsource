@@ -1,0 +1,161 @@
+dataset: super_glue
+subset: wic_ar
+templates:
+  14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
+    jinja: "\u0647\u0644 \u0643\u0644\u0645\u0629 \"{{word}}\" \u0644\u0647\u0627\
+      \ \u0646\u0641\u0633 \u0627\u0644\u0645\u0639\u0646\u0649 \u0641\u064A \u0647\
+      \u0627\u062A\u064A\u0646 \u0627\u0644\u062C\u0645\u0644\u062A\u064A\u0646\u061F\
+      \ \u0646\u0639\u0645 / \u0644\u0627\u061F\n{{sentence1}}\n{{sentence2}}\n|||\
+      \ {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning-with-label
+    reference: Generalized question-context format with label
+  3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
+    jinja: "\u0647\u0644 \u0643\u0644\u0645\u0629 \"{{word}}\" \u0644\u0647\u0627\
+      \ \u0646\u0641\u0633 \u0627\u0644\u0645\u0639\u0646\u0649 \u0641\u064A \u0647\
+      \u0627\u062A\u064A\u0646 \u0627\u0644\u062C\u0645\u0644\u062A\u064A\u0646\u061F\
+      \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning
+    reference: Generalized question-context format
+  611d13dc-d414-4b9b-9204-e4f325e859e7: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: 611d13dc-d414-4b9b-9204-e4f325e859e7
+    jinja: "\u0627\u0644\u0648\u0627\u062C\u0628 \u0627\u0644\u0645\u0646\u0632\u0644\
+      \u064A\n\n\u062D\u062F\u062F \u0645\u0627 \u0625\u0630\u0627 \u0643\u0627\u0646\
+      \u062A \u0643\u0644\u0645\u0629 \"{{word}}\" \u062A\u0633\u062A\u062E\u062F\u0645\
+      \ \u0628\u0646\u0641\u0633 \u0627\u0644\u0645\u0639\u0646\u0649 \u0641\u064A\
+      \ \u0627\u0644\u062C\u0645\u0644\u062A\u064A\u0646 \u0627\u0644\u062A\u0627\u0644\
+      \u064A\u062A\u064A\u0646. \u0627\u0644\u062C\u0648\u0627\u0628 \u0628\u0646\u0639\
+      \u0645 \u0623\u0648 \u0644\u0627.\n{{sentence1}}\n{{sentence2}}\n||| {% if label\
+      \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: grammar_homework
+    reference: ''
+  725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
+    answer_choices: "\u062E\u0637\u0623 \u0634\u0646\u064A\u0639 ||| \u062D\u0642\u064A\
+      \u0642\u064A"
+    id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
+    jinja: "\u0627\u0644\u062C\u0645\u0644\u0629 \u0623: {{sentence1}}\n\u0627\u0644\
+      \u062C\u0645\u0644\u0629 \u0628: {{sentence2}}\n\n\"{{word}}\" \u0644\u0647\
+      \ \u0645\u0639\u0646\u0649 \u0645\u0645\u0627\u062B\u0644 \u0641\u064A \u0627\
+      \u0644\u062C\u0645\u0644 A \u0648 B. \u0635\u062D\u064A\u062D\u0629 \u0623\u0648\
+      \ \u062E\u0627\u0637\u0626\u0629\u061F\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: affirmation_true_or_false
+    reference: ''
+  c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6
+    jinja: "{{sentence1}}\n{{sentence2}}\n\u0633\u0624\u0627\u0644: Is the word '{{word}}'\
+      \ used in the same sense in the two sentences above?\n||| {% if label != -1%}\n\
+      {{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf
+  ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: ce8b5a93-1841-4897-84db-b100f1c84f4b
+    jinja: "\u0627\u0644\u062C\u0645\u0644\u0629 1: {{sentence1}}\n\u0627\u0644\u062C\
+      \u0645\u0644\u0629 2: {{sentence2}}\n\n\u062D\u062F\u062F \u0645\u0627 \u0625\
+      \u0630\u0627 \u0643\u0627\u0646\u062A \u0643\u0644\u0645\u0629 \"{{word}}\"\
+      \ \u062A\u0633\u062A\u062E\u062F\u0645 \u0628\u0646\u0641\u0633 \u0627\u0644\
+      \u0645\u0639\u0646\u0649 \u0641\u064A \u0643\u0644\u062A\u0627 \u0627\u0644\u062C\
+      \u0645\u0644\u062A\u064A\u0646. \u0646\u0639\u0645 \u0627\u0645 \u0644\u0627\
+      \u061F\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same_sense
+    reference: ''
+  cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
+    jinja: "\u062D\u062F\u062F \u0645\u0627 \u0625\u0630\u0627 \u0643\u0627\u0646\u062A\
+      \ \u0643\u0644\u0645\u0629 \"{{word}} '\u062A\u0633\u062A\u062E\u062F\u0645\
+      \ \u0628\u0646\u0641\u0633 \u0627\u0644\u0637\u0631\u064A\u0642\u0629 \u0641\
+      \u064A \u0627\u0644\u062C\u0645\u0644\u062A\u064A\u0646 \u0623\u062F\u0646\u0627\
+      \u0647. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context
+    reference: Generalized question-context format
+  d9e1db2a-ab0b-4621-bb41-01d5788d3873: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
+    jinja: "{{sentence1}}\n{{sentence2}}\n\u0633\u0624\u0627\u0644: \u0647\u0644 \u062A\
+      \u0633\u062A\u062E\u062F\u0645 \u0643\u0644\u0645\u0629 '{{word}}' \u0628\u0646\
+      \u0641\u0633 \u0627\u0644\u0645\u0639\u0646\u0649 \u0641\u064A \u0627\u0644\u062C\
+      \u0645\u0644\u062A\u064A\u0646 \u0623\u0639\u0644\u0627\u0647\u061F \u0646\u0639\
+      \u0645 / \u0644\u0627\u061F\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt-with-label
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf add additional
+      label
+  dd2080cf-3117-49ba-9aff-c988a21fdb69: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: dd2080cf-3117-49ba-9aff-c988a21fdb69
+    jinja: "\u0643\u0644\u0645\u0629 \"{{word}}\" \u0644\u0647\u0627 \u0645\u0639\u0627\
+      \u0646\u064A \u0645\u062A\u0639\u062F\u062F\u0629. \u0647\u0644 \u0644\u0647\
+      \u0627 \u0646\u0641\u0633 \u0627\u0644\u0645\u0639\u0646\u0649 \u0641\u064A\
+      \ \u0627\u0644\u062C\u0645\u0644 1 \u0648 2\u061F \u0646\u0639\u0645 \u0627\u0645\
+      \ \u0644\u0627\u061F\n\n\u0627\u0644\u062C\u0645\u0644\u0629 1: {{sentence1}}\n\
+      \u0627\u0644\u062C\u0645\u0644\u0629 2: {{sentence2}}\n||| {% if label != -1%}\n\
+      {{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: polysemous
+    reference: ''
+  f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: f934a96d-fe4d-4075-aa47-5595b9a604c7
+    jinja: "{{sentence1}}\n{{sentence2}}\n\u0634\u0639\u0648\u0631 \u0645\u0645\u0627\
+      \u062B\u0644 \u0628\u0640 {{word}}\u061F\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: similar-sense
+    reference: Following https://arxiv.org/abs/2105.11447, https://github.com/ethanjperez/true_few_shot/tree/main/templates.super_glue

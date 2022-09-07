@@ -1,0 +1,117 @@
+dataset: gigaword
+subset: zh
+templates:
+  0a45ae54-4585-4d13-9540-890125d614e0: !Template
+    answer_choices: null
+    id: 0a45ae54-4585-4d13-9540-890125d614e0
+    jinja: "{{document}}\n\n===\n\n\u751F\u6210\u672C\u6587\u7684\u6807\u9898\uFF1A\
+      \ ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: generate_summary_for_this
+    reference: ''
+  2558932f-894a-41ef-be34-32a5afb1f5d8: !Template
+    answer_choices: null
+    id: 2558932f-894a-41ef-be34-32a5afb1f5d8
+    jinja: "\u6807\u9898\uFF1A {{summary}}\n\n||| {{document}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: reverse_writing
+    reference: ''
+  696e561e-1311-4a3e-9ca1-51d1fd77392b: !Template
+    answer_choices: null
+    id: 696e561e-1311-4a3e-9ca1-51d1fd77392b
+    jinja: "\u4E3A\u672C\u6587\u5236\u4F5C\u6807\u9898\uFF1A {{document}} |||\n\n\
+      {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: make_a_title
+    reference: ''
+  7ad1a48a-195d-4c0c-aea5-df0689589f27: !Template
+    answer_choices: null
+    id: 7ad1a48a-195d-4c0c-aea5-df0689589f27
+    jinja: "\u672C\u6587\u7684\u7B2C\u4E00\u53E5\u8BDD\uFF1A {{document}}\n\n\u6807\
+      \u9898\uFF1A ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: first_sentence_title
+    reference: ''
+  90c34acf-2f42-4e66-98dc-7453f7e60e60: !Template
+    answer_choices: null
+    id: 90c34acf-2f42-4e66-98dc-7453f7e60e60
+    jinja: "{{document}}\n\n\u592A\u957F;\u6CA1\u6709\u9605\u8BFB: ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: TLDR
+    reference: GPT-2 TLDR
+  93f0c400-501f-43ad-861b-4f67564f2e8f: !Template
+    answer_choices: null
+    id: 93f0c400-501f-43ad-861b-4f67564f2e8f
+    jinja: "{{document}}\n\n===\n\n\u7ED9\u5B9A\u4E0A\u8FF0\u53E5\u5B50\uFF0C\u5199\
+      \u4E0B\u6807\u9898\uFF1A ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: write_its_sentence
+    reference: ''
+  a0e699bf-1268-4929-ad13-438c08644118: !Template
+    answer_choices: null
+    id: a0e699bf-1268-4929-ad13-438c08644118
+    jinja: "\u4E3A\u6B64\u53E5\u5B50\u5199\u6807\u9898\uFF1A {{document}} \n\n\u6807\
+      \u9898\uFF1A ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: write_a_title_for_this_sentence
+    reference: ''
+  ac53a797-4d59-455a-b0e6-0e4d7d85f029: !Template
+    answer_choices: null
+    id: ac53a797-4d59-455a-b0e6-0e4d7d85f029
+    jinja: "{{document}} \u7B80\u800C\u8A00\u4E4B\uFF0C ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: in_a_nutshell
+    reference: ''
+  d1d4a115-65fd-49eb-bd75-179a46b67ec0: !Template
+    answer_choices: null
+    id: d1d4a115-65fd-49eb-bd75-179a46b67ec0
+    jinja: "\u6807\u9898\uFF1A {{summary}}\n\n===\n\n\u5199\u4E00\u7BC7\u5E26\u6709\
+      \u7ED9\u5B9A\u6807\u9898\u7684\u6587\u7AE0\uFF1A ||| {{document}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: write_an_article
+    reference: ''

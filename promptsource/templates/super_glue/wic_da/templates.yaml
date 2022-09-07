@@ -1,0 +1,134 @@
+dataset: super_glue
+subset: wic_da
+templates:
+  14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
+    answer_choices: Ingen ||| Ja
+    id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
+    jinja: "Har ordet \"{{word}}\" den samme betydning i disse to s\xE6tninger? Ja\
+      \ Nej?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning-with-label
+    reference: Generalized question-context format with label
+  3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
+    answer_choices: Ingen ||| Ja
+    id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
+    jinja: "Har ordet \"{{word}}\" den samme betydning i disse to s\xE6tninger?\n\
+      {{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning
+    reference: Generalized question-context format
+  611d13dc-d414-4b9b-9204-e4f325e859e7: !Template
+    answer_choices: Ingen ||| Ja
+    id: 611d13dc-d414-4b9b-9204-e4f325e859e7
+    jinja: "Lektier\n\nBestem, om ordet \"{{word}}\" bruges med den samme betydning\
+      \ i de to f\xF8lgende s\xE6tninger. Svar af ja eller nej.\n{{sentence1}}\n{{sentence2}}\n\
+      ||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: grammar_homework
+    reference: ''
+  725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
+    answer_choices: Falsk ||| Rigtigt
+    id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
+    jinja: "Setning A: {{sentence1}}\nSetning B: {{sentence2}}\n\n\"{{word}}\" har\
+      \ en lignende betydning i s\xE6tninger A og B. Sandt eller falsk?\n||| {% if\
+      \ label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: affirmation_true_or_false
+    reference: ''
+  c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6: !Template
+    answer_choices: Ingen ||| Ja
+    id: c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6
+    jinja: "{{sentence1}}\n{{sentence2}}\nSp\xF8rgsm\xE5l: Is the word '{{word}}'\
+      \ used in the same sense in the two sentences above?\n||| {% if label != -1%}\n\
+      {{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf
+  ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
+    answer_choices: Ingen ||| Ja
+    id: ce8b5a93-1841-4897-84db-b100f1c84f4b
+    jinja: "Setning 1: {{sentence1}}\nSetning 2: {{sentence2}}\n\nBestem, om ordet\
+      \ \"{{word}}\" bruges i samme forstand i begge s\xE6tninger. Ja eller nej?\n\
+      ||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same_sense
+    reference: ''
+  cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
+    answer_choices: Ingen ||| Ja
+    id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
+    jinja: "Bestem, om ordet '{{word}}' bruges p\xE5 samme m\xE5de i de to s\xE6tninger\
+      \ nedenfor. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context
+    reference: Generalized question-context format
+  d9e1db2a-ab0b-4621-bb41-01d5788d3873: !Template
+    answer_choices: Ingen ||| Ja
+    id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
+    jinja: "{{sentence1}}\n{{sentence2}}\nSp\xF8rgsm\xE5l: Bruges ordet '{{word}}'\
+      \ i samme forstand i de to s\xE6tninger ovenfor? Ja Nej?\n||| {% if label !=\
+      \ -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt-with-label
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf add additional
+      label
+  dd2080cf-3117-49ba-9aff-c988a21fdb69: !Template
+    answer_choices: Ingen ||| Ja
+    id: dd2080cf-3117-49ba-9aff-c988a21fdb69
+    jinja: "Ordet \"{{word}}\" har flere betydninger. Har det den samme betydning\
+      \ i s\xE6tninger 1 og 2? Ja eller nej?\n\nSetning 1: {{sentence1}}\nSetning\
+      \ 2: {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: polysemous
+    reference: ''
+  f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
+    answer_choices: Ingen ||| Ja
+    id: f934a96d-fe4d-4075-aa47-5595b9a604c7
+    jinja: "{{sentence1}}\n{{sentence2}}\nLignende f\xF8lelse af {{word}}?\n||| {%\
+      \ if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: similar-sense
+    reference: Following https://arxiv.org/abs/2105.11447, https://github.com/ethanjperez/true_few_shot/tree/main/templates.super_glue

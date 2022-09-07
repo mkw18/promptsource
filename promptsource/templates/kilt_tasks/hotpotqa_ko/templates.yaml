@@ -1,0 +1,75 @@
+dataset: kilt_tasks
+subset: hotpotqa_ko
+templates:
+  1a123f3a-0507-41b9-904f-b18d9ce2b79e: !Template
+    answer_choices: null
+    id: 1a123f3a-0507-41b9-904f-b18d9ce2b79e
+    jinja: "{% if output %}\n\uB2E4\uC74C\uC740 \uC785\uB825\uC5D0 \uB300\uD574 \uB204\
+      \uAD70\uAC00\uB97C \uCD94\uB860 \uD574\uC57C\uD558\uB294 \uBCF5\uC7A1\uD55C\
+      \ \uC9C8\uBB38\uC774 \uC788\uC2B5\uB2C8\uB2E4. \uB300\uB2F5 \uD560 \uC218 \uC788\
+      \uC2B5\uB2C8\uAE4C?\n{{input}}\n|||\n{{output | map(attribute=\"answer\") |\
+      \ list | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: complex_question
+    reference: ''
+  5531ce47-35ff-4bce-943d-5b2b86c44352: !Template
+    answer_choices: null
+    id: 5531ce47-35ff-4bce-943d-5b2b86c44352
+    jinja: "{% if output %}\n\uC0AC\uC2E4\uC744 \uACB0\uD569\uD558\uACE0 \uB2F5\uBCC0\
+      \uD558\uC2ED\uC2DC\uC624. {{input}}\n|||\n{{output | map(attribute=\"answer\"\
+      ) | list | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: combining_facts
+    reference: ''
+  5ce9d659-4df8-4afd-a6e1-3e542df0035a: !Template
+    answer_choices: null
+    id: 5ce9d659-4df8-4afd-a6e1-3e542df0035a
+    jinja: "{% if output %}\n\uC774 \uC815\uAD50\uD55C \uC9C8\uBB38\uC5D0 \uB300\uD55C\
+      \ \uB2F5\uC744 \uACF5\uC2DD\uD654\uD558\uC2ED\uC2DC\uC624. {{input}}\n|||\n\
+      {{output | map(attribute=\"answer\") | list | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: formulate
+    reference: ''
+  9211f663-51f9-428e-ba27-158480eee083: !Template
+    answer_choices: null
+    id: 9211f663-51f9-428e-ba27-158480eee083
+    jinja: "{% if output %}\n\uCD5C\uC885 \uC2DC\uD5D8\n\n\uC9C8\uBB38 1. {{input}}\n\
+      |||\n{{output | map(attribute=\"answer\") | list | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: final_exam
+    reference: ''
+  ac0545a1-9363-4c17-aada-f0eedf5a24b2: !Template
+    answer_choices: null
+    id: ac0545a1-9363-4c17-aada-f0eedf5a24b2
+    jinja: '{% if output %}
+
+      {{input}}
+
+      |||
+
+      {{output | map(attribute="answer") | list | choice}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: straighforward_qa
+    reference: ''

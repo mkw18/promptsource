@@ -1,0 +1,86 @@
+dataset: samsum
+subset: vi
+templates:
+  01faf0cd-d9d8-4245-b86f-e7e13c2972ff: !Template
+    answer_choices: null
+    id: 01faf0cd-d9d8-4245-b86f-e7e13c2972ff
+    jinja: "T\xF3m t\u1EAFt cu\u1ED9c \u0111\u1ED1i tho\u1EA1i n\xE0y: {{dialogue}}\
+      \ |||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: 'Summarize this dialogue:'
+    reference: ''
+  182a251f-2f76-4b36-8d2e-417f8d43f729: !Template
+    answer_choices: null
+    id: 182a251f-2f76-4b36-8d2e-417f8d43f729
+    jinja: "{{dialogue}}\n\u0110\u01B0a ra cu\u1ED9c \u0111\u1ED1i tho\u1EA1i tr\xEA\
+      n, vi\u1EBFt m\u1ED9t b\u1EA3n t\xF3m t\u1EAFt. |||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Given the above dialogue write a summary
+    reference: ''
+  72eda731-894d-4260-9113-9e492822f80e: !Template
+    answer_choices: null
+    id: 72eda731-894d-4260-9113-9e492822f80e
+    jinja: "T\xF3m t\u1EAFt: {{dialogue}}|||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: 'Summarize:'
+    reference: ''
+  7bd51f5b-5bac-429e-b8f9-dd6782b92a59: !Template
+    answer_choices: null
+    id: 7bd51f5b-5bac-429e-b8f9-dd6782b92a59
+    jinja: "{{dialogue}}\n\u0110\u1EC3 t\u1ED5ng h\u1EE3p h\u1ED9p tho\u1EA1i n\xE0\
+      y:\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: To sum up this dialog
+    reference: ''
+  8d829dcb-ea64-457d-b025-f16e31c2834a: !Template
+    answer_choices: null
+    id: 8d829dcb-ea64-457d-b025-f16e31c2834a
+    jinja: "T\u1EA1o t\xF3m t\u1EAFt cho cu\u1ED9c \u0111\u1ED1i tho\u1EA1i n\xE0\
+      y:\n{{dialogue}}\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Generate a summary for this dialogue
+    reference: ''
+  9f571a72-6813-4307-9aae-753ca0f737c5: !Template
+    answer_choices: null
+    id: 9f571a72-6813-4307-9aae-753ca0f737c5
+    jinja: "Vi\u1EBFt m\u1ED9t cu\u1ED9c \u0111\u1ED1i tho\u1EA1i ph\xF9 h\u1EE3p\
+      \ v\u1EDBi b\u1EA3n t\xF3m t\u1EAFt n\xE0y: {{summary}} |||\n{{dialogue}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: false
+    name: Write a dialogue that match this summary
+    reference: ''
+  bd891653-49b6-40bb-968f-8e6632c75659: !Template
+    answer_choices: null
+    id: bd891653-49b6-40bb-968f-8e6632c75659
+    jinja: "T\xF3m l\u1EA1i cu\u1ED9c \u0111\u1ED1i tho\u1EA1i sau: \n{{dialogue}}\n\
+      |||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Sum up the following dialogue
+    reference: ''

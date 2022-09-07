@@ -1,0 +1,113 @@
+dataset: multi_news
+subset: ta
+templates:
+  12269bd1-1c3a-4865-9702-892782b593d9: !Template
+    answer_choices: null
+    id: 12269bd1-1c3a-4865-9702-892782b593d9
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B9A\u0BC6\
+      \u0BAF\u0BCD\u0BA4\u0BBF \u0B95\u0B9F\u0BCD\u0B9F\u0BC1\u0BB0\u0BC8\u0B95\u0BB3\
+      \u0BBF\u0BB2\u0BCD \u0BAE\u0BC1\u0B95\u0BCD\u0B95\u0BBF\u0BAF \u0BAA\u0BC1\u0BB3\
+      \u0BCD\u0BB3\u0BBF\u0B95\u0BB3\u0BCD \u0B8E\u0BA9\u0BCD\u0BA9:\n{% for doc in\
+      \ docs %}\n\n\u0B95\u0B9F\u0BCD\u0B9F\u0BC1\u0BB0\u0BC8: {{doc}}\n{% endfor\
+      \ %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: what are the key points
+    reference: ''
+  940d0ce4-c1ef-4453-a47b-1abaaf811160: !Template
+    answer_choices: null
+    id: 940d0ce4-c1ef-4453-a47b-1abaaf811160
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B86\u0BB5\
+      \u0BA3\u0B99\u0BCD\u0B95\u0BB3\u0BC8 \u0B92\u0BB1\u0BCD\u0BB1\u0BC8 \u0B92\u0BA9\
+      \u0BCD\u0BB1\u0BBE\u0B95 \u0B92\u0BB0\u0BC1\u0B99\u0BCD\u0B95\u0BBF\u0BA3\u0BC8\
+      \u0B95\u0BCD\u0B95\u0BB5\u0BC1\u0BAE\u0BCD:\n{% for doc in docs %}\n\n- {{doc}}\n\
+      {% endfor %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: synthesize
+    reference: ''
+  9ab370ad-2b89-4d2a-bb40-ccc31accefad: !Template
+    answer_choices: null
+    id: 9ab370ad-2b89-4d2a-bb40-ccc31accefad
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\
+      \u0BAE\u0BCD \u0B95\u0B9F\u0BCD\u0B9F\u0BC1\u0BB0\u0BC8\u0B95\u0BB3\u0BC8 \u0BAE\
+      \u0BBF\u0B95\u0BB5\u0BC1\u0BAE\u0BCD \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\
+      \u0BAE\u0BBE\u0BA9 \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BBE\u0B95\
+      \ \u0BA4\u0BBF\u0BB0\u0BC1\u0BA4\u0BCD\u0BA4 \u0BB5\u0BBF\u0BB0\u0BC1\u0BAE\u0BCD\
+      \u0BAA\u0BC1\u0B95\u0BBF\u0BB1\u0BC7\u0BA9\u0BCD:\n{% for doc in docs %}\n\n\
+      \u0B95\u0B9F\u0BCD\u0B9F\u0BC1\u0BB0\u0BC8: {{doc}}\n{% endfor %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: summary scenario
+    reference: ''
+  b15485f5-2bd9-4ed4-98ce-4b241a341f99: !Template
+    answer_choices: null
+    id: b15485f5-2bd9-4ed4-98ce-4b241a341f99
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\
+      \u0BAE\u0BCD \u0B95\u0B9F\u0BCD\u0B9F\u0BC1\u0BB0\u0BC8\u0B95\u0BB3\u0BBF\u0BA9\
+      \u0BCD \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BA4\u0BCD\u0BA4\u0BC8 \u0B8E\
+      \u0BB4\u0BC1\u0BA4\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD:\n{% for doc in docs\
+      \ %}\n\n\u0B86\u0BB5\u0BA3\u0BAE\u0BCD: {{doc}}\n{% endfor %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: summarize
+    reference: ''
+  bc910e51-c0a9-473c-aa85-adcab21b9ba9: !Template
+    answer_choices: null
+    id: bc910e51-c0a9-473c-aa85-adcab21b9ba9
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list%}\n\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\
+      \u0BAE\u0BCD \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BA4\u0BCD\u0BA4\u0BBF\
+      \u0BB2\u0BBF\u0BB0\u0BC1\u0BA8\u0BCD\u0BA4\u0BC1 \u0BA8\u0BAE\u0BCD\u0BAA\u0BA4\
+      \u0BCD\u0BA4\u0B95\u0BC1\u0BA8\u0BCD\u0BA4 \u0BB5\u0BBF\u0BB5\u0BB0\u0B99\u0BCD\
+      \u0B95\u0BB3\u0BC1\u0B9F\u0BA9\u0BCD \u0BB5\u0BBF\u0BB0\u0BBF\u0BB5\u0BBE\u0B95\
+      \u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F \u0B9A\u0BC6\u0BAF\u0BCD\u0BA4\
+      \u0BBF \u0B95\u0B9F\u0BCD\u0B9F\u0BC1\u0BB0\u0BC8\u0BAF\u0BC8 \u0B8E\u0BB4\u0BC1\
+      \u0BA4\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD:\n{{summary[2:]}}\n|||\n{{docs |\
+      \ choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: expand (reverse task)
+    reference: ''
+  d5a4bb2a-634a-4e9a-9f1f-b0803894ca0f: !Template
+    answer_choices: null
+    id: d5a4bb2a-634a-4e9a-9f1f-b0803894ca0f
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0B9F\
+      \u0BCD\u0B9F\u0BC1\u0BB0\u0BC8\u0B95\u0BB3\u0BC8 \u0B92\u0BA9\u0BCD\u0BB1\u0BBE\
+      \u0B95 \u0BB5\u0B9F\u0BBF\u0B95\u0B9F\u0BCD\u0B9F \u0BAE\u0BC1\u0BAF\u0BB1\u0BCD\
+      \u0B9A\u0BBF\u0B95\u0BCD\u0B95\u0BBF\u0BB1\u0BC7\u0BA9\u0BCD:\n{% for doc in\
+      \ docs %}\n\n\u0B95\u0B9F\u0BCD\u0B9F\u0BC1\u0BB0\u0BC8: {{doc}}\n{% endfor\
+      \ %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: distill
+    reference: ''

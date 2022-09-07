@@ -1,0 +1,106 @@
+dataset: yelp_review_full
+subset: hi
+templates:
+  135fcd11-9fcc-4b55-bf1b-9b76290d0f6b: !Template
+    answer_choices: "1 \u0938\u094D\u091F\u093E\u0930 ||| 2 \u0938\u093F\u0924\u093E\
+      \u0930\u0947 ||| 3 \u0938\u094D\u091F\u093E\u0930 ||| 4 \u0938\u093F\u0924\u093E\
+      \u0930\u0947 ||| 5 \u0938\u093F\u0924\u093E\u0930\u0947"
+    id: 135fcd11-9fcc-4b55-bf1b-9b76290d0f6b
+    jinja: "{{ text }}\n\u0907\u0938\u0932\u093F\u090F \u092E\u0948\u0902 \u0907\u0938\
+      \u0947 \u0926\u0947\u0928\u093E \u091A\u093E\u0939\u0942\u0902\u0917\u093E |||\
+      \ {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: so_i_would
+    reference: ''
+  27b6bc81-bb1c-467b-91c0-22a4d6a19f44: !Template
+    answer_choices: "1 \u0938\u094D\u091F\u093E\u0930 ||| 2 \u0938\u093F\u0924\u093E\
+      \u0930\u0947 ||| 3 \u0938\u094D\u091F\u093E\u0930 ||| 4 \u0938\u093F\u0924\u093E\
+      \u0930\u0947 ||| 5 \u0938\u093F\u0924\u093E\u0930\u0947"
+    id: 27b6bc81-bb1c-467b-91c0-22a4d6a19f44
+    jinja: "{{ text }}\n===\n\u0909\u0938\u0915\u0947 \u0906\u0927\u093E\u0930 \u092A\
+      \u0930, \u092E\u0947\u0930\u0940 \u0930\u0947\u091F\u093F\u0902\u0917 \u0939\
+      \u0948 ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based_on_that
+    reference: ''
+  29fc6386-90b3-4976-b249-26e49fe7c924: !Template
+    answer_choices: "1 \u0938\u094D\u091F\u093E\u0930 ||| 2 \u0938\u093F\u0924\u093E\
+      \u0930\u0947 ||| 3 \u0938\u094D\u091F\u093E\u0930 ||| 4 \u0938\u093F\u0924\u093E\
+      \u0930\u0947 ||| 5 \u0938\u093F\u0924\u093E\u0930\u0947"
+    id: 29fc6386-90b3-4976-b249-26e49fe7c924
+    jinja: "\u092A\u093E\u0920 \u0915\u0940 \u0938\u092E\u0940\u0915\u094D\u0937\u093E\
+      \ \u0915\u0930\u0947\u0902:\n{{ text }}\n\n\u0938\u093F\u0924\u093E\u0930\u0947\
+      : |||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_star
+    reference: simulating webpage
+  2a57af86-e25a-4572-ba9e-aa921842c04b: !Template
+    answer_choices: "1 \u0938\u094D\u091F\u093E\u0930 ||| 2 \u0938\u093F\u0924\u093E\
+      \u0930\u0947 ||| 3 \u0938\u094D\u091F\u093E\u0930 ||| 4 \u0938\u093F\u0924\u093E\
+      \u0930\u0947 ||| 5 \u0938\u093F\u0924\u093E\u0930\u0947"
+    id: 2a57af86-e25a-4572-ba9e-aa921842c04b
+    jinja: "{{ text }} \u0907\u0938 \u091C\u0917\u0939 \u0915\u0947 \u0932\u093F\u090F\
+      \ \u092E\u0947\u0930\u0940 \u0930\u0947\u091F\u093F\u0902\u0917 \u0939\u0948\
+      \ ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: this_place
+    reference: ''
+  4dd990b3-7201-4cba-bb9a-baa462d68b1a: !Template
+    answer_choices: 1 ||| 2 ||| 3 ||| 4 ||| 5
+    id: 4dd990b3-7201-4cba-bb9a-baa462d68b1a
+    jinja: "\u092A\u093E\u0920 \u0915\u0940 \u0938\u092E\u0940\u0915\u094D\u0937\u093E\
+      \ \u0915\u0930\u0947\u0902:\n{{ text }}\n\n\u0938\u092E\u0940\u0915\u094D\u0937\
+      \u093E \u0938\u094D\u0915\u094B\u0930 (1 \u0914\u0930 5 \u0915\u0947 \u092C\u0940\
+      \u091A): |||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_score
+    reference: Simulating webpage
+  6d4bfb59-4260-40a5-9da5-e061720bd430: !Template
+    answer_choices: 1 ||| 2 ||| 3 ||| 4 ||| 5
+    id: 6d4bfb59-4260-40a5-9da5-e061720bd430
+    jinja: "\u0938\u092E\u0940\u0915\u094D\u0937\u093E: {{text}}\n1 \u0938\u0947 5\
+      \ \u0915\u0947 \u092A\u0948\u092E\u093E\u0928\u0947 \u092A\u0930, \u092E\u0948\
+      \u0902 \u092F\u0939 \u0909\u0924\u094D\u092A\u093E\u0926 \u0926\u0942\u0902\u0917\
+      \u093E ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: on_a_scale
+    reference: ''
+  e8091beb-c0fa-490d-9e0c-32eb6907dbc0: !Template
+    answer_choices: "1 \u0938\u094D\u091F\u093E\u0930 ||| 2 \u0938\u093F\u0924\u093E\
+      \u0930\u0947 ||| 3 \u0938\u094D\u091F\u093E\u0930 ||| 4 \u0938\u093F\u0924\u093E\
+      \u0930\u0947 ||| 5 \u0938\u093F\u0924\u093E\u0930\u0947"
+    id: e8091beb-c0fa-490d-9e0c-32eb6907dbc0
+    jinja: "\u092A\u093E\u0920 \u0915\u0940 \u0938\u092E\u0940\u0915\u094D\u0937\u093E\
+      \ \u0915\u0930\u0947\u0902:\n{{ text }}\n\n\u0938\u092E\u0940\u0915\u094D\u0937\
+      \u093E \u0930\u0947\u091F\u093F\u0902\u0917: |||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_rating
+    reference: It's simulating the format of a webpage.

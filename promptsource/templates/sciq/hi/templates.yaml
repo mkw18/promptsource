@@ -1,0 +1,98 @@
+dataset: sciq
+subset: hi
+templates:
+  0af52ad2-2b12-4700-b664-cd26d2da6dc1: !Template
+    answer_choices: '{{distractor1}} ||| {{distractor2}} ||| {{distractor3}} ||| {{correct_answer}}'
+    id: 0af52ad2-2b12-4700-b664-cd26d2da6dc1
+    jinja: "\u092A\u094D\u0930\u0936\u094D\u0928: {{question}}\n\n\n\u0909\u0924\u094D\
+      \u0924\u0930:|||{{answer_choices[3]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Direct Question (Closed Book)
+    reference: ''
+  15b0a989-84e4-4f1c-8ac1-12dbfa2ff42a: !Template
+    answer_choices: '{{distractor1}} ||| {{distractor2}} ||| {{distractor3}} ||| {{correct_answer}}'
+    id: 15b0a989-84e4-4f1c-8ac1-12dbfa2ff42a
+    jinja: "{% set order = [[0, 1, 2, 3], [0, 1, 3, 2], [0, 2, 1, 3], [0, 2, 3, 1],\
+      \ [0, 3, 1, 2], [0, 3, 2, 1],\n                             [1, 0, 2, 3], [1,\
+      \ 0, 3, 2], [1, 2, 0, 3], [1, 2, 3, 0], [1, 3, 0, 2], [1, 3, 2, 0],\n      \
+      \                       [2, 1, 0, 3], [2, 1, 0, 2], [2, 0, 1, 3], [2, 0, 3,\
+      \ 1], [2, 3, 1, 0], [2, 3, 0, 1],\n                             [3, 1, 2, 0],\
+      \ [3, 1, 0, 2], [3, 2, 1, 0], [3, 2, 0, 1], [3, 0, 1, 2], [3, 0, 2, 1]] | choice\
+      \ %}\n\u092A\u094D\u0930\u0936\u094D\u0928: {{question}}\n\n\n \u0935\u093F\u0915\
+      \u0932\u094D\u092A:\n\n- {{ answer_choices[order[0]] }}\n\n- {{ answer_choices[order[1]]\
+      \ }}\n\n- {{ answer_choices[order[2]] }}\n\n- {{ answer_choices[order[3]] }}\n\
+      \n\u0909\u0924\u094D\u0924\u0930:|||{{answer_choices[3]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Multiple Choice (Closed Book)
+    reference: Same multiple choice format but without the support text
+  368e29fb-506d-4a4e-ac33-0af8d6e1729b: !Template
+    answer_choices: '{{distractor1}} ||| {{distractor2}} ||| {{distractor3}} ||| {{correct_answer}}'
+    id: 368e29fb-506d-4a4e-ac33-0af8d6e1729b
+    jinja: "{% set order = [[0, 1, 2, 3], [0, 1, 3, 2], [0, 2, 1, 3], [0, 2, 3, 1],\
+      \ [0, 3, 1, 2], [0, 3, 2, 1],\n                             [1, 0, 2, 3], [1,\
+      \ 0, 3, 2], [1, 2, 0, 3], [1, 2, 3, 0], [1, 3, 0, 2], [1, 3, 2, 0],\n      \
+      \                       [2, 1, 0, 3], [2, 1, 0, 2], [2, 0, 1, 3], [2, 0, 3,\
+      \ 1], [2, 3, 1, 0], [2, 3, 0, 1],\n                             [3, 1, 2, 0],\
+      \ [3, 1, 0, 2], [3, 2, 1, 0], [3, 2, 0, 1], [3, 0, 1, 2], [3, 0, 2, 1]] | choice\
+      \ %}\n\u092A\u094D\u0930\u0936\u094D\u0928: {{question}}\n\n\n\u0907\u0938 \u092A\
+      \u0948\u0930\u093E\u0917\u094D\u0930\u093E\u092B \u0915\u094B \u092A\u0922\u093C\
+      \u0947\u0902 \u0914\u0930 \u092A\u094D\u0930\u0926\u093E\u0928 \u0915\u093F\u090F\
+      \ \u0917\u090F \u0909\u0924\u094D\u0924\u0930\u094B\u0902 \u0938\u0947 \u0938\
+      \u0939\u0940 \u0935\u093F\u0915\u0932\u094D\u092A \u091A\u0941\u0928\u0947\u0902\
+      :\n\n{{support}}\n\n \u0935\u093F\u0915\u0932\u094D\u092A:\n\n- {{ answer_choices[order[0]]\
+      \ }}\n\n- {{ answer_choices[order[1]] }}\n\n- {{ answer_choices[order[2]] }}\n\
+      \n- {{ answer_choices[order[3]] }}\n\n\n\u0909\u0924\u094D\u0924\u0930:|||{{answer_choices[3]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Multiple Choice Question First
+    reference: Multiple choice question format
+  63c22e8a-7029-4ce3-bd26-6ca6a1541563: !Template
+    answer_choices: '{{distractor1}} ||| {{distractor2}} ||| {{distractor3}} ||| {{correct_answer}}'
+    id: 63c22e8a-7029-4ce3-bd26-6ca6a1541563
+    jinja: "{% set order = [[0, 1, 2, 3], [0, 1, 3, 2], [0, 2, 1, 3], [0, 2, 3, 1],\
+      \ [0, 3, 1, 2], [0, 3, 2, 1],\n                             [1, 0, 2, 3], [1,\
+      \ 0, 3, 2], [1, 2, 0, 3], [1, 2, 3, 0], [1, 3, 0, 2], [1, 3, 2, 0],\n      \
+      \                       [2, 1, 0, 3], [2, 1, 0, 2], [2, 0, 1, 3], [2, 0, 3,\
+      \ 1], [2, 3, 1, 0], [2, 3, 0, 1],\n                             [3, 1, 2, 0],\
+      \ [3, 1, 0, 2], [3, 2, 1, 0], [3, 2, 0, 1], [3, 0, 1, 2], [3, 0, 2, 1]] | choice\
+      \ %}\n\u0907\u0938 \u092A\u0948\u0930\u093E\u0917\u094D\u0930\u093E\u092B \u0915\
+      \u094B \u0926\u093F\u090F \u0917\u090F \u0928\u093F\u092E\u094D\u0928\u0932\u093F\
+      \u0916\u093F\u0924 \u092A\u094D\u0930\u0936\u094D\u0928 \u0915\u093E \u0909\u0924\
+      \u094D\u0924\u0930 \u0926\u0947\u0902: \n\n{{support}}\n\n\n\u092A\u094D\u0930\
+      \u0936\u094D\u0928: {{question}}\n\n \u0935\u093F\u0915\u0932\u094D\u092A:\n\
+      \n- {{ answer_choices[order[0]] }}\n\n- {{ answer_choices[order[1]] }}\n\n-\
+      \ {{ answer_choices[order[2]] }}\n\n- {{ answer_choices[order[3]] }}\n\n\u0909\
+      \u0924\u094D\u0924\u0930:|||{{answer_choices[3]}}\n\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Multiple Choice
+    reference: Standard multiple choice format
+  d417fcfb-9f00-4186-95d8-e63609495164: !Template
+    answer_choices: '{{distractor1}} ||| {{distractor2}} ||| {{distractor3}} ||| {{correct_answer}}'
+    id: d417fcfb-9f00-4186-95d8-e63609495164
+    jinja: "\u0907\u0938 \u092A\u0948\u0930\u093E\u0917\u094D\u0930\u093E\u092B \u0915\
+      \u094B \u0926\u093F\u090F \u0917\u090F \u0928\u093F\u092E\u094D\u0928\u0932\u093F\
+      \u0916\u093F\u0924 \u092A\u094D\u0930\u0936\u094D\u0928 \u0915\u093E \u0909\u0924\
+      \u094D\u0924\u0930 \u0926\u0947\u0902: \n\n{{support}}\n\n\n\u092A\u094D\u0930\
+      \u0936\u094D\u0928: {{question}}\n\n\n\u0909\u0924\u094D\u0924\u0930:|||{{answer_choices[3]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Direct Question
+    reference: ''

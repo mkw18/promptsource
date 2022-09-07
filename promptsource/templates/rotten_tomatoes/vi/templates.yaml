@@ -1,0 +1,125 @@
+dataset: rotten_tomatoes
+subset: vi
+templates:
+  10adbcf1-b839-4522-bd76-567f0c760474: !Template
+    answer_choices: "x\u1EA5u ||| t\u1ED1t"
+    id: 10adbcf1-b839-4522-bd76-567f0c760474
+    jinja: "{{text}} Ng\u01B0\u1EDDi \u0111\xE1nh gi\xE1 c\xF3 t\xECm th\u1EA5y b\u1ED9\
+      \ phim n\xE0y {{\"t\u1ED1t hay x\u1EA5u\"}} kh\xF4ng? ||| {{ answer_choices\
+      \ [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Opinion bad good choices
+    reference: ''
+  162f7f89-4a93-42e9-9525-ba12e243ee48: !Template
+    answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
+    id: 162f7f89-4a93-42e9-9525-ba12e243ee48
+    jinja: "{{text}} T\xECnh c\u1EA3m th\u1EC3 hi\u1EC7n trong v\u0103n b\u1EA3n n\xE0\
+      y l\xE0 g\xEC? ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Text Expressed Sentiment
+    reference: ''
+  37ac89b8-09f8-443d-982c-980a86f26ea0: !Template
+    answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
+    id: 37ac89b8-09f8-443d-982c-980a86f26ea0
+    jinja: "{{text}} \nC\xF3 ph\u1EA3i \u0111\xE1nh gi\xE1 n\xE0y {{\"t\xEDch c\u1EF1\
+      c ho\u1EB7c ti\xEAu c\u1EF1c\"}}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: 'Sentiment with choices '
+    reference: ''
+  59e2aa7c-696f-4b85-87e9-688ea802d968: !Template
+    answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
+    id: 59e2aa7c-696f-4b85-87e9-688ea802d968
+    jinja: "{{text}} Ng\u01B0\u1EDDi \u0111\xE1nh gi\xE1 c\xF3 th\xEDch b\u1ED9 phim\
+      \ kh\xF4ng? ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment Yes No
+    reference: ''
+  7a8ccb1c-6737-4863-b08a-61d4a2839204: !Template
+    answer_choices: "H\u1ECD kh\xF4ng th\xEDch n\xF3 ||| H\u1ECD y\xEAu th\xEDch n\xF3"
+    id: 7a8ccb1c-6737-4863-b08a-61d4a2839204
+    jinja: "{{text}} Ng\u01B0\u1EDDi \u0111\xE1nh gi\xE1 c\u1EA3m th\u1EA5y th\u1EBF\
+      \ n\xE0o v\u1EC1 b\u1ED9 phim? ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment
+    reference: ''
+  94e190d5-2196-486e-908b-759f288eac6e: !Template
+    answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
+    id: 94e190d5-2196-486e-908b-759f288eac6e
+    jinja: "{{text}} T\xECnh c\u1EA3m th\u1EC3 hi\u1EC7n cho b\u1ED9 phim l\xE0 |||\
+      \ {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment
+    reference: ''
+  a8f6927e-7eca-4975-a93c-f520f8be480d: !Template
+    answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
+    id: a8f6927e-7eca-4975-a93c-f520f8be480d
+    jinja: "{{text}} Nh\xE0 v\u0103n th\u1EC3 hi\u1EC7n t\xECnh c\u1EA3m n\xE0o cho\
+      \ b\u1ED9 phim? ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Writer Expressed Sentiment
+    reference: ''
+  b60cad41-6bca-422a-aef7-cb113fcc32b0: !Template
+    answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
+    id: b60cad41-6bca-422a-aef7-cb113fcc32b0
+    jinja: "\u0110\xE1nh gi\xE1 phim sau \u0111\xE2y th\u1EC3 hi\u1EC7n t\xECnh c\u1EA3\
+      m l\xE0 g\xEC? {{text}} ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment 2
+    reference: ''
+  c75e322d-d6b4-4a28-b5a0-27fddfee694d: !Template
+    answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
+    id: c75e322d-d6b4-4a28-b5a0-27fddfee694d
+    jinja: "{{text}} T\xECnh c\u1EA3m \u0111\u01B0\u1EE3c th\u1EC3 hi\u1EC7n b\u1EDF\
+      i ng\u01B0\u1EDDi \u0111\xE1nh gi\xE1 cho b\u1ED9 phim l\xE0 g\xEC? ||| {{ answer_choices\
+      \ [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Expressed Sentiment
+    reference: ''
+  e05ec7b9-5a8d-4670-9723-0237c1bb1eca: !Template
+    answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
+    id: e05ec7b9-5a8d-4670-9723-0237c1bb1eca
+    jinja: "{{text}} Ng\u01B0\u1EDDi xem c\u1EA3m th\u1EA5y th\u1EBF n\xE0o v\u1EC1\
+      \ b\u1ED9 phim? ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Sentiment Feeling
+    reference: ''

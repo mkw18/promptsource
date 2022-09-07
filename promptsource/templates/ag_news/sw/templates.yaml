@@ -1,0 +1,94 @@
+dataset: ag_news
+subset: sw
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: Siasa za dunia ||| Michezo ||| Biashara ||| Sayansi na teknolojia
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "Je, ni lebo gani inayofafanua vyema makala haya ya habari?\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: Siasa za dunia ||| Michezo ||| Biashara ||| Sayansi na teknolojia
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "Je, hii ni sehemu ya habari kuhusu {{\"siasa za dunia, michezo, biashara, au\
+      \ sayansi na teknolojia\"}}?\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: Mwanasiasa ||| Mwanariadha || Mtendaji wa biashara || Mwanasayansi
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: 'Je, ungependa kupendekeza makala yafuatayo kwa {{"mwanasiasa"}}, {{"mwanariadha"}}, 
+      {{"msimamizi wa biashara"}}, au {{"mwanasayansi"}}?
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: Habari za Ulimwengu || Michezo ||| Biashara ||| Sayansi na Teknolojia
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\nNi sehemu gani kati ya sehemu zifuatazo za gazeti ambazo makala hii inaelekea\
+      \ kuonekana? {{\"Habari za Ulimwengu\"}}, {{\"Michezo\"}}, {{\"Biashara\"}}, au {{\"Sayansi na Teknolojia\"\
+      }}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: Habari za Ulimwengu || Michezo ||| Biashara ||| Sayansi na Teknolojia
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\nJe, makala hii inaweza kuonekana katika sehemu gani ya gazeti? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: Siasa za dunia ||| Michezo ||| Biashara ||| Sayansi na teknolojia
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \nJe, hii ni sehemu ya habari kuhusu {{\"siasa za dunia, michezo, biashara,\
+      \ au sayansi na teknolojia\"}}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: Siasa za dunia ||| Michezo ||| Biashara ||| Sayansi na teknolojia
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \nJe, ni lebo gani inayofafanua vyema makala haya ya habari? ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

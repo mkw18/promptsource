@@ -1,0 +1,70 @@
+dataset: adversarial_qa
+subset: droberta_fr
+templates:
+  00755780-f3c0-44b4-b159-8f3873cdb163: !Template
+    answer_choices: null
+    id: 00755780-f3c0-44b4-b159-8f3873cdb163
+    jinja: "Je veux tester la capacit\xE9 des \xE9l\xE8ves \xE0 lire un passage et\
+      \ \xE0 r\xE9pondre aux questions \xE0 ce sujet.Pourriez-vous s'il vous pla\xEE\
+      t poser une bonne question pour le passage \"{{context}}\"? |||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  3b2459cc-6600-443c-abf8-8f60c34cd993: !Template
+    answer_choices: null
+    id: 3b2459cc-6600-443c-abf8-8f60c34cd993
+    jinja: "{% if metadata.split != \"test\" %}\nJe sais que la r\xE9ponse \xE0 la\
+      \ question \"{{question}}\" est en \"{{context}}\".Pouvez-vous me dire ce que\
+      \ c'est? |||\n\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  5bdb1815-5c6f-49a3-ad1d-367344420703: !Template
+    answer_choices: null
+    id: 5bdb1815-5c6f-49a3-ad1d-367344420703
+    jinja: "{% if metadata.split != \"test\" %}\nQuestion: \"{{question}}\"\n\nLe\
+      \ contexte: \"{{context}}\"\n\nR\xE9ponse:\n|||\n{{answers.text | choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'
+  a0872cde-2f19-4ae6-919a-868da47bfbc3: !Template
+    answer_choices: null
+    id: a0872cde-2f19-4ae6-919a-868da47bfbc3
+    jinja: "{% if metadata.split != \"test\" %}\nExtraire la r\xE9ponse \xE0 la question\
+      \ du contexte suivant.\nQuestion: {{question}}\nLe contexte: {{context}}|||\n\
+      {{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  a64d5a15-68e2-4d1c-b30a-ca8250c860f3: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860f3
+    jinja: "{% if metadata.split != \"test\" %}\n\xC9tant donn\xE9 le passage suivant\n\
+      \n\"{{context}}\",\n\nr\xE9pondre \xE0 la question suivante.Notez que la r\xE9\
+      ponse est pr\xE9sente dans le texte.\n\nQuestion: {{question}} |||\n{{answers.text\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'

@@ -1,0 +1,151 @@
+dataset: quartz
+subset: el
+templates:
+  005b9776-2170-47f8-a5d2-03e83d0e55ae: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 005b9776-2170-47f8-a5d2-03e83d0e55ae
+    jinja: "Use information from the paragraph to answer the question.\n\n\u0395\u03C1\
+      \u03CE\u03C4\u03B7\u03C3\u03B7:\n\n{% if '_____' in question %}\n{{ question\
+      \ | trim(\".?!\") | replace(\"_____\", answer_choices | join(\"\u03AE\")) }}{{\
+      \ \"?\" }} \n{% else %}\n{{ question | trim(\".?!\") }} {{ answer_choices |\
+      \ join(\"\u03AE\") }}{{ \"?\" }} \n{% endif %}\n\n\u03A0\u03B1\u03C1\u03AC\u03B3\
+      \u03C1\u03B1\u03C6\u03BF\u03C2 :\n\n{{ para }}\n|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: use_info_from_question_paragraph
+    reference: ''
+  01d6ae3e-87bb-456c-9722-92a214f6ff19: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 01d6ae3e-87bb-456c-9722-92a214f6ff19
+    jinja: "{{ para }}\n{% if '_____' in question %}\n{{ question | trim(\".?!\")\
+      \ | replace(\"_____\", answer_choices | join(\"\u03AE\")) }}{{ \"?\" }} \n{%\
+      \ else %}\n{{ question | trim(\".?!\")}} {{ answer_choices | join(\"\u03AE\"\
+      ) }}{{ \"?\" }} \n{% endif %}\n|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: paragraph_question_plain_concat
+    reference: ''
+  22e29cab-f57f-4af7-92fc-72b131a96878: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 22e29cab-f57f-4af7-92fc-72b131a96878
+    jinja: "\u03A7\u03C1\u03B7\u03C3\u03B9\u03BC\u03BF\u03C0\u03BF\u03B9\u03AE\u03C3\
+      \u03C4\u03B5 \u03C0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03AF\u03B5\u03C2\
+      \ \u03B1\u03C0\u03CC \u03C4\u03B7\u03BD \u03C0\u03B1\u03C1\u03AC\u03B3\u03C1\
+      \u03B1\u03C6\u03BF \u03B3\u03B9\u03B1 \u03BD\u03B1 \u03B1\u03C0\u03B1\u03BD\u03C4\
+      \u03AE\u03C3\u03B5\u03C4\u03B5 \u03C3\u03C4\u03B7\u03BD \u03B5\u03C1\u03CE\u03C4\
+      \u03B7\u03C3\u03B7.\n\n\u03A0\u03B1\u03C1\u03AC\u03B3\u03C1\u03B1\u03C6\u03BF\
+      \u03C2 :\n\n{{ para }}\n\n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7:\n\n{%\
+      \ if '_____' in question %}\n{{ question | trim(\".?!\") | replace(\"_____\"\
+      , answer_choices | join(\"\u03AE\")) }}{{ \"?\" }} \n{% else %}\n{{ question\
+      \ | trim(\".?!\") }} {{ answer_choices | join(\"\u03AE\") }}{{ \"?\" }} \n{%\
+      \ endif %}\n|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: use_info_from_paragraph_question
+    reference: ''
+  2f6baa0c-3b69-48be-b195-cc00cb5c96fa: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 2f6baa0c-3b69-48be-b195-cc00cb5c96fa
+    jinja: "\u0391\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\u03C4\u03B5 \u03C3\u03C4\u03B7\
+      \u03BD \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B2\u03AC\u03C3\
+      \u03B7 \u03C4\u03BF \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03BF \u03BA\u03B5\
+      \u03AF\u03BC\u03B5\u03BD\u03BF.\n\n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7\
+      :\n\n{% if '_____' in question %}\n{{ question | trim(\".?!\") | replace(\"\
+      _____\", answer_choices | join(\"\u03AE\")) }}{{ \"?\" }} \n{% else %}\n{{ question\
+      \ | trim(\".?!\") }} {{ answer_choices | join(\"\u03AE\") }}{{ \"?\" }} \n{%\
+      \ endif %}\n\n\u039A\u03B5\u03AF\u03BC\u03B5\u03BD\u03BF:\n\n{{ para }}|||\n\
+      {{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: answer_question_based_on
+    reference: ''
+  397bdb29-03e8-478b-9840-1bfe9d57d6fb: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 397bdb29-03e8-478b-9840-1bfe9d57d6fb
+    jinja: "\u0391\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\u03C4\u03B5 \u03C3\u03C4\u03B7\
+      \u03BD \u03C0\u03B1\u03C1\u03B1\u03BA\u03AC\u03C4\u03C9 \u03B5\u03C1\u03CE\u03C4\
+      \u03B7\u03C3\u03B7:\n\n{% if '_____' in question %}\n{{ question | trim(\".?!\"\
+      ) | replace(\"_____\", answer_choices | join(\"\u03AE\")) }}{{ \"?\" }} \n{%\
+      \ else %}\n{{ question | trim(\".?!\") }} {{  answer_choices | join(\"\u03AE\
+      \") }}{{ \"?\" }} \n{% endif %}\n\n\u03A5\u03C0\u03BF\u03B8\u03AD\u03C4\u03BF\
+      \u03BD\u03C4\u03B1\u03C2 \u03CC\u03C4\u03B9:\n\n{{ para }}|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: answer_question_below
+    reference: ''
+  39a67851-fdf5-4f0d-bda2-4902be3a6bff: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 39a67851-fdf5-4f0d-bda2-4902be3a6bff
+    jinja: "\u0394\u03B9\u03B1\u03B2\u03AC\u03C3\u03C4\u03B5 \u03C4\u03BF \u03C0\u03B1\
+      \u03C1\u03B1\u03BA\u03AC\u03C4\u03C9 \u03B1\u03C0\u03CC\u03C3\u03C0\u03B1\u03C3\
+      \u03BC\u03B1 \u03BA\u03B1\u03B9 \u03B5\u03C0\u03B9\u03BB\u03AD\u03BE\u03C4\u03B5\
+      \ \u03C4\u03B7 \u03C3\u03C9\u03C3\u03C4\u03AE \u03B1\u03C0\u03AC\u03BD\u03C4\
+      \u03B7\u03C3\u03B7 \u03C3\u03C4\u03B7\u03BD \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\
+      \u03B8\u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 (\u039F\u03B9 \u03B5\
+      \u03C0\u03B9\u03BB\u03BF\u03B3\u03AD\u03C2 \u03B5\u03AF\u03BD\u03B1\u03B9 {{\
+      \ answer_choices | join(\"\u03AE\") }} ):\n\n{{ para }}\n\n{% if '_____' in\
+      \ question %}\n{{ question | trim(\".?!\") | replace(\"_____\", answer_choices\
+      \ | join(\"\u03AE\")) }}{{ \"?\" }} \n{% else %}\n{{ question | trim(\".?!\"\
+      ) }} {{ answer_choices | join(\"\u03AE\") }}{{ \"?\" }} \n{% endif %}\n|||\n\
+      {{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: read_passage_below_choose
+    reference: ''
+  5c794ff0-32b9-43d4-b496-1a4d246ecfc0: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 5c794ff0-32b9-43d4-b496-1a4d246ecfc0
+    jinja: "{{ para }}\n\n\u0388\u03C7\u03BF\u03BD\u03C4\u03B1\u03C2 \u03B4\u03B9\u03B1\
+      \u03B2\u03AC\u03C3\u03B5\u03B9 \u03C4\u03BF \u03C0\u03B1\u03C1\u03B1\u03C0\u03AC\
+      \u03BD\u03C9 \u03B1\u03C0\u03CC\u03C3\u03C0\u03B1\u03C3\u03BC\u03B1, \u03B5\u03C0\
+      \u03B9\u03BB\u03AD\u03BE\u03C4\u03B5 \u03C4\u03B7 \u03C3\u03C9\u03C3\u03C4\u03AE\
+      \ \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03C3\u03C4\u03B7\u03BD\
+      \ \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\
+      \u03C3\u03B7 (\u039F\u03B9 \u03B5\u03C0\u03B9\u03BB\u03BF\u03B3\u03AD\u03C2\
+      \ \u03B5\u03AF\u03BD\u03B1\u03B9 {{ answer_choices | join(\"\u03AE\") }} ):\n\
+      \n{% if '_____' in question %}\n{{ question | trim(\".?!\") | replace(\"_____\"\
+      , answer_choices | join(\"\u03AE\")) }}{{ \"?\" }} \n{% else %}\n{{ question\
+      \ | trim(\".?!\") }} {{ answer_choices | join(\"\u03AE\") }}{{ \"?\" }} \n{%\
+      \ endif %}\n|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: having_read_above_passage
+    reference: ''
+  a8c6ae4c-4874-47d1-93ea-801b6e080a58: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: a8c6ae4c-4874-47d1-93ea-801b6e080a58
+    jinja: "\u0394\u03B5\u03B4\u03BF\u03BC\u03AD\u03BD\u03BF\u03C5 \u03C4\u03BF\u03C5\
+      \ \u03B3\u03B5\u03B3\u03BF\u03BD\u03CC\u03C4\u03BF\u03C2 \u03CC\u03C4\u03B9\
+      :\n\n{{ para }}\n\n\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B5 \u03C4\u03B7\
+      \u03BD \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7:\n\n{% if '_____' in question\
+      \ %}\n{{ question | trim(\".?!\") | replace(\"_____\", answer_choices | join(\"\
+      \u03AE\")) }}{{ \"?\" }} \n{% else %}\n{{ question | trim(\".?!\") }} {{ answer_choices\
+      \ | join(\"\u03AE\") }}{{ \"?\" }} \n{% endif %}\n|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_the_fact_answer_the_q
+    reference: ''

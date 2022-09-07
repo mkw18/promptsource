@@ -1,0 +1,72 @@
+dataset: dbpedia_14
+subset: fr
+templates:
+  824ecb55-ecad-40c2-8033-f2fa0add2ddf: !Template
+    answer_choices: "Compagnie ||| \xC9tablissement d'enseignement ||| Artiste |||\
+      \ Athl\xE8te ||| Titulaire de charge ||| Moyen de transport ||| Imeuble |||\
+      \ Natural Place ||| Village ||| Animal ||| Plante ||| Album ||| Film ||| Travail\
+      \ \xE9crit"
+    id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
+    jinja: "{{content}} \xC9tant donn\xE9 une liste de cat\xE9gories: {{\"Compagnie,\
+      \ \xE9tablissement d'enseignement, artiste, athl\xE8te, d\xE9tenteur de bureau,\
+      \ moyen de transport, b\xE2timent, lieu naturel, village, animal, plante, album,\
+      \ film ou travail \xE9crit\"}}, \xE0 quelle cat\xE9gorie appartient le paragraphe?\
+      \ ||| {{ answer_choices[label] }}\n\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_list_what_category_does_the_paragraph_belong_to
+    reference: ''
+  8eda7e71-6734-486f-b883-e99d3f14c0bf: !Template
+    answer_choices: "Company ||| \xC9tablissement d'enseignement ||| Artiste ||| Athlete\
+      \ ||| Titulaire de charge ||| Moyen de transport ||| Imeuble ||| Natural Place\
+      \ ||| Village ||| Animal ||| Plante ||| Album ||| Film ||| Travail \xE9crit"
+    id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
+    jinja: "Choisissez une cat\xE9gorie pour le texte suivant.Les options sont - {{\"\
+      Compagnie, \xE9tablissement d'enseignement, artiste, athl\xE8te, d\xE9tenteur\
+      \ de bureau, moyen de transport, b\xE2timent, lieu naturel, village, animal,\
+      \ plante, album, film ou travail \xE9crit\"}}. {{title}} - {{content}} ||| {{\
+      \ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_one_category_for_the_following_text
+    reference: ''
+  9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67: !Template
+    answer_choices: "Compagnie ||| Educational Institution ||| Artiste ||| Athl\xE8\
+      te ||| Titulaire de charge ||| Moyen de transport ||| Imeuble ||| Lieu naturel\
+      \ ||| Village ||| Animal ||| Plante ||| Album ||| Film ||| Travail \xE9crit"
+    id: 9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67
+    jinja: "{{title}} - {{content}} \xC9tant donn\xE9 le choix des cat\xE9gories {{\"\
+      Compagnie, \xE9tablissement d'enseignement, artiste, athl\xE8te, d\xE9tenteur\
+      \ de bureau, moyen de transport, b\xE2timent, lieu naturel, village, animal,\
+      \ plante, album, film ou travail \xE9crit\"}}, le texte fait r\xE9f\xE9rence\
+      \ \xE0 lequel? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: 'given_a_choice_of_categories '
+    reference: ''
+  f72fa410-3278-4f62-91f0-f9edf4a4e792: !Template
+    answer_choices: "Compagnie ||| Educational Institution ||| Artist ||| Athlete\
+      \ ||| Titulaire de charge ||| Mean Of Transportation ||| Imeuble ||| Lieu naturel\
+      \ ||| Village ||| Animal ||| Plant ||| Album ||| Film ||| Travail \xE9crit"
+    id: f72fa410-3278-4f62-91f0-f9edf4a4e792
+    jinja: "\"{{title}}\", \xE9tant donn\xE9 une liste de cat\xE9gories: {{\"Compagnie,\
+      \ \xE9tablissement d'enseignement, artiste, athl\xE8te, d\xE9tenteur de bureau,\
+      \ moyen de transport, b\xE2timent, lieu naturel, village, animal, plante, album,\
+      \ film ou travail \xE9crit\"}}, \xE0 quelle cat\xE9gorie le titre appartient-il?\
+      \ ||| {{ answer_choices[label] }}\n\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_a_list_of_category_what_does_the_title_belong_to
+    reference: ''

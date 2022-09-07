@@ -1,0 +1,137 @@
+dataset: wiqa
+subset: ja
+templates:
+  1bc8d95b-0a50-49f4-a46b-bd752929926d: !Template
+    answer_choices: null
+    id: 1bc8d95b-0a50-49f4-a46b-bd752929926d
+    jinja: "-  {{ question_para_step[1:] | join(\"\\n- \") }}\n\n\u30D7\u30ED\u30BB\
+      \u30B9\u306E\u6700\u521D\u306E\u30B9\u30C6\u30C3\u30D7\u306F\u4F55\u3067\u3057\
+      \u3087\u3046\u304B\uFF1F\n\n|||\n\n{{ question_para_step | first }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_might_be_the_first_step_of_the_process
+    reference: ''
+  360cd99a-2f83-469a-a505-d80808159dd2: !Template
+    answer_choices: null
+    id: 360cd99a-2f83-469a-a505-d80808159dd2
+    jinja: "\n{% set process_list = question_para_step[:-1] if question_para_step[-1]\
+      \ == \"\" else question_para_step %}\n-  {{ process_list[:-1] | join(\"\\n-\
+      \ \") }}\n\n\u30D7\u30ED\u30BB\u30B9\u306E\u6700\u5F8C\u306E\u30B9\u30C6\u30C3\
+      \u30D7\u306F\u4F55\u3067\u3057\u3087\u3046\u304B\uFF1F\n\n|||\n\n{{ process_list\
+      \ | last }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_might_be_the_last_step_of_the_process
+    reference: ''
+  4191b162-9220-46e5-a2f0-0a763eef55a0: !Template
+    answer_choices: null
+    id: 4191b162-9220-46e5-a2f0-0a763eef55a0
+    jinja: "\u6B21\u306E\u30D7\u30ED\u30BB\u30B9\u306E\u4E0D\u8DB3\u3057\u3066\u3044\
+      \u308B\u6700\u521D\u306E\u30B9\u30C6\u30C3\u30D7\u306F\u4F55\u3067\u3059\u304B\
+      \uFF1A\n\n-  {{ question_para_step[1:] | join(\"\\n- \") }}\n\n|||\n\n{{ question_para_step\
+      \ | first }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_is_the_missing_first_step
+    reference: ''
+  52d69c02-5ff3-4fe7-bcaf-a6b995a15020: !Template
+    answer_choices: null
+    id: 52d69c02-5ff3-4fe7-bcaf-a6b995a15020
+    jinja: " {% set process_list = question_para_step[:-1] if question_para_step[-1]\
+      \ == \"\" else question_para_step %}\n\u6B21\u306E\u30D7\u30ED\u30BB\u30B9\u306E\
+      \u6700\u5F8C\u306E\u30B9\u30C6\u30C3\u30D7\u306F\u4F55\u3067\u3059\u304B\uFF1A\
+      \n-  {{ process_list[:-1] | join(\"\\n- \") }}\n\n|||\n\n{{ process_list | last\
+      \ }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_is_the_final_step_of_the_following_process
+    reference: ''
+  5dfee2c2-9742-4003-8ab6-dfe0ce5a745b: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 5dfee2c2-9742-4003-8ab6-dfe0ce5a745b
+    jinja: "\u30D7\u30ED\u30BB\u30B9\uFF1A\n- {{ question_para_step | join(\"\\n-\
+      \ \")}}\n\n\u8CEA\u554F\uFF1A\n{{question_stem}}\n\n\u60F3\u5B9A\u3055\u308C\
+      \u308B\u6442\u52D5\u306F\u3001\u8A00\u53CA\u3055\u308C\u305F2\u756A\u76EE\u306E\
+      \u52B9\u679C\u306B\u3069\u306E\u3088\u3046\u306B\u5F71\u97FF\u3057\u307E\u3059\
+      \u304B\u3002\u5FDC\u7B54 {{\"more, less or no effect\"}}\n\n|||\n\n{{answer_label|replace(\"\
+      _\", \" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: effect_with_string_answer
+    reference: ''
+  667c291f-6a36-4334-aa49-804c9e72500b: !Template
+    answer_choices: "\u30D7\u30ED\u30BB\u30B9\u306E\u30B9\u30C6\u30C3\u30D7\u306B\u9593\
+      \u63A5\u7684\u306B\u5F71\u97FF\u3092\u4E0E\u3048\u307E\u3059 ||| \u30D7\u30ED\
+      \u30BB\u30B9\u306E\u30B9\u30C6\u30C3\u30D7\u306B\u5F71\u97FF\u3092\u4E0E\u3048\
+      \u307E\u305B\u3093"
+    id: 667c291f-6a36-4334-aa49-804c9e72500b
+    jinja: "\u30D7\u30ED\u30BB\u30B9\uFF1A\n\n- {{ question_para_step | join(\"\\\
+      n- \") }}\n\n{{question_stem}}\n\n\u6B21\u306E\u3046\u3061\u3069\u308C\u304C\
+      \u6442\u52D5\u3068\u601D\u308F\u308C\u308B\u3082\u306E\u3067\u3059\u304B\uFF1F\
+      \n\n- {{\"\u30D7\u30ED\u30BB\u30B9\u306E\u30B9\u30C6\u30C3\u30D7\u306B\u76F4\
+      \u63A5\u5F71\u97FF\u3092\u4E0E\u3048\u307E\u3059\"}}\n- {{\"\u30D7\u30ED\u30BB\
+      \u30B9\u306E\u30B9\u30C6\u30C3\u30D7\u306B\u9593\u63A5\u7684\u306B\u5F71\u97FF\
+      \u3092\u4E0E\u3048\u307E\u3059\"}}\n- {{\"\u30D7\u30ED\u30BB\u30B9\u306E\u30B9\
+      \u30C6\u30C3\u30D7\u306B\u5F71\u97FF\u3092\u4E0E\u3048\u307E\u305B\u3093\"}}\n\
+      \n\n|||\n\n{{{\"EXOGENOUS_EFFECT\": \"\u30D7\u30ED\u30BB\u30B9\u306E\u30B9\u30C6\
+      \u30C3\u30D7\u306B\u9593\u63A5\u7684\u306B\u5F71\u97FF\u3092\u4E0E\u3048\u307E\
+      \u3059\", \"OUTOFPARA_DISTRACTOR\": \"\u30D7\u30ED\u30BB\u30B9\u306E\u30B9\u30C6\
+      \u30C3\u30D7\u306B\u5F71\u97FF\u3092\u4E0E\u3048\u307E\u305B\u3093\", \"INPARA_EFFECT\"\
+      : \"\u30D7\u30ED\u30BB\u30B9\u306E\u30B9\u30C6\u30C3\u30D7\u306B\u76F4\u63A5\
+      \u5F71\u97FF\u3092\u4E0E\u3048\u307E\u3059\"}[metadata_question_type]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: which_of_the_following_is_the_supposed_perturbation
+    reference: ''
+  6cf2b300-6790-4120-9592-9db63bec221b: !Template
+    answer_choices: A ||| B ||| C
+    id: 6cf2b300-6790-4120-9592-9db63bec221b
+    jinja: "\u30D7\u30ED\u30BB\u30B9\uFF1A\n- {{ question_para_step | join(\"\\n-\
+      \ \")}}\n\n\u8CEA\u554F\uFF1A\n{{question_stem}}\n\n- {{\"A: more\"}}\n- {{\"\
+      B: less\"}}\n- {{\"C: no effect\"}}\n\n|||\n\n{{answer_label_as_choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: effect_with_label_answer
+    reference: ''
+  a17313bd-94bb-47ab-82bf-538df1b1ad5f: !Template
+    answer_choices: "\u306F\u3044 ||| \u756A\u53F7"
+    id: a17313bd-94bb-47ab-82bf-538df1b1ad5f
+    jinja: "\u30D7\u30ED\u30BB\u30B9\uFF1A\n\n- {{ question_para_step | join(\"\\\
+      n- \") }}\n\n\u6442\u52D5\u4EEE\u8AAC\uFF1A\n{{question_stem}}\n\n\u60F3\u5B9A\
+      \u3055\u308C\u308B\u6442\u52D5\u306F\u3001\u30D7\u30ED\u30BB\u30B9\u306B\u52B9\
+      \u679C\u304C\u3042\u308A\u307E\u3059\u304B\uFF08\u76F4\u63A5\u7684\u307E\u305F\
+      \u306F\u9593\u63A5\uFF09\uFF1F\n\n|||\n\n{{{\"EXOGENOUS_EFFECT\": \"\u306F\u3044\
+      \", \"OUTOFPARA_DISTRACTOR\": \"\u756A\u53F7\", \"INPARA_EFFECT\": \"\u306F\u3044\
+      \"}[metadata_question_type]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: does_the_supposed_perturbation_have_an_effect
+    reference: ''

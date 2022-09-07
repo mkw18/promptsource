@@ -1,0 +1,78 @@
+dataset: glue
+subset: qqp_da
+templates:
+  8e711799-a57c-4941-833b-466bedfb80ad: !Template
+    answer_choices: ingen ||| Ja
+    id: 8e711799-a57c-4941-833b-466bedfb80ad
+    jinja: "Jeg er administrator p\xE5 webstedet Quora.Der er to indl\xE6g, et der\
+      \ sp\xF8rger \"{{question1}}\" og en anden, der sp\xF8rger \"{{question2}}\"\
+      .Jeg kan fusionere sp\xF8rgsm\xE5l, hvis de stiller den samme ting.Kan jeg fusionere\
+      \ disse to sp\xF8rgsm\xE5l? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: quora
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: ikke duplikater ||| Duplikater
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: "{{question1}}\n{{question2}}\nV\xE6lg en: Disse sp\xF8rgsm\xE5l er \"\
+      {{\"Duplikater\"}}\" eller \"{{\"ikke duplikater\"}}\".\n|||\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not
+    reference: ''
+  a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
+    answer_choices: ingen ||| Ja
+    id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
+    jinja: "Stiller sp\xF8rgsm\xE5lene \"{{question1}}\" og \"{{question2}}\" den\
+      \ samme ting? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''
+  c0182cd1-c7ac-4abe-829f-4651536af951: !Template
+    answer_choices: ingen ||| Ja
+    id: c0182cd1-c7ac-4abe-829f-4651536af951
+    jinja: "Kan et svar p\xE5 \"{{question1}}\" ogs\xE5 bruges til at svare \"{{question2}}\"\
+      ? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: answer
+    reference: ''
+  c0724198-97e7-44a1-89d8-c51e97ce0b04: !Template
+    answer_choices: Ingen ||| Ja
+    id: c0724198-97e7-44a1-89d8-c51e97ce0b04
+    jinja: "Sp\xF8rgsm\xE5l 1: {{question1}}\nSp\xF8rgsm\xE5l 2: {{question2}}\n\n\
+      Formidler disse to sp\xF8rgsm\xE5l den samme betydning?Ja eller nej? ||| {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: meaning
+    reference: ''
+  fd244bd3-ca3b-4e4f-9722-fd006c50e157: !Template
+    answer_choices: ingen ||| Ja
+    id: fd244bd3-ca3b-4e4f-9722-fd006c50e157
+    jinja: "Jeg modtog sp\xF8rgsm\xE5lene \"{{question1}}\" og \"{{question2}}\".Er\
+      \ de duplikater? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate
+    reference: ''

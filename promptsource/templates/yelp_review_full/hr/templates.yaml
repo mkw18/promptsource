@@ -1,0 +1,106 @@
+dataset: yelp_review_full
+subset: hr
+templates:
+  135fcd11-9fcc-4b55-bf1b-9b76290d0f6b: !Template
+    answer_choices: 1 zvjezdica ||| 2 zvijezde ||| 3 zvjezdice ||| 4 zvjezdice |||
+      5 zvjezdica
+    id: 135fcd11-9fcc-4b55-bf1b-9b76290d0f6b
+    jinja: "{{ text }}\nPa bih ga \u017Eelio dati ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: so_i_would
+    reference: ''
+  27b6bc81-bb1c-467b-91c0-22a4d6a19f44: !Template
+    answer_choices: 1 zvjezdica ||| 2 zvijezde ||| 3 zvjezdice ||| 4 zvjezdice |||
+      5 zvjezdica
+    id: 27b6bc81-bb1c-467b-91c0-22a4d6a19f44
+    jinja: '{{ text }}
+
+      ===
+
+      Na temelju toga, moja ocjena je ||| {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based_on_that
+    reference: ''
+  29fc6386-90b3-4976-b249-26e49fe7c924: !Template
+    answer_choices: 1 zvjezdica ||| 2 zvijezde ||| 3 zvjezdice ||| 4 zvjezdice |||
+      5 zvjezdica
+    id: 29fc6386-90b3-4976-b249-26e49fe7c924
+    jinja: 'Pregled teksta:
+
+      {{ text }}
+
+
+      Zvijezde: |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_star
+    reference: simulating webpage
+  2a57af86-e25a-4572-ba9e-aa921842c04b: !Template
+    answer_choices: 1 zvjezdica ||| 2 zvijezde ||| 3 zvjezdice ||| 4 zvjezdice |||
+      5 zvjezdica
+    id: 2a57af86-e25a-4572-ba9e-aa921842c04b
+    jinja: '{{ text }} Moja ocjena za ovo mjesto je ||| {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: this_place
+    reference: ''
+  4dd990b3-7201-4cba-bb9a-baa462d68b1a: !Template
+    answer_choices: 1 ||| 2 ||| 3 ||| 4 ||| 5
+    id: 4dd990b3-7201-4cba-bb9a-baa462d68b1a
+    jinja: "Pregled teksta:\n{{ text }}\n\nRecenzija ocjena (izme\u0111u 1 i 5): |||\n\
+      {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_score
+    reference: Simulating webpage
+  6d4bfb59-4260-40a5-9da5-e061720bd430: !Template
+    answer_choices: 1 ||| 2 ||| 3 ||| 4 ||| 5
+    id: 6d4bfb59-4260-40a5-9da5-e061720bd430
+    jinja: 'Pregled: {{text}}
+
+      Na skali od 1 do 5 dao bih ovaj proizvod ||| {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: on_a_scale
+    reference: ''
+  e8091beb-c0fa-490d-9e0c-32eb6907dbc0: !Template
+    answer_choices: 1 zvjezdica ||| 2 zvijezde ||| 3 zvjezdice ||| 4 zvjezdice |||
+      5 zvjezdica
+    id: e8091beb-c0fa-490d-9e0c-32eb6907dbc0
+    jinja: 'Pregled teksta:
+
+      {{ text }}
+
+
+      Ocjena pregleda: |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_rating
+    reference: It's simulating the format of a webpage.

@@ -1,0 +1,82 @@
+dataset: kilt_tasks
+subset: hotpotqa_th
+templates:
+  1a123f3a-0507-41b9-904f-b18d9ce2b79e: !Template
+    answer_choices: null
+    id: 1a123f3a-0507-41b9-904f-b18d9ce2b79e
+    jinja: "{% if output %}\n\u0E19\u0E35\u0E48\u0E04\u0E37\u0E2D\u0E04\u0E33\u0E16\
+      \u0E32\u0E21\u0E17\u0E35\u0E48\u0E0B\u0E31\u0E1A\u0E0B\u0E49\u0E2D\u0E19\u0E17\
+      \u0E35\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E43\u0E2B\u0E49\u0E43\
+      \u0E04\u0E23\u0E1A\u0E32\u0E07\u0E04\u0E19\u0E43\u0E2B\u0E49\u0E40\u0E2B\u0E15\
+      \u0E38\u0E1C\u0E25\u0E40\u0E01\u0E35\u0E48\u0E22\u0E27\u0E01\u0E31\u0E1A\u0E01\
+      \u0E32\u0E23\u0E1B\u0E49\u0E2D\u0E19\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E04\
+      \u0E38\u0E13\u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E15\u0E2D\u0E1A\u0E44\u0E14\
+      \u0E49\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?\n{{input}}\n|||\n{{output\
+      \ | map(attribute=\"answer\") | list | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: complex_question
+    reference: ''
+  5531ce47-35ff-4bce-943d-5b2b86c44352: !Template
+    answer_choices: null
+    id: 5531ce47-35ff-4bce-943d-5b2b86c44352
+    jinja: "{% if output %}\n\u0E23\u0E27\u0E21\u0E02\u0E49\u0E2D\u0E40\u0E17\u0E47\
+      \u0E08\u0E08\u0E23\u0E34\u0E07\u0E41\u0E25\u0E30\u0E15\u0E2D\u0E1A\u0E2A\u0E34\
+      \u0E48\u0E07\u0E19\u0E35\u0E49: {{input}}\n|||\n{{output | map(attribute=\"\
+      answer\") | list | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: combining_facts
+    reference: ''
+  5ce9d659-4df8-4afd-a6e1-3e542df0035a: !Template
+    answer_choices: null
+    id: 5ce9d659-4df8-4afd-a6e1-3e542df0035a
+    jinja: "{% if output %}\n\u0E01\u0E33\u0E2B\u0E19\u0E14\u0E04\u0E33\u0E15\u0E2D\
+      \u0E1A\u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A\u0E04\u0E33\u0E16\u0E32\u0E21\u0E17\
+      \u0E35\u0E48\u0E0B\u0E31\u0E1A\u0E0B\u0E49\u0E2D\u0E19\u0E19\u0E35\u0E49: {{input}}\n\
+      |||\n{{output | map(attribute=\"answer\") | list | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: formulate
+    reference: ''
+  9211f663-51f9-428e-ba27-158480eee083: !Template
+    answer_choices: null
+    id: 9211f663-51f9-428e-ba27-158480eee083
+    jinja: "{% if output %}\n\u0E2A\u0E2D\u0E1A\u0E1B\u0E25\u0E32\u0E22\u0E20\u0E32\
+      \u0E04\n\n\u0E04\u0E33\u0E16\u0E32\u0E21\u0E17\u0E35\u0E48 1. {{input}}\n|||\n\
+      {{output | map(attribute=\"answer\") | list | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: final_exam
+    reference: ''
+  ac0545a1-9363-4c17-aada-f0eedf5a24b2: !Template
+    answer_choices: null
+    id: ac0545a1-9363-4c17-aada-f0eedf5a24b2
+    jinja: '{% if output %}
+
+      {{input}}
+
+      |||
+
+      {{output | map(attribute="answer") | list | choice}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: straighforward_qa
+    reference: ''

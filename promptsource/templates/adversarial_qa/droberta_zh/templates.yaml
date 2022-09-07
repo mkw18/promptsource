@@ -1,0 +1,72 @@
+dataset: adversarial_qa
+subset: droberta_zh
+templates:
+  00755780-f3c0-44b4-b159-8f3873cdb163: !Template
+    answer_choices: null
+    id: 00755780-f3c0-44b4-b159-8f3873cdb163
+    jinja: "\u6211\u60F3\u6D4B\u8BD5\u5B66\u751F\u9605\u8BFB\u6BB5\u843D\u5E76\u56DE\
+      \u7B54\u6709\u5173\u5B83\u7684\u95EE\u9898\u7684\u80FD\u529B\u3002\u60A8\u80FD\
+      \u5426\u63D0\u51FA\u4E00\u4E2A\u5F88\u597D\u7684\u95EE\u9898\"{{context}}\"\uFF1F\
+      \ |||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  3b2459cc-6600-443c-abf8-8f60c34cd993: !Template
+    answer_choices: null
+    id: 3b2459cc-6600-443c-abf8-8f60c34cd993
+    jinja: "{% if metadata.split != \"test\" %}\n\u6211\u77E5\u9053\u95EE\u9898\"\
+      {{question}}\"\u7684\u7B54\u6848\u5728\"{{context}}\"\u4E2D\u3002\u4F60\u80FD\
+      \u544A\u8BC9\u6211\u8FD9\u662F\u4EC0\u4E48\u5417\uFF1F |||\n\n{{answers.text\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  5bdb1815-5c6f-49a3-ad1d-367344420703: !Template
+    answer_choices: null
+    id: 5bdb1815-5c6f-49a3-ad1d-367344420703
+    jinja: "{% if metadata.split != \"test\" %}\n\u95EE\u9898\uFF1A \"{{question}}\"\
+      \n\n\u8BED\u5883\uFF1A \"{{context}}\"\n\n\u56DE\u7B54\uFF1A\n|||\n{{answers.text\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'
+  a0872cde-2f19-4ae6-919a-868da47bfbc3: !Template
+    answer_choices: null
+    id: a0872cde-2f19-4ae6-919a-868da47bfbc3
+    jinja: "{% if metadata.split != \"test\" %}\n\u4ECE\u4EE5\u4E0B\u4E0A\u4E0B\u6587\
+      \u4E2D\u63D0\u53D6\u95EE\u9898\u7684\u7B54\u6848\u3002\n\u95EE\u9898\uFF1A {{question}}\n\
+      \u8BED\u5883\uFF1A {{context}}|||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  a64d5a15-68e2-4d1c-b30a-ca8250c860f3: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860f3
+    jinja: "{% if metadata.split != \"test\" %}\n\u7ED9\u5B9A\u4EE5\u4E0B\u6BB5\u843D\
+      \n\n\"{{context}}\",\n\n\u56DE\u7B54\u4EE5\u4E0B\u95EE\u9898\u3002\u8BF7\u6CE8\
+      \u610F\uFF0C\u7B54\u6848\u5B58\u5728\u4E8E\u6587\u672C\u4E2D\u3002\n\n\u95EE\
+      \u9898\uFF1A {{question}} |||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'

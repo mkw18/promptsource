@@ -1,0 +1,84 @@
+dataset: social_i_qa
+subset: vi
+templates:
+  605691e9-df59-415d-a622-530734c7df38: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 605691e9-df59-415d-a622-530734c7df38
+    jinja: "t\xF4i nghe n\xF3i r\u1EB1ng {{context}}\n\nV\xE0 t\xF4i \u0111\xE3 t\u1EF1\
+      \ h\u1ECFi {{question}}\n\n|||\n\n{{answer_choices[label | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: I was wondering
+    reference: ''
+  666f415b-e3ac-47bf-a79b-19024c4a4143: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 666f415b-e3ac-47bf-a79b-19024c4a4143
+    jinja: "{{context}}\n\n\u0110\u01B0a ra b\u1ED1i c\u1EA3nh: {{question}}\n\nC\xE2\
+      u tr\u1EA3 l\u1EDDi c\xF3 th\u1EC3: {{answer_choices | join(\", \")}}\n\n|||\n\
+      \n{{answer_choices[label | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate answer
+    reference: ''
+  991f78cc-82d3-482f-b1de-f37a7179a316: !Template
+    answer_choices: "\u0110\xFAng ||| Kh\xF4ng"
+    id: 991f78cc-82d3-482f-b1de-f37a7179a316
+    jinja: "{% set random_answer_id = range(0,2) | choice%}\n{% set answers = [answerA,\
+      \ answerB, answerC] %}\n{{context}}\n\nCho c\xE2u h\u1ECFi \"{{question}}\"\
+      , l\xE0 \"{{answers[random_answer_id]}}\" m\u1ED9t c\xE2u tr\u1EA3 l\u1EDDi\
+      \ h\u1EE3p l\u1EC7?\n\n|||\n\n{% if (label | int) - 1 == random_answer_id %}\n\
+      \    \u0110\xFAng\n{% else %}\n    Kh\xF4ng\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Check if a random answer is valid or not
+    reference: ''
+  b980667e-b4ca-44ce-aba9-5b47d3ccf406: !Template
+    answer_choices: null
+    id: b980667e-b4ca-44ce-aba9-5b47d3ccf406
+    jinja: "{{context}}\n\nCho r\u1EB1ng c\xE2u tr\u1EA3 l\u1EDDi cho m\u1ED9t c\xE2\
+      u h\u1ECFi l\xE0 \"{{{\"1\": answerA, \"2\": answerB, \"3\": answerC}[label]}}\"\
+      , c\xE2u h\u1ECFi l\xE0 g\xEC?\n\n|||\n\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Generate the question from the answer
+    reference: ''
+  cbad777f-5794-4d71-bf3d-54da6043e5f1: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: cbad777f-5794-4d71-bf3d-54da6043e5f1
+    jinja: "{{context}}\n\n\u0110\u01B0a ra b\u1ED1i c\u1EA3nh: {{question}}\n\n|||\n\
+      \n{{answer_choices[label | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Generate answer
+    reference: ''
+  e2316120-2461-4664-943d-962a85008e23: !Template
+    answer_choices: A ||| B ||| C
+    id: e2316120-2461-4664-943d-962a85008e23
+    jinja: "\u0110\u1ECBnh ngh\u0129a b\xE0i v\u0103n: {{context}}\n\nC\xE2u h\u1ECF\
+      i: {{question}}\n\nM\u1ED9t trong nh\u1EEFng c\xE2u tr\u1EA3 l\u1EDDi n\xE0\
+      y tr\u1EA3 l\u1EDDi t\u1ED1t nh\u1EA5t c\xE2u h\u1ECFi theo ng\u1EEF c\u1EA3\
+      nh?\n\nA: {{answerA}}\n\nB: {{answerB}}\n\nC: {{answerC}}\n\n|||\n\n{{{\"1\"\
+      : \"A\", \"2\": \"B\", \"3\": \"C\"}[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate index
+    reference: ''

@@ -1,0 +1,84 @@
+dataset: social_i_qa
+subset: zh
+templates:
+  605691e9-df59-415d-a622-530734c7df38: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 605691e9-df59-415d-a622-530734c7df38
+    jinja: "\u6211\u542C\u8BF4 {{context}}\n\n\u6211\u60F3\u77E5\u9053 {{question}}\n\
+      \n|||\n\n{{answer_choices[label | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: I was wondering
+    reference: ''
+  666f415b-e3ac-47bf-a79b-19024c4a4143: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 666f415b-e3ac-47bf-a79b-19024c4a4143
+    jinja: "{{context}}\n\n\u7ED9\u5B9A\u4E0A\u4E0B\u6587\uFF1A {{question}}\n\n\u53EF\
+      \u80FD\u7684\u7B54\u6848\uFF1A {{answer_choices | join(\", \")}}\n\n|||\n\n\
+      {{answer_choices[label | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate answer
+    reference: ''
+  991f78cc-82d3-482f-b1de-f37a7179a316: !Template
+    answer_choices: "\u662F\u7684 ||| \u4E0D"
+    id: 991f78cc-82d3-482f-b1de-f37a7179a316
+    jinja: "{% set random_answer_id = range(0,2) | choice%}\n{% set answers = [answerA,\
+      \ answerB, answerC] %}\n{{context}}\n\n\u7ED9\u5B9A\u95EE\u9898\"{{question}}\"\
+      \uFF0C\u662F\"{{answers[random_answer_id]}}\"\u4E00\u4E2A\u6709\u6548\u7684\u7B54\
+      \u6848\u5417\uFF1F\n\n|||\n\n{% if (label | int) - 1 == random_answer_id %}\n\
+      \    \u662F\u7684\n{% else %}\n    \u4E0D\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Check if a random answer is valid or not
+    reference: ''
+  b980667e-b4ca-44ce-aba9-5b47d3ccf406: !Template
+    answer_choices: null
+    id: b980667e-b4ca-44ce-aba9-5b47d3ccf406
+    jinja: "{{context}}\n\n\u9274\u4E8E\u95EE\u9898\u7684\u7B54\u6848\u662F\"{{{\"\
+      1\": answerA, \"2\": answerB, \"3\": answerC}[label]}}\"\uFF0C\u95EE\u9898\u662F\
+      \u4EC0\u4E48\uFF1F\n\n|||\n\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Generate the question from the answer
+    reference: ''
+  cbad777f-5794-4d71-bf3d-54da6043e5f1: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: cbad777f-5794-4d71-bf3d-54da6043e5f1
+    jinja: "{{context}}\n\n\u7ED9\u5B9A\u4E0A\u4E0B\u6587\uFF1A {{question}}\n\n|||\n\
+      \n{{answer_choices[label | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Generate answer
+    reference: ''
+  e2316120-2461-4664-943d-962a85008e23: !Template
+    answer_choices: A ||| B ||| C
+    id: e2316120-2461-4664-943d-962a85008e23
+    jinja: "\u8BED\u5883\uFF1A {{context}}\n\n\u95EE\u9898\uFF1A {{question}}\n\n\u8FD9\
+      \u4E9B\u7B54\u6848\u4E2D\u7684\u54EA\u4E00\u4E2A\u6700\u80FD\u6839\u636E\u4E0A\
+      \u4E0B\u6587\u56DE\u7B54\u8FD9\u4E2A\u95EE\u9898\uFF1F\n\nA: {{answerA}}\n\n\
+      B: {{answerB}}\n\nC: {{answerC}}\n\n|||\n\n{{{\"1\": \"A\", \"2\": \"B\", \"\
+      3\": \"C\"}[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate index
+    reference: ''

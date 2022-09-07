@@ -1,0 +1,188 @@
+dataset: paws
+subset: labeled_final_el
+templates:
+  0be7cecd-b427-4ec9-9b0e-666d6dae0063: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
+    jinja: "\u03A0\u03C1\u03BF\u03C3\u03B4\u03B9\u03BF\u03C1\u03AF\u03C3\u03C4\u03B5\
+      \ \u03B5\u03AC\u03BD \u03BF\u03B9 \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\
+      \u03B5\u03C2 \u03B4\u03CD\u03BF \u03C0\u03C1\u03BF\u03C4\u03AC\u03C3\u03B5\u03B9\
+      \u03C2 \u03C0\u03B1\u03C1\u03B1\u03C6\u03C1\u03AC\u03B6\u03BF\u03C5\u03BD \u03BF\
+      \ \u03AD\u03BD\u03B1\u03C2 \u03C4\u03BF\u03BD \u03AC\u03BB\u03BB\u03BF\u03BD\
+      \ \u03AE \u03CC\u03C7\u03B9.\n\u03A0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 1:\
+      \ {{sentence1}}\n\u03A0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 2: {{sentence2}}\n\
+      ||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: task_description-no-label
+    reference: Generalized prompt format, task_description-input.
+  472fe5eb-b499-4952-a930-f72f4ca9ed43: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
+    jinja: "\u03A0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 1: {{sentence1}}\n\u03A0\u03C1\
+      \u03CC\u03C4\u03B1\u03C3\u03B7 2: {{sentence2}}\n\u0395\u03C1\u03CE\u03C4\u03B7\
+      \u03C3\u03B7: \u0397 \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 1 \u03BA\u03B1\
+      \u03B9 \u03B7 \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 2 \u03B5\u03BA\u03C6\
+      \u03C1\u03AC\u03B6\u03BF\u03C5\u03BD \u03C4\u03B7\u03BD \u03AF\u03B4\u03B9\u03B1\
+      \ \u03AD\u03BD\u03BD\u03BF\u03B9\u03B1;\u039D\u03B1\u03B9 \u03AE \u03CC\u03C7\
+      \u03B9? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Meaning
+    reference: Natural question
+  4c8d4e4c-eae4-45f6-bdf0-d132ae198d09: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
+    jinja: "{{sentence1}}\n\u0395\u03AF\u03BD\u03B1\u03B9 \u03BC\u03B9\u03B1 \u03C0\
+      \u03B1\u03C1\u03AC\u03C6\u03C1\u03B1\u03C3\u03B7 \u03C4\u03B7\u03C2 \u03B1\u03BA\
+      \u03CC\u03BB\u03BF\u03C5\u03B8\u03B7 \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7\
+      ;\n{{sentence2}}?\n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context-question-no-label
+    reference: Generalized prompt format, context-question without any label
+  678400f8-1a5c-4a40-b5ef-abeaa41e20ec: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
+    jinja: "\u03A0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 1: {{sentence1}}\n\u03A0\u03C1\
+      \u03CC\u03C4\u03B1\u03C3\u03B7 2: {{sentence2}}\n\u0395\u03C1\u03CE\u03C4\u03B7\
+      \u03C3\u03B7: \u039C\u03C0\u03BF\u03C1\u03BF\u03CD\u03BC\u03B5 \u03BD\u03B1\
+      \ \u03BE\u03B1\u03BD\u03B1\u03B3\u03C1\u03AC\u03C8\u03BF\u03C5\u03BC\u03B5 \u03C4\
+      \u03B7\u03BD \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 1 \u03C3\u03C4\u03B7\
+      \u03BD \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 2; \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Rewrite-no-label
+    reference: Natural Question without label
+  7c205a61-64d4-4673-bb8e-bfa77562eede: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 7c205a61-64d4-4673-bb8e-bfa77562eede
+    jinja: "{{sentence1}}\n\u0395\u03AF\u03BD\u03B1\u03B9 \u03BC\u03B9\u03B1 \u03C0\
+      \u03B1\u03C1\u03AC\u03C6\u03C1\u03B1\u03C3\u03B7 \u03C4\u03B7\u03C2 \u03B1\u03BA\
+      \u03CC\u03BB\u03BF\u03C5\u03B8\u03B7 \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7\
+      ;\n{{sentence2}};\n\u039D\u03B1\u03B9 \u03AE \u03CC\u03C7\u03B9.\n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context-question
+    reference: Generalized prompt format, context-question
+  8c259e88-7646-4a50-a4ca-90393920f281: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 8c259e88-7646-4a50-a4ca-90393920f281
+    jinja: "\u03A0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 1: {{sentence1}}\n\u03A0\u03C1\
+      \u03CC\u03C4\u03B1\u03C3\u03B7 2: {{sentence2}}\n\u0395\u03A1\u03A9\u03A4\u0397\
+      \u03A3\u0397: \u0397 \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 1 \u03C0\u03B1\
+      \u03C1\u03B1\u03C6\u03C1\u03AC\u03B6\u03B5\u03C4\u03B1\u03B9 \u03B7 \u03C0\u03C1\
+      \u03CC\u03C4\u03B1\u03C3\u03B7 2;\u039D\u03B1\u03B9 \u03AE \u03CC\u03C7\u03B9\
+      ? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Concatenation
+    reference: Concatenation of sentence 1 and sentence 2
+  a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
+    answer_choices: null
+    id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
+    jinja: "{% if label == 1 %} \n\u03A0\u03B1\u03C1\u03B1\u03C6\u03C1\u03AC\u03B6\
+      \u03C9 \u03C4\u03B7\u03BD \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7: {{sentence1}}\
+      \ \n||| \n{{sentence2}} \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: paraphrase-task
+    reference: Create a generative paraphrase task
+  a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
+    jinja: "\u03A0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 1: {{sentence1}}\n\u03A0\u03C1\
+      \u03CC\u03C4\u03B1\u03C3\u03B7 2: {{sentence2}}\n\u0395\u03A1\u03A9\u03A4\u0397\
+      \u03A3\u0397: \u0397 \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 1 \u03C0\u03B1\
+      \u03C1\u03B1\u03C6\u03C1\u03AC\u03B6\u03B5\u03C4\u03B1\u03B9 \u03B7 \u03C0\u03C1\
+      \u03CC\u03C4\u03B1\u03C3\u03B7 2; \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Concatenation-no-label
+    reference: Concatenation of sentence 1 and sentence 2 without any label
+  d5239f5f-2014-47c9-a0c1-4896f76f82a4: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
+    jinja: "\u03A0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 1: {{sentence1}}\n\u03A0\u03C1\
+      \u03CC\u03C4\u03B1\u03C3\u03B7 2: {{sentence2}}\n\u0395\u03C1\u03CE\u03C4\u03B7\
+      \u03C3\u03B7: \u0397 \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 1 \u03BA\u03B1\
+      \u03B9 \u03B7 \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 2 \u03B5\u03BA\u03C6\
+      \u03C1\u03AC\u03B6\u03BF\u03C5\u03BD \u03C4\u03B7\u03BD \u03AF\u03B4\u03B9\u03B1\
+      \ \u03AD\u03BD\u03BD\u03BF\u03B9\u03B1; \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Meaning-no-label
+    reference: Natural question without label
+  d9911dad-75fe-4506-9843-3a46ba5e49be: !Template
+    answer_choices: "\u03A8\u03B5\u03C5\u03B4\u03AE\u03C2 ||| \u0391\u03BB\u03B7\u03B8\
+      \u03AE\u03C2"
+    id: d9911dad-75fe-4506-9843-3a46ba5e49be
+    jinja: "{{sentence1}} \u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{sentence2}}\
+      \ \u03A3\u03C9\u03C3\u03C4\u03CC \u03AE \u03BB\u03AC\u03B8\u03BF\u03C2? \n|||\
+      \ \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: PAWS-ANLI GPT3
+    reference: ANLI prompt format from Table G7 in the GPT3 paper
+  dd52359b-dc56-4241-8179-c98c636f0335: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: dd52359b-dc56-4241-8179-c98c636f0335
+    jinja: "\u03A0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 1: {{sentence1}}\n\u03A0\u03C1\
+      \u03CC\u03C4\u03B1\u03C3\u03B7 2: {{sentence2}}\n\u0395\u03C1\u03CE\u03C4\u03B7\
+      \u03C3\u03B7: \u039C\u03C0\u03BF\u03C1\u03BF\u03CD\u03BC\u03B5 \u03BD\u03B1\
+      \ \u03BE\u03B1\u03BD\u03B1\u03B3\u03C1\u03AC\u03C8\u03BF\u03C5\u03BC\u03B5 \u03C4\
+      \u03B7\u03BD \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 1 \u03C3\u03C4\u03B7\
+      \u03BD \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 2;\u039D\u03B1\u03B9 \u03AE\
+      \ \u03CC\u03C7\u03B9? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Rewrite
+    reference: Natural Question
+  f0866713-c59a-4c5d-a307-95e80a935f99: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: f0866713-c59a-4c5d-a307-95e80a935f99
+    jinja: "{{sentence1}} \u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{sentence2}}\
+      \ \u03A0\u03B1\u03C1\u03AC\u03C6\u03C1\u03B1\u03C3\u03B7 \u03AE \u03CC\u03C7\
+      \u03B9;\n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: PAWS-ANLI GPT3-no-label
+    reference: ANLI prompt format from Table G7 in the GPT3 paper. Additionally added
+      task information without any label.

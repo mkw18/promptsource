@@ -1,0 +1,136 @@
+dataset: super_glue
+subset: wsc.fixed_ht
+templates:
+  212fb8b1-8436-4f64-8f37-a9094fe029f4: !Template
+    answer_choices: Non ||| Wi
+    id: 212fb8b1-8436-4f64-8f37-a9094fe029f4
+    jinja: "{{ text }} Nan fraz anvan an, \xE8ske pwonon \"{{ span2_text.lower() }}\"\
+      \ refere a {{ span1_text }}? Wi oswa Non? ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does the pronoun refer to
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  23361c5d-b67f-4c2a-9da7-16301c55d0e1: !Template
+    answer_choices: Non ||| Wi
+    id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
+    jinja: '{{ text }} Isit la, pa "{{ span2_text }}" yo vle di "{{ span1_text }}".
+      Wi oswa Non? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: by p they mean
+    reference: ''
+  2f17f18b-6daa-44ef-a2dd-dddaf04aec0e: !Template
+    answer_choices: "Fo ||| Fid\xE8l"
+    id: 2f17f18b-6daa-44ef-a2dd-dddaf04aec0e
+    jinja: "{{ text }} \n\nNan yon l\xF2t sans, {{ text.split(\" \")[span2_index:]\
+      \ | join(\" \") | replace(span2_text, span1_text) }} Vr\xE8 ou fo? ||| {% if\
+      \ label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: in other words
+    reference: ''
+  4b3e29cc-ccb8-4e4c-a845-4935ca29cf34: !Template
+    answer_choices: Non ||| Wi
+    id: 4b3e29cc-ccb8-4e4c-a845-4935ca29cf34
+    jinja: '{{ text }} Mwen panse ke yo vle di "{{ text.split(" ")[span2_index:] |
+      join(" ") | replace(span2_text, span1_text) }}" Wi oswa Non? ||| {% if label
+      != -1 %}{{ answer_choices[label] }}{% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: I think they mean
+    reference: ''
+  7482d24f-cf45-4013-b82d-369489fc958b: !Template
+    answer_choices: Non ||| Wi
+    id: 7482d24f-cf45-4013-b82d-369489fc958b
+    jinja: '{{ text }} Isit la, "{{ span2_text.lower() }}" kanpe pou {{ span1_text
+      }}? Wi oswa Non? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif
+      %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does p stand for
+    reference: ''
+  7d377293-d043-4b6c-8ec1-d61eaf14ec67: !Template
+    answer_choices: Non ||| Wi
+    id: 7d377293-d043-4b6c-8ec1-d61eaf14ec67
+    jinja: "Pasaj: {{ text }} \n\nKesyon: Nan pasaj ki anwo a, \xE8ske pwonon \"{{\
+      \ span2_text }}\" Gade nan {{ span1_text }}?\n\nRepons: ||| {% if label != -1\
+      \ %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 Style
+    reference: Adapted from Figure G33, p. 59, Brown et al. 2020
+  809eacd0-2f6c-4e3a-b52a-57c783879d36: !Template
+    answer_choices: Non ||| Wi
+    id: 809eacd0-2f6c-4e3a-b52a-57c783879d36
+    jinja: '{{ text }} Nan fraz anvan an, ka pwonon "{{ span2_text }}" ranplase ak
+      "{{ span1_text }}"? Wi oswa Non? ||| {% if label != -1 %}{{ answer_choices[label]
+      }}{% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: replaced with
+    reference: ''
+  87f97aa0-1fa9-4f0b-b8e6-89d3c1f19bd6: !Template
+    answer_choices: "Fo ||| Fid\xE8l"
+    id: 87f97aa0-1fa9-4f0b-b8e6-89d3c1f19bd6
+    jinja: "Kont\xE8ks: {{ text }} \n\n{% if span2_text.lower()  == \"they\" or span2_text.lower()\
+      \ == \"them\" %}\nQuestion: \"{{ span2_text }}\" se {{ span1_text }}. Vr\xE8\
+      \ ou fo?\n{% else %}\nQuestion: \"{{ span2_text }}\" \xE8 {{ span1_text }}.\
+      \ Vr\xE8 ou fo?\n{% endif %}\n\nRepons: ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: p is/are r
+    reference: ''
+  aae24b54-c3a7-4f69-8b77-f6dc115988f8: !Template
+    answer_choices: "Fo ||| Fid\xE8l"
+    id: aae24b54-c3a7-4f69-8b77-f6dc115988f8
+    jinja: "{{ text }} \nNan pasaj ki anwo a, pwonon \"{{ span2_text }}\" refere a\
+      \ {{ span1_text }}. Vr\xE8 ou fo? ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: the pronoun refers to
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  d88f3e21-42dc-49a5-924d-69b764a14816: !Template
+    answer_choices: Non ||| Wi
+    id: d88f3e21-42dc-49a5-924d-69b764a14816
+    jinja: "{{ text }} \n{% if span2_text.lower()  == \"they\" or span2_text.lower()\
+      \ == \"them\" %}\nKESYON: Ki moun ki oswa ki sa yo \"{{ span2_text.lower() }}\"\
+      ? {{ span1_text }}?\n{% else %}\nKESYON: Ki moun ki oswa ki sa ki \"{{ span2_text.lower()\
+      \ }}\"? \xC8ske li {{ span1_text }}?\n{% endif %}\nRepons: ||| {% if label !=\
+      \ -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Who or what is/are
+    reference: I double checked the only plural pronouns in WSC are "they" and "them".

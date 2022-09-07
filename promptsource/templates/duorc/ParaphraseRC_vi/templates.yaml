@@ -1,0 +1,143 @@
+dataset: duorc
+subset: ParaphraseRC_vi
+templates:
+  09adcadd-fa7b-4154-91cb-fe822bf8e00e: !Template
+    answer_choices: null
+    id: 09adcadd-fa7b-4154-91cb-fe822bf8e00e
+    jinja: "{% if no_answer == false%}\nX\xE2y d\u1EF1ng m\u1ED9t c\u1ED1t truy\u1EC7\
+      n phim xung quanh \u0111i\u1EC1u n\xE0y: {{ question }} {{answers|choice}}\n\
+      |||\n{{ plot }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: build_story_around_qa
+    reference: Given the question-answer pair, generate a relevant plot.
+  0c7049c0-750a-46b7-af38-dd1e9fcb5217: !Template
+    answer_choices: null
+    id: 0c7049c0-750a-46b7-af38-dd1e9fcb5217
+    jinja: "T\xF4i \u0111ang c\u1ED1 g\u1EAFng quy\u1EBFt \u0111\u1ECBnh xem n\xF3\
+      \ c\xF3 \u0111\xE1ng \u0111\u1EC3 \u0111\u1EA7u t\u01B0 v\xE0o \u0111\u1EC1\
+      \ xu\u1EA5t phim n\xE0y hay kh\xF4ng.B\u1EA1n c\xF3 th\u1EC3 gi\xFAp t\xF4i\
+      \ tr\u1EA3 l\u1EDDi m\u1ED9t v\xE0i c\xE2u h\u1ECFi?N\u1EBFu b\u1EA1n kh\xF4\
+      ng th\u1EC3, xin vui l\xF2ng n\xF3i \"{{\"Kh\xF4ng, t\xF4i kh\xF4ng th\u1EC3\
+      \"}}\".\n\nC\xE2u h\u1ECFi: {{question}}\nTi\xEAu \u0111\u1EC1 phim: {{title}}\n\
+      L\xF4 phim: {{plot}}\n|||\n{% if no_answer %}\nKh\xF4ng, t\xF4i kh\xF4ng th\u1EC3\
+      \n{% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: decide_worth_it
+    reference: ''
+  594d0551-d737-4680-a7a5-8393acc6dbb7: !Template
+    answer_choices: null
+    id: 594d0551-d737-4680-a7a5-8393acc6dbb7
+    jinja: "C\xE2u h\u1ECFi: {{question}}\nN\u1EBFu kh\xF4ng c\xF3 c\xE2u tr\u1EA3\
+      \ l\u1EDDi, vui l\xF2ng xu\u1EA5t \"{{\"Kh\xF4ng \u0111\u1EE7 th\xF4ng tin \u0111\
+      \u1EC3 cung c\u1EA5p m\u1ED9t c\xE2u tr\u1EA3 l\u1EDDi.\"}}\".\nTi\xEAu \u0111\
+      \u1EC1 phim: {{title}}\n\u0110\u1ECBnh ngh\u0129a b\xE0i v\u0103n: {{plot}}\n\
+      |||\n{% if no_answer %}\nKh\xF4ng \u0111\u1EE7 th\xF4ng tin \u0111\u1EC3 cung\
+      \ c\u1EA5p m\u1ED9t c\xE2u tr\u1EA3 l\u1EDDi.\n{% else %}\n{{answers|choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_answering
+    reference: Given a passage and a question, generate an answer.
+  805f121a-6bd4-4803-9428-ea733f385add: !Template
+    answer_choices: null
+    id: 805f121a-6bd4-4803-9428-ea733f385add
+    jinja: "T\xF4i l\xE0 m\u1ED9t \u0111\u1EA1o di\u1EC5n phim v\xE0 t\xF4i v\u1EEB\
+      a nh\u1EADn \u0111\u01B0\u1EE3c c\u1ED1t truy\u1EC7n phim sau.B\u1EA1n c\xF3\
+      \ th\u1EC3 gi\xFAp t\xF4i tr\u1EA3 l\u1EDDi c\xE2u h\u1ECFi n\xE0y?N\u1EBFu\
+      \ kh\xF4ng, h\xE3y cho t\xF4i bi\u1EBFt b\u1EB1ng c\xE1ch vi\u1EBFt \"{{\"Kh\xF4\
+      ng tr\u1EA3 l\u1EDDi \u0111\u01B0\u1EE3c\"}}\".\n\nTi\xEAu \u0111\u1EC1 c\u1ED1\
+      t truy\u1EC7n: {{title}}\nL\xF4 phim: {{plot}}\nC\xE2u h\u1ECFi c\u1EE7a t\xF4\
+      i: {{question}}\n|||\n{% if no_answer %}\nKh\xF4ng tr\u1EA3 l\u1EDDi \u0111\u01B0\
+      \u1EE3c\n{% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: movie_director
+    reference: ''
+  842e346b-2d26-43a2-9a3a-9154f04eb76a: !Template
+    answer_choices: null
+    id: 842e346b-2d26-43a2-9a3a-9154f04eb76a
+    jinja: "T\u1EA1o c\xE2u h\u1ECFi v\u1EC1 c\u1ED1t truy\u1EC7n phim sau: {{ plot\
+      \ }}\n|||\n{{ question }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: Given the plot, generate a question.
+  945053f7-6ad3-4c08-b7dd-5413564f7467: !Template
+    answer_choices: null
+    id: 945053f7-6ad3-4c08-b7dd-5413564f7467
+    jinja: "Tr\xEDch xu\u1EA5t c\xE2u tr\u1EA3 l\u1EDDi cho c\xE2u h\u1ECFi sau \u0111\
+      \xE2y t\u1EEB c\u1ED1t truy\u1EC7n phim.N\u1EBFu c\xE2u h\u1ECFi kh\xF4ng th\u1EC3\
+      \ tr\u1EA3 l\u1EDDi \u0111\u01B0\u1EE3c, vui l\xF2ng xu\u1EA5t \"{{\"Kh\xF4\
+      ng th\u1EC3 tr\u1EA3 l\u1EDDi\"}}\".\nC\xE2u h\u1ECFi: {{question}}\nTi\xEA\
+      u \u0111\u1EC1: {{title}}\nL\xF4 phim: {{plot}}\n|||\n{% if no_answer %}\nKh\xF4\
+      ng th\u1EC3 tr\u1EA3 l\u1EDDi\n{% else %}\n{{answers | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: extract_answer
+    reference: ''
+  a8597645-cfed-4f54-ba0d-c23eaafaa131: !Template
+    answer_choices: null
+    id: a8597645-cfed-4f54-ba0d-c23eaafaa131
+    jinja: "\u0110\u1EC1 xu\u1EA5t m\u1ED9t ti\xEAu \u0111\u1EC1 phim cho c\u1ED1\
+      t truy\u1EC7n phim sau: {{plot}}\n|||\n{{title}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: title_generation
+    reference: Given the plot for the movie, suggest a title.
+  c6f75398-a993-44d6-a494-78961a7dc1b7: !Template
+    answer_choices: null
+    id: c6f75398-a993-44d6-a494-78961a7dc1b7
+    jinja: "Vui l\xF2ng tr\u1EA3 l\u1EDDi c\xE2u h\u1ECFi sau \u0111\xE2y v\u1EC1\
+      \ c\u1ED1t truy\u1EC7n n\xE0y.N\u1EBFu n\xF3 kh\xF4ng th\u1EC3 tr\u1EA3 l\u1EDD\
+      i, vui l\xF2ng xu\u1EA5t \"{{\"Kh\xF4ng c\xF3 c\xE2u tr\u1EA3 l\u1EDDi\"}}\"\
+      .\n\nC\xE2u h\u1ECFi: {{question}}\nTi\xEAu \u0111\u1EC1 c\u1ED1t truy\u1EC7\
+      n phim: {{title}}\nL\xF4 phim: {{plot}}\n|||\n{% if no_answer %}\nKh\xF4ng c\xF3\
+      \ c\xE2u tr\u1EA3 l\u1EDDi\n{% else %}\n{{answers | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question
+    reference: ''
+  ce3649d8-fd90-4a77-8819-4eb20b1c83a9: !Template
+    answer_choices: null
+    id: ce3649d8-fd90-4a77-8819-4eb20b1c83a9
+    jinja: "{% if no_answer == false%}\nT\u1EA1o m\u1ED9t c\xE2u h\u1ECFi c\xF3 c\xE2\
+      u tr\u1EA3 l\u1EDDi sau: \n{{answers|choice}} \n\u0110\u1ED1i v\u1EDBi c\u1ED1\
+      t truy\u1EC7n phim sau: \n{{plot}}\n|||\n{{question}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question_by_answer
+    reference: Given the passage and the answer, generate a question which has that
+      answer.

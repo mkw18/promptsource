@@ -1,0 +1,134 @@
+dataset: xsum
+subset: vi
+templates:
+  13c02904-e4e2-4b4f-b115-44b437d22041: !Template
+    answer_choices: null
+    id: 13c02904-e4e2-4b4f-b115-44b437d22041
+    jinja: "{{document}}\n\n===\n\nVi\u1EBFt m\u1ED9t b\u1EA3n t\xF3m t\u1EAFt c\u1EE7\
+      a v\u0103n b\u1EA3n tr\xEAn: ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_write_summary_of_above
+    reference: ''
+  30292806-8e58-463c-8d92-ba525411c6fa: !Template
+    answer_choices: null
+    id: 30292806-8e58-463c-8d92-ba525411c6fa
+    jinja: "B\xE0i b\xE1o: {{document}}\n\nB\u1EA3n t\xF3m t\u1EAFt: ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: article_DOC_summary
+    reference: Prefix-Tuning
+  3d388a1e-3361-407b-baa7-61397cc58382: !Template
+    answer_choices: null
+    id: 3d388a1e-3361-407b-baa7-61397cc58382
+    jinja: "{{document}}\nL\xE0m th\u1EBF n\xE0o b\u1EA1n s\u1EBD vi\u1EBFt l\u1EA1\
+      i \u0111i\u1EC1u \u0111\xF3 trong m\u1ED9t v\xE0i t\u1EEB? ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_how_would_you_rephrase_few_words
+    reference: http://gptprompts.wikidot.com/prompt:summarization
+  4cfe4126-b9f5-44eb-8a98-973987c5f32e: !Template
+    answer_choices: null
+    id: 4cfe4126-b9f5-44eb-8a98-973987c5f32e
+    jinja: "B\u1EA1n c\xF9ng ph\xF2ng \u0111\u1EA1i h\u1ECDc c\u1EE7a t\xF4i \u0111\
+      \xE3 h\u1ECFi t\xF4i b\xE0i vi\u1EBFt n\xE0y c\xF3 ngh\u0129a l\xE0 g\xEC:\n\
+      \n{{document}}\n\nV\xEC v\u1EADy, t\xF4i \u0111\xE3 t\xF3m t\u1EAFt n\xF3 theo\
+      \ c\xE1c \u0111i\u1EC1u kho\u1EA3n c\u1EE7a Layman: ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: college_roommate_asked_DOC_so_I_recap
+    reference: http://gptprompts.wikidot.com/prompt:summarization
+  57a7a3f1-91f8-4f4b-b72d-745d7cb7b1e3: !Template
+    answer_choices: null
+    id: 57a7a3f1-91f8-4f4b-b72d-745d7cb7b1e3
+    jinja: "{{document}}\n\u0110i\u1EC1u n\xE0y l\xE0m cho \xFD t\u01B0\u1EDFng \u0111\
+      \u01A1n gi\u1EA3n l\xE0 ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_boils_down_to_simple_idea_that
+    reference: http://gptprompts.wikidot.com/prompt:summarization
+  65a3c419-57e9-48c2-b090-0c5d7adb23c6: !Template
+    answer_choices: null
+    id: 65a3c419-57e9-48c2-b090-0c5d7adb23c6
+    jinja: "T\xF3m t\u1EAFt: {{document}}|||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: summarize_DOC
+    reference: ''
+  752fda48-e64c-47a7-8342-17c2c113f600: !Template
+    answer_choices: null
+    id: 752fda48-e64c-47a7-8342-17c2c113f600
+    jinja: "T\xF3m t\u1EAFt t\xE0i li\u1EC7u n\xE0y: {{document}}\nB\u1EA3n t\xF3\
+      m t\u1EAFt: ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: summarize_this_DOC_summary
+    reference: ''
+  826ffcd4-c0e6-4f4c-bd9a-fcf8ee169ede: !Template
+    answer_choices: null
+    id: 826ffcd4-c0e6-4f4c-bd9a-fcf8ee169ede
+    jinja: "{{document}}\n\n===\n\n\u0110\u01B0a ra t\xE0i li\u1EC7u tr\xEAn, h\xE3\
+      y vi\u1EBFt m\u1ED9t c\xE2u \u0111\u1EC3 t\xF3m t\u1EAFt: ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_given_above_write_one_sentence
+    reference: ''
+  9a3f617f-628f-4fa5-9b74-47d0b166a487: !Template
+    answer_choices: null
+    id: 9a3f617f-628f-4fa5-9b74-47d0b166a487
+    jinja: "\u0110\u1EA7u ti\xEAn, xin vui l\xF2ng \u0111\u1ECDc b\xE0i vi\u1EBFt\
+      \ d\u01B0\u1EDBi \u0111\xE2y.\n\n{{document}}\n\nB\xE2y gi\u1EDD, b\u1EA1n c\xF3\
+      \ th\u1EC3 vi\u1EBFt cho t\xF4i m\u1ED9t b\u1EA3n t\xF3m t\u1EAFt c\u1EF1c k\u1EF3\
+      \ ng\u1EAFn cho n\xF3 kh\xF4ng?  ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: read_below_DOC_write_abstract
+    reference: ''
+  d878b768-9da2-4d9d-9517-1edcca3b1b26: !Template
+    answer_choices: null
+    id: d878b768-9da2-4d9d-9517-1edcca3b1b26
+    jinja: "{{document}}\n\nQu\xE1 l\xE2u;Kh\xF4ng \u0111\u1ECDc: ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_tldr
+    reference: GPT-2 TLDR

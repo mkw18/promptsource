@@ -1,0 +1,200 @@
+dataset: quoref
+subset: nl
+templates:
+  4120bebc-9c8f-44af-8d1a-a65e443ce010: !Template
+    answer_choices: null
+    id: 4120bebc-9c8f-44af-8d1a-a65e443ce010
+    jinja: 'Het antwoord op de vraag: {{vraag}} Is in het artikel: {{context}}, kunt
+      u het raden?
+
+
+      |||
+
+      {{answers.text | choice}}
+
+      '
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Guess Answer
+    reference: ''
+  6f1d5031-1377-4b8a-9475-987b2275b8da: !Template
+    answer_choices: null
+    id: 6f1d5031-1377-4b8a-9475-987b2275b8da
+    jinja: 'Gegeven de volgende context:
+
+
+      {{context}}
+
+
+      Beantwoord de volgende vraag:
+
+
+      {{question}} |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Question Given Context
+    reference: ''
+  9493f80a-daf5-4c30-a9fc-7bc5bc61b5e9: !Template
+    answer_choices: null
+    id: 9493f80a-daf5-4c30-a9fc-7bc5bc61b5e9
+    jinja: "Het volgende artikel bevat een antwoord voor de vraag: {{vraag}}, kunt\
+      \ u het alstublieft vinden? \n\n{{context}}|||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Find Answer
+    reference: ''
+  a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb: !Template
+    answer_choices: null
+    id: a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb
+    jinja: 'Dit artikel: {{context}} bevat een antwoord voor de vraag: {{vraag}},
+      wat is het?
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Context Contains Answer
+    reference: ''
+  aa26aab2-d2e7-4560-b7eb-0cbcff7c0f31: !Template
+    answer_choices: null
+    id: aa26aab2-d2e7-4560-b7eb-0cbcff7c0f31
+    jinja: '{{question}}
+
+
+      Beantwoord de bovenstaande vraag op basis van de onderstaande context:
+
+
+      {{context}} |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Given Context Answer Question
+    reference: ''
+  abdfa570-2de5-406c-9051-caa6a1362796: !Template
+    answer_choices: null
+    id: abdfa570-2de5-406c-9051-caa6a1362796
+    jinja: 'Wat is het antwoord op de vraag: {{vraag}} uit het volgende artikel?
+
+
+      {{context}}|||
+
+      {{answers.text | choice}}
+
+      '
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: What Is The Answer
+    reference: ''
+  b3ec0888-dd6f-466a-abd4-b2fbcacfdb8b: !Template
+    answer_choices: null
+    id: b3ec0888-dd6f-466a-abd4-b2fbcacfdb8b
+    jinja: 'Ik heb een test waar ik het volgende artikel krijg, wat is een antwoord
+      voor de vraag: {{vraag}}?
+
+
+      {{context}}|||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Test
+    reference: ''
+  bf525757-8cde-4839-81fb-a85be3fd1192: !Template
+    answer_choices: null
+    id: bf525757-8cde-4839-81fb-a85be3fd1192
+    jinja: 'Gegeven de onderstaande context:
+
+
+      {{context}}
+
+
+      Raad een geldige titel ervoor! |||
+
+      {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: false
+    name: Guess Title For Context
+    reference: ''
+  d055747f-7a32-4e12-aab1-fed35d42a445: !Template
+    answer_choices: null
+    id: d055747f-7a32-4e12-aab1-fed35d42a445
+    jinja: 'Gebruik het volgende artikel online, gebruik het om de vraag te beantwoorden:
+      {{question}}
+
+
+      {{context}}|||
+
+      {{answers.text | choice}}
+
+      '
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Found Context Online
+    reference: ''
+  d1abb8a0-03c4-41ef-865c-aa275278a0e4: !Template
+    answer_choices: null
+    id: d1abb8a0-03c4-41ef-865c-aa275278a0e4
+    jinja: 'Een vriend vroeg me om deze vraag te beantwoorden: {{vraag}}, met behulp
+      van het artikel: {{context}}, wat zou het antwoord zijn?
+
+
+      |||
+
+      {{answers.text | choice}}
+
+      '
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Friend Question
+    reference: ''
+  fcbe0609-06ce-4cbd-91de-adc38966bcac: !Template
+    answer_choices: null
+    id: fcbe0609-06ce-4cbd-91de-adc38966bcac
+    jinja: 'Lees de volgende paragraaf en extraheer het antwoord voor de vraag: {{question}}
+
+
+      {{context}} |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: 'Read And Extract '
+    reference: ''

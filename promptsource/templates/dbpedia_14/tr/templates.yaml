@@ -1,0 +1,71 @@
+dataset: dbpedia_14
+subset: tr
+templates:
+  824ecb55-ecad-40c2-8033-f2fa0add2ddf: !Template
+    answer_choices: "Company ||| E\u011Fitim kurumu ||| Sanat\xE7\u0131 ||| Atlet\
+      \ ||| Ofis sahibi ||| Ula\u015F\u0131m\u0131n anlam\u0131 ||| Bina ||| Do\u011F\
+      al yer ||| K\xF6y ||| Hayvan ||| Plant ||| Alb\xFCm ||| Film ||| Written Work"
+    id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
+    jinja: "{{content}} Kategorilerin bir listesi verildi\u011Finde: {{\"\u015Eirket,\
+      \ e\u011Fitim kurumu, sanat\xE7\u0131, sporcu, ofis sahibi, ula\u015F\u0131\
+      m, bina, do\u011Fal yer, k\xF6y, hayvan, bitki, alb\xFCm, film veya yaz\u0131\
+      l\u0131 \xE7al\u0131\u015Fma\"}}, paragraf hangi kategoriye aittir? ||| {{ answer_choices[label]\
+      \ }}\n\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_list_what_category_does_the_paragraph_belong_to
+    reference: ''
+  8eda7e71-6734-486f-b883-e99d3f14c0bf: !Template
+    answer_choices: "\u015Eirket ||| E\u011Fitim kurumu ||| Sanat\xE7\u0131 ||| Atlet\
+      \ ||| Ofis sahibi ||| Mean Of Transportation ||| Bina ||| Do\u011Fal yer |||\
+      \ K\xF6y ||| Hayvan ||| Bitki ||| Album ||| Film ||| Yaz\u0131l\u0131 i\u015F"
+    id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
+    jinja: "A\u015Fa\u011F\u0131daki metin i\xE7in bir kategori se\xE7in.Se\xE7enekler\
+      \ - {{\"\u015Eirket, e\u011Fitim kurumu, sanat\xE7\u0131, sporcu, ofis sahibi,\
+      \ ula\u015F\u0131m, bina, do\u011Fal yer, k\xF6y, hayvan, bitki, alb\xFCm, film\
+      \ veya yaz\u0131l\u0131 \xE7al\u0131\u015Fma\"}}. {{title}} - {{content}} |||\
+      \ {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_one_category_for_the_following_text
+    reference: ''
+  9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67: !Template
+    answer_choices: "\u015Eirket ||| E\u011Fitim kurumu ||| Sanat\xE7\u0131 ||| Atlet\
+      \ ||| Office Holder ||| Mean Of Transportation ||| Building ||| Do\u011Fal yer\
+      \ ||| Village ||| Hayvan ||| Bitki ||| Album ||| Film ||| Yaz\u0131l\u0131 i\u015F"
+    id: 9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67
+    jinja: "{{title}} - {{content}} {{\"\u015Eirket, e\u011Fitim kurumu, sanat\xE7\
+      \u0131, sporcu, ofis sahibi, ula\u015F\u0131m, bina, do\u011Fal yer, k\xF6y,\
+      \ hayvan, bitki, alb\xFCm, film veya yaz\u0131l\u0131 \xE7al\u0131\u015Fma\"\
+      }} kategorisi se\xE7imi verildi\u011Finde, metin hangisini ifade eder? ||| {{\
+      \ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: 'given_a_choice_of_categories '
+    reference: ''
+  f72fa410-3278-4f62-91f0-f9edf4a4e792: !Template
+    answer_choices: "\u015Eirket ||| E\u011Fitim kurumu ||| Sanat\xE7\u0131 ||| Atlet\
+      \ ||| Ofis sahibi ||| Mean Of Transportation ||| Bina ||| Do\u011Fal yer |||\
+      \ K\xF6y ||| Hayvan ||| Bitki ||| Alb\xFCm ||| Film ||| Written Work"
+    id: f72fa410-3278-4f62-91f0-f9edf4a4e792
+    jinja: "\"{{title}}\", kategorilerin bir listesi verildi\u011Finde: {{\"\u015E\
+      irket, e\u011Fitim kurumu, sanat\xE7\u0131, sporcu, ofis sahibi, ula\u015F\u0131\
+      m, bina, do\u011Fal yer, k\xF6y, hayvan, bitki, alb\xFCm, film veya yaz\u0131\
+      l\u0131 \xE7al\u0131\u015Fma\"}}, ba\u015Fl\u0131k hangi kategoriye aittir?\
+      \ ||| {{ answer_choices[label] }}\n\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_a_list_of_category_what_does_the_title_belong_to
+    reference: ''

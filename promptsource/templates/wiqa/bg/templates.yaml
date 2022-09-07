@@ -1,0 +1,155 @@
+dataset: wiqa
+subset: bg
+templates:
+  1bc8d95b-0a50-49f4-a46b-bd752929926d: !Template
+    answer_choices: null
+    id: 1bc8d95b-0a50-49f4-a46b-bd752929926d
+    jinja: "-  {{ question_para_step[1:] | join(\"\\n- \") }}\n\n\u041A\u0430\u043A\
+      \u0432\u0430 \u043C\u043E\u0436\u0435 \u0434\u0430 \u0435 \u043F\u044A\u0440\
+      \u0432\u0430\u0442\u0430 \u0441\u0442\u044A\u043F\u043A\u0430 \u043E\u0442 \u043F\
+      \u0440\u043E\u0446\u0435\u0441\u0430?\n\n|||\n\n{{ question_para_step | first\
+      \ }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_might_be_the_first_step_of_the_process
+    reference: ''
+  360cd99a-2f83-469a-a505-d80808159dd2: !Template
+    answer_choices: null
+    id: 360cd99a-2f83-469a-a505-d80808159dd2
+    jinja: "\n{% set process_list = question_para_step[:-1] if question_para_step[-1]\
+      \ == \"\" else question_para_step %}\n-  {{ process_list[:-1] | join(\"\\n-\
+      \ \") }}\n\n\u041A\u0430\u043A\u0432\u0430 \u043C\u043E\u0436\u0435 \u0434\u0430\
+      \ \u0435 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0430\u0442\u0430 \u0441\
+      \u0442\u044A\u043F\u043A\u0430 \u043E\u0442 \u043F\u0440\u043E\u0446\u0435\u0441\
+      \u0430?\n\n|||\n\n{{ process_list | last }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_might_be_the_last_step_of_the_process
+    reference: ''
+  4191b162-9220-46e5-a2f0-0a763eef55a0: !Template
+    answer_choices: null
+    id: 4191b162-9220-46e5-a2f0-0a763eef55a0
+    jinja: "\u041A\u0430\u043A\u0432\u0430 \u0435 \u043B\u0438\u043F\u0441\u0432\u0430\
+      \u0449\u0430\u0442\u0430 \u043F\u044A\u0440\u0432\u0430 \u0441\u0442\u044A\u043F\
+      \u043A\u0430 \u043E\u0442 \u0441\u043B\u0435\u0434\u043D\u0438\u044F \u043F\u0440\
+      \u043E\u0446\u0435\u0441:\n\n-  {{ question_para_step[1:] | join(\"\\n- \")\
+      \ }}\n\n|||\n\n{{ question_para_step | first }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_is_the_missing_first_step
+    reference: ''
+  52d69c02-5ff3-4fe7-bcaf-a6b995a15020: !Template
+    answer_choices: null
+    id: 52d69c02-5ff3-4fe7-bcaf-a6b995a15020
+    jinja: " {% set process_list = question_para_step[:-1] if question_para_step[-1]\
+      \ == \"\" else question_para_step %}\n\u041A\u0430\u043A\u0432\u0430 \u0435\
+      \ \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0430\u0442\u0430 \u0441\u0442\u044A\
+      \u043F\u043A\u0430 \u043E\u0442 \u0441\u043B\u0435\u0434\u043D\u0438\u044F \u043F\
+      \u0440\u043E\u0446\u0435\u0441:\n-  {{ process_list[:-1] | join(\"\\n- \") }}\n\
+      \n|||\n\n{{ process_list | last }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_is_the_final_step_of_the_following_process
+    reference: ''
+  5dfee2c2-9742-4003-8ab6-dfe0ce5a745b: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 5dfee2c2-9742-4003-8ab6-dfe0ce5a745b
+    jinja: "\u041F\u0440\u043E\u0446\u0435\u0441:\n- {{ question_para_step | join(\"\
+      \\n- \")}}\n\n\u0412\u044A\u043F\u0440\u043E\u0441:\n{{question_stem}}\n\n\u041A\
+      \u0430\u043A \u043F\u0440\u0435\u0434\u043F\u043E\u043B\u0430\u0433\u0430\u0435\
+      \u043C\u043E\u0442\u043E \u0441\u043C\u0443\u0449\u0435\u043D\u0438\u0435 \u0432\
+      \u043B\u0438\u044F\u0435 \u043D\u0430 \u0432\u0442\u043E\u0440\u0438\u044F \u0441\
+      \u043F\u043E\u043C\u0435\u043D\u0430\u0442 \u0435\u0444\u0435\u043A\u0442.\u041E\
+      \u0442\u0433\u043E\u0432\u043E\u0440 \u043E\u0442 {{\"more, less or no effect\"\
+      }}\n\n|||\n\n{{answer_label|replace(\"_\", \" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: effect_with_string_answer
+    reference: ''
+  667c291f-6a36-4334-aa49-804c9e72500b: !Template
+    answer_choices: "\u043A\u043E\u0441\u0432\u0435\u043D\u043E \u0432\u043B\u0438\
+      \u044F\u0435 \u043D\u0430 \u0441\u0442\u044A\u043F\u043A\u0430 \u043E\u0442\
+      \ \u043F\u0440\u043E\u0446\u0435\u0441\u0430 ||| \u043D\u0435 \u0432\u043B\u0438\
+      \u044F\u0435 \u0432\u044A\u0440\u0445\u0443 \u0441\u0442\u044A\u043F\u043A\u0430\
+      \ \u043E\u0442 \u043F\u0440\u043E\u0446\u0435\u0441\u0430"
+    id: 667c291f-6a36-4334-aa49-804c9e72500b
+    jinja: "\u041F\u0440\u043E\u0446\u0435\u0441:\n\n- {{ question_para_step | join(\"\
+      \\n- \") }}\n\n{{question_stem}}\n\n\u041A\u043E\u0435 \u043E\u0442 \u0441\u043B\
+      \u0435\u0434\u043D\u0438\u0442\u0435 \u0435 \u043F\u0440\u0435\u0434\u043F\u043E\
+      \u043B\u0430\u0433\u0430\u0435\u043C\u043E\u0442\u043E \u0441\u043C\u0443\u0449\
+      \u0435\u043D\u0438\u0435?\n\n- {{\"\u0434\u0438\u0440\u0435\u043A\u0442\u043D\
+      \u043E \u0432\u043B\u0438\u044F\u0435 \u0432\u044A\u0440\u0445\u0443 \u0441\u0442\
+      \u044A\u043F\u043A\u0430 \u043E\u0442 \u043F\u0440\u043E\u0446\u0435\u0441\u0430\
+      \"}}\n- {{\"\u043A\u043E\u0441\u0432\u0435\u043D\u043E \u0432\u043B\u0438\u044F\
+      \u0435 \u043D\u0430 \u0441\u0442\u044A\u043F\u043A\u0430 \u043E\u0442 \u043F\
+      \u0440\u043E\u0446\u0435\u0441\u0430\"}}\n- {{\"\u043D\u0435 \u0432\u043B\u0438\
+      \u044F\u0435 \u0432\u044A\u0440\u0445\u0443 \u0441\u0442\u044A\u043F\u043A\u0430\
+      \ \u043E\u0442 \u043F\u0440\u043E\u0446\u0435\u0441\u0430\"}}\n\n\n|||\n\n{{{\"\
+      EXOGENOUS_EFFECT\": \"\u043A\u043E\u0441\u0432\u0435\u043D\u043E \u0432\u043B\
+      \u0438\u044F\u0435 \u043D\u0430 \u0441\u0442\u044A\u043F\u043A\u0430 \u043E\u0442\
+      \ \u043F\u0440\u043E\u0446\u0435\u0441\u0430\", \"OUTOFPARA_DISTRACTOR\": \"\
+      \u043D\u0435 \u0432\u043B\u0438\u044F\u0435 \u0432\u044A\u0440\u0445\u0443 \u0441\
+      \u0442\u044A\u043F\u043A\u0430 \u043E\u0442 \u043F\u0440\u043E\u0446\u0435\u0441\
+      \u0430\", \"INPARA_EFFECT\": \"\u0434\u0438\u0440\u0435\u043A\u0442\u043D\u043E\
+      \ \u0432\u043B\u0438\u044F\u0435 \u0432\u044A\u0440\u0445\u0443 \u0441\u0442\
+      \u044A\u043F\u043A\u0430 \u043E\u0442 \u043F\u0440\u043E\u0446\u0435\u0441\u0430\
+      \"}[metadata_question_type]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: which_of_the_following_is_the_supposed_perturbation
+    reference: ''
+  6cf2b300-6790-4120-9592-9db63bec221b: !Template
+    answer_choices: A ||| B ||| C
+    id: 6cf2b300-6790-4120-9592-9db63bec221b
+    jinja: "\u041F\u0440\u043E\u0446\u0435\u0441:\n- {{ question_para_step | join(\"\
+      \\n- \")}}\n\n\u0412\u044A\u043F\u0440\u043E\u0441:\n{{question_stem}}\n\n-\
+      \ {{\"A: more\"}}\n- {{\"B: less\"}}\n- {{\"C: no effect\"}}\n\n|||\n\n{{answer_label_as_choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: effect_with_label_answer
+    reference: ''
+  a17313bd-94bb-47ab-82bf-538df1b1ad5f: !Template
+    answer_choices: "\u0414\u0430 ||| \u043D\u0435"
+    id: a17313bd-94bb-47ab-82bf-538df1b1ad5f
+    jinja: "\u041F\u0440\u043E\u0446\u0435\u0441:\n\n- {{ question_para_step | join(\"\
+      \\n- \") }}\n\n\u0425\u0438\u043F\u043E\u0442\u0435\u0437\u0430 \u0437\u0430\
+      \ \u0441\u043C\u0443\u0449\u0435\u043D\u0438\u044F:\n{{question_stem}}\n\n\u041F\
+      \u0440\u0435\u0434\u043F\u043E\u043B\u0430\u0433\u0430\u0435\u043C\u043E\u0442\
+      \u043E \u0441\u043C\u0443\u0449\u0435\u043D\u0438\u0435 \u0438\u043C\u0430 \u043B\
+      \u0438 \u0435\u0444\u0435\u043A\u0442 (\u0434\u0438\u0440\u0435\u043A\u0442\u0435\
+      \u043D \u0438\u043B\u0438 \u043A\u043E\u0441\u0432\u0435\u043D) \u0432\u044A\
+      \u0440\u0445\u0443 \u043F\u0440\u043E\u0446\u0435\u0441\u0430?\n\n|||\n\n{{{\"\
+      EXOGENOUS_EFFECT\": \"\u0414\u0430\", \"OUTOFPARA_DISTRACTOR\": \"\u043D\u0435\
+      \", \"INPARA_EFFECT\": \"\u0414\u0430\"}[metadata_question_type]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: does_the_supposed_perturbation_have_an_effect
+    reference: ''

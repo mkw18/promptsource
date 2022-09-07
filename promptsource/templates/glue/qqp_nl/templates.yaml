@@ -1,0 +1,88 @@
+dataset: glue
+subset: qqp_nl
+templates:
+  8e711799-a57c-4941-833b-466bedfb80ad: !Template
+    answer_choices: nee ||| ja
+    id: 8e711799-a57c-4941-833b-466bedfb80ad
+    jinja: Ik ben een beheerder op de website Quora.Er zijn twee berichten, een die
+      "{{question1}}" vraagt en een andere die "{{question2}}" vraagt.Ik kan vragen
+      samenvoegen als ze hetzelfde stellen.Kan ik deze twee vragen samenvoegen? |||
+      {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: quora
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: niet duplicaten ||| duplicaten
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: '{{question1}}
+
+      {{question2}}
+
+      Kies er een: deze vragen zijn "{{"duplicaten"}}" of "{{"niet duplicaten"}}".
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not
+    reference: ''
+  a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
+    answer_choices: nee ||| ja
+    id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
+    jinja: Zijn de vragen "{{question1}}" en "{{question2}}" hetzelfde vragen? |||
+      {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''
+  c0182cd1-c7ac-4abe-829f-4651536af951: !Template
+    answer_choices: nee ||| ja
+    id: c0182cd1-c7ac-4abe-829f-4651536af951
+    jinja: Kan een antwoord op "{{question1}}" ook worden gebruikt om "{{question2}}"
+      te beantwoorden? ||| {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: answer
+    reference: ''
+  c0724198-97e7-44a1-89d8-c51e97ce0b04: !Template
+    answer_choices: Nee ||| Ja
+    id: c0724198-97e7-44a1-89d8-c51e97ce0b04
+    jinja: 'Vraag 1: {{question1}}
+
+      Vraag 2: {{question2}}
+
+
+      Breng deze twee vragen dezelfde betekenis over?Ja of nee? ||| {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: meaning
+    reference: ''
+  fd244bd3-ca3b-4e4f-9722-fd006c50e157: !Template
+    answer_choices: nee ||| ja
+    id: fd244bd3-ca3b-4e4f-9722-fd006c50e157
+    jinja: Ik ontving de vragen "{{question1}}" en "{{question2}}".Zijn het duplicaten?
+      ||| {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate
+    reference: ''

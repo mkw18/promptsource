@@ -1,0 +1,141 @@
+dataset: super_glue
+subset: wic_vi
+templates:
+  14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
+    answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
+    id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
+    jinja: "T\u1EEB \"{{word}}\" c\xF3 c\xF9ng \xFD ngh\u0129a trong hai c\xE2u n\xE0\
+      y kh\xF4ng? C\xF3 kh\xF4ng?\n{{sentence1}}\n{{sentence2}}\n||| {% if label !=\
+      \ -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning-with-label
+    reference: Generalized question-context format with label
+  3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
+    answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
+    id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
+    jinja: "T\u1EEB \"{{word}}\" c\xF3 c\xF9ng \xFD ngh\u0129a trong hai c\xE2u n\xE0\
+      y kh\xF4ng?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning
+    reference: Generalized question-context format
+  611d13dc-d414-4b9b-9204-e4f325e859e7: !Template
+    answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
+    id: 611d13dc-d414-4b9b-9204-e4f325e859e7
+    jinja: "B\xE0i t\u1EADp v\u1EC1 nh\xE0\n\nQuy\u1EBFt \u0111\u1ECBnh xem t\u1EEB\
+      \ \"{{word}}\" c\xF3 \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng v\u1EDBi c\xF9ng\
+      \ m\u1ED9t ngh\u0129a trong hai c\xE2u sau. Tr\u1EA3 l\u1EDDi b\u1EB1ng c\xF3\
+      \ ho\u1EB7c kh\xF4ng.\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n\
+      {{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: grammar_homework
+    reference: ''
+  725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
+    answer_choices: "Sai ||| \u0110\xDANG V\u1EACY"
+    id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
+    jinja: "C\xE2u A: {{sentence1}}\nC\xE2u B: {{sentence2}}\n\n\"{{word}}\" c\xF3\
+      \ \xFD ngh\u0129a t\u01B0\u01A1ng t\u1EF1 trong c\xE1c c\xE2u A v\xE0 B. \u0110\
+      \xFAng hay sai?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: affirmation_true_or_false
+    reference: ''
+  c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6: !Template
+    answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
+    id: c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6
+    jinja: "{{sentence1}}\n{{sentence2}}\nC\xE2u h\u1ECFi: Is the word '{{word}}'\
+      \ used in the same sense in the two sentences above?\n||| {% if label != -1%}\n\
+      {{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf
+  ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
+    answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
+    id: ce8b5a93-1841-4897-84db-b100f1c84f4b
+    jinja: "C\xE2u 1: {{sentence1}}\nC\xE2u 2: {{sentence2}}\n\nX\xE1c \u0111\u1ECB\
+      nh xem t\u1EEB \"{{word}}\" c\xF3 \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng theo\
+      \ c\xF9ng m\u1ED9t ngh\u0129a trong c\u1EA3 hai c\xE2u hay kh\xF4ng. C\xF3 hay\
+      \ kh\xF4ng?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same_sense
+    reference: ''
+  cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
+    answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
+    id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
+    jinja: "X\xE1c \u0111\u1ECBnh xem t\u1EEB '{{word}}' c\xF3 \u0111\u01B0\u1EE3\
+      c s\u1EED d\u1EE5ng theo c\xF9ng m\u1ED9t c\xE1ch trong hai c\xE2u b\xEAn d\u01B0\
+      \u1EDBi. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context
+    reference: Generalized question-context format
+  d9e1db2a-ab0b-4621-bb41-01d5788d3873: !Template
+    answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
+    id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
+    jinja: "{{sentence1}}\n{{sentence2}}\nC\xE2u h\u1ECFi: L\xE0 t\u1EEB '{{word}}'\
+      \ \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng theo c\xF9ng m\u1ED9t ngh\u0129a trong\
+      \ hai c\xE2u tr\xEAn? C\xF3 kh\xF4ng?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt-with-label
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf add additional
+      label
+  dd2080cf-3117-49ba-9aff-c988a21fdb69: !Template
+    answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
+    id: dd2080cf-3117-49ba-9aff-c988a21fdb69
+    jinja: "T\u1EEB \"{{word}}\" c\xF3 nhi\u1EC1u \xFD ngh\u0129a. N\xF3 c\xF3 c\xF9\
+      ng \xFD ngh\u0129a trong c\xE2u 1 v\xE0 2? C\xF3 hay kh\xF4ng?\n\nC\xE2u 1:\
+      \ {{sentence1}}\nC\xE2u 2: {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: polysemous
+    reference: ''
+  f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
+    answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
+    id: f934a96d-fe4d-4075-aa47-5595b9a604c7
+    jinja: "{{sentence1}}\n{{sentence2}}\n\xDD ngh\u0129a t\u01B0\u01A1ng t\u1EF1\
+      \ c\u1EE7a {{word}}?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: similar-sense
+    reference: Following https://arxiv.org/abs/2105.11447, https://github.com/ethanjperez/true_few_shot/tree/main/templates.super_glue

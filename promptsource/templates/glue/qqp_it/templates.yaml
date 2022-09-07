@@ -1,0 +1,84 @@
+dataset: glue
+subset: qqp_it
+templates:
+  8e711799-a57c-4941-833b-466bedfb80ad: !Template
+    answer_choices: "No ||| s\xEC"
+    id: 8e711799-a57c-4941-833b-466bedfb80ad
+    jinja: Sono un amministratore sul sito web Quora.Ci sono due post, uno che chiede
+      "{{question1}}" e un altro che chiede "{{question2}}".Posso unire le domande
+      se fanno la stessa cosa.Posso unire queste due domande? ||| {{ answer_choices[label]
+      }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: quora
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: non duplicati ||| duplicati
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: '{{question1}}
+
+      {{question2}}
+
+      Scegli uno: queste domande sono "{{"duplicati"}}" o "{{"non duplicati"}}".
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not
+    reference: ''
+  a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
+    answer_choices: "No ||| s\xEC"
+    id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
+    jinja: Le domande "{{question1}}" e "{{question2}}" chiedono la stessa cosa? |||
+      {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''
+  c0182cd1-c7ac-4abe-829f-4651536af951: !Template
+    answer_choices: "No ||| s\xEC"
+    id: c0182cd1-c7ac-4abe-829f-4651536af951
+    jinja: "Pu\xF2 anche essere usata una risposta a \"{{question1}}\" per rispondere\
+      \ a \"{{question2}}\"? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: answer
+    reference: ''
+  c0724198-97e7-44a1-89d8-c51e97ce0b04: !Template
+    answer_choices: "No ||| s\xEC"
+    id: c0724198-97e7-44a1-89d8-c51e97ce0b04
+    jinja: "Domanda 1: {{question1}}\nDomanda 2: {{question2}}\n\nQueste due domande\
+      \ trasmettono lo stesso significato?S\xEC o no? ||| {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: meaning
+    reference: ''
+  fd244bd3-ca3b-4e4f-9722-fd006c50e157: !Template
+    answer_choices: "No ||| s\xEC"
+    id: fd244bd3-ca3b-4e4f-9722-fd006c50e157
+    jinja: Ho ricevuto le domande "{{question1}}" e "{{question2}}".Sono duplicati?
+      ||| {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate
+    reference: ''

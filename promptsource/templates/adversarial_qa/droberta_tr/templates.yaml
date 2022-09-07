@@ -1,0 +1,70 @@
+dataset: adversarial_qa
+subset: droberta_tr
+templates:
+  00755780-f3c0-44b4-b159-8f3873cdb163: !Template
+    answer_choices: null
+    id: 00755780-f3c0-44b4-b159-8f3873cdb163
+    jinja: "\xD6\u011Frencilerin bir pasaj okuma ve bu konuda sorular\u0131 cevaplama\
+      \ yetene\u011Fini test etmek istiyorum.L\xFCtfen \"{{context}}\" pasaj\u0131\
+      \ i\xE7in iyi bir soru bulabilir misiniz? |||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  3b2459cc-6600-443c-abf8-8f60c34cd993: !Template
+    answer_choices: null
+    id: 3b2459cc-6600-443c-abf8-8f60c34cd993
+    jinja: "{% if metadata.split != \"test\" %}\n\"{{question}}\" sorusunun cevab\u0131\
+      n\u0131n \"{{context}}\" 'da oldu\u011Funu biliyorum.Bana ne oldu\u011Funu s\xF6\
+      yleyebilir misin? |||\n\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  5bdb1815-5c6f-49a3-ad1d-367344420703: !Template
+    answer_choices: null
+    id: 5bdb1815-5c6f-49a3-ad1d-367344420703
+    jinja: "{% if metadata.split != \"test\" %}\nSoru: \"{{question}}\"\n\nBa\u011F\
+      lam: \"{{context}}\"\n\nCevap:\n|||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'
+  a0872cde-2f19-4ae6-919a-868da47bfbc3: !Template
+    answer_choices: null
+    id: a0872cde-2f19-4ae6-919a-868da47bfbc3
+    jinja: "{% if metadata.split != \"test\" %}\nSorunun cevab\u0131n\u0131 a\u015F\
+      a\u011F\u0131daki ba\u011Flamdan \xE7\u0131kar\u0131n.\nSoru: {{question}}\n\
+      Ba\u011Flam: {{context}}|||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  a64d5a15-68e2-4d1c-b30a-ca8250c860f3: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860f3
+    jinja: "{% if metadata.split != \"test\" %}\nA\u015Fa\u011F\u0131daki pasaj g\xF6\
+      z \xF6n\xFCne al\u0131nd\u0131\u011F\u0131nda\n\n\"{{context}}\",\n\nA\u015F\
+      a\u011F\u0131daki soruyu cevaplay\u0131n.Cevab\u0131n metinde bulundu\u011F\
+      unu unutmay\u0131n.\n\nSoru: {{question}} |||\n{{answers.text | choice}}\n{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'

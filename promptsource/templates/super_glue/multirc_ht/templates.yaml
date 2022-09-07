@@ -1,0 +1,138 @@
+dataset: super_glue
+subset: multirc_ht
+templates:
+  2d95962b-a545-41ae-8d76-07ee6704ef65: !Template
+    answer_choices: Non ||| Wi
+    id: 2d95962b-a545-41ae-8d76-07ee6704ef65
+    jinja: "{{paragraph}}\n\nKESYON: {{question}}\nMwen te jwenn repons sa a \"{{answer}}\"\
+      . \xC8ske sa k\xF2r\xE8k? Wi oswa Non?\n|||\n{% if label != -1 %}{{answer_choices[label]}}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: found_this_answer
+    reference: ''
+  42d47df9-09de-4691-8e49-7cfadd636cdd: !Template
+    answer_choices: Non ||| Wi
+    id: 42d47df9-09de-4691-8e49-7cfadd636cdd
+    jinja: "{{ paragraph }}\nKi baze sou pasaj anvan an, {{ question }} \nSe \"{{answer}}\"\
+      \ yon repons ki k\xF2r\xE8k? ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "is\u2026 a correct answer?"
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  431a5c97-af33-4053-83c8-afb0dfc04448: !Template
+    answer_choices: Non ||| Wi
+    id: 431a5c97-af33-4053-83c8-afb0dfc04448
+    jinja: "{{paragraph}}\nKESYON: {{question}}\n\nMwen bay egz\xE8sis el\xE8v mwen\
+      \ yo. \xC8ske repons lan \"{{answer}}\" k\xF2r\xE8k?\n|||\n{% if label != -1\
+      \ %}{{answer_choices[label]}}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: grading
+    reference: ''
+  4fc9e1ea-7451-4dba-a2cb-ce870e35ef8b: !Template
+    answer_choices: Non ||| Wi
+    id: 4fc9e1ea-7451-4dba-a2cb-ce870e35ef8b
+    jinja: "{{ paragraph }}\n{{ question }} \nLi ta bon pou reponn \"{{answer}}\"\
+      ? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "Would it be good to answer\u2026"
+    reference: ''
+  59a2d847-27f3-4002-a125-cf9a291b3098: !Template
+    answer_choices: Non ||| Wi
+    id: 59a2d847-27f3-4002-a125-cf9a291b3098
+    jinja: "{{ paragraph }}\nKESYON: {{ question }} \n\xC8ske li {{answer}}? ||| {%\
+      \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "paragraph\u2026 question\u2026 is it\u2026 ?"
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  7bf537ea-ff8d-44c7-8fc9-305b35e3be66: !Template
+    answer_choices: Non ||| Wi
+    id: 7bf537ea-ff8d-44c7-8fc9-305b35e3be66
+    jinja: '{{paragraph}}
+
+
+      Deside si "{{answer}}" se yon repons ki valab nan kesyon sa a: {{question}}
+
+      Reponn Wi oswa Non.
+
+      |||
+
+      {% if label != -1 %}{{answer_choices[label]}}{% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: decide_valid
+    reference: ''
+  7d878b89-2774-429a-82fb-ac801379e3ae: !Template
+    answer_choices: Non ||| Wi
+    id: 7d878b89-2774-429a-82fb-ac801379e3ae
+    jinja: "{{ paragraph }}\nKESYON: {{ question }} \n\xC8ske repons ki k\xF2r\xE8\
+      k la {{answer}}? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "is the correct answer\u2026"
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  ae9b2b0b-1731-4370-adcc-36c4a959490d: !Template
+    answer_choices: Non ||| Wi
+    id: ae9b2b0b-1731-4370-adcc-36c4a959490d
+    jinja: "\xC8ske \"{{answer}}\" yon repons k\xF2r\xE8k nan kesyon sa a?\nKESYON:\
+      \ {{question}}\n\nKonte sou t\xE8ks sa a: {{paragraph}}\n|||\n{% if label !=\
+      \ -1 %}{{answer_choices[label]}}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: correct
+    reference: ''
+  b63fd1c3-b4a6-43c3-8429-6a389235b2a4: !Template
+    answer_choices: Non ||| Wi
+    id: b63fd1c3-b4a6-43c3-8429-6a389235b2a4
+    jinja: "{{paragraph}}\n\nKESYON: {{question}}\nMwen panse ke \"{{answer}}\" se\
+      \ yon repons ki valab. \xC8ske ou ta ka konfime? Wi oswa Non?\n|||\n{% if label\
+      \ != -1 %}{{answer_choices[label]}}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: confirm
+    reference: ''
+  d2d78b88-8845-45b5-935a-6451da00b285: !Template
+    answer_choices: Non ||| Wi
+    id: d2d78b88-8845-45b5-935a-6451da00b285
+    jinja: "{{ paragraph }}\n{{ question }} \nMwen te pral di \"{{answer}}\". \xC8\
+      ske sa son dwa? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "I was going to say\u2026"
+    reference: ''

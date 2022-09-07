@@ -1,0 +1,92 @@
+dataset: ag_news
+subset: th
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: การเมืองโลก ||| กีฬา ||| ธุรกิจ ||| วิทยาศาสตร์และเทคโนโลยี
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "ป้ายกำกับใดอธิบายบทความข่าวนี้ได้ดีที่สุด\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: การเมืองโลก ||| กีฬา ||| ธุรกิจ ||| วิทยาศาสตร์และเทคโนโลยี
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "นี่เป็นข่าวเกี่ยวกับ {{\"การเมืองโลก กีฬา ธุรกิจ หรือวิทยาศาสตร์และเทคโนโลยี\"}}\
+      \ หรือไม่\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: นักการเมือง ||| นักกีฬา ||| ผู้บริหารธุรกิจ ||| นักวิทยาศาสตร์
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: 'คุณจะแนะนำบทความต่อไปนี้ให้กับ {{"นักการเมือง"}}, {{"นักกีฬา"}}, 
+      {{"ผู้บริหารธุรกิจ"}} หรือ {{"นักวิทยาศาสตร์"}} หรือไม่?
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: ข่าวรอบโลก ||| กีฬา ||| ธุรกิจ ||| วิทยาศาสตร์และเทคโนโลยี
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\nบทความนี้น่าจะปรากฏในหมวดใดต่อไปนี้ของหนังสือพิมพ์ {{\"ข่าวรอบโลก\"}}, {{\"กีฬา\"}}, {{\"ธุรกิจ\"\
+      }} หรือ {{\"วิทยาศาสตร์และเทคโนโลยี\"}}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: ข่าวรอบโลก ||| กีฬา ||| ธุรกิจ ||| วิทยาศาสตร์และเทคโนโลยี
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\nบทความนี้น่าจะปรากฏในหนังสือพิมพ์หมวดใด ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: การเมืองโลก ||| กีฬา ||| ธุรกิจ ||| วิทยาศาสตร์และเทคโนโลยี
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \nนี่เป็นข่าวเกี่ยวกับ {{\"การเมืองโลก กีฬา ธุรกิจ หรือวิทยาศาสตร์และเทคโนโลยี\"}} หรือไม่ ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: การเมืองโลก ||| กีฬา ||| ธุรกิจ ||| วิทยาศาสตร์และเทคโนโลยี
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \nป้ายกำกับใดอธิบายบทความข่าวนี้ได้ดีที่สุด ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

@@ -1,0 +1,178 @@
+dataset: paws
+subset: labeled_final_th
+templates:
+  0be7cecd-b427-4ec9-9b0e-666d6dae0063: !Template
+    answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
+    id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
+    jinja: "\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E27\u0E48\u0E32\u0E2A\u0E2D\
+      \u0E07\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\
+      \u0E35\u0E49\u0E16\u0E2D\u0E14\u0E04\u0E27\u0E32\u0E21\u0E0B\u0E36\u0E48\u0E07\
+      \u0E01\u0E31\u0E19\u0E41\u0E25\u0E30\u0E01\u0E31\u0E19\u0E2B\u0E23\u0E37\u0E2D\
+      \u0E44\u0E21\u0E48\n\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04 1: {{sentence1}}\n\u0E1B\
+      \u0E23\u0E30\u0E42\u0E22\u0E04 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: task_description-no-label
+    reference: Generalized prompt format, task_description-input.
+  472fe5eb-b499-4952-a930-f72f4ca9ed43: !Template
+    answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
+    id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
+    jinja: "\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04 1: {{sentence1}}\n\u0E1B\u0E23\u0E30\
+      \u0E42\u0E22\u0E04 2: {{sentence2}}\n\u0E04\u0E33\u0E16\u0E32\u0E21: \u0E1B\u0E23\
+      \u0E30\u0E42\u0E22\u0E04 1 \u0E41\u0E25\u0E30\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04\
+      \ 2 \u0E41\u0E2A\u0E14\u0E07\u0E04\u0E27\u0E32\u0E21\u0E2B\u0E21\u0E32\u0E22\
+      \u0E40\u0E14\u0E35\u0E22\u0E27\u0E01\u0E31\u0E19\u0E2B\u0E23\u0E37\u0E2D\u0E44\
+      \u0E21\u0E48?\u0E43\u0E0A\u0E48\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? \n\
+      ||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Meaning
+    reference: Natural question
+  4c8d4e4c-eae4-45f6-bdf0-d132ae198d09: !Template
+    answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
+    id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
+    jinja: "{{sentence1}}\n\u0E19\u0E31\u0E48\u0E19\u0E04\u0E37\u0E2D\u0E01\u0E32\u0E23\
+      \u0E16\u0E2D\u0E14\u0E04\u0E27\u0E32\u0E21\u0E02\u0E2D\u0E07\u0E1B\u0E23\u0E30\
+      \u0E42\u0E22\u0E04\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49\u0E2B\u0E23\
+      \u0E37\u0E2D\u0E44\u0E21\u0E48?\n{{sentence2}}?\n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context-question-no-label
+    reference: Generalized prompt format, context-question without any label
+  678400f8-1a5c-4a40-b5ef-abeaa41e20ec: !Template
+    answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
+    id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
+    jinja: "\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04 1: {{sentence1}}\n\u0E1B\u0E23\u0E30\
+      \u0E42\u0E22\u0E04 2: {{sentence2}}\n\u0E04\u0E33\u0E16\u0E32\u0E21: \u0E40\u0E23\
+      \u0E32\u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E40\u0E02\u0E35\u0E22\u0E19\u0E1B\
+      \u0E23\u0E30\u0E42\u0E22\u0E04 1 \u0E16\u0E36\u0E07\u0E1B\u0E23\u0E30\u0E42\u0E22\
+      \u0E04 2 \u0E44\u0E14\u0E49\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? \n|||\
+      \ \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Rewrite-no-label
+    reference: Natural Question without label
+  7c205a61-64d4-4673-bb8e-bfa77562eede: !Template
+    answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
+    id: 7c205a61-64d4-4673-bb8e-bfa77562eede
+    jinja: "{{sentence1}}\n\u0E19\u0E31\u0E48\u0E19\u0E04\u0E37\u0E2D\u0E01\u0E32\u0E23\
+      \u0E16\u0E2D\u0E14\u0E04\u0E27\u0E32\u0E21\u0E02\u0E2D\u0E07\u0E1B\u0E23\u0E30\
+      \u0E42\u0E22\u0E04\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49\u0E2B\u0E23\
+      \u0E37\u0E2D\u0E44\u0E21\u0E48?\n{{sentence2}}?\n\u0E43\u0E0A\u0E48\u0E2B\u0E23\
+      \u0E37\u0E2D\u0E44\u0E21\u0E48.\n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context-question
+    reference: Generalized prompt format, context-question
+  8c259e88-7646-4a50-a4ca-90393920f281: !Template
+    answer_choices: "\u0E44\u0E21\u0E48 ||| Yes"
+    id: 8c259e88-7646-4a50-a4ca-90393920f281
+    jinja: "\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04 1: {{sentence1}}\nSentence 2: {{sentence2}}\n\
+      Question: Does Sentence 1 paraphrase Sentence 2? Yes or No? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Concatenation
+    reference: Concatenation of sentence 1 and sentence 2
+  a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
+    answer_choices: null
+    id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
+    jinja: "{% if label == 1 %} \n\u0E16\u0E2D\u0E14\u0E04\u0E27\u0E32\u0E21\u0E1B\
+      \u0E23\u0E30\u0E42\u0E22\u0E04: {{sentence1}} \n||| \n{{sentence2}} \n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: paraphrase-task
+    reference: Create a generative paraphrase task
+  a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076: !Template
+    answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
+    id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
+    jinja: "\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04 1: {{sentence1}}\nSentence 2: {{sentence2}}\n\
+      \u0E04\u0E33\u0E16\u0E32\u0E21: \u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04 1 \u0E1B\
+      \u0E23\u0E30\u0E42\u0E22\u0E04\u0E16\u0E2D\u0E14\u0E04\u0E27\u0E32\u0E21 2 \u0E2B\
+      \u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Concatenation-no-label
+    reference: Concatenation of sentence 1 and sentence 2 without any label
+  d5239f5f-2014-47c9-a0c1-4896f76f82a4: !Template
+    answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
+    id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
+    jinja: "\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04 1: {{sentence1}}\n\u0E1B\u0E23\u0E30\
+      \u0E42\u0E22\u0E04 2: {{sentence2}}\n\u0E04\u0E33\u0E16\u0E32\u0E21: \u0E1B\u0E23\
+      \u0E30\u0E42\u0E22\u0E04 1 \u0E41\u0E25\u0E30\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04\
+      \ 2 \u0E41\u0E2A\u0E14\u0E07\u0E04\u0E27\u0E32\u0E21\u0E2B\u0E21\u0E32\u0E22\
+      \u0E40\u0E14\u0E35\u0E22\u0E27\u0E01\u0E31\u0E19\u0E2B\u0E23\u0E37\u0E2D\u0E44\
+      \u0E21\u0E48? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Meaning-no-label
+    reference: Natural question without label
+  d9911dad-75fe-4506-9843-3a46ba5e49be: !Template
+    answer_choices: "\u0E40\u0E17\u0E47\u0E08 ||| \u0E08\u0E23\u0E34\u0E07"
+    id: d9911dad-75fe-4506-9843-3a46ba5e49be
+    jinja: "{{sentence1}} \u0E04\u0E33\u0E16\u0E32\u0E21: {{sentence2}} \u0E08\u0E23\
+      \u0E34\u0E07\u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E17\u0E47\u0E08? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: PAWS-ANLI GPT3
+    reference: ANLI prompt format from Table G7 in the GPT3 paper
+  dd52359b-dc56-4241-8179-c98c636f0335: !Template
+    answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
+    id: dd52359b-dc56-4241-8179-c98c636f0335
+    jinja: "\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04 1: {{sentence1}}\n\u0E1B\u0E23\u0E30\
+      \u0E42\u0E22\u0E04 2: {{sentence2}}\n\u0E04\u0E33\u0E16\u0E32\u0E21: \u0E40\u0E23\
+      \u0E32\u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E40\u0E02\u0E35\u0E22\u0E19\u0E1B\
+      \u0E23\u0E30\u0E42\u0E22\u0E04 1 \u0E16\u0E36\u0E07\u0E1B\u0E23\u0E30\u0E42\u0E22\
+      \u0E04 2 \u0E44\u0E14\u0E49\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?\u0E43\
+      \u0E0A\u0E48\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Rewrite
+    reference: Natural Question
+  f0866713-c59a-4c5d-a307-95e80a935f99: !Template
+    answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
+    id: f0866713-c59a-4c5d-a307-95e80a935f99
+    jinja: "{{sentence1}} Question: {{sentence2}} \u0E16\u0E2D\u0E14\u0E04\u0E27\u0E32\
+      \u0E21\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?\n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: PAWS-ANLI GPT3-no-label
+    reference: ANLI prompt format from Table G7 in the GPT3 paper. Additionally added
+      task information without any label.

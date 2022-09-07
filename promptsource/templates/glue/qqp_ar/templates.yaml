@@ -1,0 +1,94 @@
+dataset: glue
+subset: qqp_ar
+templates:
+  8e711799-a57c-4941-833b-466bedfb80ad: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: 8e711799-a57c-4941-833b-466bedfb80ad
+    jinja: "\u0623\u0646\u0627 \u0645\u0633\u0624\u0648\u0644 \u0639\u0644\u0649 \u0645\
+      \u0648\u0642\u0639 Quora.\u0647\u0646\u0627\u0643 \u0645\u0646\u0634\u0648\u0631\
+      \u0627\u0646 \u060C \u0623\u062D\u062F\u0647\u0645\u0627 \u064A\u0633\u0623\u0644\
+      \ \"{{question1}}\" \u0648\u0627\u0644\u0622\u062E\u0631 \u064A\u0633\u0623\u0644\
+      \ \"{{question2}}\".\u064A\u0645\u0643\u0646\u0646\u064A \u062F\u0645\u062C\
+      \ \u0627\u0644\u0623\u0633\u0626\u0644\u0629 \u0625\u0630\u0627 \u0643\u0627\
+      \u0646\u0648\u0627 \u064A\u0633\u0623\u0644\u0648\u0646 \u0646\u0641\u0633 \u0627\
+      \u0644\u0634\u064A\u0621.\u0647\u0644 \u064A\u0645\u0643\u0646\u0646\u064A \u062F\
+      \u0645\u062C \u0647\u0630\u064A\u0646 \u0627\u0644\u0633\u0624\u0627\u0644\u064A\
+      \u0646\u061F ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: quora
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: "\u0644\u0627 \u0627\u0644\u062A\u0643\u0631\u0627\u0631\u0627\
+      \u062A ||| \u0627\u0644\u062A\u0643\u0631\u0627\u0631\u0627\u062A"
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: "{{question1}}\n{{question2}}\n\u0627\u062E\u062A\u0631 \u0648\u0627\u062D\
+      \u062F: \u0647\u0630\u0647 \u0627\u0644\u0623\u0633\u0626\u0644\u0629 \"{{\"\
+      \u0627\u0644\u062A\u0643\u0631\u0627\u0631\u0627\u062A\"}}\" \u0623\u0648 \"\
+      {{\"\u0644\u0627 \u0627\u0644\u062A\u0643\u0631\u0627\u0631\u0627\u062A\"}}\"\
+      .\n|||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not
+    reference: ''
+  a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
+    jinja: "\u0647\u0644 \u0627\u0644\u0623\u0633\u0626\u0644\u0629 \"{{question1}}\"\
+      \ \u0648 \"{{question2}}\" \u062A\u0637\u0631\u062D \u0646\u0641\u0633 \u0627\
+      \u0644\u0634\u064A\u0621\u061F ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''
+  c0182cd1-c7ac-4abe-829f-4651536af951: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: c0182cd1-c7ac-4abe-829f-4651536af951
+    jinja: "\u0647\u0644 \u064A\u0645\u0643\u0646 \u0623\u064A\u0636\u064B\u0627 \u0627\
+      \u0633\u062A\u062E\u062F\u0627\u0645 \u0625\u062C\u0627\u0628\u0629 \u0639\u0644\
+      \u0649 \"{{question1}}\" \u0644\u0644\u0625\u062C\u0627\u0628\u0629 \"{{question2}}\"\
+      \u061F ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: answer
+    reference: ''
+  c0724198-97e7-44a1-89d8-c51e97ce0b04: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: c0724198-97e7-44a1-89d8-c51e97ce0b04
+    jinja: "\u0627\u0644\u0633\u0624\u0627\u0644 \u0631\u0642\u0645 1: {{question1}}\n\
+      \u0627\u0644\u0633\u0624\u0627\u0644 2: {{question2}}\n\n\u0647\u0644 \u064A\
+      \u0646\u0642\u0644 \u0647\u0630\u0627\u0646 \u0627\u0644\u0633\u0624\u0627\u0644\
+      \u0627\u0646 \u0646\u0641\u0633 \u0627\u0644\u0645\u0639\u0646\u0649\u061F\u0646\
+      \u0639\u0645 \u0627\u0645 \u0644\u0627\u061F ||| {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: meaning
+    reference: ''
+  fd244bd3-ca3b-4e4f-9722-fd006c50e157: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: fd244bd3-ca3b-4e4f-9722-fd006c50e157
+    jinja: "\u062A\u0644\u0642\u064A\u062A \u0627\u0644\u0623\u0633\u0626\u0644\u0629\
+      \ \"{{question1}}\" \u0648 \"{{question2}}\".\u0647\u0644 \u0647\u0645 \u0645\
+      \u0643\u0631\u0631\u0648\u0646\u061F ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate
+    reference: ''

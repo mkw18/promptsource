@@ -1,0 +1,73 @@
+dataset: quarel
+subset: ko
+templates:
+  5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
+    jinja: "\uC758\uBB38: {{question}}\n\n\uC9C8\uBB38\uC5D0 \uB300\uB2F5\uD558\uB824\
+      \uBA74 {{ \"a\"}} \uBC0F {{ \"b\"}}\uB97C \uC0AC\uC6A9\uD558\uC9C0 \uB9D0\uACE0\
+      \ \uB300\uC2E0 \"{{answer_choices[0]}}\"\uACFC \"{{answer_choices[1]}}\" \uC911\
+      \uC5D0\uC11C \uC120\uD0DD\uD558\uC9C0 \uB9C8\uC2ED\uC2DC\uC624.\n|||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: do_not_use
+    reference: ''
+  5b5f9d29-0ad5-4bb9-831a-11fcb115c10d: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
+    jinja: "\uB2E4\uC74C\uC740 \uB17C\uB9AC \uD14C\uC2A4\uD2B8\uC785\uB2C8\uB2E4.\
+      \ {{question}}\n\n\"{{answer_choices[0]}}\"\uACFC \"{{answer_choices[1]}}\"\
+      \ \uC0AC\uC774\uC758 \uB2F5\uC744 \uC120\uD0DD\uD558\uC2ED\uC2DC\uC624.\n|||\n\
+      {{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: logic_test
+    reference: ''
+  63c58389-605a-42b9-85a6-a2586a954a92: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 63c58389-605a-42b9-85a6-a2586a954a92
+    jinja: "\uC9E7\uC740 \uC774\uC57C\uAE30\uB294 \uB2E4\uC74C\uACFC \uAC19\uC2B5\uB2C8\
+      \uB2E4. {{question}}.\n\n\"{{answer_choices[0]}}\"\uACFC \"{{answer_choices[1]}}\"\
+      \ \uC0AC\uC774\uC758 \uAC00\uC7A5 \uAC10\uAC01\uC801 \uC778 \uB300\uB2F5\uC740\
+      \ \uBB34\uC5C7\uC785\uB2C8\uAE4C?\n|||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: heres_a_story
+    reference: ''
+  73a7adbb-41b1-4b4d-b378-d7e17d030a6f: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 73a7adbb-41b1-4b4d-b378-d7e17d030a6f
+    jinja: "\"{{answer_choices[0]}}\"\uACFC \"{{answer_choices[1]}}\" \uC0AC\uC774\
+      \uB97C \uC120\uD0DD\uD558\uC2ED\uC2DC\uC624.\n\uC758\uBB38: {{question}}\n|||\n\
+      {{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: choose_between
+    reference: ''
+  92013fab-5387-44d4-bf0f-e29a31bcafb6: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 92013fab-5387-44d4-bf0f-e29a31bcafb6
+    jinja: "\uB098\uB294 \uD559\uC0DD\uB4E4\uC758 \uB17C\uB9AC\uB97C \uD14C\uC2A4\uD2B8\
+      \uD558\uACE0 \uC788\uC2B5\uB2C8\uB2E4.\n\"{{answer_choices[0]}}\"\uACFC \"{{answer_choices[1]}}\"\
+      \ \uC0AC\uC774\uC5D0\uC11C \uC120\uD0DD \uD574\uC57C\uD558\uB294 \uB300\uB2F5\
+      \uC740 \uBB34\uC5C7\uC785\uB2C8\uAE4C?\n\uB17C\uB9AC \uD14C\uC2A4\uD2B8 : {{question}}\n\
+      |||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: testing_students
+    reference: ''

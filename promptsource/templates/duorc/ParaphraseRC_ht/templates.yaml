@@ -1,0 +1,158 @@
+dataset: duorc
+subset: ParaphraseRC_ht
+templates:
+  09adcadd-fa7b-4154-91cb-fe822bf8e00e: !Template
+    answer_choices: null
+    id: 09adcadd-fa7b-4154-91cb-fe822bf8e00e
+    jinja: '{% if no_answer == false%}
+
+      Bati yon konplo fim alantou sa a: {{ question }} {{answers|choice}}
+
+      |||
+
+      {{ plot }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: build_story_around_qa
+    reference: Given the question-answer pair, generate a relevant plot.
+  0c7049c0-750a-46b7-af38-dd1e9fcb5217: !Template
+    answer_choices: null
+    id: 0c7049c0-750a-46b7-af38-dd1e9fcb5217
+    jinja: "Mwen ap eseye deside si li la vo li envesti nan pwopozisyon sa a fim.\xC8\
+      ske ou ka ede m 'reponn k\xE8k kesyon?Si ou pa kapab, tanpri di \"{{\"Non mwen\
+      \ pa kapab\"}}\".\n\nKESYON: {{question}}\nTit fim: {{title}}\nKonplo fim: {{plot}}\n\
+      |||\n{% if no_answer %}\nNon mwen pa kapab\n{% else %}\n{{answers|choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: decide_worth_it
+    reference: ''
+  594d0551-d737-4680-a7a5-8393acc6dbb7: !Template
+    answer_choices: null
+    id: 594d0551-d737-4680-a7a5-8393acc6dbb7
+    jinja: "KESYON: {{question}}\nSi pa gen okenn repons, tanpri pwodiksyon \"{{\"\
+      Enf\xF2masyon ase pou bay yon repons.\"}}\".\nTit fim: {{title}}\nKont\xE8ks:\
+      \ {{plot}}\n|||\n{% if no_answer %}\nEnf\xF2masyon ase pou bay yon repons.\n\
+      {% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_answering
+    reference: Given a passage and a question, generate an answer.
+  805f121a-6bd4-4803-9428-ea733f385add: !Template
+    answer_choices: null
+    id: 805f121a-6bd4-4803-9428-ea733f385add
+    jinja: "Mwen se yon direkt\xE8 fim e mwen jis te resevwa konplo a fim sa yo.\xC8\
+      ske ou ta ka ede m 'reponn kesyon sa a?Si ou pa, kite m 'konnen pa ekri \"{{\"\
+      Pa reponn\"}}\".\n\nTit trase: {{title}}\nKonplo fim: {{plot}}\nKesyon mwen\
+      \ an: {{question}}\n|||\n{% if no_answer %}\nPa reponn\n{% else %}\n{{answers|choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: movie_director
+    reference: ''
+  842e346b-2d26-43a2-9a3a-9154f04eb76a: !Template
+    answer_choices: null
+    id: 842e346b-2d26-43a2-9a3a-9154f04eb76a
+    jinja: 'Jenere yon kesyon sou konplo a fim sa yo: {{ plot }}
+
+      |||
+
+      {{ question }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: Given the plot, generate a question.
+  945053f7-6ad3-4c08-b7dd-5413564f7467: !Template
+    answer_choices: null
+    id: 945053f7-6ad3-4c08-b7dd-5413564f7467
+    jinja: "Ekstr\xE8 repons lan nan kesyon sa a soti nan konplo a fim.Si kesyon an\
+      \ pa responsab, tanpri pwodiksyon \"{{\"Pa ka reponn\"}}\".\nKESYON: {{question}}\n\
+      Tit: {{title}}\nKonplo fim: {{plot}}\n|||\n{% if no_answer %}\nPa ka reponn\n\
+      {% else %}\n{{answers | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: extract_answer
+    reference: ''
+  a8597645-cfed-4f54-ba0d-c23eaafaa131: !Template
+    answer_choices: null
+    id: a8597645-cfed-4f54-ba0d-c23eaafaa131
+    jinja: 'Sijere yon tit fim pou konplo a fim sa yo: {{plot}}
+
+      |||
+
+      {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: title_generation
+    reference: Given the plot for the movie, suggest a title.
+  c6f75398-a993-44d6-a494-78961a7dc1b7: !Template
+    answer_choices: null
+    id: c6f75398-a993-44d6-a494-78961a7dc1b7
+    jinja: 'Tanpri reponn kesyon sa a sou konplo sa a fim.Si li nan un-repons, tanpri
+      pwodiksyon "{{"San repons"}}".
+
+
+      KESYON: {{question}}
+
+      Tit trase fim: {{title}}
+
+      Konplo fim: {{plot}}
+
+      |||
+
+      {% if no_answer %}
+
+      San repons
+
+      {% else %}
+
+      {{answers | choice }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question
+    reference: ''
+  ce3649d8-fd90-4a77-8819-4eb20b1c83a9: !Template
+    answer_choices: null
+    id: ce3649d8-fd90-4a77-8819-4eb20b1c83a9
+    jinja: "{% if no_answer == false%}\nJenere yon kesyon ki gen repons sa a: \n{{answers|choice}}\
+      \ \nPou konplo a fim sa yo: \n{{plot}}\n|||\n{{question}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question_by_answer
+    reference: Given the passage and the answer, generate a question which has that
+      answer.

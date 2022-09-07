@@ -1,0 +1,69 @@
+dataset: app_reviews
+subset: ko
+templates:
+  2da8f134-58db-4f9d-b3b0-8c6b50693ab5: !Template
+    answer_choices: 전혀 ||| 아니 ||| 아마도 ||| 네 ||| 분명히
+    id: 2da8f134-58db-4f9d-b3b0-8c6b50693ab5
+    jinja: '이 리뷰를 감안할 때: "{{review}}"
+
+      이 앱을 친구에게 추천하시겠습니까? {{answer_choices[0]}}, {{answer_choices[1]}},
+      {{answer_choices[2]}}, {{answer_choices[3]}} 또는 {{answer_choices[4]}}?
+
+      |||
+
+      {{answer_choices[star-1]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: categorize_rating_using_review
+    reference: Given the review, return a categorical answer.
+  8086b434-a75e-45a4-87fb-4364601e2e05: !Template
+    answer_choices: null
+    id: 8086b434-a75e-45a4-87fb-4364601e2e05
+    jinja: '{{package_name}} 패키지가 포함된 앱에 대한 별 {{star}} 별 리뷰(1이 가장 낮고 5가 가장 높음)를 생성합니다.
+
+      |||
+
+      {{review}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: generate_review
+    reference: Generate a review from the rating.
+  9746ce4b-ac58-4dfb-9783-d77c95cb62cf: !Template
+    answer_choices: "\u2605 ||| \u2605\u2605 ||| \u2605\u2605\u2605 ||| \u2605\u2605\
+      \u2605\u2605 ||| \u2605\u2605\u2605\u2605\u2605"
+    id: 9746ce4b-ac58-4dfb-9783-d77c95cb62cf
+    jinja: "이 리뷰의 \u2605-등급은 무엇입니까(\u2605가 가장 낮습니다\
+      \ 및 \u2605\u2605\u2605\u2605\u2605 가장 높음)? \"{{review}}\"\n|||\n\
+      {{answer_choices[star-1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: convert_to_star_rating
+    reference: Given the review, generate a star rating.
+  d34e1413-2699-4701-baa2-05d931d012ba: !Template
+    answer_choices: null
+    id: d34e1413-2699-4701-baa2-05d931d012ba
+    jinja: '1-5의 척도(1이 가장 덜 호의적임, 5가 가장 호의적임)에서 이 리뷰를 어떻게 평가하시겠습니까? "{{review}}"
+
+      |||
+
+      {{star}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: convert_to_rating
+    reference: Convert review to rating

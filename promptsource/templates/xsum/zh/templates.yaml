@@ -1,0 +1,132 @@
+dataset: xsum
+subset: zh
+templates:
+  13c02904-e4e2-4b4f-b115-44b437d22041: !Template
+    answer_choices: null
+    id: 13c02904-e4e2-4b4f-b115-44b437d22041
+    jinja: "{{document}}\n\n===\n\n\u5199\u4E0A\u8FF0\u6587\u672C\u7684\u6458\u8981\
+      \uFF1A ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_write_summary_of_above
+    reference: ''
+  30292806-8e58-463c-8d92-ba525411c6fa: !Template
+    answer_choices: null
+    id: 30292806-8e58-463c-8d92-ba525411c6fa
+    jinja: "\u6587\u7AE0\uFF1A {{document}}\n\n\u6982\u62EC\uFF1A ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: article_DOC_summary
+    reference: Prefix-Tuning
+  3d388a1e-3361-407b-baa7-61397cc58382: !Template
+    answer_choices: null
+    id: 3d388a1e-3361-407b-baa7-61397cc58382
+    jinja: "{{document}}\n\u60A8\u5C06\u5982\u4F55\u7528\u51E0\u53E5\u8BDD\u91CD\u65B0\
+      \u8BF4\u660E\uFF1F ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_how_would_you_rephrase_few_words
+    reference: http://gptprompts.wikidot.com/prompt:summarization
+  4cfe4126-b9f5-44eb-8a98-973987c5f32e: !Template
+    answer_choices: null
+    id: 4cfe4126-b9f5-44eb-8a98-973987c5f32e
+    jinja: "\u6211\u7684\u5927\u5B66\u5BA4\u53CB\u95EE\u6211\u8FD9\u7BC7\u6587\u7AE0\
+      \u7684\u542B\u4E49\uFF1A\n\n{{document}}\n\n\u56E0\u6B64\uFF0C\u6211\u7528\u5916\
+      \u884C\u7684\u672F\u8BED\u56DE\u987E\u4E86\u5B83\uFF1A ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: college_roommate_asked_DOC_so_I_recap
+    reference: http://gptprompts.wikidot.com/prompt:summarization
+  57a7a3f1-91f8-4f4b-b72d-745d7cb7b1e3: !Template
+    answer_choices: null
+    id: 57a7a3f1-91f8-4f4b-b72d-745d7cb7b1e3
+    jinja: "{{document}}\n\u8FD9\u5F52\u7ED3\u4E3A\u4E00\u4E2A\u7B80\u5355\u7684\u60F3\
+      \u6CD5 ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_boils_down_to_simple_idea_that
+    reference: http://gptprompts.wikidot.com/prompt:summarization
+  65a3c419-57e9-48c2-b090-0c5d7adb23c6: !Template
+    answer_choices: null
+    id: 65a3c419-57e9-48c2-b090-0c5d7adb23c6
+    jinja: "\u603B\u7ED3\uFF1A {{document}}|||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: summarize_DOC
+    reference: ''
+  752fda48-e64c-47a7-8342-17c2c113f600: !Template
+    answer_choices: null
+    id: 752fda48-e64c-47a7-8342-17c2c113f600
+    jinja: "\u603B\u7ED3\u672C\u6587\u6863\uFF1A {{document}}\n\u6982\u62EC\uFF1A\
+      \ ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: summarize_this_DOC_summary
+    reference: ''
+  826ffcd4-c0e6-4f4c-bd9a-fcf8ee169ede: !Template
+    answer_choices: null
+    id: 826ffcd4-c0e6-4f4c-bd9a-fcf8ee169ede
+    jinja: "{{document}}\n\n===\n\n\u7ED9\u5B9A\u4E0A\u8FF0\u6587\u6863\uFF0C\u5199\
+      \u4E00\u4E2A\u53E5\u5B50\u4EE5\u603B\u7ED3\uFF1A ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_given_above_write_one_sentence
+    reference: ''
+  9a3f617f-628f-4fa5-9b74-47d0b166a487: !Template
+    answer_choices: null
+    id: 9a3f617f-628f-4fa5-9b74-47d0b166a487
+    jinja: "\u9996\u5148\uFF0C\u8BF7\u9605\u8BFB\u4E0B\u9762\u7684\u6587\u7AE0\u3002\
+      \n\n{{document}}\n\n\u73B0\u5728\uFF0C\u60A8\u80FD\u7ED9\u6211\u5199\u4E00\u4E2A\
+      \u975E\u5E38\u7B80\u77ED\u7684\u6458\u8981\u5417\uFF1F  ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: read_below_DOC_write_abstract
+    reference: ''
+  d878b768-9da2-4d9d-9517-1edcca3b1b26: !Template
+    answer_choices: null
+    id: d878b768-9da2-4d9d-9517-1edcca3b1b26
+    jinja: "{{document}}\n\n\u592A\u957F;\u6CA1\u6709\u9605\u8BFB\uFF1A ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_tldr
+    reference: GPT-2 TLDR

@@ -1,0 +1,89 @@
+dataset: dbpedia_14
+subset: vi
+templates:
+  824ecb55-ecad-40c2-8033-f2fa0add2ddf: !Template
+    answer_choices: "C\xF4ng ty ||| C\u01A1 s\u1EDF gi\xE1o d\u1EE5c ||| H\u1ECDa\
+      \ s\u0129 ||| L\u1EF1c s\u0129 ||| Office Holder ||| Mean Of Transportation\
+      \ ||| T\xF2a nh\xE0 ||| N\u01A1i t\u1EF1 nhi\xEAn ||| L\xE0ng qu\xEA ||| \u0110\
+      \u1ED9ng v\u1EADt ||| Plant ||| Album ||| Phim \u1EA3nh ||| Written Work"
+    id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
+    jinja: "{{content}} Cho m\u1ED9t danh s\xE1ch c\xE1c danh m\u1EE5c: {{\"c\xF4\
+      ng ty, t\u1ED5 ch\u1EE9c gi\xE1o d\u1EE5c, ngh\u1EC7 s\u0129, v\u1EADn \u0111\
+      \u1ED9ng vi\xEAn, ch\u1EE7 s\u1EDF h\u1EEFu v\u0103n ph\xF2ng, trung b\xECnh\
+      \ c\u1EE7a giao th\xF4ng, x\xE2y d\u1EF1ng, \u0111\u1ECBa \u0111i\u1EC3m t\u1EF1\
+      \ nhi\xEAn, l\xE0ng, \u0111\u1ED9ng v\u1EADt, th\u1EF1c v\u1EADt, album, phim\
+      \ ho\u1EB7c c\xF4ng vi\u1EC7c vi\u1EBFt\"}}, \u0111o\u1EA1n n\xE0o m\xE0 \u0111\
+      o\u1EA1n thu\u1ED9c v\u1EC1? ||| {{ answer_choices[label] }}\n\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_list_what_category_does_the_paragraph_belong_to
+    reference: ''
+  8eda7e71-6734-486f-b883-e99d3f14c0bf: !Template
+    answer_choices: "C\xF4ng ty ||| C\u01A1 s\u1EDF gi\xE1o d\u1EE5c ||| H\u1ECDa\
+      \ s\u0129 ||| L\u1EF1c s\u0129 ||| Ch\u1EE7 s\u1EDF h\u1EEFu v\u0103n ph\xF2\
+      ng ||| \xDD ngh\u0129a c\u1EE7a vi\u1EC7c v\u1EADn chuy\u1EC3n ||| T\xF2a nh\xE0\
+      \ ||| Natural Place ||| L\xE0ng qu\xEA ||| \u0110\u1ED9ng v\u1EADt ||| Th\u1EF1\
+      c v\u1EADt ||| Album ||| Phim \u1EA3nh ||| C\xF4ng vi\u1EC7c b\u1EB1ng v\u0103\
+      n b\u1EA3n"
+    id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
+    jinja: "Ch\u1ECDn m\u1ED9t danh m\u1EE5c cho v\u0103n b\u1EA3n sau.C\xE1c t\xF9\
+      y ch\u1ECDn l\xE0 - {{\"c\xF4ng ty, t\u1ED5 ch\u1EE9c gi\xE1o d\u1EE5c, ngh\u1EC7\
+      \ s\u0129, v\u1EADn \u0111\u1ED9ng vi\xEAn, ch\u1EE7 s\u1EDF h\u1EEFu v\u0103\
+      n ph\xF2ng, trung b\xECnh c\u1EE7a giao th\xF4ng, x\xE2y d\u1EF1ng, \u0111\u1ECB\
+      a \u0111i\u1EC3m t\u1EF1 nhi\xEAn, l\xE0ng, \u0111\u1ED9ng v\u1EADt, th\u1EF1\
+      c v\u1EADt, album, phim ho\u1EB7c c\xF4ng vi\u1EC7c vi\u1EBFt\"}}. {{title}}\
+      \ - {{content}} ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_one_category_for_the_following_text
+    reference: ''
+  9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67: !Template
+    answer_choices: "C\xF4ng ty ||| Educational Institution ||| Artist ||| L\u1EF1\
+      c s\u0129 ||| Ch\u1EE7 s\u1EDF h\u1EEFu v\u0103n ph\xF2ng ||| Mean Of Transportation\
+      \ ||| T\xF2a nh\xE0 ||| Natural Place ||| L\xE0ng qu\xEA ||| \u0110\u1ED9ng\
+      \ v\u1EADt ||| Th\u1EF1c v\u1EADt ||| Album ||| Phim \u1EA3nh ||| C\xF4ng vi\u1EC7\
+      c b\u1EB1ng v\u0103n b\u1EA3n"
+    id: 9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67
+    jinja: "{{title}} - {{content}} \u0110\u01B0a ra m\u1ED9t l\u1EF1a ch\u1ECDn c\u1EE7\
+      a c\xE1c danh m\u1EE5c {{\"c\xF4ng ty, t\u1ED5 ch\u1EE9c gi\xE1o d\u1EE5c, ngh\u1EC7\
+      \ s\u0129, v\u1EADn \u0111\u1ED9ng vi\xEAn, ch\u1EE7 s\u1EDF h\u1EEFu v\u0103\
+      n ph\xF2ng, trung b\xECnh c\u1EE7a giao th\xF4ng, x\xE2y d\u1EF1ng, \u0111\u1ECB\
+      a \u0111i\u1EC3m t\u1EF1 nhi\xEAn, l\xE0ng, \u0111\u1ED9ng v\u1EADt, th\u1EF1\
+      c v\u1EADt, album, phim ho\u1EB7c c\xF4ng vi\u1EC7c vi\u1EBFt\"}}, v\u0103n\
+      \ b\u1EA3n \u0111\u1EC1 c\u1EADp \u0111\u1EBFn c\xE1i n\xE0o? ||| {{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: 'given_a_choice_of_categories '
+    reference: ''
+  f72fa410-3278-4f62-91f0-f9edf4a4e792: !Template
+    answer_choices: "C\xF4ng ty ||| C\u01A1 s\u1EDF gi\xE1o d\u1EE5c ||| H\u1ECDa\
+      \ s\u0129 ||| L\u1EF1c s\u0129 ||| Ch\u1EE7 s\u1EDF h\u1EEFu v\u0103n ph\xF2\
+      ng ||| \xDD ngh\u0129a c\u1EE7a vi\u1EC7c v\u1EADn chuy\u1EC3n ||| T\xF2a nh\xE0\
+      \ ||| N\u01A1i t\u1EF1 nhi\xEAn ||| Village ||| \u0110\u1ED9ng v\u1EADt |||\
+      \ Plant ||| Album ||| Phim \u1EA3nh ||| C\xF4ng vi\u1EC7c b\u1EB1ng v\u0103\
+      n b\u1EA3n"
+    id: f72fa410-3278-4f62-91f0-f9edf4a4e792
+    jinja: "\"{{title}}\", \u0111\u01B0a ra m\u1ED9t danh s\xE1ch c\xE1c danh m\u1EE5\
+      c: {{\"c\xF4ng ty, t\u1ED5 ch\u1EE9c gi\xE1o d\u1EE5c, ngh\u1EC7 s\u0129, v\u1EAD\
+      n \u0111\u1ED9ng vi\xEAn, ch\u1EE7 s\u1EDF h\u1EEFu v\u0103n ph\xF2ng, trung\
+      \ b\xECnh c\u1EE7a giao th\xF4ng, x\xE2y d\u1EF1ng, \u0111\u1ECBa \u0111i\u1EC3\
+      m t\u1EF1 nhi\xEAn, l\xE0ng, \u0111\u1ED9ng v\u1EADt, th\u1EF1c v\u1EADt, album,\
+      \ phim ho\u1EB7c c\xF4ng vi\u1EC7c vi\u1EBFt\"}}, danh m\u1EE5c n\xE0o thu\u1ED9\
+      c lo\u1EA1i n\xE0o? ||| {{ answer_choices[label] }}\n\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_a_list_of_category_what_does_the_title_belong_to
+    reference: ''

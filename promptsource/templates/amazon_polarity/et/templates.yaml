@@ -1,0 +1,116 @@
+dataset: amazon_polarity
+subset: et
+templates:
+  1e90a24a-1182-43dd-9445-22f2e56e5761: !Template
+    answer_choices: Negatiivne ||| Positiivne
+    id: 1e90a24a-1182-43dd-9445-22f2e56e5761
+    jinja: "Pealkiri: {{title}}\n\xDClevaade: {{content}}\nKas \xFClevaade on positiivne\
+      \ v\xF5i negatiivne? |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review
+    reference: ''
+  3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
+    answer_choices: Mitte ||| Jah
+    id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
+    jinja: "Kas kasutaja soovitaks selle arvustuse p\xF5hjal seda toodet?\n===\n\xDC\
+      levaade: {{content}}\nVastus: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: User_recommend_this_product
+    reference: 'Reformulation equivalent to sent analysis: would the user recommend
+      this product?'
+  592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
+    answer_choices: Mitte ||| Jah
+    id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
+    jinja: "Kas see toote \xFClevaade on positiivne?\nPealkiri: {{title}}\n\xDClevaade:\
+      \ {{content}}\nVastus: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_product_review_positive
+    reference: ''
+  745b9c05-10df-4a7e-81ad-1b88cefcb166: !Template
+    answer_choices: Jah ||| Mitte
+    id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
+    jinja: "Pealkiri: {{title}}\n\xDClevaade: {{content}}\nKas see toote \xFClevaade\
+      \ on negatiivne?|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review_negative
+    reference: ''
+  8abb5377-5dd3-4402-92a5-0d81adb6a325: !Template
+    answer_choices: Negatiivne ||| Positiivne
+    id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
+    jinja: "Pealkiri: {{title}}\n\xDClevaade: {{content}}\nKas see toote\xFClevaade\
+      \ annab edasi negatiivse v\xF5i positiivse sentimendi?|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: convey_negative_or_positive_sentiment
+    reference: ''
+  9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
+    answer_choices: Negatiivne ||| Positiivne
+    id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
+    jinja: "Kas sellel toote\xFClevaatel on negatiivne v\xF5i positiivne toon?\n===\n\
+      Pealkiri: {{title}}\n\xDClevaade: {{content}}\nVastus: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: negative_or_positive_tone
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
+    answer_choices: rahulolematu ||| rahuldatud
+    id: b13369e8-0500-4e93-90d4-8e6814bfb97b
+    jinja: "Siin on \xFClevaade, mille klient on toote kohta j\xE4tnud.Kas te \xFC\
+      tleksite, et ta oli {{answer_choices[1]}} v\xF5i {{answer_choices[0]}}?\nPealkiri:\
+      \ {{title}}\n\xDClevaade: {{content}}\n|||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: user_satisfied
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
+    answer_choices: "v\xE4henemine ||| suurendama"
+    id: b13369e8-0500-4e93-90d4-8e6814bfb98b
+    jinja: "Kaalute, kas osta toodet.Vaatad arvustusi.Kas j\xE4rgmine \xFClevaade\
+      \ {{answer_choices[0]}} v\xF5i {{answer_choices[1]}} on v\xF5imalused toote\
+      \ ostmiseks?\n\xDClevaate pealkiri: {{title}}\nToote \xFClevaade: {{content}}\n\
+      |||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: would_you_buy
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
+    answer_choices: lakkamatu ||| meelitav
+    id: b13369e8-0500-4e93-90d4-8e6814bfb99b
+    jinja: "Pealkiri: {{title}}\nToote \xFClevaade: {{content}}\nKas te \xFCtleksite,\
+      \ et see \xFClevaade kujutab toodet {{answer_choices[1]}} v\xF5i {{answer_choices[0]}}\
+      \ valguses?\n|||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: flattering_or_not
+    reference: ''

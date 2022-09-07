@@ -1,0 +1,141 @@
+dataset: quartz
+subset: fa
+templates:
+  005b9776-2170-47f8-a5d2-03e83d0e55ae: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 005b9776-2170-47f8-a5d2-03e83d0e55ae
+    jinja: "Use information from the paragraph to answer the question.\n\n\u0633\u0648\
+      \u0627\u0644:\n\n{% if '_____' in question %}\n{{ question | trim(\".?!\") |\
+      \ replace(\"_____\", answer_choices | join(\"\u06CC\u0627\")) }}{{ \"?\" }}\
+      \ \n{% else %}\n{{ question | trim(\".?!\") }} {{ answer_choices | join(\"\u06CC\
+      \u0627\") }}{{ \"?\" }} \n{% endif %}\n\n\u0628\u0646\u062F:\n\n{{ para }}\n\
+      |||\n{{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: use_info_from_question_paragraph
+    reference: ''
+  01d6ae3e-87bb-456c-9722-92a214f6ff19: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 01d6ae3e-87bb-456c-9722-92a214f6ff19
+    jinja: "{{ para }}\n{% if '_____' in question %}\n{{ question | trim(\".?!\")\
+      \ | replace(\"_____\", answer_choices | join(\"\u06CC\u0627\")) }}{{ \"?\" }}\
+      \ \n{% else %}\n{{ question | trim(\".?!\")}} {{ answer_choices | join(\"\u06CC\
+      \u0627\") }}{{ \"?\" }} \n{% endif %}\n|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: paragraph_question_plain_concat
+    reference: ''
+  22e29cab-f57f-4af7-92fc-72b131a96878: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 22e29cab-f57f-4af7-92fc-72b131a96878
+    jinja: "\u0628\u0631\u0627\u06CC \u067E\u0627\u0633\u062E \u0628\u0647 \u0627\u06CC\
+      \u0646 \u0633\u0648\u0627\u0644 \u0627\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\
+      \u062A \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u067E\u0627\u0631\u0627\u06AF\
+      \u0631\u0627\u0641 \u0627\u0633\u062A\u0641\u0627\u062F\u0647 \u06A9\u0646\u06CC\
+      \u062F.\n\n\u0628\u0646\u062F:\n\n{{ para }}\n\n\u0633\u0648\u0627\u0644:\n\n\
+      {% if '_____' in question %}\n{{ question | trim(\".?!\") | replace(\"_____\"\
+      , answer_choices | join(\"\u06CC\u0627\")) }}{{ \"?\" }} \n{% else %}\n{{ question\
+      \ | trim(\".?!\") }} {{ answer_choices | join(\"\u06CC\u0627\") }}{{ \"?\" }}\
+      \ \n{% endif %}\n|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: use_info_from_paragraph_question
+    reference: ''
+  2f6baa0c-3b69-48be-b195-cc00cb5c96fa: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 2f6baa0c-3b69-48be-b195-cc00cb5c96fa
+    jinja: "\u0628\u0631 \u0627\u0633\u0627\u0633 \u0645\u062A\u0646 \u0632\u06CC\u0631\
+      \ \u0628\u0647 \u0633\u0648\u0627\u0644 \u067E\u0627\u0633\u062E \u062F\u0647\
+      \u06CC\u062F.\n\n\u0633\u0648\u0627\u0644:\n\n{% if '_____' in question %}\n\
+      {{ question | trim(\".?!\") | replace(\"_____\", answer_choices | join(\"\u06CC\
+      \u0627\")) }}{{ \"?\" }} \n{% else %}\n{{ question | trim(\".?!\") }} {{ answer_choices\
+      \ | join(\"\u06CC\u0627\") }}{{ \"?\" }} \n{% endif %}\n\n\u0645\u062A\u0646\
+      :\n\n{{ para }}|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: answer_question_based_on
+    reference: ''
+  397bdb29-03e8-478b-9840-1bfe9d57d6fb: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 397bdb29-03e8-478b-9840-1bfe9d57d6fb
+    jinja: "\u0628\u0647 \u0633\u0648\u0627\u0644 \u0632\u06CC\u0631 \u067E\u0627\u0633\
+      \u062E \u062F\u0647\u06CC\u062F:\n\n{% if '_____' in question %}\n{{ question\
+      \ | trim(\".?!\") | replace(\"_____\", answer_choices | join(\"\u06CC\u0627\"\
+      )) }}{{ \"?\" }} \n{% else %}\n{{ question | trim(\".?!\") }} {{  answer_choices\
+      \ | join(\"\u06CC\u0627\") }}{{ \"?\" }} \n{% endif %}\n\n\u0641\u0631\u0636\
+      \ \u06A9\u0646\u06CC\u062F \u06A9\u0647:\n\n{{ para }}|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: answer_question_below
+    reference: ''
+  39a67851-fdf5-4f0d-bda2-4902be3a6bff: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 39a67851-fdf5-4f0d-bda2-4902be3a6bff
+    jinja: "\u0645\u062A\u0646 \u0632\u06CC\u0631 \u0631\u0627 \u0628\u062E\u0648\u0627\
+      \u0646\u06CC\u062F \u0648 \u067E\u0627\u0633\u062E \u062F\u0631\u0633\u062A\
+      \ \u0633\u0648\u0627\u0644 \u0632\u06CC\u0631 \u0631\u0627 \u0627\u0646\u062A\
+      \u062E\u0627\u0628 \u06A9\u0646\u06CC\u062F (\u06AF\u0632\u06CC\u0646\u0647\
+      \ \u0647\u0627 \u0647\u0633\u062A\u0646\u062F {{ answer_choices | join(\"\u06CC\
+      \u0627\") }} ):\n\n{{ para }}\n\n{% if '_____' in question %}\n{{ question |\
+      \ trim(\".?!\") | replace(\"_____\", answer_choices | join(\"\u06CC\u0627\"\
+      )) }}{{ \"?\" }} \n{% else %}\n{{ question | trim(\".?!\") }} {{ answer_choices\
+      \ | join(\"\u06CC\u0627\") }}{{ \"?\" }} \n{% endif %}\n|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: read_passage_below_choose
+    reference: ''
+  5c794ff0-32b9-43d4-b496-1a4d246ecfc0: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 5c794ff0-32b9-43d4-b496-1a4d246ecfc0
+    jinja: "{{ para }}\n\n\u0628\u0627 \u062E\u0648\u0627\u0646\u062F\u0646 \u0642\
+      \u0633\u0645\u062A \u0641\u0648\u0642 \u060C \u067E\u0627\u0633\u062E \u0635\
+      \u062D\u06CC\u062D \u0628\u0647 \u0633\u0648\u0627\u0644 \u0632\u06CC\u0631\
+      \ \u0631\u0627 \u0627\u0646\u062A\u062E\u0627\u0628 \u06A9\u0646\u06CC\u062F\
+      \ (\u06AF\u0632\u06CC\u0646\u0647 \u0647\u0627 \u0647\u0633\u062A\u0646\u062F\
+      \ {{ answer_choices | join(\"\u06CC\u0627\") }} ):\n\n{% if '_____' in question\
+      \ %}\n{{ question | trim(\".?!\") | replace(\"_____\", answer_choices | join(\"\
+      \u06CC\u0627\")) }}{{ \"?\" }} \n{% else %}\n{{ question | trim(\".?!\") }}\
+      \ {{ answer_choices | join(\"\u06CC\u0627\") }}{{ \"?\" }} \n{% endif %}\n|||\n\
+      {{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: having_read_above_passage
+    reference: ''
+  a8c6ae4c-4874-47d1-93ea-801b6e080a58: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: a8c6ae4c-4874-47d1-93ea-801b6e080a58
+    jinja: "\u0628\u0627 \u062A\u0648\u062C\u0647 \u0628\u0647 \u0627\u06CC\u0646\
+      \ \u0648\u0627\u0642\u0639\u06CC\u062A \u06A9\u0647:\n\n{{ para }}\n\n\u0628\
+      \u0647 \u0633\u0648\u0627\u0644 \u067E\u0627\u0633\u062E \u062F\u0647\u06CC\u062F\
+      :\n\n{% if '_____' in question %}\n{{ question | trim(\".?!\") | replace(\"\
+      _____\", answer_choices | join(\"\u06CC\u0627\")) }}{{ \"?\" }} \n{% else %}\n\
+      {{ question | trim(\".?!\") }} {{ answer_choices | join(\"\u06CC\u0627\") }}{{\
+      \ \"?\" }} \n{% endif %}\n|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_the_fact_answer_the_q
+    reference: ''

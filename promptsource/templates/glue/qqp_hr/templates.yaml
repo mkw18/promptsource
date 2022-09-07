@@ -1,0 +1,84 @@
+dataset: glue
+subset: qqp_hr
+templates:
+  8e711799-a57c-4941-833b-466bedfb80ad: !Template
+    answer_choices: Ne ||| Da
+    id: 8e711799-a57c-4941-833b-466bedfb80ad
+    jinja: Ja sam administrator na web stranici Quora.Postoje dva postova, jedan koji
+      pita "{{question1}}" i drugi koji pita "{{question2}}".Mogu spojiti pitanja
+      ako postavljaju istu stvar.Mogu li spojiti ova dva pitanja? ||| {{ answer_choices[label]
+      }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: quora
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: ne duplikati ||| duplikati
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: '{{question1}}
+
+      {{question2}}
+
+      Odaberite jedan: Ova pitanja su "{{"duplikati"}}" ili "{{"ne duplikati"}}".
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not
+    reference: ''
+  a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
+    answer_choices: Ne ||| Da
+    id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
+    jinja: Postavljaju li pitanja "{{question1}}" i "{{question2}}" isto? ||| {{ answer_choices[label]
+      }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''
+  c0182cd1-c7ac-4abe-829f-4651536af951: !Template
+    answer_choices: Ne ||| Da
+    id: c0182cd1-c7ac-4abe-829f-4651536af951
+    jinja: "Mo\u017Ee li se odgovor na \"{{question1}}\" koristiti za odgovor \"{{question2}}\"\
+      ? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: answer
+    reference: ''
+  c0724198-97e7-44a1-89d8-c51e97ce0b04: !Template
+    answer_choices: Ne ||| Da
+    id: c0724198-97e7-44a1-89d8-c51e97ce0b04
+    jinja: "Pitanje 1: {{question1}}\nPitanje 2: {{question2}}\n\nPrenose li ta dva\
+      \ pitanja isto zna\u010Denje?Da ili ne? ||| {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: meaning
+    reference: ''
+  fd244bd3-ca3b-4e4f-9722-fd006c50e157: !Template
+    answer_choices: Ne ||| Da
+    id: fd244bd3-ca3b-4e4f-9722-fd006c50e157
+    jinja: Primio sam pitanja "{{question1}}" i "{{question2}}".Jesu li duplikati?
+      ||| {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate
+    reference: ''

@@ -1,0 +1,87 @@
+dataset: samsum
+subset: ja
+templates:
+  01faf0cd-d9d8-4245-b86f-e7e13c2972ff: !Template
+    answer_choices: null
+    id: 01faf0cd-d9d8-4245-b86f-e7e13c2972ff
+    jinja: "\u3053\u306E\u5BFE\u8A71\u3092\u8981\u7D04\u3057\u3066\u304F\u3060\u3055\
+      \u3044\uFF1A {{dialogue}} |||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: 'Summarize this dialogue:'
+    reference: ''
+  182a251f-2f76-4b36-8d2e-417f8d43f729: !Template
+    answer_choices: null
+    id: 182a251f-2f76-4b36-8d2e-417f8d43f729
+    jinja: "{{dialogue}}\n\u4E0A\u8A18\u306E\u5BFE\u8A71\u3092\u8003\u3048\u308B\u3068\
+      \u3001\u8981\u7D04\u3092\u66F8\u3044\u3066\u304F\u3060\u3055\u3044\u3002 |||\n\
+      {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Given the above dialogue write a summary
+    reference: ''
+  72eda731-894d-4260-9113-9e492822f80e: !Template
+    answer_choices: null
+    id: 72eda731-894d-4260-9113-9e492822f80e
+    jinja: "\u8981\u7D04\uFF1A {{dialogue}}|||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: 'Summarize:'
+    reference: ''
+  7bd51f5b-5bac-429e-b8f9-dd6782b92a59: !Template
+    answer_choices: null
+    id: 7bd51f5b-5bac-429e-b8f9-dd6782b92a59
+    jinja: "{{dialogue}}\n\u3053\u306E\u30C0\u30A4\u30A2\u30ED\u30B0\u3092\u307E\u3068\
+      \u3081\u308B\u306B\u306F\uFF1A\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: To sum up this dialog
+    reference: ''
+  8d829dcb-ea64-457d-b025-f16e31c2834a: !Template
+    answer_choices: null
+    id: 8d829dcb-ea64-457d-b025-f16e31c2834a
+    jinja: "\u3053\u306E\u5BFE\u8A71\u306E\u6982\u8981\u3092\u751F\u6210\u3057\u307E\
+      \u3059\u3002\n{{dialogue}}\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Generate a summary for this dialogue
+    reference: ''
+  9f571a72-6813-4307-9aae-753ca0f737c5: !Template
+    answer_choices: null
+    id: 9f571a72-6813-4307-9aae-753ca0f737c5
+    jinja: "\u3053\u306E\u8981\u7D04\u306B\u4E00\u81F4\u3059\u308B\u5BFE\u8A71\u3092\
+      \u66F8\u304F\uFF1A {{summary}} |||\n{{dialogue}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: false
+    name: Write a dialogue that match this summary
+    reference: ''
+  bd891653-49b6-40bb-968f-8e6632c75659: !Template
+    answer_choices: null
+    id: bd891653-49b6-40bb-968f-8e6632c75659
+    jinja: "\u6B21\u306E\u30C0\u30A4\u30A2\u30ED\u30B0\u3092\u307E\u3068\u3081\u307E\
+      \u3059\u3002 \n{{dialogue}}\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Sum up the following dialogue
+    reference: ''

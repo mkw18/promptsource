@@ -1,0 +1,76 @@
+dataset: kilt_tasks
+subset: hotpotqa_ja
+templates:
+  1a123f3a-0507-41b9-904f-b18d9ce2b79e: !Template
+    answer_choices: null
+    id: 1a123f3a-0507-41b9-904f-b18d9ce2b79e
+    jinja: "{% if output %}\n\u3053\u308C\u306F\u3001\u8AB0\u304B\u304C\u5165\u529B\
+      \u306B\u3064\u3044\u3066\u63A8\u8AD6\u3059\u308B\u3053\u3068\u3092\u8981\u6C42\
+      \u3059\u308B\u8907\u96D1\u306A\u8CEA\u554F\u3067\u3059\u3001\u3042\u306A\u305F\
+      \u306F\u305D\u308C\u306B\u7B54\u3048\u308B\u3053\u3068\u304C\u3067\u304D\u307E\
+      \u3059\u304B\uFF1F\n{{input}}\n|||\n{{output | map(attribute=\"answer\") | list\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: complex_question
+    reference: ''
+  5531ce47-35ff-4bce-943d-5b2b86c44352: !Template
+    answer_choices: null
+    id: 5531ce47-35ff-4bce-943d-5b2b86c44352
+    jinja: "{% if output %}\n\u4E8B\u5B9F\u3092\u7D44\u307F\u5408\u308F\u305B\u3066\
+      \u3001\u3053\u308C\u306B\u7B54\u3048\u3066\u304F\u3060\u3055\u3044\uFF1A {{input}}\n\
+      |||\n{{output | map(attribute=\"answer\") | list | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: combining_facts
+    reference: ''
+  5ce9d659-4df8-4afd-a6e1-3e542df0035a: !Template
+    answer_choices: null
+    id: 5ce9d659-4df8-4afd-a6e1-3e542df0035a
+    jinja: "{% if output %}\n\u3053\u306E\u7CBE\u5DE7\u306A\u8CEA\u554F\u306B\u5BFE\
+      \u3059\u308B\u7B54\u3048\u3092\u5B9A\u5F0F\u5316\u3057\u307E\u3059\uFF1A {{input}}\n\
+      |||\n{{output | map(attribute=\"answer\") | list | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: formulate
+    reference: ''
+  9211f663-51f9-428e-ba27-158480eee083: !Template
+    answer_choices: null
+    id: 9211f663-51f9-428e-ba27-158480eee083
+    jinja: "{% if output %}\n\u671F\u672B\u8A66\u9A13\n\n\u8CEA\u554F1\u3002 {{input}}\n\
+      |||\n{{output | map(attribute=\"answer\") | list | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: final_exam
+    reference: ''
+  ac0545a1-9363-4c17-aada-f0eedf5a24b2: !Template
+    answer_choices: null
+    id: ac0545a1-9363-4c17-aada-f0eedf5a24b2
+    jinja: '{% if output %}
+
+      {{input}}
+
+      |||
+
+      {{output | map(attribute="answer") | list | choice}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: straighforward_qa
+    reference: ''

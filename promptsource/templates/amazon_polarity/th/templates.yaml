@@ -1,0 +1,157 @@
+dataset: amazon_polarity
+subset: th
+templates:
+  1e90a24a-1182-43dd-9445-22f2e56e5761: !Template
+    answer_choices: "\u0E40\u0E0A\u0E34\u0E07\u0E25\u0E1A ||| \u0E40\u0E0A\u0E34\u0E07\
+      \u0E1A\u0E27\u0E01"
+    id: 1e90a24a-1182-43dd-9445-22f2e56e5761
+    jinja: "\u0E0A\u0E37\u0E48\u0E2D: {{title}}\n\u0E17\u0E1A\u0E17\u0E27\u0E19: {{content}}\n\
+      \u0E01\u0E32\u0E23\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E40\u0E1B\u0E47\
+      \u0E19\u0E1A\u0E27\u0E01\u0E2B\u0E23\u0E37\u0E2D\u0E25\u0E1A? |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review
+    reference: ''
+  3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
+    answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
+    id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
+    jinja: "\u0E08\u0E32\u0E01\u0E01\u0E32\u0E23\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\
+      \u0E1A\u0E19\u0E35\u0E49\u0E1C\u0E39\u0E49\u0E43\u0E0A\u0E49\u0E08\u0E30\u0E41\
+      \u0E19\u0E30\u0E19\u0E33\u0E1C\u0E25\u0E34\u0E15\u0E20\u0E31\u0E13\u0E11\u0E4C\
+      \u0E19\u0E35\u0E49\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?\n===\n\u0E17\u0E1A\
+      \u0E17\u0E27\u0E19: {{content}}\n\u0E15\u0E2D\u0E1A: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: User_recommend_this_product
+    reference: 'Reformulation equivalent to sent analysis: would the user recommend
+      this product?'
+  592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
+    answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
+    id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
+    jinja: "\u0E01\u0E32\u0E23\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E1C\u0E25\
+      \u0E34\u0E15\u0E20\u0E31\u0E13\u0E11\u0E4C\u0E19\u0E35\u0E49\u0E40\u0E1B\u0E47\
+      \u0E19\u0E1A\u0E27\u0E01\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?\n\u0E0A\u0E37\
+      \u0E48\u0E2D: {{title}}\n\u0E17\u0E1A\u0E17\u0E27\u0E19: {{content}}\n\u0E15\
+      \u0E2D\u0E1A: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_product_review_positive
+    reference: ''
+  745b9c05-10df-4a7e-81ad-1b88cefcb166: !Template
+    answer_choices: "\u0E43\u0E0A\u0E48 ||| \u0E44\u0E21\u0E48"
+    id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
+    jinja: "\u0E0A\u0E37\u0E48\u0E2D: {{title}}\n\u0E17\u0E1A\u0E17\u0E27\u0E19: {{content}}\n\
+      \u0E01\u0E32\u0E23\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E1C\u0E25\u0E34\
+      \u0E15\u0E20\u0E31\u0E13\u0E11\u0E4C\u0E19\u0E35\u0E49\u0E40\u0E1B\u0E47\u0E19\
+      \u0E25\u0E1A\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review_negative
+    reference: ''
+  8abb5377-5dd3-4402-92a5-0d81adb6a325: !Template
+    answer_choices: "\u0E40\u0E0A\u0E34\u0E07\u0E25\u0E1A ||| \u0E40\u0E0A\u0E34\u0E07\
+      \u0E1A\u0E27\u0E01"
+    id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
+    jinja: "\u0E0A\u0E37\u0E48\u0E2D: {{title}}\n\u0E17\u0E1A\u0E17\u0E27\u0E19: {{content}}\n\
+      \u0E01\u0E32\u0E23\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E1C\u0E25\u0E34\
+      \u0E15\u0E20\u0E31\u0E13\u0E11\u0E4C\u0E19\u0E35\u0E49\u0E16\u0E48\u0E32\u0E22\
+      \u0E17\u0E2D\u0E14\u0E04\u0E27\u0E32\u0E21\u0E40\u0E0A\u0E37\u0E48\u0E2D\u0E21\
+      \u0E31\u0E48\u0E19\u0E40\u0E0A\u0E34\u0E07\u0E25\u0E1A\u0E2B\u0E23\u0E37\u0E2D\
+      \u0E40\u0E0A\u0E34\u0E07\u0E1A\u0E27\u0E01\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\
+      \u0E48?|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: convey_negative_or_positive_sentiment
+    reference: ''
+  9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
+    answer_choices: "\u0E40\u0E0A\u0E34\u0E07\u0E25\u0E1A ||| \u0E40\u0E0A\u0E34\u0E07\
+      \u0E1A\u0E27\u0E01"
+    id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
+    jinja: "\u0E21\u0E35\u0E19\u0E49\u0E33\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E40\u0E0A\
+      \u0E34\u0E07\u0E25\u0E1A\u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E1B\u0E47\u0E19\u0E1A\
+      \u0E27\u0E01\u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E15\u0E23\
+      \u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E1C\u0E25\u0E34\u0E15\u0E20\u0E31\u0E13\u0E11\
+      \u0E4C\u0E19\u0E35\u0E49\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?\n===\n\u0E0A\
+      \u0E37\u0E48\u0E2D: {{title}}\n\u0E17\u0E1A\u0E17\u0E27\u0E19: {{content}}\n\
+      \u0E15\u0E2D\u0E1A: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: negative_or_positive_tone
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
+    answer_choices: "\u0E44\u0E21\u0E48\u0E1E\u0E2D\u0E43\u0E08 ||| \u0E1E\u0E2D\u0E43\
+      \u0E08"
+    id: b13369e8-0500-4e93-90d4-8e6814bfb97b
+    jinja: "\u0E19\u0E35\u0E48\u0E04\u0E37\u0E2D\u0E23\u0E35\u0E27\u0E34\u0E27\u0E17\
+      \u0E35\u0E48\u0E25\u0E39\u0E01\u0E04\u0E49\u0E32\u0E40\u0E2B\u0E25\u0E37\u0E2D\
+      \u0E2D\u0E22\u0E39\u0E48\u0E43\u0E19\u0E1C\u0E25\u0E34\u0E15\u0E20\u0E31\u0E13\
+      \u0E11\u0E4C\u0E04\u0E38\u0E13\u0E08\u0E30\u0E1A\u0E2D\u0E01\u0E27\u0E48\u0E32\
+      \u0E40\u0E02\u0E32\u0E04\u0E37\u0E2D {{answer_choices[1]}} \u0E2B\u0E23\u0E37\
+      \u0E2D {{answer_choices[0]}}?\n\u0E0A\u0E37\u0E48\u0E2D: {{title}}\n\u0E17\u0E1A\
+      \u0E17\u0E27\u0E19: {{content}}\n|||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: user_satisfied
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
+    answer_choices: "\u0E25\u0E14 ||| \u0E40\u0E1E\u0E34\u0E48\u0E21"
+    id: b13369e8-0500-4e93-90d4-8e6814bfb98b
+    jinja: "\u0E04\u0E38\u0E13\u0E01\u0E33\u0E25\u0E31\u0E07\u0E1E\u0E34\u0E08\u0E32\
+      \u0E23\u0E13\u0E32\u0E27\u0E48\u0E32\u0E08\u0E30\u0E0B\u0E37\u0E49\u0E2D\u0E1C\
+      \u0E25\u0E34\u0E15\u0E20\u0E31\u0E13\u0E11\u0E4C\u0E2B\u0E23\u0E37\u0E2D\u0E44\
+      \u0E21\u0E48\u0E04\u0E38\u0E13\u0E14\u0E39\u0E1A\u0E17\u0E27\u0E34\u0E08\u0E32\
+      \u0E23\u0E13\u0E4C\u0E01\u0E32\u0E23\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\
+      \u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49\u0E08\u0E30 {{answer_choices[0]}}\
+      \ \u0E2B\u0E23\u0E37\u0E2D {{answer_choices[1]}} \u0E42\u0E2D\u0E01\u0E32\u0E2A\
+      \u0E17\u0E35\u0E48\u0E04\u0E38\u0E13\u0E08\u0E30\u0E0B\u0E37\u0E49\u0E2D\u0E1C\
+      \u0E25\u0E34\u0E15\u0E20\u0E31\u0E13\u0E11\u0E4C\u0E2B\u0E23\u0E37\u0E2D\u0E44\
+      \u0E21\u0E48?\n\u0E23\u0E35\u0E27\u0E34\u0E27\u0E0A\u0E37\u0E48\u0E2D: {{title}}\n\
+      \u0E23\u0E35\u0E27\u0E34\u0E27\u0E1C\u0E25\u0E34\u0E15\u0E20\u0E31\u0E13\u0E11\
+      \u0E4C: {{content}}\n|||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: would_you_buy
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
+    answer_choices: "\u0E44\u0E21\u0E48\u0E1B\u0E23\u0E30\u0E08\u0E1A\u0E1B\u0E23\u0E30\
+      \u0E41\u0E08\u0E07 ||| \u0E01\u0E32\u0E23\u0E1B\u0E23\u0E30\u0E08\u0E1A\u0E2A\
+      \u0E2D\u0E1E\u0E25\u0E2D"
+    id: b13369e8-0500-4e93-90d4-8e6814bfb99b
+    jinja: "\u0E0A\u0E37\u0E48\u0E2D: {{title}}\n\u0E23\u0E35\u0E27\u0E34\u0E27\u0E1C\
+      \u0E25\u0E34\u0E15\u0E20\u0E31\u0E13\u0E11\u0E4C: {{content}}\n\u0E04\u0E38\u0E13\
+      \u0E08\u0E30\u0E1A\u0E2D\u0E01\u0E27\u0E48\u0E32\u0E01\u0E32\u0E23\u0E15\u0E23\
+      \u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E19\u0E35\u0E49\u0E41\u0E2A\u0E14\u0E07\u0E43\
+      \u0E2B\u0E49\u0E40\u0E2B\u0E47\u0E19\u0E16\u0E36\u0E07\u0E1C\u0E25\u0E34\u0E15\
+      \u0E20\u0E31\u0E13\u0E11\u0E4C\u0E43\u0E19 {{answer_choices[1]}} \u0E2B\u0E23\
+      \u0E37\u0E2D {{answer_choices[0]}} \u0E41\u0E2A\u0E07?\n|||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: flattering_or_not
+    reference: ''

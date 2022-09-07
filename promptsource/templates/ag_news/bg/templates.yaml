@@ -1,0 +1,95 @@
+dataset: ag_news
+subset: bg
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: Световна политика ||| Спорт ||| Бизнес ||| Науката и технологиите
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "Кой етикет най-добре описва тази новинарска статия?\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: Световна политика ||| Спорт ||| Бизнес ||| Науката и технологиите
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "Това новина относно {{\"световна политика, спорт, бизнес\
+      \ или наука и технологии\"}} ли е?\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: Политик ||| Спортист ||| Бизнес ръководител ||| Учен
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: 'Бихте ли препоръчали следната статия на {{"политик"}}, {{"атлет"}},\
+      \ {{"бизнес мениджър"}} или {{"учен"}}?
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: Световни новини ||| Спорт ||| Бизнес ||| Науката и технологиите
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\nКой от следните раздели на вестник би това\
+      \ статия вероятно ще се появи в? {{\"Световни новини\"}}, {{\"Спорт\"}}, {{\"Бизнес\"\
+      }} или {{\"Наука и технологии\"}}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: Световни новини ||| Спорт ||| Бизнес ||| Науката и технологиите
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\nв кой раздел на вестник вероятно ще се появи тази\
+      \ статия? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: Световна политика ||| Спорт ||| Бизнес ||| Науката и технологиите
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \nТова новина относно {{\"световна политика, спорт, бизнес\
+      \ или наука и технологии\"}} ли е? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: Световна политика ||| Спорт ||| Бизнес ||| Науката и технологиите
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \nКой етикет най-добре описва тази новинарска статия? ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

@@ -1,0 +1,139 @@
+dataset: quoref
+subset: da
+templates:
+  4120bebc-9c8f-44af-8d1a-a65e443ce010: !Template
+    answer_choices: null
+    id: 4120bebc-9c8f-44af-8d1a-a65e443ce010
+    jinja: "Svaret p\xE5 sp\xF8rgsm\xE5let: {{sp\xF8rgsm\xE5l}} er inde i artiklen:\
+      \ {{context}}, kan du g\xE6tte det?\n\n|||\n{{answers.text | choice}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Guess Answer
+    reference: ''
+  6f1d5031-1377-4b8a-9475-987b2275b8da: !Template
+    answer_choices: null
+    id: 6f1d5031-1377-4b8a-9475-987b2275b8da
+    jinja: "I betragtning af f\xF8lgende kontekst:\n\n{{context}}\n\nBesvar f\xF8\
+      lgende sp\xF8rgsm\xE5l:\n\n{{question}} |||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Question Given Context
+    reference: ''
+  9493f80a-daf5-4c30-a9fc-7bc5bc61b5e9: !Template
+    answer_choices: null
+    id: 9493f80a-daf5-4c30-a9fc-7bc5bc61b5e9
+    jinja: "F\xF8lgende artikel indeholder et svar til sp\xF8rgsm\xE5let: {{sp\xF8\
+      rgsm\xE5l}}, kan du venligst finde det? \n\n{{context}}|||\n{{answers.text |\
+      \ choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Find Answer
+    reference: ''
+  a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb: !Template
+    answer_choices: null
+    id: a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb
+    jinja: "Denne artikel: {{Context}} indeholder et svar til sp\xF8rgsm\xE5let: {{sp\xF8\
+      rgsm\xE5l}}, hvad er det?\n|||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Context Contains Answer
+    reference: ''
+  aa26aab2-d2e7-4560-b7eb-0cbcff7c0f31: !Template
+    answer_choices: null
+    id: aa26aab2-d2e7-4560-b7eb-0cbcff7c0f31
+    jinja: "{{question}}\n\nBesvar ovenst\xE5ende sp\xF8rgsm\xE5l baseret p\xE5 nedenst\xE5\
+      ende kontekst:\n\n{{context}} |||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Given Context Answer Question
+    reference: ''
+  abdfa570-2de5-406c-9051-caa6a1362796: !Template
+    answer_choices: null
+    id: abdfa570-2de5-406c-9051-caa6a1362796
+    jinja: "Hvad er svaret p\xE5 sp\xF8rgsm\xE5let: {{sp\xF8rgsm\xE5l}} fra den f\xF8\
+      lgende artikel?\n\n{{context}}|||\n{{answers.text | choice}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: What Is The Answer
+    reference: ''
+  b3ec0888-dd6f-466a-abd4-b2fbcacfdb8b: !Template
+    answer_choices: null
+    id: b3ec0888-dd6f-466a-abd4-b2fbcacfdb8b
+    jinja: "Jeg har en test, hvor jeg f\xE5r f\xF8lgende artikel, hvad er et svar\
+      \ p\xE5 sp\xF8rgsm\xE5let: {{sp\xF8rgsm\xE5l}}?\n\n{{context}}|||\n{{answers.text\
+      \ | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Test
+    reference: ''
+  bf525757-8cde-4839-81fb-a85be3fd1192: !Template
+    answer_choices: null
+    id: bf525757-8cde-4839-81fb-a85be3fd1192
+    jinja: "Givet nedenst\xE5ende kontekst:\n\n{{context}}\n\nG\xE6t en gyldig titel\
+      \ til det! |||\n{{title}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: false
+    name: Guess Title For Context
+    reference: ''
+  d055747f-7a32-4e12-aab1-fed35d42a445: !Template
+    answer_choices: null
+    id: d055747f-7a32-4e12-aab1-fed35d42a445
+    jinja: "Fundet f\xF8lgende artikel online, brug den til at besvare sp\xF8rgsm\xE5\
+      let: {{question}}\n\n{{context}}|||\n{{answers.text | choice}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Found Context Online
+    reference: ''
+  d1abb8a0-03c4-41ef-865c-aa275278a0e4: !Template
+    answer_choices: null
+    id: d1abb8a0-03c4-41ef-865c-aa275278a0e4
+    jinja: "En ven bad mig om at besvare dette sp\xF8rgsm\xE5l: {{sp\xF8rgsm\xE5l}}\
+      \ ved hj\xE6lp af artiklen: {{context}}, hvad ville svaret v\xE6re?\n\n|||\n\
+      {{answers.text | choice}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Friend Question
+    reference: ''
+  fcbe0609-06ce-4cbd-91de-adc38966bcac: !Template
+    answer_choices: null
+    id: fcbe0609-06ce-4cbd-91de-adc38966bcac
+    jinja: "L\xE6s det f\xF8lgende afsnit, og udtr\xE6k svaret p\xE5 sp\xF8rgsm\xE5\
+      let: {{question}}\n\n{{context}} |||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: 'Read And Extract '
+    reference: ''

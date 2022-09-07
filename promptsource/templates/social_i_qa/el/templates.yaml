@@ -1,0 +1,97 @@
+dataset: social_i_qa
+subset: el
+templates:
+  605691e9-df59-415d-a622-530734c7df38: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 605691e9-df59-415d-a622-530734c7df38
+    jinja: "\u0395\u03BC\u03B1\u03B8\u03B1 \u03BF\u03C4\u03B9 {{context}}\n\n\u039A\
+      \u03B1\u03B9 \u03B1\u03BD\u03B1\u03C1\u03C9\u03C4\u03B9\u03CC\u03BC\u03BF\u03C5\
+      \u03BD {{question}}\n\n|||\n\n{{answer_choices[label | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: I was wondering
+    reference: ''
+  666f415b-e3ac-47bf-a79b-19024c4a4143: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 666f415b-e3ac-47bf-a79b-19024c4a4143
+    jinja: "{{context}}\n\n\u0394\u03B5\u03B4\u03BF\u03BC\u03AD\u03BD\u03BF\u03C5\
+      \ \u03C4\u03BF\u03C5 \u03C0\u03BB\u03B1\u03B9\u03C3\u03AF\u03BF\u03C5: {{question}}\n\
+      \n\u03A0\u03B9\u03B8\u03B1\u03BD\u03AD\u03C2 \u03B1\u03C0\u03B1\u03BD\u03C4\u03AE\
+      \u03C3\u03B5\u03B9\u03C2: {{answer_choices | join(\", \")}}\n\n|||\n\n{{answer_choices[label\
+      \ | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate answer
+    reference: ''
+  991f78cc-82d3-482f-b1de-f37a7179a316: !Template
+    answer_choices: "\u039D\u03B1\u03AF ||| \u039F\u03C7\u03B9"
+    id: 991f78cc-82d3-482f-b1de-f37a7179a316
+    jinja: "{% set random_answer_id = range(0,2) | choice%}\n{% set answers = [answerA,\
+      \ answerB, answerC] %}\n{{context}}\n\n\u0394\u03B5\u03B4\u03BF\u03BC\u03AD\u03BD\
+      \u03B7\u03C2 \u03C4\u03B7\u03C2 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7\u03C2\
+      \ \"{{question}}\", \u03B5\u03AF\u03BD\u03B1\u03B9 \"{{answers[random_answer_id]}}\"\
+      \ \u03BC\u03B9\u03B1 \u03AD\u03B3\u03BA\u03C5\u03C1\u03B7 \u03B1\u03C0\u03AC\
+      \u03BD\u03C4\u03B7\u03C3\u03B7;\n\n|||\n\n{% if (label | int) - 1 == random_answer_id\
+      \ %}\n    \u039D\u03B1\u03AF\n{% else %}\n    \u039F\u03C7\u03B9\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Check if a random answer is valid or not
+    reference: ''
+  b980667e-b4ca-44ce-aba9-5b47d3ccf406: !Template
+    answer_choices: null
+    id: b980667e-b4ca-44ce-aba9-5b47d3ccf406
+    jinja: "{{context}}\n\n\u0394\u03B5\u03B4\u03BF\u03BC\u03AD\u03BD\u03BF\u03C5\
+      \ \u03CC\u03C4\u03B9 \u03B7 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7\
+      \ \u03C3\u03B5 \u03BC\u03B9\u03B1 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7\
+      \ \u03B5\u03AF\u03BD\u03B1\u03B9 \"{{{\"1\": answerA, \"2\": answerB, \"3\"\
+      : answerC}[label]}}\", \u03C0\u03BF\u03B9\u03B1 \u03B5\u03AF\u03BD\u03B1\u03B9\
+      \ \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7;\n\n|||\n\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Generate the question from the answer
+    reference: ''
+  cbad777f-5794-4d71-bf3d-54da6043e5f1: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: cbad777f-5794-4d71-bf3d-54da6043e5f1
+    jinja: "{{context}}\n\n\u0394\u03B5\u03B4\u03BF\u03BC\u03AD\u03BD\u03BF\u03C5\
+      \ \u03C4\u03BF\u03C5 \u03C0\u03BB\u03B1\u03B9\u03C3\u03AF\u03BF\u03C5: {{question}}\n\
+      \n|||\n\n{{answer_choices[label | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Generate answer
+    reference: ''
+  e2316120-2461-4664-943d-962a85008e23: !Template
+    answer_choices: A ||| B ||| C
+    id: e2316120-2461-4664-943d-962a85008e23
+    jinja: "\u03A3\u03C5\u03BC\u03C6\u03C1\u03B1\u03B6\u03CC\u03BC\u03B5\u03BD\u03B1\
+      : {{context}}\n\n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{question}}\n\n\
+      \u03A0\u03BF\u03B9\u03B1 \u03B1\u03C0\u03CC \u03B1\u03C5\u03C4\u03AD\u03C2 \u03C4\
+      \u03B9\u03C2 \u03B1\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\u03B5\u03B9\u03C2 \u03B1\
+      \u03C0\u03B1\u03BD\u03C4\u03AC \u03BA\u03B1\u03BB\u03CD\u03C4\u03B5\u03C1\u03B1\
+      \ \u03C3\u03C4\u03B7\u03BD \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03C3\
+      \u03CD\u03BC\u03C6\u03C9\u03BD\u03B1 \u03BC\u03B5 \u03C4\u03BF \u03C0\u03BB\u03B1\
+      \u03AF\u03C3\u03B9\u03BF;\n\nA: {{answerA}}\n\nB: {{answerB}}\n\nC: {{answerC}}\n\
+      \n|||\n\n{{{\"1\": \"A\", \"2\": \"B\", \"3\": \"C\"}[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate index
+    reference: ''

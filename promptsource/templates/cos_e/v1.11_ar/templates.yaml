@@ -1,0 +1,176 @@
+dataset: cos_e
+subset: v1.11_ar
+templates:
+  02a87cd3-6595-44bd-a384-95bdc8b3dd0c: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: 02a87cd3-6595-44bd-a384-95bdc8b3dd0c
+    jinja: "{{ question }}\n\u0627\u062E\u062A\u0631 \u0627\u0644\u062E\u064A\u0627\
+      \u0631 \u0627\u0644\u0623\u0646\u0633\u0628 \u0644\u0644\u0625\u062C\u0627\u0628\
+      \u0629 \u0639\u0644\u0649 \u0627\u0644\u0633\u0624\u0627\u0644 \u0623\u0639\u0644\
+      \u0627\u0647.\n\u062E\u064A\u0627\u0631\u0627\u062A:\n- {{ answer_choices |\
+      \ join(\"\\n- \") }}\n|||\n{{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_description_option_text
+    reference: ''
+  046ce4df-c847-4dc2-b53c-9f02d32aff8a: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: 046ce4df-c847-4dc2-b53c-9f02d32aff8a
+    jinja: "{{ question }}\n\u0627\u062E\u062A\u0631 \u0627\u0644\u062E\u064A\u0627\
+      \u0631 \u0627\u0644\u0623\u0646\u0633\u0628 \u0644\u0644\u0625\u062C\u0627\u0628\
+      \u0629 \u0639\u0644\u0649 \u0627\u0644\u0633\u0624\u0627\u0644 \u0623\u0639\u0644\
+      \u0627\u0647.\n\u062E\u064A\u0627\u0631\u0627\u062A\uFF1A\n{% for k in range(choices\
+      \ | length) %}\n{{'. '.join([answer_choices[k], choices[k]])}}\n{% endfor %}\n\
+      |||\n{{ answer_choices[choices.index(answer)] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_description_option_id
+    reference: ''
+  25863d16-34be-4c5f-9040-11d5c6398b4b: !Template
+    answer_choices: null
+    id: 25863d16-34be-4c5f-9040-11d5c6398b4b
+    jinja: "\u0633\u0624\u0627\u0644: {{question}}\n\n\u0627\u062E\u062A\u064A\u0627\
+      \u0631\u0627\u062A: \n- {{ choices | join(\"\\n- \") }}\n\n\u0627\u0644\u0623\
+      \u0633\u0627\u0633 \u0627\u0644\u0645\u0646\u0637\u0642\u064A \u0644\u0644\u0627\
+      \u062E\u062A\u064A\u0627\u0631 \"{{answer}}\" \u0643\u0645\u0627 \u0627\u0644\
+      \u062C\u0648\u0627\u0628 \u0647\u0648: |||\n{{abstractive_explanation}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: rationale
+    reference: ''
+  4b946a87-b39c-4f01-9041-832d82da48af: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: 4b946a87-b39c-4f01-9041-832d82da48af
+    jinja: "{{ question }}\n- {{ answer_choices | join(\"\\n- \") }}\n\n\u0623\u0641\
+      \u0636\u0644 \u0625\u062C\u0627\u0628\u0629\n|||\n{{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_option_description_text
+    reference: ''
+  55dd7471-c01e-4197-a8cd-d8e6359ef582: !Template
+    answer_choices: null
+    id: 55dd7471-c01e-4197-a8cd-d8e6359ef582
+    jinja: "\u0625\u0644\u064A\u0643 \u0633\u0624\u0627\u0644 \u0648\u0628\u0639\u0636\
+      \ \u0627\u0644\u0625\u062C\u0627\u0628\u0627\u062A \u0627\u0644\u0645\u0645\u0643\
+      \u0646\u0629: \n\n\u0633\u0624\u0627\u0644: {{ question }}\n\u0627\u0644\u0625\
+      \u062C\u0627\u0628\u0629 \u0627\u0644\u0645\u062D\u062A\u0645\u0644\u0629: {{\
+      \ choices | join(\", \") }}\n\n\u0644\u0645\u0627\u0630\u0627 \"{{answer}}\"\
+      \ \u0625\u062C\u0627\u0628\u0629 \u062A\u062A\u0645\u0627\u0634\u0649 \u0645\
+      \u0639 \u0627\u0644\u062D\u0633 \u0627\u0644\u0633\u0644\u064A\u0645 \u0627\u0644\
+      \u0628\u0634\u0631\u064A\u061F \n|||\n{{ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: aligned_with_common_sense
+    reference: ''
+  60354294-f30a-4a5b-be18-372c3c1a3491: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: 60354294-f30a-4a5b-be18-372c3c1a3491
+    jinja: "\u0627\u062E\u062A\u0631 \u0627\u0644\u062E\u064A\u0627\u0631 \u0628\u0645\
+      \u0627 \u064A\u062A\u0645\u0627\u0634\u0649 \u0645\u0639 \u0627\u0644\u062D\u0633\
+      \ \u0627\u0644\u0633\u0644\u064A\u0645 \u0644\u0644\u0625\u062C\u0627\u0628\u0629\
+      \ \u0639\u0644\u0649 \u0627\u0644\u0633\u0624\u0627\u0644.\n\u0633\u0624\u0627\
+      \u0644: {{ question }}\n\u062E\u064A\u0627\u0631\u0627\u062A:\n{% for k in range(choices\
+      \ | length) %}\n{{'. '.join([answer_choices[k], choices[k]])}}\n{% endfor %}\n\
+      |||\n{{ answer_choices[choices.index(answer)] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_question_option_id
+    reference: ''
+  73f0f76b-c7f9-41fd-b4df-705625ab8241: !Template
+    answer_choices: null
+    id: 73f0f76b-c7f9-41fd-b4df-705625ab8241
+    jinja: "\u0633\u0624\u0627\u0644: {{ question }}\n\u062E\u064A\u0627\u0631\u0627\
+      \u062A:\n- {{ choices | join(\"\\n- \") }}\n\n\u0627\u0634\u0631\u062D \u0644\
+      \u0645\u0627\u0630\u0627 \u064A\u062E\u062A\u0627\u0631 \u0627\u0644\u0625\u0646\
+      \u0633\u0627\u0646 \"{{answer}}\" \u0644\u0644\u0625\u062C\u0627\u0628\u0629\
+      \ \u0639\u0644\u0649 \u0627\u0644\u0633\u0624\u0627\u0644 \u0623\u0639\u0644\
+      \u0627\u0647:\n|||\n{{ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: explain_why_human
+    reference: ''
+  90a7d84f-0316-4b28-a4fe-2f61c0126158: !Template
+    answer_choices: null
+    id: 90a7d84f-0316-4b28-a4fe-2f61c0126158
+    jinja: "\u0633\u0624\u0627\u0644: {{ question }}\n\u062E\u064A\u0627\u0631\u0627\
+      \u062A:\n- {{ choices | join(\"\\n- \") }}\n\n\u0627\u0644\u062C\u0648\u0627\
+      \u0628 \u0647\u0648 \"{{answer}}\"\n|||\n{{ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_explanation_given_text
+    reference: ''
+  a8036e94-ad4a-4f26-9765-cf7223800138: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: a8036e94-ad4a-4f26-9765-cf7223800138
+    jinja: "\u0627\u062E\u062A\u0631 \u0627\u0644\u062E\u064A\u0627\u0631 \u0628\u0645\
+      \u0627 \u064A\u062A\u0645\u0627\u0634\u0649 \u0645\u0639 \u0627\u0644\u062D\u0633\
+      \ \u0627\u0644\u0633\u0644\u064A\u0645 \u0644\u0644\u0625\u062C\u0627\u0628\u0629\
+      \ \u0639\u0644\u0649 \u0627\u0644\u0633\u0624\u0627\u0644.\n\u0623\u0633\u0626\
+      \u0644\u0629: {{ question }}\n\u062E\u064A\u0627\u0631\u0627\u062A:\n- {{ answer_choices\
+      \ | join(\"\\n- \") }}\n|||\n{{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_question_option_text
+    reference: ''
+  e57a5c48-209c-4e82-b061-dbc8d124dffa: !Template
+    answer_choices: null
+    id: e57a5c48-209c-4e82-b061-dbc8d124dffa
+    jinja: "\u0647\u0630\u0627 \u0633\u0624\u0627\u0644: {{ question }}\n\n\u0641\u064A\
+      \u0645\u0627 \u064A\u0644\u064A \u0625\u062C\u0627\u0628\u0627\u062A \u0645\u062D\
+      \u062A\u0645\u0644\u0629 \u0644\u0647\u0630\u0627 \u0627\u0644\u0633\u0624\u0627\
+      \u0644:\n- {{ choices | join(\"\\n- \") }}\n\n\u0623\u0639\u062A\u0642\u062F\
+      \ \u0623\u0646 \u0627\u0644\u062E\u064A\u0627\u0631 \u0627\u0644\u0635\u062D\
+      \u064A\u062D \u0647\u0648 \"{{answer}}\" \u060C \u0625\u0644\u064A\u0643 \u0627\
+      \u0644\u0633\u0628\u0628:\n|||\n{{ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: i_think
+    reference: ''
+  f678d224-23f0-488b-9c5d-0bf466a0aa16: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: f678d224-23f0-488b-9c5d-0bf466a0aa16
+    jinja: "{{ question }}\n{% for k in range(choices | length) %}\n{{'. '.join([answer_choices[k],\
+      \ choices[k]])}}\n{% endfor %}\n\u0623\u0641\u0636\u0644 \u0625\u062C\u0627\u0628\
+      \u0629\n|||\n{{ answer_choices[choices.index(answer)] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_option_description_id
+    reference: ''

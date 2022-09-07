@@ -1,0 +1,156 @@
+dataset: amazon_polarity
+subset: hr
+templates:
+  1e90a24a-1182-43dd-9445-22f2e56e5761: !Template
+    answer_choices: Negativan ||| Pozitivan
+    id: 1e90a24a-1182-43dd-9445-22f2e56e5761
+    jinja: 'Titula: {{title}}
+
+      Pregled: {{content}}
+
+      Je li pregled pozitivan ili negativan? |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review
+    reference: ''
+  3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
+    answer_choices: Ne ||| Da
+    id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
+    jinja: "Na temelju ovog pregleda, bi li korisnik preporu\u010Dio ovaj proizvod?\n\
+      ===\nPregled: {{content}}\nOdgovor: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: User_recommend_this_product
+    reference: 'Reformulation equivalent to sent analysis: would the user recommend
+      this product?'
+  592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
+    answer_choices: Ne ||| Da
+    id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
+    jinja: 'Je li ovaj pregled proizvoda pozitivan?
+
+      Titula: {{title}}
+
+      Pregled: {{content}}
+
+      Odgovor: |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_product_review_positive
+    reference: ''
+  745b9c05-10df-4a7e-81ad-1b88cefcb166: !Template
+    answer_choices: Da ||| Ne
+    id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
+    jinja: 'Titula: {{title}}
+
+      Pregled: {{content}}
+
+      Je li ovaj pregled proizvoda negativan?|||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review_negative
+    reference: ''
+  8abb5377-5dd3-4402-92a5-0d81adb6a325: !Template
+    answer_choices: Negativan ||| Pozitivan
+    id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
+    jinja: "Titula: {{title}}\nPregled: {{content}}\nPrenosi li ovaj pregled proizvoda\
+      \ negativan ili pozitivan osje\u0107aj?|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: convey_negative_or_positive_sentiment
+    reference: ''
+  9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
+    answer_choices: Negativan ||| Pozitivan
+    id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
+    jinja: 'Postoji li negativan ili pozitivan ton ovog pregleda proizvoda?
+
+      ===
+
+      Titula: {{title}}
+
+      Pregled: {{content}}
+
+      Odgovor: |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: negative_or_positive_tone
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
+    answer_choices: nezadovoljan ||| zadovoljan
+    id: b13369e8-0500-4e93-90d4-8e6814bfb97b
+    jinja: 'Evo pregleda koju je kupac ostavio na proizvodu.Biste li rekli da je bio
+      {{answer_choices[1]}} ili {{answer_choices[0]}}?
+
+      Titula: {{title}}
+
+      Pregled: {{content}}
+
+      |||
+
+      {{answer_choices[label]}} '
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: user_satisfied
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
+    answer_choices: "smanjenje ||| pove\u0107ati"
+    id: b13369e8-0500-4e93-90d4-8e6814bfb98b
+    jinja: "Razmi\u0161ljate ho\u0107ete li kupiti proizvod.Gledate recenzije.Bi li\
+      \ sljede\u0107i pregled {{answer_choices[0]}} ili {{answer_choices[1]}} \u0161\
+      anse da kupite proizvod?\nNaslov pregleda: {{title}}\nPregled proizvoda: {{content}}\n\
+      |||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: would_you_buy
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
+    answer_choices: neprijatan ||| laskav
+    id: b13369e8-0500-4e93-90d4-8e6814bfb99b
+    jinja: 'Titula: {{title}}
+
+      Pregled proizvoda: {{content}}
+
+      Da li biste rekli da ovaj pregled prikazuje proizvod u {{answer_choices[1]}}
+      ili {{answer_choices[0]}} svjetlu?
+
+      |||
+
+      {{answer_choices[label]}} '
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: flattering_or_not
+    reference: ''

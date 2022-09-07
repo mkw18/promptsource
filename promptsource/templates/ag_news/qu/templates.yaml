@@ -1,0 +1,94 @@
+dataset: ag_news
+subset: qu
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: Pachamamamanta pulitika ||| Pukllay ||| Negocio ||| Ciencia y tecnología nisqamanta
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "¿Ima etiquetataq kay noticiamanta aswan allinta willakun?\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: Pachamamamanta pulitika ||| Pukllay ||| Negocio ||| Ciencia y tecnología nisqamanta
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "¿Kayqa {{\"pacha política, pukllay, negocio, icha ciencia y tecnología\"}} nisqamanta\
+      \ willakuychu?\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: Pulitiku ||| Atleta ||| Negocio kamachiq ||| Cientifico
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: '¿Kay qatiq qillqasqata huk {{"politico"}} kaqman, huk {{"atleta"}} kaqman, 
+      huk {{"negocio kamachiqman"}} kaqman utaq huk {{"yachaq"}} kaqman yuyaychawaqchu?
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: Mundo Noticias ||| Pukllay ||| Negocio ||| Ciencia y Tecnología
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\nPeriódicopa qatiqnin partekunamanta, ¿mayqen partenkunapichá kay yachachikuy\
+      \ rikurinman? {{\"Tiqsimuyupi Willakuykuna\"}}, {{\"Pukllaykuna\"}}, {{\"Negociokuna\"}}, icha {{\"Ciencia y Tecnología\"\
+      }}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: Mundo Noticias ||| Pukllay ||| Negocio ||| Ciencia y Tecnología
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\n¿Periódicopi mayqen t’aqapinchá kay qelqa lloqsimunman? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: Pachamamamanta pulitika ||| Pukllay ||| Negocio ||| Ciencia y tecnología nisqamanta
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \n¿Kayqa {{\"pacha política, pukllay, negocio, icha ciencia y tecnología\"}} nisqamanta\
+      \ willakuychu? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: Pachamamamanta pulitika ||| Pukllay ||| Negocio ||| Ciencia y tecnología nisqamanta
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \n¿Ima etiquetataq kay noticiamanta aswan allinta willakun? ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

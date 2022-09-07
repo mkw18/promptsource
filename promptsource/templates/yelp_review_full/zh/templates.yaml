@@ -1,0 +1,87 @@
+dataset: yelp_review_full
+subset: zh
+templates:
+  135fcd11-9fcc-4b55-bf1b-9b76290d0f6b: !Template
+    answer_choices: "1\u661F ||| 2\u661F ||| 3\u661F ||| 4\u661F ||| 5\u661F"
+    id: 135fcd11-9fcc-4b55-bf1b-9b76290d0f6b
+    jinja: "{{ text }}\n\u6240\u4EE5\u6211\u60F3\u7ED9\u5B83 ||| {{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: so_i_would
+    reference: ''
+  27b6bc81-bb1c-467b-91c0-22a4d6a19f44: !Template
+    answer_choices: "1\u661F ||| 2\u661F ||| 3\u661F ||| 4\u661F ||| 5\u661F"
+    id: 27b6bc81-bb1c-467b-91c0-22a4d6a19f44
+    jinja: "{{ text }}\n===\n\u57FA\u4E8E\u6B64\uFF0C\u6211\u7684\u8BC4\u5206\u662F\
+      \ ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based_on_that
+    reference: ''
+  29fc6386-90b3-4976-b249-26e49fe7c924: !Template
+    answer_choices: "1\u661F ||| 2\u661F ||| 3\u661F ||| 4\u661F ||| 5\u661F"
+    id: 29fc6386-90b3-4976-b249-26e49fe7c924
+    jinja: "\u8BC4\u8BBA\u6587\u5B57\uFF1A\n{{ text }}\n\n\u661F\u661F\uFF1A |||\n\
+      {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_star
+    reference: simulating webpage
+  2a57af86-e25a-4572-ba9e-aa921842c04b: !Template
+    answer_choices: "1\u661F ||| 2\u661F ||| 3\u661F ||| 4\u661F ||| 5\u661F"
+    id: 2a57af86-e25a-4572-ba9e-aa921842c04b
+    jinja: "{{ text }} \u6211\u5BF9\u8FD9\u4E2A\u5730\u65B9\u7684\u8BC4\u5206\u662F\
+      \ ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: this_place
+    reference: ''
+  4dd990b3-7201-4cba-bb9a-baa462d68b1a: !Template
+    answer_choices: 1 ||| 2 ||| 3 ||| 4 ||| 5
+    id: 4dd990b3-7201-4cba-bb9a-baa462d68b1a
+    jinja: "\u8BC4\u8BBA\u6587\u5B57\uFF1A\n{{ text }}\n\n\u8BC4\u8BBA\u5206\u6570\
+      \uFF081\u81F35\u4E4B\u95F4\uFF09\uFF1A |||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_score
+    reference: Simulating webpage
+  6d4bfb59-4260-40a5-9da5-e061720bd430: !Template
+    answer_choices: 1 ||| 2 ||| 3 ||| 4 ||| 5
+    id: 6d4bfb59-4260-40a5-9da5-e061720bd430
+    jinja: "\u5BA1\u67E5\uFF1A {{text}}\n\u4EE51\u52305\u7684\u6BD4\u4F8B\uFF0C\u6211\
+      \u4F1A\u7ED9\u8FD9\u4E2A\u4EA7\u54C1 ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: on_a_scale
+    reference: ''
+  e8091beb-c0fa-490d-9e0c-32eb6907dbc0: !Template
+    answer_choices: "1\u661F ||| 2\u661F ||| 3\u661F ||| 4\u661F ||| 5\u661F"
+    id: e8091beb-c0fa-490d-9e0c-32eb6907dbc0
+    jinja: "\u8BC4\u8BBA\u6587\u5B57\uFF1A\n{{ text }}\n\n\u8BC4\u8BBA\u8BC4\u5206\
+      \uFF1A |||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_rating
+    reference: It's simulating the format of a webpage.

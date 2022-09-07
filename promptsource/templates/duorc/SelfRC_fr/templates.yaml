@@ -1,0 +1,140 @@
+dataset: duorc
+subset: SelfRC_fr
+templates:
+  1f544641-ba15-44ef-bfcd-c951d320eb9a: !Template
+    answer_choices: null
+    id: 1f544641-ba15-44ef-bfcd-c951d320eb9a
+    jinja: "{% if no_answer == false%}\nG\xE9n\xE9rer une question qui a la r\xE9\
+      ponse suivante: \n{{answers|choice}} \nPour l'intrigue de film suivante: \n\
+      {{plot}}\n|||\n{{question}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question_by_answer
+    reference: Given the passage and the answer, generate a question which has that
+      answer.
+  289254d0-e382-4c9d-9638-984c01fe7391: !Template
+    answer_choices: null
+    id: 289254d0-e382-4c9d-9638-984c01fe7391
+    jinja: "Je suis r\xE9alisateur et je viens de recevoir l'intrigue de film suivante.Pouvez-vous\
+      \ m'aider \xE0 r\xE9pondre \xE0 cette question?Sinon, faites-le moi savoir en\
+      \ \xE9crivant \"{{\"Pas responsable\"}}\".\n\nTitre de l'intrigue: {{title}}\n\
+      Plots de film: {{plot}}\nMa question: {{question}}\n|||\n{% if no_answer %}\n\
+      Pas responsable\n{% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: movie_director
+    reference: ''
+  606e9fc0-d07d-45e6-a828-b786fd3a10da: !Template
+    answer_choices: null
+    id: 606e9fc0-d07d-45e6-a828-b786fd3a10da
+    jinja: "Extraire la r\xE9ponse \xE0 la question suivante de l'intrigue du film.Si\
+      \ la question n'est pas responsable, veuillez sortir \"{{\"Je ne peux pas r\xE9\
+      pondre\"}}\".\nQuestion: {{question}}\nTitre: {{title}}\nPlots de film: {{plot}}\n\
+      |||\n{% if no_answer %}\nJe ne peux pas r\xE9pondre\n{% else %}\n{{answers |\
+      \ choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: extract_answer
+    reference: ''
+  af62f222-a8d2-439f-9586-52e0279d25cc: !Template
+    answer_choices: null
+    id: af62f222-a8d2-439f-9586-52e0279d25cc
+    jinja: "G\xE9n\xE9rez une question sur l'intrigue de film suivante: {{ plot }}\n\
+      |||\n{{ question }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: Given the plot, generate a question.
+  c1829c38-eae3-49a9-a047-f89316f58140: !Template
+    answer_choices: null
+    id: c1829c38-eae3-49a9-a047-f89316f58140
+    jinja: "Veuillez r\xE9pondre \xE0 la question suivante sur cette intrigue de film.Si\
+      \ c'est sans r\xE9ponse, veuillez sortir \"{{\"Pas de r\xE9ponse\"}}\".\n\n\
+      Question: {{question}}\nTitre de l'intrigue du film: {{title}}\nPlots de film:\
+      \ {{plot}}\n|||\n{% if no_answer %}\nPas de r\xE9ponse\n{% else %}\n{{answers\
+      \ | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question
+    reference: ''
+  c76b38f1-b47a-4354-960d-58d2f0974d14: !Template
+    answer_choices: null
+    id: c76b38f1-b47a-4354-960d-58d2f0974d14
+    jinja: '{% if no_answer == false%}
+
+      Construisez une intrigue de film autour de ceci: {{ question }} {{answers|choice}}
+
+      |||
+
+      {{ plot }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: build_story_around_qa
+    reference: Given the question-answer pair, generate a relevant plot.
+  c917a801-28fe-4c78-93d8-8e43897aa613: !Template
+    answer_choices: null
+    id: c917a801-28fe-4c78-93d8-8e43897aa613
+    jinja: "Question: {{question}}\nS'il n'y a pas de r\xE9ponse, veuillez sortir\
+      \ \"{{\"Des informations insuffisantes pour fournir une r\xE9ponse.\"}}\".\n\
+      Titre du film: {{title}}\nLe contexte: {{plot}}\n|||\n{% if no_answer %}\nDes\
+      \ informations insuffisantes pour fournir une r\xE9ponse.\n{% else %}\n{{answers|choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_answering
+    reference: Given a passage and a question, generate an answer.
+  d486ac96-de6b-403a-8628-5adb23252194: !Template
+    answer_choices: null
+    id: d486ac96-de6b-403a-8628-5adb23252194
+    jinja: "Sugg\xE9rez un titre de film pour l'intrigue de film suivante: {{plot}}\n\
+      |||\n{{title}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: title_generation
+    reference: Given the plot for the movie, suggest a title.
+  f64279e3-dc9b-4480-9aa6-72d9d1ca2287: !Template
+    answer_choices: null
+    id: f64279e3-dc9b-4480-9aa6-72d9d1ca2287
+    jinja: "J'essaie de d\xE9cider si cela vaut la peine d'investir dans cette proposition\
+      \ de film.Pouvez-vous m'aider \xE0 r\xE9pondre \xE0 quelques questions?Si vous\
+      \ ne pouvez pas, veuillez dire \"{{\"Non je ne peux pas\"}}\".\n\nQuestion:\
+      \ {{question}}\nTitre du film: {{title}}\nPlots de film: {{plot}}\n|||\n{% if\
+      \ no_answer %}\nNon je ne peux pas\n{% else %}\n{{answers|choice}}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: decide_worth_it
+    reference: ''

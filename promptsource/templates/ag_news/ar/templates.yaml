@@ -1,0 +1,91 @@
+dataset: ag_news
+subset: ar
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: السياسة العالمية ||| رياضات ||| اعمال ||| العلوم والتكنولوجيا
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "ما هي التسمية التي تصف هذه المقالة الإخبارية بشكل أفضل؟\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: السياسة العالمية ||| رياضات ||| اعمال ||| العلوم والتكنولوجيا
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "؟{{\"السياسة العالمية أو الرياضة أو الأعمال التجارية أو العلوم والتكنولوجيا\"}} هل هذا خبر بخصوص\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: سياسي ||| رياضي ||| الاعمال التنفيذية ||| عالم
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: 'هل تنصح بالمقالة التالية إلى {{"سياسي"}} أو {{"رياضي"}} أو {{"رجل أعمال"}} أو {{"عالم"}}؟
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: اخبار العالم ||| رياضات ||| اعمال ||| العلوم والتكنولوجيا
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\n؟{{\"العلوم والتكنولوجيا\"}} أو {{\"اعمال\"}} أو {{\"رياضات\"}} أو {{\"اخبار العالم\"\
+      }} في أي قسم من أقسام الصحيفة التالية من المحتمل أن تظهر هذه المقالة؟ ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: اخبار العالم ||| رياضات ||| اعمال ||| العلوم والتكنولوجيا
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\nفي أي قسم من الجريدة من المحتمل أن تظهر هذه المقالة؟ ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: السياسة العالمية ||| رياضات ||| اعمال ||| العلوم والتكنولوجيا
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \nهل هذا خبر يتعلق {{\"بالسياسة العالمية أو الرياضة أو الأعمال التجارية أو العلوم والتكنولوجيا\"\
+      }}؟ ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: السياسة العالمية ||| رياضات ||| اعمال ||| العلوم والتكنولوجيا
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \nما هي التسمية التي تصف هذه المقالة الإخبارية بشكل أفضل؟ ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

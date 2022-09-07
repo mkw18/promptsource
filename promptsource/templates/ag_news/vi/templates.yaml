@@ -1,0 +1,95 @@
+dataset: ag_news
+subset: vi
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: Chính trị thế giới ||| Thể thao ||| Kinh doanh ||| Khoa học và Công nghệ
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "Nhãn nào mô tả tốt nhất bài báo này?\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: Chính trị thế giới ||| Thể thao ||| Kinh doanh ||| Khoa học và Công nghệ
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "Đây có phải là một tin tức liên quan đến {{\ "chính trị thế giới, thể thao, kinh doanh\
+      \ hay khoa học và công nghệ \"}} không?\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: Chính trị gia ||| Vận động viên ||| Giám đốc điều hành kinh doanh ||| Nhà khoa học
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: 'Bạn sẽ giới thiệu bài viết sau cho một {{"chính trị gia"}}, một {{"vận động viên"}}, 
+      một {{"giám đốc điều hành kinh doanh"}} hay một {{"nhà khoa học"}}?
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: Tin tức thế giới ||| Thể thao ||| Kinh doanh ||| Khoa học và Công nghệ
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\nBài báo này có thể sẽ xuất hiện trong phần nào sau đây của một tờ báo? {{\ "Tin tức\
+      \ Thế giới \"}}, {{\ "Thể thao \"}}, {{\ "Kinh doanh \"}} hay {{\ "Khoa học và\
+      \ Công nghệ \"}}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: Tin tức thế giới ||| Thể thao ||| Kinh doanh ||| Khoa học và Công nghệ
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\nBài báo này có thể sẽ xuất hiện trên phần nào của một tờ\
+      \ báo? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: Chính trị thế giới ||| Thể thao ||| Kinh doanh ||| Khoa học và Công nghệ
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \nĐây có phải là một tin tức liên quan đến {{\ "chính trị thế giới, thể thao,\
+      \ kinh doanh hay khoa học và công nghệ \"}} không? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: Chính trị thế giới ||| Thể thao ||| Kinh doanh ||| Khoa học và Công nghệ
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \nNhãn nào mô tả tốt nhất bài báo này? ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

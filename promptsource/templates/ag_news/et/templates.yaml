@@ -1,0 +1,95 @@
+dataset: ag_news
+subset: et
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: Maailmapoliitika ||| Sport ||| Äri ||| Teaduse ja tehnoloogia
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "Milline silt kirjeldab seda uudisteartiklit kõige paremini?\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: Maailmapoliitika ||| Sport ||| Äri ||| Teaduse ja tehnoloogia
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "Kas see on uudis, mis puudutab {{\"maailmapoliitikat, sporti, äri,\
+      \ või teadus ja tehnoloogia\"}}?\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: Poliitik ||| Sportlane ||| Ärijuht ||| Teadlane
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: 'Kas soovitaksite järgmist artiklit {{"poliitikule"}}, {{"sportlasele"}},
+       {{"ärijuht"}} või {{"teadlane"}}?
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: Maailmauudised ||| Sport ||| Äri ||| Teaduse ja tehnoloogia
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\nMilline järgmistest ajalehe osadest oleks see\
+      \ artikkel ilmub tõenäoliselt? {{\"Maailmauudised\"}}, {{\"Sport\"}}, {{\"Äri\"\
+      }} või {{\"Teadus ja tehnoloogia\"}}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: Maailmauudised ||| Sport ||| Äri ||| Teaduse ja tehnoloogia
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\nMillises ajalehe jaotises see artikkel tõenäoliselt\
+      \ ilmuks? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: Maailmapoliitika ||| Sport ||| Äri ||| Teaduse ja tehnoloogia
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \nKas see on uudis, mis puudutab {{\"maailmapoliitikat, sporti,\
+       \ äri või teadus ja tehnoloogia\"}}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: Maailmapoliitika ||| Sport ||| Äri ||| Teaduse ja tehnoloogia
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \nMilline silt kirjeldab seda uudisteartiklit kõige paremini? ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

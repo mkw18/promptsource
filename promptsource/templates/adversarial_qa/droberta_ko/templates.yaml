@@ -1,0 +1,76 @@
+dataset: adversarial_qa
+subset: droberta_ko
+templates:
+  00755780-f3c0-44b4-b159-8f3873cdb163: !Template
+    answer_choices: null
+    id: 00755780-f3c0-44b4-b159-8f3873cdb163
+    jinja: "\uD559\uC0DD\uB4E4\uC774 \uAD6C\uC808\uC744 \uC77D\uACE0 \uADF8\uAC83\uC5D0\
+      \ \uB300\uD55C \uC9C8\uBB38\uC5D0 \uB2F5\uD560 \uC218\uC788\uB294 \uB2A5\uB825\
+      \uC744 \uD14C\uC2A4\uD2B8\uD558\uACE0 \uC2F6\uC2B5\uB2C8\uB2E4.\uAD6C\uC808\
+      \ \"{{context}}\"\uC5D0 \uB300\uD55C \uC88B\uC740 \uC9C8\uBB38\uC744 \uC81C\uC2DC\
+      \uD574 \uC8FC\uC2DC\uACA0\uC2B5\uB2C8\uAE4C? |||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  3b2459cc-6600-443c-abf8-8f60c34cd993: !Template
+    answer_choices: null
+    id: 3b2459cc-6600-443c-abf8-8f60c34cd993
+    jinja: "{% if metadata.split != \"test\" %}\n\"{{question}}\" \uC9C8\uBB38\uC5D0\
+      \ \uB300\uD55C \uB2F5\uC740 \"{{context}}\"\uC5D0 \uC788\uB2E4\uB294 \uAC83\uC744\
+      \ \uC54C\uACE0 \uC788\uC2B5\uB2C8\uB2E4.\uADF8\uAC83\uC774 \uBB34\uC5C7\uC778\
+      \uC9C0 \uB9D0\uD574 \uC904 \uC218 \uC788\uC2B5\uB2C8\uAE4C? |||\n\n{{answers.text\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  5bdb1815-5c6f-49a3-ad1d-367344420703: !Template
+    answer_choices: null
+    id: 5bdb1815-5c6f-49a3-ad1d-367344420703
+    jinja: "{% if metadata.split != \"test\" %}\n\uC758\uBB38: \"{{question}}\"\n\n\
+      \uBB38\uB9E5: \"{{context}}\"\n\n\uB300\uB2F5:\n|||\n{{answers.text | choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'
+  a0872cde-2f19-4ae6-919a-868da47bfbc3: !Template
+    answer_choices: null
+    id: a0872cde-2f19-4ae6-919a-868da47bfbc3
+    jinja: "{% if metadata.split != \"test\" %}\n\uB2E4\uC74C \uB9E5\uB77D\uC5D0\uC11C\
+      \ \uC9C8\uBB38\uC5D0 \uB300\uD55C \uB2F5\uC744 \uCD94\uCD9C\uD558\uC2ED\uC2DC\
+      \uC624.\n\uC758\uBB38: {{question}}\n\uBB38\uB9E5: {{context}}|||\n{{answers.text\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  a64d5a15-68e2-4d1c-b30a-ca8250c860f3: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860f3
+    jinja: "{% if metadata.split != \"test\" %}\n\uB2E4\uC74C \uAD6C\uC808\uC774 \uC8FC\
+      \uC5B4\uC84C\uC2B5\uB2C8\uB2E4\n\n\"{{context}}\",\n\n\uB2E4\uC74C \uC9C8\uBB38\
+      \uC5D0 \uB2F5\uD558\uC2ED\uC2DC\uC624.\uB2F5\uC740 \uD14D\uC2A4\uD2B8 \uB0B4\
+      \uC5D0 \uC788\uC2B5\uB2C8\uB2E4.\n\n\uC758\uBB38: {{question}} |||\n{{answers.text\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'

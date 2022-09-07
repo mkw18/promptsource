@@ -1,0 +1,125 @@
+dataset: common_gen
+subset: da
+templates:
+  45778bd5-fddc-4c60-a77b-4eff5bed1c0b: !Template
+    answer_choices: null
+    id: 45778bd5-fddc-4c60-a77b-4eff5bed1c0b
+    jinja: "Ignorerer r\xE6kkef\xF8lgen af koncepterne: {{ concepts | join(\", \"\
+      ) }}; \nGenerer en s\xE6tning med alle koncepterne:\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Given concepts - type 2
+    reference: Ignoring the order of the concepts:...
+  684f1859-0b8d-4efe-82e1-7218838813cd: !Template
+    answer_choices: null
+    id: 684f1859-0b8d-4efe-82e1-7218838813cd
+    jinja: "S\xE6t koncepterne sammen for at danne en s\xE6tning: {{ concepts | join(\"\
+      , \") }}.\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Put together
+    reference: This is similar to a task description
+  a4991cc7-cc91-4f37-af80-1983a02eb950: !Template
+    answer_choices: null
+    id: a4991cc7-cc91-4f37-af80-1983a02eb950
+    jinja: "Konstruer en s\xE6tning med ordet {{concepts | choice}}. \n\nTip: Brug\
+      \ {{concepts | join(\", \")}} til at begr\xE6nse outputs\xE6tningen.\n|||\n\
+      {{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: choice in concept centric sentence generation
+    reference: ''
+  b2033df4-7922-45b8-a113-e7784135cea9: !Template
+    answer_choices: null
+    id: b2033df4-7922-45b8-a113-e7784135cea9
+    jinja: "{% set seq = [ \n'Fra de nedenfor n\xE6vnte koncepter, generer en s\xE6\
+      tning:', \n'Konverter koncepterne til en s\xE6tning:', \n'I betragtning af listen\
+      \ over koncepter, skriv en s\xE6tning:'\n] %} \n{{ seq | choice }}\n{{ concepts\
+      \ | join(\", \") }}\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: random task template prompt
+    reference: With a randomly chosen task template, generate a sentence from the
+      list of concepts
+  b7012213-04c4-424d-85fb-39d63d8a0ca2: !Template
+    answer_choices: null
+    id: b7012213-04c4-424d-85fb-39d63d8a0ca2
+    jinja: "Hvad er emnerne i s\xE6tningen: {{target}}\n|||\n{{ concepts | join(\"\
+      , \") }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: topics from the sentence
+    reference: The template generates a random topic from the sentence
+  ed215962-8e51-45e7-b025-6e822f877098: !Template
+    answer_choices: null
+    id: ed215962-8e51-45e7-b025-6e822f877098
+    jinja: "Vi har s\xE6tningen: {{target}}; \nUddrag alle de vigtigste koncepter:\
+      \ \n|||\n{{ concepts | join(\", \") }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: sentence to concepts
+    reference: Template identifies the concepts from the sentence
+  f3fce748-89e0-4b88-94bb-72ddb9a04d10: !Template
+    answer_choices: null
+    id: f3fce748-89e0-4b88-94bb-72ddb9a04d10
+    jinja: "Kan du skrive en s\xE6tning om emnet {{concepts | choice}}?\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: topic to sentence
+    reference: 'Choose a random topic and ask the model to write a sentence about
+      it '
+  fa787974-86dd-4f66-b2d7-6d3523ce00e1: !Template
+    answer_choices: null
+    id: fa787974-86dd-4f66-b2d7-6d3523ce00e1
+    jinja: "Mennesker kan nemt stramme abstrakte begreber til at danne en sammenh\xE6\
+      ngende s\xE6tning. \nFor eksempel med koncepterne {{concepts | join(\", \")}}\
+      \ kan en simpel s\xE6tning v\xE6re  \n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Example prompt
+    reference: The prompt is in the form of an example
+  fbeebb4f-cba1-4bc4-80ec-758a3c134033: !Template
+    answer_choices: null
+    id: fbeebb4f-cba1-4bc4-80ec-758a3c134033
+    jinja: "I betragtning af listen over koncepter: {{ concepts | join(\", \") }};\
+      \ \nGenerer en s\xE6tning med alle koncepterne:\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Given concepts type 1
+    reference: 'The prompt has the prefix "Given the .." '

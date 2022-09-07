@@ -1,0 +1,153 @@
+dataset: wiki_hop
+subset: original_vi
+templates:
+  0bb6b603-115e-4ae9-b17b-881fa72b2e81: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 0bb6b603-115e-4ae9-b17b-881fa72b2e81
+    jinja: "Th\xF4ng tin:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\nTh\u1EF1c th\u1EC3 \u0111\
+      \u1ED1i t\u01B0\u1EE3ng n\xE0o c\xF3 m\u1ED1i quan h\u1EC7 c\u1EE7a '{{question_split[0]\
+      \ | replace(\"_\", \" \")}}' v\u1EDBi ch\u1EE7 \u0111\u1EC1 '{{question_split[1:]\
+      \ | join(\" \")}}'?\n\nL\u1EF1a ch\u1ECDn:\n- {{answer_choices | join(\"\\n\
+      \ - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_interrogative_1
+    reference: Given information and subject and relation, choose the best object
+      entity (interrogative instruction).
+  23e0d05a-8777-45c4-8692-13f3dc5a40bb: !Template
+    answer_choices: null
+    id: 23e0d05a-8777-45c4-8692-13f3dc5a40bb
+    jinja: "Th\xF4ng tin:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\nM\u1ED1i quan h\u1EC7\
+      \ gi\u1EEFa '{{question_split[1:] | join(\" \")}}' v\xE0 '{{answer}}' l\xE0\
+      \ g\xEC?\n\n|||\n{{ question_split[0] | replace(\"_\", \" \") }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: explain_relation
+    reference: Given information, explain the relation between the subject entity
+      and the object entity.
+  2fadafea-f814-4ff1-a3aa-cace9067f31f: !Template
+    answer_choices: null
+    id: 2fadafea-f814-4ff1-a3aa-cace9067f31f
+    jinja: "Th\xF4ng tin:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\nTh\u1EF1c th\u1EC3 n\xE0\
+      o '{{question_split[1:] | join(\" \")}}' c\xF3 m\u1ED1i quan h\u1EC7 '{{question_split[0]\
+      \ | replace(\"_\", \" \")}}' v\u1EDBi?\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_object
+    reference: Given information, generate the best object entity (without answer
+      choices in prompt).
+  40bdb0e7-def9-4829-9a37-a05d354ef7cd: !Template
+    answer_choices: null
+    id: 40bdb0e7-def9-4829-9a37-a05d354ef7cd
+    jinja: "Th\xF4ng tin:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\n\u0110\u01B0a ra c\xE1\
+      c \u0111o\u1EA1n tr\xEAn, quy\u1EBFt \u0111\u1ECBnh th\u1EF1c th\u1EC3 n\xE0\
+      o c\xF3 m\u1ED1i quan h\u1EC7 '{{question_split[0] | replace(\"_\", \" \")}}'\
+      \ v\u1EDBi '{{answer}}'.\n\n|||\n{{ question_split[1:] | join(\" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_subject
+    reference: Given information, generate the best subject entity for the fact triple.
+  4836e754-b2c9-4697-b386-6770494dc5f5: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 4836e754-b2c9-4697-b386-6770494dc5f5
+    jinja: "Th\xF4ng tin:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\n\u0110\u01B0a ra th\xF4\
+      ng tin \u1EDF tr\xEAn, ch\u1ECDn t\u1EEB danh s\xE1ch b\xEAn d\u01B0\u1EDBi\
+      \ th\u1EF1c th\u1EC3 \u0111\u1ED1i t\u01B0\u1EE3ng th\u1EC3 hi\u1EC7n m\u1ED1\
+      i quan h\u1EC7 '{{question_split[0] | replace(\"_\", \" \")}}' v\u1EDBi ch\u1EE7\
+      \ \u0111\u1EC1 '{{question_split[1:] | join(\" \")}}'.\n\nL\u1EF1a ch\u1ECD\
+      n:\n- {{answer_choices | join(\"\\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_1
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  4a1b61f6-c619-4d3d-aec2-f41a8986641c: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 4a1b61f6-c619-4d3d-aec2-f41a8986641c
+    jinja: "Th\xF4ng tin:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\nSau khi \u0111\u1ECD\
+      c c\xE1c \u0111o\u1EA1n tr\xEAn, ch\xFAng t\xF4i quan t\xE2m \u0111\u1EBFn vi\u1EC7\
+      c bi\u1EBFt th\u1EF1c th\u1EC3 m\xE0 '{{question_split[1:] | join(\" \")}}'\
+      \ th\u1EC3 hi\u1EC7n m\u1ED1i quan h\u1EC7 c\u1EE7a '{{question_split[0] | replace(\"\
+      _\", \" \")}}'.T\xECm c\xE2u tr\u1EA3 l\u1EDDi t\u1EEB c\xE1c l\u1EF1a ch\u1ECD\
+      n d\u01B0\u1EDBi \u0111\xE2y.\n\nL\u1EF1a ch\u1ECDn:\n- {{answer_choices | join(\"\
+      \\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_3
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  c4675106-0ac5-4bf0-a400-f628daae81db: !Template
+    answer_choices: null
+    id: c4675106-0ac5-4bf0-a400-f628daae81db
+    jinja: "Th\xF4ng tin:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\n\u0110\u01B0a ra th\xF4\
+      ng tin, ch\u1ECDn c\xE1c th\u1EF1c th\u1EC3 \u0111\u1ED1i t\u01B0\u1EE3ng v\xE0\
+      \ \u0111\u1ED1i t\u01B0\u1EE3ng c\xF3 m\u1ED1i quan h\u1EC7 c\u1EE7a '{{question_split[0]\
+      \ | replace(\"_\", \" \")}}'.\n\n|||\n{{ question_split[1:] | join(\" \") }}\
+      \ , {{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_subject_and_object
+    reference: Given information and relation, generate the subject and object.
+  e4dc7abf-d56a-4217-ba7f-7470cd959e8e: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: e4dc7abf-d56a-4217-ba7f-7470cd959e8e
+    jinja: "Th\xF4ng tin:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\nSau khi \u0111\u1ECD\
+      c c\xE1c \u0111o\u1EA1n tr\xEAn, ch\u1ECDn c\xE2u tr\u1EA3 l\u1EDDi t\u1ED1\
+      t nh\u1EA5t cho th\u1EF1c th\u1EC3 li\xEAn quan \u0111\u1EBFn '{{question_split[1:]\
+      \ | join(\" \")}}' v\u1EDBi m\u1ED1i quan h\u1EC7 c\u1EE7a '{{question_split[0]\
+      \ | replace(\"_\", \" \")}}'.\n\nL\u1EF1a ch\u1ECDn:\n- {{answer_choices | join(\"\
+      \\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_2
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  f44936e1-cbde-4d41-b462-6150cce8c1c8: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: f44936e1-cbde-4d41-b462-6150cce8c1c8
+    jinja: "Th\xF4ng tin:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\n'{{question_split[1:]\
+      \ | join(\" \")}}' c\xF3 li\xEAn quan \u0111\u1EBFn th\u1EF1c th\u1EC3 \u0111\
+      \u1ED1i t\u01B0\u1EE3ng n\xE0o th\xF4ng qua m\u1ED1i quan h\u1EC7 c\u1EE7a '{{question_split[0]\
+      \ | replace(\"_\", \" \")}}'?\n\nL\u1EF1a ch\u1ECDn:\n- {{answer_choices | join(\"\
+      \\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_interrogative_2
+    reference: Given information and subject and relation, choose the best object
+      entity (interrogative instruction).

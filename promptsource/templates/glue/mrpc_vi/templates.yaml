@@ -1,0 +1,95 @@
+dataset: glue
+subset: mrpc_vi
+templates:
+  3b88d2c4-0aeb-4c6d-9ccc-653a388250a5: !Template
+    answer_choices: null
+    id: 3b88d2c4-0aeb-4c6d-9ccc-653a388250a5
+    jinja: "{% if label == 1 %}\nDi\u1EC5n gi\u1EA3i c\xE2u sau: {{sentence1}}\n|||\n\
+      {{sentence2}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_paraphrase
+    reference: ''
+  44c2e6d9-facf-4959-8400-38e0eb8dd3a8: !Template
+    answer_choices: "kh\xF4ng ||| V\xE2ng"
+    id: 44c2e6d9-facf-4959-8400-38e0eb8dd3a8
+    jinja: "T\xF4i mu\u1ED1n bi\u1EBFt li\u1EC7u hai c\xE2u sau \u0111\xE2y c\xF3\
+      \ ngh\u0129a t\u01B0\u01A1ng t\u1EF1 kh\xF4ng.\n{{sentence1}}\n{{sentence2}}\n\
+      H\u1ECD c\xF3?\n|||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: want to know
+    reference: ''
+  adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
+    answer_choices: "kh\xF4ng ||| V\xE2ng"
+    id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
+    jinja: "C\xF3 ph\u1EA3i c\xE2u\n{{sentence1}}\nparaphrase (ngh\u0129a l\xE0, c\xF3\
+      \ ngh\u0129a gi\u1ED1ng nh\u01B0) c\xE2u n\xE0y?\n{{sentence2}}\n|||\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: paraphrase
+    reference: ''
+  bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
+    answer_choices: "kh\xF4ng t\u01B0\u01A1ng \u0111\u01B0\u01A1ng ||| t\u01B0\u01A1\
+      ng \u0111\u01B0\u01A1ng"
+    id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
+    jinja: "C\xF3 ph\u1EA3i hai c\xE2u sau \"{{\"t\u01B0\u01A1ng \u0111\u01B0\u01A1\
+      ng\"}}\" ho\u1EB7c \"{{\"kh\xF4ng t\u01B0\u01A1ng \u0111\u01B0\u01A1ng\"}}\"\
+      ?\n{{sentence1}}\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: equivalent
+    reference: ''
+  d830d7a5-abc0-4275-ac62-974e0088876f: !Template
+    answer_choices: null
+    id: d830d7a5-abc0-4275-ac62-974e0088876f
+    jinja: "{% if label == 1 %}\nT\u1EA1o m\u1ED9t c\xE2u c\xF3 ngh\u0129a gi\u1ED1\
+      ng nh\u01B0 c\xE2u n\xE0y: {{sentence1}}\n|||\n{{sentence2}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_sentence
+    reference: ''
+  ee82d511-908c-4244-804f-6d0d907c68c7: !Template
+    answer_choices: "kh\xF4ng ||| V\xE2ng"
+    id: ee82d511-908c-4244-804f-6d0d907c68c7
+    jinja: "T\xF4i c\xF3 th\u1EC3 thay th\u1EBF c\xE2u\n{{sentence1}}\nb\u1EB1ng c\xE2\
+      u\n{{sentence2}}\nv\xE0 c\xF3 ngh\u0129a t\u01B0\u01A1ng t\u1EF1 kh\xF4ng?\n\
+      |||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: replace
+    reference: ''
+  eefd8606-b936-4d26-b91d-8f4bc38bfcbf: !Template
+    answer_choices: "kh\xF4ng ||| V\xE2ng"
+    id: eefd8606-b936-4d26-b91d-8f4bc38bfcbf
+    jinja: "Hai c\xE2u sau \u0111\xE2y c\xF3 ngh\u0129a l\xE0 c\xF9ng m\u1ED9t \u0111\
+      i\u1EC1u kh\xF4ng?\n{{sentence1}}\n{{sentence2}}\n|||\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''

@@ -1,0 +1,145 @@
+dataset: rotten_tomatoes
+subset: ur
+templates:
+  10adbcf1-b839-4522-bd76-567f0c760474: !Template
+    answer_choices: "\u0628\u0631\u0627 ||| \u0627\u0686\u06BE\u06CC"
+    id: 10adbcf1-b839-4522-bd76-567f0c760474
+    jinja: "{{text}} \u06A9\u06CC\u0627 \u062C\u0627\u0626\u0632\u06C1 \u0644\u06CC\
+      \u0646\u06D2 \u0648\u0627\u0644\u06D2 \u06A9\u0648 \u06CC\u06C1 \u0641\u0644\
+      \u0645 {{\"\u0627\u0686\u06BE\u0627 \u06CC\u0627 \u0628\u0631\u0627\"}} \u0645\
+      \u0644 \u06AF\u0626\u06CC\u061F ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Opinion bad good choices
+    reference: ''
+  162f7f89-4a93-42e9-9525-ba12e243ee48: !Template
+    answer_choices: "\u0645\u0646\u0641\u06CC ||| \u0645\u062B\u0628\u062A"
+    id: 162f7f89-4a93-42e9-9525-ba12e243ee48
+    jinja: "{{text}} \u0627\u0633 \u0645\u062A\u0646 \u0645\u06CC\u06BA \u062C\u0630\
+      \u0628\u0627\u062A \u06A9\u0627 \u06A9\u06CC\u0627 \u0627\u0638\u06C1\u0627\u0631\
+      \ \u06A9\u06CC\u0627 \u062C\u0627\u062A\u0627 \u06C1\u06D2\u061F ||| {{ answer_choices\
+      \ [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Text Expressed Sentiment
+    reference: ''
+  37ac89b8-09f8-443d-982c-980a86f26ea0: !Template
+    answer_choices: "\u0645\u0646\u0641\u06CC ||| \u0645\u062B\u0628\u062A"
+    id: 37ac89b8-09f8-443d-982c-980a86f26ea0
+    jinja: "{{text}} \n\u06A9\u06CC\u0627 \u06CC\u06C1 \u062C\u0627\u0626\u0632\u06C1\
+      \ {{\"\u0645\u062B\u0628\u062A \u06CC\u0627 \u0645\u0646\u0641\u06CC\"}} \u06C1\
+      \u06D2\u061F ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: 'Sentiment with choices '
+    reference: ''
+  59e2aa7c-696f-4b85-87e9-688ea802d968: !Template
+    answer_choices: "\u0646\u06C1\u06CC\u06BA ||| \u062C\u06CC \u06C1\u0627\u06BA"
+    id: 59e2aa7c-696f-4b85-87e9-688ea802d968
+    jinja: "{{text}} \u06A9\u06CC\u0627 \u062C\u0627\u0626\u0632\u06C1 \u0644\u06CC\
+      \u0646\u06D2 \u0648\u0627\u0644\u06D2 \u0646\u06D2 \u0641\u0644\u0645 \u0633\
+      \u06D2 \u0644\u0637\u0641 \u0627\u0646\u062F\u0648\u0632 \u06A9\u06CC\u0627\u061F\
+      \ ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment Yes No
+    reference: ''
+  7a8ccb1c-6737-4863-b08a-61d4a2839204: !Template
+    answer_choices: "\u0627\u0646\u06C1\u06CC\u06BA \u06CC\u06C1 \u067E\u0633\u0646\
+      \u062F \u0646\u06C1\u06CC\u06BA \u062A\u06BE\u0627 ||| \u0648\u06C1 \u0627\u0633\
+      \u06D2 \u067E\u0633\u0646\u062F \u06A9\u0631\u062A\u06D2 \u062A\u06BE\u06D2"
+    id: 7a8ccb1c-6737-4863-b08a-61d4a2839204
+    jinja: "{{text}} \u062C\u0627\u0626\u0632\u06C1 \u0644\u06CC\u0646\u06D2 \u0648\
+      \u0627\u0644\u06D2 \u06A9\u0648 \u0641\u0644\u0645 \u06A9\u06D2 \u0628\u0627\
+      \u0631\u06D2 \u0645\u06CC\u06BA \u06A9\u06CC\u0633\u0627 \u0645\u062D\u0633\u0648\
+      \u0633 \u06C1\u0648\u062A\u0627 \u06C1\u06D2\u061F ||| {{ answer_choices [label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment
+    reference: ''
+  94e190d5-2196-486e-908b-759f288eac6e: !Template
+    answer_choices: "\u0645\u0646\u0641\u06CC ||| \u0645\u062B\u0628\u062A"
+    id: 94e190d5-2196-486e-908b-759f288eac6e
+    jinja: "{{text}} \u0641\u0644\u0645 \u06A9\u06D2 \u0644\u0626\u06D2 \u0627\u0638\
+      \u06C1\u0627\u0631 \u06A9\u0631\u062F\u06C1 \u062C\u0630\u0628\u0627\u062A \u06C1\
+      \u06D2 ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment
+    reference: ''
+  a8f6927e-7eca-4975-a93c-f520f8be480d: !Template
+    answer_choices: "\u0645\u0646\u0641\u06CC ||| \u0645\u062B\u0628\u062A"
+    id: a8f6927e-7eca-4975-a93c-f520f8be480d
+    jinja: "{{text}} \u0645\u0635\u0646\u0641 \u0641\u0644\u0645 \u06A9\u06D2 \u0644\
+      \u0626\u06D2 \u06A9\u0633 \u062C\u0630\u0628\u0627\u062A \u06A9\u0627 \u0627\
+      \u0638\u06C1\u0627\u0631 \u06A9\u0631\u062A\u0627 \u06C1\u06D2\u061F ||| {{\
+      \ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Writer Expressed Sentiment
+    reference: ''
+  b60cad41-6bca-422a-aef7-cb113fcc32b0: !Template
+    answer_choices: "\u0645\u0646\u0641\u06CC ||| \u0645\u062B\u0628\u062A"
+    id: b60cad41-6bca-422a-aef7-cb113fcc32b0
+    jinja: "\u0645\u0646\u062F\u0631\u062C\u06C1 \u0630\u06CC\u0644 \u0645\u0648\u0648\
+      \u06CC \u06A9\u0627 \u062C\u0627\u0626\u0632\u06C1 \u06A9\u0633 \u062C\u0630\
+      \u0628\u0627\u062A \u06A9\u0627 \u0627\u0638\u06C1\u0627\u0631 \u06A9\u0631\u062A\
+      \u0627 \u06C1\u06D2\u061F {{text}} ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment 2
+    reference: ''
+  c75e322d-d6b4-4a28-b5a0-27fddfee694d: !Template
+    answer_choices: "\u0645\u0646\u0641\u06CC ||| \u0645\u062B\u0628\u062A"
+    id: c75e322d-d6b4-4a28-b5a0-27fddfee694d
+    jinja: "{{text}} \u0641\u0644\u0645 \u06A9\u06D2 \u062C\u0627\u0626\u0632\u06C1\
+      \ \u0644\u06CC\u0646\u06D2 \u0648\u0627\u0644\u06D2 \u06A9\u06D2 \u0630\u0631\
+      \u06CC\u0639\u06C1 \u06A9\u06CC\u0627 \u062C\u0630\u0628\u0627\u062A \u06A9\u0627\
+      \ \u0627\u0638\u06C1\u0627\u0631 \u06A9\u06CC\u0627 \u062C\u0627\u062A\u0627\
+      \ \u06C1\u06D2\u061F ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Expressed Sentiment
+    reference: ''
+  e05ec7b9-5a8d-4670-9723-0237c1bb1eca: !Template
+    answer_choices: "\u0645\u0646\u0641\u06CC ||| \u0645\u062B\u0628\u062A"
+    id: e05ec7b9-5a8d-4670-9723-0237c1bb1eca
+    jinja: "{{text}} \u0641\u0644\u0645 \u06A9\u06D2 \u0628\u0627\u0631\u06D2 \u0645\
+      \u06CC\u06BA \u062F\u06CC\u06A9\u06BE\u0646\u06D2 \u0648\u0627\u0644\u06D2 \u06A9\
+      \u0648 \u06A9\u06CC\u0633\u0627 \u0644\u06AF\u062A\u0627 \u06C1\u06D2\u061F\
+      \ ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Sentiment Feeling
+    reference: ''

@@ -1,0 +1,67 @@
+dataset: dbpedia_14
+subset: da
+templates:
+  824ecb55-ecad-40c2-8033-f2fa0add2ddf: !Template
+    answer_choices: Selskab ||| Uddannelsesinstitution ||| Kunstner ||| Atlet |||
+      Kontorindehaver ||| Gennemsnit af transport ||| Bygning ||| Naturligt sted |||
+      Landsby ||| Dyr ||| Plante ||| Album ||| Film ||| Skriftligt arbejde
+    id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
+    jinja: "{{content}} Givet en liste over kategorier: {{\"Virksomhed, uddannelsesinstitution,\
+      \ kunstner, atlet, kontorholder, middelv\xE6rdi af transport, bygning, naturligt\
+      \ sted, landsby, dyr, plante, album, film eller skriftligt arbejde\"}}, hvilken\
+      \ kategori tilh\xF8rer afsnittet? ||| {{ answer_choices[label] }}\n\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_list_what_category_does_the_paragraph_belong_to
+    reference: ''
+  8eda7e71-6734-486f-b883-e99d3f14c0bf: !Template
+    answer_choices: Selskab ||| Uddannelsesinstitution ||| Kunstner ||| Atlet |||
+      Kontorindehaver ||| Gennemsnit af transport ||| Bygning ||| Naturligt sted |||
+      Landsby ||| Dyr ||| Plante ||| Album ||| Film ||| Skriftligt arbejde
+    id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
+    jinja: "V\xE6lg en kategori til f\xF8lgende tekst.Valgmulighederne er - {{\"Virksomhed,\
+      \ uddannelsesinstitution, kunstner, atlet, kontorholder, middelv\xE6rdi af transport,\
+      \ bygning, naturligt sted, landsby, dyr, plante, album, film eller skriftligt\
+      \ arbejde\"}}. {{title}} - {{content}} ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_one_category_for_the_following_text
+    reference: ''
+  9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67: !Template
+    answer_choices: Selskab ||| Uddannelsesinstitution ||| Kunstner ||| Atlet |||
+      Kontorindehaver ||| Gennemsnit af transport ||| Bygning ||| Naturligt sted |||
+      Landsby ||| Dyr ||| Plante ||| Album ||| Film ||| Skriftligt arbejde
+    id: 9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67
+    jinja: "{{title}} - {{content}} Givet et valg af kategorier {{\"Virksomhed, uddannelsesinstitution,\
+      \ kunstner, atlet, kontorholder, middelv\xE6rdi af transport, bygning, naturligt\
+      \ sted, landsby, dyr, plante, album, film eller skriftligt arbejde\"}}, refererer\
+      \ teksten til hvilken? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: 'given_a_choice_of_categories '
+    reference: ''
+  f72fa410-3278-4f62-91f0-f9edf4a4e792: !Template
+    answer_choices: Selskab ||| Uddannelsesinstitution ||| Kunstner ||| Atlet |||
+      Kontorindehaver ||| Gennemsnit af transport ||| Bygning ||| Naturligt sted |||
+      Landsby ||| Dyr ||| Plante ||| Album ||| Film ||| Skriftligt arbejde
+    id: f72fa410-3278-4f62-91f0-f9edf4a4e792
+    jinja: "\"{{title}}\", givet en liste over kategorier: {{\"Virksomhed, uddannelsesinstitution,\
+      \ kunstner, atlet, kontorholder, middelv\xE6rdi af transport, bygning, naturligt\
+      \ sted, landsby, dyr, plante, album, film eller skriftligt arbejde\"}}, hvilken\
+      \ kategori tilh\xF8rer titlen? ||| {{ answer_choices[label] }}\n\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_a_list_of_category_what_does_the_title_belong_to
+    reference: ''

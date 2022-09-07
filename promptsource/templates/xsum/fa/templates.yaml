@@ -1,0 +1,149 @@
+dataset: xsum
+subset: fa
+templates:
+  13c02904-e4e2-4b4f-b115-44b437d22041: !Template
+    answer_choices: null
+    id: 13c02904-e4e2-4b4f-b115-44b437d22041
+    jinja: "{{document}}\n\n===\n\n\u062E\u0644\u0627\u0635\u0647 \u0627\u06CC \u0627\
+      \u0632 \u0645\u062A\u0646 \u0628\u0627\u0644\u0627 \u0631\u0627 \u0628\u0646\
+      \u0648\u06CC\u0633\u06CC\u062F: ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_write_summary_of_above
+    reference: ''
+  30292806-8e58-463c-8d92-ba525411c6fa: !Template
+    answer_choices: null
+    id: 30292806-8e58-463c-8d92-ba525411c6fa
+    jinja: "\u0645\u0642\u0627\u0644\u0647: {{document}}\n\n\u062E\u0644\u0627\u0635\
+      \u0647: ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: article_DOC_summary
+    reference: Prefix-Tuning
+  3d388a1e-3361-407b-baa7-61397cc58382: !Template
+    answer_choices: null
+    id: 3d388a1e-3361-407b-baa7-61397cc58382
+    jinja: "{{document}}\n\u0686\u06AF\u0648\u0646\u0647 \u0645\u06CC \u062A\u0648\
+      \u0627\u0646\u06CC\u062F \u0628\u0627 \u0686\u0646\u062F \u06A9\u0644\u0645\u0647\
+      \ \u062F\u0648\u0628\u0627\u0631\u0647 \u0628\u06CC\u0627\u0646 \u06A9\u0646\
+      \u06CC\u062F\u061F ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_how_would_you_rephrase_few_words
+    reference: http://gptprompts.wikidot.com/prompt:summarization
+  4cfe4126-b9f5-44eb-8a98-973987c5f32e: !Template
+    answer_choices: null
+    id: 4cfe4126-b9f5-44eb-8a98-973987c5f32e
+    jinja: "\u0647\u0645 \u0627\u062A\u0627\u0642\u06CC \u06A9\u0627\u0644\u062C \u0645\
+      \u0646 \u0627\u0632 \u0645\u0646 \u067E\u0631\u0633\u06CC\u062F \u0627\u06CC\
+      \u0646 \u0645\u0642\u0627\u0644\u0647 \u0628\u0647 \u0686\u0647 \u0645\u0639\
+      \u0646\u06CC \u0627\u0633\u062A:\n\n{{document}}\n\n\u0628\u0646\u0627\u0628\
+      \u0631\u0627\u06CC\u0646 \u0645\u0646 \u0622\u0646 \u0631\u0627 \u0628\u0647\
+      \ \u062A\u0639\u0628\u06CC\u0631 \u063A\u06CC\u0631\u0645\u0633\u062A\u0642\u06CC\
+      \u0645 \u062F\u0648\u0628\u0627\u0631\u0647 \u06CC\u0627\u062F\u0622\u0648\u0631\
+      \u06CC \u06A9\u0631\u062F\u0645: ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: college_roommate_asked_DOC_so_I_recap
+    reference: http://gptprompts.wikidot.com/prompt:summarization
+  57a7a3f1-91f8-4f4b-b72d-745d7cb7b1e3: !Template
+    answer_choices: null
+    id: 57a7a3f1-91f8-4f4b-b72d-745d7cb7b1e3
+    jinja: "{{document}}\n\u0627\u06CC\u0646 \u0628\u0647 \u0627\u06CC\u062F\u0647\
+      \ \u0633\u0627\u062F\u0647 \u0627\u06CC \u0645\u06CC \u0631\u0633\u062F \u06A9\
+      \u0647 ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_boils_down_to_simple_idea_that
+    reference: http://gptprompts.wikidot.com/prompt:summarization
+  65a3c419-57e9-48c2-b090-0c5d7adb23c6: !Template
+    answer_choices: null
+    id: 65a3c419-57e9-48c2-b090-0c5d7adb23c6
+    jinja: "\u062E\u0644\u0627\u0635\u0647: {{document}}|||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: summarize_DOC
+    reference: ''
+  752fda48-e64c-47a7-8342-17c2c113f600: !Template
+    answer_choices: null
+    id: 752fda48-e64c-47a7-8342-17c2c113f600
+    jinja: "\u062E\u0644\u0627\u0635\u0647 \u0627\u06CC\u0646 \u0633\u0646\u062F:\
+      \ {{document}}\n\u062E\u0644\u0627\u0635\u0647: ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: summarize_this_DOC_summary
+    reference: ''
+  826ffcd4-c0e6-4f4c-bd9a-fcf8ee169ede: !Template
+    answer_choices: null
+    id: 826ffcd4-c0e6-4f4c-bd9a-fcf8ee169ede
+    jinja: "{{document}}\n\n===\n\n\u0628\u0627 \u062A\u0648\u062C\u0647 \u0628\u0647\
+      \ \u0633\u0646\u062F \u0641\u0648\u0642 \u060C \u06CC\u06A9 \u062C\u0645\u0644\
+      \u0647 \u0628\u0646\u0648\u06CC\u0633\u06CC\u062F \u062A\u0627 \u062E\u0644\u0627\
+      \u0635\u0647 \u0634\u0648\u062F: ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_given_above_write_one_sentence
+    reference: ''
+  9a3f617f-628f-4fa5-9b74-47d0b166a487: !Template
+    answer_choices: null
+    id: 9a3f617f-628f-4fa5-9b74-47d0b166a487
+    jinja: "\u0627\u0628\u062A\u062F\u0627 \u0644\u0637\u0641\u0627 \u0645\u0642\u0627\
+      \u0644\u0647 \u0632\u06CC\u0631 \u0631\u0627 \u0628\u062E\u0648\u0627\u0646\u06CC\
+      \u062F.\n\n{{document}}\n\n\u062D\u0627\u0644 \u060C \u0622\u06CC\u0627 \u0645\
+      \u06CC \u062A\u0648\u0627\u0646\u06CC\u062F \u06CC\u06A9 \u0686\u06A9\u06CC\u062F\
+      \u0647 \u0628\u0633\u06CC\u0627\u0631 \u06A9\u0648\u062A\u0627\u0647 \u0628\u0631\
+      \u0627\u06CC \u0622\u0646 \u0628\u0631\u0627\u06CC \u0645\u0646 \u0628\u0646\
+      \u0648\u06CC\u0633\u06CC\u062F\u061F  ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: read_below_DOC_write_abstract
+    reference: ''
+  d878b768-9da2-4d9d-9517-1edcca3b1b26: !Template
+    answer_choices: null
+    id: d878b768-9da2-4d9d-9517-1edcca3b1b26
+    jinja: "{{document}}\n\n\u062E\u06CC\u0644\u06CC \u0637\u0648\u0644\u0627\u0646\
+      \u06CC\u062E\u0648\u0627\u0646\u062F\u0647 \u0646\u0634\u062F: ||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_tldr
+    reference: GPT-2 TLDR

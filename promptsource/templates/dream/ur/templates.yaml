@@ -1,0 +1,78 @@
+dataset: dream
+subset: ur
+templates:
+  024906f3-2503-451f-a0ce-2c9faf90e6c5: !Template
+    answer_choices: null
+    id: 024906f3-2503-451f-a0ce-2c9faf90e6c5
+    jinja: "\u0646\u06CC\u0686\u06D2 \u06A9\u06CC \u06AF\u0641\u062A\u06AF\u0648 \u067E\
+      \u0691\u06BE\u06CC\u06BA\u06D4\n\n{{dialogue[:-1] | join(\"\\n\\n\")}}\n\n\u0633\
+      \u0646\u0646\u06D2 \u0648\u0627\u0644\u0627 \u06A9\u06CC\u0627 \u06A9\u06C1\u06D2\
+      \ \u06AF\u0627\u061F\n|||\n{{dialogue[-1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate-last-utterance
+    reference: ''
+  5c53fe97-b8b9-4c91-bd75-b3f8e056bd01: !Template
+    answer_choices: null
+    id: 5c53fe97-b8b9-4c91-bd75-b3f8e056bd01
+    jinja: "\u0633\u0648\u0627\u0644 \"{{question}}\" \u0627\u0648\u0631 \u062C\u0648\
+      \u0627\u0628 \"{{answer}}\" \u06A9\u0648 \u062F\u06CC\u06A9\u06BE\u062A\u06D2\
+      \ \u06C1\u0648\u0626\u06D2 \u060C \u0627\u06CC\u06A9 \u0627\u06CC\u0633\u06CC\
+      \ \u06AF\u0641\u062A\u06AF\u0648 \u0644\u06A9\u06BE\u06CC\u06BA \u062C\u0648\
+      \ \u06C1\u0648\u0633\u06A9\u062A\u0627 \u06C1\u06D2\u06D4\n|||\n{{dialogue |\
+      \ join(\"\\n\\n\")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: answer-to-dialogue
+    reference: ''
+  70865a35-1db3-45bc-8b08-baf1d9d0be9d: !Template
+    answer_choices: null
+    id: 70865a35-1db3-45bc-8b08-baf1d9d0be9d
+    jinja: "{{dialogue[1:] | join(\"\\n\\n\")}}\n\n\u0627\u0633 \u06AF\u0641\u062A\
+      \u06AF\u0648 \u0633\u06D2 \u067E\u06C1\u0644\u06D2 \u06A9\u06CC\u0627 \u06A9\
+      \u06C1\u0627 \u06AF\u06CC\u0627 \u062A\u06BE\u0627\u061F\n|||\n{{dialogue[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate-first-utterance
+    reference: ''
+  8f962580-1611-4982-b567-05939c5012ff: !Template
+    answer_choices: '{{choice | join("|||")}}'
+    id: 8f962580-1611-4982-b567-05939c5012ff
+    jinja: "\u0645\u06A9\u0627\u0644\u0645\u06C1:\n\n{{dialogue | join(\"\\n\\n\"\
+      )}}\n\n\u0633\u0648\u0627\u0644: {{question}} \n\n- {{answer_choices[0]}}\n\n\
+      - {{answer_choices[1]}}\n\n- {{answer_choices[2]}}\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: baseline
+    reference: https://dataset.org/dream/
+  d4687975-664d-46ac-b13b-482a35a61ab3: !Template
+    answer_choices: '{{choice | join("|||")}}'
+    id: d4687975-664d-46ac-b13b-482a35a61ab3
+    jinja: "\u0645\u0646\u062F\u0631\u062C\u06C1 \u0630\u06CC\u0644 \u06AF\u0641\u062A\
+      \u06AF\u0648 \u06A9\u0648 \u067E\u0691\u06BE\u06CC\u06BA \u0627\u0648\u0631\
+      \ \u0633\u0648\u0627\u0644 \u06A9\u0627 \u062C\u0648\u0627\u0628 \u062F\u06CC\
+      \u06BA\u06D4\n\n{{dialogue | join(\"\\n\\n\")}}\n\n\u0633\u0648\u0627\u0644\
+      : {{question}} \n\n- {{answer_choices[0]}}\n\n- {{answer_choices[1]}}\n\n- {{answer_choices[2]}}\n\
+      |||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: read_the_following_conversation_and_answer_the_question
+    reference: ''

@@ -1,0 +1,71 @@
+dataset: app_reviews
+subset: da
+templates:
+  2da8f134-58db-4f9d-b3b0-8c6b50693ab5: !Template
+    answer_choices: Slet ikke ||| Nej ||| Måske ||| Ja ||| Helt bestemt
+    id: 2da8f134-58db-4f9d-b3b0-8c6b50693ab5
+    jinja: 'Givet denne anmeldelse: "{{review}}"
+
+      Vil du anbefale denne app til en ven? {{answer_choices[0]}}, {{answer_choices[1]}},
+      {{answer_choices[2]}}, {{answer_choices[3]}} eller {{answer_choices[4]}}?
+
+      |||
+
+      {{answer_choices[star-1]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: categorize_rating_using_review
+    reference: Given the review, return a categorical answer.
+  8086b434-a75e-45a4-87fb-4364601e2e05: !Template
+    answer_choices: null
+    id: 8086b434-a75e-45a4-87fb-4364601e2e05
+    jinja: 'Generer en {{star}}-stjernet anmeldelse (1 er lavest og 5 er højest) 
+      om en app med pakken {{package_name}}.
+
+      |||
+
+      {{review}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: generate_review
+    reference: Generate a review from the rating.
+  9746ce4b-ac58-4dfb-9783-d77c95cb62cf: !Template
+    answer_choices: "\u2605 ||| \u2605\u2605 ||| \u2605\u2605\u2605 ||| \u2605\u2605\
+      \u2605\u2605 ||| \u2605\u2605\u2605\u2605\u2605"
+    id: 9746ce4b-ac58-4dfb-9783-d77c95cb62cf
+    jinja: "Hvad ville være \u2605-vurderingen af denne anmeldelse (\u2605 er den laveste\
+      \ og \u2605\u2605\u2605\u2605\u2605\u2605 er den højeste)? \"{{review}}\"\n|||\n\
+      {{answer_choices[star-1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: convert_to_star_rating
+    reference: Given the review, generate a star rating.
+  d34e1413-2699-4701-baa2-05d931d012ba: !Template
+    answer_choices: null
+    id: d34e1413-2699-4701-baa2-05d931d012ba
+    jinja: 'På en skala fra 1-5 (hvor 1 er mindst gunstig og 5 er mest gunstig), hvordan vil 
+      du vurdere denne anmeldelse? "{{review}}"
+
+      |||
+
+      {{star}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: convert_to_rating
+    reference: Convert review to rating

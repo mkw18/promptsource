@@ -1,0 +1,199 @@
+dataset: super_glue
+subset: copa_ta
+templates:
+  0edd8660-f299-4819-a5ac-633c11177228: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 0edd8660-f299-4819-a5ac-633c11177228
+    jinja: "\u0B89\u0B9F\u0BB1\u0BCD\u0BAA\u0BAF\u0BBF\u0BB1\u0BCD\u0B9A\u0BBF: \u0BAE\
+      \u0BBF\u0B95\u0BB5\u0BC1\u0BAE\u0BCD \u0BA8\u0BAE\u0BCD\u0BAA\u0BA4\u0BCD\u0BA4\
+      \u0B95\u0BC1\u0BA8\u0BCD\u0BA4 \u0BAE\u0BBE\u0BB1\u0BCD\u0BB1\u0BC0\u0B9F\u0BCD\
+      \u0B9F\u0BC8\u0BA4\u0BCD \u0BA4\u0BC7\u0BB0\u0BCD\u0BB5\u0BC1\u0B9A\u0BC6\u0BAF\
+      \u0BCD\u0B95.\n\n{{ premise }} {% if question == \"cause\" %} \u0B8F\u0BA9\u0BC6\
+      \u0BA9\u0BBF\u0BB2\u0BCD... {% else %} \u0B85\u0BA4\u0BA9\u0BBE\u0BB2\u0BCD\
+      ... {% endif %}\n- {{choice1}}\n- {{choice2}} ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: exercise
+    reference: ''
+  150789fe-e309-47a1-82c9-0a4dc2c6b12b: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 150789fe-e309-47a1-82c9-0a4dc2c6b12b
+    jinja: "{% if question == \"effect\" %} \n{{ premise }} \u0B85\u0B9F\u0BC1\u0BA4\
+      \u0BCD\u0BA4\u0BC1 \u0B8E\u0BA9\u0BCD\u0BA9 \u0BA8\u0B9F\u0B95\u0BCD\u0B95\u0BC1\
+      \u0BAE\u0BCD, \"{{ answer_choices[0] }}\" \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1\
+      \ \"{{ answer_choices[1] }}\"? ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{%endif%}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "\u2026What could happen next, C1 or C2?"
+    reference: ''
+  4d879cbe-2fd7-424a-9d78-3f5200313fba: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 4d879cbe-2fd7-424a-9d78-3f5200313fba
+    jinja: "{{ premise }} \n\n\u0B87\u0BB0\u0BA3\u0BCD\u0B9F\u0BC1 \u0BB5\u0BBF\u0BB0\
+      \u0BC1\u0BAA\u0BCD\u0BAA\u0B99\u0BCD\u0B95\u0BB3\u0BC1\u0B95\u0BCD\u0B95\u0BC1\
+      \ \u0B87\u0B9F\u0BC8\u0BAF\u0BBF\u0BB2\u0BCD \u0BA8\u0BBE\u0BA9\u0BCD \u0BA4\
+      \u0BAF\u0B99\u0BCD\u0B95\u0BC1\u0B95\u0BBF\u0BB1\u0BC7\u0BA9\u0BCD. \u0B85\u0BA4\
+      \u0BBF\u0B95 \u0BB5\u0BBE\u0BAF\u0BCD\u0BAA\u0BCD\u0BAA\u0BC8\u0BA4\u0BCD \u0BA4\
+      \u0BC7\u0BB0\u0BCD\u0BB5\u0BC1\u0B9A\u0BC6\u0BAF\u0BCD\u0BAF \u0B8E\u0BA9\u0B95\
+      \u0BCD\u0B95\u0BC1 \u0B89\u0BA4\u0BB5\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD {%\
+      \ if question == \"cause\" %} \u0B95\u0BBE\u0BB0\u0BA3\u0BAE\u0BCD: {% else\
+      \ %} \u0BB5\u0BBF\u0BB3\u0BC8\u0BB5\u0BC1: {% endif %}\n- {{choice1}}\n- {{choice2}}\
+      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: i_am_hesitating
+    reference: ''
+  66ea075e-4d03-4a78-b1fa-9a5228cf0c9d: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 66ea075e-4d03-4a78-b1fa-9a5228cf0c9d
+    jinja: "{{ premise }} {% if question == \"cause\" %} \u0B87\u0BA4\u0BC1 \u0BA8\
+      \u0B9F\u0BA8\u0BCD\u0BA4\u0BA4\u0BC1... {% else %} \u0B85\u0BA4\u0BA9\u0BCD\
+      \ \u0BB5\u0BBF\u0BB3\u0BC8\u0BB5\u0BBE\u0B95... {% endif %}\n\u0BAE\u0BC7\u0BB2\
+      \u0BC1\u0BAE\u0BCD \u0BA8\u0BAE\u0BCD\u0BAA\u0BA4\u0BCD\u0BA4\u0B95\u0BC1\u0BA8\
+      \u0BCD\u0BA4 \u0BB5\u0BBF\u0BB0\u0BC1\u0BAA\u0BCD\u0BAA\u0BA4\u0BCD\u0BA4\u0BC8\
+      \u0BA4\u0BCD \u0BA4\u0BC7\u0BB0\u0BCD\u0BB5\u0BC1\u0B9A\u0BC6\u0BAF\u0BCD\u0BAF\
+      \ \u0B8E\u0BA9\u0B95\u0BCD\u0B95\u0BC1 \u0B89\u0BA4\u0BB5\u0BC1\u0B99\u0BCD\u0B95\
+      \u0BB3\u0BCD:\n- {{choice1}}\n- {{choice2}} ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: plausible_alternatives
+    reference: ''
+  744047dc-1298-45a2-8d68-d67e3f834ded: !Template
+    answer_choices: '{{choice1 }} ||| {{choice2}}'
+    id: 744047dc-1298-45a2-8d68-d67e3f834ded
+    jinja: "\"{{ answer_choices[0] }}\" \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \"{{\
+      \ answer_choices[1] }}\"? {{ premise }} {% if question == \"cause\" %} \u0B8F\
+      \u0BA9\u0BC6\u0BA9\u0BBF\u0BB2\u0BCD {% else %} \u0B85\u0BA4\u0BA9\u0BBE\u0BB2\
+      \u0BCD {% endif %} ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "C1 or C2? premise, so/because\u2026"
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  84da62c2-9440-4cfc-bdd4-d70c65e33a82: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 84da62c2-9440-4cfc-bdd4-d70c65e33a82
+    jinja: "{% if question == \"effect\" %} \n{{ premise }} \u0B87\u0BA4\u0BA9\u0BCD\
+      \ \u0BB5\u0BBF\u0BB3\u0BC8\u0BB5\u0BBE\u0B95, \"{{ answer_choices[0] }}\" \u0B85\
+      \u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \"{{ answer_choices[1] }}\"? ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{%endif%}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "\u2026As a result, C1 or C2?"
+    reference: ''
+  8ce80f8a-239e-4393-892c-f63dbb0d9929: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 8ce80f8a-239e-4393-892c-f63dbb0d9929
+    jinja: "{{ premise }} \n\n\u0B9A\u0BBF\u0BB1\u0BA8\u0BCD\u0BA4 \u0BB5\u0BB4\u0BBF\
+      \ \u0B8E\u0BA4\u0BC1?\n- {{choice1}}\n- {{choice2}}\n\n\u0BA8\u0BBE\u0B99\u0BCD\
+      \u0B95\u0BB3\u0BCD \u0BA4\u0BC7\u0B9F\u0BC1\u0B95\u0BBF\u0BB1\u0BCB\u0BAE\u0BCD\
+      \ {% if question == \"cause\" %} \u0B92\u0BB0\u0BC1 \u0B95\u0BBE\u0BB0\u0BA3\
+      \u0BAE\u0BCD {% else %} \u0B92\u0BB0\u0BC1 \u0BB5\u0BBF\u0BB3\u0BC8\u0BB5\u0BC1\
+      \ {% endif %}\n||| {% if label != -1 %}{{answer_choices[label]}}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: best_option
+    reference: ''
+  8cf2ba73-aee5-4651-b5d4-b1b88afe4abb: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 8cf2ba73-aee5-4651-b5d4-b1b88afe4abb
+    jinja: "{% if question == \"cause\" %} \n{{ premise }} \u0B87\u0BA4\u0BC1 \"{{\
+      \ answer_choices[0] }}\" \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 {{b} by \u0B86\
+      \u0BB2\u0BCD \u0B8F\u0BB1\u0BCD\u0BAA\u0B9F\u0B95\u0BCD\u0B95\u0BC2\u0B9F\u0BC1\
+      \u0BAE\u0BCD? ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "\u2026which may be caused by"
+    reference: ''
+  a1f9951e-2b6b-4530-9636-9cdf4c1658c5: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: a1f9951e-2b6b-4530-9636-9cdf4c1658c5
+    jinja: "\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\u0BAE\u0BCD \u0BB5\u0BBE\u0B95\
+      \u0BCD\u0B95\u0BBF\u0BAF\u0BA4\u0BCD\u0BA4\u0BBF\u0BB1\u0BCD\u0B95\u0BC1 \u0BA4\
+      \u0BCA\u0B9F\u0BB0\u0BCD\u0B9A\u0BCD\u0B9A\u0BBF\u0BAF\u0BC8\u0BA4\u0BCD \u0BA4\
+      \u0BC7\u0BB0\u0BCD\u0BA8\u0BCD\u0BA4\u0BC6\u0B9F\u0BC1\u0B99\u0BCD\u0B95\u0BB3\
+      \u0BCD:\n{{ premise }} {% if question == \"cause\" %} \u0B87\u0BA4\u0BA9\u0BCD\
+      \ \u0BB5\u0BBF\u0BB3\u0BC8\u0BB5\u0BBE\u0B95: {% else %} \u0B85\u0BA4\u0BA9\u0BCD\
+      \ \u0BB5\u0BBF\u0BB3\u0BC8\u0BB5\u0BBE\u0B95: {% endif %}\n- {{choice1}}\n-\
+      \ {{choice2}} ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: more likely
+    reference: ''
+  a61d8c21-da25-47bf-b5fe-14a8edd650af: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: a61d8c21-da25-47bf-b5fe-14a8edd650af
+    jinja: "{{ premise }}\n\n\u0BAE\u0BBF\u0B95\u0BB5\u0BC1\u0BAE\u0BCD \u0BA8\u0BAE\
+      \u0BCD\u0BAA\u0BA4\u0BCD\u0BA4\u0B95\u0BC1\u0BA8\u0BCD\u0BA4\u0BA4\u0BC8\u0BA4\
+      \u0BCD \u0BA4\u0BC7\u0BB0\u0BCD\u0BA8\u0BCD\u0BA4\u0BC6\u0B9F\u0BC1\u0B95\u0BCD\
+      \u0B95\u0BB5\u0BC1\u0BAE\u0BCD {% if question == \"cause\" %} \u0B95\u0BBE\u0BB0\
+      \u0BA3\u0BAE\u0BCD: {% else %} \u0BB5\u0BBF\u0BB3\u0BC8\u0BB5\u0BC1: {% endif\
+      \ %}\n- {{choice1}}\n- {{choice2}} ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: cause_effect
+    reference: ''
+  a8bf11c3-bea2-45ba-a533-957d8bee5e2e: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: a8bf11c3-bea2-45ba-a533-957d8bee5e2e
+    jinja: "{% if question == \"cause\" %} \n{{ premise }} \u0B8F\u0BA9\u0BCD? \"\
+      {{ answer_choices[0] }}\" \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \"{{ answer_choices[1]\
+      \ }}\"? ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "\u2026why? C1 or C2"
+    reference: ''
+  f32348cd-d3cb-4619-87b9-e24f99c78567: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: f32348cd-d3cb-4619-87b9-e24f99c78567
+    jinja: "{{ premise }} {% if question == \"cause\" %} \u0B8F\u0BA9\u0BC6\u0BA9\u0BBF\
+      \u0BB2\u0BCD... {% else %} \u0B85\u0BA4\u0BA9\u0BBE\u0BB2\u0BCD... {% endif\
+      \ %}\n\u0B87\u0B9F\u0BC8\u0BAF\u0BC7 \u0BA4\u0BC7\u0BB0\u0BCD\u0BB5\u0BC1\u0B9A\
+      \u0BC6\u0BAF\u0BCD\u0B95:\n- {{choice1}}\n- {{choice2}} ||| {% if label != -1\
+      \ %}{{ answer_choices[label] }}{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose
+    reference: ''

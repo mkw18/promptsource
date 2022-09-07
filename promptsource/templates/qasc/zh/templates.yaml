@@ -1,0 +1,132 @@
+dataset: qasc
+subset: zh
+templates:
+  3e1e6ca0-b95e-4e68-bb6a-cd47c8429658: !Template
+    answer_choices: "\u662F\u7684 ||| \u4E0D"
+    id: 3e1e6ca0-b95e-4e68-bb6a-cd47c8429658
+    jinja: "\u5982\u679C\u6211\u544A\u8BC9\u4F60 {{combinedfact[0]|capitalize}}{{\
+      \ combinedfact[1:]|trim('.') }}\uFF0C\u95EE\u4F60\u4E00\u4E2A\u95EE\u9898 \"\
+      {{ question[0]|lower }}{{ question[1:] }}\"\uFF0C\u662F\u6B63\u786E\u7684\u7B54\
+      \u6848 \"{{ choices.text[0][0]|lower}}{{ choices.text[0][1:]|trim('.') }}\"\
+      ? \n\n||| \n\n{% if answerKey == choices.label[0] %} \u662F\u7684 {% else %}\
+      \ \u4E0D {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: is_correct_1
+    reference: ''
+  40ef67db-dff3-4e7b-b167-f7e54b400c74: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 40ef67db-dff3-4e7b-b167-f7e54b400c74
+    jinja: "{{ fact1[0]|capitalize }}{{ fact1[1:]|trim|trim('.') }}\uFF0C \u548C {{fact2[0]|lower\
+      \ }}{{ fact2[1:]|trim|trim('.') }}. \u8003\u8651\u5230\u8FD9\u4E9B\u4E8B\u5B9E\
+      \uFF0C {{ question[0]|lower }}{{question[1:]|trim('?') }} \u5728\u4EE5\u4E0B\
+      \u9009\u9879\u4E2D\uFF1A\n- {{answer_choices | join(\"\\n - \") }}\n\n||| \n\
+      \n{% for choice in choices.label %} {% if choice == answerKey %}{{ answer_choices[loop.index\
+      \ - 1] }}{% endif %}{% endfor %} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_separated_facts_1
+    reference: Question Answering with separated facts.
+  5d63c186-e047-49dd-b5fd-c4a574f6f0e2: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 5d63c186-e047-49dd-b5fd-c4a574f6f0e2
+    jinja: "\u4E8B\u5B9E1\uFF1A {{ fact1[0]|capitalize }}{{ fact1[1:]|trim|trim('.')\
+      \ }}.\n\n\u4E8B\u5B9E2\uFF1A {{fact2[0]|capitalize }}{{ fact2[1:]|trim|trim('.')\
+      \ }}.\n\n\u9274\u4E8E\u4E0A\u9762\u7684\u4E24\u4E2A\u4E8B\u5B9E\uFF0C {{ question[0]|lower\
+      \ }}{{question[1:]|trim('?') }}?\n\n||| \n\n{% for choice in choices.label %}\
+      \ {% if choice == answerKey %}{{ answer_choices[loop.index - 1] }}{% endif %}{%\
+      \ endfor %}  "
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_separated_facts_3
+    reference: Question Answering with separated facts.
+  604dd379-21f1-4d30-af2f-22f9a8a97ceb: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 604dd379-21f1-4d30-af2f-22f9a8a97ceb
+    jinja: "You are presented with the question \"{{ question }}\" and the following\
+      \ answer choices: \n- {{answer_choices | join(\"\\n - \") }}\n\n\u73B0\u5728\
+      \u77E5\u9053{{ fact1[0]|lower }}{{ fact1[1:]|trim|trim('.') }}\u548C{{fact2[0]|lower\
+      \ }}{{ fact2[1:]|trim|trim('.') }}\uFF0C\u9009\u62E9\u6700\u4F73\u7B54\u6848\
+      \u3002\n\n||| \n\n{% for choice in choices.label %} {% if choice == answerKey\
+      \ %}{{ answer_choices[loop.index - 1] }}{% endif %}{% endfor %} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_separated_facts_4
+    reference: Question Answering with separated facts.
+  67cb1b35-e5d4-490b-beb8-dc9c0be9c298: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 67cb1b35-e5d4-490b-beb8-dc9c0be9c298
+    jinja: "\u60A8\u6709\u6D4B\u9A8C \"{{ question }}\" \n\n\u4F46\u662F\u60A8\u4E0D\
+      \u77E5\u9053\u7B54\u6848\uFF0C\u56E0\u6B64\u60A8\u6C42\u52A9\u4E8E\u8001\u5E08\
+      \u8981\u6C42\u63D0\u793A\u3002 \u4ED6\u8BF4\u201C {{ fact1[0]|lower }}{{ fact1[1:]|trim|trim('.')\
+      \ }}\u201D\u548C\u201C {{fact2[0]|lower }}{{ fact2[1:]|trim|trim('.') }}\u201D\
+      \u3002 \n\n\u90A3\u4E48\uFF0C\u8FD9\u4E2A\u95EE\u9898\u7684\u6700\u4F73\u7B54\
+      \u6848\u662F\u4EC0\u4E48\uFF1F\n\n||| \n\n{% for choice in choices.label %}\
+      \ {% if choice == answerKey %}{{ answer_choices[loop.index - 1] }}{% endif %}{%\
+      \ endfor %}   "
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_separated_facts_5
+    reference: Question Answering with separated facts.
+  b5b61423-8655-408d-a8e6-81a5eaaac2aa: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: b5b61423-8655-408d-a8e6-81a5eaaac2aa
+    jinja: "\u5982\u679C{{ combinedfact[0]|lower }}{{ combinedfact[1:]|trim|trim('.')\
+      \ }}\uFF0C\u5219{{ question[0]|lower }}{{question[1:]|trim|trim('?') }}\uFF1F\
+      \n\n\u7B54\u6848\u9009\u62E9\uFF1A\n- {{answer_choices | join(\"\\n - \") }}\n\
+      ||| \n\n{% for choice in choices.label %} {% if choice == answerKey %}{{ answer_choices[loop.index\
+      \ - 1] }}{% endif %}{% endfor %}  "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: qa_with_combined_facts_1
+    reference: ''
+  c251edaf-a063-40fe-bd49-038843fcdb23: !Template
+    answer_choices: "\u662F\u7684 ||| \u4E0D"
+    id: c251edaf-a063-40fe-bd49-038843fcdb23
+    jinja: "\u60A8\u8BA4\u4E3A\u5BF9\u95EE\u9898\u7684\u6B63\u786E\u7B54\u6848\"{{\
+      \ question[0]|lower }}{{ question[1:] }}\"\u662F\"{{ choices.text[1][0]|lower}}{{\
+      \ choices.text[1][1:]|trim('.') }}\"\uFF0C\u9274\u4E8E\n {{combinedfact[0]|lower}}{{\
+      \ combinedfact[1:]|trim('.') }}?\n ||| \n{% if answerKey == choices.label[0]\
+      \ %} \u662F\u7684 {% else %} \u4E0D {% endif %}   "
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: is_correct_2
+    reference: ''
+  c7cd51f1-ea49-4d6a-a422-46624333b7b1: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: c7cd51f1-ea49-4d6a-a422-46624333b7b1
+    jinja: "\u4E8B\u5B9E1\uFF1A {{ fact1[0]|capitalize }}{{ fact1[1:]|trim|trim('.')\
+      \ }}.\n\n\u4E8B\u5B9E2\uFF1A {{fact2[0]|capitalize }}{{ fact2[1:]|trim|trim('.')\
+      \ }}.\n\n\u7ED9\u5B9A\u4E0A\u9762\u7684\u4E24\u4E2A\u4E8B\u5B9E\uFF0C\u8BF7\u56DE\
+      \u7B54\u4EE5\u4E0B\u9009\u9879\u7684\u95EE\u9898\"{{ question }}\"\uFF1A \n\
+      - {{answer_choices | join(\"\\n - \") }}\n\n||| \n\n{% for choice in choices.label\
+      \ %} {% if choice == answerKey %}{{ answer_choices[loop.index - 1] }}{% endif\
+      \ %}{% endfor %} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_separated_facts_2
+    reference: Question Answering with separated facts.

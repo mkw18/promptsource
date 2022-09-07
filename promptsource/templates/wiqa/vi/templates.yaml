@@ -1,0 +1,132 @@
+dataset: wiqa
+subset: vi
+templates:
+  1bc8d95b-0a50-49f4-a46b-bd752929926d: !Template
+    answer_choices: null
+    id: 1bc8d95b-0a50-49f4-a46b-bd752929926d
+    jinja: "-  {{ question_para_step[1:] | join(\"\\n- \") }}\n\n\u0110i\u1EC1u g\xEC\
+      \ c\xF3 th\u1EC3 l\xE0 b\u01B0\u1EDBc \u0111\u1EA7u ti\xEAn c\u1EE7a qu\xE1\
+      \ tr\xECnh?\n\n|||\n\n{{ question_para_step | first }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_might_be_the_first_step_of_the_process
+    reference: ''
+  360cd99a-2f83-469a-a505-d80808159dd2: !Template
+    answer_choices: null
+    id: 360cd99a-2f83-469a-a505-d80808159dd2
+    jinja: "\n{% set process_list = question_para_step[:-1] if question_para_step[-1]\
+      \ == \"\" else question_para_step %}\n-  {{ process_list[:-1] | join(\"\\n-\
+      \ \") }}\n\n\u0110i\u1EC1u g\xEC c\xF3 th\u1EC3 l\xE0 b\u01B0\u1EDBc cu\u1ED1\
+      i c\xF9ng c\u1EE7a qu\xE1 tr\xECnh?\n\n|||\n\n{{ process_list | last }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_might_be_the_last_step_of_the_process
+    reference: ''
+  4191b162-9220-46e5-a2f0-0a763eef55a0: !Template
+    answer_choices: null
+    id: 4191b162-9220-46e5-a2f0-0a763eef55a0
+    jinja: "B\u01B0\u1EDBc \u0111\u1EA7u ti\xEAn c\xF2n thi\u1EBFu c\u1EE7a quy tr\xEC\
+      nh sau:\n\n-  {{ question_para_step[1:] | join(\"\\n- \") }}\n\n|||\n\n{{ question_para_step\
+      \ | first }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_is_the_missing_first_step
+    reference: ''
+  52d69c02-5ff3-4fe7-bcaf-a6b995a15020: !Template
+    answer_choices: null
+    id: 52d69c02-5ff3-4fe7-bcaf-a6b995a15020
+    jinja: " {% set process_list = question_para_step[:-1] if question_para_step[-1]\
+      \ == \"\" else question_para_step %}\nB\u01B0\u1EDBc cu\u1ED1i c\xF9ng c\u1EE7\
+      a quy tr\xECnh sau:\n-  {{ process_list[:-1] | join(\"\\n- \") }}\n\n|||\n\n\
+      {{ process_list | last }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_is_the_final_step_of_the_following_process
+    reference: ''
+  5dfee2c2-9742-4003-8ab6-dfe0ce5a745b: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 5dfee2c2-9742-4003-8ab6-dfe0ce5a745b
+    jinja: "Qu\xE1 tr\xECnh:\n- {{ question_para_step | join(\"\\n- \")}}\n\nC\xE2\
+      u h\u1ECFi:\n{{question_stem}}\n\nL\xE0m th\u1EBF n\xE0o \u0111\u1EC3 s\u1EF1\
+      \ nhi\u1EC5u lo\u1EA1n \u0111\u01B0\u1EE3c cho l\xE0 \u1EA3nh h\u01B0\u1EDF\
+      ng \u0111\u1EBFn hi\u1EC7u \u1EE9ng th\u1EE9 hai \u0111\u01B0\u1EE3c \u0111\u1EC1\
+      \ c\u1EADp.Tr\u1EA3 l\u1EDDi b\u1EDFi {{\"more, less or no effect\"}}\n\n|||\n\
+      \n{{answer_label|replace(\"_\", \" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: effect_with_string_answer
+    reference: ''
+  667c291f-6a36-4334-aa49-804c9e72500b: !Template
+    answer_choices: "T\xE1c \u0111\u1ED9ng gi\xE1n ti\u1EBFp \u0111\u1EBFn m\u1ED9\
+      t b\u01B0\u1EDBc c\u1EE7a qu\xE1 tr\xECnh ||| kh\xF4ng \u1EA3nh h\u01B0\u1EDF\
+      ng \u0111\u1EBFn b\u1EA5t k\u1EF3 b\u01B0\u1EDBc n\xE0o c\u1EE7a qu\xE1 tr\xEC\
+      nh"
+    id: 667c291f-6a36-4334-aa49-804c9e72500b
+    jinja: "Qu\xE1 tr\xECnh:\n\n- {{ question_para_step | join(\"\\n- \") }}\n\n{{question_stem}}\n\
+      \n\u0110i\u1EC1u n\xE0o sau \u0111\xE2y l\xE0 nhi\u1EC5u lo\u1EA1n \u0111\u01B0\
+      \u1EE3c cho l\xE0?\n\n- {{\"\u1EA3nh h\u01B0\u1EDFng tr\u1EF1c ti\u1EBFp \u0111\
+      \u1EBFn m\u1ED9t b\u01B0\u1EDBc c\u1EE7a qu\xE1 tr\xECnh\"}}\n- {{\"T\xE1c \u0111\
+      \u1ED9ng gi\xE1n ti\u1EBFp \u0111\u1EBFn m\u1ED9t b\u01B0\u1EDBc c\u1EE7a qu\xE1\
+      \ tr\xECnh\"}}\n- {{\"kh\xF4ng \u1EA3nh h\u01B0\u1EDFng \u0111\u1EBFn b\u1EA5\
+      t k\u1EF3 b\u01B0\u1EDBc n\xE0o c\u1EE7a qu\xE1 tr\xECnh\"}}\n\n\n|||\n\n{{{\"\
+      EXOGENOUS_EFFECT\": \"T\xE1c \u0111\u1ED9ng gi\xE1n ti\u1EBFp \u0111\u1EBFn\
+      \ m\u1ED9t b\u01B0\u1EDBc c\u1EE7a qu\xE1 tr\xECnh\", \"OUTOFPARA_DISTRACTOR\"\
+      : \"kh\xF4ng \u1EA3nh h\u01B0\u1EDFng \u0111\u1EBFn b\u1EA5t k\u1EF3 b\u01B0\
+      \u1EDBc n\xE0o c\u1EE7a qu\xE1 tr\xECnh\", \"INPARA_EFFECT\": \"\u1EA3nh h\u01B0\
+      \u1EDFng tr\u1EF1c ti\u1EBFp \u0111\u1EBFn m\u1ED9t b\u01B0\u1EDBc c\u1EE7a\
+      \ qu\xE1 tr\xECnh\"}[metadata_question_type]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: which_of_the_following_is_the_supposed_perturbation
+    reference: ''
+  6cf2b300-6790-4120-9592-9db63bec221b: !Template
+    answer_choices: A ||| B ||| C
+    id: 6cf2b300-6790-4120-9592-9db63bec221b
+    jinja: "Qu\xE1 tr\xECnh:\n- {{ question_para_step | join(\"\\n- \")}}\n\nC\xE2\
+      u h\u1ECFi:\n{{question_stem}}\n\n- {{\"A: more\"}}\n- {{\"B: less\"}}\n- {{\"\
+      C: no effect\"}}\n\n|||\n\n{{answer_label_as_choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: effect_with_label_answer
+    reference: ''
+  a17313bd-94bb-47ab-82bf-538df1b1ad5f: !Template
+    answer_choices: "V\xE2ng ||| kh\xF4ng"
+    id: a17313bd-94bb-47ab-82bf-538df1b1ad5f
+    jinja: "Qu\xE1 tr\xECnh:\n\n- {{ question_para_step | join(\"\\n- \") }}\n\nGi\u1EA3\
+      \ thuy\u1EBFt nhi\u1EC5u lo\u1EA1n:\n{{question_stem}}\n\nLi\u1EC7u s\u1EF1\
+      \ nhi\u1EC5u lo\u1EA1n \u0111\u01B0\u1EE3c cho l\xE0 c\xF3 \u1EA3nh h\u01B0\u1EDF\
+      ng (tr\u1EF1c ti\u1EBFp ho\u1EB7c gi\xE1n ti\u1EBFp) trong qu\xE1 tr\xECnh?\n\
+      \n|||\n\n{{{\"EXOGENOUS_EFFECT\": \"V\xE2ng\", \"OUTOFPARA_DISTRACTOR\": \"\
+      kh\xF4ng\", \"INPARA_EFFECT\": \"V\xE2ng\"}[metadata_question_type]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: does_the_supposed_perturbation_have_an_effect
+    reference: ''

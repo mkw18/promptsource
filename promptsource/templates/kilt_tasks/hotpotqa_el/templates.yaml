@@ -1,0 +1,85 @@
+dataset: kilt_tasks
+subset: hotpotqa_el
+templates:
+  1a123f3a-0507-41b9-904f-b18d9ce2b79e: !Template
+    answer_choices: null
+    id: 1a123f3a-0507-41b9-904f-b18d9ce2b79e
+    jinja: "{% if output %}\n\u0391\u03BA\u03BF\u03BB\u03BF\u03C5\u03B8\u03B5\u03AF\
+      \ \u03BC\u03B9\u03B1 \u03C0\u03BF\u03BB\u03CD\u03C0\u03BB\u03BF\u03BA\u03B7\
+      \ \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03C0\u03BF\u03C5 \u03B1\u03C0\
+      \u03B1\u03B9\u03C4\u03B5\u03AF \u03B1\u03C0\u03CC \u03BA\u03AC\u03C0\u03BF\u03B9\
+      \u03BF\u03BD \u03BD\u03B1 \u03B1\u03B9\u03C4\u03B9\u03BF\u03BB\u03BF\u03B3\u03AE\
+      \u03C3\u03B5\u03B9 \u03C4\u03B7\u03BD \u03B5\u03B9\u03C3\u03C1\u03BF\u03AE,\
+      \ \u03BC\u03C0\u03BF\u03C1\u03B5\u03AF\u03C4\u03B5 \u03BD\u03B1 \u03C4\u03B7\
+      \u03BD \u03B1\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\u03B5\u03C4\u03B5;\n{{input}}\n\
+      |||\n{{output | map(attribute=\"answer\") | list | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: complex_question
+    reference: ''
+  5531ce47-35ff-4bce-943d-5b2b86c44352: !Template
+    answer_choices: null
+    id: 5531ce47-35ff-4bce-943d-5b2b86c44352
+    jinja: "{% if output %}\n\u03A3\u03C5\u03BD\u03B4\u03C5\u03AC\u03C3\u03C4\u03B5\
+      \ \u03C4\u03B1 \u03B3\u03B5\u03B3\u03BF\u03BD\u03CC\u03C4\u03B1 \u03BA\u03B1\
+      \u03B9 \u03B1\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\u03C4\u03B5 \u03C3\u03B5 \u03B1\
+      \u03C5\u03C4\u03CC: {{input}}\n|||\n{{output | map(attribute=\"answer\") | list\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: combining_facts
+    reference: ''
+  5ce9d659-4df8-4afd-a6e1-3e542df0035a: !Template
+    answer_choices: null
+    id: 5ce9d659-4df8-4afd-a6e1-3e542df0035a
+    jinja: "{% if output %}\n\u0394\u03B9\u03B1\u03C4\u03C5\u03C0\u03CE\u03C3\u03C4\
+      \u03B5 \u03BC\u03B9\u03B1 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03C3\
+      \u03B5 \u03B1\u03C5\u03C4\u03AE \u03C4\u03B7\u03BD \u03C0\u03B5\u03C1\u03AF\u03C0\
+      \u03BB\u03BF\u03BA\u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{input}}\n\
+      |||\n{{output | map(attribute=\"answer\") | list | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: formulate
+    reference: ''
+  9211f663-51f9-428e-ba27-158480eee083: !Template
+    answer_choices: null
+    id: 9211f663-51f9-428e-ba27-158480eee083
+    jinja: "{% if output %}\n\u03A4\u0395\u039B\u0399\u039A\u0395\u03A3 \u0395\u039E\
+      \u0395\u03A4\u0391\u03A3\u0395\u0399\u03A3\n\n\u0395\u03C1\u03CE\u03C4\u03B7\
+      \u03C3\u03B7 1. {{input}}\n|||\n{{output | map(attribute=\"answer\") | list\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: final_exam
+    reference: ''
+  ac0545a1-9363-4c17-aada-f0eedf5a24b2: !Template
+    answer_choices: null
+    id: ac0545a1-9363-4c17-aada-f0eedf5a24b2
+    jinja: '{% if output %}
+
+      {{input}}
+
+      |||
+
+      {{output | map(attribute="answer") | list | choice}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: straighforward_qa
+    reference: ''

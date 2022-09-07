@@ -1,0 +1,154 @@
+dataset: super_glue
+subset: boolq_el
+templates:
+  3e386463-1715-4578-9cba-07d11a0d3b61: !Template
+    answer_choices: "\u03A8\u03B5\u03C5\u03B4\u03AE\u03C2 ||| \u0391\u03BB\u03B7\u03B8\
+      \u03AE\u03C2"
+    id: 3e386463-1715-4578-9cba-07d11a0d3b61
+    jinja: "\u03A0\u03AD\u03C1\u03B1\u03C3\u03BC\u03B1: {{passage}}\n\n\u0391\u03C6\
+      \u03BF\u03CD \u03B4\u03B9\u03B1\u03B2\u03AC\u03C3\u03C9 \u03B1\u03C5\u03C4\u03CC\
+      \ \u03C4\u03BF \u03B1\u03C0\u03CC\u03C3\u03C0\u03B1\u03C3\u03BC\u03B1, \u03AD\
+      \u03C7\u03C9 \u03BC\u03B9\u03B1 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7:\
+      \ {{question}}; \u03A3\u03C9\u03C3\u03C4\u03CC \u03AE \u03BB\u03AC\u03B8\u03BF\
+      \u03C2; |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: after_reading
+    reference: ''
+  492f0f88-4370-46cd-839b-1de37a55aeda: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 492f0f88-4370-46cd-839b-1de37a55aeda
+    jinja: "{{ passage }} \n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{ question\
+      \ }}\n\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7: ||| \n{% if label !=\
+      \ -1 %}\n{{ answer_choices[label] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 Style
+    reference: Same as Figure G29, p. 58 of the GPT-3 paper
+  6cb6a026-c070-470a-b75d-bb8fdf424e35: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 6cb6a026-c070-470a-b75d-bb8fdf424e35
+    jinja: "{{ passage }} \n\n\u0388\u03C7\u03BF\u03BD\u03C4\u03B1\u03C2 \u03B4\u03B9\
+      \u03B1\u03B2\u03AC\u03C3\u03B5\u03B9 \u03B1\u03C5\u03C4\u03CC, \u03B1\u03BD\u03B1\
+      \u03C1\u03C9\u03C4\u03B9\u03AD\u03BC\u03B1\u03B9 {{ question }}; |||\n{% if\
+      \ label != -1 %}\n{{ answer_choices[label] }} \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "I wonder\u2026"
+    reference: ''
+  7cf7acdf-e3a2-459f-a3e8-2e2d27dd6aa5: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 7cf7acdf-e3a2-459f-a3e8-2e2d27dd6aa5
+    jinja: "\u039A\u03B5\u03AF\u03BC\u03B5\u03BD\u03BF: {{passage}}\n\n\u0391\u03C0\
+      \u03B1\u03BD\u03C4\u03AE\u03C3\u03C4\u03B5 \u03C3\u03C4\u03BF \u03B1\u03BA\u03CC\
+      \u03BB\u03BF\u03C5\u03B8\u03BF \u039D\u03B1\u03B9/\u038C\u03C7\u03B9 \u03B5\u03C1\
+      \u03CE\u03C4\u03B7\u03C3\u03B7: {{question}}; \u039D\u03B1\u03B9 \u03AE \u03CC\
+      \u03C7\u03B9; |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: yes_no_question
+    reference: ''
+  7d21d974-0624-4d4f-9e8c-644e2d009cb5: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 7d21d974-0624-4d4f-9e8c-644e2d009cb5
+    jinja: "{{ passage }} \n\n\u0388\u03C7\u03BF\u03BD\u03C4\u03B1\u03C2 \u03B4\u03B9\
+      \u03B1\u03B2\u03AC\u03C3\u03B5\u03B9 \u03B1\u03C5\u03C4\u03CC, \u03B8\u03B1\
+      \ \u03BC\u03C0\u03BF\u03C1\u03BF\u03CD\u03C3\u03B1\u03C4\u03B5 \u03BD\u03B1\
+      \ \u03BC\u03BF\u03C5 \u03C0\u03B5\u03AF\u03C4\u03B5 {{ question }}; ||| {% if\
+      \ label != -1 %}{{ answer_choices[label] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "could you tell me\u2026"
+    reference: ''
+  922d3e87-ac58-4731-84d1-f0a40e47afb5: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 922d3e87-ac58-4731-84d1-f0a40e47afb5
+    jinja: "\u0395\u039E\u0395\u03A4\u0391\u03A3\u0397\n1. \u0391\u03C0\u03AC\u03BD\
+      \u03C4\u03B7\u03C3\u03B7 \u03B1\u03C0\u03CC \u03BD\u03B1\u03B9 \u03AE \u03CC\
+      \u03C7\u03B9.\n\n\u0395\u03B3\u03B3\u03C1\u03B1\u03C6\u03BF: {{passage}}\n\u0395\
+      \u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{question}}? ||| \n{% if label != -1\
+      \ %}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: exam
+    reference: ''
+  9a1bf459-8047-437c-9def-f21e960429cc: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 9a1bf459-8047-437c-9def-f21e960429cc
+    jinja: "\u039C\u03B5 \u03B2\u03AC\u03C3\u03B7 \u03C4\u03BF \u03B1\u03BA\u03CC\u03BB\
+      \u03BF\u03C5\u03B8\u03BF \u03B1\u03C0\u03CC\u03C3\u03C0\u03B1\u03C3\u03BC\u03B1\
+      , {{ question }}; {{ passage }}\n\n|||\n{% if label != -1 %}\n{{ answer_choices[label]\
+      \ }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based on the following passage
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  9f4c6b0a-437b-40c0-b467-db4b7218d38d: !Template
+    answer_choices: "\u03A8\u03B5\u03C5\u03B4\u03AE\u03C2 ||| \u0391\u03BB\u03B7\u03B8\
+      \u03AE\u03C2"
+    id: 9f4c6b0a-437b-40c0-b467-db4b7218d38d
+    jinja: "\u0391\u03C3\u03BA\u03B7\u03C3\u03B7: \u0394\u03B9\u03B1\u03B2\u03AC\u03C3\
+      \u03C4\u03B5 \u03C4\u03BF \u03BA\u03B5\u03AF\u03BC\u03B5\u03BD\u03BF \u03BA\u03B1\
+      \u03B9 \u03B1\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\u03C4\u03B5 \u03C3\u03C4\u03B7\
+      \u03BD \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B1\u03BB\u03B7\
+      \u03B8\u03B9\u03BD\u03CC \u03AE \u03C8\u03B5\u03C5\u03B4\u03AD\u03C2.\n\n\u039A\
+      \u03B5\u03AF\u03BC\u03B5\u03BD\u03BF: {{passage}}\n\u0395\u03C1\u03CE\u03C4\u03B7\
+      \u03C3\u03B7: {{question}}? |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: exercise
+    reference: ''
+  b2b3cb60-d6e3-491c-a09a-8201e13e417e: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: b2b3cb60-d6e3-491c-a09a-8201e13e417e
+    jinja: "{{ passage }}\n\u039C\u03B5 \u03B2\u03AC\u03C3\u03B7 \u03C4\u03BF \u03C0\
+      \u03C1\u03BF\u03B7\u03B3\u03BF\u03CD\u03BC\u03B5\u03BD\u03BF \u03B1\u03C0\u03CC\
+      \u03C3\u03C0\u03B1\u03C3\u03BC\u03B1, {{ question }}; ||| {% if label != -1\
+      \ %}{{ answer_choices[label] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based on the previous passage
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  eb78772c-e81e-4b8a-a77b-b75efd1c212a: !Template
+    answer_choices: "\u03A8\u03B5\u03C5\u03B4\u03AE\u03C2 ||| \u0391\u03BB\u03B7\u03B8\
+      \u03AE\u03C2"
+    id: eb78772c-e81e-4b8a-a77b-b75efd1c212a
+    jinja: "{{passage}}\n\n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{question}};\
+      \ \u03A3\u03C9\u03C3\u03C4\u03CC \u03AE \u03BB\u03AC\u03B8\u03BF\u03C2; |||\n\
+      {% if label != -1 %}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: valid_binary
+    reference: ''

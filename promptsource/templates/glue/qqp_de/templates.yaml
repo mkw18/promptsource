@@ -1,0 +1,82 @@
+dataset: glue
+subset: qqp_de
+templates:
+  8e711799-a57c-4941-833b-466bedfb80ad: !Template
+    answer_choices: nein ||| Jawohl
+    id: 8e711799-a57c-4941-833b-466bedfb80ad
+    jinja: "Ich bin Administrator auf der Website Quora.Es gibt zwei Beitr\xE4ge,\
+      \ eine, die \"{{question1}}\" und eine fragt, die \"{{question2}}\" fragt.Ich\
+      \ kann Fragen zusammenf\xFChren, wenn sie dasselbe stellen.Kann ich diese beiden\
+      \ Fragen zusammenf\xFChren? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: quora
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: Nicht Duplikate ||| Duplikate
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: "{{question1}}\n{{question2}}\nW\xE4hlen Sie eine aus: Diese Fragen sind\
+      \ \"{{\"Duplikate\"}}\" oder \"{{\"Nicht Duplikate\"}}\".\n|||\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not
+    reference: ''
+  a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
+    answer_choices: nein ||| Jawohl
+    id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
+    jinja: Sind die Fragen "{{question1}}" und "{{question2}}" das Gleiche? ||| {{
+      answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''
+  c0182cd1-c7ac-4abe-829f-4651536af951: !Template
+    answer_choices: nein ||| Jawohl
+    id: c0182cd1-c7ac-4abe-829f-4651536af951
+    jinja: Kann eine Antwort auf "{{question1}}" auch verwendet werden, um "{{question2}}"
+      zu beantworten? ||| {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: answer
+    reference: ''
+  c0724198-97e7-44a1-89d8-c51e97ce0b04: !Template
+    answer_choices: Nein ||| Ja
+    id: c0724198-97e7-44a1-89d8-c51e97ce0b04
+    jinja: 'Frage 1: {{question1}}
+
+      Frage 2: {{question2}}
+
+
+      Stellen diese beiden Fragen die gleiche Bedeutung?Ja oder Nein? ||| {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: meaning
+    reference: ''
+  fd244bd3-ca3b-4e4f-9722-fd006c50e157: !Template
+    answer_choices: nein ||| Jawohl
+    id: fd244bd3-ca3b-4e4f-9722-fd006c50e157
+    jinja: Ich habe die Fragen "{{question1}}" und "{{question2}}" erhalten.Sind sie
+      Duplikate? ||| {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate
+    reference: ''

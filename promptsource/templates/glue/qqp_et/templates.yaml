@@ -1,0 +1,78 @@
+dataset: glue
+subset: qqp_et
+templates:
+  8e711799-a57c-4941-833b-466bedfb80ad: !Template
+    answer_choices: mitte ||| jah
+    id: 8e711799-a57c-4941-833b-466bedfb80ad
+    jinja: "Olen veebisaidil Quora administraator.Seal on kaks postitust: \xFCks k\xFC\
+      sib \"{{question1}}\" ja teine, kes k\xFCsib \"{{question2}}\".Saan k\xFCsimusi\
+      \ \xFChendada, kui nad k\xFCsivad sama asja.Kas ma saan need kaks k\xFCsimust\
+      \ \xFChendada? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: quora
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: Mitte duplikaadid ||| duplikaadid
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: "{{question1}}\n{{question2}}\nValige \xFCks: need k\xFCsimused on \"{{\"\
+      duplikaadid\"}}\" v\xF5i \"{{\"Mitte duplikaadid\"}}\".\n|||\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not
+    reference: ''
+  a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
+    answer_choices: mitte ||| jah
+    id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
+    jinja: "Kas k\xFCsimused \"{{question1}}\" ja \"{{question2}}\" k\xFCsivad sama\
+      \ asja? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''
+  c0182cd1-c7ac-4abe-829f-4651536af951: !Template
+    answer_choices: mitte ||| jah
+    id: c0182cd1-c7ac-4abe-829f-4651536af951
+    jinja: Kas "{{question2}}" vastamiseks saab kasutada ka vastust "{{question1}}"?
+      ||| {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: answer
+    reference: ''
+  c0724198-97e7-44a1-89d8-c51e97ce0b04: !Template
+    answer_choices: Mitte ||| Jah
+    id: c0724198-97e7-44a1-89d8-c51e97ce0b04
+    jinja: "K\xFCsimus 1: {{question1}}\n2. k\xFCsimus: {{question2}}\n\nKas need\
+      \ kaks k\xFCsimust annavad sama t\xE4henduse?Jah v\xF5i ei? ||| {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: meaning
+    reference: ''
+  fd244bd3-ca3b-4e4f-9722-fd006c50e157: !Template
+    answer_choices: mitte ||| jah
+    id: fd244bd3-ca3b-4e4f-9722-fd006c50e157
+    jinja: "Sain k\xFCsimused \"{{question1}}\" ja \"{{question2}}\".Kas need on duplikaadid?\
+      \ ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate
+    reference: ''

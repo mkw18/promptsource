@@ -1,0 +1,151 @@
+dataset: quoref
+subset: hr
+templates:
+  4120bebc-9c8f-44af-8d1a-a65e443ce010: !Template
+    answer_choices: null
+    id: 4120bebc-9c8f-44af-8d1a-a65e443ce010
+    jinja: "Odgovor na pitanje: {{pitanje}} nalazi se unutar \u010Dlanka: {{kontekst}},\
+      \ mo\u017Eete li ga pogoditi?\n\n|||\n{{answers.text | choice}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Guess Answer
+    reference: ''
+  6f1d5031-1377-4b8a-9475-987b2275b8da: !Template
+    answer_choices: null
+    id: 6f1d5031-1377-4b8a-9475-987b2275b8da
+    jinja: "S obzirom na sljede\u0107i kontekst:\n\n{{context}}\n\nodgovori na sljede\u0107\
+      e pitanje:\n\n{{question}} |||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Question Given Context
+    reference: ''
+  9493f80a-daf5-4c30-a9fc-7bc5bc61b5e9: !Template
+    answer_choices: null
+    id: 9493f80a-daf5-4c30-a9fc-7bc5bc61b5e9
+    jinja: "Sljede\u0107i \u010Dlanak sadr\u017Ei odgovor za pitanje: {{pitanje}},\
+      \ mo\u017Eete li ga prona\u0107i? \n\n{{context}}|||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Find Answer
+    reference: ''
+  a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb: !Template
+    answer_choices: null
+    id: a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb
+    jinja: "Ovaj \u010Dlanak: {{kontekst}} sadr\u017Ei odgovor za pitanje: {{pitanje}},\
+      \ \u0161to je to?\n|||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Context Contains Answer
+    reference: ''
+  aa26aab2-d2e7-4560-b7eb-0cbcff7c0f31: !Template
+    answer_choices: null
+    id: aa26aab2-d2e7-4560-b7eb-0cbcff7c0f31
+    jinja: '{{question}}
+
+
+      Odgovorite na gornje pitanje na temelju konteksta u nastavku:
+
+
+      {{context}} |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Given Context Answer Question
+    reference: ''
+  abdfa570-2de5-406c-9051-caa6a1362796: !Template
+    answer_choices: null
+    id: abdfa570-2de5-406c-9051-caa6a1362796
+    jinja: "Koji je odgovor za pitanje: {{pitanje}} iz sljede\u0107eg \u010Dlanka?\n\
+      \n{{context}}|||\n{{answers.text | choice}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: What Is The Answer
+    reference: ''
+  b3ec0888-dd6f-466a-abd4-b2fbcacfdb8b: !Template
+    answer_choices: null
+    id: b3ec0888-dd6f-466a-abd4-b2fbcacfdb8b
+    jinja: "Imam test gdje mi je dat sljede\u0107i \u010Dlanak, \u0161to je odgovor\
+      \ za pitanje: {{pitanje}}?\n\n{{context}}|||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Test
+    reference: ''
+  bf525757-8cde-4839-81fb-a85be3fd1192: !Template
+    answer_choices: null
+    id: bf525757-8cde-4839-81fb-a85be3fd1192
+    jinja: 'S obzirom na donji kontekst:
+
+
+      {{context}}
+
+
+      Pogodite valjani naslov za to! |||
+
+      {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: false
+    name: Guess Title For Context
+    reference: ''
+  d055747f-7a32-4e12-aab1-fed35d42a445: !Template
+    answer_choices: null
+    id: d055747f-7a32-4e12-aab1-fed35d42a445
+    jinja: "Prona\u0161li sljede\u0107i \u010Dlanak na mre\u017Ei, upotrijebite ga\
+      \ da biste odgovorili na pitanje: {{question}}\n\n{{context}}|||\n{{answers.text\
+      \ | choice}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Found Context Online
+    reference: ''
+  d1abb8a0-03c4-41ef-865c-aa275278a0e4: !Template
+    answer_choices: null
+    id: d1abb8a0-03c4-41ef-865c-aa275278a0e4
+    jinja: "Prijatelj me zamolio da odgovorim na ovo pitanje: {{pitanje}}, koriste\u0107\
+      i \u010Dlanak: {{kontekst}}, koji bi bio odgovor?\n\n|||\n{{answers.text | choice}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Friend Question
+    reference: ''
+  fcbe0609-06ce-4cbd-91de-adc38966bcac: !Template
+    answer_choices: null
+    id: fcbe0609-06ce-4cbd-91de-adc38966bcac
+    jinja: "Pro\u010Ditajte sljede\u0107i odlomak i izvucite odgovor na pitanje: {{question}}\n\
+      \n{{context}} |||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: 'Read And Extract '
+    reference: ''

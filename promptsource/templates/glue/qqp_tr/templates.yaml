@@ -1,0 +1,78 @@
+dataset: glue
+subset: qqp_tr
+templates:
+  8e711799-a57c-4941-833b-466bedfb80ad: !Template
+    answer_choices: "hay\u0131r ||| evet"
+    id: 8e711799-a57c-4941-833b-466bedfb80ad
+    jinja: "Quora web sitesinde y\xF6neticiyim.Biri \"{{question1}}\" soran iki yaz\u0131\
+      \ vard\u0131r ve di\u011Feri \"{{question2}}\" soran.Ayn\u0131 \u015Feyi soruyorlarsa\
+      \ sorular\u0131 birle\u015Ftirebilirim.Bu iki soruyu birle\u015Ftirebilir miyim?\
+      \ ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: quora
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: "kopya de\u011Fil ||| kopyalar"
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: "{{question1}}\n{{question2}}\nBirini se\xE7in: Bu sorular \"{{\"kopyalar\"\
+      }}\" veya \"{{\"kopya de\u011Fil\"}}\" 'd\u0131r.\n|||\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not
+    reference: ''
+  a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
+    answer_choices: "hay\u0131r ||| evet"
+    id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
+    jinja: "\"{{question1}}\" ve \"{{question2}}\"} ayn\u0131 \u015Feyi soruyor mu?\
+      \ ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''
+  c0182cd1-c7ac-4abe-829f-4651536af951: !Template
+    answer_choices: "hay\u0131r ||| evet"
+    id: c0182cd1-c7ac-4abe-829f-4651536af951
+    jinja: "\"{{question2}}\" cevaplamak i\xE7in \"{{question1}}\" 'e cevap da kullan\u0131\
+      labilir mi? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: answer
+    reference: ''
+  c0724198-97e7-44a1-89d8-c51e97ce0b04: !Template
+    answer_choices: Numara ||| Evet
+    id: c0724198-97e7-44a1-89d8-c51e97ce0b04
+    jinja: "Soru 1: {{question1}}\nSoru 2: {{question2}}\n\nBu iki soru ayn\u0131\
+      \ anlam\u0131 iletiyor mu?Evet veya Hay\u0131r? ||| {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: meaning
+    reference: ''
+  fd244bd3-ca3b-4e4f-9722-fd006c50e157: !Template
+    answer_choices: "hay\u0131r ||| evet"
+    id: fd244bd3-ca3b-4e4f-9722-fd006c50e157
+    jinja: "\"{{question1}}\" ve \"{{question2}}\" sorular\u0131n\u0131 ald\u0131\
+      m.Onlar kopyalar m\u0131? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate
+    reference: ''

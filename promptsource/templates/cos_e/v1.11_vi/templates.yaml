@@ -1,0 +1,160 @@
+dataset: cos_e
+subset: v1.11_vi
+templates:
+  02a87cd3-6595-44bd-a384-95bdc8b3dd0c: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: 02a87cd3-6595-44bd-a384-95bdc8b3dd0c
+    jinja: "{{ question }}\nCh\u1ECDn t\xF9y ch\u1ECDn ph\xF9 h\u1EE3p nh\u1EA5t \u0111\
+      \u1EC3 tr\u1EA3 l\u1EDDi c\xE2u h\u1ECFi tr\xEAn.\nT\xF9y ch\u1ECDn:\n- {{ answer_choices\
+      \ | join(\"\\n- \") }}\n|||\n{{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_description_option_text
+    reference: ''
+  046ce4df-c847-4dc2-b53c-9f02d32aff8a: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: 046ce4df-c847-4dc2-b53c-9f02d32aff8a
+    jinja: "{{ question }}\nCh\u1ECDn t\xF9y ch\u1ECDn ph\xF9 h\u1EE3p nh\u1EA5t \u0111\
+      \u1EC3 tr\u1EA3 l\u1EDDi c\xE2u h\u1ECFi tr\xEAn.\nT\xF9y ch\u1ECDn\uFF1A\n\
+      {% for k in range(choices | length) %}\n{{'. '.join([answer_choices[k], choices[k]])}}\n\
+      {% endfor %}\n|||\n{{ answer_choices[choices.index(answer)] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_description_option_id
+    reference: ''
+  25863d16-34be-4c5f-9040-11d5c6398b4b: !Template
+    answer_choices: null
+    id: 25863d16-34be-4c5f-9040-11d5c6398b4b
+    jinja: "C\xE2u h\u1ECFi: {{question}}\n\nL\u1EF1a ch\u1ECDn: \n- {{ choices |\
+      \ join(\"\\n- \") }}\n\nC\u01A1 s\u1EDF l\xFD lu\u1EADn \u0111\u1EC3 ch\u1ECD\
+      n \"{{answer}}\" l\xE0m c\xE2u tr\u1EA3 l\u1EDDi l\xE0: |||\n{{abstractive_explanation}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: rationale
+    reference: ''
+  4b946a87-b39c-4f01-9041-832d82da48af: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: 4b946a87-b39c-4f01-9041-832d82da48af
+    jinja: "{{ question }}\n- {{ answer_choices | join(\"\\n- \") }}\n\nC\xE2u tr\u1EA3\
+      \ l\u1EDDi t\u1ED1t nh\u1EA5t l\xE0\n|||\n{{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_option_description_text
+    reference: ''
+  55dd7471-c01e-4197-a8cd-d8e6359ef582: !Template
+    answer_choices: null
+    id: 55dd7471-c01e-4197-a8cd-d8e6359ef582
+    jinja: "\u0110\xE2y l\xE0 m\u1ED9t c\xE2u h\u1ECFi v\xE0 m\u1ED9t v\xE0i c\xE2\
+      u tr\u1EA3 l\u1EDDi c\xF3 th\u1EC3: \n\nC\xE2u h\u1ECFi: {{ question }}\nC\xE2\
+      u tr\u1EA3 l\u1EDDi c\xF3 th\u1EC3: {{ choices | join(\", \") }}\n\nT\u1EA1\
+      i sao \"{{answer}}\" m\u1ED9t c\xE2u tr\u1EA3 l\u1EDDi ph\xF9 h\u1EE3p v\u1EDB\
+      i l\u1EBD th\u01B0\u1EDDng c\u1EE7a con ng\u01B0\u1EDDi? \n|||\n{{ abstractive_explanation\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: aligned_with_common_sense
+    reference: ''
+  60354294-f30a-4a5b-be18-372c3c1a3491: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: 60354294-f30a-4a5b-be18-372c3c1a3491
+    jinja: "Ch\u1ECDn t\xF9y ch\u1ECDn ph\xF9 h\u1EE3p v\u1EDBi l\u1EBD th\u01B0\u1EDD\
+      ng \u0111\u1EC3 tr\u1EA3 l\u1EDDi c\xE2u h\u1ECFi.\nC\xE2u h\u1ECFi: {{ question\
+      \ }}\nT\xF9y ch\u1ECDn:\n{% for k in range(choices | length) %}\n{{'. '.join([answer_choices[k],\
+      \ choices[k]])}}\n{% endfor %}\n|||\n{{ answer_choices[choices.index(answer)]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_question_option_id
+    reference: ''
+  73f0f76b-c7f9-41fd-b4df-705625ab8241: !Template
+    answer_choices: null
+    id: 73f0f76b-c7f9-41fd-b4df-705625ab8241
+    jinja: "C\xE2u h\u1ECFi: {{ question }}\nT\xF9y ch\u1ECDn:\n- {{ choices | join(\"\
+      \\n- \") }}\n\nGi\u1EA3i th\xEDch l\xFD do t\u1EA1i sao con ng\u01B0\u1EDDi\
+      \ s\u1EBD ch\u1ECDn \"{{answer}}\" \u0111\u1EC3 tr\u1EA3 l\u1EDDi c\xE2u h\u1ECF\
+      i \u1EDF tr\xEAn:\n|||\n{{ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: explain_why_human
+    reference: ''
+  90a7d84f-0316-4b28-a4fe-2f61c0126158: !Template
+    answer_choices: null
+    id: 90a7d84f-0316-4b28-a4fe-2f61c0126158
+    jinja: "C\xE2u h\u1ECFi: {{ question }}\nT\xF9y ch\u1ECDn:\n- {{ choices | join(\"\
+      \\n- \") }}\n\nC\xE2u tr\u1EA3 l\u1EDDi l\xE0 \"{{answer}}\" v\xEC\n|||\n{{\
+      \ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_explanation_given_text
+    reference: ''
+  a8036e94-ad4a-4f26-9765-cf7223800138: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: a8036e94-ad4a-4f26-9765-cf7223800138
+    jinja: "Ch\u1ECDn t\xF9y ch\u1ECDn ph\xF9 h\u1EE3p v\u1EDBi l\u1EBD th\u01B0\u1EDD\
+      ng \u0111\u1EC3 tr\u1EA3 l\u1EDDi c\xE2u h\u1ECFi.\nC\xE2u h\u1ECFi: {{ question\
+      \ }}\nT\xF9y ch\u1ECDn:\n- {{ answer_choices | join(\"\\n- \") }}\n|||\n{{ answer\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_question_option_text
+    reference: ''
+  e57a5c48-209c-4e82-b061-dbc8d124dffa: !Template
+    answer_choices: null
+    id: e57a5c48-209c-4e82-b061-dbc8d124dffa
+    jinja: "\u0110\xE2y l\xE0 m\u1ED9t c\xE2u h\u1ECFi: {{ question }}\n\nD\u01B0\u1EDB\
+      i \u0111\xE2y l\xE0 c\xE2u tr\u1EA3 l\u1EDDi c\xF3 th\u1EC3 cho c\xE2u h\u1ECF\
+      i n\xE0y:\n- {{ choices | join(\"\\n- \") }}\n\nT\xF4i tin r\u1EB1ng l\u1EF1\
+      a ch\u1ECDn ch\xEDnh x\xE1c l\xE0 \"{{answer}}\", \u0111\xE2y l\xE0 l\xFD do\
+      \ t\u1EA1i sao:\n|||\n{{ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: i_think
+    reference: ''
+  f678d224-23f0-488b-9c5d-0bf466a0aa16: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: f678d224-23f0-488b-9c5d-0bf466a0aa16
+    jinja: "{{ question }}\n{% for k in range(choices | length) %}\n{{'. '.join([answer_choices[k],\
+      \ choices[k]])}}\n{% endfor %}\nC\xE2u tr\u1EA3 l\u1EDDi t\u1ED1t nh\u1EA5t\
+      \ l\xE0\n|||\n{{ answer_choices[choices.index(answer)] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_option_description_id
+    reference: ''

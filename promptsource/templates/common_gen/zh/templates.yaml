@@ -1,0 +1,130 @@
+dataset: common_gen
+subset: zh
+templates:
+  45778bd5-fddc-4c60-a77b-4eff5bed1c0b: !Template
+    answer_choices: null
+    id: 45778bd5-fddc-4c60-a77b-4eff5bed1c0b
+    jinja: "\u5FFD\u7565\u6982\u5FF5\u7684\u987A\u5E8F\uFF1A {{ concepts | join(\"\
+      , \") }}; \n\u751F\u6210\u4E00\u4E2A\u5E26\u6709\u6240\u6709\u6982\u5FF5\u7684\
+      \u53E5\u5B50\uFF1A\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Given concepts - type 2
+    reference: Ignoring the order of the concepts:...
+  684f1859-0b8d-4efe-82e1-7218838813cd: !Template
+    answer_choices: null
+    id: 684f1859-0b8d-4efe-82e1-7218838813cd
+    jinja: "\u5C06\u6982\u5FF5\u653E\u5728\u4E00\u8D77\u4EE5\u5F62\u6210\u4E00\u4E2A\
+      \u53E5\u5B50\uFF1A {{ concepts | join(\", \") }}.\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Put together
+    reference: This is similar to a task description
+  a4991cc7-cc91-4f37-af80-1983a02eb950: !Template
+    answer_choices: null
+    id: a4991cc7-cc91-4f37-af80-1983a02eb950
+    jinja: "\u7528\u5355\u8BCD{{concepts | choice}}\u6784\u5EFA\u4E00\u4E2A\u53E5\u5B50\
+      \u3002 \n\n\u63D0\u793A\uFF1A\u4F7F\u7528{{concepts | join(\", \")}}\u9650\u5236\
+      \u8F93\u51FA\u53E5\u5B50\u3002\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: choice in concept centric sentence generation
+    reference: ''
+  b2033df4-7922-45b8-a113-e7784135cea9: !Template
+    answer_choices: null
+    id: b2033df4-7922-45b8-a113-e7784135cea9
+    jinja: "{% set seq = [ \n'\u4ECE\u4E0B\u9762\u63D0\u5230\u7684\u6982\u5FF5\u4E2D\
+      \u4EA7\u751F\u4E00\u4E2A\u53E5\u5B50\uFF1A', \n'\u5C06\u6982\u5FF5\u8F6C\u6362\
+      \u4E3A\u53E5\u5B50\uFF1A', \n'\u7ED9\u5B9A\u6982\u5FF5\u5217\u8868\uFF0C\u5199\
+      \u4E00\u4E2A\u53E5\u5B50\uFF1A'\n] %} \n{{ seq | choice }}\n{{ concepts | join(\"\
+      , \") }}\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: random task template prompt
+    reference: With a randomly chosen task template, generate a sentence from the
+      list of concepts
+  b7012213-04c4-424d-85fb-39d63d8a0ca2: !Template
+    answer_choices: null
+    id: b7012213-04c4-424d-85fb-39d63d8a0ca2
+    jinja: "\u53E5\u5B50\u4E2D\u7684\u4E3B\u9898\u662F\u4EC0\u4E48\uFF1A {{target}}\n\
+      |||\n{{ concepts | join(\", \") }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: topics from the sentence
+    reference: The template generates a random topic from the sentence
+  ed215962-8e51-45e7-b025-6e822f877098: !Template
+    answer_choices: null
+    id: ed215962-8e51-45e7-b025-6e822f877098
+    jinja: "\u6211\u4EEC\u6709\u53E5\u5B50\uFF1A {{target}}; \n\u63D0\u53D6\u6240\u6709\
+      \u5173\u952E\u6982\u5FF5\uFF1A \n|||\n{{ concepts | join(\", \") }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: sentence to concepts
+    reference: Template identifies the concepts from the sentence
+  f3fce748-89e0-4b88-94bb-72ddb9a04d10: !Template
+    answer_choices: null
+    id: f3fce748-89e0-4b88-94bb-72ddb9a04d10
+    jinja: "\u60A8\u53EF\u4EE5\u5199\u4E00\u4E2A\u6709\u5173\u4E3B\u9898{{concepts\
+      \ | choice}}\u7684\u53E5\u5B50\u5417\uFF1F\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: topic to sentence
+    reference: 'Choose a random topic and ask the model to write a sentence about
+      it '
+  fa787974-86dd-4f66-b2d7-6d3523ce00e1: !Template
+    answer_choices: null
+    id: fa787974-86dd-4f66-b2d7-6d3523ce00e1
+    jinja: "\u4EBA\u7C7B\u53EF\u4EE5\u8F7B\u677E\u5730\u5C06\u62BD\u8C61\u6982\u5FF5\
+      \u4E32\u5728\u4E00\u8D77\u4EE5\u5F62\u6210\u8FDE\u8D2F\u7684\u53E5\u5B50\u3002\
+      \ \n\u4F8B\u5982\uFF0C\u4F7F\u7528\u6982\u5FF5{{concepts | join(\", \")}}\uFF0C\
+      \u4E00\u4E2A\u7B80\u5355\u7684\u53E5\u5B50\u53EF\u4EE5\u662F  \n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Example prompt
+    reference: The prompt is in the form of an example
+  fbeebb4f-cba1-4bc4-80ec-758a3c134033: !Template
+    answer_choices: null
+    id: fbeebb4f-cba1-4bc4-80ec-758a3c134033
+    jinja: "\u7ED9\u5B9A\u6982\u5FF5\u5217\u8868\uFF1A {{ concepts | join(\", \")\
+      \ }}; \n\u751F\u6210\u4E00\u4E2A\u5E26\u6709\u6240\u6709\u6982\u5FF5\u7684\u53E5\
+      \u5B50\uFF1A\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Given concepts type 1
+    reference: 'The prompt has the prefix "Given the .." '

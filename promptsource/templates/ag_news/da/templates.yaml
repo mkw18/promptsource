@@ -1,0 +1,95 @@
+dataset: ag_news
+subset: da
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: Verdenspolitik ||| Sport ||| Forretning ||| Videnskab og teknologi
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "Hvilken etiket beskriver bedst denne nyhedsartikel?\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: Verdenspolitik ||| Sport ||| Forretning ||| Videnskab og teknologi
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "Er dette en nyhed vedrørende {{\"verdenspolitik, sport, erhvervsliv,\
+      \ eller videnskab og teknologi\"}}?\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: Politiker ||| Atlet ||| Virksomhedsleder ||| Videnskabsmand
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: 'Vil du anbefale følgende artikel til en {{"politiker"}}, en {{"atlet"}},
+      en {{"virksomhedsleder"}} eller en {{"videnskabsmand"}}?
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: Verdensnyheder ||| Sport ||| Forretning ||| Videnskab og teknologi
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\nHvilken af de følgende sektioner af en avis ville dette\
+       \ artiklen sandsynligvis vises i? {{\"Verdensnyheder\"}}, {{\"Sport\"}}, {{\"Forretning\"\
+       }} eller {{\"Videnskab og teknologi\"}}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: Verdensnyheder ||| Sport ||| Forretning ||| Videnskab og teknologi
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\nHvilken del af en avis ville denne artikel sandsynligvis blive\
+      \ vist i? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: Verdenspolitik ||| Sport ||| Forretning ||| Videnskab og teknologi
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \nEr dette en nyhed vedrørende {{\"verdenspolitik, sport,\
+      \ business, eller videnskab og teknologi\"}}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: Verdenspolitik ||| Sport ||| Forretning ||| Videnskab og teknologi
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \nHvilken etiket beskriver bedst denne nyhedsartikel? ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

@@ -1,0 +1,66 @@
+dataset: quarel
+subset: hr
+templates:
+  5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
+    jinja: "Pitanje: {{question}}\n\nNe koristite {{\"a\"}} i {{\"b\"}} da biste odgovorili\
+      \ na pitanje, ve\u0107 umjesto toga, odaberite izme\u0111u \"{{answer_choices[0]}}\"\
+      \ i \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: do_not_use
+    reference: ''
+  5b5f9d29-0ad5-4bb9-831a-11fcb115c10d: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
+    jinja: "Evo logi\u010Dkog testa: {{question}}\n\nOdaberite odgovor izme\u0111\
+      u \"{{answer_choices[0]}}\" i \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: logic_test
+    reference: ''
+  63c58389-605a-42b9-85a6-a2586a954a92: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 63c58389-605a-42b9-85a6-a2586a954a92
+    jinja: "Evo kratke pri\u010De: {{question}}.\n\nKoji je najosjetljiviji odgovor\
+      \ izme\u0111u \"{{answer_choices[0]}}\" i \"{{answer_choices[1]}}\"?\n|||\n\
+      {{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: heres_a_story
+    reference: ''
+  73a7adbb-41b1-4b4d-b378-d7e17d030a6f: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 73a7adbb-41b1-4b4d-b378-d7e17d030a6f
+    jinja: "Odaberite izme\u0111u \"{{answer_choices[0]}}\" i \"{{answer_choices[1]}}\"\
+      .\nPitanje: {{question}}\n|||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: choose_between
+    reference: ''
+  92013fab-5387-44d4-bf0f-e29a31bcafb6: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 92013fab-5387-44d4-bf0f-e29a31bcafb6
+    jinja: "Testiram logiku svojih u\u010Denika.\nKoji je odgovor koji bi trebali\
+      \ birati izme\u0111u \"{{answer_choices[0]}}\" i \"{{answer_choices[1]}}\"?\n\
+      Logi\u010Dki test: {{question}}\n|||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: testing_students
+    reference: ''

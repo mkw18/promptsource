@@ -1,0 +1,144 @@
+dataset: multi_news
+subset: de
+templates:
+  12269bd1-1c3a-4865-9702-892782b593d9: !Template
+    answer_choices: null
+    id: 12269bd1-1c3a-4865-9702-892782b593d9
+    jinja: '{% set docs = document.split("3ed2dface8203c4c9dfb1a5dc58e41e0||") | reject("equalto",
+      "") | list %}
+
+      Was sind die wichtigsten Punkte in diesen Nachrichtenartikeln:
+
+      {% for doc in docs %}
+
+
+      Artikel: {{doc}}
+
+      {% endfor %}
+
+      |||
+
+      {{summary[2:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: what are the key points
+    reference: ''
+  940d0ce4-c1ef-4453-a47b-1abaaf811160: !Template
+    answer_choices: null
+    id: 940d0ce4-c1ef-4453-a47b-1abaaf811160
+    jinja: '{% set docs = document.split("3ed2dface8203c4c9dfb1a5dc58e41e0||") | reject("equalto",
+      "") | list %}
+
+      Synthese diese Dokumente in eine einzige:
+
+      {% for doc in docs %}
+
+
+      - {{doc}}
+
+      {% endfor %}
+
+      |||
+
+      {{summary[2:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: synthesize
+    reference: ''
+  9ab370ad-2b89-4d2a-bb40-ccc31accefad: !Template
+    answer_choices: null
+    id: 9ab370ad-2b89-4d2a-bb40-ccc31accefad
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\nIch m\xF6chte die folgenden Artikel in\
+      \ eine pr\xE4gnantere Zusammenfassung bearbeiten:\n{% for doc in docs %}\n\n\
+      Artikel: {{doc}}\n{% endfor %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: summary scenario
+    reference: ''
+  b15485f5-2bd9-4ed4-98ce-4b241a341f99: !Template
+    answer_choices: null
+    id: b15485f5-2bd9-4ed4-98ce-4b241a341f99
+    jinja: '{% set docs = document.split("3ed2dface8203c4c9dfb1a5dc58e41e0||") | reject("equalto",
+      "") | list %}
+
+      Schreiben Sie eine Zusammenfassung der folgenden Artikel:
+
+      {% for doc in docs %}
+
+
+      Dokumentieren: {{doc}}
+
+      {% endfor %}
+
+      |||
+
+      {{summary[2:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: summarize
+    reference: ''
+  bc910e51-c0a9-473c-aa85-adcab21b9ba9: !Template
+    answer_choices: null
+    id: bc910e51-c0a9-473c-aa85-adcab21b9ba9
+    jinja: '{% set docs = document.split("3ed2dface8203c4c9dfb1a5dc58e41e0||") | reject("equalto",
+      "") | list%}
+
+      Schreiben Sie einen erweiterten Nachrichtenartikel mit plausiblen Details aus
+      der folgenden Zusammenfassung:
+
+      {{summary[2:]}}
+
+      |||
+
+      {{docs | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: expand (reverse task)
+    reference: ''
+  d5a4bb2a-634a-4e9a-9f1f-b0803894ca0f: !Template
+    answer_choices: null
+    id: d5a4bb2a-634a-4e9a-9f1f-b0803894ca0f
+    jinja: '{% set docs = document.split("3ed2dface8203c4c9dfb1a5dc58e41e0||") | reject("equalto",
+      "") | list %}
+
+      Ich versuche, diese Artikel in einen zu destillieren:
+
+      {% for doc in docs %}
+
+
+      Artikel: {{doc}}
+
+      {% endfor %}
+
+      |||
+
+      {{summary[2:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: distill
+    reference: ''

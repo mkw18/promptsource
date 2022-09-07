@@ -1,0 +1,94 @@
+dataset: adversarial_qa
+subset: droberta_el
+templates:
+  00755780-f3c0-44b4-b159-8f3873cdb163: !Template
+    answer_choices: null
+    id: 00755780-f3c0-44b4-b159-8f3873cdb163
+    jinja: "\u0398\u03AD\u03BB\u03C9 \u03BD\u03B1 \u03B4\u03BF\u03BA\u03B9\u03BC\u03AC\
+      \u03C3\u03C9 \u03C4\u03B7\u03BD \u03B9\u03BA\u03B1\u03BD\u03CC\u03C4\u03B7\u03C4\
+      \u03B1 \u03C4\u03C9\u03BD \u03BC\u03B1\u03B8\u03B7\u03C4\u03CE\u03BD \u03BD\u03B1\
+      \ \u03B4\u03B9\u03B1\u03B2\u03AC\u03C3\u03BF\u03C5\u03BD \u03AD\u03BD\u03B1\
+      \ \u03B1\u03C0\u03CC\u03C3\u03C0\u03B1\u03C3\u03BC\u03B1 \u03BA\u03B1\u03B9\
+      \ \u03BD\u03B1 \u03B1\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\u03C9 \u03C3\u03B5\
+      \ \u03B5\u03C1\u03C9\u03C4\u03AE\u03C3\u03B5\u03B9\u03C2 \u03C3\u03C7\u03B5\u03C4\
+      \u03B9\u03BA\u03AC \u03BC\u03B5 \u03B1\u03C5\u03C4\u03CC.\u0398\u03B1 \u03BC\
+      \u03C0\u03BF\u03C1\u03BF\u03CD\u03C3\u03B1\u03C4\u03B5 \u03BD\u03B1 \u03B2\u03C1\
+      \u03B5\u03AF\u03C4\u03B5 \u03BC\u03B9\u03B1 \u03BA\u03B1\u03BB\u03AE \u03B5\u03C1\
+      \u03CE\u03C4\u03B7\u03C3\u03B7 \u03B3\u03B9\u03B1 \u03C4\u03BF \u03C0\u03AD\u03C1\
+      \u03B1\u03C3\u03BC\u03B1 \"{{context}}\"; |||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  3b2459cc-6600-443c-abf8-8f60c34cd993: !Template
+    answer_choices: null
+    id: 3b2459cc-6600-443c-abf8-8f60c34cd993
+    jinja: "{% if metadata.split != \"test\" %}\n\u0393\u03BD\u03C9\u03C1\u03AF\u03B6\
+      \u03C9 \u03CC\u03C4\u03B9 \u03B7 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7\
+      \ \u03C3\u03C4\u03B7\u03BD \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \"{{question}}\"\
+      \ \u03B5\u03AF\u03BD\u03B1\u03B9 \u03C3\u03C4\u03BF \"{{context}}\".\u039C\u03C0\
+      \u03BF\u03C1\u03B5\u03AF\u03C4\u03B5 \u03BD\u03B1 \u03BC\u03BF\u03C5 \u03C0\u03B5\
+      \u03AF\u03C4\u03B5 \u03C4\u03B9 \u03B5\u03AF\u03BD\u03B1\u03B9; |||\n\n{{answers.text\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  5bdb1815-5c6f-49a3-ad1d-367344420703: !Template
+    answer_choices: null
+    id: 5bdb1815-5c6f-49a3-ad1d-367344420703
+    jinja: "{% if metadata.split != \"test\" %}\n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\
+      \u03B7: \"{{question}}\"\n\n\u03A3\u03C5\u03BC\u03C6\u03C1\u03B1\u03B6\u03CC\
+      \u03BC\u03B5\u03BD\u03B1: \"{{context}}\"\n\n\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\
+      \u03C3\u03B7:\n|||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'
+  a0872cde-2f19-4ae6-919a-868da47bfbc3: !Template
+    answer_choices: null
+    id: a0872cde-2f19-4ae6-919a-868da47bfbc3
+    jinja: "{% if metadata.split != \"test\" %}\n\u0395\u03BE\u03B1\u03B3\u03AC\u03B3\
+      \u03B5\u03C4\u03B5 \u03C4\u03B7\u03BD \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\
+      \u03B7 \u03C3\u03C4\u03B7\u03BD \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03B1\
+      \u03C0\u03CC \u03C4\u03BF \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03BF \u03C0\
+      \u03BB\u03B1\u03AF\u03C3\u03B9\u03BF.\n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7\
+      : {{question}}\n\u03A3\u03C5\u03BC\u03C6\u03C1\u03B1\u03B6\u03CC\u03BC\u03B5\
+      \u03BD\u03B1: {{context}}|||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  a64d5a15-68e2-4d1c-b30a-ca8250c860f3: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860f3
+    jinja: "{% if metadata.split != \"test\" %}\n\u0394\u03B5\u03B4\u03BF\u03BC\u03AD\
+      \u03BD\u03BF\u03C5 \u03CC\u03C4\u03B9 \u03C4\u03BF \u03B1\u03BA\u03CC\u03BB\u03BF\
+      \u03C5\u03B8\u03BF \u03B1\u03C0\u03CC\u03C3\u03C0\u03B1\u03C3\u03BC\u03B1\n\n\
+      \"{{context}}\",\n\n\u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B5 \u03C4\u03B7\
+      \u03BD \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03B7 \u03B5\u03C1\u03CE\u03C4\
+      \u03B7\u03C3\u03B7.\u03A3\u03B7\u03BC\u03B5\u03B9\u03CE\u03C3\u03C4\u03B5 \u03CC\
+      \u03C4\u03B9 \u03B7 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03C5\u03C0\
+      \u03AC\u03C1\u03C7\u03B5\u03B9 \u03BC\u03AD\u03C3\u03B1 \u03C3\u03C4\u03BF \u03BA\
+      \u03B5\u03AF\u03BC\u03B5\u03BD\u03BF.\n\n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\
+      \u03B7: {{question}} |||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'

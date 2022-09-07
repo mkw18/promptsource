@@ -1,0 +1,191 @@
+dataset: ropes
+subset: vi
+templates:
+  0791ec30-6361-4e62-8dce-ca9cbf997acc: !Template
+    answer_choices: null
+    id: 0791ec30-6361-4e62-8dce-ca9cbf997acc
+    jinja: "{% if answers.text %}\nVui l\xF2ng tr\u1EA3 l\u1EDDi ch\xEDnh x\xE1c c\xE2\
+      u h\u1ECFi sau \u0111\xE2y li\xEAn quan \u0111\u1EBFn \u0111o\u1EA1n v\u0103\
+      n d\u01B0\u1EDBi \u0111\xE2y. \n\n{{ question }}\n\n{{ situation }}\n\nD\u1EA5\
+      u: {{ background }}\n|||\n{{ answers.text | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: prompt_beginning
+    reference: ''
+  0909d72d-50c7-4cbb-bec4-1f891123717c: !Template
+    answer_choices: null
+    id: 0909d72d-50c7-4cbb-bec4-1f891123717c
+    jinja: "{% if answers.text %}\n{{ situation }}\n\n\u0110\u01B0a ra \u0111o\u1EA1\
+      n tr\xEAn, vui l\xF2ng tr\u1EA3 l\u1EDDi \u0111\xFAng c\xE2u h\u1ECFi sau: \n\
+      \n{{ question }}\n|||\n{{ answers.text | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: prompt_bottom_no_hint
+    reference: ''
+  1e4944e7-4d5b-475c-8b04-4b523e96bc51: !Template
+    answer_choices: null
+    id: 1e4944e7-4d5b-475c-8b04-4b523e96bc51
+    jinja: "{% if answers.text %}\nTi\u1EC3u s\u1EED: {{ background }}\n\n\u0110o\u1EA1\
+      n v\u0103n: {{ situation }}\n\n\u0110\u01B0a ra \u0111o\u1EA1n tr\xEAn, vui\
+      \ l\xF2ng tr\u1EA3 l\u1EDDi \u0111\xFAng c\xE2u h\u1ECFi sau: {{ question }}\n\
+      |||\n{{ answers.text | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: prompt_bottom_hint_beginning
+    reference: ''
+  27fb16c6-a563-46ef-af73-42e15183824e: !Template
+    answer_choices: null
+    id: 27fb16c6-a563-46ef-af73-42e15183824e
+    jinja: "{% if answers.text %}\n\u0110\u01B0a ra n\u1EC1n: {{background}}\n\nV\xE0\
+      \ t\xECnh hu\u1ED1ng: {{situation}}\n\nTr\u1EA3 l\u1EDDi c\xE2u h\u1ECFi sau:\
+      \ {{question}}|||\n{{ answers.text | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: given_background_situation
+    reference: ''
+  31faf808-80ff-47af-ac49-d2cd7a7abcaf: !Template
+    answer_choices: null
+    id: 31faf808-80ff-47af-ac49-d2cd7a7abcaf
+    jinja: '{% if answers.text %}
+
+      {{ situation }}
+
+
+      {{ question }}
+
+
+      |||
+
+      {{ answers.text | choice }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: plain_no_background
+    reference: Task without background
+  473f2c9c-9731-443c-a641-5e43770f7df6: !Template
+    answer_choices: null
+    id: 473f2c9c-9731-443c-a641-5e43770f7df6
+    jinja: "{% if answers.text %}\n{{ situation }}\n\n{{ question }}\n\nD\u1EA5u:\
+      \ {{ background }}\n|||\n{{ answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: plain_bottom_hint
+    reference: ''
+  a04f69ac-8122-4618-8426-185fc043feca: !Template
+    answer_choices: null
+    id: a04f69ac-8122-4618-8426-185fc043feca
+    jinja: '{% if answers.text %}
+
+      {{ background }}
+
+
+      {{ situation }}
+
+
+      {{ question }}
+
+      |||
+
+      {{ answers.text | choice }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: plain_background_situation
+    reference: ''
+  a17aefbb-c571-4127-8170-379e2ec83774: !Template
+    answer_choices: null
+    id: a17aefbb-c571-4127-8170-379e2ec83774
+    jinja: "{% if answers.text %}\nT\xF4i c\xF3 th\u1EC3 s\u1EED d\u1EE5ng n\u1EC1\
+      n n\xE0y: {{background}}\n\nB\xE2y gi\u1EDD, t\xF4i c\xF3 m\u1ED9t t\xECnh hu\u1ED1\
+      ng m\u1EDBi: {{situation}}\n\nTr\u1EA3 l\u1EDDi c\xE2u h\u1ECFi n\xE0y xin vui\
+      \ l\xF2ng: {{question}}|||\n{{ answers.text | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: background_new_situation_answer
+    reference: ''
+  b6da4f12-5384-46f5-a74e-c703c19d1698: !Template
+    answer_choices: null
+    id: b6da4f12-5384-46f5-a74e-c703c19d1698
+    jinja: "{% if answers.text %}\nB\u1EA1n \u0111\u01B0\u1EE3c \u0111\u01B0a ra m\u1ED9\
+      t t\xECnh hu\u1ED1ng m\u1EDBi: {{situation}}\n\nv\xE0 m\u1ED9t g\u1EE3i \xFD\
+      : {{background}}\n\nH\xE3y tr\u1EA3 l\u1EDDi c\xE2u h\u1ECFi n\xE0y : {{question}}|||\n\
+      {{ answers.text | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: background_situation_middle
+    reference: ''
+  cc747655-6472-4023-95e4-03cb85d5a1c5: !Template
+    answer_choices: null
+    id: cc747655-6472-4023-95e4-03cb85d5a1c5
+    jinja: "{% if answers.text %}\nT\xF4i c\xF3 m\u1ED9t t\xECnh hu\u1ED1ng m\u1EDB\
+      i: {{situation}}\n\nNh\u01B0ng t\xF4i c\xF3 th\u1EC3 s\u1EED d\u1EE5ng n\u1EC1\
+      n n\xE0y: {{background}}\n\nC\xE2u tr\u1EA3 l\u1EDDi cho c\xE2u h\u1ECFi n\xE0\
+      y l\xE0 g\xEC: {{question}}|||\n{{ answers.text | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: new_situation_background_answer
+    reference: ''
+  cc8f3c6b-b800-4b47-b6ec-e8febfdaad6f: !Template
+    answer_choices: null
+    id: cc8f3c6b-b800-4b47-b6ec-e8febfdaad6f
+    jinja: "{% if answers.text %}\n{{ situation }}\n\n\u0110\u01B0a ra \u0111o\u1EA1\
+      n tr\xEAn, vui l\xF2ng tr\u1EA3 l\u1EDDi \u0111\xFAng c\xE2u h\u1ECFi sau: \n\
+      \n{{ question }}\n\nD\u1EA5u: {{ background }}\n|||\n{{ answers.text | choice\
+      \ }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: prompt_mix
+    reference: ''
+  f62e0adb-ca74-4280-8ed3-8b53411d87ce: !Template
+    answer_choices: null
+    id: f62e0adb-ca74-4280-8ed3-8b53411d87ce
+    jinja: "{% if answers.text %}\nT\xF4i \u0111\u1ECDc b\xE0i vi\u1EBFt n\u1EC1n\
+      \ n\xE0y v\xE0o m\u1ED9t ng\xE0y kh\xE1c: {{background}}\n\nT\xF4i \u0111ang\
+      \ ph\u1EA3i \u0111\u1ED1i m\u1EB7t v\u1EDBi m\u1ED9t t\xECnh hu\u1ED1ng m\u1EDB\
+      i h\xF4m nay: {{situation}}\n\nS\u1EED d\u1EE5ng ki\u1EBFn th\u1EE9c m\xE0 t\xF4\
+      i c\xF3 \u0111\u01B0\u1EE3c t\u1EEB b\xE0i vi\u1EBFt n\u1EC1n, t\xF4i n\xEA\
+      n tr\u1EA3 l\u1EDDi \u0111\xFAng c\xE2u h\u1ECFi ch\xEDnh x\xE1c v\u1EC1 t\xEC\
+      nh hu\u1ED1ng m\u1EDBi c\u1EE7a t\xF4i: {{question}}|||\n{{ answers.text | choice\
+      \ }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: read_background_situation
+    reference: ''

@@ -1,0 +1,134 @@
+dataset: imdb
+subset: id
+templates:
+  02ff2949-0f45-4d97-941e-6fa4c0afbc2d: !Template
+    answer_choices: negatif ||| positif
+    id: 02ff2949-0f45-4d97-941e-6fa4c0afbc2d
+    jinja: Ulasan film berikut mengungkapkan sentimen apa? {{text}} ||| {{ answer_choices
+      [label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment 2
+    reference: ''
+  2351d12a-e630-4d19-8b41-e199266e38f7: !Template
+    answer_choices: buruk ||| bagus
+    id: 2351d12a-e630-4d19-8b41-e199266e38f7
+    jinja: '{{text}} Apakah pengulas menemukan film ini {{"baik atau buruk"}}? |||
+      {{ answer_choices [label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Opinion bad good choices
+    reference: ''
+  5f372fb1-795a-47b6-8ddf-c4fd1579e76a: !Template
+    answer_choices: negatif ||| positif
+    id: 5f372fb1-795a-47b6-8ddf-c4fd1579e76a
+    jinja: "{{text}} \nApakah ulasan ini {{\"positif atau negatif\"}}? ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: 'Sentiment with choices '
+    reference: ''
+  866474a5-1498-46b7-bfee-ac0c5160707f: !Template
+    answer_choices: negatif ||| positif
+    id: 866474a5-1498-46b7-bfee-ac0c5160707f
+    jinja: '{{text}} Bagaimana perasaan pemirsa tentang film ini? ||| {{ answer_choices
+      [label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Sentiment Feeling
+    reference: ''
+  96538f30-f2c1-430e-8fc6-936a16966d9c: !Template
+    answer_choices: negatif ||| positif
+    id: 96538f30-f2c1-430e-8fc6-936a16966d9c
+    jinja: '{{text}} Sentimen apa yang diungkapkan oleh penulis untuk film ini? |||
+      {{ answer_choices [label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Writer Expressed Sentiment
+    reference: ''
+  af51297c-38a3-4d6c-a8b5-04b1243d7443: !Template
+    answer_choices: negatif ||| positif
+    id: af51297c-38a3-4d6c-a8b5-04b1243d7443
+    jinja: '{{text}} Sentimen yang diungkapkan untuk film ini ||| {{ answer_choices
+      [label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment
+    reference: ''
+  b93b74ac-fe95-40b4-9610-318b46ab820f: !Template
+    answer_choices: negatif ||| positif
+    id: b93b74ac-fe95-40b4-9610-318b46ab820f
+    jinja: '{{text}} Apa sentimen yang diungkapkan dalam teks ini? ||| {{ answer_choices
+      [label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Text Expressed Sentiment
+    reference: ''
+  b9b5d79d-f0b3-4bec-a724-f585db3e93ff: !Template
+    answer_choices: negatif ||| positif
+    id: b9b5d79d-f0b3-4bec-a724-f585db3e93ff
+    jinja: '{{text}} Ini jelas bukan ulasan ||| {{ answer_choices [1-label]}}.'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Negation template for positive and negative
+    reference: ''
+  bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9: !Template
+    answer_choices: Tidak ||| Ya
+    id: bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9
+    jinja: '{{text}} Apakah pengulas menikmati filmnya? ||| {{ answer_choices [label]
+      }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment Yes No
+    reference: ''
+  c70d1687-2421-49a2-9553-91b8bac4cfbe: !Template
+    answer_choices: negatif ||| positif
+    id: c70d1687-2421-49a2-9553-91b8bac4cfbe
+    jinja: '{{text}} Apa sentimen yang diungkapkan oleh pengulas untuk film ini? |||
+      {{ answer_choices [label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Expressed Sentiment
+    reference: ''
+  e01970ab-42c0-4e6e-a08f-4940d889ef37: !Template
+    answer_choices: Mereka tidak menyukainya! ||| Mereka menyukainya
+    id: e01970ab-42c0-4e6e-a08f-4940d889ef37
+    jinja: '{{text}} Bagaimana perasaan pengulas tentang film ini? ||| {{ answer_choices
+      [label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment
+    reference: ''

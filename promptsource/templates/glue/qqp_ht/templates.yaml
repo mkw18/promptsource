@@ -1,0 +1,84 @@
+dataset: glue
+subset: qqp_ht
+templates:
+  8e711799-a57c-4941-833b-466bedfb80ad: !Template
+    answer_choices: non ||| wi
+    id: 8e711799-a57c-4941-833b-466bedfb80ad
+    jinja: "Mwen se yon administrat\xE8 sou sit ent\xE8n\xE8t la Quora.Gen de posts,\
+      \ youn ki mande \"{{question1}}\" ak yon l\xF2t ki mande \"{{question2}}\".Mwen\
+      \ ka rantre kesyon yo si yo ap mande menm bagay la.\xC8ske mwen ka rantre de\
+      \ kesyon sa yo? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: quora
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: pa kopi ||| kopi
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: '{{question1}}
+
+      {{question2}}
+
+      Chwazi youn: kesyon sa yo se "{{"kopi"}}" oswa "{{"pa kopi"}}".
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not
+    reference: ''
+  a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
+    answer_choices: non ||| wi
+    id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
+    jinja: "\xC8ske kesyon yo \"{{question1}}\" ak \"{{question2}}\" mande menm bagay\
+      \ la? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''
+  c0182cd1-c7ac-4abe-829f-4651536af951: !Template
+    answer_choices: non ||| wi
+    id: c0182cd1-c7ac-4abe-829f-4651536af951
+    jinja: "\xC8ske yon repons a \"{{question1}}\" tou pou itilize pou reponn \"{{question2}}\"\
+      ? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: answer
+    reference: ''
+  c0724198-97e7-44a1-89d8-c51e97ce0b04: !Template
+    answer_choices: Non ||| Wi
+    id: c0724198-97e7-44a1-89d8-c51e97ce0b04
+    jinja: "Kesyon 1: {{question1}}\nKesyon 2: {{question2}}\n\n\xC8ske de kesyon\
+      \ sa yo transm\xE8t menm siyifikasyon an?Wi oswa Non? ||| {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: meaning
+    reference: ''
+  fd244bd3-ca3b-4e4f-9722-fd006c50e157: !Template
+    answer_choices: non ||| wi
+    id: fd244bd3-ca3b-4e4f-9722-fd006c50e157
+    jinja: "Mwen te resevwa kesyon yo \"{{question1}}\" ak \"{{question2}}\".\xC8\
+      ske yo kopi? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate
+    reference: ''

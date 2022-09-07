@@ -1,0 +1,231 @@
+dataset: ropes
+subset: hi
+templates:
+  0791ec30-6361-4e62-8dce-ca9cbf997acc: !Template
+    answer_choices: null
+    id: 0791ec30-6361-4e62-8dce-ca9cbf997acc
+    jinja: "{% if answers.text %}\n\u0915\u0943\u092A\u092F\u093E \u0928\u0940\u091A\
+      \u0947 \u0926\u093F\u090F \u0917\u090F \u092A\u0948\u0930\u093E\u0917\u094D\u0930\
+      \u093E\u092B \u0938\u0947 \u0938\u0902\u092C\u0902\u0927\u093F\u0924 \u0928\u093F\
+      \u092E\u094D\u0928\u0932\u093F\u0916\u093F\u0924 \u092A\u094D\u0930\u0936\u094D\
+      \u0928 \u0915\u093E \u0938\u0939\u0940 \u0909\u0924\u094D\u0924\u0930 \u0926\
+      \u0947\u0902\u0964 \n\n{{ question }}\n\n{{ situation }}\n\n\u0938\u0902\u0915\
+      \u0947\u0924 \u0926\u0947\u0928\u093E: {{ background }}\n|||\n{{ answers.text\
+      \ | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: prompt_beginning
+    reference: ''
+  0909d72d-50c7-4cbb-bec4-1f891123717c: !Template
+    answer_choices: null
+    id: 0909d72d-50c7-4cbb-bec4-1f891123717c
+    jinja: "{% if answers.text %}\n{{ situation }}\n\n\u0909\u092A\u0930\u094B\u0915\
+      \u094D\u0924 \u092A\u0948\u0930\u093E\u0917\u094D\u0930\u093E\u092B \u0915\u094B\
+      \ \u0926\u0947\u0916\u0924\u0947 \u0939\u0941\u090F, \u0915\u0943\u092A\u092F\
+      \u093E \u0928\u093F\u092E\u094D\u0928\u0932\u093F\u0916\u093F\u0924 \u092A\u094D\
+      \u0930\u0936\u094D\u0928 \u0915\u093E \u0938\u0939\u0940 \u0909\u0924\u094D\u0924\
+      \u0930 \u0926\u0947\u0902: \n\n{{ question }}\n|||\n{{ answers.text | choice\
+      \ }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: prompt_bottom_no_hint
+    reference: ''
+  1e4944e7-4d5b-475c-8b04-4b523e96bc51: !Template
+    answer_choices: null
+    id: 1e4944e7-4d5b-475c-8b04-4b523e96bc51
+    jinja: "{% if answers.text %}\n\u092A\u093E\u0930\u094D\u0936\u094D\u0935\u092D\
+      \u0942\u092E\u093F: {{ background }}\n\n\u092A\u0948\u0930\u093E\u0917\u094D\
+      \u0930\u093E\u092B: {{ situation }}\n\n\u0909\u092A\u0930\u094B\u0915\u094D\u0924\
+      \ \u092A\u0948\u0930\u093E\u0917\u094D\u0930\u093E\u092B \u0915\u094B \u0926\
+      \u0947\u0916\u0924\u0947 \u0939\u0941\u090F, \u0915\u0943\u092A\u092F\u093E\
+      \ \u0928\u093F\u092E\u094D\u0928\u0932\u093F\u0916\u093F\u0924 \u092A\u094D\u0930\
+      \u0936\u094D\u0928 \u0915\u093E \u0938\u0939\u0940 \u0909\u0924\u094D\u0924\u0930\
+      \ \u0926\u0947\u0902: {{ question }}\n|||\n{{ answers.text | choice }}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: prompt_bottom_hint_beginning
+    reference: ''
+  27fb16c6-a563-46ef-af73-42e15183824e: !Template
+    answer_choices: null
+    id: 27fb16c6-a563-46ef-af73-42e15183824e
+    jinja: "{% if answers.text %}\n\u092A\u0943\u0937\u094D\u0920\u092D\u0942\u092E\
+      \u093F \u0915\u094B \u0926\u0947\u0916\u0924\u0947 \u0939\u0941\u090F: {{background}}\n\
+      \n\u0914\u0930 \u0938\u094D\u0925\u093F\u0924\u093F: {{situation}}\n\n\u0928\
+      \u093F\u092E\u094D\u0928\u0932\u093F\u0916\u093F\u0924 \u092A\u094D\u0930\u0936\
+      \u094D\u0928 \u0915\u093E \u0909\u0924\u094D\u0924\u0930: {{question}}|||\n\
+      {{ answers.text | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: given_background_situation
+    reference: ''
+  31faf808-80ff-47af-ac49-d2cd7a7abcaf: !Template
+    answer_choices: null
+    id: 31faf808-80ff-47af-ac49-d2cd7a7abcaf
+    jinja: '{% if answers.text %}
+
+      {{ situation }}
+
+
+      {{ question }}
+
+
+      |||
+
+      {{ answers.text | choice }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: plain_no_background
+    reference: Task without background
+  473f2c9c-9731-443c-a641-5e43770f7df6: !Template
+    answer_choices: null
+    id: 473f2c9c-9731-443c-a641-5e43770f7df6
+    jinja: "{% if answers.text %}\n{{ situation }}\n\n{{ question }}\n\n\u0938\u0902\
+      \u0915\u0947\u0924 \u0926\u0947\u0928\u093E: {{ background }}\n|||\n{{ answers.text\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: plain_bottom_hint
+    reference: ''
+  a04f69ac-8122-4618-8426-185fc043feca: !Template
+    answer_choices: null
+    id: a04f69ac-8122-4618-8426-185fc043feca
+    jinja: '{% if answers.text %}
+
+      {{ background }}
+
+
+      {{ situation }}
+
+
+      {{ question }}
+
+      |||
+
+      {{ answers.text | choice }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: plain_background_situation
+    reference: ''
+  a17aefbb-c571-4127-8170-379e2ec83774: !Template
+    answer_choices: null
+    id: a17aefbb-c571-4127-8170-379e2ec83774
+    jinja: "{% if answers.text %}\n\u092E\u0948\u0902 \u0907\u0938 \u092A\u0943\u0937\
+      \u094D\u0920\u092D\u0942\u092E\u093F \u0915\u093E \u0909\u092A\u092F\u094B\u0917\
+      \ \u0915\u0930 \u0938\u0915\u0924\u093E \u0939\u0942\u0902: {{background}}\n\
+      \n\u0905\u092C, \u092E\u0947\u0930\u0947 \u092A\u093E\u0938 \u090F\u0915 \u0928\
+      \u0908 \u0938\u094D\u0925\u093F\u0924\u093F \u0939\u0948: {{situation}}\n\n\u0915\
+      \u0943\u092A\u092F\u093E \u0907\u0938 \u092A\u094D\u0930\u0936\u094D\u0928 \u0915\
+      \u093E \u0909\u0924\u094D\u0924\u0930 \u0926\u0947\u0902: {{question}}|||\n\
+      {{ answers.text | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: background_new_situation_answer
+    reference: ''
+  b6da4f12-5384-46f5-a74e-c703c19d1698: !Template
+    answer_choices: null
+    id: b6da4f12-5384-46f5-a74e-c703c19d1698
+    jinja: "{% if answers.text %}\n\u0906\u092A\u0915\u094B \u090F\u0915 \u0928\u0908\
+      \ \u0938\u094D\u0925\u093F\u0924\u093F \u0926\u0940 \u091C\u093E\u0924\u0940\
+      \ \u0939\u0948: {{situation}}\n\n\u0914\u0930 \u090F\u0915 \u0938\u0902\u0915\
+      \u0947\u0924: {{background}}\n\n\u0915\u0943\u092A\u092F\u093E \u0907\u0938\
+      \ \u092A\u094D\u0930\u0936\u094D\u0928 \u0915\u093E \u0909\u0924\u094D\u0924\
+      \u0930 \u0926\u0947\u0902: {{question}}|||\n{{ answers.text | choice }}\n{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: background_situation_middle
+    reference: ''
+  cc747655-6472-4023-95e4-03cb85d5a1c5: !Template
+    answer_choices: null
+    id: cc747655-6472-4023-95e4-03cb85d5a1c5
+    jinja: "{% if answers.text %}\n\u092E\u0947\u0930\u0940 \u090F\u0915 \u0928\u0908\
+      \ \u0938\u094D\u0925\u093F\u0924\u093F \u0939\u0948: {{situation}}\n\n\u0932\
+      \u0947\u0915\u093F\u0928 \u092E\u0948\u0902 \u0907\u0938 \u092A\u0943\u0937\u094D\
+      \u0920\u092D\u0942\u092E\u093F \u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0915\
+      \u0930 \u0938\u0915\u0924\u093E \u0939\u0942\u0902: {{background}}\n\n\u0907\
+      \u0938 \u092A\u094D\u0930\u0936\u094D\u0928 \u0915\u093E \u0909\u0924\u094D\u0924\
+      \u0930 \u0915\u094D\u092F\u093E \u0939\u0948: {{question}}|||\n{{ answers.text\
+      \ | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: new_situation_background_answer
+    reference: ''
+  cc8f3c6b-b800-4b47-b6ec-e8febfdaad6f: !Template
+    answer_choices: null
+    id: cc8f3c6b-b800-4b47-b6ec-e8febfdaad6f
+    jinja: "{% if answers.text %}\n{{ situation }}\n\n\u0909\u092A\u0930\u094B\u0915\
+      \u094D\u0924 \u092A\u0948\u0930\u093E\u0917\u094D\u0930\u093E\u092B \u0915\u094B\
+      \ \u0926\u0947\u0916\u0924\u0947 \u0939\u0941\u090F, \u0915\u0943\u092A\u092F\
+      \u093E \u0928\u093F\u092E\u094D\u0928\u0932\u093F\u0916\u093F\u0924 \u092A\u094D\
+      \u0930\u0936\u094D\u0928 \u0915\u093E \u0938\u0939\u0940 \u0909\u0924\u094D\u0924\
+      \u0930 \u0926\u0947\u0902: \n\n{{ question }}\n\n\u0938\u0902\u0915\u0947\u0924\
+      \ \u0926\u0947\u0928\u093E: {{ background }}\n|||\n{{ answers.text | choice\
+      \ }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: prompt_mix
+    reference: ''
+  f62e0adb-ca74-4280-8ed3-8b53411d87ce: !Template
+    answer_choices: null
+    id: f62e0adb-ca74-4280-8ed3-8b53411d87ce
+    jinja: "{% if answers.text %}\n\u092E\u0948\u0902 \u0907\u0938 \u092A\u0943\u0937\
+      \u094D\u0920\u092D\u0942\u092E\u093F \u0932\u0947\u0916 \u0915\u094B \u0926\u0942\
+      \u0938\u0930\u0947 \u0926\u093F\u0928 \u092A\u0922\u093C\u0924\u093E \u0939\u0942\
+      \u0902: {{background}}\n\n\u092E\u0948\u0902 \u0906\u091C \u090F\u0915 \u0928\
+      \u0908 \u0938\u094D\u0925\u093F\u0924\u093F \u0915\u093E \u0938\u093E\u092E\u0928\
+      \u093E \u0915\u0930 \u0930\u0939\u093E \u0939\u0942\u0902: {{situation}}\n\n\
+      \u092A\u0943\u0937\u094D\u0920\u092D\u0942\u092E\u093F \u0932\u0947\u0916 \u0938\
+      \u0947 \u092A\u094D\u0930\u093E\u092A\u094D\u0924 \u091C\u094D\u091E\u093E\u0928\
+      \ \u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0915\u0930\u0924\u0947 \u0939\
+      \u0941\u090F, \u092E\u0941\u091D\u0947 \u0905\u092A\u0928\u0940 \u0928\u0908\
+      \ \u0938\u094D\u0925\u093F\u0924\u093F \u0915\u0947 \u092C\u093E\u0930\u0947\
+      \ \u092E\u0947\u0902 \u0928\u093F\u092E\u094D\u0928\u0932\u093F\u0916\u093F\u0924\
+      \ \u092A\u094D\u0930\u0936\u094D\u0928 \u0915\u093E \u0938\u0939\u0940 \u0909\
+      \u0924\u094D\u0924\u0930 \u0915\u0948\u0938\u0947 \u0926\u0947\u0928\u093E \u091A\
+      \u093E\u0939\u093F\u090F: {{question}}|||\n{{ answers.text | choice }}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: read_background_situation
+    reference: ''

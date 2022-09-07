@@ -1,0 +1,154 @@
+dataset: cos_e
+subset: v1.11_fr
+templates:
+  02a87cd3-6595-44bd-a384-95bdc8b3dd0c: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: 02a87cd3-6595-44bd-a384-95bdc8b3dd0c
+    jinja: "{{ question }}\nChoisissez l'option la plus appropri\xE9e pour r\xE9pondre\
+      \ \xE0 la question ci-dessus.\nOptions:\n- {{ answer_choices | join(\"\\n- \"\
+      ) }}\n|||\n{{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_description_option_text
+    reference: ''
+  046ce4df-c847-4dc2-b53c-9f02d32aff8a: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: 046ce4df-c847-4dc2-b53c-9f02d32aff8a
+    jinja: "{{ question }}\nChoisissez l'option la plus appropri\xE9e pour r\xE9pondre\
+      \ \xE0 la question ci-dessus.\nOptions\uFF1A\n{% for k in range(choices | length)\
+      \ %}\n{{'. '.join([answer_choices[k], choices[k]])}}\n{% endfor %}\n|||\n{{\
+      \ answer_choices[choices.index(answer)] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_description_option_id
+    reference: ''
+  25863d16-34be-4c5f-9040-11d5c6398b4b: !Template
+    answer_choices: null
+    id: 25863d16-34be-4c5f-9040-11d5c6398b4b
+    jinja: "Question: {{question}}\n\nLes choix: \n- {{ choices | join(\"\\n- \")\
+      \ }}\n\nLa justification du choix \"{{answer}}\" comme la r\xE9ponse est que:\
+      \ |||\n{{abstractive_explanation}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: rationale
+    reference: ''
+  4b946a87-b39c-4f01-9041-832d82da48af: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: 4b946a87-b39c-4f01-9041-832d82da48af
+    jinja: "{{ question }}\n- {{ answer_choices | join(\"\\n- \") }}\n\nLa meilleure\
+      \ r\xE9ponse est\n|||\n{{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_option_description_text
+    reference: ''
+  55dd7471-c01e-4197-a8cd-d8e6359ef582: !Template
+    answer_choices: null
+    id: 55dd7471-c01e-4197-a8cd-d8e6359ef582
+    jinja: "Voici une question et quelques r\xE9ponses possibles: \n\nQuestion: {{\
+      \ question }}\nR\xE9ponse possible: {{ choices | join(\", \") }}\n\nPourquoi\
+      \ \"{{answer}}\" est-il une r\xE9ponse align\xE9e sur le bon sens humain? \n\
+      |||\n{{ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: aligned_with_common_sense
+    reference: ''
+  60354294-f30a-4a5b-be18-372c3c1a3491: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: 60354294-f30a-4a5b-be18-372c3c1a3491
+    jinja: "Choisissez l'option en ligne avec le bon sens pour r\xE9pondre \xE0 la\
+      \ question.\nQuestion: {{ question }}\nOptions:\n{% for k in range(choices |\
+      \ length) %}\n{{'. '.join([answer_choices[k], choices[k]])}}\n{% endfor %}\n\
+      |||\n{{ answer_choices[choices.index(answer)] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_question_option_id
+    reference: ''
+  73f0f76b-c7f9-41fd-b4df-705625ab8241: !Template
+    answer_choices: null
+    id: 73f0f76b-c7f9-41fd-b4df-705625ab8241
+    jinja: "Question: {{ question }}\nOptions:\n- {{ choices | join(\"\\n- \") }}\n\
+      \nExpliquez pourquoi un humain choisirait \"{{answer}}\" pour r\xE9pondre \xE0\
+      \ la question ci-dessus:\n|||\n{{ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: explain_why_human
+    reference: ''
+  90a7d84f-0316-4b28-a4fe-2f61c0126158: !Template
+    answer_choices: null
+    id: 90a7d84f-0316-4b28-a4fe-2f61c0126158
+    jinja: "Question: {{ question }}\nOptions:\n- {{ choices | join(\"\\n- \") }}\n\
+      \nLa r\xE9ponse est \"{{answer}}\" parce que\n|||\n{{ abstractive_explanation\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_explanation_given_text
+    reference: ''
+  a8036e94-ad4a-4f26-9765-cf7223800138: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: a8036e94-ad4a-4f26-9765-cf7223800138
+    jinja: "Choisissez l'option en ligne avec le bon sens pour r\xE9pondre \xE0 la\
+      \ question.\nDes questions: {{ question }}\nOptions:\n- {{ answer_choices |\
+      \ join(\"\\n- \") }}\n|||\n{{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_question_option_text
+    reference: ''
+  e57a5c48-209c-4e82-b061-dbc8d124dffa: !Template
+    answer_choices: null
+    id: e57a5c48-209c-4e82-b061-dbc8d124dffa
+    jinja: "Voici une question: {{ question }}\n\nVoici des r\xE9ponses possibles\
+      \ \xE0 cette question:\n- {{ choices | join(\"\\n- \") }}\n\nJe crois que le\
+      \ bon choix est \"{{answer}}\", voici pourquoi:\n|||\n{{ abstractive_explanation\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: i_think
+    reference: ''
+  f678d224-23f0-488b-9c5d-0bf466a0aa16: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: f678d224-23f0-488b-9c5d-0bf466a0aa16
+    jinja: "{{ question }}\n{% for k in range(choices | length) %}\n{{'. '.join([answer_choices[k],\
+      \ choices[k]])}}\n{% endfor %}\nLa meilleure r\xE9ponse est\n|||\n{{ answer_choices[choices.index(answer)]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_option_description_id
+    reference: ''

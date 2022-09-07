@@ -1,0 +1,138 @@
+dataset: wiqa
+subset: es
+templates:
+  1bc8d95b-0a50-49f4-a46b-bd752929926d: !Template
+    answer_choices: null
+    id: 1bc8d95b-0a50-49f4-a46b-bd752929926d
+    jinja: "-  {{ question_para_step[1:] | join(\"\\n- \") }}\n\n\xBFCu\xE1l podr\xED\
+      a ser el primer paso del proceso?\n\n|||\n\n{{ question_para_step | first }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_might_be_the_first_step_of_the_process
+    reference: ''
+  360cd99a-2f83-469a-a505-d80808159dd2: !Template
+    answer_choices: null
+    id: 360cd99a-2f83-469a-a505-d80808159dd2
+    jinja: "\n{% set process_list = question_para_step[:-1] if question_para_step[-1]\
+      \ == \"\" else question_para_step %}\n-  {{ process_list[:-1] | join(\"\\n-\
+      \ \") }}\n\n\xBFCu\xE1l podr\xEDa ser el \xFAltimo paso del proceso?\n\n|||\n\
+      \n{{ process_list | last }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_might_be_the_last_step_of_the_process
+    reference: ''
+  4191b162-9220-46e5-a2f0-0a763eef55a0: !Template
+    answer_choices: null
+    id: 4191b162-9220-46e5-a2f0-0a763eef55a0
+    jinja: "\xBFCu\xE1l es el primer paso que falta del siguiente proceso:\n\n-  {{\
+      \ question_para_step[1:] | join(\"\\n- \") }}\n\n|||\n\n{{ question_para_step\
+      \ | first }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_is_the_missing_first_step
+    reference: ''
+  52d69c02-5ff3-4fe7-bcaf-a6b995a15020: !Template
+    answer_choices: null
+    id: 52d69c02-5ff3-4fe7-bcaf-a6b995a15020
+    jinja: " {% set process_list = question_para_step[:-1] if question_para_step[-1]\
+      \ == \"\" else question_para_step %}\n\xBFCu\xE1l es el paso final del siguiente\
+      \ proceso:\n-  {{ process_list[:-1] | join(\"\\n- \") }}\n\n|||\n\n{{ process_list\
+      \ | last }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_is_the_final_step_of_the_following_process
+    reference: ''
+  5dfee2c2-9742-4003-8ab6-dfe0ce5a745b: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 5dfee2c2-9742-4003-8ab6-dfe0ce5a745b
+    jinja: "Proceso:\n- {{ question_para_step | join(\"\\n- \")}}\n\nPregunta:\n{{question_stem}}\n\
+      \n\xBFC\xF3mo influye la supuesta perturbaci\xF3n el segundo efecto mencionado?Responder\
+      \ {{\"more, less or no effect\"}}\n\n|||\n\n{{answer_label|replace(\"_\", \"\
+      \ \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: effect_with_string_answer
+    reference: ''
+  667c291f-6a36-4334-aa49-804c9e72500b: !Template
+    answer_choices: "impactando indirectamente un paso del proceso ||| no afectar\
+      \ ning\xFAn paso del proceso"
+    id: 667c291f-6a36-4334-aa49-804c9e72500b
+    jinja: "Proceso:\n\n- {{ question_para_step | join(\"\\n- \") }}\n\n{{question_stem}}\n\
+      \n\xBFCu\xE1l de las siguientes es la supuesta perturbaci\xF3n?\n\n- {{\"impactando\
+      \ directamente un paso del proceso\"}}\n- {{\"impactando indirectamente un paso\
+      \ del proceso\"}}\n- {{\"no afectar ning\xFAn paso del proceso\"}}\n\n\n|||\n\
+      \n{{{\"EXOGENOUS_EFFECT\": \"impactando indirectamente un paso del proceso\"\
+      , \"OUTOFPARA_DISTRACTOR\": \"no afectar ning\xFAn paso del proceso\", \"INPARA_EFFECT\"\
+      : \"impactando directamente un paso del proceso\"}[metadata_question_type]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: which_of_the_following_is_the_supposed_perturbation
+    reference: ''
+  6cf2b300-6790-4120-9592-9db63bec221b: !Template
+    answer_choices: A ||| B ||| C
+    id: 6cf2b300-6790-4120-9592-9db63bec221b
+    jinja: 'Proceso:
+
+      - {{ question_para_step | join("\n- ")}}
+
+
+      Pregunta:
+
+      {{question_stem}}
+
+
+      - {{"A: more"}}
+
+      - {{"B: less"}}
+
+      - {{"C: no effect"}}
+
+
+      |||
+
+
+      {{answer_label_as_choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: effect_with_label_answer
+    reference: ''
+  a17313bd-94bb-47ab-82bf-538df1b1ad5f: !Template
+    answer_choices: "s\xED ||| no"
+    id: a17313bd-94bb-47ab-82bf-538df1b1ad5f
+    jinja: "Proceso:\n\n- {{ question_para_step | join(\"\\n- \") }}\n\nHip\xF3tesis\
+      \ de perturbaci\xF3n:\n{{question_stem}}\n\n\xBFLa supuesta perturbaci\xF3n\
+      \ tiene un efecto (directo o indirecto) en el proceso?\n\n|||\n\n{{{\"EXOGENOUS_EFFECT\"\
+      : \"s\xED\", \"OUTOFPARA_DISTRACTOR\": \"no\", \"INPARA_EFFECT\": \"s\xED\"\
+      }[metadata_question_type]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: does_the_supposed_perturbation_have_an_effect
+    reference: ''

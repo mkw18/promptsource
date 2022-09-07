@@ -1,0 +1,181 @@
+dataset: cos_e
+subset: v1.11_es
+templates:
+  02a87cd3-6595-44bd-a384-95bdc8b3dd0c: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: 02a87cd3-6595-44bd-a384-95bdc8b3dd0c
+    jinja: "{{ question }}\nElija la opci\xF3n m\xE1s adecuada para responder la pregunta\
+      \ anterior.\nOpciones:\n- {{ answer_choices | join(\"\\n- \") }}\n|||\n{{ answer\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_description_option_text
+    reference: ''
+  046ce4df-c847-4dc2-b53c-9f02d32aff8a: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: 046ce4df-c847-4dc2-b53c-9f02d32aff8a
+    jinja: "{{ question }}\nElija la opci\xF3n m\xE1s adecuada para responder la pregunta\
+      \ anterior.\nOpci\xF3n\uFF1A\n{% for k in range(choices | length) %}\n{{'. '.join([answer_choices[k],\
+      \ choices[k]])}}\n{% endfor %}\n|||\n{{ answer_choices[choices.index(answer)]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_description_option_id
+    reference: ''
+  25863d16-34be-4c5f-9040-11d5c6398b4b: !Template
+    answer_choices: null
+    id: 25863d16-34be-4c5f-9040-11d5c6398b4b
+    jinja: "Pregunta: {{question}}\n\nOpciones: \n- {{ choices | join(\"\\n- \") }}\n\
+      \nLa justificaci\xF3n para elegir \"{{answer}}\" como la respuesta es que: |||\n\
+      {{abstractive_explanation}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: rationale
+    reference: ''
+  4b946a87-b39c-4f01-9041-832d82da48af: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: 4b946a87-b39c-4f01-9041-832d82da48af
+    jinja: '{{ question }}
+
+      - {{ answer_choices | join("\n- ") }}
+
+
+      La mejor respuesta es
+
+      |||
+
+      {{ answer }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_option_description_text
+    reference: ''
+  55dd7471-c01e-4197-a8cd-d8e6359ef582: !Template
+    answer_choices: null
+    id: 55dd7471-c01e-4197-a8cd-d8e6359ef582
+    jinja: "Aqu\xED hay una pregunta y algunas respuestas posibles: \n\nPregunta:\
+      \ {{ question }}\nPosible respuesta: {{ choices | join(\", \") }}\n\n\xBFPor\
+      \ qu\xE9 \"{{answer}}\" una respuesta alineada con el sentido com\xFAn humano?\
+      \ \n|||\n{{ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: aligned_with_common_sense
+    reference: ''
+  60354294-f30a-4a5b-be18-372c3c1a3491: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: 60354294-f30a-4a5b-be18-372c3c1a3491
+    jinja: "Elija la opci\xF3n en l\xEDnea con el sentido com\xFAn para responder\
+      \ la pregunta.\nPregunta: {{ question }}\nOpciones:\n{% for k in range(choices\
+      \ | length) %}\n{{'. '.join([answer_choices[k], choices[k]])}}\n{% endfor %}\n\
+      |||\n{{ answer_choices[choices.index(answer)] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_question_option_id
+    reference: ''
+  73f0f76b-c7f9-41fd-b4df-705625ab8241: !Template
+    answer_choices: null
+    id: 73f0f76b-c7f9-41fd-b4df-705625ab8241
+    jinja: "Pregunta: {{ question }}\nOpciones:\n- {{ choices | join(\"\\n- \") }}\n\
+      \nExplique por qu\xE9 un humano elegir\xEDa \"{{answer}}\" para responder la\
+      \ pregunta anterior:\n|||\n{{ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: explain_why_human
+    reference: ''
+  90a7d84f-0316-4b28-a4fe-2f61c0126158: !Template
+    answer_choices: null
+    id: 90a7d84f-0316-4b28-a4fe-2f61c0126158
+    jinja: 'Pregunta: {{ question }}
+
+      Opciones:
+
+      - {{ choices | join("\n- ") }}
+
+
+      La respuesta es "{{answer}}" porque
+
+      |||
+
+      {{ abstractive_explanation }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_explanation_given_text
+    reference: ''
+  a8036e94-ad4a-4f26-9765-cf7223800138: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: a8036e94-ad4a-4f26-9765-cf7223800138
+    jinja: "Elija la opci\xF3n en l\xEDnea con el sentido com\xFAn para responder\
+      \ la pregunta.\nPreguntas: {{ question }}\nOpciones:\n- {{ answer_choices |\
+      \ join(\"\\n- \") }}\n|||\n{{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_question_option_text
+    reference: ''
+  e57a5c48-209c-4e82-b061-dbc8d124dffa: !Template
+    answer_choices: null
+    id: e57a5c48-209c-4e82-b061-dbc8d124dffa
+    jinja: "Aqu\xED hay una pregunta: {{ question }}\n\nAqu\xED hay posibles respuestas\
+      \ a esta pregunta:\n- {{ choices | join(\"\\n- \") }}\n\nCreo que la elecci\xF3\
+      n correcta es \"{{answer}}\", aqu\xED est\xE1 por qu\xE9:\n|||\n{{ abstractive_explanation\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: i_think
+    reference: ''
+  f678d224-23f0-488b-9c5d-0bf466a0aa16: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: f678d224-23f0-488b-9c5d-0bf466a0aa16
+    jinja: '{{ question }}
+
+      {% for k in range(choices | length) %}
+
+      {{''. ''.join([answer_choices[k], choices[k]])}}
+
+      {% endfor %}
+
+      La mejor respuesta es
+
+      |||
+
+      {{ answer_choices[choices.index(answer)] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_option_description_id
+    reference: ''

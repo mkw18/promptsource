@@ -1,0 +1,90 @@
+dataset: ag_news
+subset: zh
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: 世界政治 ||| 运动 ||| 业务 ||| 科学和技术
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "哪个标签最能描述这篇新闻文章？\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: 世界政治 ||| 运动 ||| 业务 ||| 科学和技术
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "这是一条关于{{\"世界政治、体育、商业或科技\"}}的新闻吗？\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: 政治家 ||| 运动员 ||| 业务主管 ||| 科学家
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: '您会向 {{"政治家"}}、{{"运动员"}}、{{"业务主管"}} 或 {{"科学家"}} 推荐以下文章吗？
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: 世界新闻 ||| 运动 ||| 业务 ||| 科学和技术
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\n这篇文章可能会出现在报纸的以下哪个版块？ {{\"世界新闻\"}}，{{\"体育\"}}，{{\"商业\"\
+      }} 还是 {{\"科技\"}}？ ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: 世界新闻 ||| 运动 ||| 业务 ||| 科学和技术
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\n这篇文章可能会出现在报纸的哪个版块？ ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: 世界政治 ||| 运动 ||| 业务 ||| 科学和技术
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \n这是一条关于{{\"世界政治、体育、商业或科技\"}}的新闻吗？ ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: 世界政治 ||| 运动 ||| 业务 ||| 科学和技术
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \n哪个标签最能描述这篇新闻文章？ ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

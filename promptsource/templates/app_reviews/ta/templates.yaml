@@ -1,0 +1,71 @@
+dataset: app_reviews
+subset: ta
+templates:
+  2da8f134-58db-4f9d-b3b0-8c6b50693ab5: !Template
+    answer_choices: இல்லவே இல்லை ||| இல்லை ||| ஒருவேளை ||| ஆம் ||| கண்டிப்பாக
+    id: 2da8f134-58db-4f9d-b3b0-8c6b50693ab5
+    jinja: 'இந்த மதிப்பாய்வு கொடுக்கப்பட்டது: "{{review}}"
+
+      இந்த பயன்பாட்டை நண்பருக்குப் பரிந்துரைக்கிறீர்களா? {{answer_choices[0]}}, {{answer_choices[1]}},
+      {{answer_choices[2]}}, {{answer_choices[3]}}, அல்லது {{answer_choices[4]}}?
+
+      |||
+
+      {{answer_choices[star-1]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: categorize_rating_using_review
+    reference: Given the review, return a categorical answer.
+  8086b434-a75e-45a4-87fb-4364601e2e05: !Template
+    answer_choices: null
+    id: 8086b434-a75e-45a4-87fb-4364601e2e05
+    jinja: '{{package_name}} தொகுப்பைக் கொண்ட பயன்பாட்டைப் பற்றி {{star}}-நட்சத்திர மதிப்பாய்வை 
+      (1 குறைவாகவும் 5 அதிகமாகவும்) உருவாக்கவும்.
+
+      |||
+
+      {{review}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: generate_review
+    reference: Generate a review from the rating.
+  9746ce4b-ac58-4dfb-9783-d77c95cb62cf: !Template
+    answer_choices: "\u2605 ||| \u2605\u2605 ||| \u2605\u2605\u2605 ||| \u2605\u2605\
+      \u2605\u2605 ||| \u2605\u2605\u2605\u2605\u2605"
+    id: 9746ce4b-ac58-4dfb-9783-d77c95cb62cf
+    jinja: "இந்த மதிப்பாய்வின் \u2605-மதிப்பீடு என்னவாக இருக்கும் (\u2605 மிகக் குறைவானது\
+      \ மற்றும் \u2605\u2605\u2605\u2605\u2605 மிக உயர்ந்தது)? \"{{review}}\"\n|||\n\
+      {{answer_choices[star-1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: convert_to_star_rating
+    reference: Given the review, generate a star rating.
+  d34e1413-2699-4701-baa2-05d931d012ba: !Template
+    answer_choices: null
+    id: d34e1413-2699-4701-baa2-05d931d012ba
+    jinja: '1-5 என்ற அளவில் (1 குறைந்தது சாதகமானது மற்றும் 5 மிகவும் சாதகமானது), இந்த 
+      மதிப்பாய்வை எப்படி மதிப்பிடுவீர்கள்? "{{review}}"
+
+      |||
+
+      {{star}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: convert_to_rating
+    reference: Convert review to rating

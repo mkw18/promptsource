@@ -1,0 +1,146 @@
+dataset: glue
+subset: mrpc_nl
+templates:
+  3b88d2c4-0aeb-4c6d-9ccc-653a388250a5: !Template
+    answer_choices: null
+    id: 3b88d2c4-0aeb-4c6d-9ccc-653a388250a5
+    jinja: '{% if label == 1 %}
+
+      Parafraseer de volgende zin: {{sentence1}}
+
+      |||
+
+      {{sentence2}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_paraphrase
+    reference: ''
+  44c2e6d9-facf-4959-8400-38e0eb8dd3a8: !Template
+    answer_choices: nee ||| ja
+    id: 44c2e6d9-facf-4959-8400-38e0eb8dd3a8
+    jinja: 'Ik wil weten of de volgende twee zinnen hetzelfde betekenen.
+
+      {{sentence1}}
+
+      {{sentence2}}
+
+      Doen ze?
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: want to know
+    reference: ''
+  adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
+    answer_choices: nee ||| ja
+    id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
+    jinja: 'Betekent de zin
+
+      {{sentence1}}
+
+      parafrase (dat wil zeggen, hetzelfde als) deze zin?
+
+      {{sentence2}}
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: paraphrase
+    reference: ''
+  bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
+    answer_choices: niet gelijkwaardig ||| gelijkwaardig
+    id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
+    jinja: 'Zijn de volgende twee zinnen "{{"gelijkwaardig"}}" of "{{"niet equivalent"}}"?
+
+      {{sentence1}}
+
+      {{sentence2}}
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: equivalent
+    reference: ''
+  d830d7a5-abc0-4275-ac62-974e0088876f: !Template
+    answer_choices: null
+    id: d830d7a5-abc0-4275-ac62-974e0088876f
+    jinja: '{% if label == 1 %}
+
+      Genereer een zin die hetzelfde betekent als deze: {{sentence1}}
+
+      |||
+
+      {{sentence2}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_sentence
+    reference: ''
+  ee82d511-908c-4244-804f-6d0d907c68c7: !Template
+    answer_choices: nee ||| ja
+    id: ee82d511-908c-4244-804f-6d0d907c68c7
+    jinja: 'Kan ik de zin
+
+      {{sentence1}}
+
+      vervangen door de zin
+
+      {{sentence2}}
+
+      en hebben ik deze hetzelfde?
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: replace
+    reference: ''
+  eefd8606-b936-4d26-b91d-8f4bc38bfcbf: !Template
+    answer_choices: nee ||| ja
+    id: eefd8606-b936-4d26-b91d-8f4bc38bfcbf
+    jinja: 'Betekent de volgende twee zinnen hetzelfde?
+
+      {{sentence1}}
+
+      {{sentence2}}
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''

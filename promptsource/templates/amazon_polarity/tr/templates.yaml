@@ -1,0 +1,121 @@
+dataset: amazon_polarity
+subset: tr
+templates:
+  1e90a24a-1182-43dd-9445-22f2e56e5761: !Template
+    answer_choices: Olumsuz ||| Pozitif
+    id: 1e90a24a-1182-43dd-9445-22f2e56e5761
+    jinja: "Ba\u015Fl\u0131k: {{title}}\nG\xF6zden ge\xE7irmek: {{content}}\n\u0130\
+      nceleme olumlu mu negatif mi? |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review
+    reference: ''
+  3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
+    answer_choices: Numara ||| Evet
+    id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
+    jinja: "Bu incelemeye dayanarak, kullan\u0131c\u0131 bu \xFCr\xFCn\xFC tavsiye\
+      \ eder mi?\n===\nG\xF6zden ge\xE7irmek: {{content}}\nCevap: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: User_recommend_this_product
+    reference: 'Reformulation equivalent to sent analysis: would the user recommend
+      this product?'
+  592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
+    answer_choices: Numara ||| Evet
+    id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
+    jinja: "Bu \xFCr\xFCn incelemesi olumlu mu?\nBa\u015Fl\u0131k: {{title}}\nG\xF6\
+      zden ge\xE7irmek: {{content}}\nCevap: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_product_review_positive
+    reference: ''
+  745b9c05-10df-4a7e-81ad-1b88cefcb166: !Template
+    answer_choices: Evet ||| Numara
+    id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
+    jinja: "Ba\u015Fl\u0131k: {{title}}\nG\xF6zden ge\xE7irmek: {{content}}\nBu \xFC\
+      r\xFCn incelemesi olumsuz mu?|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review_negative
+    reference: ''
+  8abb5377-5dd3-4402-92a5-0d81adb6a325: !Template
+    answer_choices: Olumsuz ||| Pozitif
+    id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
+    jinja: "Ba\u015Fl\u0131k: {{title}}\nG\xF6zden ge\xE7irmek: {{content}}\nBu \xFC\
+      r\xFCn incelemesi olumsuz veya olumlu bir duygu ta\u015F\u0131yor mu?|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: convey_negative_or_positive_sentiment
+    reference: ''
+  9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
+    answer_choices: Olumsuz ||| Pozitif
+    id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
+    jinja: "Bu \xFCr\xFCn incelemesinde olumsuz veya olumlu bir ton var m\u0131?\n\
+      ===\nBa\u015Fl\u0131k: {{title}}\nG\xF6zden ge\xE7irmek: {{content}}\nCevap:\
+      \ |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: negative_or_positive_tone
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
+    answer_choices: "ho\u015Fnutsuz ||| memnun"
+    id: b13369e8-0500-4e93-90d4-8e6814bfb97b
+    jinja: "\u0130\u015Fte bir m\xFC\u015Fteri taraf\u0131ndan bir \xFCr\xFCn \xFC\
+      zerinde b\u0131rak\u0131lan bir inceleme.{{answer_choices[1]}} veya {{answer_choices[0]}}\
+      \ oldu\u011Funu s\xF6yleyebilir misiniz?\nBa\u015Fl\u0131k: {{title}}\nG\xF6\
+      zden ge\xE7irmek: {{content}}\n|||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: user_satisfied
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
+    answer_choices: "azalmak ||| artt\u0131rmak"
+    id: b13369e8-0500-4e93-90d4-8e6814bfb98b
+    jinja: "Bir \xFCr\xFCn sat\u0131n al\u0131p almayaca\u011F\u0131n\u0131z\u0131\
+      \ d\xFC\u015F\xFCn\xFCyorsunuz.\u0130ncelemelere bak\u0131yorsunuz.A\u015Fa\u011F\
+      \u0131daki inceleme {{answer_choices[0]}} veya {{answer_choices[1]}} \xFCr\xFC\
+      n\xFC sat\u0131n alma \u015Fans\u0131n\u0131z olur mu?\n\u0130nceleme Ba\u015F\
+      l\u0131\u011F\u0131: {{title}}\n\xDCr\xFCn \u0130ncelemesi: {{content}}\n|||\n\
+      {{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: would_you_buy
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
+    answer_choices: "\xE7irkin ||| gurur verici"
+    id: b13369e8-0500-4e93-90d4-8e6814bfb99b
+    jinja: "Ba\u015Fl\u0131k: {{title}}\n\xDCr\xFCn \u0130ncelemesi: {{content}}\n\
+      Bu incelemenin \xFCr\xFCn\xFC {{answer_choices[1]}} veya {{answer_choices[0]}}\
+      \ \u0131\u015F\u0131kta g\xF6sterdi\u011Fini s\xF6yleyebilir misiniz?\n|||\n\
+      {{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: flattering_or_not
+    reference: ''

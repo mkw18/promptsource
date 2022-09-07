@@ -1,0 +1,83 @@
+dataset: adversarial_qa
+subset: dbidaf_ar
+templates:
+  41f28b31-d0fc-4f20-a0a2-ff21813e298e: !Template
+    answer_choices: null
+    id: 41f28b31-d0fc-4f20-a0a2-ff21813e298e
+    jinja: "{% if metadata.split != \"test\" %}\n\u0627\u0633\u062A\u062E\u0631\u0627\
+      \u062C \u0625\u062C\u0627\u0628\u0629 \u0627\u0644\u0633\u0624\u0627\u0644 \u0645\
+      \u0646 \u0627\u0644\u0633\u064A\u0627\u0642 \u0627\u0644\u062A\u0627\u0644\u064A\
+      .\n\u0633\u0624\u0627\u0644: {{question}}\n\u0633\u064A\u0627\u0642: {{context}}|||\n\
+      {{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  a64d5a15-68e2-4d1c-b30a-ca8250c860d9: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860d9
+    jinja: "{% if metadata.split != \"test\" %}\n\u0628\u0627\u0644\u0646\u0638\u0631\
+      \ \u0625\u0644\u0649 \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062A\
+      \u0627\u0644\u064A\n\n\"{{context}}\",\n\n\u0623\u062C\u0628 \u0639\u0644\u0649\
+      \ \u0627\u0644\u0633\u0624\u0627\u0644 \u0627\u0644\u062A\u0627\u0644\u064A\
+      .\u0644\u0627\u062D\u0638 \u0623\u0646 \u0627\u0644\u0625\u062C\u0627\u0628\u0629\
+      \ \u0645\u0648\u062C\u0648\u062F\u0629 \u062F\u0627\u062E\u0644 \u0627\u0644\
+      \u0646\u0635.\n\n\u0633\u0624\u0627\u0644: {{question}} |||\n{{answers.text\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'
+  c7a80603-d610-4999-98a7-815b2f84592d: !Template
+    answer_choices: null
+    id: c7a80603-d610-4999-98a7-815b2f84592d
+    jinja: "\u0623\u0631\u063A\u0628 \u0641\u064A \u0627\u062E\u062A\u0628\u0627\u0631\
+      \ \u0642\u062F\u0631\u0629 \u0627\u0644\u0637\u0644\u0627\u0628 \u0639\u0644\
+      \u0649 \u0642\u0631\u0627\u0621\u0629 \u0645\u0642\u0637\u0639 \u0648\u0627\u0644\
+      \u0625\u062C\u0627\u0628\u0629 \u0639\u0644\u0649 \u0623\u0633\u0626\u0644\u0629\
+      \ \u062D\u0648\u0644 \u0647\u0630\u0627 \u0627\u0644\u0645\u0648\u0636\u0648\
+      \u0639.\u0647\u0644 \u064A\u0645\u0643\u0646\u0643 \u0627\u0644\u062E\u0631\u0648\
+      \u062C \u0628\u0633\u0624\u0627\u0644 \u062C\u064A\u062F \u0639\u0646 \u0627\
+      \u0644\u0645\u0642\u0637\u0639 \"{{context}}\"\u061F |||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  ce9bc00a-567b-4c4e-aad7-df6f5d5d57bb: !Template
+    answer_choices: null
+    id: ce9bc00a-567b-4c4e-aad7-df6f5d5d57bb
+    jinja: "{% if metadata.split != \"test\" %}\n\u0623\u0639\u0644\u0645 \u0623\u0646\
+      \ \u0625\u062C\u0627\u0628\u0629 \u0627\u0644\u0633\u0624\u0627\u0644 \"{{question}}\"\
+      \ \u0645\u0648\u062C\u0648\u062F \u0641\u064A \"{{context}}\".\u0647\u0644 \u064A\
+      \u0645\u0643\u0646 \u0623\u0646 \u062A\u062E\u0628\u0631\u0646\u064A \u0645\u0627\
+      \ \u0647\u0648\u061F |||\n\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  fa185424-6ebe-49b8-b4ed-7632ca33c361: !Template
+    answer_choices: null
+    id: fa185424-6ebe-49b8-b4ed-7632ca33c361
+    jinja: "{% if metadata.split != \"test\" %}\n\u0633\u0624\u0627\u0644: \"{{question}}\"\
+      \n\n\u0633\u064A\u0627\u0642: \"{{context}}\"\n\n\u0625\u062C\u0627\u0628\u0647\
+      :\n|||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'

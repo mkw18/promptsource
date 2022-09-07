@@ -1,0 +1,96 @@
+dataset: samsum
+subset: el
+templates:
+  01faf0cd-d9d8-4245-b86f-e7e13c2972ff: !Template
+    answer_choices: null
+    id: 01faf0cd-d9d8-4245-b86f-e7e13c2972ff
+    jinja: "\u03A3\u03C5\u03B3\u03BA\u03B5\u03BD\u03C4\u03C1\u03CE\u03C3\u03C4\u03B5\
+      \ \u03B1\u03C5\u03C4\u03CC\u03BD \u03C4\u03BF\u03BD \u03B4\u03B9\u03AC\u03BB\
+      \u03BF\u03B3\u03BF: {{dialogue}} |||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: 'Summarize this dialogue:'
+    reference: ''
+  182a251f-2f76-4b36-8d2e-417f8d43f729: !Template
+    answer_choices: null
+    id: 182a251f-2f76-4b36-8d2e-417f8d43f729
+    jinja: "{{dialogue}}\n\u0394\u03B5\u03B4\u03BF\u03BC\u03AD\u03BD\u03BF\u03C5 \u03C4\
+      \u03BF\u03C5 \u03C0\u03B1\u03C1\u03B1\u03C0\u03AC\u03BD\u03C9 \u03B4\u03B9\u03B1\
+      \u03BB\u03CC\u03B3\u03BF\u03C5, \u03B3\u03C1\u03AC\u03C8\u03C4\u03B5 \u03BC\u03B9\
+      \u03B1 \u03C0\u03B5\u03C1\u03AF\u03BB\u03B7\u03C8\u03B7. |||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Given the above dialogue write a summary
+    reference: ''
+  72eda731-894d-4260-9113-9e492822f80e: !Template
+    answer_choices: null
+    id: 72eda731-894d-4260-9113-9e492822f80e
+    jinja: "\u03A3\u03C5\u03BD\u03BF\u03C8\u03AF\u03B6\u03C9: {{dialogue}}|||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: 'Summarize:'
+    reference: ''
+  7bd51f5b-5bac-429e-b8f9-dd6782b92a59: !Template
+    answer_choices: null
+    id: 7bd51f5b-5bac-429e-b8f9-dd6782b92a59
+    jinja: "{{dialogue}}\n\u0393\u03B9\u03B1 \u03BD\u03B1 \u03C3\u03C5\u03BD\u03BF\
+      \u03C8\u03AF\u03C3\u03BF\u03C5\u03BC\u03B5 \u03B1\u03C5\u03C4\u03CC \u03C4\u03BF\
+      \ \u03C0\u03B1\u03C1\u03AC\u03B8\u03C5\u03C1\u03BF \u03B4\u03B9\u03B1\u03BB\u03CC\
+      \u03B3\u03BF\u03C5:\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: To sum up this dialog
+    reference: ''
+  8d829dcb-ea64-457d-b025-f16e31c2834a: !Template
+    answer_choices: null
+    id: 8d829dcb-ea64-457d-b025-f16e31c2834a
+    jinja: "\u0394\u03B7\u03BC\u03B9\u03BF\u03C5\u03C1\u03B3\u03AE\u03C3\u03C4\u03B5\
+      \ \u03BC\u03B9\u03B1 \u03C0\u03B5\u03C1\u03AF\u03BB\u03B7\u03C8\u03B7 \u03B3\
+      \u03B9\u03B1 \u03B1\u03C5\u03C4\u03CC\u03BD \u03C4\u03BF\u03BD \u03B4\u03B9\u03AC\
+      \u03BB\u03BF\u03B3\u03BF:\n{{dialogue}}\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Generate a summary for this dialogue
+    reference: ''
+  9f571a72-6813-4307-9aae-753ca0f737c5: !Template
+    answer_choices: null
+    id: 9f571a72-6813-4307-9aae-753ca0f737c5
+    jinja: "\u0393\u03C1\u03AC\u03C8\u03C4\u03B5 \u03AD\u03BD\u03B1\u03BD \u03B4\u03B9\
+      \u03AC\u03BB\u03BF\u03B3\u03BF \u03C0\u03BF\u03C5 \u03C4\u03B1\u03B9\u03C1\u03B9\
+      \u03AC\u03B6\u03B5\u03B9 \u03BC\u03B5 \u03B1\u03C5\u03C4\u03AE\u03BD \u03C4\u03B7\
+      \u03BD \u03C0\u03B5\u03C1\u03AF\u03BB\u03B7\u03C8\u03B7: {{summary}} |||\n{{dialogue}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: false
+    name: Write a dialogue that match this summary
+    reference: ''
+  bd891653-49b6-40bb-968f-8e6632c75659: !Template
+    answer_choices: null
+    id: bd891653-49b6-40bb-968f-8e6632c75659
+    jinja: "\u03A3\u03C5\u03BD\u03BF\u03C8\u03AF\u03B6\u03BF\u03BD\u03C4\u03B1\u03C2\
+      \ \u03C4\u03BF\u03BD \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03BF \u03B4\
+      \u03B9\u03AC\u03BB\u03BF\u03B3\u03BF: \n{{dialogue}}\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Sum up the following dialogue
+    reference: ''

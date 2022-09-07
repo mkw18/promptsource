@@ -1,0 +1,92 @@
+dataset: yelp_review_full
+subset: ko
+templates:
+  135fcd11-9fcc-4b55-bf1b-9b76290d0f6b: !Template
+    answer_choices: "\uBCC4 1 \uAC1C ||| \uBCC4 2 \uAC1C ||| \uBCC4 3 \uAC1C ||| \uBCC4\
+      \ 4 \uAC1C ||| \uBCC4 5 \uAC1C"
+    id: 135fcd11-9fcc-4b55-bf1b-9b76290d0f6b
+    jinja: "{{ text }}\n\uADF8\uB798\uC11C \uB098\uB294 \uADF8\uAC83\uC744\uC8FC\uACE0\
+      \ \uC2F6\uC2B5\uB2C8\uB2E4 ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: so_i_would
+    reference: ''
+  27b6bc81-bb1c-467b-91c0-22a4d6a19f44: !Template
+    answer_choices: "\uBCC4 1 \uAC1C ||| \uBCC4 2 \uAC1C ||| \uBCC4 3 \uAC1C ||| \uBCC4\
+      \ 4 \uAC1C ||| \uBCC4 5 \uAC1C"
+    id: 27b6bc81-bb1c-467b-91c0-22a4d6a19f44
+    jinja: "{{ text }}\n===\n\uADF8\uAC83\uC744 \uAE30\uBC18\uC73C\uB85C, \uB0B4 \uD3C9\
+      \uAC00\uB294\uC785\uB2C8\uB2E4 ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based_on_that
+    reference: ''
+  29fc6386-90b3-4976-b249-26e49fe7c924: !Template
+    answer_choices: "\uBCC4 1 \uAC1C ||| \uBCC4 2 \uAC1C ||| \uBCC4 3 \uAC1C ||| \uBCC4\
+      \ 4 \uAC1C ||| \uBCC4 5 \uAC1C"
+    id: 29fc6386-90b3-4976-b249-26e49fe7c924
+    jinja: "\uD14D\uC2A4\uD2B8 \uAC80\uD1A0 :\n{{ text }}\n\n\uBCC4 : |||\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_star
+    reference: simulating webpage
+  2a57af86-e25a-4572-ba9e-aa921842c04b: !Template
+    answer_choices: "\uBCC4 1 \uAC1C ||| \uBCC4 2 \uAC1C ||| \uBCC4 3 \uAC1C ||| \uBCC4\
+      \ 4 \uAC1C ||| \uBCC4 5 \uAC1C"
+    id: 2a57af86-e25a-4572-ba9e-aa921842c04b
+    jinja: "{{ text }} \uC774 \uC7A5\uC18C\uC5D0 \uB300\uD55C \uB098\uC758 \uB4F1\uAE09\
+      \uC740 ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: this_place
+    reference: ''
+  4dd990b3-7201-4cba-bb9a-baa462d68b1a: !Template
+    answer_choices: "1 ||| 2 ||| \uC0BC ||| 4 ||| 5"
+    id: 4dd990b3-7201-4cba-bb9a-baa462d68b1a
+    jinja: "\uD14D\uC2A4\uD2B8 \uAC80\uD1A0 :\n{{ text }}\n\n\uC810\uC218 \uAC80\uD1A0\
+      \ \uC810\uC218 (1\uACFC 5) : |||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_score
+    reference: Simulating webpage
+  6d4bfb59-4260-40a5-9da5-e061720bd430: !Template
+    answer_choices: "1 ||| 2 ||| \uC0BC ||| 4 ||| 5"
+    id: 6d4bfb59-4260-40a5-9da5-e061720bd430
+    jinja: "\uAC80\uD1A0: {{text}}\n1 ~ 5\uC758 \uADDC\uBAA8 \uB85C\uC774 \uC81C\uD488\
+      \uC744 \uC904 \uAC83\uC785\uB2C8\uB2E4. ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: on_a_scale
+    reference: ''
+  e8091beb-c0fa-490d-9e0c-32eb6907dbc0: !Template
+    answer_choices: "\uBCC4 1 \uAC1C ||| \uBCC4 2 \uAC1C ||| \uBCC4 3 \uAC1C ||| \uBCC4\
+      \ 4 \uAC1C ||| \uBCC4 5 \uAC1C"
+    id: e8091beb-c0fa-490d-9e0c-32eb6907dbc0
+    jinja: "\uD14D\uC2A4\uD2B8 \uAC80\uD1A0 :\n{{ text }}\n\n\uD3C9\uAC00 \uB4F1\uAE09\
+      \ : |||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_rating
+    reference: It's simulating the format of a webpage.

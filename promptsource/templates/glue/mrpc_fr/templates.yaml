@@ -1,0 +1,104 @@
+dataset: glue
+subset: mrpc_fr
+templates:
+  3b88d2c4-0aeb-4c6d-9ccc-653a388250a5: !Template
+    answer_choices: null
+    id: 3b88d2c4-0aeb-4c6d-9ccc-653a388250a5
+    jinja: '{% if label == 1 %}
+
+      Paraphraser la phrase suivante: {{sentence1}}
+
+      |||
+
+      {{sentence2}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_paraphrase
+    reference: ''
+  44c2e6d9-facf-4959-8400-38e0eb8dd3a8: !Template
+    answer_choices: non ||| oui
+    id: 44c2e6d9-facf-4959-8400-38e0eb8dd3a8
+    jinja: "Je veux savoir si les deux phrases suivantes signifient la m\xEAme chose.\n\
+      {{sentence1}}\n{{sentence2}}\nEst-ce qu'ils?\n|||\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: want to know
+    reference: ''
+  adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
+    answer_choices: non ||| oui
+    id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
+    jinja: "La phrase\n{{sentence1}}\nest-elle paraphrase (c'est-\xE0-dire la m\xEA\
+      me chose que) cette phrase?\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: paraphrase
+    reference: ''
+  bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
+    answer_choices: "pas équivalent ||| équivalent"
+    id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
+    jinja: 'Les deux phrases suivantes sont-elles "{{"équivalent"}}" ou "{{"pas équivalent"}}" ?
+
+      {{sentence1}}
+
+      {{sentence2}}
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: equivalent
+    reference: ''
+  d830d7a5-abc0-4275-ac62-974e0088876f: !Template
+    answer_choices: null
+    id: d830d7a5-abc0-4275-ac62-974e0088876f
+    jinja: "{% if label == 1 %}\nG\xE9n\xE9rez une phrase qui signifie la m\xEAme\
+      \ chose que celle-ci: {{sentence1}}\n|||\n{{sentence2}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_sentence
+    reference: ''
+  ee82d511-908c-4244-804f-6d0d907c68c7: !Template
+    answer_choices: non ||| oui
+    id: ee82d511-908c-4244-804f-6d0d907c68c7
+    jinja: "Puis-je remplacer la phrase\n{{sentence1}}\npar la phrase\n{{sentence2}}\n\
+      et que cela signifie la m\xEAme chose?\n|||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: replace
+    reference: ''
+  eefd8606-b936-4d26-b91d-8f4bc38bfcbf: !Template
+    answer_choices: non ||| oui
+    id: eefd8606-b936-4d26-b91d-8f4bc38bfcbf
+    jinja: "Les deux phrases suivantes signifient-elles la m\xEAme chose?\n{{sentence1}}\n\
+      {{sentence2}}\n|||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''

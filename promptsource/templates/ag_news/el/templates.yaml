@@ -1,0 +1,95 @@
+dataset: ag_news
+subset: el
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: Παγκόσμια πολιτική ||| Αθλητισμός ||| Επιχείρηση ||| Επιστήμη και Τεχνολογία
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "Ποια ετικέτα περιγράφει καλύτερα αυτό το άρθρο ειδήσεων;\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: Παγκόσμια πολιτική ||| Αθλητισμός ||| Επιχείρηση ||| Επιστήμη και Τεχνολογία
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "Είναι αυτή μια είδηση σχετικά με {{\"παγκόσμια πολιτική, αθλητισμός, επιχειρήσεις,\
+      \ ή επιστήμη και τεχνολογία\"}};\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: Πολιτικός ||| Αθλητής ||| Στέλεχος επιχείρησης ||| Επιστήμονας
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: 'Θα προτείνατε το παρακάτω άρθρο σε έναν {{"πολιτικό"}}, έναν {{"αθλητή"}},
+      {{"στέλεχος επιχείρησης"}} ή {{"επιστήμονας"}};
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: Παγκόσμια Νέα ||| Αθλητισμός ||| Επιχείρηση ||| Επιστήμη και Τεχνολογία
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\nΠοιο από τα παρακάτω τμήματα μιας εφημερίδας θα ήταν αυτό\
+      \ άρθρο πιθανό να εμφανιστεί σε; {{\"Παγκόσμια Νέα\"}}, {{\"Αθλητισμός\"}}, {{\"Επιχείρηση\"\
+      }} ή {{\"Επιστήμη και Τεχνολογία\"}}; ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: Παγκόσμια Νέα ||| Αθλητισμός ||| Επιχείρηση ||| Επιστήμη και Τεχνολογία
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\nΣε ποιο τμήμα μιας εφημερίδας θα εμφανιζόταν πιθανότατα αυτό το\
+      \ άρθρο; ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: Παγκόσμια πολιτική ||| Αθλητισμός ||| Επιχείρηση ||| Επιστήμη και Τεχνολογία
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \nΕίναι αυτή μια είδηση σχετικά με {{\"παγκόσμια πολιτική, αθλητισμός,\
+      \ επιχείρηση ή επιστήμη και τεχνολογία\"}}; ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: Παγκόσμια πολιτική ||| Αθλητισμός ||| Επιχείρηση ||| Επιστήμη και Τεχνολογία
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \nΠοια ετικέτα περιγράφει καλύτερα αυτό το άρθρο ειδήσεων; ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

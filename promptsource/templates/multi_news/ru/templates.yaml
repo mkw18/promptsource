@@ -1,0 +1,109 @@
+dataset: multi_news
+subset: ru
+templates:
+  12269bd1-1c3a-4865-9702-892782b593d9: !Template
+    answer_choices: null
+    id: 12269bd1-1c3a-4865-9702-892782b593d9
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\u041A\u0430\u043A\u043E\u0432\u044B\
+      \ \u043A\u043B\u044E\u0447\u0435\u0432\u044B\u0435 \u043C\u043E\u043C\u0435\u043D\
+      \u0442\u044B \u0432 \u044D\u0442\u0438\u0445 \u043D\u043E\u0432\u043E\u0441\u0442\
+      \u043D\u044B\u0445 \u0441\u0442\u0430\u0442\u044C\u044F\u0445:\n{% for doc in\
+      \ docs %}\n\n\u0421\u0442\u0430\u0442\u044C\u044F: {{doc}}\n{% endfor %}\n|||\n\
+      {{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: what are the key points
+    reference: ''
+  940d0ce4-c1ef-4453-a47b-1abaaf811160: !Template
+    answer_choices: null
+    id: 940d0ce4-c1ef-4453-a47b-1abaaf811160
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\u0421\u0438\u043D\u0442\u0435\u0437\u0438\
+      \u0440\u0443\u0439\u0442\u0435 \u044D\u0442\u0438 \u0434\u043E\u043A\u0443\u043C\
+      \u0435\u043D\u0442\u044B \u0432 \u043E\u0434\u0438\u043D:\n{% for doc in docs\
+      \ %}\n\n- {{doc}}\n{% endfor %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: synthesize
+    reference: ''
+  9ab370ad-2b89-4d2a-bb40-ccc31accefad: !Template
+    answer_choices: null
+    id: 9ab370ad-2b89-4d2a-bb40-ccc31accefad
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\u042F \u0445\u043E\u0447\u0443 \u043E\
+      \u0442\u0440\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\
+      \u044C \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0435 \u0441\u0442\u0430\
+      \u0442\u044C\u0438 \u0432 \u0431\u043E\u043B\u0435\u0435 \u043A\u0440\u0430\u0442\
+      \u043A\u043E\u0435 \u0440\u0435\u0437\u044E\u043C\u0435:\n{% for doc in docs\
+      \ %}\n\n\u0421\u0442\u0430\u0442\u044C\u044F: {{doc}}\n{% endfor %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: summary scenario
+    reference: ''
+  b15485f5-2bd9-4ed4-98ce-4b241a341f99: !Template
+    answer_choices: null
+    id: b15485f5-2bd9-4ed4-98ce-4b241a341f99
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\u041D\u0430\u043F\u0438\u0448\u0438\u0442\
+      \u0435 \u043A\u0440\u0430\u0442\u043A\u043E\u0435 \u0438\u0437\u043B\u043E\u0436\
+      \u0435\u043D\u0438\u0435 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0445\
+      \ \u0441\u0442\u0430\u0442\u0435\u0439:\n{% for doc in docs %}\n\n\u0414\u043E\
+      \u043A\u0443\u043C\u0435\u043D\u0442: {{doc}}\n{% endfor %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: summarize
+    reference: ''
+  bc910e51-c0a9-473c-aa85-adcab21b9ba9: !Template
+    answer_choices: null
+    id: bc910e51-c0a9-473c-aa85-adcab21b9ba9
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list%}\n\u041D\u0430\u043F\u0438\u0448\u0438\u0442\
+      \u0435 \u0440\u0430\u0441\u0448\u0438\u0440\u0435\u043D\u043D\u0443\u044E \u043D\
+      \u043E\u0432\u043E\u0441\u0442\u043D\u0443\u044E \u0441\u0442\u0430\u0442\u044C\
+      \u044E \u0441 \u043F\u0440\u0430\u0432\u0434\u043E\u043F\u043E\u0434\u043E\u0431\
+      \u043D\u044B\u043C\u0438 \u043F\u043E\u0434\u0440\u043E\u0431\u043D\u043E\u0441\
+      \u0442\u044F\u043C\u0438 \u0438\u0437 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\
+      \u0435\u0433\u043E \u0440\u0435\u0437\u044E\u043C\u0435:\n{{summary[2:]}}\n\
+      |||\n{{docs | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: expand (reverse task)
+    reference: ''
+  d5a4bb2a-634a-4e9a-9f1f-b0803894ca0f: !Template
+    answer_choices: null
+    id: d5a4bb2a-634a-4e9a-9f1f-b0803894ca0f
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\u042F \u043F\u044B\u0442\u0430\u044E\
+      \u0441\u044C \u043F\u0435\u0440\u0435\u0436\u0438\u0442\u044C \u044D\u0442\u0438\
+      \ \u0441\u0442\u0430\u0442\u044C\u0438 \u0432 \u043E\u0434\u043D\u0443:\n{%\
+      \ for doc in docs %}\n\n\u0421\u0442\u0430\u0442\u044C\u044F: {{doc}}\n{% endfor\
+      \ %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: distill
+    reference: ''

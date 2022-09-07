@@ -1,0 +1,174 @@
+dataset: amazon_polarity
+subset: qu
+templates:
+  1e90a24a-1182-43dd-9445-22f2e56e5761: !Template
+    answer_choices: Negativo nisqa ||| Positivo
+    id: 1e90a24a-1182-43dd-9445-22f2e56e5761
+    jinja: 'Suti: {{title}}
+
+      Qawapay: {{content}}
+
+      ¿Allinchu icha mana allinchu chay repaso? |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review
+    reference: ''
+  3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
+    answer_choices: Mana ||| Arí
+    id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
+    jinja: 'Kay qhawaymanta, ¿kamachiq kay ruruta yuyaychanmanchu?
+
+      ===
+
+      Qawapay: {{content}}
+
+      Kutichiy: |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: User_recommend_this_product
+    reference: 'Reformulation equivalent to sent analysis: would the user recommend
+      this product?'
+  592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
+    answer_choices: Mana ||| Arí
+    id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
+    jinja: '¿Allinchu kay ruru qhaway?
+
+      Suti: {{title}}
+
+      Qawapay: {{content}}
+
+      Kutichiy: |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_product_review_positive
+    reference: ''
+  745b9c05-10df-4a7e-81ad-1b88cefcb166: !Template
+    answer_choices: Arí ||| Manam
+    id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
+    jinja: 'Suti: {{title}}
+
+      Qawapay: {{content}}
+
+      ¿Kay ruru qhaway mana allinchu? |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review_negative
+    reference: ''
+  8abb5377-5dd3-4402-92a5-0d81adb6a325: !Template
+    answer_choices: Negativo nisqa ||| Positivo
+    id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
+    jinja: 'Suti: {{title}}
+
+      Qawapay: {{content}}
+
+      ¿Kay ruru qhawayqa mana allin utaq allin yuyaytachu willan? |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: convey_negative_or_positive_sentiment
+    reference: ''
+  9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
+    answer_choices: Negativo nisqa ||| Positivo
+    id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
+    jinja: '¿Kanchu huk mana allin utaq allin tono kay ruru qhawaypi?
+
+      ===
+
+      Suti: {{title}}
+
+      Qawapay: {{content}}
+
+      Kutichiy: |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: negative_or_positive_tone
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
+    answer_choices: mana kusisqachu ||| saksasqa
+    id: b13369e8-0500-4e93-90d4-8e6814bfb97b
+    jinja: 'Kaypi huk qhaway huk rantiqmanta huk rurumanta saqisqa kachkan. 
+      ¿Niwaqchu payqa {{answer_choices[1]}} icha {{answer_choices[0]}} kasqanmanta?
+
+      Suti: {{title}}
+
+      Qawapay: {{content}}
+
+      |||
+
+      {{answer_choices[label]}} '
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: user_satisfied
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
+    answer_choices: pisiyachiy ||| yapay
+    id: b13369e8-0500-4e93-90d4-8e6814bfb98b
+    jinja: 'Huk ruruta rantinaykipaqmi yuyaykushanki. Qamqa qawanki chay revisionkunata.
+      ¿Kay qatiq {{answer_choices[0]}} utaq {{answer_choices[1]}} chansakuna ruruta 
+      rantinaykipaq qhawayta atinmanchu?
+
+      Rimanakuypa sutin: {{title}}
+
+      Rurumanta qhaway: {{content}}
+
+      |||
+
+      {{answer_choices[label]}} '
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: would_you_buy
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
+    answer_choices: mana sumaqchasqa ||| halagando
+    id: b13369e8-0500-4e93-90d4-8e6814bfb99b
+    jinja: 'Suti: {{title}}
+
+      Rurumanta qhaway: {{content}}
+
+      ¿Niwaqchu kay qhawayqa ruruta {{answer_choices[1]}} utaq {{answer_choices[0]}} k''anchaypi rikuchin?
+
+      |||
+
+      {{answer_choices[label]}} '
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: flattering_or_not
+    reference: ''

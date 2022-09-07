@@ -1,0 +1,124 @@
+dataset: glue
+subset: mrpc_de
+templates:
+  3b88d2c4-0aeb-4c6d-9ccc-653a388250a5: !Template
+    answer_choices: null
+    id: 3b88d2c4-0aeb-4c6d-9ccc-653a388250a5
+    jinja: '{% if label == 1 %}
+
+      Paraphrase den folgenden Satz: {{sentence1}}
+
+      |||
+
+      {{sentence2}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_paraphrase
+    reference: ''
+  44c2e6d9-facf-4959-8400-38e0eb8dd3a8: !Template
+    answer_choices: nein ||| Jawohl
+    id: 44c2e6d9-facf-4959-8400-38e0eb8dd3a8
+    jinja: "Ich m\xF6chte wissen, ob die folgenden zwei S\xE4tze dasselbe bedeuten.\n\
+      {{sentence1}}\n{{sentence2}}\nTun sie?\n|||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: want to know
+    reference: ''
+  adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
+    answer_choices: nein ||| Jawohl
+    id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
+    jinja: 'Bedeutet der Satz
+
+      {{sentence1}}
+
+      (dh das Gleiche wie) diesen Satz?
+
+      {{sentence2}}
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: paraphrase
+    reference: ''
+  bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
+    answer_choices: "nicht gleichwertig ||| \xC4quivalent"
+    id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
+    jinja: "Sind die folgenden zwei S\xE4tze \"{{\"\xC4quivalent\"}}\" oder \"{{\"\
+      nicht gleichwertig\"}}\"?\n{{sentence1}}\n{{sentence2}}\n|||\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: equivalent
+    reference: ''
+  d830d7a5-abc0-4275-ac62-974e0088876f: !Template
+    answer_choices: null
+    id: d830d7a5-abc0-4275-ac62-974e0088876f
+    jinja: '{% if label == 1 %}
+
+      Erstellen Sie einen Satz, der dasselbe bedeutet wie dieses: {{sentence1}}
+
+      |||
+
+      {{sentence2}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_sentence
+    reference: ''
+  ee82d511-908c-4244-804f-6d0d907c68c7: !Template
+    answer_choices: nein ||| Jawohl
+    id: ee82d511-908c-4244-804f-6d0d907c68c7
+    jinja: 'Kann ich den Satz
+
+      {{sentence1}}
+
+      durch den Satz
+
+      {{sentence2}}
+
+      ersetzen und lassen Sie es dasselbe bedeuten?
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: replace
+    reference: ''
+  eefd8606-b936-4d26-b91d-8f4bc38bfcbf: !Template
+    answer_choices: nein ||| Jawohl
+    id: eefd8606-b936-4d26-b91d-8f4bc38bfcbf
+    jinja: "Bedeuten die folgenden zwei S\xE4tze dasselbe?\n{{sentence1}}\n{{sentence2}}\n\
+      |||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''

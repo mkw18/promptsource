@@ -1,0 +1,177 @@
+dataset: duorc
+subset: ParaphraseRC_fa
+templates:
+  09adcadd-fa7b-4154-91cb-fe822bf8e00e: !Template
+    answer_choices: null
+    id: 09adcadd-fa7b-4154-91cb-fe822bf8e00e
+    jinja: "{% if no_answer == false%}\n\u062F\u0631 \u0627\u06CC\u0646 \u0645\u0648\
+      \u0631\u062F \u06CC\u06A9 \u0646\u0642\u0634\u0647 \u0641\u06CC\u0644\u0645\
+      \ \u0628\u0633\u0627\u0632\u06CC\u062F: {{ question }} {{answers|choice}}\n\
+      |||\n{{ plot }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: build_story_around_qa
+    reference: Given the question-answer pair, generate a relevant plot.
+  0c7049c0-750a-46b7-af38-dd1e9fcb5217: !Template
+    answer_choices: null
+    id: 0c7049c0-750a-46b7-af38-dd1e9fcb5217
+    jinja: "\u0645\u0646 \u0633\u0639\u06CC \u0645\u06CC \u06A9\u0646\u0645 \u062A\
+      \u0635\u0645\u06CC\u0645 \u0628\u06AF\u06CC\u0631\u0645 \u06A9\u0647 \u0622\u06CC\
+      \u0627 \u0627\u0631\u0632\u0634 \u0633\u0631\u0645\u0627\u06CC\u0647 \u06AF\u0630\
+      \u0627\u0631\u06CC \u062F\u0631 \u0627\u06CC\u0646 \u067E\u06CC\u0634\u0646\u0647\
+      \u0627\u062F \u0641\u06CC\u0644\u0645 \u0631\u0627 \u062F\u0627\u0631\u062F\
+      \ \u06CC\u0627 \u062E\u06CC\u0631.\u0622\u06CC\u0627 \u0645\u06CC \u062A\u0648\
+      \u0627\u0646\u06CC\u062F \u0628\u0647 \u0645\u0646 \u062F\u0631 \u067E\u0627\
+      \u0633\u062E \u0628\u0647 \u0686\u0646\u062F \u0633\u0648\u0627\u0644 \u06A9\
+      \u0645\u06A9 \u06A9\u0646\u06CC\u062F\u061F\u0627\u06AF\u0631 \u0646\u0645\u06CC\
+      \ \u062A\u0648\u0627\u0646\u06CC\u062F \u060C \u0644\u0637\u0641\u0627\u064B\
+      \ \u0628\u06AF\u0648\u06CC\u06CC\u062F \"{{\"\u0646\u0647 \u0646\u0645\u06CC\
+      \ \u062A\u0648\u0627\u0646\u0645\"}}\".\n\n\u0633\u0648\u0627\u0644: {{question}}\n\
+      \u0639\u0646\u0648\u0627\u0646 \u0641\u06CC\u0644\u0645: {{title}}\n\u0637\u0631\
+      \u062D \u0641\u06CC\u0644\u0645: {{plot}}\n|||\n{% if no_answer %}\n\u0646\u0647\
+      \ \u0646\u0645\u06CC \u062A\u0648\u0627\u0646\u0645\n{% else %}\n{{answers|choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: decide_worth_it
+    reference: ''
+  594d0551-d737-4680-a7a5-8393acc6dbb7: !Template
+    answer_choices: null
+    id: 594d0551-d737-4680-a7a5-8393acc6dbb7
+    jinja: "\u0633\u0648\u0627\u0644: {{question}}\n\u0627\u06AF\u0631 \u067E\u0627\
+      \u0633\u062E\u06CC \u0648\u062C\u0648\u062F \u0646\u062F\u0627\u0631\u062F \u060C\
+      \ \u0644\u0637\u0641\u0627\u064B \u062E\u0631\u0648\u062C\u06CC \"{{\"\u0627\
+      \u0637\u0644\u0627\u0639\u0627\u062A \u06A9\u0627\u0641\u06CC \u0628\u0631\u0627\
+      \u06CC \u0627\u0631\u0627\u0626\u0647 \u067E\u0627\u0633\u062E.\"}}\".\n\u0639\
+      \u0646\u0648\u0627\u0646 \u0641\u06CC\u0644\u0645: {{title}}\n\u0645\u062A\u0646\
+      \ \u0646\u0648\u0634\u062A\u0647: {{plot}}\n|||\n{% if no_answer %}\n\u0627\u0637\
+      \u0644\u0627\u0639\u0627\u062A \u06A9\u0627\u0641\u06CC \u0628\u0631\u0627\u06CC\
+      \ \u0627\u0631\u0627\u0626\u0647 \u067E\u0627\u0633\u062E.\n{% else %}\n{{answers|choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_answering
+    reference: Given a passage and a question, generate an answer.
+  805f121a-6bd4-4803-9428-ea733f385add: !Template
+    answer_choices: null
+    id: 805f121a-6bd4-4803-9428-ea733f385add
+    jinja: "\u0645\u0646 \u06CC\u06A9 \u06A9\u0627\u0631\u06AF\u0631\u062F\u0627\u0646\
+      \ \u0641\u06CC\u0644\u0645 \u0647\u0633\u062A\u0645 \u0648 \u0641\u0642\u0637\
+      \ \u0646\u0642\u0634\u0647 \u0641\u06CC\u0644\u0645 \u0632\u06CC\u0631 \u0631\
+      \u0627 \u062F\u0631\u06CC\u0627\u0641\u062A \u06A9\u0631\u062F\u0645.\u0622\u06CC\
+      \u0627 \u0645\u06CC \u062A\u0648\u0627\u0646\u06CC\u062F \u0628\u0647 \u0645\
+      \u0646 \u06A9\u0645\u06A9 \u06A9\u0646\u06CC\u062F \u062A\u0627 \u0628\u0647\
+      \ \u0627\u06CC\u0646 \u0633\u0648\u0627\u0644 \u067E\u0627\u0633\u062E \u062F\
+      \u0647\u0645\u061F\u0627\u06AF\u0631 \u0646\u0647 \u060C \u0628\u0627 \u0646\
+      \u0648\u0634\u062A\u0646 \u0628\u0647 \u0645\u0646 \u0627\u0637\u0644\u0627\u0639\
+      \ \u062F\u0647\u06CC\u062F \"{{\"\u067E\u0627\u0633\u062E\u06AF\u0648 \u0646\
+      \u06CC\u0633\u062A\"}}\".\n\n\u0639\u0646\u0648\u0627\u0646 \u0637\u0631\u062D\
+      : {{title}}\n\u0637\u0631\u062D \u0641\u06CC\u0644\u0645: {{plot}}\n\u0633\u0648\
+      \u0627\u0644 \u0645\u0646: {{question}}\n|||\n{% if no_answer %}\n\u067E\u0627\
+      \u0633\u062E\u06AF\u0648 \u0646\u06CC\u0633\u062A\n{% else %}\n{{answers|choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: movie_director
+    reference: ''
+  842e346b-2d26-43a2-9a3a-9154f04eb76a: !Template
+    answer_choices: null
+    id: 842e346b-2d26-43a2-9a3a-9154f04eb76a
+    jinja: "\u062F\u0631 \u0645\u0648\u0631\u062F \u0637\u0631\u062D \u0641\u06CC\u0644\
+      \u0645 \u0632\u06CC\u0631 \u0633\u0648\u0627\u0644\u06CC \u0627\u06CC\u062C\u0627\
+      \u062F \u06A9\u0646\u06CC\u062F: {{ plot }}\n|||\n{{ question }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: Given the plot, generate a question.
+  945053f7-6ad3-4c08-b7dd-5413564f7467: !Template
+    answer_choices: null
+    id: 945053f7-6ad3-4c08-b7dd-5413564f7467
+    jinja: "\u067E\u0627\u0633\u062E \u0633\u0648\u0627\u0644 \u0632\u06CC\u0631 \u0631\
+      \u0627 \u0627\u0632 \u0637\u0631\u062D \u0641\u06CC\u0644\u0645 \u0627\u0633\
+      \u062A\u062E\u0631\u0627\u062C \u06A9\u0646\u06CC\u062F.\u0627\u06AF\u0631 \u0633\
+      \u0648\u0627\u0644 \u067E\u0627\u0633\u062E\u06AF\u0648 \u0646\u06CC\u0633\u062A\
+      \ \u060C \u0644\u0637\u0641\u0627\u064B \u062E\u0631\u0648\u062C\u06CC \"{{\"\
+      \u067E\u0627\u0633\u062E \u0646\u0645\u06CC \u062F\u0647\u062F\"}}\".\n\u0633\
+      \u0648\u0627\u0644: {{question}}\n\u0639\u0646\u0648\u0627\u0646: {{title}}\n\
+      \u0637\u0631\u062D \u0641\u06CC\u0644\u0645: {{plot}}\n|||\n{% if no_answer\
+      \ %}\n\u067E\u0627\u0633\u062E \u0646\u0645\u06CC \u062F\u0647\u062F\n{% else\
+      \ %}\n{{answers | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: extract_answer
+    reference: ''
+  a8597645-cfed-4f54-ba0d-c23eaafaa131: !Template
+    answer_choices: null
+    id: a8597645-cfed-4f54-ba0d-c23eaafaa131
+    jinja: "\u06CC\u06A9 \u0639\u0646\u0648\u0627\u0646 \u0641\u06CC\u0644\u0645 \u0631\
+      \u0627 \u0628\u0631\u0627\u06CC \u0637\u0631\u062D \u0641\u06CC\u0644\u0645\
+      \ \u0632\u06CC\u0631 \u067E\u06CC\u0634\u0646\u0647\u0627\u062F \u062F\u0647\
+      \u06CC\u062F: {{plot}}\n|||\n{{title}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: title_generation
+    reference: Given the plot for the movie, suggest a title.
+  c6f75398-a993-44d6-a494-78961a7dc1b7: !Template
+    answer_choices: null
+    id: c6f75398-a993-44d6-a494-78961a7dc1b7
+    jinja: "\u0644\u0637\u0641\u0627\u064B \u062F\u0631 \u0645\u0648\u0631\u062F \u0627\
+      \u06CC\u0646 \u0637\u0631\u062D \u0641\u06CC\u0644\u0645 \u0628\u0647 \u0633\
+      \u0648\u0627\u0644 \u0632\u06CC\u0631 \u067E\u0627\u0633\u062E \u062F\u0647\u06CC\
+      \u062F.\u0627\u06AF\u0631 \u063A\u06CC\u0631\u0642\u0627\u0628\u0644 \u067E\u0627\
+      \u0633\u062E \u0627\u0633\u062A \u060C \u0644\u0637\u0641\u0627\u064B \u062E\
+      \u0631\u0648\u062C\u06CC \"{{\"\u0628\u062F\u0648\u0646 \u067E\u0627\u0633\u062E\
+      \"}}\".\n\n\u0633\u0648\u0627\u0644: {{question}}\n\u0639\u0646\u0648\u0627\u0646\
+      \ \u0637\u0631\u062D \u0641\u06CC\u0644\u0645: {{title}}\n\u0637\u0631\u062D\
+      \ \u0641\u06CC\u0644\u0645: {{plot}}\n|||\n{% if no_answer %}\n\u0628\u062F\u0648\
+      \u0646 \u067E\u0627\u0633\u062E\n{% else %}\n{{answers | choice }}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question
+    reference: ''
+  ce3649d8-fd90-4a77-8819-4eb20b1c83a9: !Template
+    answer_choices: null
+    id: ce3649d8-fd90-4a77-8819-4eb20b1c83a9
+    jinja: "{% if no_answer == false%}\n\u0633\u0648\u0627\u0644\u06CC \u0627\u06CC\
+      \u062C\u0627\u062F \u06A9\u0646\u06CC\u062F \u06A9\u0647 \u062C\u0648\u0627\u0628\
+      \ \u0632\u06CC\u0631 \u0631\u0627 \u062F\u0627\u0634\u062A\u0647 \u0628\u0627\
+      \u0634\u062F: \n{{answers|choice}} \n\u0628\u0631\u0627\u06CC \u0637\u0631\u062D\
+      \ \u0641\u06CC\u0644\u0645 \u0632\u06CC\u0631: \n{{plot}}\n|||\n{{question}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question_by_answer
+    reference: Given the passage and the answer, generate a question which has that
+      answer.

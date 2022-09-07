@@ -1,0 +1,151 @@
+dataset: cnn_dailymail
+subset: 3.0.0_ur
+templates:
+  0556fd07-f7de-4daf-a0ae-4cda4fc239c8: !Template
+    answer_choices: null
+    id: 0556fd07-f7de-4daf-a0ae-4cda4fc239c8
+    jinja: 'کیا آپ مندرجہ ذیل مضمون کا خاکہ چند نکات میں لکھ سکتے ہیں؟
+
+
+      مضمون: {{article}}|||
+
+      {{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: write_an_outline
+    reference: ''
+  1c446bde-b3e6-4629-860f-9125681c72a1: !Template
+    answer_choices: null
+    id: 1c446bde-b3e6-4629-860f-9125681c72a1
+    jinja: 'مضمون کا خلاصہ کریں:
+
+
+      {{article}} |||
+
+      {{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: news_summary
+    reference: ''
+  6e46894f-b5ff-4259-a691-63f1da8405da: !Template
+    answer_choices: null
+    id: 6e46894f-b5ff-4259-a691-63f1da8405da
+    jinja: '2 یا 3 جملوں میں، اس نیوز آرٹیکل سے کون سے اہم نکات یاد رکھنے چاہئیں؟
+
+
+      مضمون: {{article}} |||
+
+      {{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: 2_or_3_sentences
+    reference: ''
+  892cbf90-2c19-4664-943e-a004a0c9a7fa: !Template
+    answer_choices: null
+    id: 892cbf90-2c19-4664-943e-a004a0c9a7fa
+    jinja: 'کیا آپ براہ کرم مندرجہ ذیل خبروں کے مضمون کا TLDR (Too Long Didn''t Read) خلاصہ بنا سکتے ہیں؟
+
+
+      مضمون: {{article}} |||
+
+      {{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: tldr_summary
+    reference: ''
+  9b7c6abf-5110-4b31-8345-be6b2eeea580: !Template
+    answer_choices: null
+    id: 9b7c6abf-5110-4b31-8345-be6b2eeea580
+    jinja: 'موبائل نیوز ایپس میں شارٹ کارڈز کی شکل میں پیش کرنے کے لیے آرٹیکل کو ضروری چیزوں تک کم کریں:
+
+
+      {{article}} |||
+
+      {{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: news_card_view
+    reference: ''
+  b4ff2f63-8539-4d9c-9858-42fa5f95ba56: !Template
+    answer_choices: null
+    id: b4ff2f63-8539-4d9c-9858-42fa5f95ba56
+    jinja: 'اہم پلاٹ پوائنٹس سے ایک کہانی بنائیں:
+
+
+      {{highlights}} |||
+
+      {{article}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_story
+    reference: ''
+  c20ac3c5-da85-408a-bba9-8b12ef2ae379: !Template
+    answer_choices: null
+    id: c20ac3c5-da85-408a-bba9-8b12ef2ae379
+    jinja: 'مندرجہ ذیل مضمون کو مختصراً جمع کریں: {{article}}|||{{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: sum_in_brief
+    reference: ''
+  e047b4ec-abff-4b36-896a-83f5f1ea6759: !Template
+    answer_choices: null
+    id: e047b4ec-abff-4b36-896a-83f5f1ea6759
+    jinja: 'مضمون سے اہم نکات نکالیں جن کی بنیاد پر اسٹاک مارکیٹ کا رد عمل ہو سکتا ہے:
+
+
+      {{article}} |||
+
+      {{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: news_stock
+    reference: ''
+  efa42de6-7a20-4e35-92fc-919a5eb0b77e: !Template
+    answer_choices: null
+    id: efa42de6-7a20-4e35-92fc-919a5eb0b77e
+    jinja: 'کہانی کو مزید دل چسپ اور معلوماتی بنانے کے لیے آپ اس میں کیا تفصیلات شامل کریں گے؟
+
+
+      {{highlights}} |||
+
+      {{article}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: spice_up_story
+    reference: ''

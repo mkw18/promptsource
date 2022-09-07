@@ -1,0 +1,161 @@
+dataset: super_glue
+subset: wsc.fixed_ar
+templates:
+  212fb8b1-8436-4f64-8f37-a9094fe029f4: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: 212fb8b1-8436-4f64-8f37-a9094fe029f4
+    jinja: "{{ text }} \u0641\u064A \u0627\u0644\u062C\u0645\u0644\u0629 \u0627\u0644\
+      \u0633\u0627\u0628\u0642\u0629 \u060C \u0647\u0644 \u064A\u0634\u064A\u0631\
+      \ \u0627\u0644\u0636\u0645\u064A\u0631 \"{{ span2_text.lower() }}\" \u0625\u0644\
+      \u0649 {{ span1_text }}\u061F \u0646\u0639\u0645 \u0627\u0645 \u0644\u0627\u061F\
+      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does the pronoun refer to
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  23361c5d-b67f-4c2a-9da7-16301c55d0e1: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
+    jinja: "{{ text }} \u0647\u0646\u0627 \u060C \u0628\u0648\u0627\u0633\u0637\u0629\
+      \ \"{{ span2_text }}\" \u062A\u0639\u0646\u064A \"{{ span1_text }}\". \u0646\
+      \u0639\u0645 \u0627\u0645 \u0644\u0627\u061F ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: by p they mean
+    reference: ''
+  2f17f18b-6daa-44ef-a2dd-dddaf04aec0e: !Template
+    answer_choices: "\u062E\u0637\u0623 \u0634\u0646\u064A\u0639 ||| \u062D\u0642\u064A\
+      \u0642\u064A"
+    id: 2f17f18b-6daa-44ef-a2dd-dddaf04aec0e
+    jinja: "{{ text }} \n\n\u0628\u0639\u0628\u0627\u0631\u0627\u062A \u0623\u062E\
+      \u0631\u0649\u060C {{ text.split(\" \")[span2_index:] | join(\" \") | replace(span2_text,\
+      \ span1_text) }} \u0635\u062D\u064A\u062D\u0629 \u0623\u0648 \u062E\u0627\u0637\
+      \u0626\u0629\u061F ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: in other words
+    reference: ''
+  4b3e29cc-ccb8-4e4c-a845-4935ca29cf34: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: 4b3e29cc-ccb8-4e4c-a845-4935ca29cf34
+    jinja: "{{ text }} \u0623\u0639\u062A\u0642\u062F \u0623\u0646\u0647\u0645 \u064A\
+      \u0639\u0646\u064A\u0648\u0646 \"{{ text.split(\" \")[span2_index:] | join(\"\
+      \ \") | replace(span2_text, span1_text) }}\" \u0646\u0639\u0645 \u0627\u0645\
+      \ \u0644\u0627\u061F ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: I think they mean
+    reference: ''
+  7482d24f-cf45-4013-b82d-369489fc958b: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: 7482d24f-cf45-4013-b82d-369489fc958b
+    jinja: "{{ text }} \u0647\u0646\u0627 \u060C \u0647\u0644 \"{{ span2_text.lower()\
+      \ }}\" \u064A\u0642\u0641 \u0639\u0644\u0649 {{ span1_text }}\u061F \u0646\u0639\
+      \u0645 \u0627\u0645 \u0644\u0627\u061F ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does p stand for
+    reference: ''
+  7d377293-d043-4b6c-8ec1-d61eaf14ec67: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: 7d377293-d043-4b6c-8ec1-d61eaf14ec67
+    jinja: "\u0627\u0644\u0645\u0645\u0631: {{ text }} \n\n\u0633\u0624\u0627\u0644\
+      : \u0641\u064A \u0627\u0644\u0645\u0642\u0637\u0639 \u0623\u0639\u0644\u0627\
+      \u0647 \u060C \u0647\u0644 \u064A\u0634\u064A\u0631 \u0627\u0644\u0636\u0645\
+      \u064A\u0631 \"{{ span2_text }}\" \u0625\u0644\u0649 {{ span1_text }}\u061F\n\
+      \n\u0625\u062C\u0627\u0628\u0647: ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 Style
+    reference: Adapted from Figure G33, p. 59, Brown et al. 2020
+  809eacd0-2f6c-4e3a-b52a-57c783879d36: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: 809eacd0-2f6c-4e3a-b52a-57c783879d36
+    jinja: "{{ text }} \u0641\u064A \u0627\u0644\u062C\u0645\u0644\u0629 \u0627\u0644\
+      \u0633\u0627\u0628\u0642\u0629 \u060C \u0647\u0644 \u064A\u0645\u0643\u0646\
+      \ \u0627\u0633\u062A\u0628\u062F\u0627\u0644 \u0627\u0644\u0636\u0645\u064A\u0631\
+      \ \"{{ span2_text }}\" \u0628\u0640 \"{{ span1_text }}\"\u061F \u0646\u0639\u0645\
+      \ \u0627\u0645 \u0644\u0627\u061F ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: replaced with
+    reference: ''
+  87f97aa0-1fa9-4f0b-b8e6-89d3c1f19bd6: !Template
+    answer_choices: "\u062E\u0637\u0623 \u0634\u0646\u064A\u0639 ||| \u062D\u0642\u064A\
+      \u0642\u064A"
+    id: 87f97aa0-1fa9-4f0b-b8e6-89d3c1f19bd6
+    jinja: "\u0633\u064A\u0627\u0642: {{ text }} \n\n{% if span2_text.lower()  ==\
+      \ \"they\" or span2_text.lower() == \"them\" %}\nQuestion: \"{{ span2_text }}\"\
+      \ \u0646\u0643\u0648\u0646 {{ span1_text }}. \u0635\u062D\u064A\u062D\u0629\
+      \ \u0623\u0648 \u062E\u0627\u0637\u0626\u0629\u061F\n{% else %}\nQuestion: \"\
+      {{ span2_text }}\" \u0647\u0648 {{ span1_text }}. \u0635\u062D\u064A\u062D\u0629\
+      \ \u0623\u0648 \u062E\u0627\u0637\u0626\u0629\u061F\n{% endif %}\n\n\u0625\u062C\
+      \u0627\u0628\u0647: ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: p is/are r
+    reference: ''
+  aae24b54-c3a7-4f69-8b77-f6dc115988f8: !Template
+    answer_choices: "\u062E\u0637\u0623 \u0634\u0646\u064A\u0639 ||| \u062D\u0642\u064A\
+      \u0642\u064A"
+    id: aae24b54-c3a7-4f69-8b77-f6dc115988f8
+    jinja: "{{ text }} \n\u0641\u064A \u0627\u0644\u0645\u0642\u0637\u0639 \u0623\u0639\
+      \u0644\u0627\u0647 \u060C \u064A\u0634\u064A\u0631 \u0627\u0644\u0636\u0645\u064A\
+      \u0631 \"{{ span2_text }}\" \u0625\u0644\u0649 {{ span1_text }}. \u0635\u062D\
+      \u064A\u062D\u0629 \u0623\u0648 \u062E\u0627\u0637\u0626\u0629\u061F ||| {%\
+      \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: the pronoun refers to
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  d88f3e21-42dc-49a5-924d-69b764a14816: !Template
+    answer_choices: "\u0631\u0642\u0645 ||| \u0646\u0639\u0645"
+    id: d88f3e21-42dc-49a5-924d-69b764a14816
+    jinja: "{{ text }} \n{% if span2_text.lower()  == \"they\" or span2_text.lower()\
+      \ == \"them\" %}\n\u0633\u0624\u0627\u0644: \u0645\u0646 \u0623\u0648 \u0645\
+      \u0627\u0630\u0627 \"{{ span2_text.lower() }}\"\u061F {{ span1_text }}\u061F\
+      \n{% else %}\n\u0633\u0624\u0627\u0644: \u0645\u0646 \u0623\u0648 \u0645\u0627\
+      \ \u0647\u0648 \"{{ span2_text.lower() }}\"\u061F \u0647\u0644 \u0647\u064A\
+      }}\u061F\n{% endif %}\n\u0625\u062C\u0627\u0628\u0647: ||| {% if label != -1\
+      \ %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Who or what is/are
+    reference: I double checked the only plural pronouns in WSC are "they" and "them".

@@ -1,0 +1,70 @@
+dataset: dbpedia_14
+subset: nl
+templates:
+  824ecb55-ecad-40c2-8033-f2fa0add2ddf: !Template
+    answer_choices: Bedrijf ||| Onderwijsinstelling ||| Artiest ||| Atleet ||| Kantoorhouder
+      ||| Transportmiddel ||| Building ||| Natuurlijke plaats ||| Dorp ||| Dier |||
+      Plant ||| Album ||| Film ||| Geschreven werk
+    id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
+    jinja: '{{content}} Given a list of categories: {{"company, educational institution,
+      artist, athlete, office holder, mean of transportation, building, natural place,
+      village, animal, plant, album, film or written work"}}, what category does the
+      paragraph belong to? ||| {{ answer_choices[label] }}
+
+
+      '
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_list_what_category_does_the_paragraph_belong_to
+    reference: ''
+  8eda7e71-6734-486f-b883-e99d3f14c0bf: !Template
+    answer_choices: Bedrijf ||| Onderwijsinstelling ||| Artist ||| Atleet ||| Kantoorhouder
+      ||| Transportmiddel ||| Building ||| Natuurlijke plaats ||| Dorp ||| Dier |||
+      Plant ||| Album ||| Film ||| Geschreven werk
+    id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
+    jinja: Kies een categorie voor de volgende tekst.De opties zijn - {{"company,
+      educational institution, artist, athlete, office holder, mean of transportation,
+      building, natural place, village, animal, plant, album, film or written work"}}.
+      {{title}} - {{content}} ||| {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_one_category_for_the_following_text
+    reference: ''
+  9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67: !Template
+    answer_choices: Bedrijf ||| Onderwijsinstelling ||| Artiest ||| Atleet ||| Office
+      Holder ||| Transportmiddel ||| Building ||| Natural Place ||| Dorp ||| Animal
+      ||| Plant ||| Album ||| Film ||| Geschreven werk
+    id: 9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67
+    jinja: "{{title}} - {{content}} Gegeven een keuze uit categorie\xEBn {{\"company,\
+      \ educational institution, artist, athlete, office holder, mean of transportation,\
+      \ building, natural place, village, animal, plant, album, film or written work\"\
+      }}, verwijst de tekst naar welke? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: 'given_a_choice_of_categories '
+    reference: ''
+  f72fa410-3278-4f62-91f0-f9edf4a4e792: !Template
+    answer_choices: Bedrijf ||| Onderwijsinstelling ||| Artist ||| Atleet ||| Kantoorhouder
+      ||| Transportmiddel ||| Building ||| Natuurlijke plaats ||| Dorp ||| Dier |||
+      Plant ||| Album ||| Film ||| Written Work
+    id: f72fa410-3278-4f62-91f0-f9edf4a4e792
+    jinja: "\"{{title}}\", Gegeven een lijst met categorie\xEBn: {{\"company, educational\
+      \ institution, artist, athlete, office holder, mean of transportation, building,\
+      \ natural place, village, animal, plant, album, film or written work\"}}, tot\
+      \ welke categorie behoort de titel? ||| {{ answer_choices[label] }}\n\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_a_list_of_category_what_does_the_title_belong_to
+    reference: ''

@@ -1,0 +1,148 @@
+dataset: wiki_hop
+subset: original_tr
+templates:
+  0bb6b603-115e-4ae9-b17b-881fa72b2e81: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 0bb6b603-115e-4ae9-b17b-881fa72b2e81
+    jinja: "Bilgi:\n{% for support in supports %}\n- {{ support }}\n{% endfor %}\n\
+      \n{% set question_split = question.split(' ') %}\nHangi nesne varl\u0131\u011F\
+      \u0131n\u0131n '{{question_split[0] | replace(\"_\", \" \")}}' ile '{{question_split[1:]\
+      \ | join(\" \")}}' konusu ile ili\u015Fkisi vard\u0131r?\n\nSe\xE7imler:\n-\
+      \ {{answer_choices | join(\"\\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_interrogative_1
+    reference: Given information and subject and relation, choose the best object
+      entity (interrogative instruction).
+  23e0d05a-8777-45c4-8692-13f3dc5a40bb: !Template
+    answer_choices: null
+    id: 23e0d05a-8777-45c4-8692-13f3dc5a40bb
+    jinja: "Bilgi:\n{% for support in supports %}\n- {{ support }}\n{% endfor %}\n\
+      \n{% set question_split = question.split(' ') %}\n'{{question_split[1:] | join(\"\
+      \ \")}}' ve '{{answer}}' aras\u0131ndaki ili\u015Fki nedir?\n\n|||\n{{ question_split[0]\
+      \ | replace(\"_\", \" \") }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: explain_relation
+    reference: Given information, explain the relation between the subject entity
+      and the object entity.
+  2fadafea-f814-4ff1-a3aa-cace9067f31f: !Template
+    answer_choices: null
+    id: 2fadafea-f814-4ff1-a3aa-cace9067f31f
+    jinja: "Bilgi:\n{% for support in supports %}\n- {{ support }}\n{% endfor %}\n\
+      \n{% set question_split = question.split(' ') %}\n'{{question_split[1:] | join(\"\
+      \ \")}}' '{{question_split[0] | replace(\"_\", \" \")}}' ili\u015Fkisi hangi\
+      \ varl\u0131kt\u0131r?\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_object
+    reference: Given information, generate the best object entity (without answer
+      choices in prompt).
+  40bdb0e7-def9-4829-9a37-a05d354ef7cd: !Template
+    answer_choices: null
+    id: 40bdb0e7-def9-4829-9a37-a05d354ef7cd
+    jinja: "Bilgi:\n{% for support in supports %}\n- {{ support }}\n{% endfor %}\n\
+      \n{% set question_split = question.split(' ') %}\nYukar\u0131daki paragraflar\
+      \ g\xF6z \xF6n\xFCne al\u0131nd\u0131\u011F\u0131nda, hangi varl\u0131\u011F\
+      \u0131n '{{answer}}' ile '{{question_split[0] | replace(\"_\", \" \")}}' ili\u015F\
+      kisine sahip oldu\u011Funa karar verin.\n\n|||\n{{ question_split[1:] | join(\"\
+      \ \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_subject
+    reference: Given information, generate the best subject entity for the fact triple.
+  4836e754-b2c9-4697-b386-6770494dc5f5: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 4836e754-b2c9-4697-b386-6770494dc5f5
+    jinja: "Bilgi:\n{% for support in supports %}\n- {{ support }}\n{% endfor %}\n\
+      \n{% set question_split = question.split(' ') %}\nYukar\u0131daki bilgiler g\xF6\
+      z \xF6n\xFCne al\u0131nd\u0131\u011F\u0131nda, '{{question_split[0] | replace(\"\
+      _\", \" \")}}' ili\u015Fkisini '{{question_split[1:] | join(\" \")}}' ile sergileyen\
+      \ nesne varl\u0131\u011F\u0131n\u0131n alt\u0131ndaki listeden se\xE7in.\n\n\
+      Se\xE7imler:\n- {{answer_choices | join(\"\\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_1
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  4a1b61f6-c619-4d3d-aec2-f41a8986641c: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 4a1b61f6-c619-4d3d-aec2-f41a8986641c
+    jinja: "Bilgi:\n{% for support in supports %}\n- {{ support }}\n{% endfor %}\n\
+      \n{% set question_split = question.split(' ') %}\nYukar\u0131daki paragraflar\u0131\
+      \ okuduktan sonra, '{{question_split[1:] | join(\" \")}}' nin '{{question_split[0]\
+      \ | replace(\"_\", \" \")}}' ili\u015Fkisini sergiledi\u011Fi varl\u0131\u011F\
+      \u0131 bilmekle ilgileniyoruz.Cevab\u0131 a\u015Fa\u011F\u0131daki se\xE7eneklerden\
+      \ bulun.\n\nSe\xE7imler:\n- {{answer_choices | join(\"\\n - \") }}\n\n|||\n\
+      {{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_3
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  c4675106-0ac5-4bf0-a400-f628daae81db: !Template
+    answer_choices: null
+    id: c4675106-0ac5-4bf0-a400-f628daae81db
+    jinja: "Bilgi:\n{% for support in supports %}\n- {{ support }}\n{% endfor %}\n\
+      \n{% set question_split = question.split(' ') %}\nBilgiler g\xF6z \xF6n\xFC\
+      ne al\u0131nd\u0131\u011F\u0131nda, '{{question_split[0] | replace(\"_\", \"\
+      \ \")}}' ili\u015Fkisi olan konu ve nesne varl\u0131klar\u0131n\u0131 se\xE7\
+      in.\n\n|||\n{{ question_split[1:] | join(\" \") }} , {{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_subject_and_object
+    reference: Given information and relation, generate the subject and object.
+  e4dc7abf-d56a-4217-ba7f-7470cd959e8e: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: e4dc7abf-d56a-4217-ba7f-7470cd959e8e
+    jinja: "Bilgi:\n{% for support in supports %}\n- {{ support }}\n{% endfor %}\n\
+      \n{% set question_split = question.split(' ') %}\nYukar\u0131daki paragraflar\u0131\
+      \ okuduktan sonra, '{{question_split[1:] | join(\" \")}}' ile ilgili varl\u0131\
+      k i\xE7in '{{question_split[0] | replace(\"_\", \" \")}}' ili\u015Fkisi ile\
+      \ en iyi cevab\u0131 se\xE7in.\n\nSe\xE7imler:\n- {{answer_choices | join(\"\
+      \\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_2
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  f44936e1-cbde-4d41-b462-6150cce8c1c8: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: f44936e1-cbde-4d41-b462-6150cce8c1c8
+    jinja: "Bilgi:\n{% for support in supports %}\n- {{ support }}\n{% endfor %}\n\
+      \n{% set question_split = question.split(' ') %}\n'{{question_split[1:] | join(\"\
+      \ \")}}' '{{question_split[0] | replace(\"_\", \" \")}}' ili\u015Fkisi yoluyla\
+      \ hangi nesne varl\u0131\u011F\u0131yla ilgilidir?\n\nSe\xE7imler:\n- {{answer_choices\
+      \ | join(\"\\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_interrogative_2
+    reference: Given information and subject and relation, choose the best object
+      entity (interrogative instruction).

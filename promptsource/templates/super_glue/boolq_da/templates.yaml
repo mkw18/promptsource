@@ -1,0 +1,128 @@
+dataset: super_glue
+subset: boolq_da
+templates:
+  3e386463-1715-4578-9cba-07d11a0d3b61: !Template
+    answer_choices: Falsk ||| Rigtigt
+    id: 3e386463-1715-4578-9cba-07d11a0d3b61
+    jinja: "Passage: {{passage}}\n\nEfter at have l\xE6st denne passage, har jeg et\
+      \ sp\xF8rgsm\xE5l: {{question}}? Sandt eller falsk? |||\n{% if label != -1 %}\n\
+      {{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: after_reading
+    reference: ''
+  492f0f88-4370-46cd-839b-1de37a55aeda: !Template
+    answer_choices: Ingen ||| Ja
+    id: 492f0f88-4370-46cd-839b-1de37a55aeda
+    jinja: "{{ passage }} \nSp\xF8rgsm\xE5l: {{ question }}\nSvar: ||| \n{% if label\
+      \ != -1 %}\n{{ answer_choices[label] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 Style
+    reference: Same as Figure G29, p. 58 of the GPT-3 paper
+  6cb6a026-c070-470a-b75d-bb8fdf424e35: !Template
+    answer_choices: Ingen ||| Ja
+    id: 6cb6a026-c070-470a-b75d-bb8fdf424e35
+    jinja: "{{ passage }} \n\nEfter at have l\xE6st det, spekulerer jeg p\xE5 {{ question\
+      \ }}? |||\n{% if label != -1 %}\n{{ answer_choices[label] }} \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "I wonder\u2026"
+    reference: ''
+  7cf7acdf-e3a2-459f-a3e8-2e2d27dd6aa5: !Template
+    answer_choices: Ingen ||| Ja
+    id: 7cf7acdf-e3a2-459f-a3e8-2e2d27dd6aa5
+    jinja: "Tekst: {{passage}}\n\nBesvar f\xF8lgende ja/nej sp\xF8rgsm\xE5l: {{question}}?\
+      \ Ja eller nej? |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: yes_no_question
+    reference: ''
+  7d21d974-0624-4d4f-9e8c-644e2d009cb5: !Template
+    answer_choices: Ingen ||| Ja
+    id: 7d21d974-0624-4d4f-9e8c-644e2d009cb5
+    jinja: "{{ passage }} \n\nEfter at have l\xE6st det, kunne du fort\xE6lle mig\
+      \ {{ question }}? ||| {% if label != -1 %}{{ answer_choices[label] }}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "could you tell me\u2026"
+    reference: ''
+  922d3e87-ac58-4731-84d1-f0a40e47afb5: !Template
+    answer_choices: Ingen ||| Ja
+    id: 922d3e87-ac58-4731-84d1-f0a40e47afb5
+    jinja: "Eksamen\n1. Svar af ja eller nej.\n\nDokument: {{passage}}\nSp\xF8rgsm\xE5\
+      l: {{question}}? ||| \n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: exam
+    reference: ''
+  9a1bf459-8047-437c-9def-f21e960429cc: !Template
+    answer_choices: Ingen ||| Ja
+    id: 9a1bf459-8047-437c-9def-f21e960429cc
+    jinja: "Baseret p\xE5 f\xF8lgende passage, {{ question }}? {{ passage }}\n\n|||\n\
+      {% if label != -1 %}\n{{ answer_choices[label] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based on the following passage
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  9f4c6b0a-437b-40c0-b467-db4b7218d38d: !Template
+    answer_choices: Falsk ||| Rigtigt
+    id: 9f4c6b0a-437b-40c0-b467-db4b7218d38d
+    jinja: "Dyrke motion: L\xE6s teksten og besvar sp\xF8rgsm\xE5let fra sandt eller\
+      \ falskt.\n\nTekst: {{passage}}\nSp\xF8rgsm\xE5l: {{question}}? |||\n{% if label\
+      \ != -1 %}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: exercise
+    reference: ''
+  b2b3cb60-d6e3-491c-a09a-8201e13e417e: !Template
+    answer_choices: Ingen ||| Ja
+    id: b2b3cb60-d6e3-491c-a09a-8201e13e417e
+    jinja: "{{ passage }}\nBaseret p\xE5 den forrige passage, {{ question }}? |||\
+      \ {% if label != -1 %}{{ answer_choices[label] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based on the previous passage
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  eb78772c-e81e-4b8a-a77b-b75efd1c212a: !Template
+    answer_choices: Falsk ||| Rigtigt
+    id: eb78772c-e81e-4b8a-a77b-b75efd1c212a
+    jinja: "{{passage}}\n\nSp\xF8rgsm\xE5l: {{question}}? Sandt eller falsk? |||\n\
+      {% if label != -1 %}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: valid_binary
+    reference: ''

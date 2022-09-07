@@ -1,0 +1,159 @@
+dataset: super_glue
+subset: wsc.fixed_hi
+templates:
+  212fb8b1-8436-4f64-8f37-a9094fe029f4: !Template
+    answer_choices: "\u0928\u0939\u0940\u0902 ||| \u0939\u093E\u0901"
+    id: 212fb8b1-8436-4f64-8f37-a9094fe029f4
+    jinja: "{{ text }} \u092A\u093F\u091B\u0932\u0947 \u0935\u093E\u0915\u094D\u092F\
+      \ \u092E\u0947\u0902, \u0915\u094D\u092F\u093E \u0938\u0930\u094D\u0935\u0928\
+      \u093E\u092E \"{{ span2_text.lower() }}\" {{ span1_text }} \u0915\u094B \u0938\
+      \u0902\u0926\u0930\u094D\u092D\u093F\u0924 \u0915\u0930\u0924\u093E \u0939\u0948\
+      ? \u0939\u093E\u0902 \u092F\u093E \u0928\u0939\u0940\u0902? ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does the pronoun refer to
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  23361c5d-b67f-4c2a-9da7-16301c55d0e1: !Template
+    answer_choices: "\u0928\u0939\u0940\u0902 ||| \u0939\u093E\u0901"
+    id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
+    jinja: "{{ text }} \u092F\u0939\u093E\u0901, \"{{ span2_text }}\" \u0938\u0947\
+      \ \u0909\u0928\u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948 \"{{ span1_text\
+      \ }}\"\u0964 \u0939\u093E\u0902 \u092F\u093E \u0928\u0939\u0940\u0902? ||| {%\
+      \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: by p they mean
+    reference: ''
+  2f17f18b-6daa-44ef-a2dd-dddaf04aec0e: !Template
+    answer_choices: "\u0905\u0938\u0924\u094D\u092F ||| \u0938\u0924\u094D\u092F"
+    id: 2f17f18b-6daa-44ef-a2dd-dddaf04aec0e
+    jinja: "{{ text }} \n\n\u0926\u0942\u0938\u0930\u0947 \u0936\u092C\u094D\u0926\
+      \u094B\u0902 \u092E\u0947\u0902, {{ text.split(\" \")[span2_index:] | join(\"\
+      \ \") | replace(span2_text, span1_text) }} \u0938\u0939\u0940 \u092F\u093E \u0917\
+      \u0932\u0924? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: in other words
+    reference: ''
+  4b3e29cc-ccb8-4e4c-a845-4935ca29cf34: !Template
+    answer_choices: "\u0928\u0939\u0940\u0902 ||| \u0939\u093E\u0901"
+    id: 4b3e29cc-ccb8-4e4c-a845-4935ca29cf34
+    jinja: "{{ text }} \u092E\u0941\u091D\u0947 \u0932\u0917\u0924\u093E \u0939\u0948\
+      \ \u0915\u093F \u0909\u0928\u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948\
+      \ \"{{ text.split(\" \")[span2_index:] | join(\" \") | replace(span2_text, span1_text)\
+      \ }}\" \u0939\u093E\u0902 \u092F\u093E \u0928\u0939\u0940\u0902? ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: I think they mean
+    reference: ''
+  7482d24f-cf45-4013-b82d-369489fc958b: !Template
+    answer_choices: "\u0928\u0939\u0940\u0902 ||| \u0939\u093E\u0901"
+    id: 7482d24f-cf45-4013-b82d-369489fc958b
+    jinja: "{{ text }} \u092F\u0939\u093E\u0901, \"{{ span2_text.lower() }}\" {{ span1_text\
+      \ }} \u0915\u0947 \u0932\u093F\u090F \u0916\u0921\u093C\u093E \u0939\u0948?\
+      \ \u0939\u093E\u0902 \u092F\u093E \u0928\u0939\u0940\u0902? ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does p stand for
+    reference: ''
+  7d377293-d043-4b6c-8ec1-d61eaf14ec67: !Template
+    answer_choices: "\u0928\u0939\u0940\u0902 ||| \u0939\u093E\u0901"
+    id: 7d377293-d043-4b6c-8ec1-d61eaf14ec67
+    jinja: "\u0930\u093E\u0938\u094D\u0924\u093E: {{ text }} \n\n\u092A\u094D\u0930\
+      \u0936\u094D\u0928: \u0909\u092A\u0930\u094B\u0915\u094D\u0924 \u092E\u093E\u0930\
+      \u094D\u0917 \u092E\u0947\u0902, \u0938\u0930\u094D\u0935\u0928\u093E\u092E\
+      \ \"{{ span2_text }}\" {{ span1_text }} \u0915\u094B \u0938\u0902\u0926\u0930\
+      \u094D\u092D\u093F\u0924 \u0915\u0930\u0924\u093E \u0939\u0948?\n\n\u0909\u0924\
+      \u094D\u0924\u0930: ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 Style
+    reference: Adapted from Figure G33, p. 59, Brown et al. 2020
+  809eacd0-2f6c-4e3a-b52a-57c783879d36: !Template
+    answer_choices: "\u0928\u0939\u0940\u0902 ||| \u0939\u093E\u0901"
+    id: 809eacd0-2f6c-4e3a-b52a-57c783879d36
+    jinja: "{{ text }} \u092A\u093F\u091B\u0932\u0947 \u0935\u093E\u0915\u094D\u092F\
+      \ \u092E\u0947\u0902, \u0915\u094D\u092F\u093E \u0938\u0930\u094D\u0935\u0928\
+      \u093E\u092E \"{{ span2_text }}\" \u0915\u094B \"{{ span1_text }}\" \u0915\u0947\
+      \ \u0938\u093E\u0925 \u092C\u0926\u0932\u093E \u091C\u093E \u0938\u0915\u0924\
+      \u093E \u0939\u0948? \u0939\u093E\u0902 \u092F\u093E \u0928\u0939\u0940\u0902\
+      ? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: replaced with
+    reference: ''
+  87f97aa0-1fa9-4f0b-b8e6-89d3c1f19bd6: !Template
+    answer_choices: "\u0905\u0938\u0924\u094D\u092F ||| \u0938\u0924\u094D\u092F"
+    id: 87f97aa0-1fa9-4f0b-b8e6-89d3c1f19bd6
+    jinja: "\u0938\u0902\u0926\u0930\u094D\u092D: {{ text }} \n\n{% if span2_text.lower()\
+      \  == \"they\" or span2_text.lower() == \"them\" %}\nQuestion: \"{{ span2_text\
+      \ }}\" \u0939\u0948\u0902 {{ span1_text }}. \u0938\u0939\u0940 \u092F\u093E\
+      \ \u0917\u0932\u0924?\n{% else %}\nQuestion: \"{{ span2_text }}\" \u0939\u0948\
+      \ {{ span1_text }}. \u0938\u0939\u0940 \u092F\u093E \u0917\u0932\u0924?\n{%\
+      \ endif %}\n\n\u0909\u0924\u094D\u0924\u0930: ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: p is/are r
+    reference: ''
+  aae24b54-c3a7-4f69-8b77-f6dc115988f8: !Template
+    answer_choices: "\u0905\u0938\u0924\u094D\u092F ||| \u0938\u0924\u094D\u092F"
+    id: aae24b54-c3a7-4f69-8b77-f6dc115988f8
+    jinja: "{{ text }} \n\u090A\u092A\u0930 \u0926\u093F\u090F \u0917\u090F \u092E\
+      \u093E\u0930\u094D\u0917 \u092E\u0947\u0902, \u0938\u0930\u094D\u0935\u0928\u093E\
+      \u092E \"{{ span2_text }}\" {{ span1_text }} \u0915\u094B \u0938\u0902\u0926\
+      \u0930\u094D\u092D\u093F\u0924 \u0915\u0930\u0924\u093E \u0939\u0948\u0964 \u0938\
+      \u0939\u0940 \u092F\u093E \u0917\u0932\u0924? ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: the pronoun refers to
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  d88f3e21-42dc-49a5-924d-69b764a14816: !Template
+    answer_choices: "\u0928\u0939\u0940\u0902 ||| \u0939\u093E\u0901"
+    id: d88f3e21-42dc-49a5-924d-69b764a14816
+    jinja: "{{ text }} \n{% if span2_text.lower()  == \"they\" or span2_text.lower()\
+      \ == \"them\" %}\n\u092A\u094D\u0930\u0936\u094D\u0928: \u0915\u094C\u0928 \u092F\
+      \u093E \u0915\u094D\u092F\u093E \u0939\u0948\u0902 \"{{ span2_text.lower() }}\"\
+      ? {{ span1_text }}?\n{% else %}\n\u092A\u094D\u0930\u0936\u094D\u0928: \u0915\
+      \u094C\u0928 \u092F\u093E \u0915\u094D\u092F\u093E \u0939\u0948 \"{{ span2_text.lower()\
+      \ }}\"? \u0915\u094D\u092F\u093E \u092F\u0939}}?\n{% endif %}\n\u0909\u0924\u094D\
+      \u0924\u0930: ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Who or what is/are
+    reference: I double checked the only plural pronouns in WSC are "they" and "them".

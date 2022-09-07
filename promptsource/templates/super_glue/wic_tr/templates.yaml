@@ -1,0 +1,154 @@
+dataset: super_glue
+subset: wic_tr
+templates:
+  14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
+    answer_choices: Numara ||| Evet
+    id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
+    jinja: "\"{{word}}\" kelimesinin bu iki c\xFCmlede ayn\u0131 anlam\u0131 var m\u0131\
+      ? Evet Hay\u0131r?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n\
+      {{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning-with-label
+    reference: Generalized question-context format with label
+  3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
+    answer_choices: Numara ||| Evet
+    id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
+    jinja: "\"{{word}}\" kelimesinin bu iki c\xFCmlede ayn\u0131 anlam\u0131 var m\u0131\
+      ?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning
+    reference: Generalized question-context format
+  611d13dc-d414-4b9b-9204-e4f325e859e7: !Template
+    answer_choices: Numara ||| Evet
+    id: 611d13dc-d414-4b9b-9204-e4f325e859e7
+    jinja: "Ev \xF6devi\n\n\"{{word}}\" kelimesinin a\u015Fa\u011F\u0131daki iki c\xFC\
+      mlede ayn\u0131 anlamla kullan\u0131l\u0131p kullan\u0131lmad\u0131\u011F\u0131\
+      na karar verin. Cevap evet veya hay\u0131r ile.\n{{sentence1}}\n{{sentence2}}\n\
+      ||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: grammar_homework
+    reference: ''
+  725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
+    answer_choices: "Yanl\u0131\u015F ||| Do\u011Fru"
+    id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
+    jinja: "C\xFCmle A: {{sentence1}}\nC\xFCmle B: {{sentence2}}\n\n\"{{word}}\",\
+      \ A ve B c\xFCmlelerinde benzer bir anlama sahiptir. Do\u011Fru ya da yanl\u0131\
+      \u015F?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: affirmation_true_or_false
+    reference: ''
+  c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6: !Template
+    answer_choices: Numara ||| Evet
+    id: c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6
+    jinja: '{{sentence1}}
+
+      {{sentence2}}
+
+      Soru: Is the word ''{{word}}'' used in the same sense in the two sentences above?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf
+  ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
+    answer_choices: Numara ||| Evet
+    id: ce8b5a93-1841-4897-84db-b100f1c84f4b
+    jinja: "C\xFCmle 1: {{sentence1}}\nC\xFCmle 2: {{sentence2}}\n\n\"{{word}}\" kelimesinin\
+      \ her iki c\xFCmlede de ayn\u0131 anlamda kullan\u0131l\u0131p kullan\u0131\
+      lmad\u0131\u011F\u0131n\u0131 belirleyin. Evet veya Hay\u0131r?\n||| {% if label\
+      \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same_sense
+    reference: ''
+  cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
+    answer_choices: Numara ||| Evet
+    id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
+    jinja: "'{{word}}' kelimesinin a\u015Fa\u011F\u0131daki iki c\xFCmlede ayn\u0131\
+      \ \u015Fekilde kullan\u0131l\u0131p kullan\u0131lmad\u0131\u011F\u0131n\u0131\
+      \ belirleyin. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context
+    reference: Generalized question-context format
+  d9e1db2a-ab0b-4621-bb41-01d5788d3873: !Template
+    answer_choices: Numara ||| Evet
+    id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
+    jinja: "{{sentence1}}\n{{sentence2}}\nSoru: '{{word}}' kelimesi yukar\u0131daki\
+      \ iki c\xFCmlede ayn\u0131 anlamda m\u0131 kullan\u0131l\u0131yor? Evet Hay\u0131\
+      r?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt-with-label
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf add additional
+      label
+  dd2080cf-3117-49ba-9aff-c988a21fdb69: !Template
+    answer_choices: Numara ||| Evet
+    id: dd2080cf-3117-49ba-9aff-c988a21fdb69
+    jinja: "\"{{word}}\" kelimesinin birden fazla anlam\u0131 vard\u0131r. 1 ve 2\
+      \ c\xFCmlelerinde ayn\u0131 anlam\u0131 var m\u0131? Evet veya Hay\u0131r?\n\
+      \nC\xFCmle 1: {{sentence1}}\nC\xFCmle 2: {{sentence2}}\n||| {% if label != -1%}\n\
+      {{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: polysemous
+    reference: ''
+  f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
+    answer_choices: Numara ||| Evet
+    id: f934a96d-fe4d-4075-aa47-5595b9a604c7
+    jinja: '{{sentence1}}
+
+      {{sentence2}}
+
+      {{word}} benzer duygusu?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: similar-sense
+    reference: Following https://arxiv.org/abs/2105.11447, https://github.com/ethanjperez/true_few_shot/tree/main/templates.super_glue

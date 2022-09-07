@@ -1,0 +1,115 @@
+dataset: glue
+subset: mrpc_bg
+templates:
+  3b88d2c4-0aeb-4c6d-9ccc-653a388250a5: !Template
+    answer_choices: null
+    id: 3b88d2c4-0aeb-4c6d-9ccc-653a388250a5
+    jinja: "{% if label == 1 %}\n\u041F\u0435\u0440\u0438\u0444\u0440\u0430\u0437\u0438\
+      \u0440\u0430\u0439\u0442\u0435 \u0441\u043B\u0435\u0434\u043D\u043E\u0442\u043E\
+      \ \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435: {{sentence1}}\n|||\n\
+      {{sentence2}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_paraphrase
+    reference: ''
+  44c2e6d9-facf-4959-8400-38e0eb8dd3a8: !Template
+    answer_choices: "\u043D\u0435 ||| \u0414\u0430"
+    id: 44c2e6d9-facf-4959-8400-38e0eb8dd3a8
+    jinja: "\u0418\u0441\u043A\u0430\u043C \u0434\u0430 \u0437\u043D\u0430\u043C \u0434\
+      \u0430\u043B\u0438 \u0441\u043B\u0435\u0434\u0432\u0430\u0449\u0438\u0442\u0435\
+      \ \u0434\u0432\u0435 \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u044F\
+      \ \u043E\u0437\u043D\u0430\u0447\u0430\u0432\u0430\u0442 \u0435\u0434\u043D\u043E\
+      \ \u0438 \u0441\u044A\u0449\u043E \u043D\u0435\u0449\u043E.\n{{sentence1}}\n\
+      {{sentence2}}\n\u041D\u0430\u043B\u0438?\n|||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: want to know
+    reference: ''
+  adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
+    answer_choices: "\u043D\u0435 ||| \u0414\u0430"
+    id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
+    jinja: "\u0418\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435\u0442\u043E\n{{sentence1}}\n\
+      \u043F\u0435\u0440\u0438\u0444\u0440\u0430\u0437\u0430 (\u0442\u043E\u0435\u0441\
+      \u0442 \u043E\u0437\u043D\u0430\u0447\u0430\u0432\u0430 \u0441\u044A\u0449\u043E\
+      \u0442\u043E \u043A\u0430\u0442\u043E) \u0442\u043E\u0432\u0430 \u0438\u0437\
+      \u0440\u0435\u0447\u0435\u043D\u0438\u0435?\n{{sentence2}}\n|||\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: paraphrase
+    reference: ''
+  bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
+    answer_choices: "\u043D\u0435 \u0435 \u0435\u043A\u0432\u0438\u0432\u0430\u043B\
+      \u0435\u043D\u0442 ||| \u0435\u043A\u0432\u0438\u0432\u0430\u043B\u0435\u043D\
+      \u0442\u0435\u043D"
+    id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
+    jinja: "\u0421\u043B\u0435\u0434\u043D\u0438\u0442\u0435 \u0434\u0432\u0435 \u0438\
+      \u0437\u0440\u0435\u0447\u0435\u043D\u0438\u044F \"{{\"\u0435\u043A\u0432\u0438\
+      \u0432\u0430\u043B\u0435\u043D\u0442\u0435\u043D\"}}\" \u0438\u043B\u0438 \"\
+      {{\"\u043D\u0435 \u0435 \u0435\u043A\u0432\u0438\u0432\u0430\u043B\u0435\u043D\
+      \u0442\"}}\"?\n{{sentence1}}\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: equivalent
+    reference: ''
+  d830d7a5-abc0-4275-ac62-974e0088876f: !Template
+    answer_choices: null
+    id: d830d7a5-abc0-4275-ac62-974e0088876f
+    jinja: "{% if label == 1 %}\n\u0413\u0435\u043D\u0435\u0440\u0438\u0440\u0430\u0439\
+      \u0442\u0435 \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435, \u043A\u043E\
+      \u0435\u0442\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0432\u0430 \u0441\u044A\
+      \u0449\u043E\u0442\u043E \u043A\u0430\u0442\u043E \u0442\u043E\u0432\u0430:\
+      \ {{sentence1}}\n|||\n{{sentence2}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_sentence
+    reference: ''
+  ee82d511-908c-4244-804f-6d0d907c68c7: !Template
+    answer_choices: "\u043D\u0435 ||| \u0414\u0430"
+    id: ee82d511-908c-4244-804f-6d0d907c68c7
+    jinja: "\u041C\u043E\u0433\u0430 \u043B\u0438 \u0434\u0430 \u0437\u0430\u043C\u0435\
+      \u043D\u044F \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435\u0442\u043E\
+      \n{{sentence1}}\n\u0441 \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435\
+      \u0442\u043E\n{{sentence2}}\n\u0438 \u0442\u043E\u0432\u0430 \u043E\u0437\u043D\
+      \u0430\u0447\u0430\u0432\u0430 \u043B\u0438 \u0435\u0434\u043D\u043E \u0438\
+      \ \u0441\u044A\u0449\u043E \u043D\u0435\u0449\u043E?\n|||\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: replace
+    reference: ''
+  eefd8606-b936-4d26-b91d-8f4bc38bfcbf: !Template
+    answer_choices: "\u043D\u0435 ||| \u0414\u0430"
+    id: eefd8606-b936-4d26-b91d-8f4bc38bfcbf
+    jinja: "\u0421\u043B\u0435\u0434\u043D\u0438\u0442\u0435 \u0434\u0432\u0435 \u0438\
+      \u0437\u0440\u0435\u0447\u0435\u043D\u0438\u044F \u043E\u0437\u043D\u0430\u0447\
+      \u0430\u0432\u0430\u0442 \u043B\u0438 \u0435\u0434\u043D\u043E \u0438 \u0441\
+      \u044A\u0449\u043E \u043D\u0435\u0449\u043E?\n{{sentence1}}\n{{sentence2}}\n\
+      |||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''

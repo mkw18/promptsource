@@ -1,0 +1,84 @@
+dataset: glue
+subset: qqp_fr
+templates:
+  8e711799-a57c-4941-833b-466bedfb80ad: !Template
+    answer_choices: non ||| oui
+    id: 8e711799-a57c-4941-833b-466bedfb80ad
+    jinja: "Je suis administrateur sur le site Web Quora.Il y a deux messages, l'un\
+      \ qui demande \"{{question1}}\" et un autre qui demande \"{{question2}}\".Je\
+      \ peux fusionner des questions s'ils posent la m\xEAme chose.Puis-je fusionner\
+      \ ces deux questions? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: quora
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: pas des doublons ||| doublure
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: '{{question1}}
+
+      {{question2}}
+
+      Choisissez un: ces questions sont "{{"doublure"}}" ou "{{"pas des doublons"}}".
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not
+    reference: ''
+  a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
+    answer_choices: non ||| oui
+    id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
+    jinja: "Les questions \"{{question1}}\" et \"{{question2}}\" posent-elles la m\xEA\
+      me chose? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''
+  c0182cd1-c7ac-4abe-829f-4651536af951: !Template
+    answer_choices: non ||| oui
+    id: c0182cd1-c7ac-4abe-829f-4651536af951
+    jinja: "Une r\xE9ponse \xE0 \"{{question1}}\" peut-elle \xE9galement \xEAtre utilis\xE9\
+      e pour r\xE9pondre \"{{question2}}\"? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: answer
+    reference: ''
+  c0724198-97e7-44a1-89d8-c51e97ce0b04: !Template
+    answer_choices: Non ||| Oui
+    id: c0724198-97e7-44a1-89d8-c51e97ce0b04
+    jinja: "Question 1: {{question1}}\nQuestion 2: {{question2}}\n\nCes deux questions\
+      \ transmettent-elles le m\xEAme sens?Oui ou non? ||| {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: meaning
+    reference: ''
+  fd244bd3-ca3b-4e4f-9722-fd006c50e157: !Template
+    answer_choices: non ||| oui
+    id: fd244bd3-ca3b-4e4f-9722-fd006c50e157
+    jinja: "J'ai re\xE7u les questions \"{{question1}}\" et \"{{question2}}\".Sont-ils\
+      \ des doublons? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate
+    reference: ''

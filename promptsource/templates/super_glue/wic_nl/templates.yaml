@@ -1,0 +1,219 @@
+dataset: super_glue
+subset: wic_nl
+templates:
+  14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
+    answer_choices: Nee ||| Ja
+    id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
+    jinja: 'Heeft het woord "{{word}}" dezelfde betekenis in deze twee zinnen? Ja
+      nee?
+
+      {{sentence1}}
+
+      {{sentence2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning-with-label
+    reference: Generalized question-context format with label
+  3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
+    answer_choices: Nee ||| Ja
+    id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
+    jinja: 'Heeft het woord "{{word}}" dezelfde betekenis in deze twee zinnen?
+
+      {{sentence1}}
+
+      {{sentence2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning
+    reference: Generalized question-context format
+  611d13dc-d414-4b9b-9204-e4f325e859e7: !Template
+    answer_choices: Nee ||| Ja
+    id: 611d13dc-d414-4b9b-9204-e4f325e859e7
+    jinja: 'Huiswerk
+
+
+      Bepaal of het woord "{{word}}" met dezelfde betekenis wordt gebruikt in de twee
+      volgende zinnen. Antwoord door ja of nee.
+
+      {{sentence1}}
+
+      {{sentence2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: grammar_homework
+    reference: ''
+  725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
+    answer_choices: Vals ||| WAAR
+    id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
+    jinja: 'Zin a: {{sentence1}}
+
+      Zin B: {{sentence2}}
+
+
+      "{{word}}" heeft een vergelijkbare betekenis in zinnen A en B. Waar of niet
+      waar?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: affirmation_true_or_false
+    reference: ''
+  c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6: !Template
+    answer_choices: Nee ||| Ja
+    id: c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6
+    jinja: '{{sentence1}}
+
+      {{sentence2}}
+
+      Vraag: Is the word ''{{word}}'' used in the same sense in the two sentences
+      above?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf
+  ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
+    answer_choices: Nee ||| Ja
+    id: ce8b5a93-1841-4897-84db-b100f1c84f4b
+    jinja: 'Zin 1: {{sentence1}}
+
+      Zin 2: {{sentence2}}
+
+
+      Bepaal of het woord "{{word}}" in dezelfde zin in beide zinnen wordt gebruikt.
+      Ja of nee?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same_sense
+    reference: ''
+  cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
+    answer_choices: Nee ||| Ja
+    id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
+    jinja: "Bepaal of het woord '{{word}}' op dezelfde manier wordt gebruikt in de\
+      \ onderstaande zinnen. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n\
+      {{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context
+    reference: Generalized question-context format
+  d9e1db2a-ab0b-4621-bb41-01d5788d3873: !Template
+    answer_choices: Nee ||| Ja
+    id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
+    jinja: '{{sentence1}}
+
+      {{sentence2}}
+
+      Vraag: Wordt het woord ''{{word}}'' in dezelfde zin gebruikt in de twee bovenstaande
+      zinnen? Ja nee?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt-with-label
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf add additional
+      label
+  dd2080cf-3117-49ba-9aff-c988a21fdb69: !Template
+    answer_choices: Nee ||| Ja
+    id: dd2080cf-3117-49ba-9aff-c988a21fdb69
+    jinja: 'Het woord "{{word}}" heeft meerdere betekenissen. Heeft het dezelfde betekenis
+      in zinnen 1 en 2? Ja of nee?
+
+
+      Zin 1: {{sentence1}}
+
+      Zin 2: {{sentence2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: polysemous
+    reference: ''
+  f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
+    answer_choices: Nee ||| Ja
+    id: f934a96d-fe4d-4075-aa47-5595b9a604c7
+    jinja: '{{sentence1}}
+
+      {{sentence2}}
+
+      Vergelijkbaar gevoel van {{word}}?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: similar-sense
+    reference: Following https://arxiv.org/abs/2105.11447, https://github.com/ethanjperez/true_few_shot/tree/main/templates.super_glue

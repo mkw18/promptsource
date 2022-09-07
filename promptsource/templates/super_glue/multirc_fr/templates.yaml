@@ -1,0 +1,130 @@
+dataset: super_glue
+subset: multirc_fr
+templates:
+  2d95962b-a545-41ae-8d76-07ee6704ef65: !Template
+    answer_choices: Non ||| Oui
+    id: 2d95962b-a545-41ae-8d76-07ee6704ef65
+    jinja: "{{paragraph}}\n\nQuestion: {{question}}\nJ'ai trouv\xE9 cette r\xE9ponse\
+      \ \"{{answer}}\". Est-ce exact? Oui ou non?\n|||\n{% if label != -1 %}{{answer_choices[label]}}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: found_this_answer
+    reference: ''
+  42d47df9-09de-4691-8e49-7cfadd636cdd: !Template
+    answer_choices: Non ||| Oui
+    id: 42d47df9-09de-4691-8e49-7cfadd636cdd
+    jinja: "{{ paragraph }}\nSur la base du passage pr\xE9c\xE9dent, {{ question }}\
+      \ \n\"{{answer}}\" est-il une r\xE9ponse correcte? ||| {% if label != -1 %}{{\
+      \ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "is\u2026 a correct answer?"
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  431a5c97-af33-4053-83c8-afb0dfc04448: !Template
+    answer_choices: Non ||| Oui
+    id: 431a5c97-af33-4053-83c8-afb0dfc04448
+    jinja: "{{paragraph}}\nQuestion: {{question}}\n\nJe classe les exercices de mes\
+      \ \xE9l\xE8ves. La r\xE9ponse \"{{answer}}\" est-elle correcte?\n|||\n{% if\
+      \ label != -1 %}{{answer_choices[label]}}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: grading
+    reference: ''
+  4fc9e1ea-7451-4dba-a2cb-ce870e35ef8b: !Template
+    answer_choices: Non ||| Oui
+    id: 4fc9e1ea-7451-4dba-a2cb-ce870e35ef8b
+    jinja: "{{ paragraph }}\n{{ question }} \nSerait-il bon de r\xE9pondre \"{{answer}}\"\
+      ? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "Would it be good to answer\u2026"
+    reference: ''
+  59a2d847-27f3-4002-a125-cf9a291b3098: !Template
+    answer_choices: Non ||| Oui
+    id: 59a2d847-27f3-4002-a125-cf9a291b3098
+    jinja: "{{ paragraph }}\nQuestion: {{ question }} \nEst-ce {{answer}}? ||| {%\
+      \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "paragraph\u2026 question\u2026 is it\u2026 ?"
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  7bf537ea-ff8d-44c7-8fc9-305b35e3be66: !Template
+    answer_choices: Non ||| Oui
+    id: 7bf537ea-ff8d-44c7-8fc9-305b35e3be66
+    jinja: "{{paragraph}}\n\nD\xE9cidez si \"{{answer}}\" est une r\xE9ponse valide\
+      \ \xE0 la question suivante: {{question}}\nR\xE9pond oui ou non.\n|||\n{% if\
+      \ label != -1 %}{{answer_choices[label]}}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: decide_valid
+    reference: ''
+  7d878b89-2774-429a-82fb-ac801379e3ae: !Template
+    answer_choices: Non ||| Oui
+    id: 7d878b89-2774-429a-82fb-ac801379e3ae
+    jinja: "{{ paragraph }}\nQuestion: {{ question }} \nLa bonne r\xE9ponse est-elle\
+      \ {{answer}}? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "is the correct answer\u2026"
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  ae9b2b0b-1731-4370-adcc-36c4a959490d: !Template
+    answer_choices: Non ||| Oui
+    id: ae9b2b0b-1731-4370-adcc-36c4a959490d
+    jinja: "\"{{answer}}\" est-il une r\xE9ponse correcte \xE0 la question suivante?\n\
+      Question: {{question}}\n\nComptez sur le texte suivant: {{paragraph}}\n|||\n\
+      {% if label != -1 %}{{answer_choices[label]}}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: correct
+    reference: ''
+  b63fd1c3-b4a6-43c3-8429-6a389235b2a4: !Template
+    answer_choices: Non ||| Oui
+    id: b63fd1c3-b4a6-43c3-8429-6a389235b2a4
+    jinja: "{{paragraph}}\n\nQuestion: {{question}}\nJe pense que \"{{answer}}\" est\
+      \ une r\xE9ponse valide. Pourriez-vous confirmer? Oui ou non?\n|||\n{% if label\
+      \ != -1 %}{{answer_choices[label]}}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: confirm
+    reference: ''
+  d2d78b88-8845-45b5-935a-6451da00b285: !Template
+    answer_choices: Non ||| Oui
+    id: d2d78b88-8845-45b5-935a-6451da00b285
+    jinja: "{{ paragraph }}\n{{ question }} \nJ'allais dire \"{{answer}}\". Est-ce\
+      \ que cela sonne bien? ||| {% if label != -1 %}{{ answer_choices[label] }}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "I was going to say\u2026"
+    reference: ''

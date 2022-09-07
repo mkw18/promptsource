@@ -1,0 +1,134 @@
+dataset: imdb
+subset: da
+templates:
+  02ff2949-0f45-4d97-941e-6fa4c0afbc2d: !Template
+    answer_choices: negativ ||| positiv
+    id: 02ff2949-0f45-4d97-941e-6fa4c0afbc2d
+    jinja: "F\xF8lgende filmanmeldelse udtrykker hvilken f\xF8lelse? {{text}} |||\
+      \ {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment 2
+    reference: ''
+  2351d12a-e630-4d19-8b41-e199266e38f7: !Template
+    answer_choices: "D\xE5rligt ||| godt"
+    id: 2351d12a-e630-4d19-8b41-e199266e38f7
+    jinja: "{{text}} Fandt anmelderen denne film {{\"god eller d\xE5rlig\"}}? |||\
+      \ {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Opinion bad good choices
+    reference: ''
+  5f372fb1-795a-47b6-8ddf-c4fd1579e76a: !Template
+    answer_choices: negativ ||| positiv
+    id: 5f372fb1-795a-47b6-8ddf-c4fd1579e76a
+    jinja: "{{text}} \nEr denne gennemgang {{\"positiv eller negativ\"}}? ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: 'Sentiment with choices '
+    reference: ''
+  866474a5-1498-46b7-bfee-ac0c5160707f: !Template
+    answer_choices: negativ ||| positiv
+    id: 866474a5-1498-46b7-bfee-ac0c5160707f
+    jinja: "{{text}} Hvordan f\xF8ler seeren om filmen? ||| {{ answer_choices [label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Sentiment Feeling
+    reference: ''
+  96538f30-f2c1-430e-8fc6-936a16966d9c: !Template
+    answer_choices: negativ ||| positiv
+    id: 96538f30-f2c1-430e-8fc6-936a16966d9c
+    jinja: "{{text}} Hvilken f\xF8lelse udtrykker forfatteren til filmen? ||| {{ answer_choices\
+      \ [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Writer Expressed Sentiment
+    reference: ''
+  af51297c-38a3-4d6c-a8b5-04b1243d7443: !Template
+    answer_choices: negativ ||| positiv
+    id: af51297c-38a3-4d6c-a8b5-04b1243d7443
+    jinja: "{{text}} F\xF8lelsen udtrykt for filmen er ||| {{ answer_choices [label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment
+    reference: ''
+  b93b74ac-fe95-40b4-9610-318b46ab820f: !Template
+    answer_choices: negativ ||| positiv
+    id: b93b74ac-fe95-40b4-9610-318b46ab820f
+    jinja: '{{text}} Hvad er stemningen udtrykt i denne tekst? ||| {{ answer_choices
+      [label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Text Expressed Sentiment
+    reference: ''
+  b9b5d79d-f0b3-4bec-a724-f585db3e93ff: !Template
+    answer_choices: negativ ||| positiv
+    id: b9b5d79d-f0b3-4bec-a724-f585db3e93ff
+    jinja: '{{text}} Dette er bestemt ikke en ||| {{ answer_choices [1-label]}} gennemgang.'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Negation template for positive and negative
+    reference: ''
+  bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9: !Template
+    answer_choices: Ingen ||| Ja
+    id: bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9
+    jinja: "{{text}} N\xF8d korrekturl\xE6seren filmen? ||| {{ answer_choices [label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment Yes No
+    reference: ''
+  c70d1687-2421-49a2-9553-91b8bac4cfbe: !Template
+    answer_choices: negativ ||| positiv
+    id: c70d1687-2421-49a2-9553-91b8bac4cfbe
+    jinja: "{{text}} Hvad er stemningen udtrykt af korrekturl\xE6seren til filmen?\
+      \ ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Expressed Sentiment
+    reference: ''
+  e01970ab-42c0-4e6e-a08f-4940d889ef37: !Template
+    answer_choices: De kunne ikke lide det! ||| De elskede det
+    id: e01970ab-42c0-4e6e-a08f-4940d889ef37
+    jinja: "{{text}} Hvordan har korrekturl\xE6seren det om filmen? ||| {{ answer_choices\
+      \ [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment
+    reference: ''

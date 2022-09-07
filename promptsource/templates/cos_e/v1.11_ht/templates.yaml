@@ -1,0 +1,216 @@
+dataset: cos_e
+subset: v1.11_ht
+templates:
+  02a87cd3-6595-44bd-a384-95bdc8b3dd0c: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: 02a87cd3-6595-44bd-a384-95bdc8b3dd0c
+    jinja: '{{ question }}
+
+      Chwazi opsyon ki pi apwopriye pou reponn kesyon ki anwo a.
+
+      Opsyon:
+
+      - {{ answer_choices | join("\n- ") }}
+
+      |||
+
+      {{ answer }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_description_option_text
+    reference: ''
+  046ce4df-c847-4dc2-b53c-9f02d32aff8a: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: 046ce4df-c847-4dc2-b53c-9f02d32aff8a
+    jinja: "{{ question }}\nChwazi opsyon ki pi apwopriye pou reponn kesyon ki anwo\
+      \ a.\nOpsyon\uFF1A\n{% for k in range(choices | length) %}\n{{'. '.join([answer_choices[k],\
+      \ choices[k]])}}\n{% endfor %}\n|||\n{{ answer_choices[choices.index(answer)]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_description_option_id
+    reference: ''
+  25863d16-34be-4c5f-9040-11d5c6398b4b: !Template
+    answer_choices: null
+    id: 25863d16-34be-4c5f-9040-11d5c6398b4b
+    jinja: "KESYON: {{question}}\n\nChwa: \n- {{ choices | join(\"\\n- \") }}\n\n\
+      Rezon ki f\xE8 yo chwazi \"{{answer}}\" k\xF2m repons lan se ke: |||\n{{abstractive_explanation}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: rationale
+    reference: ''
+  4b946a87-b39c-4f01-9041-832d82da48af: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: 4b946a87-b39c-4f01-9041-832d82da48af
+    jinja: '{{ question }}
+
+      - {{ answer_choices | join("\n- ") }}
+
+
+      Pi bon repons lan se
+
+      |||
+
+      {{ answer }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_option_description_text
+    reference: ''
+  55dd7471-c01e-4197-a8cd-d8e6359ef582: !Template
+    answer_choices: null
+    id: 55dd7471-c01e-4197-a8cd-d8e6359ef582
+    jinja: "Isit la nan yon kesyon ak k\xE8k repons posib: \n\nKESYON: {{ question\
+      \ }}\nRepons posib: {{ choices | join(\", \") }}\n\nPoukisa se \"{{answer}}\"\
+      \ yon repons ki aliyen ak sans komen moun? \n|||\n{{ abstractive_explanation\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: aligned_with_common_sense
+    reference: ''
+  60354294-f30a-4a5b-be18-372c3c1a3491: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: 60354294-f30a-4a5b-be18-372c3c1a3491
+    jinja: 'Chwazi opsyon an nan liy ak sans komen pou reponn kesyon an.
+
+      KESYON: {{ question }}
+
+      Opsyon:
+
+      {% for k in range(choices | length) %}
+
+      {{''. ''.join([answer_choices[k], choices[k]])}}
+
+      {% endfor %}
+
+      |||
+
+      {{ answer_choices[choices.index(answer)] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_question_option_id
+    reference: ''
+  73f0f76b-c7f9-41fd-b4df-705625ab8241: !Template
+    answer_choices: null
+    id: 73f0f76b-c7f9-41fd-b4df-705625ab8241
+    jinja: 'KESYON: {{ question }}
+
+      Opsyon:
+
+      - {{ choices | join("\n- ") }}
+
+
+      Eksplike poukisa yon moun ta chwazi "{{answer}}" pou reponn kesyon ki anwo a:
+
+      |||
+
+      {{ abstractive_explanation }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: explain_why_human
+    reference: ''
+  90a7d84f-0316-4b28-a4fe-2f61c0126158: !Template
+    answer_choices: null
+    id: 90a7d84f-0316-4b28-a4fe-2f61c0126158
+    jinja: 'KESYON: {{ question }}
+
+      Opsyon:
+
+      - {{ choices | join("\n- ") }}
+
+
+      Repons lan se "{{answer}}" paske
+
+      |||
+
+      {{ abstractive_explanation }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_explanation_given_text
+    reference: ''
+  a8036e94-ad4a-4f26-9765-cf7223800138: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: a8036e94-ad4a-4f26-9765-cf7223800138
+    jinja: 'Chwazi opsyon an nan liy ak sans komen pou reponn kesyon an.
+
+      Kesyon: {{ question }}
+
+      Opsyon:
+
+      - {{ answer_choices | join("\n- ") }}
+
+      |||
+
+      {{ answer }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_question_option_text
+    reference: ''
+  e57a5c48-209c-4e82-b061-dbc8d124dffa: !Template
+    answer_choices: null
+    id: e57a5c48-209c-4e82-b061-dbc8d124dffa
+    jinja: "Isit la nan yon kesyon: {{ question }}\n\nIsit la yo se repons posib nan\
+      \ kesyon sa a:\n- {{ choices | join(\"\\n- \") }}\n\nMwen kw\xE8 chwa ki k\xF2\
+      r\xE8k la se \"{{answer}}\", isit la poukisa:\n|||\n{{ abstractive_explanation\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: i_think
+    reference: ''
+  f678d224-23f0-488b-9c5d-0bf466a0aa16: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: f678d224-23f0-488b-9c5d-0bf466a0aa16
+    jinja: '{{ question }}
+
+      {% for k in range(choices | length) %}
+
+      {{''. ''.join([answer_choices[k], choices[k]])}}
+
+      {% endfor %}
+
+      Pi bon repons lan se
+
+      |||
+
+      {{ answer_choices[choices.index(answer)] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_option_description_id
+    reference: ''

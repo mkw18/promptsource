@@ -1,0 +1,187 @@
+dataset: cos_e
+subset: v1.11_hi
+templates:
+  02a87cd3-6595-44bd-a384-95bdc8b3dd0c: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: 02a87cd3-6595-44bd-a384-95bdc8b3dd0c
+    jinja: "{{ question }}\n\u0909\u092A\u0930\u094B\u0915\u094D\u0924 \u092A\u094D\
+      \u0930\u0936\u094D\u0928 \u0915\u093E \u0909\u0924\u094D\u0924\u0930 \u0926\u0947\
+      \u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0938\u092C\u0938\u0947 \u0909\
+      \u092A\u092F\u0941\u0915\u094D\u0924 \u0935\u093F\u0915\u0932\u094D\u092A \u091A\
+      \u0941\u0928\u0947\u0902\u0964\n\u0935\u093F\u0915\u0932\u094D\u092A:\n- {{\
+      \ answer_choices | join(\"\\n- \") }}\n|||\n{{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_description_option_text
+    reference: ''
+  046ce4df-c847-4dc2-b53c-9f02d32aff8a: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: 046ce4df-c847-4dc2-b53c-9f02d32aff8a
+    jinja: "{{ question }}\n\u0909\u092A\u0930\u094B\u0915\u094D\u0924 \u092A\u094D\
+      \u0930\u0936\u094D\u0928 \u0915\u093E \u0909\u0924\u094D\u0924\u0930 \u0926\u0947\
+      \u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0938\u092C\u0938\u0947 \u0909\
+      \u092A\u092F\u0941\u0915\u094D\u0924 \u0935\u093F\u0915\u0932\u094D\u092A \u091A\
+      \u0941\u0928\u0947\u0902\u0964\n\u0935\u093F\u0915\u0932\u094D\u092A\uFF1A\n\
+      {% for k in range(choices | length) %}\n{{'. '.join([answer_choices[k], choices[k]])}}\n\
+      {% endfor %}\n|||\n{{ answer_choices[choices.index(answer)] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_description_option_id
+    reference: ''
+  25863d16-34be-4c5f-9040-11d5c6398b4b: !Template
+    answer_choices: null
+    id: 25863d16-34be-4c5f-9040-11d5c6398b4b
+    jinja: "\u092A\u094D\u0930\u0936\u094D\u0928: {{question}}\n\n\u0935\u093F\u0915\
+      \u0932\u094D\u092A: \n- {{ choices | join(\"\\n- \") }}\n\n\u0909\u0924\u094D\
+      \u0924\u0930 \u0915\u0947 \u0930\u0942\u092A \u092E\u0947\u0902 \"{{answer}}\"\
+      \ \u091A\u0941\u0928\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0924\u0930\
+      \u094D\u0915 \u092F\u0939 \u0939\u0948 \u0915\u093F: |||\n{{abstractive_explanation}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: rationale
+    reference: ''
+  4b946a87-b39c-4f01-9041-832d82da48af: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: 4b946a87-b39c-4f01-9041-832d82da48af
+    jinja: "{{ question }}\n- {{ answer_choices | join(\"\\n- \") }}\n\n\u0938\u092C\
+      \u0938\u0947 \u0905\u091A\u094D\u091B\u093E \u091C\u0935\u093E\u092C \u0939\u0948\
+      \n|||\n{{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_option_description_text
+    reference: ''
+  55dd7471-c01e-4197-a8cd-d8e6359ef582: !Template
+    answer_choices: null
+    id: 55dd7471-c01e-4197-a8cd-d8e6359ef582
+    jinja: "\u092F\u0939\u093E\u0901 \u090F\u0915 \u092A\u094D\u0930\u0936\u094D\u0928\
+      \ \u0914\u0930 \u0915\u0941\u091B \u0938\u0902\u092D\u093E\u0935\u093F\u0924\
+      \ \u0909\u0924\u094D\u0924\u0930 \u0939\u0948\u0902: \n\n\u092A\u094D\u0930\u0936\
+      \u094D\u0928: {{ question }}\n\u0938\u0902\u092D\u093E\u0935\u093F\u0924 \u0909\
+      \u0924\u094D\u0924\u0930: {{ choices | join(\", \") }}\n\n\u0915\u094D\u092F\
+      \u094B\u0902 \"{{answer}}\" \u090F\u0915 \u0909\u0924\u094D\u0924\u0930 \u092E\
+      \u093E\u0928\u0935 \u0938\u093E\u092E\u093E\u0928\u094D\u092F \u091C\u094D\u091E\
+      \u093E\u0928 \u0915\u0947 \u0938\u093E\u0925 \u0938\u0902\u0930\u0947\u0916\u093F\
+      \u0924 \u0939\u0948? \n|||\n{{ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: aligned_with_common_sense
+    reference: ''
+  60354294-f30a-4a5b-be18-372c3c1a3491: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: 60354294-f30a-4a5b-be18-372c3c1a3491
+    jinja: "\u092A\u094D\u0930\u0936\u094D\u0928 \u0915\u093E \u0909\u0924\u094D\u0924\
+      \u0930 \u0926\u0947\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0938\u093E\
+      \u092E\u093E\u0928\u094D\u092F \u091C\u094D\u091E\u093E\u0928 \u0915\u0947 \u0905\
+      \u0928\u0941\u0930\u0942\u092A \u0935\u093F\u0915\u0932\u094D\u092A \u091A\u0941\
+      \u0928\u0947\u0902\u0964\n\u092A\u094D\u0930\u0936\u094D\u0928: {{ question\
+      \ }}\n\u0935\u093F\u0915\u0932\u094D\u092A:\n{% for k in range(choices | length)\
+      \ %}\n{{'. '.join([answer_choices[k], choices[k]])}}\n{% endfor %}\n|||\n{{\
+      \ answer_choices[choices.index(answer)] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_question_option_id
+    reference: ''
+  73f0f76b-c7f9-41fd-b4df-705625ab8241: !Template
+    answer_choices: null
+    id: 73f0f76b-c7f9-41fd-b4df-705625ab8241
+    jinja: "\u092A\u094D\u0930\u0936\u094D\u0928: {{ question }}\n\u0935\u093F\u0915\
+      \u0932\u094D\u092A:\n- {{ choices | join(\"\\n- \") }}\n\n\u092C\u0924\u093E\
+      \u090F\u0902 \u0915\u093F \u090A\u092A\u0930 \u0915\u0947 \u092A\u094D\u0930\
+      \u0936\u094D\u0928 \u0915\u093E \u0909\u0924\u094D\u0924\u0930 \u0926\u0947\u0928\
+      \u0947 \u0915\u0947 \u0932\u093F\u090F \u090F\u0915 \u092E\u093E\u0928\u0935\
+      \ \"{{answer}}\" \u0915\u094D\u092F\u094B\u0902 \u091A\u0941\u0928\u0947\u0917\
+      \u093E:\n|||\n{{ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: explain_why_human
+    reference: ''
+  90a7d84f-0316-4b28-a4fe-2f61c0126158: !Template
+    answer_choices: null
+    id: 90a7d84f-0316-4b28-a4fe-2f61c0126158
+    jinja: "\u092A\u094D\u0930\u0936\u094D\u0928: {{ question }}\n\u0935\u093F\u0915\
+      \u0932\u094D\u092A:\n- {{ choices | join(\"\\n- \") }}\n\n\u0909\u0924\u094D\
+      \u0924\u0930 \"{{answer}}\" \u0939\u0948 \u0915\u094D\u092F\u094B\u0902\u0915\
+      \u093F\n|||\n{{ abstractive_explanation }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_explanation_given_text
+    reference: ''
+  a8036e94-ad4a-4f26-9765-cf7223800138: !Template
+    answer_choices: '{{ choices | join("|||") }}'
+    id: a8036e94-ad4a-4f26-9765-cf7223800138
+    jinja: "\u092A\u094D\u0930\u0936\u094D\u0928 \u0915\u093E \u0909\u0924\u094D\u0924\
+      \u0930 \u0926\u0947\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0938\u093E\
+      \u092E\u093E\u0928\u094D\u092F \u091C\u094D\u091E\u093E\u0928 \u0915\u0947 \u0905\
+      \u0928\u0941\u0930\u0942\u092A \u0935\u093F\u0915\u0932\u094D\u092A \u091A\u0941\
+      \u0928\u0947\u0902\u0964\n\u092A\u094D\u0930\u0936\u0928: {{ question }}\n\u0935\
+      \u093F\u0915\u0932\u094D\u092A:\n- {{ answer_choices | join(\"\\n- \") }}\n\
+      |||\n{{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_question_option_text
+    reference: ''
+  e57a5c48-209c-4e82-b061-dbc8d124dffa: !Template
+    answer_choices: null
+    id: e57a5c48-209c-4e82-b061-dbc8d124dffa
+    jinja: "\u092F\u0939\u093E\u0901 \u090F\u0915 \u0938\u0935\u093E\u0932 \u0939\u0948\
+      : {{ question }}\n\n\u0907\u0938 \u092A\u094D\u0930\u0936\u094D\u0928 \u0915\
+      \u0947 \u0938\u0902\u092D\u093E\u0935\u093F\u0924 \u0909\u0924\u094D\u0924\u0930\
+      \ \u092F\u0939\u093E\u0902 \u0926\u093F\u090F \u0917\u090F \u0939\u0948\u0902\
+      :\n- {{ choices | join(\"\\n- \") }}\n\n\u092E\u0947\u0930\u093E \u092E\u093E\
+      \u0928\u0928\u093E \u0939\u0948 \u0915\u093F \u0938\u0939\u0940 \u0935\u093F\
+      \u0915\u0932\u094D\u092A \"{{answer}}\" \u0939\u0948, \u092F\u0939\u093E\u0901\
+      \ \u0915\u094D\u092F\u094B\u0902 \u0939\u0948:\n|||\n{{ abstractive_explanation\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: i_think
+    reference: ''
+  f678d224-23f0-488b-9c5d-0bf466a0aa16: !Template
+    answer_choices: A ||| B ||| C ||| D ||| E
+    id: f678d224-23f0-488b-9c5d-0bf466a0aa16
+    jinja: "{{ question }}\n{% for k in range(choices | length) %}\n{{'. '.join([answer_choices[k],\
+      \ choices[k]])}}\n{% endfor %}\n\u0938\u092C\u0938\u0947 \u0905\u091A\u094D\u091B\
+      \u093E \u091C\u0935\u093E\u092C \u0939\u0948\n|||\n{{ answer_choices[choices.index(answer)]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_option_description_id
+    reference: ''

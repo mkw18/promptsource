@@ -1,0 +1,116 @@
+dataset: amazon_polarity
+subset: es
+templates:
+  1e90a24a-1182-43dd-9445-22f2e56e5761: !Template
+    answer_choices: Negative ||| Positive
+    id: 1e90a24a-1182-43dd-9445-22f2e56e5761
+    jinja: "T\xEDtulo: {{title}}\nRevisar: {{content}}\n\xBFLa revisi\xF3n es positiva\
+      \ o negativa? |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review
+    reference: ''
+  3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
+    answer_choices: "No ||| S\xED"
+    id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
+    jinja: "Seg\xFAn esta revisi\xF3n, \xBFrecomendar\xEDa el usuario este producto?\n\
+      ===\nRevisar: {{content}}\nResponder: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: User_recommend_this_product
+    reference: 'Reformulation equivalent to sent analysis: would the user recommend
+      this product?'
+  592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
+    answer_choices: "No ||| S\xED"
+    id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
+    jinja: "\xBFEs esta revisi\xF3n del producto positiva?\nT\xEDtulo: {{title}}\n\
+      Revisar: {{content}}\nResponder: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_product_review_positive
+    reference: ''
+  745b9c05-10df-4a7e-81ad-1b88cefcb166: !Template
+    answer_choices: "S\xED ||| No"
+    id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
+    jinja: "T\xEDtulo: {{title}}\nRevisar: {{content}}\n\xBFEs esta revisi\xF3n del\
+      \ producto negativa?|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review_negative
+    reference: ''
+  8abb5377-5dd3-4402-92a5-0d81adb6a325: !Template
+    answer_choices: Negative ||| Positive
+    id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
+    jinja: "T\xEDtulo: {{title}}\nRevisar: {{content}}\n\xBFEsta revisi\xF3n del producto\
+      \ transmite un sentimiento negativo o positivo?|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: convey_negative_or_positive_sentiment
+    reference: ''
+  9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
+    answer_choices: Negative ||| Positive
+    id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
+    jinja: "\xBFExiste un tono negativo o positivo para esta revisi\xF3n del producto?\n\
+      ===\nT\xEDtulo: {{title}}\nRevisar: {{content}}\nResponder: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: negative_or_positive_tone
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
+    answer_choices: dissatisfied ||| satisfied
+    id: b13369e8-0500-4e93-90d4-8e6814bfb97b
+    jinja: "Aqu\xED hay una revisi\xF3n dejada por un cliente en un producto.\xBF\
+      Dir\xEDa que fue {{answer_choices[1]}} o {{answer_choices[0]}}?\nT\xEDtulo:\
+      \ {{title}}\nRevisar: {{content}}\n|||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: user_satisfied
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
+    answer_choices: disminuir ||| aumentar
+    id: b13369e8-0500-4e93-90d4-8e6814bfb98b
+    jinja: "Est\xE1 considerando si comprar un producto.Miras las rese\xF1as.\xBF\
+      La siguiente revisi\xF3n {{answer_choices[0]}} o {{answer_choices[1]}} las posibilidades\
+      \ de que compre el producto?\nT\xEDtulo de Revisi\xF3n: {{title}}\nRevision\
+      \ de producto: {{content}}\n|||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: would_you_buy
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
+    answer_choices: poco halagador ||| halagador
+    id: b13369e8-0500-4e93-90d4-8e6814bfb99b
+    jinja: "T\xEDtulo: {{title}}\nRevision de producto: {{content}}\n\xBFDir\xEDa\
+      \ que esta revisi\xF3n representa el producto en una luz {{answer_choices[1]}}\
+      \ o {{answer_choices[0]}}?\n|||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: flattering_or_not
+    reference: ''

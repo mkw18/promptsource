@@ -1,0 +1,95 @@
+dataset: ag_news
+subset: es
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: Politica mundial ||| Deportes ||| Negocio ||| Ciencia y Tecnología
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "¿Qué etiqueta describe mejor este artículo de noticias?\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: Politica mundial ||| Deportes ||| Negocio ||| Ciencia y Tecnología
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "¿Es esta una noticia sobre {{\"política mundial, deportes, negocios,\
+       \ o ciencia y tecnología\"}}?\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: Político ||| atleta ||| ejecutivo de negocios ||| Científico
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: '¿Recomendaría el siguiente artículo a un {{"político"}}, un {{"atleta"}},
+      un {{"ejecutivo de negocios"}} o un {{"científico"}}?
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: Noticias del mundo ||| Deportes ||| Negocios ||| Ciencia y Tecnología
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\n¿Cuál de las siguientes secciones de un periódico sería esto\
+      \ artículo probablemente aparecerá en? {{\"Noticias mundiales\"}}, {{\"Deportes\"}}, {{\"Empresa\"\
+      }}, o {{\"Ciencia y Tecnología\"}}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: Noticias del mundo ||| Deportes ||| Negocios ||| Ciencia y Tecnología
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\n¿En qué sección de un periódico es probable que aparezca este\
+      \ artículo? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: Política mundial ||| Deportes ||| Negocios ||| Ciencia y Tecnología
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \n¿Es esta una noticia sobre {{\"política mundial, deportes,\
+       \ negocios o ciencia y tecnología \"}}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: Política mundial ||| Deportes ||| Negocios ||| Ciencia y Tecnología
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \n¿Qué etiqueta describe mejor este artículo de noticias? ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

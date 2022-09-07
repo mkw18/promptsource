@@ -1,0 +1,86 @@
+dataset: adversarial_qa
+subset: dbidaf_fa
+templates:
+  41f28b31-d0fc-4f20-a0a2-ff21813e298e: !Template
+    answer_choices: null
+    id: 41f28b31-d0fc-4f20-a0a2-ff21813e298e
+    jinja: "{% if metadata.split != \"test\" %}\n\u067E\u0627\u0633\u062E \u0633\u0648\
+      \u0627\u0644 \u0631\u0627 \u0627\u0632 \u0645\u062A\u0646 \u0632\u06CC\u0631\
+      \ \u0627\u0633\u062A\u062E\u0631\u0627\u062C \u06A9\u0646\u06CC\u062F.\n\u0633\
+      \u0648\u0627\u0644: {{question}}\n\u0645\u062A\u0646 \u0646\u0648\u0634\u062A\
+      \u0647: {{context}}|||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  a64d5a15-68e2-4d1c-b30a-ca8250c860d9: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860d9
+    jinja: "{% if metadata.split != \"test\" %}\n\u0628\u0627 \u062A\u0648\u062C\u0647\
+      \ \u0628\u0647 \u0642\u0633\u0645\u062A \u0632\u06CC\u0631\n\n\"{{context}}\"\
+      ,\n\n\u0628\u0647 \u0633\u0648\u0627\u0644 \u0632\u06CC\u0631 \u067E\u0627\u0633\
+      \u062E \u062F\u0647\u06CC\u062F.\u062A\u0648\u062C\u0647 \u062F\u0627\u0634\u062A\
+      \u0647 \u0628\u0627\u0634\u06CC\u062F \u06A9\u0647 \u067E\u0627\u0633\u062E\
+      \ \u062F\u0631 \u0645\u062A\u0646 \u0645\u0648\u062C\u0648\u062F \u0627\u0633\
+      \u062A.\n\n\u0633\u0648\u0627\u0644: {{question}} |||\n{{answers.text | choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'
+  c7a80603-d610-4999-98a7-815b2f84592d: !Template
+    answer_choices: null
+    id: c7a80603-d610-4999-98a7-815b2f84592d
+    jinja: "\u0645\u0646 \u0645\u06CC \u062E\u0648\u0627\u0647\u0645 \u062A\u0648\u0627\
+      \u0646\u0627\u06CC\u06CC \u062F\u0627\u0646\u0634 \u0622\u0645\u0648\u0632\u0627\
+      \u0646 \u0631\u0627 \u0628\u0631\u0627\u06CC \u062E\u0648\u0627\u0646\u062F\u0646\
+      \ \u06CC\u06A9 \u0645\u062A\u0646 \u0648 \u067E\u0627\u0633\u062E \u0628\u0647\
+      \ \u0633\u0624\u0627\u0644\u0627\u062A \u0645\u0631\u0628\u0648\u0637 \u0628\
+      \u0647 \u0622\u0646 \u0622\u0632\u0645\u0627\u06CC\u0634 \u06A9\u0646\u0645\
+      .\u0622\u06CC\u0627 \u0645\u06CC \u062A\u0648\u0627\u0646\u06CC\u062F \u0644\
+      \u0637\u0641\u0627\u064B \u06CC\u06A9 \u0633\u0648\u0627\u0644 \u062E\u0648\u0628\
+      \ \u0628\u0631\u0627\u06CC \u06AF\u0630\u0631\u06AF\u0627\u0647 {{a} \u0645\u0637\
+      \u0631\u062D \u06A9\u0646\u06CC\u062F\u061F |||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  ce9bc00a-567b-4c4e-aad7-df6f5d5d57bb: !Template
+    answer_choices: null
+    id: ce9bc00a-567b-4c4e-aad7-df6f5d5d57bb
+    jinja: "{% if metadata.split != \"test\" %}\n\u0645\u0646 \u0645\u06CC \u062F\u0627\
+      \u0646\u0645 \u06A9\u0647 \u067E\u0627\u0633\u062E \u0628\u0647 \u0633\u0648\
+      \u0627\u0644 \"{{question}}\" \u062F\u0631 \"{{context}}\" \u0627\u0633\u062A\
+      .\u0645\u06CC \u062A\u0648\u0627\u0646\u06CC\u062F \u0628\u0647 \u0645\u0646\
+      \ \u0628\u06AF\u0648\u06CC\u06CC\u062F \u06A9\u0647 \u0686\u06CC\u0633\u062A\
+      \u061F |||\n\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  fa185424-6ebe-49b8-b4ed-7632ca33c361: !Template
+    answer_choices: null
+    id: fa185424-6ebe-49b8-b4ed-7632ca33c361
+    jinja: "{% if metadata.split != \"test\" %}\n\u0633\u0648\u0627\u0644: \"{{question}}\"\
+      \n\n\u0645\u062A\u0646 \u0646\u0648\u0634\u062A\u0647: \"{{context}}\"\n\n\u067E\
+      \u0627\u0633\u062E:\n|||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'

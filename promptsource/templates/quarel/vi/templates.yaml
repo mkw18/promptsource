@@ -1,0 +1,69 @@
+dataset: quarel
+subset: vi
+templates:
+  5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
+    jinja: "C\xE2u h\u1ECFi: {{question}}\n\nKh\xF4ng s\u1EED d\u1EE5ng {{\"A\"}}\
+      \ v\xE0 {{\"B\"}} \u0111\u1EC3 tr\u1EA3 l\u1EDDi c\xE2u h\u1ECFi nh\u01B0ng\
+      \ thay v\xE0o \u0111\xF3, ch\u1ECDn gi\u1EEFa \"{{answer_choices[0]}}\" v\xE0\
+      \ \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: do_not_use
+    reference: ''
+  5b5f9d29-0ad5-4bb9-831a-11fcb115c10d: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
+    jinja: "\u0110\xE2y l\xE0 m\u1ED9t b\xE0i ki\u1EC3m tra logic: {{question}}\n\n\
+      Ch\u1ECDn c\xE2u tr\u1EA3 l\u1EDDi gi\u1EEFa \"{{answer_choices[0]}}\" v\xE0\
+      \ \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: logic_test
+    reference: ''
+  63c58389-605a-42b9-85a6-a2586a954a92: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 63c58389-605a-42b9-85a6-a2586a954a92
+    jinja: "\u0110\xE2y l\xE0 m\u1ED9t c\xE2u chuy\u1EC7n ng\u1EAFn: {{question}}.\n\
+      \nC\xE2u tr\u1EA3 l\u1EDDi nh\u1EA1y c\u1EA3m nh\u1EA5t gi\u1EEFa \"{{answer_choices[0]}}\"\
+      \ v\xE0 \"{{answer_choices[1]}}\" l\xE0 g\xEC?\n|||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: heres_a_story
+    reference: ''
+  73a7adbb-41b1-4b4d-b378-d7e17d030a6f: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 73a7adbb-41b1-4b4d-b378-d7e17d030a6f
+    jinja: "Ch\u1ECDn gi\u1EEFa \"{{answer_choices[0]}}\" v\xE0 \"{{answer_choices[1]}}\"\
+      .\nC\xE2u h\u1ECFi: {{question}}\n|||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: choose_between
+    reference: ''
+  92013fab-5387-44d4-bf0f-e29a31bcafb6: !Template
+    answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
+    id: 92013fab-5387-44d4-bf0f-e29a31bcafb6
+    jinja: "T\xF4i \u0111ang ki\u1EC3m tra logic c\u1EE7a h\u1ECDc sinh.\nC\xE2u tr\u1EA3\
+      \ l\u1EDDi h\u1ECD n\xEAn ch\u1ECDn gi\u1EEFa \"{{answer_choices[0]}}\" v\xE0\
+      \ \"{{answer_choices[1]}}\" l\xE0 g\xEC?\nKi\u1EC3m tra logic: {{question}}\n\
+      |||\n{{answer_choices[answer_index]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: testing_students
+    reference: ''

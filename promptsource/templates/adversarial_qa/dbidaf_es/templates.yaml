@@ -1,0 +1,90 @@
+dataset: adversarial_qa
+subset: dbidaf_es
+templates:
+  41f28b31-d0fc-4f20-a0a2-ff21813e298e: !Template
+    answer_choices: null
+    id: 41f28b31-d0fc-4f20-a0a2-ff21813e298e
+    jinja: '{% if metadata.split != "test" %}
+
+      Extraiga la respuesta a la pregunta del siguiente contexto.
+
+      Pregunta: {{question}}
+
+      Contexto: {{context}}|||
+
+      {{answers.text | choice}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  a64d5a15-68e2-4d1c-b30a-ca8250c860d9: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860d9
+    jinja: "{% if metadata.split != \"test\" %}\nDado el siguiente pasaje\n\n\"{{context}}\"\
+      ,\n\ncontesta la siguiente pregunta.Tenga en cuenta que la respuesta est\xE1\
+      \ presente dentro del texto.\n\nPregunta: {{question}} |||\n{{answers.text |\
+      \ choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'
+  c7a80603-d610-4999-98a7-815b2f84592d: !Template
+    answer_choices: null
+    id: c7a80603-d610-4999-98a7-815b2f84592d
+    jinja: "Quiero probar la capacidad de los estudiantes para leer un pasaje y responder\
+      \ preguntas al respecto.\xBFPodr\xEDas hacer una buena pregunta para el pasaje\
+      \ \"{{context}}\"? |||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  ce9bc00a-567b-4c4e-aad7-df6f5d5d57bb: !Template
+    answer_choices: null
+    id: ce9bc00a-567b-4c4e-aad7-df6f5d5d57bb
+    jinja: "{% if metadata.split != \"test\" %}\nS\xE9 que la respuesta a la pregunta\
+      \ \"{{question}}\" est\xE1 en \"{{context}}\".\xBFMe puede decir qu\xE9 es?\
+      \ |||\n\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  fa185424-6ebe-49b8-b4ed-7632ca33c361: !Template
+    answer_choices: null
+    id: fa185424-6ebe-49b8-b4ed-7632ca33c361
+    jinja: '{% if metadata.split != "test" %}
+
+      Pregunta: "{{question}}"
+
+
+      Contexto: "{{context}}"
+
+
+      Responder:
+
+      |||
+
+      {{answers.text | choice}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'

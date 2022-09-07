@@ -1,0 +1,134 @@
+dataset: amazon_polarity
+subset: ja
+templates:
+  1e90a24a-1182-43dd-9445-22f2e56e5761: !Template
+    answer_choices: "\u30CD\u30AC\u30C6\u30A3\u30D6 ||| \u30DD\u30B8\u30C6\u30A3\u30D6"
+    id: 1e90a24a-1182-43dd-9445-22f2e56e5761
+    jinja: "\u984C\u540D\uFF1A {{title}}\n\u30EC\u30D3\u30E5\u30FC\uFF1A {{content}}\n\
+      \u30EC\u30D3\u30E5\u30FC\u306F\u80AF\u5B9A\u7684\u3067\u3059\u304B\u3001\u305D\
+      \u308C\u3068\u3082\u30CD\u30AC\u30C6\u30A3\u30D6\u3067\u3059\u304B\uFF1F |||\n\
+      {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review
+    reference: ''
+  3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
+    answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
+    id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
+    jinja: "\u3053\u306E\u30EC\u30D3\u30E5\u30FC\u306B\u57FA\u3065\u3044\u3066\u3001\
+      \u30E6\u30FC\u30B6\u30FC\u306F\u3053\u306E\u88FD\u54C1\u3092\u63A8\u5968\u3057\
+      \u307E\u3059\u304B\uFF1F\n===\n\u30EC\u30D3\u30E5\u30FC\uFF1A {{content}}\n\u7B54\
+      \u3048\uFF1A |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: User_recommend_this_product
+    reference: 'Reformulation equivalent to sent analysis: would the user recommend
+      this product?'
+  592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
+    answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
+    id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
+    jinja: "\u3053\u306E\u88FD\u54C1\u30EC\u30D3\u30E5\u30FC\u306F\u30DD\u30B8\u30C6\
+      \u30A3\u30D6\u3067\u3059\u304B\uFF1F\n\u984C\u540D\uFF1A {{title}}\n\u30EC\u30D3\
+      \u30E5\u30FC\uFF1A {{content}}\n\u7B54\u3048\uFF1A |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_product_review_positive
+    reference: ''
+  745b9c05-10df-4a7e-81ad-1b88cefcb166: !Template
+    answer_choices: "\u306F\u3044 ||| \u3044\u3044\u3048"
+    id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
+    jinja: "\u984C\u540D\uFF1A {{title}}\n\u30EC\u30D3\u30E5\u30FC\uFF1A {{content}}\n\
+      \u3053\u306E\u88FD\u54C1\u30EC\u30D3\u30E5\u30FC\u306F\u5426\u5B9A\u7684\u3067\
+      \u3059\u304B\uFF1F|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review_negative
+    reference: ''
+  8abb5377-5dd3-4402-92a5-0d81adb6a325: !Template
+    answer_choices: "\u30CD\u30AC\u30C6\u30A3\u30D6 ||| \u30DD\u30B8\u30C6\u30A3\u30D6"
+    id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
+    jinja: "\u984C\u540D\uFF1A {{title}}\n\u30EC\u30D3\u30E5\u30FC\uFF1A {{content}}\n\
+      \u3053\u306E\u88FD\u54C1\u30EC\u30D3\u30E5\u30FC\u306F\u3001\u5426\u5B9A\u7684\
+      \u307E\u305F\u306F\u80AF\u5B9A\u7684\u306A\u611F\u60C5\u3092\u4F1D\u3048\u3066\
+      \u3044\u307E\u3059\u304B\uFF1F|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: convey_negative_or_positive_sentiment
+    reference: ''
+  9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
+    answer_choices: "\u30CD\u30AC\u30C6\u30A3\u30D6 ||| \u30DD\u30B8\u30C6\u30A3\u30D6"
+    id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
+    jinja: "\u3053\u306E\u88FD\u54C1\u30EC\u30D3\u30E5\u30FC\u306B\u5426\u5B9A\u7684\
+      \u306A\u30C8\u30FC\u30F3\u307E\u305F\u306F\u30DD\u30B8\u30C6\u30A3\u30D6\u306A\
+      \u30C8\u30FC\u30F3\u306F\u3042\u308A\u307E\u3059\u304B\uFF1F\n===\n\u984C\u540D\
+      \uFF1A {{title}}\n\u30EC\u30D3\u30E5\u30FC\uFF1A {{content}}\n\u7B54\u3048\uFF1A\
+      \ |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: negative_or_positive_tone
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
+    answer_choices: "\u4E0D\u6E80 ||| \u6E80\u8DB3\u3057"
+    id: b13369e8-0500-4e93-90d4-8e6814bfb97b
+    jinja: "\u3053\u308C\u306F\u3001\u88FD\u54C1\u306B\u9867\u5BA2\u304C\u6B8B\u3057\
+      \u305F\u30EC\u30D3\u30E5\u30FC\u3067\u3059\u3002\u5F7C\u306F{{answer_choices[1]}}\u307E\
+      \u305F\u306F{{answer_choices[0]}}\u3060\u3063\u305F\u3068\u601D\u3044\u307E\u3059\
+      \u304B\uFF1F\n\u984C\u540D\uFF1A {{title}}\n\u30EC\u30D3\u30E5\u30FC\uFF1A {{content}}\n\
+      |||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: user_satisfied
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
+    answer_choices: "\u4E0B\u964D ||| \u5897\u52A0"
+    id: b13369e8-0500-4e93-90d4-8e6814bfb98b
+    jinja: "\u88FD\u54C1\u3092\u8CFC\u5165\u3059\u308B\u304B\u3069\u3046\u304B\u3092\
+      \u691C\u8A0E\u3057\u3066\u3044\u307E\u3059\u3002\u30EC\u30D3\u30E5\u30FC\u3092\
+      \u898B\u3066\u3044\u307E\u3059\u3002\u6B21\u306E\u30EC\u30D3\u30E5\u30FC{{{answer_choices[0]}}\u307E\
+      \u305F\u306F{{answer_choices[1]}}\u88FD\u54C1\u3092\u8CFC\u5165\u3059\u308B\u53EF\
+      \u80FD\u6027\u306F\u3042\u308A\u307E\u3059\u304B\uFF1F\n\u30EC\u30D3\u30E5\u30FC\
+      \u30BF\u30A4\u30C8\u30EB\uFF1A {{title}}\n\u88FD\u54C1\u30EC\u30D3\u30E5\u30FC\
+      \uFF1A {{content}}\n|||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: would_you_buy
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
+    answer_choices: "\u5351\u52A3\u306A ||| \u304A\u4E16\u8F9E"
+    id: b13369e8-0500-4e93-90d4-8e6814bfb99b
+    jinja: "\u984C\u540D\uFF1A {{title}}\n\u88FD\u54C1\u30EC\u30D3\u30E5\u30FC\uFF1A\
+      \ {{content}}\n\u3053\u306E\u30EC\u30D3\u30E5\u30FC\u306F\u3001{{answer_choices[1]}}\u307E\
+      \u305F\u306F{{{answer_choices[0]}}\u30E9\u30A4\u30C8\u306E\u88FD\u54C1\u3092\
+      \u63CF\u3044\u3066\u3044\u308B\u3068\u601D\u3044\u307E\u3059\u304B\uFF1F\n|||\n\
+      {{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: flattering_or_not
+    reference: ''

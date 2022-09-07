@@ -1,0 +1,158 @@
+dataset: wiqa
+subset: th
+templates:
+  1bc8d95b-0a50-49f4-a46b-bd752929926d: !Template
+    answer_choices: null
+    id: 1bc8d95b-0a50-49f4-a46b-bd752929926d
+    jinja: "-  {{ question_para_step[1:] | join(\"\\n- \") }}\n\n\u0E2D\u0E30\u0E44\
+      \u0E23\u0E04\u0E37\u0E2D\u0E02\u0E31\u0E49\u0E19\u0E15\u0E2D\u0E19\u0E41\u0E23\
+      \u0E01\u0E02\u0E2D\u0E07\u0E01\u0E23\u0E30\u0E1A\u0E27\u0E19\u0E01\u0E32\u0E23\
+      ?\n\n|||\n\n{{ question_para_step | first }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_might_be_the_first_step_of_the_process
+    reference: ''
+  360cd99a-2f83-469a-a505-d80808159dd2: !Template
+    answer_choices: null
+    id: 360cd99a-2f83-469a-a505-d80808159dd2
+    jinja: "\n{% set process_list = question_para_step[:-1] if question_para_step[-1]\
+      \ == \"\" else question_para_step %}\n-  {{ process_list[:-1] | join(\"\\n-\
+      \ \") }}\n\n\u0E02\u0E31\u0E49\u0E19\u0E15\u0E2D\u0E19\u0E2A\u0E38\u0E14\u0E17\
+      \u0E49\u0E32\u0E22\u0E02\u0E2D\u0E07\u0E01\u0E23\u0E30\u0E1A\u0E27\u0E19\u0E01\
+      \u0E32\u0E23\u0E2D\u0E32\u0E08\u0E40\u0E1B\u0E47\u0E19\u0E2D\u0E22\u0E48\u0E32\
+      \u0E07\u0E44\u0E23\n\n|||\n\n{{ process_list | last }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_might_be_the_last_step_of_the_process
+    reference: ''
+  4191b162-9220-46e5-a2f0-0a763eef55a0: !Template
+    answer_choices: null
+    id: 4191b162-9220-46e5-a2f0-0a763eef55a0
+    jinja: "\u0E02\u0E31\u0E49\u0E19\u0E15\u0E2D\u0E19\u0E41\u0E23\u0E01\u0E17\u0E35\
+      \u0E48\u0E02\u0E32\u0E14\u0E2B\u0E32\u0E22\u0E44\u0E1B\u0E02\u0E2D\u0E07\u0E01\
+      \u0E23\u0E30\u0E1A\u0E27\u0E19\u0E01\u0E32\u0E23\u0E15\u0E48\u0E2D\u0E44\u0E1B\
+      \u0E19\u0E35\u0E49\u0E04\u0E37\u0E2D\u0E2D\u0E30\u0E44\u0E23:\n\n-  {{ question_para_step[1:]\
+      \ | join(\"\\n- \") }}\n\n|||\n\n{{ question_para_step | first }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_is_the_missing_first_step
+    reference: ''
+  52d69c02-5ff3-4fe7-bcaf-a6b995a15020: !Template
+    answer_choices: null
+    id: 52d69c02-5ff3-4fe7-bcaf-a6b995a15020
+    jinja: " {% set process_list = question_para_step[:-1] if question_para_step[-1]\
+      \ == \"\" else question_para_step %}\n\u0E02\u0E31\u0E49\u0E19\u0E15\u0E2D\u0E19\
+      \u0E2A\u0E38\u0E14\u0E17\u0E49\u0E32\u0E22\u0E02\u0E2D\u0E07\u0E01\u0E23\u0E30\
+      \u0E1A\u0E27\u0E19\u0E01\u0E32\u0E23\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\
+      \u0E49\u0E04\u0E37\u0E2D\u0E2D\u0E30\u0E44\u0E23:\n-  {{ process_list[:-1] |\
+      \ join(\"\\n- \") }}\n\n|||\n\n{{ process_list | last }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_is_the_final_step_of_the_following_process
+    reference: ''
+  5dfee2c2-9742-4003-8ab6-dfe0ce5a745b: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 5dfee2c2-9742-4003-8ab6-dfe0ce5a745b
+    jinja: "\u0E01\u0E23\u0E30\u0E1A\u0E27\u0E19\u0E01\u0E32\u0E23:\n- {{ question_para_step\
+      \ | join(\"\\n- \")}}\n\n\u0E04\u0E33\u0E16\u0E32\u0E21:\n{{question_stem}}\n\
+      \n\u0E01\u0E32\u0E23\u0E01\u0E48\u0E2D\u0E01\u0E27\u0E19\u0E17\u0E35\u0E48\u0E04\
+      \u0E27\u0E23\u0E08\u0E30\u0E21\u0E35\u0E1C\u0E25\u0E15\u0E48\u0E2D\u0E40\u0E2D\
+      \u0E1F\u0E40\u0E1F\u0E01\u0E15\u0E4C\u0E17\u0E35\u0E48\u0E2A\u0E2D\u0E07\u0E17\
+      \u0E35\u0E48\u0E01\u0E25\u0E48\u0E32\u0E27\u0E16\u0E36\u0E07\u0E2D\u0E22\u0E48\
+      \u0E32\u0E07\u0E44\u0E23\u0E15\u0E2D\u0E1A\u0E42\u0E14\u0E22 {{\"more, less\
+      \ or no effect\"}}\n\n|||\n\n{{answer_label|replace(\"_\", \" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: effect_with_string_answer
+    reference: ''
+  667c291f-6a36-4334-aa49-804c9e72500b: !Template
+    answer_choices: "\u0E2A\u0E48\u0E07\u0E1C\u0E25\u0E01\u0E23\u0E30\u0E17\u0E1A\u0E17\
+      \u0E32\u0E07\u0E2D\u0E49\u0E2D\u0E21\u0E15\u0E48\u0E2D\u0E02\u0E31\u0E49\u0E19\
+      \u0E15\u0E2D\u0E19\u0E02\u0E2D\u0E07\u0E01\u0E23\u0E30\u0E1A\u0E27\u0E19\u0E01\
+      \u0E32\u0E23 ||| \u0E44\u0E21\u0E48\u0E2A\u0E48\u0E07\u0E1C\u0E25\u0E01\u0E23\
+      \u0E30\u0E17\u0E1A\u0E15\u0E48\u0E2D\u0E02\u0E31\u0E49\u0E19\u0E15\u0E2D\u0E19\
+      \u0E43\u0E14 \u0E46 \u0E02\u0E2D\u0E07\u0E01\u0E23\u0E30\u0E1A\u0E27\u0E19\u0E01\
+      \u0E32\u0E23"
+    id: 667c291f-6a36-4334-aa49-804c9e72500b
+    jinja: "\u0E01\u0E23\u0E30\u0E1A\u0E27\u0E19\u0E01\u0E32\u0E23:\n\n- {{ question_para_step\
+      \ | join(\"\\n- \") }}\n\n{{question_stem}}\n\n\u0E02\u0E49\u0E2D\u0E43\u0E14\
+      \u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49\u0E04\u0E37\u0E2D\u0E01\u0E32\
+      \u0E23\u0E01\u0E48\u0E2D\u0E01\u0E27\u0E19\n\n- {{\"\u0E2A\u0E48\u0E07\u0E1C\
+      \u0E25\u0E42\u0E14\u0E22\u0E15\u0E23\u0E07\u0E15\u0E48\u0E2D\u0E02\u0E31\u0E49\
+      \u0E19\u0E15\u0E2D\u0E19\u0E02\u0E2D\u0E07\u0E01\u0E23\u0E30\u0E1A\u0E27\u0E19\
+      \u0E01\u0E32\u0E23\"}}\n- {{\"\u0E2A\u0E48\u0E07\u0E1C\u0E25\u0E01\u0E23\u0E30\
+      \u0E17\u0E1A\u0E17\u0E32\u0E07\u0E2D\u0E49\u0E2D\u0E21\u0E15\u0E48\u0E2D\u0E02\
+      \u0E31\u0E49\u0E19\u0E15\u0E2D\u0E19\u0E02\u0E2D\u0E07\u0E01\u0E23\u0E30\u0E1A\
+      \u0E27\u0E19\u0E01\u0E32\u0E23\"}}\n- {{\"\u0E44\u0E21\u0E48\u0E2A\u0E48\u0E07\
+      \u0E1C\u0E25\u0E01\u0E23\u0E30\u0E17\u0E1A\u0E15\u0E48\u0E2D\u0E02\u0E31\u0E49\
+      \u0E19\u0E15\u0E2D\u0E19\u0E43\u0E14 \u0E46 \u0E02\u0E2D\u0E07\u0E01\u0E23\u0E30\
+      \u0E1A\u0E27\u0E19\u0E01\u0E32\u0E23\"}}\n\n\n|||\n\n{{{\"EXOGENOUS_EFFECT\"\
+      : \"\u0E2A\u0E48\u0E07\u0E1C\u0E25\u0E01\u0E23\u0E30\u0E17\u0E1A\u0E17\u0E32\
+      \u0E07\u0E2D\u0E49\u0E2D\u0E21\u0E15\u0E48\u0E2D\u0E02\u0E31\u0E49\u0E19\u0E15\
+      \u0E2D\u0E19\u0E02\u0E2D\u0E07\u0E01\u0E23\u0E30\u0E1A\u0E27\u0E19\u0E01\u0E32\
+      \u0E23\", \"OUTOFPARA_DISTRACTOR\": \"\u0E44\u0E21\u0E48\u0E2A\u0E48\u0E07\u0E1C\
+      \u0E25\u0E01\u0E23\u0E30\u0E17\u0E1A\u0E15\u0E48\u0E2D\u0E02\u0E31\u0E49\u0E19\
+      \u0E15\u0E2D\u0E19\u0E43\u0E14 \u0E46 \u0E02\u0E2D\u0E07\u0E01\u0E23\u0E30\u0E1A\
+      \u0E27\u0E19\u0E01\u0E32\u0E23\", \"INPARA_EFFECT\": \"\u0E2A\u0E48\u0E07\u0E1C\
+      \u0E25\u0E42\u0E14\u0E22\u0E15\u0E23\u0E07\u0E15\u0E48\u0E2D\u0E02\u0E31\u0E49\
+      \u0E19\u0E15\u0E2D\u0E19\u0E02\u0E2D\u0E07\u0E01\u0E23\u0E30\u0E1A\u0E27\u0E19\
+      \u0E01\u0E32\u0E23\"}[metadata_question_type]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: which_of_the_following_is_the_supposed_perturbation
+    reference: ''
+  6cf2b300-6790-4120-9592-9db63bec221b: !Template
+    answer_choices: A ||| B ||| C
+    id: 6cf2b300-6790-4120-9592-9db63bec221b
+    jinja: "\u0E01\u0E23\u0E30\u0E1A\u0E27\u0E19\u0E01\u0E32\u0E23:\n- {{ question_para_step\
+      \ | join(\"\\n- \")}}\n\n\u0E04\u0E33\u0E16\u0E32\u0E21:\n{{question_stem}}\n\
+      \n- {{\"A: more\"}}\n- {{\"B: less\"}}\n- {{\"C: no effect\"}}\n\n|||\n\n{{answer_label_as_choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: effect_with_label_answer
+    reference: ''
+  a17313bd-94bb-47ab-82bf-538df1b1ad5f: !Template
+    answer_choices: "\u0E43\u0E0A\u0E48 ||| \u0E44\u0E21\u0E48"
+    id: a17313bd-94bb-47ab-82bf-538df1b1ad5f
+    jinja: "\u0E01\u0E23\u0E30\u0E1A\u0E27\u0E19\u0E01\u0E32\u0E23:\n\n- {{ question_para_step\
+      \ | join(\"\\n- \") }}\n\n\u0E2A\u0E21\u0E21\u0E15\u0E34\u0E10\u0E32\u0E19\u0E01\
+      \u0E32\u0E23\u0E01\u0E48\u0E2D\u0E01\u0E27\u0E19:\n{{question_stem}}\n\n\u0E01\
+      \u0E32\u0E23\u0E01\u0E48\u0E2D\u0E01\u0E27\u0E19\u0E17\u0E35\u0E48\u0E04\u0E27\
+      \u0E23\u0E08\u0E30\u0E21\u0E35\u0E1C\u0E25\u0E01\u0E23\u0E30\u0E17\u0E1A (\u0E42\
+      \u0E14\u0E22\u0E15\u0E23\u0E07\u0E2B\u0E23\u0E37\u0E2D\u0E42\u0E14\u0E22\u0E2D\
+      \u0E49\u0E2D\u0E21) \u0E15\u0E48\u0E2D\u0E01\u0E23\u0E30\u0E1A\u0E27\u0E19\u0E01\
+      \u0E32\u0E23\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?\n\n|||\n\n{{{\"EXOGENOUS_EFFECT\"\
+      : \"\u0E43\u0E0A\u0E48\", \"OUTOFPARA_DISTRACTOR\": \"\u0E44\u0E21\u0E48\",\
+      \ \"INPARA_EFFECT\": \"\u0E43\u0E0A\u0E48\"}[metadata_question_type]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: does_the_supposed_perturbation_have_an_effect
+    reference: ''

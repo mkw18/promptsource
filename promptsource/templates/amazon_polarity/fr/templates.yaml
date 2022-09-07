@@ -1,0 +1,116 @@
+dataset: amazon_polarity
+subset: fr
+templates:
+  1e90a24a-1182-43dd-9445-22f2e56e5761: !Template
+    answer_choices: Negative ||| Positive
+    id: 1e90a24a-1182-43dd-9445-22f2e56e5761
+    jinja: "Titre: {{title}}\nExamen: {{content}}\nL'examen est-il positif ou n\xE9\
+      gatif? |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review
+    reference: ''
+  3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
+    answer_choices: Non ||| Oui
+    id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
+    jinja: "Sur la base de cette revue, l'utilisateur recommanderait-il ce produit?\n\
+      ===\nExamen: {{content}}\nR\xE9ponse: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: User_recommend_this_product
+    reference: 'Reformulation equivalent to sent analysis: would the user recommend
+      this product?'
+  592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
+    answer_choices: Non ||| Oui
+    id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
+    jinja: "Cette revue de produit est-elle positive?\nTitre: {{title}}\nExamen: {{content}}\n\
+      R\xE9ponse: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_product_review_positive
+    reference: ''
+  745b9c05-10df-4a7e-81ad-1b88cefcb166: !Template
+    answer_choices: Oui ||| Non
+    id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
+    jinja: "Titre: {{title}}\nExamen: {{content}}\nCette revue de produit est-elle\
+      \ n\xE9gative?|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review_negative
+    reference: ''
+  8abb5377-5dd3-4402-92a5-0d81adb6a325: !Template
+    answer_choices: Negative ||| Positive
+    id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
+    jinja: "Titre: {{title}}\nExamen: {{content}}\nCette revue de produit transmet-elle\
+      \ un sentiment n\xE9gatif ou positif?|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: convey_negative_or_positive_sentiment
+    reference: ''
+  9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
+    answer_choices: Negative ||| Positive
+    id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
+    jinja: "Y a-t-il un ton n\xE9gatif ou positif \xE0 cette revue de produit?\n===\n\
+      Titre: {{title}}\nExamen: {{content}}\nR\xE9ponse: |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: negative_or_positive_tone
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
+    answer_choices: dissatisfied ||| satisfied
+    id: b13369e8-0500-4e93-90d4-8e6814bfb97b
+    jinja: "Voici un examen laiss\xE9 par un client sur un produit.Diriez-vous qu'il\
+      \ \xE9tait {{answer_choices[1]}} ou {{answer_choices[0]}}?\nTitre: {{title}}\n\
+      Examen: {{content}}\n|||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: user_satisfied
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
+    answer_choices: diminuer ||| augmenter
+    id: b13369e8-0500-4e93-90d4-8e6814bfb98b
+    jinja: "Vous envisagez d'acheter un produit.Vous regardez les critiques.La revue\
+      \ suivante {{answer_choices[0]}} ou {{answer_choices[1]}} est-elle des chances\
+      \ que vous achetiez le produit?\nTitre du commentaire: {{title}}\n\xC9valuation\
+      \ du produit: {{content}}\n|||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: would_you_buy
+    reference: ''
+  b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
+    answer_choices: peu flatteur ||| flattering
+    id: b13369e8-0500-4e93-90d4-8e6814bfb99b
+    jinja: "Titre: {{title}}\n\xC9valuation du produit: {{content}}\nDiriez-vous que\
+      \ cette revue repr\xE9sente le produit dans une lumi\xE8re {{answer_choices[1]}}\
+      \ ou {{answer_choices[0]}}?\n|||\n{{answer_choices[label]}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: flattering_or_not
+    reference: ''

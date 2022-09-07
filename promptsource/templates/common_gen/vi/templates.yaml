@@ -1,0 +1,133 @@
+dataset: common_gen
+subset: vi
+templates:
+  45778bd5-fddc-4c60-a77b-4eff5bed1c0b: !Template
+    answer_choices: null
+    id: 45778bd5-fddc-4c60-a77b-4eff5bed1c0b
+    jinja: "B\u1ECF qua th\u1EE9 t\u1EF1 c\u1EE7a c\xE1c kh\xE1i ni\u1EC7m: {{ concepts\
+      \ | join(\", \") }}; \nT\u1EA1o m\u1ED9t c\xE2u v\u1EDBi t\u1EA5t c\u1EA3 c\xE1\
+      c kh\xE1i ni\u1EC7m:\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Given concepts - type 2
+    reference: Ignoring the order of the concepts:...
+  684f1859-0b8d-4efe-82e1-7218838813cd: !Template
+    answer_choices: null
+    id: 684f1859-0b8d-4efe-82e1-7218838813cd
+    jinja: "\u0110\u1EB7t c\xE1c kh\xE1i ni\u1EC7m l\u1EA1i v\u1EDBi nhau \u0111\u1EC3\
+      \ t\u1EA1o th\xE0nh m\u1ED9t c\xE2u: {{ concepts | join(\", \") }}.\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Put together
+    reference: This is similar to a task description
+  a4991cc7-cc91-4f37-af80-1983a02eb950: !Template
+    answer_choices: null
+    id: a4991cc7-cc91-4f37-af80-1983a02eb950
+    jinja: "X\xE2y d\u1EF1ng m\u1ED9t c\xE2u v\u1EDBi t\u1EEB {{concepts | choice}}.\
+      \ \n\nG\u1EE3i \xFD: S\u1EED d\u1EE5ng {{concepts | join(\", \")}} \u0111\u1EC3\
+      \ h\u1EA1n ch\u1EBF c\xE2u \u0111\u1EA7u ra.\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: choice in concept centric sentence generation
+    reference: ''
+  b2033df4-7922-45b8-a113-e7784135cea9: !Template
+    answer_choices: null
+    id: b2033df4-7922-45b8-a113-e7784135cea9
+    jinja: "{% set seq = [ \n'T\u1EEB c\xE1c kh\xE1i ni\u1EC7m \u0111\u01B0\u1EE3\
+      c \u0111\u1EC1 c\u1EADp d\u01B0\u1EDBi \u0111\xE2y, t\u1EA1o m\u1ED9t c\xE2\
+      u:', \n'Chuy\u1EC3n \u0111\u1ED5i c\xE1c kh\xE1i ni\u1EC7m th\xE0nh m\u1ED9\
+      t c\xE2u:', \n'\u0110\u01B0a ra danh s\xE1ch c\xE1c kh\xE1i ni\u1EC7m, h\xE3\
+      y vi\u1EBFt m\u1ED9t c\xE2u:'\n] %} \n{{ seq | choice }}\n{{ concepts | join(\"\
+      , \") }}\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: random task template prompt
+    reference: With a randomly chosen task template, generate a sentence from the
+      list of concepts
+  b7012213-04c4-424d-85fb-39d63d8a0ca2: !Template
+    answer_choices: null
+    id: b7012213-04c4-424d-85fb-39d63d8a0ca2
+    jinja: "C\xE1c ch\u1EE7 \u0111\u1EC1 trong c\xE2u l\xE0 g\xEC: {{target}}\n|||\n\
+      {{ concepts | join(\", \") }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: topics from the sentence
+    reference: The template generates a random topic from the sentence
+  ed215962-8e51-45e7-b025-6e822f877098: !Template
+    answer_choices: null
+    id: ed215962-8e51-45e7-b025-6e822f877098
+    jinja: "Ch\xFAng t\xF4i c\xF3 c\xE2u: {{target}}; \nTr\xEDch xu\u1EA5t t\u1EA5\
+      t c\u1EA3 c\xE1c kh\xE1i ni\u1EC7m ch\xEDnh: \n|||\n{{ concepts | join(\", \"\
+      ) }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: sentence to concepts
+    reference: Template identifies the concepts from the sentence
+  f3fce748-89e0-4b88-94bb-72ddb9a04d10: !Template
+    answer_choices: null
+    id: f3fce748-89e0-4b88-94bb-72ddb9a04d10
+    jinja: "B\u1EA1n c\xF3 th\u1EC3 vi\u1EBFt m\u1ED9t c\xE2u v\u1EC1 ch\u1EE7 \u0111\
+      \u1EC1 {{concepts | choice}} kh\xF4ng?\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: topic to sentence
+    reference: 'Choose a random topic and ask the model to write a sentence about
+      it '
+  fa787974-86dd-4f66-b2d7-6d3523ce00e1: !Template
+    answer_choices: null
+    id: fa787974-86dd-4f66-b2d7-6d3523ce00e1
+    jinja: "Con ng\u01B0\u1EDDi c\xF3 th\u1EC3 d\u1EC5 d\xE0ng x\xE2u chu\u1ED7i c\xE1\
+      c kh\xE1i ni\u1EC7m tr\u1EEBu t\u01B0\u1EE3ng \u0111\u1EC3 t\u1EA1o th\xE0nh\
+      \ m\u1ED9t c\xE2u m\u1EA1ch l\u1EA1c. \nV\xED d\u1EE5: v\u1EDBi c\xE1c kh\xE1\
+      i ni\u1EC7m {{concepts | join(\", \")}}, m\u1ED9t c\xE2u \u0111\u01A1n gi\u1EA3\
+      n c\xF3 th\u1EC3  \n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Example prompt
+    reference: The prompt is in the form of an example
+  fbeebb4f-cba1-4bc4-80ec-758a3c134033: !Template
+    answer_choices: null
+    id: fbeebb4f-cba1-4bc4-80ec-758a3c134033
+    jinja: "\u0110\u01B0a ra danh s\xE1ch c\xE1c kh\xE1i ni\u1EC7m: {{ concepts |\
+      \ join(\", \") }}; \nT\u1EA1o m\u1ED9t c\xE2u v\u1EDBi t\u1EA5t c\u1EA3 c\xE1\
+      c kh\xE1i ni\u1EC7m:\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Given concepts type 1
+    reference: 'The prompt has the prefix "Given the .." '

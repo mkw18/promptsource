@@ -1,0 +1,187 @@
+dataset: quoref
+subset: ta
+templates:
+  4120bebc-9c8f-44af-8d1a-a65e443ce010: !Template
+    answer_choices: null
+    id: 4120bebc-9c8f-44af-8d1a-a65e443ce010
+    jinja: "\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BCD\u0B95\u0BBE\u0BA9 \u0BAA\
+      \u0BA4\u0BBF\u0BB2\u0BCD: {{\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF}} \u0B95\u0B9F\
+      \u0BCD\u0B9F\u0BC1\u0BB0\u0BC8\u0B95\u0BCD\u0B95\u0BC1\u0BB3\u0BCD \u0B89\u0BB3\
+      \u0BCD\u0BB3\u0BA4\u0BC1: {{\u0B9A\u0BC2\u0BB4\u0BB2\u0BCD}}, \u0BA8\u0BC0\u0B99\
+      \u0BCD\u0B95\u0BB3\u0BCD \u0B85\u0BA4\u0BC8 \u0BAF\u0BC2\u0B95\u0BBF\u0B95\u0BCD\
+      \u0B95 \u0BAE\u0BC1\u0B9F\u0BBF\u0BAF\u0BC1\u0BAE\u0BBE?\n\n|||\n{{answers.text\
+      \ | choice}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Guess Answer
+    reference: ''
+  6f1d5031-1377-4b8a-9475-987b2275b8da: !Template
+    answer_choices: null
+    id: 6f1d5031-1377-4b8a-9475-987b2275b8da
+    jinja: "\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\u0BAE\u0BCD \u0B9A\u0BC2\u0BB4\
+      \u0BB2\u0BCD \u0B95\u0BCA\u0B9F\u0BC1\u0B95\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\
+      \u0BCD\u0B9F\u0BC1\u0BB3\u0BCD\u0BB3\u0BA4\u0BC1:\n\n{{context}}\n\n\u0BAA\u0BBF\
+      \u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\u0BAE\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\
+      \u0B95\u0BCD\u0B95\u0BC1 \u0BAA\u0BA4\u0BBF\u0BB2\u0BB3\u0BBF\u0B95\u0BCD\u0B95\
+      \u0BB5\u0BC1\u0BAE\u0BCD:\n\n{{question}} |||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Question Given Context
+    reference: ''
+  9493f80a-daf5-4c30-a9fc-7bc5bc61b5e9: !Template
+    answer_choices: null
+    id: 9493f80a-daf5-4c30-a9fc-7bc5bc61b5e9
+    jinja: "\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\u0BAE\u0BCD \u0B95\u0B9F\u0BCD\
+      \u0B9F\u0BC1\u0BB0\u0BC8\u0BAF\u0BBF\u0BB2\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\
+      \u0BBF\u0B95\u0BCD\u0B95\u0BBE\u0BA9 \u0BAA\u0BA4\u0BBF\u0BB2\u0BCD \u0B89\u0BB3\
+      \u0BCD\u0BB3\u0BA4\u0BC1: {{\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF}}, \u0BA4\u0BAF\
+      \u0BB5\u0BC1\u0B9A\u0BC6\u0BAF\u0BCD\u0BA4\u0BC1 \u0B85\u0BA4\u0BC8\u0B95\u0BCD\
+      \ \u0B95\u0BA3\u0BCD\u0B9F\u0BC1\u0BAA\u0BBF\u0B9F\u0BBF\u0B95\u0BCD\u0B95 \u0BAE\
+      \u0BC1\u0B9F\u0BBF\u0BAF\u0BC1\u0BAE\u0BBE? \n\n{{context}}|||\n{{answers.text\
+      \ | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Find Answer
+    reference: ''
+  a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb: !Template
+    answer_choices: null
+    id: a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb
+    jinja: "\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0B9F\u0BCD\u0B9F\u0BC1\u0BB0\u0BC8: {{\u0B9A\
+      \u0BC2\u0BB4\u0BB2\u0BCD}} \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BCD\u0B95\
+      \u0BBE\u0BA9 \u0BAA\u0BA4\u0BBF\u0BB2\u0BC8\u0B95\u0BCD \u0B95\u0BCA\u0BA3\u0BCD\
+      \u0B9F\u0BC1\u0BB3\u0BCD\u0BB3\u0BA4\u0BC1: {{\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\
+      \u0BBF}}, \u0B85\u0BA4\u0BC1 \u0B8E\u0BA9\u0BCD\u0BA9?\n|||\n{{answers.text\
+      \ | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Context Contains Answer
+    reference: ''
+  aa26aab2-d2e7-4560-b7eb-0cbcff7c0f31: !Template
+    answer_choices: null
+    id: aa26aab2-d2e7-4560-b7eb-0cbcff7c0f31
+    jinja: "{{question}}\n\n\u0B95\u0BC0\u0BB4\u0BC7\u0BAF\u0BC1\u0BB3\u0BCD\u0BB3\
+      \ \u0B9A\u0BC2\u0BB4\u0BB2\u0BBF\u0BA9\u0BCD \u0B85\u0B9F\u0BBF\u0BAA\u0BCD\u0BAA\
+      \u0B9F\u0BC8\u0BAF\u0BBF\u0BB2\u0BCD \u0BAE\u0BC7\u0BB2\u0BC7 \u0B89\u0BB3\u0BCD\
+      \u0BB3 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BCD\u0B95\u0BC1 \u0BAA\u0BA4\
+      \u0BBF\u0BB2\u0BB3\u0BBF\u0B95\u0BCD\u0B95\u0BB5\u0BC1\u0BAE\u0BCD:\n\n{{context}}\
+      \ |||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Given Context Answer Question
+    reference: ''
+  abdfa570-2de5-406c-9051-caa6a1362796: !Template
+    answer_choices: null
+    id: abdfa570-2de5-406c-9051-caa6a1362796
+    jinja: "\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BCD\u0B95\u0BBE\u0BA9 \u0BAA\
+      \u0BA4\u0BBF\u0BB2\u0BCD \u0B8E\u0BA9\u0BCD\u0BA9: {{\u0B95\u0BC7\u0BB3\u0BCD\
+      \u0BB5\u0BBF} the \u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\u0BAE\u0BCD \u0B95\
+      \u0B9F\u0BCD\u0B9F\u0BC1\u0BB0\u0BC8\u0BAF\u0BBF\u0BB2\u0BBF\u0BB0\u0BC1\u0BA8\
+      \u0BCD\u0BA4\u0BC1?\n\n{{context}}|||\n{{answers.text | choice}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: What Is The Answer
+    reference: ''
+  b3ec0888-dd6f-466a-abd4-b2fbcacfdb8b: !Template
+    answer_choices: null
+    id: b3ec0888-dd6f-466a-abd4-b2fbcacfdb8b
+    jinja: "\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\u0BAE\u0BCD \u0B95\u0B9F\u0BCD\
+      \u0B9F\u0BC1\u0BB0\u0BC8 \u0B8E\u0BA9\u0B95\u0BCD\u0B95\u0BC1 \u0BB5\u0BB4\u0B99\
+      \u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F \u0B92\u0BB0\u0BC1 \u0B9A\u0BCB\
+      \u0BA4\u0BA9\u0BC8 \u0B8E\u0BA9\u0BCD\u0BA9\u0BBF\u0B9F\u0BAE\u0BCD \u0B89\u0BB3\
+      \u0BCD\u0BB3\u0BA4\u0BC1, \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BCD\u0B95\
+      \u0BC1 \u0B8E\u0BA9\u0BCD\u0BA9 \u0BAA\u0BA4\u0BBF\u0BB2\u0BCD: {{\u0B95\u0BC7\
+      \u0BB3\u0BCD\u0BB5\u0BBF}}?\n\n{{context}}|||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Test
+    reference: ''
+  bf525757-8cde-4839-81fb-a85be3fd1192: !Template
+    answer_choices: null
+    id: bf525757-8cde-4839-81fb-a85be3fd1192
+    jinja: "\u0B95\u0BC0\u0BB4\u0BC7\u0BAF\u0BC1\u0BB3\u0BCD\u0BB3 \u0B9A\u0BC2\u0BB4\
+      \u0BB2\u0BC8\u0B95\u0BCD \u0B95\u0BCA\u0B9F\u0BC1\u0B95\u0BCD\u0B95\u0BAA\u0BCD\
+      \u0BAA\u0B9F\u0BCD\u0B9F\u0BC1\u0BB3\u0BCD\u0BB3\u0BA4\u0BC1:\n\n{{context}}\n\
+      \n\u0B85\u0BA4\u0BB1\u0BCD\u0B95\u0BBE\u0BA9 \u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9\
+      \ \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC8 \u0BAF\u0BC2\u0B95\u0BBF\u0B95\u0BCD\
+      \u0B95\u0BB5\u0BC1\u0BAE\u0BCD! |||\n{{title}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: false
+    name: Guess Title For Context
+    reference: ''
+  d055747f-7a32-4e12-aab1-fed35d42a445: !Template
+    answer_choices: null
+    id: d055747f-7a32-4e12-aab1-fed35d42a445
+    jinja: "\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\u0BAE\u0BCD \u0B95\u0B9F\u0BCD\
+      \u0B9F\u0BC1\u0BB0\u0BC8\u0BAF\u0BC8 \u0B86\u0BA9\u0BCD\u0BB2\u0BC8\u0BA9\u0BBF\
+      \u0BB2\u0BCD \u0B95\u0BA3\u0BCD\u0B9F\u0BB1\u0BBF\u0BA8\u0BCD\u0BA4\u0BA4\u0BC1\
+      , \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BCD\u0B95\u0BC1 \u0BAA\u0BA4\u0BBF\
+      \u0BB2\u0BB3\u0BBF\u0B95\u0BCD\u0B95 \u0B87\u0BA4\u0BC8\u0BAA\u0BCD \u0BAA\u0BAF\
+      \u0BA9\u0BCD\u0BAA\u0B9F\u0BC1\u0BA4\u0BCD\u0BA4\u0BB5\u0BC1\u0BAE\u0BCD: {{question}}\n\
+      \n{{context}}|||\n{{answers.text | choice}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Found Context Online
+    reference: ''
+  d1abb8a0-03c4-41ef-865c-aa275278a0e4: !Template
+    answer_choices: null
+    id: d1abb8a0-03c4-41ef-865c-aa275278a0e4
+    jinja: "\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BCD\
+      \u0B95\u0BC1 \u0BAA\u0BA4\u0BBF\u0BB2\u0BB3\u0BBF\u0B95\u0BCD\u0B95 \u0B92\u0BB0\
+      \u0BC1 \u0BA8\u0BA3\u0BCD\u0BAA\u0BB0\u0BCD \u0B8E\u0BA9\u0BCD\u0BA9\u0BBF\u0B9F\
+      \u0BAE\u0BCD \u0B95\u0BC7\u0B9F\u0BCD\u0B9F\u0BBE\u0BB0\u0BCD: {{\u0B95\u0BC7\
+      \u0BB3\u0BCD\u0BB5\u0BBF}}, \u0B95\u0B9F\u0BCD\u0B9F\u0BC1\u0BB0\u0BC8\u0BAF\
+      \u0BC8\u0BAA\u0BCD \u0BAA\u0BAF\u0BA9\u0BCD\u0BAA\u0B9F\u0BC1\u0BA4\u0BCD\u0BA4\
+      \u0BBF: {{\u0B9A\u0BC2\u0BB4\u0BB2\u0BCD}}, \u0BAA\u0BA4\u0BBF\u0BB2\u0BCD \u0B8E\
+      \u0BA9\u0BCD\u0BA9\u0BB5\u0BBE\u0B95 \u0B87\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BC1\
+      \u0BAE\u0BCD?\n\n|||\n{{answers.text | choice}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Friend Question
+    reference: ''
+  fcbe0609-06ce-4cbd-91de-adc38966bcac: !Template
+    answer_choices: null
+    id: fcbe0609-06ce-4cbd-91de-adc38966bcac
+    jinja: "\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\u0BAE\u0BCD \u0BAA\u0BA4\u0BCD\
+      \u0BA4\u0BBF\u0BAF\u0BC8\u0BAA\u0BCD \u0BAA\u0B9F\u0BBF\u0BA4\u0BCD\u0BA4\u0BC1\
+      \ \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BCD\u0B95\u0BBE\u0BA9 \u0BAA\u0BA4\
+      \u0BBF\u0BB2\u0BC8\u0BAA\u0BCD \u0BAA\u0BBF\u0BB0\u0BBF\u0BA4\u0BCD\u0BA4\u0BC6\
+      \u0B9F\u0BC1\u0B95\u0BCD\u0B95\u0BB5\u0BC1\u0BAE\u0BCD: {{question}}\n\n{{context}}\
+      \ |||\n{{answers.text | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: 'Read And Extract '
+    reference: ''

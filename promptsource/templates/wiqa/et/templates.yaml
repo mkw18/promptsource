@@ -1,0 +1,118 @@
+dataset: wiqa
+subset: et
+templates:
+  1bc8d95b-0a50-49f4-a46b-bd752929926d: !Template
+    answer_choices: null
+    id: 1bc8d95b-0a50-49f4-a46b-bd752929926d
+    jinja: "-  {{ question_para_step[1:] | join(\"\\n- \") }}\n\nMilline v\xF5iks\
+      \ olla protsessi esimene samm?\n\n|||\n\n{{ question_para_step | first }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_might_be_the_first_step_of_the_process
+    reference: ''
+  360cd99a-2f83-469a-a505-d80808159dd2: !Template
+    answer_choices: null
+    id: 360cd99a-2f83-469a-a505-d80808159dd2
+    jinja: "\n{% set process_list = question_para_step[:-1] if question_para_step[-1]\
+      \ == \"\" else question_para_step %}\n-  {{ process_list[:-1] | join(\"\\n-\
+      \ \") }}\n\nMilline v\xF5ib olla protsessi viimane samm?\n\n|||\n\n{{ process_list\
+      \ | last }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_might_be_the_last_step_of_the_process
+    reference: ''
+  4191b162-9220-46e5-a2f0-0a763eef55a0: !Template
+    answer_choices: null
+    id: 4191b162-9220-46e5-a2f0-0a763eef55a0
+    jinja: "Mis on j\xE4rgmise protsessi puuduv esimene samm:\n\n-  {{ question_para_step[1:]\
+      \ | join(\"\\n- \") }}\n\n|||\n\n{{ question_para_step | first }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_is_the_missing_first_step
+    reference: ''
+  52d69c02-5ff3-4fe7-bcaf-a6b995a15020: !Template
+    answer_choices: null
+    id: 52d69c02-5ff3-4fe7-bcaf-a6b995a15020
+    jinja: " {% set process_list = question_para_step[:-1] if question_para_step[-1]\
+      \ == \"\" else question_para_step %}\nMis on j\xE4rgmise protsessi viimane samm:\n\
+      -  {{ process_list[:-1] | join(\"\\n- \") }}\n\n|||\n\n{{ process_list | last\
+      \ }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: what_is_the_final_step_of_the_following_process
+    reference: ''
+  5dfee2c2-9742-4003-8ab6-dfe0ce5a745b: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 5dfee2c2-9742-4003-8ab6-dfe0ce5a745b
+    jinja: "Protsess:\n- {{ question_para_step | join(\"\\n- \")}}\n\nK\xFCsimus:\n\
+      {{question_stem}}\n\nKuidas m\xF5jutab oletatav h\xE4irimine teist mainitud\
+      \ efekti.Vastata {{\"more, less or no effect\"}}\n\n|||\n\n{{answer_label|replace(\"\
+      _\", \" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: effect_with_string_answer
+    reference: ''
+  667c291f-6a36-4334-aa49-804c9e72500b: !Template
+    answer_choices: "m\xF5jutab protsessi sammu kaudselt ||| ei m\xF5juta protsessi\
+      \ \xFChtegi sammu"
+    id: 667c291f-6a36-4334-aa49-804c9e72500b
+    jinja: "Protsess:\n\n- {{ question_para_step | join(\"\\n- \") }}\n\n{{question_stem}}\n\
+      \nMilline j\xE4rgmistest on v\xE4idetav h\xE4iring?\n\n- {{\"m\xF5jutab otse\
+      \ protsessi sammu\"}}\n- {{\"m\xF5jutab protsessi sammu kaudselt\"}}\n- {{\"\
+      ei m\xF5juta protsessi \xFChtegi sammu\"}}\n\n\n|||\n\n{{{\"EXOGENOUS_EFFECT\"\
+      : \"m\xF5jutab protsessi sammu kaudselt\", \"OUTOFPARA_DISTRACTOR\": \"ei m\xF5\
+      juta protsessi \xFChtegi sammu\", \"INPARA_EFFECT\": \"m\xF5jutab otse protsessi\
+      \ sammu\"}[metadata_question_type]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: which_of_the_following_is_the_supposed_perturbation
+    reference: ''
+  6cf2b300-6790-4120-9592-9db63bec221b: !Template
+    answer_choices: A ||| B ||| C
+    id: 6cf2b300-6790-4120-9592-9db63bec221b
+    jinja: "Protsess:\n- {{ question_para_step | join(\"\\n- \")}}\n\nK\xFCsimus:\n\
+      {{question_stem}}\n\n- {{\"A: more\"}}\n- {{\"B: less\"}}\n- {{\"C: no effect\"\
+      }}\n\n|||\n\n{{answer_label_as_choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: effect_with_label_answer
+    reference: ''
+  a17313bd-94bb-47ab-82bf-538df1b1ad5f: !Template
+    answer_choices: jah ||| mitte
+    id: a17313bd-94bb-47ab-82bf-538df1b1ad5f
+    jinja: "Protsess:\n\n- {{ question_para_step | join(\"\\n- \") }}\n\nH\xE4iringu\
+      \ h\xFCpotees:\n{{question_stem}}\n\nKas oletataval h\xE4iringul on m\xF5ju\
+      \ (otsene v\xF5i kaudne) protsessile?\n\n|||\n\n{{{\"EXOGENOUS_EFFECT\": \"\
+      jah\", \"OUTOFPARA_DISTRACTOR\": \"mitte\", \"INPARA_EFFECT\": \"jah\"}[metadata_question_type]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: does_the_supposed_perturbation_have_an_effect
+    reference: ''

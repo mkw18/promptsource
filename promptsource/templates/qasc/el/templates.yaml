@@ -1,0 +1,161 @@
+dataset: qasc
+subset: el
+templates:
+  3e1e6ca0-b95e-4e68-bb6a-cd47c8429658: !Template
+    answer_choices: "\u039D\u03B1\u03AF ||| \u039F\u03C7\u03B9"
+    id: 3e1e6ca0-b95e-4e68-bb6a-cd47c8429658
+    jinja: "\u0391\u03BD \u03C3\u03B1\u03C2 \u03C4\u03BF \u03C0\u03C9 \u03B1\u03C5\
+      \u03C4\u03CC {{combinedfact[0]|capitalize}}{{ combinedfact[1:]|trim('.') }}\u03BA\
+      \u03B1\u03B9 \u03BD\u03B1 \u03C3\u03B1\u03C2 \u03C1\u03C9\u03C4\u03AE\u03C3\u03C9\
+      \ \u03C4\u03B7\u03BD \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \"{{ question[0]|lower\
+      \ }}{{ question[1:] }}\", \u03B5\u03AF\u03BD\u03B1\u03B9 \u03B7 \u03C3\u03C9\
+      \u03C3\u03C4\u03AE \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \"{{ choices.text[0][0]|lower}}{{\
+      \ choices.text[0][1:]|trim('.') }}\"? \n\n||| \n\n{% if answerKey == choices.label[0]\
+      \ %} \u039D\u03B1\u03AF {% else %} \u039F\u03C7\u03B9 {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: is_correct_1
+    reference: ''
+  40ef67db-dff3-4e7b-b167-f7e54b400c74: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 40ef67db-dff3-4e7b-b167-f7e54b400c74
+    jinja: "{{ fact1[0]|capitalize }}{{ fact1[1:]|trim|trim('.') }}, \u03BA\u03B1\u03B9\
+      \ {{fact2[0]|lower }}{{ fact2[1:]|trim|trim('.') }}. \u0394\u03B5\u03B4\u03BF\
+      \u03BC\u03AD\u03BD\u03C9\u03BD \u03B1\u03C5\u03C4\u03CE\u03BD \u03C4\u03C9\u03BD\
+      \ \u03B3\u03B5\u03B3\u03BF\u03BD\u03CC\u03C4\u03C9\u03BD, {{ question[0]|lower\
+      \ }}{{question[1:]|trim('?') }} \u039C\u03B5\u03C4\u03B1\u03BE\u03CD \u03C4\u03C9\
+      \u03BD \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03C9\u03BD \u03B5\u03C0\u03B9\
+      \u03BB\u03BF\u03B3\u03CE\u03BD:\n- {{answer_choices | join(\"\\n - \") }}\n\n\
+      ||| \n\n{% for choice in choices.label %} {% if choice == answerKey %}{{ answer_choices[loop.index\
+      \ - 1] }}{% endif %}{% endfor %} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_separated_facts_1
+    reference: Question Answering with separated facts.
+  5d63c186-e047-49dd-b5fd-c4a574f6f0e2: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 5d63c186-e047-49dd-b5fd-c4a574f6f0e2
+    jinja: "\u0393\u03B5\u03B3\u03BF\u03BD\u03CC\u03C2 1: {{ fact1[0]|capitalize }}{{\
+      \ fact1[1:]|trim|trim('.') }}.\n\n\u0393\u03B5\u03B3\u03BF\u03BD\u03CC\u03C2\
+      \ 2: {{fact2[0]|capitalize }}{{ fact2[1:]|trim|trim('.') }}.\n\n\u0394\u03B5\
+      \u03B4\u03BF\u03BC\u03AD\u03BD\u03C9\u03BD \u03C4\u03C9\u03BD \u03B4\u03CD\u03BF\
+      \ \u03C0\u03B1\u03C1\u03B1\u03C0\u03AC\u03BD\u03C9 \u03B3\u03B5\u03B3\u03BF\u03BD\
+      \u03CC\u03C4\u03C9\u03BD, {{ question[0]|lower }}{{question[1:]|trim('?') }}?\n\
+      \n||| \n\n{% for choice in choices.label %} {% if choice == answerKey %}{{ answer_choices[loop.index\
+      \ - 1] }}{% endif %}{% endfor %}  "
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_separated_facts_3
+    reference: Question Answering with separated facts.
+  604dd379-21f1-4d30-af2f-22f9a8a97ceb: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 604dd379-21f1-4d30-af2f-22f9a8a97ceb
+    jinja: "You are presented with the question \"{{ question }}\" and the following\
+      \ answer choices: \n- {{answer_choices | join(\"\\n - \") }}\n\n\u03A4\u03CE\
+      \u03C1\u03B1 \u03B3\u03BD\u03C9\u03C1\u03AF\u03B6\u03BF\u03BD\u03C4\u03B1\u03C2\
+      \ \u03CC\u03C4\u03B9 {{ fact1[0]|lower }}{{ fact1[1:]|trim|trim('.') }} \u03BA\
+      \u03B1\u03B9 {{fact2[0]|lower }}{{ fact2[1:]|trim|trim('.') }}, \u03B5\u03C0\
+      \u03B9\u03BB\u03AD\u03BE\u03C4\u03B5 \u03C4\u03B7\u03BD \u03BA\u03B1\u03BB\u03CD\
+      \u03C4\u03B5\u03C1\u03B7 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7.\n\
+      \n||| \n\n{% for choice in choices.label %} {% if choice == answerKey %}{{ answer_choices[loop.index\
+      \ - 1] }}{% endif %}{% endfor %} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_separated_facts_4
+    reference: Question Answering with separated facts.
+  67cb1b35-e5d4-490b-beb8-dc9c0be9c298: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 67cb1b35-e5d4-490b-beb8-dc9c0be9c298
+    jinja: "\u03A3\u03B1\u03C2 \u03C0\u03B1\u03C1\u03BF\u03C5\u03C3\u03B9\u03AC\u03B6\
+      \u03BF\u03BD\u03C4\u03B1\u03B9 \u03C4\u03BF \u03BA\u03BF\u03C5\u03AF\u03B6 \"\
+      {{ question }}\" \n\n\u0391\u03BB\u03BB\u03AC \u03B4\u03B5\u03BD \u03B3\u03BD\
+      \u03C9\u03C1\u03AF\u03B6\u03B5\u03C4\u03B5 \u03C4\u03B7\u03BD \u03B1\u03C0\u03AC\
+      \u03BD\u03C4\u03B7\u03C3\u03B7, \u03BF\u03C0\u03CC\u03C4\u03B5 \u03B1\u03C0\u03B5\
+      \u03C5\u03B8\u03C5\u03BD\u03B8\u03B5\u03AF\u03C4\u03B5 \u03C3\u03C4\u03BF\u03BD\
+      \ \u03B4\u03AC\u03C3\u03BA\u03B1\u03BB\u03CC \u03C3\u03B1\u03C2 \u03B3\u03B9\
+      \u03B1 \u03BD\u03B1 \u03B6\u03B7\u03C4\u03AE\u03C3\u03B5\u03C4\u03B5 \u03C3\u03C5\
+      \u03BC\u03B2\u03BF\u03C5\u03BB\u03AD\u03C2. \u039B\u03AD\u03B5\u03B9 \u03CC\u03C4\
+      \u03B9 \"{{ fact1[0]|lower }}{{ fact1[1:]|trim|trim('.') }}\" \u03BA\u03B1\u03B9\
+      \ \"{{fact2[0]|lower }}{{ fact2[1:]|trim|trim('.') }}\". \n\n\u039B\u03BF\u03B9\
+      \u03C0\u03CC\u03BD, \u03C0\u03BF\u03B9\u03B1 \u03B5\u03AF\u03BD\u03B1\u03B9\
+      \ \u03B7 \u03BA\u03B1\u03BB\u03CD\u03C4\u03B5\u03C1\u03B7 \u03B1\u03C0\u03AC\
+      \u03BD\u03C4\u03B7\u03C3\u03B7 \u03C3\u03C4\u03B7\u03BD \u03B5\u03C1\u03CE\u03C4\
+      \u03B7\u03C3\u03B7;\n\n||| \n\n{% for choice in choices.label %} {% if choice\
+      \ == answerKey %}{{ answer_choices[loop.index - 1] }}{% endif %}{% endfor %}\
+      \   "
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_separated_facts_5
+    reference: Question Answering with separated facts.
+  b5b61423-8655-408d-a8e6-81a5eaaac2aa: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: b5b61423-8655-408d-a8e6-81a5eaaac2aa
+    jinja: "\u0391\u03BD {{ combinedfact[0]|lower }}{{ combinedfact[1:]|trim|trim('.')\
+      \ }}, \u03C4\u03CC\u03C4\u03B5 {{ question[0]|lower }}{{question[1:]|trim|trim('?')\
+      \ }}?\n\n\u0395\u03C0\u03B9\u03BB\u03BF\u03B3\u03AD\u03C2 \u03B1\u03C0\u03B1\
+      \u03BD\u03C4\u03AE\u03C3\u03B5\u03C9\u03BD:\n- {{answer_choices | join(\"\\\
+      n - \") }}\n||| \n\n{% for choice in choices.label %} {% if choice == answerKey\
+      \ %}{{ answer_choices[loop.index - 1] }}{% endif %}{% endfor %}  "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: qa_with_combined_facts_1
+    reference: ''
+  c251edaf-a063-40fe-bd49-038843fcdb23: !Template
+    answer_choices: "\u039D\u03B1\u03AF ||| \u039F\u03C7\u03B9"
+    id: c251edaf-a063-40fe-bd49-038843fcdb23
+    jinja: "\u03A0\u03B9\u03C3\u03C4\u03B5\u03CD\u03B5\u03C4\u03B5 \u03CC\u03C4\u03B9\
+      \ \u03B7 \u03C3\u03C9\u03C3\u03C4\u03AE \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\
+      \u03C3\u03B7 \u03C3\u03C4\u03B7\u03BD \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7\
+      \ \"{{ question[0]|lower }}{{ question[1:] }}\" \u03B5\u03AF\u03BD\u03B1\u03B9\
+      \ \"{{ choices.text[1][0]|lower}}{{ choices.text[1][1:]|trim('.') }}\", \u03B4\
+      \u03B5\u03B4\u03BF\u03BC\u03AD\u03BD\u03BF\u03C5 \u03CC\u03C4\u03B9 \u03B1\u03C5\
+      \u03C4\u03CC\n {{combinedfact[0]|lower}}{{ combinedfact[1:]|trim('.') }}?\n\
+      \ ||| \n{% if answerKey == choices.label[0] %} \u039D\u03B1\u03AF {% else %}\
+      \ \u039F\u03C7\u03B9 {% endif %}   "
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: is_correct_2
+    reference: ''
+  c7cd51f1-ea49-4d6a-a422-46624333b7b1: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: c7cd51f1-ea49-4d6a-a422-46624333b7b1
+    jinja: "\u0393\u03B5\u03B3\u03BF\u03BD\u03CC\u03C2 1: {{ fact1[0]|capitalize }}{{\
+      \ fact1[1:]|trim|trim('.') }}.\n\n\u0393\u03B5\u03B3\u03BF\u03BD\u03CC\u03C2\
+      \ 2: {{fact2[0]|capitalize }}{{ fact2[1:]|trim|trim('.') }}.\n\n\u039B\u03B1\
+      \u03BC\u03B2\u03AC\u03BD\u03BF\u03BD\u03C4\u03B1\u03C2 \u03C5\u03C0\u03CC\u03C8\
+      \u03B7 \u03C4\u03B1 \u03B4\u03CD\u03BF \u03C0\u03B1\u03C1\u03B1\u03C0\u03AC\u03BD\
+      \u03C9 \u03B3\u03B5\u03B3\u03BF\u03BD\u03CC\u03C4\u03B1, \u03B1\u03C0\u03B1\u03BD\
+      \u03C4\u03AE\u03C3\u03C4\u03B5 \u03C3\u03C4\u03B7\u03BD \u03B5\u03C1\u03CE\u03C4\
+      \u03B7\u03C3\u03B7 \"{{ question }}\" \u03BC\u03B5 \u03C4\u03B9\u03C2 \u03B1\
+      \u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03B5\u03C2 \u03B5\u03C0\u03B9\u03BB\u03BF\
+      \u03B3\u03AD\u03C2: \n- {{answer_choices | join(\"\\n - \") }}\n\n||| \n\n{%\
+      \ for choice in choices.label %} {% if choice == answerKey %}{{ answer_choices[loop.index\
+      \ - 1] }}{% endif %}{% endfor %} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_separated_facts_2
+    reference: Question Answering with separated facts.

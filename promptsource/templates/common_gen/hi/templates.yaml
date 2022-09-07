@@ -1,0 +1,162 @@
+dataset: common_gen
+subset: hi
+templates:
+  45778bd5-fddc-4c60-a77b-4eff5bed1c0b: !Template
+    answer_choices: null
+    id: 45778bd5-fddc-4c60-a77b-4eff5bed1c0b
+    jinja: "\u0905\u0935\u0927\u093E\u0930\u0923\u093E\u0913\u0902 \u0915\u0947 \u0915\
+      \u094D\u0930\u092E \u0915\u094B \u0905\u0928\u0926\u0947\u0916\u093E \u0915\u0930\
+      \u0928\u093E: {{ concepts | join(\", \") }}; \n\u0938\u092D\u0940 \u0905\u0935\
+      \u0927\u093E\u0930\u0923\u093E\u0913\u0902 \u0915\u0947 \u0938\u093E\u0925 \u090F\
+      \u0915 \u0935\u093E\u0915\u094D\u092F \u0909\u0924\u094D\u092A\u0928\u094D\u0928\
+      \ \u0915\u0930\u0947\u0902:\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Given concepts - type 2
+    reference: Ignoring the order of the concepts:...
+  684f1859-0b8d-4efe-82e1-7218838813cd: !Template
+    answer_choices: null
+    id: 684f1859-0b8d-4efe-82e1-7218838813cd
+    jinja: "\u090F\u0915 \u0935\u093E\u0915\u094D\u092F \u092C\u0928\u093E\u0928\u0947\
+      \ \u0915\u0947 \u0932\u093F\u090F \u0905\u0935\u0927\u093E\u0930\u0923\u093E\
+      \u0913\u0902 \u0915\u094B \u090F\u0915 \u0938\u093E\u0925 \u0930\u0916\u0947\
+      \u0902: {{ concepts | join(\", \") }}.\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Put together
+    reference: This is similar to a task description
+  a4991cc7-cc91-4f37-af80-1983a02eb950: !Template
+    answer_choices: null
+    id: a4991cc7-cc91-4f37-af80-1983a02eb950
+    jinja: "\u0936\u092C\u094D\u0926 {{concepts | choice}} \u0915\u0947 \u0938\u093E\
+      \u0925 \u090F\u0915 \u0935\u093E\u0915\u094D\u092F \u0915\u093E \u0928\u093F\
+      \u0930\u094D\u092E\u093E\u0923 \u0915\u0930\u0947\u0902\u0964 \n\n\u0938\u0902\
+      \u0915\u0947\u0924: \u0906\u0909\u091F\u092A\u0941\u091F \u0935\u093E\u0915\u094D\
+      \u092F \u0915\u094B \u092A\u094D\u0930\u0924\u093F\u092C\u0902\u0927\u093F\u0924\
+      \ \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F {{concepts | join(\"\
+      , \")}} \u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0915\u0930\u0947\u0902\
+      \u0964\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: choice in concept centric sentence generation
+    reference: ''
+  b2033df4-7922-45b8-a113-e7784135cea9: !Template
+    answer_choices: null
+    id: b2033df4-7922-45b8-a113-e7784135cea9
+    jinja: "{% set seq = [ \n'\u0928\u0940\u091A\u0947 \u0909\u0932\u094D\u0932\u093F\
+      \u0916\u093F\u0924 \u0905\u0935\u0927\u093E\u0930\u0923\u093E\u0913\u0902 \u0938\
+      \u0947, \u090F\u0915 \u0935\u093E\u0915\u094D\u092F \u0909\u0924\u094D\u092A\
+      \u0928\u094D\u0928 \u0915\u0930\u0947\u0902:', \n'\u0905\u0935\u0927\u093E\u0930\
+      \u0923\u093E\u0913\u0902 \u0915\u094B \u090F\u0915 \u0935\u093E\u0915\u094D\u092F\
+      \ \u092E\u0947\u0902 \u092A\u0930\u093F\u0935\u0930\u094D\u0924\u093F\u0924\
+      \ \u0915\u0930\u0947\u0902:', \n'\u0905\u0935\u0927\u093E\u0930\u0923\u093E\u0913\
+      \u0902 \u0915\u0940 \u0938\u0942\u091A\u0940 \u0915\u094B \u0926\u0947\u0916\
+      \u0924\u0947 \u0939\u0941\u090F, \u090F\u0915 \u0935\u093E\u0915\u094D\u092F\
+      \ \u0932\u093F\u0916\u0947\u0902:'\n] %} \n{{ seq | choice }}\n{{ concepts |\
+      \ join(\", \") }}\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: random task template prompt
+    reference: With a randomly chosen task template, generate a sentence from the
+      list of concepts
+  b7012213-04c4-424d-85fb-39d63d8a0ca2: !Template
+    answer_choices: null
+    id: b7012213-04c4-424d-85fb-39d63d8a0ca2
+    jinja: "\u0935\u093E\u0915\u094D\u092F \u092E\u0947\u0902 \u0915\u094D\u092F\u093E\
+      \ \u0935\u093F\u0937\u092F \u0939\u0948\u0902: {{target}}\n|||\n{{ concepts\
+      \ | join(\", \") }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: topics from the sentence
+    reference: The template generates a random topic from the sentence
+  ed215962-8e51-45e7-b025-6e822f877098: !Template
+    answer_choices: null
+    id: ed215962-8e51-45e7-b025-6e822f877098
+    jinja: "\u0939\u092E\u093E\u0930\u0947 \u092A\u093E\u0938 \u0935\u093E\u0915\u094D\
+      \u092F \u0939\u0948: {{target}}; \n\u0938\u092D\u0940 \u092A\u094D\u0930\u092E\
+      \u0941\u0916 \u0905\u0935\u0927\u093E\u0930\u0923\u093E\u0913\u0902 \u0915\u094B\
+      \ \u0928\u093F\u0915\u093E\u0932\u0947\u0902: \n|||\n{{ concepts | join(\",\
+      \ \") }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: sentence to concepts
+    reference: Template identifies the concepts from the sentence
+  f3fce748-89e0-4b88-94bb-72ddb9a04d10: !Template
+    answer_choices: null
+    id: f3fce748-89e0-4b88-94bb-72ddb9a04d10
+    jinja: "\u0915\u094D\u092F\u093E \u0906\u092A \u0935\u093F\u0937\u092F {{concepts\
+      \ | choice}} \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u090F\
+      \u0915 \u0935\u093E\u0915\u094D\u092F \u0932\u093F\u0916 \u0938\u0915\u0924\u0947\
+      \ \u0939\u0948\u0902?\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: topic to sentence
+    reference: 'Choose a random topic and ask the model to write a sentence about
+      it '
+  fa787974-86dd-4f66-b2d7-6d3523ce00e1: !Template
+    answer_choices: null
+    id: fa787974-86dd-4f66-b2d7-6d3523ce00e1
+    jinja: "\u092E\u0928\u0941\u0937\u094D\u092F \u0906\u0938\u093E\u0928\u0940 \u0938\
+      \u0947 \u090F\u0915 \u0938\u0941\u0938\u0902\u0917\u0924 \u0935\u093E\u0915\u094D\
+      \u092F \u092C\u0928\u093E\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0905\
+      \u092E\u0942\u0930\u094D\u0924 \u0905\u0935\u0927\u093E\u0930\u0923\u093E\u0913\
+      \u0902 \u0915\u094B \u090F\u0915 \u0938\u093E\u0925 \u0938\u094D\u091F\u094D\
+      \u0930\u093F\u0902\u0917 \u0915\u0930 \u0938\u0915\u0924\u093E \u0939\u0948\u0964\
+      \ \n\u0909\u0926\u093E\u0939\u0930\u0923 \u0915\u0947 \u0932\u093F\u090F, \u0905\
+      \u0935\u0927\u093E\u0930\u0923\u093E\u0913\u0902 {{concepts | join(\", \")}}\
+      \ \u0915\u0947 \u0938\u093E\u0925, \u090F\u0915 \u0938\u093E\u0927\u093E\u0930\
+      \u0923 \u0935\u093E\u0915\u094D\u092F \u0939\u094B \u0938\u0915\u0924\u093E\
+      \ \u0939\u0948  \n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Example prompt
+    reference: The prompt is in the form of an example
+  fbeebb4f-cba1-4bc4-80ec-758a3c134033: !Template
+    answer_choices: null
+    id: fbeebb4f-cba1-4bc4-80ec-758a3c134033
+    jinja: "\u0905\u0935\u0927\u093E\u0930\u0923\u093E\u0913\u0902 \u0915\u0940 \u0938\
+      \u0942\u091A\u0940 \u0915\u094B \u0926\u0947\u0916\u0924\u0947 \u0939\u0941\u090F\
+      : {{ concepts | join(\", \") }}; \n\u0938\u092D\u0940 \u0905\u0935\u0927\u093E\
+      \u0930\u0923\u093E\u0913\u0902 \u0915\u0947 \u0938\u093E\u0925 \u090F\u0915\
+      \ \u0935\u093E\u0915\u094D\u092F \u0909\u0924\u094D\u092A\u0928\u094D\u0928\
+      \ \u0915\u0930\u0947\u0902:\n|||\n{{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Given concepts type 1
+    reference: 'The prompt has the prefix "Given the .." '

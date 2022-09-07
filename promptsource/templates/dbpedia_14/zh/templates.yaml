@@ -1,0 +1,83 @@
+dataset: dbpedia_14
+subset: zh
+templates:
+  824ecb55-ecad-40c2-8033-f2fa0add2ddf: !Template
+    answer_choices: "\u516C\u53F8 ||| \u6559\u80B2\u673A\u6784 ||| \u827A\u672F\u5BB6\
+      \ ||| \u8FD0\u52A8\u5458 ||| \u529E\u516C\u5BA4\u6301\u6709\u4EBA ||| \u8FD0\
+      \u8F93\u5E73\u5747\u503C ||| \u5EFA\u9020 ||| \u81EA\u7136\u7684\u5730\u65B9\
+      \ ||| Village ||| Animal ||| \u690D\u7269 ||| \u4E13\u8F91 ||| \u7535\u5F71\
+      \ ||| \u4E66\u9762\u4F5C\u4E1A"
+    id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
+    jinja: "{{content}} \u7ED9\u5B9A\u7C7B\u522B\u5217\u8868\uFF1A{{\"\u516C\u53F8\
+      \uFF0C\u6559\u80B2\u673A\u6784\uFF0C\u827A\u672F\u5BB6\uFF0C\u8FD0\u52A8\u5458\
+      \uFF0C\u529E\u516C\u5BA4\u6301\u6709\u4EBA\uFF0C\u4EA4\u901A\u5DE5\u5177\uFF0C\
+      \u5EFA\u7B51\u7269\uFF0C\u81EA\u7136\u5730\uFF0C\u6751\u5E84\uFF0C\u52A8\u7269\
+      \uFF0C\u690D\u7269\uFF0C\u4E13\u8F91\uFF0C\u7535\u5F71\uFF0C\u7535\u5F71\u6216\
+      \u4E66\u9762\u5DE5\u4F5C\"}}\uFF0C\u8BE5\u6BB5\u843D\u5C5E\u4E8E\u4EC0\u4E48\
+      \u7C7B\u522B\uFF1F ||| {{ answer_choices[label] }}\n\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_list_what_category_does_the_paragraph_belong_to
+    reference: ''
+  8eda7e71-6734-486f-b883-e99d3f14c0bf: !Template
+    answer_choices: "\u516C\u53F8 ||| Educational Institution ||| \u827A\u672F\u5BB6\
+      \ ||| \u8FD0\u52A8\u5458 ||| \u529E\u516C\u5BA4\u6301\u6709\u4EBA ||| \u8FD0\
+      \u8F93\u5E73\u5747\u503C ||| \u5EFA\u9020 ||| Natural Place ||| \u6751\u5E84\
+      \ ||| \u52A8\u7269 ||| \u690D\u7269 ||| \u4E13\u8F91 ||| \u7535\u5F71 ||| \u4E66\
+      \u9762\u4F5C\u4E1A"
+    id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
+    jinja: Pick one category for the following text. The options are - {{"company,
+      educational institution, artist, athlete, office holder, mean of transportation,
+      building, natural place, village, animal, plant, album, film or written work"}}.
+      {{title}} - {{content}} ||| {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_one_category_for_the_following_text
+    reference: ''
+  9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67: !Template
+    answer_choices: "Company ||| \u6559\u80B2\u673A\u6784 ||| \u827A\u672F\u5BB6 |||\
+      \ \u8FD0\u52A8\u5458 ||| \u529E\u516C\u5BA4\u6301\u6709\u4EBA ||| \u8FD0\u8F93\
+      \u5E73\u5747\u503C ||| \u5EFA\u9020 ||| Natural Place ||| Village ||| Animal\
+      \ ||| \u690D\u7269 ||| \u4E13\u8F91 ||| Film ||| \u4E66\u9762\u4F5C\u4E1A"
+    id: 9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67
+    jinja: "{{title}} - {{content}} \u7ED9\u5B9A\u7C7B\u522B\u7684\u9009\u62E9{{\"\
+      \u516C\u53F8\uFF0C\u6559\u80B2\u673A\u6784\uFF0C\u827A\u672F\u5BB6\uFF0C\u8FD0\
+      \u52A8\u5458\uFF0C\u529E\u516C\u5BA4\u6301\u6709\u4EBA\uFF0C\u4EA4\u901A\u5DE5\
+      \u5177\uFF0C\u5EFA\u7B51\u7269\uFF0C\u81EA\u7136\u5730\uFF0C\u6751\u5E84\uFF0C\
+      \u52A8\u7269\uFF0C\u690D\u7269\uFF0C\u4E13\u8F91\uFF0C\u7535\u5F71\uFF0C\u7535\
+      \u5F71\u6216\u4E66\u9762\u5DE5\u4F5C\"}}\uFF0C\u6587\u672C\u662F\u6307\u54EA\
+      \u4E2A\uFF1F ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: 'given_a_choice_of_categories '
+    reference: ''
+  f72fa410-3278-4f62-91f0-f9edf4a4e792: !Template
+    answer_choices: "\u516C\u53F8 ||| \u6559\u80B2\u673A\u6784 ||| \u827A\u672F\u5BB6\
+      \ ||| Athlete ||| \u529E\u516C\u5BA4\u6301\u6709\u4EBA ||| Mean Of Transportation\
+      \ ||| \u5EFA\u9020 ||| \u81EA\u7136\u7684\u5730\u65B9 ||| \u6751\u5E84 ||| \u52A8\
+      \u7269 ||| \u690D\u7269 ||| \u4E13\u8F91 ||| \u7535\u5F71 ||| \u4E66\u9762\u4F5C\
+      \u4E1A"
+    id: f72fa410-3278-4f62-91f0-f9edf4a4e792
+    jinja: "\"{{title}}\"\uFF0C\u7ED9\u5B9A\u7C7B\u522B\u5217\u8868\uFF1A{{\"\u516C\
+      \u53F8\uFF0C\u6559\u80B2\u673A\u6784\uFF0C\u827A\u672F\u5BB6\uFF0C\u8FD0\u52A8\
+      \u5458\uFF0C\u529E\u516C\u5BA4\u6301\u6709\u4EBA\uFF0C\u4EA4\u901A\u5DE5\u5177\
+      \uFF0C\u5EFA\u7B51\u7269\uFF0C\u81EA\u7136\u5730\uFF0C\u6751\u5E84\uFF0C\u52A8\
+      \u7269\uFF0C\u690D\u7269\uFF0C\u4E13\u8F91\uFF0C\u7535\u5F71\uFF0C\u7535\u5F71\
+      \u6216\u4E66\u9762\u5DE5\u4F5C\"}}\uFF0C\u6807\u9898\u5C5E\u4E8E\u4EC0\u4E48\
+      \u7C7B\u522B\uFF1F ||| {{ answer_choices[label] }}\n\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_a_list_of_category_what_does_the_title_belong_to
+    reference: ''

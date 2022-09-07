@@ -1,0 +1,73 @@
+dataset: dream
+subset: vi
+templates:
+  024906f3-2503-451f-a0ce-2c9faf90e6c5: !Template
+    answer_choices: null
+    id: 024906f3-2503-451f-a0ce-2c9faf90e6c5
+    jinja: "\u0110\u1ECDc cu\u1ED9c tr\xF2 chuy\u1EC7n d\u01B0\u1EDBi \u0111\xE2y.\n\
+      \n{{dialogue[:-1] | join(\"\\n\\n\")}}\n\nNg\u01B0\u1EDDi nghe s\u1EBD n\xF3\
+      i g\xEC?\n|||\n{{dialogue[-1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate-last-utterance
+    reference: ''
+  5c53fe97-b8b9-4c91-bd75-b3f8e056bd01: !Template
+    answer_choices: null
+    id: 5c53fe97-b8b9-4c91-bd75-b3f8e056bd01
+    jinja: "\u0110\u01B0a ra c\xE2u h\u1ECFi \"{{question}}\" v\xE0 c\xE2u tr\u1EA3\
+      \ l\u1EDDi \"{{answer}}\", h\xE3y vi\u1EBFt m\u1ED9t cu\u1ED9c tr\xF2 chuy\u1EC7\
+      n c\xF3 th\u1EC3 \u0111\xE3 x\u1EA3y ra.\n|||\n{{dialogue | join(\"\\n\\n\"\
+      )}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: answer-to-dialogue
+    reference: ''
+  70865a35-1db3-45bc-8b08-baf1d9d0be9d: !Template
+    answer_choices: null
+    id: 70865a35-1db3-45bc-8b08-baf1d9d0be9d
+    jinja: "{{dialogue[1:] | join(\"\\n\\n\")}}\n\n\u0110i\u1EC1u g\xEC \u0111\xE3\
+      \ \u0111\u01B0\u1EE3c n\xF3i tr\u01B0\u1EDBc cu\u1ED9c tr\xF2 chuy\u1EC7n n\xE0\
+      y?\n|||\n{{dialogue[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate-first-utterance
+    reference: ''
+  8f962580-1611-4982-b567-05939c5012ff: !Template
+    answer_choices: '{{choice | join("|||")}}'
+    id: 8f962580-1611-4982-b567-05939c5012ff
+    jinja: "H\u1ED9i tho\u1EA1i:\n\n{{dialogue | join(\"\\n\\n\")}}\n\nC\xE2u h\u1ECF\
+      i: {{question}} \n\n- {{answer_choices[0]}}\n\n- {{answer_choices[1]}}\n\n-\
+      \ {{answer_choices[2]}}\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: baseline
+    reference: https://dataset.org/dream/
+  d4687975-664d-46ac-b13b-482a35a61ab3: !Template
+    answer_choices: '{{choice | join("|||")}}'
+    id: d4687975-664d-46ac-b13b-482a35a61ab3
+    jinja: "\u0110\u1ECDc cu\u1ED9c tr\xF2 chuy\u1EC7n sau \u0111\xE2y v\xE0 tr\u1EA3\
+      \ l\u1EDDi c\xE2u h\u1ECFi.\n\n{{dialogue | join(\"\\n\\n\")}}\n\nC\xE2u h\u1ECF\
+      i: {{question}} \n\n- {{answer_choices[0]}}\n\n- {{answer_choices[1]}}\n\n-\
+      \ {{answer_choices[2]}}\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: read_the_following_conversation_and_answer_the_question
+    reference: ''

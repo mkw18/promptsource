@@ -1,0 +1,137 @@
+dataset: duorc
+subset: ParaphraseRC_da
+templates:
+  09adcadd-fa7b-4154-91cb-fe822bf8e00e: !Template
+    answer_choices: null
+    id: 09adcadd-fa7b-4154-91cb-fe822bf8e00e
+    jinja: '{% if no_answer == false%}
+
+      Byg et filmplot omkring dette: {{ question }} {{answers|choice}}
+
+      |||
+
+      {{ plot }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: build_story_around_qa
+    reference: Given the question-answer pair, generate a relevant plot.
+  0c7049c0-750a-46b7-af38-dd1e9fcb5217: !Template
+    answer_choices: null
+    id: 0c7049c0-750a-46b7-af38-dd1e9fcb5217
+    jinja: "Jeg pr\xF8ver at beslutte, om det er det v\xE6rd at investere i dette\
+      \ filmforslag.Kan du hj\xE6lpe mig med at besvare et par sp\xF8rgsm\xE5l?Hvis\
+      \ du ikke kan, skal du sige \"{{\"Nej, jeg kan ikke\"}}\".\n\nSp\xF8rgsm\xE5\
+      l: {{question}}\nFilmtitel: {{title}}\nFilmplot: {{plot}}\n|||\n{% if no_answer\
+      \ %}\nNej, jeg kan ikke\n{% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: decide_worth_it
+    reference: ''
+  594d0551-d737-4680-a7a5-8393acc6dbb7: !Template
+    answer_choices: null
+    id: 594d0551-d737-4680-a7a5-8393acc6dbb7
+    jinja: "Sp\xF8rgsm\xE5l: {{question}}\nHvis der ikke er noget svar, skal du output\
+      \ \"{{\"Utilstr\xE6kkelig information til at give et svar.\"}}\".\nFilmtitel:\
+      \ {{title}}\nSammenh\xE6ng: {{plot}}\n|||\n{% if no_answer %}\nUtilstr\xE6kkelig\
+      \ information til at give et svar.\n{% else %}\n{{answers|choice}}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_answering
+    reference: Given a passage and a question, generate an answer.
+  805f121a-6bd4-4803-9428-ea733f385add: !Template
+    answer_choices: null
+    id: 805f121a-6bd4-4803-9428-ea733f385add
+    jinja: "Jeg er filmregiss\xF8r, og jeg har lige modtaget f\xF8lgende filmplot.Kan\
+      \ du hj\xE6lpe mig med at besvare dette sp\xF8rgsm\xE5l?Hvis ikke, s\xE5 lad\
+      \ mig det vide ved at skrive \"{{\"Ikke svarende\"}}\".\n\nPlot titel: {{title}}\n\
+      Filmplot: {{plot}}\nMit sp\xF8rgsm\xE5l: {{question}}\n|||\n{% if no_answer\
+      \ %}\nIkke svarende\n{% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: movie_director
+    reference: ''
+  842e346b-2d26-43a2-9a3a-9154f04eb76a: !Template
+    answer_choices: null
+    id: 842e346b-2d26-43a2-9a3a-9154f04eb76a
+    jinja: "Generer et sp\xF8rgsm\xE5l om f\xF8lgende filmplot: {{ plot }}\n|||\n\
+      {{ question }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: Given the plot, generate a question.
+  945053f7-6ad3-4c08-b7dd-5413564f7467: !Template
+    answer_choices: null
+    id: 945053f7-6ad3-4c08-b7dd-5413564f7467
+    jinja: "Uddrag svaret p\xE5 f\xF8lgende sp\xF8rgsm\xE5l fra filmplottet.Hvis sp\xF8\
+      rgsm\xE5let ikke er svarbart, skal du udsende \"{{\"Kan ikke svare\"}}\".\n\
+      Sp\xF8rgsm\xE5l: {{question}}\nTitel: {{title}}\nFilmplot: {{plot}}\n|||\n{%\
+      \ if no_answer %}\nKan ikke svare\n{% else %}\n{{answers | choice }}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: extract_answer
+    reference: ''
+  a8597645-cfed-4f54-ba0d-c23eaafaa131: !Template
+    answer_choices: null
+    id: a8597645-cfed-4f54-ba0d-c23eaafaa131
+    jinja: "Foresl\xE5 en filmtitel til f\xF8lgende filmplot: {{plot}}\n|||\n{{title}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: title_generation
+    reference: Given the plot for the movie, suggest a title.
+  c6f75398-a993-44d6-a494-78961a7dc1b7: !Template
+    answer_choices: null
+    id: c6f75398-a993-44d6-a494-78961a7dc1b7
+    jinja: "Besvar f\xF8lgende sp\xF8rgsm\xE5l om dette filmplot.Hvis det er ubesvareligt,\
+      \ skal du output \"{{\"Intet svar\"}}\".\n\nSp\xF8rgsm\xE5l: {{question}}\n\
+      Filmplotstitel: {{title}}\nFilmplot: {{plot}}\n|||\n{% if no_answer %}\nIntet\
+      \ svar\n{% else %}\n{{answers | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question
+    reference: ''
+  ce3649d8-fd90-4a77-8819-4eb20b1c83a9: !Template
+    answer_choices: null
+    id: ce3649d8-fd90-4a77-8819-4eb20b1c83a9
+    jinja: "{% if no_answer == false%}\nGenerer et sp\xF8rgsm\xE5l, der har f\xF8\
+      lgende svar: \n{{answers|choice}} \nTil f\xF8lgende filmplot: \n{{plot}}\n|||\n\
+      {{question}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question_by_answer
+    reference: Given the passage and the answer, generate a question which has that
+      answer.

@@ -1,0 +1,68 @@
+dataset: adversarial_qa
+subset: dbert_ht
+templates:
+  00755780-f3c0-44b4-b159-8f3873cdb16a: !Template
+    answer_choices: null
+    id: 00755780-f3c0-44b4-b159-8f3873cdb16a
+    jinja: "Mwen vle teste kapasite el\xE8v yo pou li yon pasaj epi reponn kesyon\
+      \ sou li.\xC8ske ou ta ka tanpri vini ak yon bon kesyon pou pasaj la \"{{context}}\"\
+      ? |||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  3b2459cc-6600-443c-abf8-8f60c34cd99a: !Template
+    answer_choices: null
+    id: 3b2459cc-6600-443c-abf8-8f60c34cd99a
+    jinja: "{% if metadata.split != \"test\" %}\nMwen konnen ke repons lan nan kesyon\
+      \ an \"{{question}}\" se nan \"{{context}}\".\xC8ske ou ka di m 'sa li ye? |||\n\
+      \n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  5bdb1815-5c6f-49a3-ad1d-36734442070a: !Template
+    answer_choices: null
+    id: 5bdb1815-5c6f-49a3-ad1d-36734442070a
+    jinja: "{% if metadata.split != \"test\" %}\nKESYON: \"{{question}}\"\n\nKont\xE8\
+      ks: \"{{context}}\"\n\nRepons:\n|||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'
+  a0872cde-2f19-4ae6-919a-868da47bfbca: !Template
+    answer_choices: null
+    id: a0872cde-2f19-4ae6-919a-868da47bfbca
+    jinja: "{% if metadata.split != \"test\" %}\nEkstr\xE8 repons lan nan kesyon an\
+      \ soti nan kont\xE8ks sa a.\nKESYON: {{question}}\nKont\xE8ks: {{context}}|||\n\
+      {{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  a64d5a15-68e2-4d1c-b30a-ca8250c860fa: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860fa
+    jinja: "{% if metadata.split != \"test\" %}\nBay pasaj sa a\n\n\"{{context}}\"\
+      ,\n\nreponn kesyon sa a.Remake repons lan prezan nan t\xE8ks la.\n\nKESYON:\
+      \ {{question}} |||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'

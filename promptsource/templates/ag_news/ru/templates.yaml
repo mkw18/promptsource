@@ -1,0 +1,95 @@
+dataset: ag_news
+subset: ru
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: Мировая политика ||| Спорт ||| Бизнес ||| Наука и технология
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "Какой ярлык лучше всего описывает эту новостную статью?\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: Мировая политика ||| Спорт ||| Бизнес ||| Наука и технология
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "Это новости о {{\"мировой политике, спорте, бизнесе или науке и\
+      \ технологиях\"}}?\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: Политик ||| Спортсмен ||| Бизнес-менеджер ||| Ученый
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: 'Вы бы порекомендовали следующую статью {{"политику"}}, {{"спортсмену"}}, 
+      {{"руководителю бизнеса"}} или {{"ученому"}}?
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: Новости мира ||| Спорт ||| Бизнес ||| Наука и технология
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\nВ каком из следующих разделов газеты, скорее всего, появится эта статья?\
+      \ {{\"Мировые новости\"}}, {{\"Спорт\"}}, {{\"Бизнес\"}} или {{\"Наука и технологии\"\
+      }}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: Новости мира ||| Спорт ||| Бизнес ||| Наука и технология
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\nВ каком разделе газеты могла бы появиться эта\
+      \ статья? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: Мировая политика ||| Спорт ||| Бизнес ||| Наука и технология
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \nЭто новости о {{\"мировой политике, спорте, бизнесе или\
+      \ науке и технологиях\"}}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: Мировая политика ||| Спорт ||| Бизнес ||| Наука и технология
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \nКакой ярлык лучше всего описывает эту новостную статью? ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

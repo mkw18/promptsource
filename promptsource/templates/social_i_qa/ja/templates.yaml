@@ -1,0 +1,88 @@
+dataset: social_i_qa
+subset: ja
+templates:
+  605691e9-df59-415d-a622-530734c7df38: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 605691e9-df59-415d-a622-530734c7df38
+    jinja: "\u305D\u3046\u805E\u304D\u307E\u3057\u305F {{context}}\n\n\u305D\u3057\
+      \u3066\u3001\u79C1\u306F\u7591\u554F\u306B\u601D\u3063\u3066\u3044\u307E\u3057\
+      \u305F {{question}}\n\n|||\n\n{{answer_choices[label | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: I was wondering
+    reference: ''
+  666f415b-e3ac-47bf-a79b-19024c4a4143: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 666f415b-e3ac-47bf-a79b-19024c4a4143
+    jinja: "{{context}}\n\n\u30B3\u30F3\u30C6\u30AD\u30B9\u30C8\u3092\u4E0E\u3048\u3089\
+      \u308C\u305F\uFF1A {{question}}\n\n\u8003\u3048\u3089\u308C\u308B\u7B54\u3048\
+      \uFF1A {{answer_choices | join(\", \")}}\n\n|||\n\n{{answer_choices[label |\
+      \ int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate answer
+    reference: ''
+  991f78cc-82d3-482f-b1de-f37a7179a316: !Template
+    answer_choices: "\u306F\u3044 ||| \u3044\u3044\u3048"
+    id: 991f78cc-82d3-482f-b1de-f37a7179a316
+    jinja: "{% set random_answer_id = range(0,2) | choice%}\n{% set answers = [answerA,\
+      \ answerB, answerC] %}\n{{context}}\n\n\"{{question}}\"\u8CEA\u554F\u304C\u4E0E\
+      \u3048\u3089\u308C\u308B\u3068\u3001\"{{answers[random_answer_id]}}\"\u306F\u6709\
+      \u52B9\u306A\u7B54\u3048\u3067\u3059\u304B\uFF1F\n\n|||\n\n{% if (label | int)\
+      \ - 1 == random_answer_id %}\n    \u306F\u3044\n{% else %}\n    \u3044\u3044\
+      \u3048\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Check if a random answer is valid or not
+    reference: ''
+  b980667e-b4ca-44ce-aba9-5b47d3ccf406: !Template
+    answer_choices: null
+    id: b980667e-b4ca-44ce-aba9-5b47d3ccf406
+    jinja: "{{context}}\n\n\u8CEA\u554F\u306B\u5BFE\u3059\u308B\u7B54\u3048\u306F\"\
+      {{{\"1\": answerA, \"2\": answerB, \"3\": answerC}[label]}}\"\u3067\u3042\u308B\
+      \u3053\u3068\u3092\u8003\u3048\u308B\u3068\u3001\u8CEA\u554F\u306F\u4F55\u3067\
+      \u3059\u304B\uFF1F\n\n|||\n\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Generate the question from the answer
+    reference: ''
+  cbad777f-5794-4d71-bf3d-54da6043e5f1: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: cbad777f-5794-4d71-bf3d-54da6043e5f1
+    jinja: "{{context}}\n\n\u30B3\u30F3\u30C6\u30AD\u30B9\u30C8\u3092\u4E0E\u3048\u3089\
+      \u308C\u305F\uFF1A {{question}}\n\n|||\n\n{{answer_choices[label | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Generate answer
+    reference: ''
+  e2316120-2461-4664-943d-962a85008e23: !Template
+    answer_choices: A ||| B ||| C
+    id: e2316120-2461-4664-943d-962a85008e23
+    jinja: "\u74B0\u5883\uFF1A {{context}}\n\n\u8CEA\u554F\uFF1A {{question}}\n\n\u3053\
+      \u308C\u3089\u306E\u7B54\u3048\u306E\u3069\u308C\u304C\u30B3\u30F3\u30C6\u30AD\
+      \u30B9\u30C8\u306B\u5F93\u3063\u3066\u8CEA\u554F\u306B\u6700\u3082\u3088\u304F\
+      \u7B54\u3048\u307E\u3059\u304B\uFF1F\n\nA: {{answerA}}\n\nB: {{answerB}}\n\n\
+      C: {{answerC}}\n\n|||\n\n{{{\"1\": \"A\", \"2\": \"B\", \"3\": \"C\"}[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate index
+    reference: ''

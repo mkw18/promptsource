@@ -1,0 +1,94 @@
+dataset: samsum
+subset: ru
+templates:
+  01faf0cd-d9d8-4245-b86f-e7e13c2972ff: !Template
+    answer_choices: null
+    id: 01faf0cd-d9d8-4245-b86f-e7e13c2972ff
+    jinja: "\u0421\u0443\u043C\u043C\u0438\u0440\u0443\u0439\u0442\u0435 \u044D\u0442\
+      \u043E\u0442 \u0434\u0438\u0430\u043B\u043E\u0433: {{dialogue}} |||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: 'Summarize this dialogue:'
+    reference: ''
+  182a251f-2f76-4b36-8d2e-417f8d43f729: !Template
+    answer_choices: null
+    id: 182a251f-2f76-4b36-8d2e-417f8d43f729
+    jinja: "{{dialogue}}\n\u0423\u0447\u0438\u0442\u044B\u0432\u0430\u044F \u043F\u0440\
+      \u0438\u0432\u0435\u0434\u0435\u043D\u043D\u044B\u0439 \u0432\u044B\u0448\u0435\
+      \ \u0434\u0438\u0430\u043B\u043E\u0433, \u043D\u0430\u043F\u0438\u0448\u0438\
+      \u0442\u0435 \u0440\u0435\u0437\u044E\u043C\u0435. |||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Given the above dialogue write a summary
+    reference: ''
+  72eda731-894d-4260-9113-9e492822f80e: !Template
+    answer_choices: null
+    id: 72eda731-894d-4260-9113-9e492822f80e
+    jinja: "\u041F\u043E\u0434\u0432\u0435\u0441\u0442\u0438 \u0438\u0442\u043E\u0433\
+      : {{dialogue}}|||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: 'Summarize:'
+    reference: ''
+  7bd51f5b-5bac-429e-b8f9-dd6782b92a59: !Template
+    answer_choices: null
+    id: 7bd51f5b-5bac-429e-b8f9-dd6782b92a59
+    jinja: "{{dialogue}}\n\u041F\u043E\u0434\u0432\u043E\u0434\u044F \u0438\u0442\u043E\
+      \u0433 \u0432 \u044D\u0442\u043E\u043C \u0434\u0438\u0430\u043B\u043E\u0433\u0435\
+      :\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: To sum up this dialog
+    reference: ''
+  8d829dcb-ea64-457d-b025-f16e31c2834a: !Template
+    answer_choices: null
+    id: 8d829dcb-ea64-457d-b025-f16e31c2834a
+    jinja: "\u0421\u043E\u0437\u0434\u0430\u0439\u0442\u0435 \u0440\u0435\u0437\u044E\
+      \u043C\u0435 \u0434\u043B\u044F \u044D\u0442\u043E\u0433\u043E \u0434\u0438\u0430\
+      \u043B\u043E\u0433\u0430:\n{{dialogue}}\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Generate a summary for this dialogue
+    reference: ''
+  9f571a72-6813-4307-9aae-753ca0f737c5: !Template
+    answer_choices: null
+    id: 9f571a72-6813-4307-9aae-753ca0f737c5
+    jinja: "\u041D\u0430\u043F\u0438\u0448\u0438\u0442\u0435 \u0434\u0438\u0430\u043B\
+      \u043E\u0433, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0441\u043E\u043E\u0442\
+      \u0432\u0435\u0442\u0441\u0442\u0432\u0443\u0435\u0442 \u044D\u0442\u043E\u043C\
+      \u0443 \u0440\u0435\u0437\u044E\u043C\u0435: {{summary}} |||\n{{dialogue}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: false
+    name: Write a dialogue that match this summary
+    reference: ''
+  bd891653-49b6-40bb-968f-8e6632c75659: !Template
+    answer_choices: null
+    id: bd891653-49b6-40bb-968f-8e6632c75659
+    jinja: "\u041F\u043E\u0434\u0432\u0435\u0441\u0442\u0438 \u0438\u0442\u043E\u0433\
+      \ \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0433\u043E \u0434\u0438\u0430\
+      \u043B\u043E\u0433\u0430: \n{{dialogue}}\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Sum up the following dialogue
+    reference: ''

@@ -1,0 +1,163 @@
+dataset: super_glue
+subset: wic_fr
+templates:
+  14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
+    answer_choices: Non ||| Oui
+    id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
+    jinja: "Le mot \"{{word}}\" a-t-il le m\xEAme sens dans ces deux phrases? Oui\
+      \ Non?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning-with-label
+    reference: Generalized question-context format with label
+  3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
+    answer_choices: Non ||| Oui
+    id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
+    jinja: "Le mot \"{{word}}\" a-t-il le m\xEAme sens dans ces deux phrases?\n{{sentence1}}\n\
+      {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning
+    reference: Generalized question-context format
+  611d13dc-d414-4b9b-9204-e4f325e859e7: !Template
+    answer_choices: Non ||| Oui
+    id: 611d13dc-d414-4b9b-9204-e4f325e859e7
+    jinja: "Devoirs\n\nD\xE9cidez si le mot \"{{word}}\" est utilis\xE9 avec la m\xEA\
+      me signification dans les deux phrases suivantes. R\xE9ponse par oui ou non.\n\
+      {{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: grammar_homework
+    reference: ''
+  725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
+    answer_choices: Faux ||| Vrai
+    id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
+    jinja: 'Phrase A: {{sentence1}}
+
+      Phrase B: {{sentence2}}
+
+
+      "{{word}}" a une signification similaire dans les phrases A et B. Vrai ou faux?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: affirmation_true_or_false
+    reference: ''
+  c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6: !Template
+    answer_choices: Non ||| Oui
+    id: c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6
+    jinja: '{{sentence1}}
+
+      {{sentence2}}
+
+      Question: Is the word ''{{word}}'' used in the same sense in the two sentences
+      above?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf
+  ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
+    answer_choices: Non ||| Oui
+    id: ce8b5a93-1841-4897-84db-b100f1c84f4b
+    jinja: "Phrase 1: {{sentence1}}\nPhrase 2: {{sentence2}}\n\nD\xE9terminez si le\
+      \ mot \"{{word}}\" est utilis\xE9 dans le m\xEAme sens dans les deux phrases.\
+      \ Oui ou non?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same_sense
+    reference: ''
+  cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
+    answer_choices: Non ||| Oui
+    id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
+    jinja: "D\xE9terminez si le mot '{{word}}' est utilis\xE9 de la m\xEAme mani\xE8\
+      re dans les deux phrases ci-dessous. \n{{sentence1}}\n{{sentence2}}\n||| {%\
+      \ if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context
+    reference: Generalized question-context format
+  d9e1db2a-ab0b-4621-bb41-01d5788d3873: !Template
+    answer_choices: Non ||| Oui
+    id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
+    jinja: "{{sentence1}}\n{{sentence2}}\nQuestion: Le mot '{{word}}' est-il utilis\xE9\
+      \ dans le m\xEAme sens dans les deux phrases ci-dessus? Oui Non?\n||| {% if\
+      \ label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt-with-label
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf add additional
+      label
+  dd2080cf-3117-49ba-9aff-c988a21fdb69: !Template
+    answer_choices: Non ||| Oui
+    id: dd2080cf-3117-49ba-9aff-c988a21fdb69
+    jinja: "Le mot \"{{word}}\" a plusieurs significations. A-t-il la m\xEAme signification\
+      \ dans les phrases 1 et 2? Oui ou non?\n\nPhrase 1: {{sentence1}}\nPhrase 2:\
+      \ {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: polysemous
+    reference: ''
+  f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
+    answer_choices: Non ||| Oui
+    id: f934a96d-fe4d-4075-aa47-5595b9a604c7
+    jinja: '{{sentence1}}
+
+      {{sentence2}}
+
+      Sens similaire de {{word}}?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: similar-sense
+    reference: Following https://arxiv.org/abs/2105.11447, https://github.com/ethanjperez/true_few_shot/tree/main/templates.super_glue

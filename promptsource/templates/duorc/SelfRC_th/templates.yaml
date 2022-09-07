@@ -1,0 +1,181 @@
+dataset: duorc
+subset: SelfRC_th
+templates:
+  1f544641-ba15-44ef-bfcd-c951d320eb9a: !Template
+    answer_choices: null
+    id: 1f544641-ba15-44ef-bfcd-c951d320eb9a
+    jinja: "{% if no_answer == false%}\n\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E04\u0E33\
+      \u0E16\u0E32\u0E21\u0E17\u0E35\u0E48\u0E21\u0E35\u0E04\u0E33\u0E15\u0E2D\u0E1A\
+      \u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49: \n{{answers|choice}} \n\u0E2A\
+      \u0E33\u0E2B\u0E23\u0E31\u0E1A\u0E1E\u0E25\u0E47\u0E2D\u0E15\u0E20\u0E32\u0E1E\
+      \u0E22\u0E19\u0E15\u0E23\u0E4C\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49\
+      : \n{{plot}}\n|||\n{{question}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question_by_answer
+    reference: Given the passage and the answer, generate a question which has that
+      answer.
+  289254d0-e382-4c9d-9638-984c01fe7391: !Template
+    answer_choices: null
+    id: 289254d0-e382-4c9d-9638-984c01fe7391
+    jinja: "\u0E09\u0E31\u0E19\u0E40\u0E1B\u0E47\u0E19\u0E1C\u0E39\u0E49\u0E01\u0E33\
+      \u0E01\u0E31\u0E1A\u0E20\u0E32\u0E1E\u0E22\u0E19\u0E15\u0E23\u0E4C\u0E41\u0E25\
+      \u0E30\u0E09\u0E31\u0E19\u0E40\u0E1E\u0E34\u0E48\u0E07\u0E44\u0E14\u0E49\u0E23\
+      \u0E31\u0E1A\u0E1E\u0E25\u0E47\u0E2D\u0E15\u0E20\u0E32\u0E1E\u0E22\u0E19\u0E15\
+      \u0E23\u0E4C\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49\u0E04\u0E38\u0E13\
+      \u0E0A\u0E48\u0E27\u0E22\u0E09\u0E31\u0E19\u0E15\u0E2D\u0E1A\u0E04\u0E33\u0E16\
+      \u0E32\u0E21\u0E19\u0E35\u0E49\u0E44\u0E14\u0E49\u0E44\u0E2B\u0E21\u0E16\u0E49\
+      \u0E32\u0E44\u0E21\u0E48\u0E41\u0E08\u0E49\u0E07\u0E43\u0E2B\u0E49\u0E40\u0E23\
+      \u0E32\u0E17\u0E23\u0E32\u0E1A\u0E42\u0E14\u0E22\u0E01\u0E32\u0E23\u0E40\u0E02\
+      \u0E35\u0E22\u0E19 \"{{\"\u0E44\u0E21\u0E48\u0E15\u0E2D\u0E1A\"}}\".\n\n\u0E1E\
+      \u0E25\u0E47\u0E2D\u0E15\u0E0A\u0E37\u0E48\u0E2D\u0E40\u0E23\u0E37\u0E48\u0E2D\
+      \u0E07: {{title}}\n\u0E1E\u0E25\u0E47\u0E2D\u0E15\u0E2B\u0E19\u0E31\u0E07: {{plot}}\n\
+      \u0E04\u0E33\u0E16\u0E32\u0E21\u0E02\u0E2D\u0E07\u0E09\u0E31\u0E19: {{question}}\n\
+      |||\n{% if no_answer %}\n\u0E44\u0E21\u0E48\u0E15\u0E2D\u0E1A\n{% else %}\n\
+      {{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: movie_director
+    reference: ''
+  606e9fc0-d07d-45e6-a828-b786fd3a10da: !Template
+    answer_choices: null
+    id: 606e9fc0-d07d-45e6-a828-b786fd3a10da
+    jinja: "\u0E41\u0E22\u0E01\u0E04\u0E33\u0E15\u0E2D\u0E1A\u0E2A\u0E33\u0E2B\u0E23\
+      \u0E31\u0E1A\u0E04\u0E33\u0E16\u0E32\u0E21\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\
+      \u0E35\u0E49\u0E08\u0E32\u0E01\u0E1E\u0E25\u0E47\u0E2D\u0E15\u0E20\u0E32\u0E1E\
+      \u0E22\u0E19\u0E15\u0E23\u0E4C\u0E2B\u0E32\u0E01\u0E04\u0E33\u0E16\u0E32\u0E21\
+      \u0E44\u0E21\u0E48\u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E15\u0E2D\u0E1A\u0E44\
+      \u0E14\u0E49\u0E42\u0E1B\u0E23\u0E14\u0E2A\u0E48\u0E07\u0E2D\u0E2D\u0E01 \"\
+      {{\"\u0E15\u0E2D\u0E1A\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\"}}\".\n\u0E04\u0E33\
+      \u0E16\u0E32\u0E21: {{question}}\n\u0E0A\u0E37\u0E48\u0E2D: {{title}}\n\u0E1E\
+      \u0E25\u0E47\u0E2D\u0E15\u0E2B\u0E19\u0E31\u0E07: {{plot}}\n|||\n{% if no_answer\
+      \ %}\n\u0E15\u0E2D\u0E1A\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\n{% else %}\n{{answers\
+      \ | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: extract_answer
+    reference: ''
+  af62f222-a8d2-439f-9586-52e0279d25cc: !Template
+    answer_choices: null
+    id: af62f222-a8d2-439f-9586-52e0279d25cc
+    jinja: "\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E04\u0E33\u0E16\u0E32\u0E21\u0E40\u0E01\
+      \u0E35\u0E48\u0E22\u0E27\u0E01\u0E31\u0E1A\u0E1E\u0E25\u0E47\u0E2D\u0E15\u0E20\
+      \u0E32\u0E1E\u0E22\u0E19\u0E15\u0E23\u0E4C\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\
+      \u0E35\u0E49: {{ plot }}\n|||\n{{ question }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: Given the plot, generate a question.
+  c1829c38-eae3-49a9-a047-f89316f58140: !Template
+    answer_choices: null
+    id: c1829c38-eae3-49a9-a047-f89316f58140
+    jinja: "\u0E42\u0E1B\u0E23\u0E14\u0E15\u0E2D\u0E1A\u0E04\u0E33\u0E16\u0E32\u0E21\
+      \u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49\u0E40\u0E01\u0E35\u0E48\u0E22\
+      \u0E27\u0E01\u0E31\u0E1A\u0E1E\u0E25\u0E47\u0E2D\u0E15\u0E40\u0E23\u0E37\u0E48\
+      \u0E2D\u0E07\u0E20\u0E32\u0E1E\u0E22\u0E19\u0E15\u0E23\u0E4C\u0E40\u0E23\u0E37\
+      \u0E48\u0E2D\u0E07\u0E19\u0E35\u0E49\u0E2B\u0E32\u0E01\u0E44\u0E21\u0E48\u0E2A\
+      \u0E32\u0E21\u0E32\u0E23\u0E16\u0E15\u0E2D\u0E1A\u0E44\u0E14\u0E49\u0E42\u0E1B\
+      \u0E23\u0E14\u0E2A\u0E48\u0E07\u0E2D\u0E2D\u0E01 \"{{\"\u0E44\u0E21\u0E48\u0E21\
+      \u0E35\u0E04\u0E33\u0E15\u0E2D\u0E1A\"}}\".\n\n\u0E04\u0E33\u0E16\u0E32\u0E21\
+      : {{question}}\n\u0E20\u0E32\u0E1E\u0E22\u0E19\u0E15\u0E23\u0E4C\u0E40\u0E23\
+      \u0E37\u0E48\u0E2D\u0E07\u0E1E\u0E25\u0E47\u0E2D\u0E15\u0E40\u0E23\u0E37\u0E48\
+      \u0E2D\u0E07: {{title}}\n\u0E1E\u0E25\u0E47\u0E2D\u0E15\u0E2B\u0E19\u0E31\u0E07\
+      : {{plot}}\n|||\n{% if no_answer %}\n\u0E44\u0E21\u0E48\u0E21\u0E35\u0E04\u0E33\
+      \u0E15\u0E2D\u0E1A\n{% else %}\n{{answers | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question
+    reference: ''
+  c76b38f1-b47a-4354-960d-58d2f0974d14: !Template
+    answer_choices: null
+    id: c76b38f1-b47a-4354-960d-58d2f0974d14
+    jinja: "{% if no_answer == false%}\n\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E1E\u0E25\
+      \u0E47\u0E2D\u0E15\u0E20\u0E32\u0E1E\u0E22\u0E19\u0E15\u0E23\u0E4C\u0E40\u0E23\
+      \u0E37\u0E48\u0E2D\u0E07\u0E19\u0E35\u0E49: {{ question }} {{answers|choice}}\n\
+      |||\n{{ plot }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: build_story_around_qa
+    reference: Given the question-answer pair, generate a relevant plot.
+  c917a801-28fe-4c78-93d8-8e43897aa613: !Template
+    answer_choices: null
+    id: c917a801-28fe-4c78-93d8-8e43897aa613
+    jinja: "\u0E04\u0E33\u0E16\u0E32\u0E21: {{question}}\n\u0E2B\u0E32\u0E01\u0E44\
+      \u0E21\u0E48\u0E21\u0E35\u0E04\u0E33\u0E15\u0E2D\u0E1A\u0E42\u0E1B\u0E23\u0E14\
+      \u0E2A\u0E48\u0E07\u0E2D\u0E2D\u0E01 \"{{\"\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\
+      \u0E44\u0E21\u0E48\u0E40\u0E1E\u0E35\u0E22\u0E07\u0E1E\u0E2D\u0E17\u0E35\u0E48\
+      \u0E08\u0E30\u0E43\u0E2B\u0E49\u0E04\u0E33\u0E15\u0E2D\u0E1A\"}}\".\n\u0E0A\u0E37\
+      \u0E48\u0E2D\u0E2B\u0E19\u0E31\u0E07: {{title}}\n\u0E1A\u0E23\u0E34\u0E1A\u0E17\
+      : {{plot}}\n|||\n{% if no_answer %}\n\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E44\
+      \u0E21\u0E48\u0E40\u0E1E\u0E35\u0E22\u0E07\u0E1E\u0E2D\u0E17\u0E35\u0E48\u0E08\
+      \u0E30\u0E43\u0E2B\u0E49\u0E04\u0E33\u0E15\u0E2D\u0E1A\n{% else %}\n{{answers|choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_answering
+    reference: Given a passage and a question, generate an answer.
+  d486ac96-de6b-403a-8628-5adb23252194: !Template
+    answer_choices: null
+    id: d486ac96-de6b-403a-8628-5adb23252194
+    jinja: "\u0E41\u0E19\u0E30\u0E19\u0E33\u0E0A\u0E37\u0E48\u0E2D\u0E20\u0E32\u0E1E\
+      \u0E22\u0E19\u0E15\u0E23\u0E4C\u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A\u0E1E\u0E25\
+      \u0E47\u0E2D\u0E15\u0E20\u0E32\u0E1E\u0E22\u0E19\u0E15\u0E23\u0E4C\u0E15\u0E48\
+      \u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49: {{plot}}\n|||\n{{title}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: title_generation
+    reference: Given the plot for the movie, suggest a title.
+  f64279e3-dc9b-4480-9aa6-72d9d1ca2287: !Template
+    answer_choices: null
+    id: f64279e3-dc9b-4480-9aa6-72d9d1ca2287
+    jinja: "\u0E09\u0E31\u0E19\u0E1E\u0E22\u0E32\u0E22\u0E32\u0E21\u0E15\u0E31\u0E14\
+      \u0E2A\u0E34\u0E19\u0E43\u0E08\u0E27\u0E48\u0E32\u0E21\u0E31\u0E19\u0E04\u0E38\
+      \u0E49\u0E21\u0E04\u0E48\u0E32\u0E17\u0E35\u0E48\u0E08\u0E30\u0E25\u0E07\u0E17\
+      \u0E38\u0E19\u0E43\u0E19\u0E02\u0E49\u0E2D\u0E40\u0E2A\u0E19\u0E2D\u0E20\u0E32\
+      \u0E1E\u0E22\u0E19\u0E15\u0E23\u0E4C\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E19\
+      \u0E35\u0E49\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48\u0E04\u0E38\u0E13\u0E0A\
+      \u0E48\u0E27\u0E22\u0E15\u0E2D\u0E1A\u0E04\u0E33\u0E16\u0E32\u0E21\u0E2A\u0E2D\
+      \u0E07\u0E2A\u0E32\u0E21\u0E02\u0E49\u0E2D\u0E44\u0E14\u0E49\u0E44\u0E2B\u0E21\
+      \u0E16\u0E49\u0E32\u0E04\u0E38\u0E13\u0E17\u0E33\u0E44\u0E21\u0E48\u0E44\u0E14\
+      \u0E49\u0E42\u0E1B\u0E23\u0E14\u0E1E\u0E39\u0E14 \"{{\"\u0E44\u0E21\u0E48\u0E09\
+      \u0E31\u0E19\u0E17\u0E33\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\"}}\".\n\n\u0E04\
+      \u0E33\u0E16\u0E32\u0E21: {{question}}\n\u0E0A\u0E37\u0E48\u0E2D\u0E2B\u0E19\
+      \u0E31\u0E07: {{title}}\n\u0E1E\u0E25\u0E47\u0E2D\u0E15\u0E2B\u0E19\u0E31\u0E07\
+      : {{plot}}\n|||\n{% if no_answer %}\n\u0E44\u0E21\u0E48\u0E09\u0E31\u0E19\u0E17\
+      \u0E33\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\n{% else %}\n{{answers|choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: decide_worth_it
+    reference: ''

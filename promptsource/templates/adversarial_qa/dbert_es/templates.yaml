@@ -1,0 +1,90 @@
+dataset: adversarial_qa
+subset: dbert_es
+templates:
+  00755780-f3c0-44b4-b159-8f3873cdb16a: !Template
+    answer_choices: null
+    id: 00755780-f3c0-44b4-b159-8f3873cdb16a
+    jinja: "Quiero probar la capacidad de los estudiantes para leer un pasaje y responder\
+      \ preguntas al respecto.\xBFPodr\xEDas hacer una buena pregunta para el pasaje\
+      \ \"{{context}}\"? |||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  3b2459cc-6600-443c-abf8-8f60c34cd99a: !Template
+    answer_choices: null
+    id: 3b2459cc-6600-443c-abf8-8f60c34cd99a
+    jinja: "{% if metadata.split != \"test\" %}\nS\xE9 que la respuesta a la pregunta\
+      \ \"{{question}}\" est\xE1 en \"{{context}}\".\xBFMe puede decir qu\xE9 es?\
+      \ |||\n\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  5bdb1815-5c6f-49a3-ad1d-36734442070a: !Template
+    answer_choices: null
+    id: 5bdb1815-5c6f-49a3-ad1d-36734442070a
+    jinja: '{% if metadata.split != "test" %}
+
+      Pregunta: "{{question}}"
+
+
+      Contexto: "{{context}}"
+
+
+      Responder:
+
+      |||
+
+      {{answers.text | choice}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'
+  a0872cde-2f19-4ae6-919a-868da47bfbca: !Template
+    answer_choices: null
+    id: a0872cde-2f19-4ae6-919a-868da47bfbca
+    jinja: '{% if metadata.split != "test" %}
+
+      Extraiga la respuesta a la pregunta del siguiente contexto.
+
+      Pregunta: {{question}}
+
+      Contexto: {{context}}|||
+
+      {{answers.text | choice}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  a64d5a15-68e2-4d1c-b30a-ca8250c860fa: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860fa
+    jinja: "{% if metadata.split != \"test\" %}\nDado el siguiente pasaje\n\n\"{{context}}\"\
+      ,\n\ncontesta la siguiente pregunta.Tenga en cuenta que la respuesta est\xE1\
+      \ presente dentro del texto.\n\nPregunta: {{question}} |||\n{{answers.text |\
+      \ choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'

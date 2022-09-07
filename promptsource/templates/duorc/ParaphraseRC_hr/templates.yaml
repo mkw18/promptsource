@@ -1,0 +1,137 @@
+dataset: duorc
+subset: ParaphraseRC_hr
+templates:
+  09adcadd-fa7b-4154-91cb-fe822bf8e00e: !Template
+    answer_choices: null
+    id: 09adcadd-fa7b-4154-91cb-fe822bf8e00e
+    jinja: '{% if no_answer == false%}
+
+      Izgradite filmski zaplet oko ovoga: {{ question }} {{answers|choice}}
+
+      |||
+
+      {{ plot }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: build_story_around_qa
+    reference: Given the question-answer pair, generate a relevant plot.
+  0c7049c0-750a-46b7-af38-dd1e9fcb5217: !Template
+    answer_choices: null
+    id: 0c7049c0-750a-46b7-af38-dd1e9fcb5217
+    jinja: "Poku\u0161avam odlu\u010Diti vrijedi li ulo\u017Eiti u ovaj filmski prijedlog.Mo\u017E\
+      ete li mi pomo\u0107i da odgovorim na nekoliko pitanja?Ako ne mo\u017Eete, molim\
+      \ vas, recite \"{{\"Ne, ne mogu\"}}\".\n\nPitanje: {{question}}\nNaslov filma:\
+      \ {{title}}\nFilmski zaplet: {{plot}}\n|||\n{% if no_answer %}\nNe, ne mogu\n\
+      {% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: decide_worth_it
+    reference: ''
+  594d0551-d737-4680-a7a5-8393acc6dbb7: !Template
+    answer_choices: null
+    id: 594d0551-d737-4680-a7a5-8393acc6dbb7
+    jinja: "Pitanje: {{question}}\nAko nema odgovora, molim vas, u\u010Dinite \"{{\"\
+      Nedovoljne informacije za pru\u017Eanje odgovora.\"}}\".\nNaslov filma: {{title}}\n\
+      Kontekst: {{plot}}\n|||\n{% if no_answer %}\nNedovoljne informacije za pru\u017E\
+      anje odgovora.\n{% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_answering
+    reference: Given a passage and a question, generate an answer.
+  805f121a-6bd4-4803-9428-ea733f385add: !Template
+    answer_choices: null
+    id: 805f121a-6bd4-4803-9428-ea733f385add
+    jinja: "Ja sam filmski redatelj i upravo sam primio sljede\u0107i filmski zaplet.Mo\u017E\
+      ete li mi pomo\u0107i da odgovorim na ovo pitanje?Ako ne, javite mi pisanjem\
+      \ \"{{\"Nije odgovoran\"}}\".\n\nNaslov zapleta: {{title}}\nFilmski zaplet:\
+      \ {{plot}}\nMoje pitanje: {{question}}\n|||\n{% if no_answer %}\nNije odgovoran\n\
+      {% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: movie_director
+    reference: ''
+  842e346b-2d26-43a2-9a3a-9154f04eb76a: !Template
+    answer_choices: null
+    id: 842e346b-2d26-43a2-9a3a-9154f04eb76a
+    jinja: "Generirajte pitanje o sljede\u0107em filmskom zapletu: {{ plot }}\n|||\n\
+      {{ question }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: Given the plot, generate a question.
+  945053f7-6ad3-4c08-b7dd-5413564f7467: !Template
+    answer_choices: null
+    id: 945053f7-6ad3-4c08-b7dd-5413564f7467
+    jinja: "Izdvojite odgovor na sljede\u0107e pitanje s filmskog zapleta.Ako pitanje\
+      \ nije odgovorno, molim vas, u\u010Dinite \"{{\"Ne mogu odgovoriti\"}}\".\n\
+      Pitanje: {{question}}\nTitula: {{title}}\nFilmski zaplet: {{plot}}\n|||\n{%\
+      \ if no_answer %}\nNe mogu odgovoriti\n{% else %}\n{{answers | choice }}\n{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: extract_answer
+    reference: ''
+  a8597645-cfed-4f54-ba0d-c23eaafaa131: !Template
+    answer_choices: null
+    id: a8597645-cfed-4f54-ba0d-c23eaafaa131
+    jinja: "Predlo\u017Eite naslov filma za sljede\u0107i film: {{plot}}\n|||\n{{title}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: title_generation
+    reference: Given the plot for the movie, suggest a title.
+  c6f75398-a993-44d6-a494-78961a7dc1b7: !Template
+    answer_choices: null
+    id: c6f75398-a993-44d6-a494-78961a7dc1b7
+    jinja: "Molimo odgovorite na sljede\u0107e pitanje o ovom filmskom zapletu.Ako\
+      \ je to nepovjerljivo, molim vas, u\u010Dinite \"{{\"Nema odgovora\"}}\".\n\n\
+      Pitanje: {{question}}\nNaslov filma: {{title}}\nFilmski zaplet: {{plot}}\n|||\n\
+      {% if no_answer %}\nNema odgovora\n{% else %}\n{{answers | choice }}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question
+    reference: ''
+  ce3649d8-fd90-4a77-8819-4eb20b1c83a9: !Template
+    answer_choices: null
+    id: ce3649d8-fd90-4a77-8819-4eb20b1c83a9
+    jinja: "{% if no_answer == false%}\nGenerirati pitanje koje ima sljede\u0107i\
+      \ odgovor: \n{{answers|choice}} \nZa sljede\u0107u filmsku zaplet: \n{{plot}}\n\
+      |||\n{{question}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question_by_answer
+    reference: Given the passage and the answer, generate a question which has that
+      answer.

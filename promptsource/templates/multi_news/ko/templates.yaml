@@ -1,0 +1,95 @@
+dataset: multi_news
+subset: ko
+templates:
+  12269bd1-1c3a-4865-9702-892782b593d9: !Template
+    answer_choices: null
+    id: 12269bd1-1c3a-4865-9702-892782b593d9
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\uC774 \uB274\uC2A4 \uAE30\uC0AC\uC758\
+      \ \uD575\uC2EC \uC694\uC810\uC740 \uBB34\uC5C7\uC785\uB2C8\uAE4C?\n{% for doc\
+      \ in docs %}\n\n\uAE30\uC0AC: {{doc}}\n{% endfor %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: what are the key points
+    reference: ''
+  940d0ce4-c1ef-4453-a47b-1abaaf811160: !Template
+    answer_choices: null
+    id: 940d0ce4-c1ef-4453-a47b-1abaaf811160
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\uC774 \uBB38\uC11C\uB97C \uD558\uB098\
+      \uC758 \uBB38\uC11C\uB85C \uC885\uD569\uD558\uC2ED\uC2DC\uC624.\n{% for doc\
+      \ in docs %}\n\n- {{doc}}\n{% endfor %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: synthesize
+    reference: ''
+  9ab370ad-2b89-4d2a-bb40-ccc31accefad: !Template
+    answer_choices: null
+    id: 9ab370ad-2b89-4d2a-bb40-ccc31accefad
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\uB2E4\uC74C \uAE30\uC0AC\uB97C\uBCF4\
+      \uB2E4 \uAC04\uACB0\uD55C \uC694\uC57D\uC73C\uB85C \uD3B8\uC9D1\uD558\uACE0\
+      \ \uC2F6\uC2B5\uB2C8\uB2E4.\n{% for doc in docs %}\n\n\uAE30\uC0AC: {{doc}}\n\
+      {% endfor %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: summary scenario
+    reference: ''
+  b15485f5-2bd9-4ed4-98ce-4b241a341f99: !Template
+    answer_choices: null
+    id: b15485f5-2bd9-4ed4-98ce-4b241a341f99
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\uB2E4\uC74C \uAE30\uC0AC\uC758 \uC694\
+      \uC57D\uC744 \uC791\uC131\uD558\uC2ED\uC2DC\uC624.\n{% for doc in docs %}\n\n\
+      \uBB38\uC11C: {{doc}}\n{% endfor %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: summarize
+    reference: ''
+  bc910e51-c0a9-473c-aa85-adcab21b9ba9: !Template
+    answer_choices: null
+    id: bc910e51-c0a9-473c-aa85-adcab21b9ba9
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list%}\n\uB2E4\uC74C \uC694\uC57D\uC5D0\uC11C\
+      \ \uADF8\uB7F4\uB4EF\uD55C \uC138\uBD80 \uC815\uBCF4\uAC00 \uB2F4\uAE34 \uD655\
+      \uC7A5 \uB274\uC2A4 \uAE30\uC0AC\uB97C \uC791\uC131\uD558\uC2ED\uC2DC\uC624\
+      .\n{{summary[2:]}}\n|||\n{{docs | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: expand (reverse task)
+    reference: ''
+  d5a4bb2a-634a-4e9a-9f1f-b0803894ca0f: !Template
+    answer_choices: null
+    id: d5a4bb2a-634a-4e9a-9f1f-b0803894ca0f
+    jinja: "{% set docs = document.split(\"3ed2dface8203c4c9dfb1a5dc58e41e0||\") |\
+      \ reject(\"equalto\", \"\") | list %}\n\uC774 \uAE30\uC0AC\uB97C \uD558\uB098\
+      \uB85C \uC99D\uB958\uD558\uB824\uACE0\uD569\uB2C8\uB2E4.\n{% for doc in docs\
+      \ %}\n\n\uAE30\uC0AC: {{doc}}\n{% endfor %}\n|||\n{{summary[2:]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: distill
+    reference: ''

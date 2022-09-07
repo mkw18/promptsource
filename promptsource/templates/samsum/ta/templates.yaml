@@ -1,0 +1,98 @@
+dataset: samsum
+subset: ta
+templates:
+  01faf0cd-d9d8-4245-b86f-e7e13c2972ff: !Template
+    answer_choices: null
+    id: 01faf0cd-d9d8-4245-b86f-e7e13c2972ff
+    jinja: "\u0B87\u0BA8\u0BCD\u0BA4 \u0B89\u0BB0\u0BC8\u0BAF\u0BBE\u0B9F\u0BB2\u0BC8\
+      \ \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BBE\u0B95\u0B95\u0BCD \u0B95\
+      \u0BC2\u0BB1\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD: {{dialogue}} |||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: 'Summarize this dialogue:'
+    reference: ''
+  182a251f-2f76-4b36-8d2e-417f8d43f729: !Template
+    answer_choices: null
+    id: 182a251f-2f76-4b36-8d2e-417f8d43f729
+    jinja: "{{dialogue}}\n\u0BAE\u0BC7\u0BB2\u0BC7 \u0B89\u0BB3\u0BCD\u0BB3 \u0B89\
+      \u0BB0\u0BC8\u0BAF\u0BBE\u0B9F\u0BB2\u0BC8\u0B95\u0BCD \u0B95\u0BCA\u0BA3\u0BCD\
+      \u0B9F\u0BC1, \u0B92\u0BB0\u0BC1 \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BA4\
+      \u0BCD\u0BA4\u0BC8 \u0B8E\u0BB4\u0BC1\u0BA4\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD\
+      . |||\n{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Given the above dialogue write a summary
+    reference: ''
+  72eda731-894d-4260-9113-9e492822f80e: !Template
+    answer_choices: null
+    id: 72eda731-894d-4260-9113-9e492822f80e
+    jinja: "\u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BBE\u0B95: {{dialogue}}|||\n\
+      {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: 'Summarize:'
+    reference: ''
+  7bd51f5b-5bac-429e-b8f9-dd6782b92a59: !Template
+    answer_choices: null
+    id: 7bd51f5b-5bac-429e-b8f9-dd6782b92a59
+    jinja: "{{dialogue}}\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B89\u0BB0\u0BC8\u0BAF\u0BBE\u0B9F\
+      \u0BB2\u0BC8\u0B9A\u0BCD \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BBE\
+      \u0B95\u0B95\u0BCD \u0B95\u0BC2\u0BB1:\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: To sum up this dialog
+    reference: ''
+  8d829dcb-ea64-457d-b025-f16e31c2834a: !Template
+    answer_choices: null
+    id: 8d829dcb-ea64-457d-b025-f16e31c2834a
+    jinja: "\u0B87\u0BA8\u0BCD\u0BA4 \u0B89\u0BB0\u0BC8\u0BAF\u0BBE\u0B9F\u0BB2\u0BC1\
+      \u0B95\u0BCD\u0B95\u0BBE\u0BA9 \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BA4\
+      \u0BCD\u0BA4\u0BC8 \u0B89\u0BB0\u0BC1\u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BC1\u0B99\
+      \u0BCD\u0B95\u0BB3\u0BCD:\n{{dialogue}}\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Generate a summary for this dialogue
+    reference: ''
+  9f571a72-6813-4307-9aae-753ca0f737c5: !Template
+    answer_choices: null
+    id: 9f571a72-6813-4307-9aae-753ca0f737c5
+    jinja: "\u0B87\u0BA8\u0BCD\u0BA4 \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BA4\
+      \u0BCD\u0BA4\u0BC1\u0B9F\u0BA9\u0BCD \u0BAA\u0BCA\u0BB0\u0BC1\u0BA8\u0BCD\u0BA4\
+      \u0B95\u0BCD\u0B95\u0BC2\u0B9F\u0BBF\u0BAF \u0B89\u0BB0\u0BC8\u0BAF\u0BBE\u0B9F\
+      \u0BB2\u0BC8 \u0B8E\u0BB4\u0BC1\u0BA4\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD: {{summary}}\
+      \ |||\n{{dialogue}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: false
+    name: Write a dialogue that match this summary
+    reference: ''
+  bd891653-49b6-40bb-968f-8e6632c75659: !Template
+    answer_choices: null
+    id: bd891653-49b6-40bb-968f-8e6632c75659
+    jinja: "\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\u0BAE\u0BCD \u0B89\u0BB0\u0BC8\
+      \u0BAF\u0BBE\u0B9F\u0BB2\u0BC8\u0B9A\u0BCD \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\
+      \u0B95\u0BB5\u0BC1\u0BAE\u0BCD: \n{{dialogue}}\n|||{{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Sum up the following dialogue
+    reference: ''

@@ -1,0 +1,153 @@
+dataset: super_glue
+subset: rte_ur
+templates:
+  2b52a83c-0021-41fe-b44c-5aaa076d71a2: !Template
+    answer_choices: "\u062C\u06CC \u06C1\u0627\u06BA ||| \u0646\u06C1\u06CC\u06BA"
+    id: 2b52a83c-0021-41fe-b44c-5aaa076d71a2
+    jinja: "{{premise}} \u0635\u0631\u0641 \u0645\u0630\u06A9\u0648\u0631\u06C1 \u0628\
+      \u0627\u0644\u0627 \u062A\u0641\u0635\u06CC\u0644 \u06A9\u0627 \u0627\u0633\u062A\
+      \u0639\u0645\u0627\u0644 \u06A9\u0631\u062A\u06D2 \u06C1\u0648\u0626\u06D2 \u0627\
+      \u0648\u0631 \u0622\u067E \u062F\u0646\u06CC\u0627 \u06A9\u06D2 \u0628\u0627\
+      \u0631\u06D2 \u0645\u06CC\u06BA \u06A9\u06CC\u0627 \u062C\u0627\u0646\u062A\u06D2\
+      \ \u06C1\u0648 \u060C \u06A9\u06CC\u0627 \"{{hypothesis}}\" \u06CC\u0642\u06CC\
+      \u0646\u06CC \u0637\u0648\u0631 \u067E\u0631 \u062F\u0631\u0633\u062A \u06C1\
+      \u06D2\u061F \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F\
+      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: MNLI crowdsource
+    reference: Adapted from Williams et al. 2018's instructions to crowdsourcing workers.
+  2d0d63da-ffcf-4f6e-941a-b8da922be43e: !Template
+    answer_choices: "\u062C\u06CC \u06C1\u0627\u06BA ||| \u0646\u06C1\u06CC\u06BA"
+    id: 2d0d63da-ffcf-4f6e-941a-b8da922be43e
+    jinja: "\u062F\u06CC\u0627 {{premise}} \u06A9\u06CC\u0627 \u0627\u0633 \u06A9\u06CC\
+      \ \u0636\u0645\u0627\u0646\u062A \u06C1\u06D2 \u06A9\u06C1 \"{{hypothesis}}\"\
+      \u061F \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F ||| {%\
+      \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: guaranteed true
+    reference: Webson & Pavlick 2021
+  4163e6f1-1a83-4c73-b867-02eb7ac80316: !Template
+    answer_choices: "\u062C\u06CC \u06C1\u0627\u06BA ||| \u0646\u06C1\u06CC\u06BA"
+    id: 4163e6f1-1a83-4c73-b867-02eb7ac80316
+    jinja: "\u0641\u0631\u0636 \u06A9\u0631\u06CC\u06BA {{premise}} \u06A9\u06CC\u0627\
+      \ \u06C1\u0645 \u0627\u0633 \"{{hypothesis}}\" \u06A9\u0627 \u0627\u0646\u062F\
+      \u0627\u0632\u06C1 \u0644\u06AF\u0627\u0633\u06A9\u062A\u06D2 \u06C1\u06CC\u06BA\
+      \u061F \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F ||| {%\
+      \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: can we infer
+    reference: Webson & Pavlick 2021
+  8fb1c6aa-20e9-438c-bece-c6af1c746449: !Template
+    answer_choices: "\u0633\u0686 \u06C1\u06D2 ||| \u062C\u06BE\u0648\u0679\u0627"
+    id: 8fb1c6aa-20e9-438c-bece-c6af1c746449
+    jinja: "{{premise}}\n\u0633\u0648\u0627\u0644: {{hypothesis}} \u0635\u062D\u06CC\
+      \u062D \u06CC\u0627 \u063A\u0644\u0637\u061F ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 style
+    reference: Same as reported in Figure G31 of the GPT-3 paper.
+  9e078fb4-505b-413c-bb5e-3cd16ddcf5d7: !Template
+    answer_choices: "\u062C\u06CC \u06C1\u0627\u06BA ||| \u0646\u06C1\u06CC\u06BA"
+    id: 9e078fb4-505b-413c-bb5e-3cd16ddcf5d7
+    jinja: "{{premise}} \n\n\u0633\u0648\u0627\u0644: \u06A9\u06CC\u0627 \u0627\u0633\
+      \ \u06A9\u0627 \u0645\u0637\u0644\u0628 \u06CC\u06C1 \u06C1\u06D2 \u06A9\u06C1\
+      \ \"{{hypothesis}}\"\u061F \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\
+      \u06BA\u061F ||| {% if label != -1 %}{{answer_choices[label]}}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does this imply
+    reference: Sanh et al. 2021
+  b8dc85c6-28b6-4340-979a-8e77c2a0dde8: !Template
+    answer_choices: "\u062C\u06CC \u06C1\u0627\u06BA ||| \u0646\u06C1\u06CC\u06BA"
+    id: b8dc85c6-28b6-4340-979a-8e77c2a0dde8
+    jinja: "\u062F\u06CC\u0627 {{premise}} \u06A9\u06CC\u0627 \u06C1\u0645\u06CC\u06BA\
+      \ \u06CC\u06C1 \u0641\u0631\u0636 \u06A9\u0631\u0646\u0627 \u0686\u0627\u06C1\
+      \u0626\u06D2 \u06A9\u06C1 \"{{hypothesis}}\" \u0633\u0686 \u06C1\u06D2\u061F\
+      \ \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: should assume
+    reference: Webson & Pavlick 2021
+  e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff: !Template
+    answer_choices: "\u062C\u06CC \u06C1\u0627\u06BA ||| \u0646\u06C1\u06CC\u06BA"
+    id: e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff
+    jinja: "\u0627\u0633 \u06A9\u0648 \u0644\u06D2 \u06A9\u0631 {{premise}} \u06A9\
+      \u06CC\u0627 \u06CC\u06C1 \u0627\u0633 {{hypothesis}} \u06A9\u06CC \u067E\u06CC\
+      \u0631\u0648\u06CC \u06A9\u0631\u062A\u0627 \u06C1\u06D2\u061F \u06C1\u0627\u06BA\
+      \ \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does it follow that
+    reference: Sanh et al. 2021
+  ed1f4b75-8826-4852-9bd6-aedf368678f5: !Template
+    answer_choices: "\u062C\u06CC \u06C1\u0627\u06BA ||| \u0646\u06C1\u06CC\u06BA"
+    id: ed1f4b75-8826-4852-9bd6-aedf368678f5
+    jinja: "{{premise}} \u067E\u0686\u06BE\u0644\u06D2 \u062D\u0635\u06D2 \u06A9\u06CC\
+      \ \u0628\u0646\u06CC\u0627\u062F \u067E\u0631 \u060C \u06A9\u06CC\u0627 \u06CC\
+      \u06C1 \u0633\u0686 \u06C1\u06D2 \u06A9\u06C1 \"{{hypothesis}}\"\u061F \u06C1\
+      \u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F ||| {% if label !=\
+      \ -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based on the previous passage
+    reference: "Adapted from the BoolQ prompts in Schick & Sch\xFCtze 2021."
+  ee0ce095-122a-4509-bf0b-33d1495295f7: !Template
+    answer_choices: "\u062C\u06CC \u06C1\u0627\u06BA ||| \u0646\u06C1\u06CC\u06BA"
+    id: ee0ce095-122a-4509-bf0b-33d1495295f7
+    jinja: "{{premise}} \u06A9\u06CC\u0627 \u06C1\u0645 \u06CC\u06C1 \u06A9\u06C1\u0646\
+      \u06D2 \u0645\u06CC\u06BA \u062C\u0648\u0627\u0632 \u067E\u06CC\u0634 \u06A9\
+      \u0631 \u0631\u06C1\u06D2 \u06C1\u06CC\u06BA \u06A9\u06C1 \"{{hypothesis}}\"\
+      \u061F \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F ||| {%\
+      \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: justified in saying
+    reference: Webson & Pavlick 2021
+  fb4f8144-37f5-4977-88da-37a5d0bfd0e8: !Template
+    answer_choices: "\u062C\u06CC \u06C1\u0627\u06BA ||| \u0646\u06C1\u06CC\u06BA"
+    id: fb4f8144-37f5-4977-88da-37a5d0bfd0e8
+    jinja: "\u0627\u0633 \u06A9\u0648 \u0644\u06D2 \u06A9\u0631 {{premise}} \u0644\
+      \u06C1\u0630\u0627 \u060C \u06CC\u06C1 \u0633\u0686 \u06C1\u0648\u0646\u0627\
+      \ \u0686\u0627\u06C1\u0626\u06D2 \u06A9\u06C1 \"{{hypothesis}}\"\u061F \u06C1\
+      \u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F ||| {% if label !=\
+      \ -1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: must be true
+    reference: Sanh et al. 2021

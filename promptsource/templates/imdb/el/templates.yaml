@@ -1,0 +1,168 @@
+dataset: imdb
+subset: el
+templates:
+  02ff2949-0f45-4d97-941e-6fa4c0afbc2d: !Template
+    answer_choices: "\u03B1\u03C1\u03BD\u03B7\u03C4\u03B9\u03BA\u03CC\u03C2 ||| \u03B8\
+      \u03B5\u03C4\u03B9\u03BA\u03CC\u03C2"
+    id: 02ff2949-0f45-4d97-941e-6fa4c0afbc2d
+    jinja: "\u0397 \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03B7 \u03B1\u03BD\u03B1\
+      \u03B8\u03B5\u03CE\u03C1\u03B7\u03C3\u03B7 \u03C4\u03B7\u03C2 \u03C4\u03B1\u03B9\
+      \u03BD\u03AF\u03B1\u03C2 \u03B5\u03BA\u03C6\u03C1\u03AC\u03B6\u03B5\u03B9 \u03C0\
+      \u03BF\u03B9\u03BF \u03C3\u03C5\u03BD\u03B1\u03AF\u03C3\u03B8\u03B7\u03BC\u03B1\
+      ; {{text}} ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment 2
+    reference: ''
+  2351d12a-e630-4d19-8b41-e199266e38f7: !Template
+    answer_choices: "\u03BA\u03B1\u03BA\u03CC ||| \u039A\u03B1\u03BB\u03CC\u03C2"
+    id: 2351d12a-e630-4d19-8b41-e199266e38f7
+    jinja: "{{text}} \u039F \u03BA\u03C1\u03B9\u03C4\u03B9\u03BA\u03CC\u03C2 \u03B2\
+      \u03C1\u03AE\u03BA\u03B5 \u03B1\u03C5\u03C4\u03AE\u03BD \u03C4\u03B7\u03BD \u03C4\
+      \u03B1\u03B9\u03BD\u03AF\u03B1 {{\"\u039A\u03B1\u03BB\u03CC \u03AE \u03BA\u03B1\
+      \u03BA\u03CC\"}}; ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Opinion bad good choices
+    reference: ''
+  5f372fb1-795a-47b6-8ddf-c4fd1579e76a: !Template
+    answer_choices: "\u03B1\u03C1\u03BD\u03B7\u03C4\u03B9\u03BA\u03CC\u03C2 ||| \u03B8\
+      \u03B5\u03C4\u03B9\u03BA\u03CC\u03C2"
+    id: 5f372fb1-795a-47b6-8ddf-c4fd1579e76a
+    jinja: "{{text}} \n\u0395\u03AF\u03BD\u03B1\u03B9 \u03B1\u03C5\u03C4\u03AE \u03B7\
+      \ \u03BA\u03C1\u03B9\u03C4\u03B9\u03BA\u03AE {{\"\u03B8\u03B5\u03C4\u03B9\u03BA\
+      \u03CC \u03AE \u03B1\u03C1\u03BD\u03B7\u03C4\u03B9\u03BA\u03CC\"}}; ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: 'Sentiment with choices '
+    reference: ''
+  866474a5-1498-46b7-bfee-ac0c5160707f: !Template
+    answer_choices: "\u03B1\u03C1\u03BD\u03B7\u03C4\u03B9\u03BA\u03CC\u03C2 ||| \u03B8\
+      \u03B5\u03C4\u03B9\u03BA\u03CC\u03C2"
+    id: 866474a5-1498-46b7-bfee-ac0c5160707f
+    jinja: "{{text}} \u03A0\u03CE\u03C2 \u03B1\u03B9\u03C3\u03B8\u03AC\u03BD\u03B5\
+      \u03C4\u03B1\u03B9 \u03BF \u03B8\u03B5\u03B1\u03C4\u03AE\u03C2 \u03B3\u03B9\u03B1\
+      \ \u03C4\u03B7\u03BD \u03C4\u03B1\u03B9\u03BD\u03AF\u03B1; ||| {{ answer_choices\
+      \ [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Sentiment Feeling
+    reference: ''
+  96538f30-f2c1-430e-8fc6-936a16966d9c: !Template
+    answer_choices: "\u03B1\u03C1\u03BD\u03B7\u03C4\u03B9\u03BA\u03CC\u03C2 ||| \u03B8\
+      \u03B5\u03C4\u03B9\u03BA\u03CC\u03C2"
+    id: 96538f30-f2c1-430e-8fc6-936a16966d9c
+    jinja: "{{text}} \u03A0\u03BF\u03B9\u03BF \u03C3\u03C5\u03BD\u03B1\u03AF\u03C3\
+      \u03B8\u03B7\u03BC\u03B1 \u03B5\u03BA\u03C6\u03C1\u03AC\u03B6\u03B5\u03B9 \u03BF\
+      \ \u03C3\u03C5\u03B3\u03B3\u03C1\u03B1\u03C6\u03AD\u03B1\u03C2 \u03B3\u03B9\u03B1\
+      \ \u03C4\u03B7\u03BD \u03C4\u03B1\u03B9\u03BD\u03AF\u03B1; ||| {{ answer_choices\
+      \ [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Writer Expressed Sentiment
+    reference: ''
+  af51297c-38a3-4d6c-a8b5-04b1243d7443: !Template
+    answer_choices: "\u03B1\u03C1\u03BD\u03B7\u03C4\u03B9\u03BA\u03CC\u03C2 ||| \u03B8\
+      \u03B5\u03C4\u03B9\u03BA\u03CC\u03C2"
+    id: af51297c-38a3-4d6c-a8b5-04b1243d7443
+    jinja: "{{text}} \u03A4\u03BF \u03C3\u03C5\u03BD\u03B1\u03AF\u03C3\u03B8\u03B7\
+      \u03BC\u03B1 \u03C0\u03BF\u03C5 \u03B5\u03BA\u03C6\u03C1\u03AC\u03B6\u03B5\u03C4\
+      \u03B1\u03B9 \u03B3\u03B9\u03B1 \u03C4\u03B7\u03BD \u03C4\u03B1\u03B9\u03BD\u03AF\
+      \u03B1 \u03B5\u03AF\u03BD\u03B1\u03B9 ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment
+    reference: ''
+  b93b74ac-fe95-40b4-9610-318b46ab820f: !Template
+    answer_choices: "\u03B1\u03C1\u03BD\u03B7\u03C4\u03B9\u03BA\u03CC\u03C2 ||| \u03B8\
+      \u03B5\u03C4\u03B9\u03BA\u03CC\u03C2"
+    id: b93b74ac-fe95-40b4-9610-318b46ab820f
+    jinja: "{{text}} \u03A0\u03BF\u03B9\u03BF \u03B5\u03AF\u03BD\u03B1\u03B9 \u03C4\
+      \u03BF \u03C3\u03C5\u03BD\u03B1\u03AF\u03C3\u03B8\u03B7\u03BC\u03B1 \u03C0\u03BF\
+      \u03C5 \u03B5\u03BA\u03C6\u03C1\u03AC\u03B6\u03B5\u03C4\u03B1\u03B9 \u03C3\u03B5\
+      \ \u03B1\u03C5\u03C4\u03CC \u03C4\u03BF \u03BA\u03B5\u03AF\u03BC\u03B5\u03BD\
+      \u03BF; ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Text Expressed Sentiment
+    reference: ''
+  b9b5d79d-f0b3-4bec-a724-f585db3e93ff: !Template
+    answer_choices: "\u03B1\u03C1\u03BD\u03B7\u03C4\u03B9\u03BA\u03CC\u03C2 ||| \u03B8\
+      \u03B5\u03C4\u03B9\u03BA\u03CC\u03C2"
+    id: b9b5d79d-f0b3-4bec-a724-f585db3e93ff
+    jinja: "{{text}} \u0391\u03C5\u03C4\u03CC \u03C3\u03AF\u03B3\u03BF\u03C5\u03C1\
+      \u03B1 \u03B4\u03B5\u03BD \u03B5\u03AF\u03BD\u03B1\u03B9 ||| {{ answer_choices\
+      \ [1-label]}} \u03B1\u03BD\u03B1\u03B8\u03B5\u03CE\u03C1\u03B7\u03C3\u03B7."
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Negation template for positive and negative
+    reference: ''
+  bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9
+    jinja: "{{text}} \u0391\u03C0\u03BF\u03BB\u03B1\u03CD\u03C3\u03B5\u03B9 \u03BF\
+      \ \u03BA\u03C1\u03B9\u03C4\u03B9\u03BA\u03CC\u03C2 \u03C4\u03B7\u03C2 \u03C4\
+      \u03B1\u03B9\u03BD\u03AF\u03B1\u03C2; ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment Yes No
+    reference: ''
+  c70d1687-2421-49a2-9553-91b8bac4cfbe: !Template
+    answer_choices: "\u03B1\u03C1\u03BD\u03B7\u03C4\u03B9\u03BA\u03CC\u03C2 ||| \u03B8\
+      \u03B5\u03C4\u03B9\u03BA\u03CC\u03C2"
+    id: c70d1687-2421-49a2-9553-91b8bac4cfbe
+    jinja: "{{text}} \u03A0\u03BF\u03B9\u03BF \u03B5\u03AF\u03BD\u03B1\u03B9 \u03C4\
+      \u03BF \u03C3\u03C5\u03BD\u03B1\u03AF\u03C3\u03B8\u03B7\u03BC\u03B1 \u03C0\u03BF\
+      \u03C5 \u03B5\u03BE\u03AD\u03C6\u03C1\u03B1\u03C3\u03B5 \u03BF \u03BA\u03C1\u03B9\
+      \u03C4\u03B9\u03BA\u03CC\u03C2 \u03B3\u03B9\u03B1 \u03C4\u03B7\u03BD \u03C4\u03B1\
+      \u03B9\u03BD\u03AF\u03B1; ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Expressed Sentiment
+    reference: ''
+  e01970ab-42c0-4e6e-a08f-4940d889ef37: !Template
+    answer_choices: "\u0394\u03B5\u03BD \u03C4\u03BF\u03C5\u03C2 \u03AC\u03C1\u03B5\
+      \u03C3\u03B5! ||| \u03A4\u03BF \u03B1\u03B3\u03AC\u03C0\u03B7\u03C3\u03B1\u03BD"
+    id: e01970ab-42c0-4e6e-a08f-4940d889ef37
+    jinja: "{{text}} \u03A0\u03CE\u03C2 \u03B1\u03B9\u03C3\u03B8\u03AC\u03BD\u03B5\
+      \u03C4\u03B1\u03B9 \u03BF \u03BA\u03C1\u03B9\u03C4\u03B9\u03BA\u03CC\u03C2 \u03B3\
+      \u03B9\u03B1 \u03C4\u03B7\u03BD \u03C4\u03B1\u03B9\u03BD\u03AF\u03B1; ||| {{\
+      \ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment
+    reference: ''

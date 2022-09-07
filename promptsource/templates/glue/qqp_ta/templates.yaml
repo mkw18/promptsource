@@ -1,0 +1,106 @@
+dataset: glue
+subset: qqp_ta
+templates:
+  8e711799-a57c-4941-833b-466bedfb80ad: !Template
+    answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| \u0B86\u0BAE\u0BCD"
+    id: 8e711799-a57c-4941-833b-466bedfb80ad
+    jinja: "\u0BA8\u0BBE\u0BA9\u0BCD Quora \u0B8E\u0BA9\u0BCD\u0BB1 \u0B87\u0BA3\u0BC8\
+      \u0BAF\u0BA4\u0BB3\u0BA4\u0BCD\u0BA4\u0BBF\u0BB2\u0BCD \u0BA8\u0BBF\u0BB0\u0BCD\
+      \u0BB5\u0BBE\u0B95\u0BBF.\u0B87\u0BB0\u0BA3\u0BCD\u0B9F\u0BC1 \u0B87\u0B9F\u0BC1\
+      \u0B95\u0BC8\u0B95\u0BB3\u0BCD \u0B89\u0BB3\u0BCD\u0BB3\u0BA9, \u0B92\u0BA9\u0BCD\
+      \u0BB1\u0BC1 \"{{question1}}\" \u0BAE\u0BB1\u0BCD\u0BB1\u0BC1\u0BAE\u0BCD \u0BAE\
+      \u0BB1\u0BCD\u0BB1\u0BCA\u0BA9\u0BCD\u0BB1\u0BC1 \"{{question2}}\" \u0B8E\u0BA9\
+      \u0BCD\u0BB1\u0BC1 \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BC1\u0BAE\u0BCD.\u0B85\u0BB5\
+      \u0BB0\u0BCD\u0B95\u0BB3\u0BCD \u0B85\u0BA4\u0BC8\u0BAF\u0BC7 \u0B95\u0BC7\u0B9F\
+      \u0BCD\u0B95\u0BBF\u0BB1\u0BBE\u0BB0\u0BCD\u0B95\u0BB3\u0BCD \u0B8E\u0BA9\u0BCD\
+      \u0BB1\u0BBE\u0BB2\u0BCD \u0BA8\u0BBE\u0BA9\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\
+      \u0BBF\u0B95\u0BB3\u0BC8 \u0B92\u0BA9\u0BCD\u0BB1\u0BBF\u0BA3\u0BC8\u0B95\u0BCD\
+      \u0B95 \u0BAE\u0BC1\u0B9F\u0BBF\u0BAF\u0BC1\u0BAE\u0BCD.\u0B87\u0BA8\u0BCD\u0BA4\
+      \ \u0B87\u0BB0\u0BA3\u0BCD\u0B9F\u0BC1 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\
+      \u0BB3\u0BC8\u0BAF\u0BC1\u0BAE\u0BCD \u0BA8\u0BBE\u0BA9\u0BCD \u0B92\u0BA9\u0BCD\
+      \u0BB1\u0BBF\u0BA3\u0BC8\u0B95\u0BCD\u0B95\u0BB2\u0BBE\u0BAE\u0BBE? ||| {{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: quora
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: "\u0BA8\u0B95\u0BB2\u0BCD \u0B85\u0BB2\u0BCD\u0BB2 ||| \u0BA8\u0B95\
+      \u0BB2\u0BCD\u0B95\u0BB3\u0BCD"
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: "{{question1}}\n{{question2}}\n\u0B92\u0BA9\u0BCD\u0BB1\u0BC8\u0BA4\u0BCD\
+      \ \u0BA4\u0BC7\u0BB0\u0BCD\u0BA8\u0BCD\u0BA4\u0BC6\u0B9F\u0BC1: \u0B87\u0BA8\
+      \u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BB3\u0BCD \"{{\"\u0BA8\
+      \u0B95\u0BB2\u0BCD\u0B95\u0BB3\u0BCD\"}}\" \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1\
+      \ \"{{\"\u0BA8\u0B95\u0BB2\u0BCD \u0B85\u0BB2\u0BCD\u0BB2\"}}\".\n|||\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not
+    reference: ''
+  a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
+    answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| \u0B86\u0BAE\u0BCD"
+    id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
+    jinja: "\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BB3\u0BCD \"{{question1}}\"\
+      \ \u0BAE\u0BB1\u0BCD\u0BB1\u0BC1\u0BAE\u0BCD \"{{question2}}\" \u0B85\u0BA4\u0BC7\
+      \ \u0BB5\u0BBF\u0BB7\u0BAF\u0BA4\u0BCD\u0BA4\u0BC8\u0B95\u0BCD \u0B95\u0BC7\u0B9F\
+      \u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BBE? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''
+  c0182cd1-c7ac-4abe-829f-4651536af951: !Template
+    answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| \u0B86\u0BAE\u0BCD"
+    id: c0182cd1-c7ac-4abe-829f-4651536af951
+    jinja: "{{A} for \u0B95\u0BCD\u0B95\u0BC1 \u0B92\u0BB0\u0BC1 \u0BAA\u0BA4\u0BBF\
+      \u0BB2\u0BC8\u0BAF\u0BC1\u0BAE\u0BCD {{b} beter \u0B95\u0BCD\u0B95\u0BC1 \u0BAA\
+      \u0BAF\u0BA9\u0BCD\u0BAA\u0B9F\u0BC1\u0BA4\u0BCD\u0BA4 \u0BAE\u0BC1\u0B9F\u0BBF\
+      \u0BAF\u0BC1\u0BAE\u0BBE? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: answer
+    reference: ''
+  c0724198-97e7-44a1-89d8-c51e97ce0b04: !Template
+    answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| \u0B86\u0BAE\u0BCD"
+    id: c0724198-97e7-44a1-89d8-c51e97ce0b04
+    jinja: "\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF 1: {{question1}}\n\u0B95\u0BC7\u0BB3\
+      \u0BCD\u0BB5\u0BBF 2: {{question2}}\n\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B87\u0BB0\
+      \u0BA3\u0BCD\u0B9F\u0BC1 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BB3\u0BC1\
+      \u0BAE\u0BCD \u0B92\u0BB0\u0BC7 \u0B85\u0BB0\u0BCD\u0BA4\u0BCD\u0BA4\u0BA4\u0BCD\
+      \u0BA4\u0BC8 \u0BA4\u0BC6\u0BB0\u0BBF\u0BB5\u0BBF\u0B95\u0BCD\u0B95\u0BBF\u0BB1\
+      \u0BA4\u0BBE?\u0B86\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \u0B87\u0BB2\
+      \u0BCD\u0BB2\u0BC8? ||| {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: meaning
+    reference: ''
+  fd244bd3-ca3b-4e4f-9722-fd006c50e157: !Template
+    answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| \u0B86\u0BAE\u0BCD"
+    id: fd244bd3-ca3b-4e4f-9722-fd006c50e157
+    jinja: "\u0BA8\u0BBE\u0BA9\u0BCD \"{{question1}}\" \u0BAE\u0BB1\u0BCD\u0BB1\u0BC1\
+      \u0BAE\u0BCD \"{{question2}}\" \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BB3\
+      \u0BC8\u0BAA\u0BCD \u0BAA\u0BC6\u0BB1\u0BCD\u0BB1\u0BC7\u0BA9\u0BCD.\u0B85\u0BB5\
+      \u0BC8 \u0BA8\u0B95\u0BB2\u0BCD\u0B95\u0BB3\u0BBE? ||| {{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate
+    reference: ''

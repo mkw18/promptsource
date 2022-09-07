@@ -1,0 +1,134 @@
+dataset: imdb
+subset: hr
+templates:
+  02ff2949-0f45-4d97-941e-6fa4c0afbc2d: !Template
+    answer_choices: negativan ||| pozitivan
+    id: 02ff2949-0f45-4d97-941e-6fa4c0afbc2d
+    jinja: "Sljede\u0107i pregled filma izra\u017Eava Kakve osje\u0107aje? {{text}}\
+      \ ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment 2
+    reference: ''
+  2351d12a-e630-4d19-8b41-e199266e38f7: !Template
+    answer_choices: "lo\u0161e ||| dobro"
+    id: 2351d12a-e630-4d19-8b41-e199266e38f7
+    jinja: "{{text}} Je li recenzent prona\u0161ao ovaj film {{\"Dobro ili lo\u0161\
+      e\"}}? ||| {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Opinion bad good choices
+    reference: ''
+  5f372fb1-795a-47b6-8ddf-c4fd1579e76a: !Template
+    answer_choices: negativan ||| pozitivan
+    id: 5f372fb1-795a-47b6-8ddf-c4fd1579e76a
+    jinja: "{{text}} \nJe li ovaj pregled {{\"Pozitivan ili negativan\"}}? ||| \n\
+      {{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: 'Sentiment with choices '
+    reference: ''
+  866474a5-1498-46b7-bfee-ac0c5160707f: !Template
+    answer_choices: negativan ||| pozitivan
+    id: 866474a5-1498-46b7-bfee-ac0c5160707f
+    jinja: "{{text}} Kako se gledatelj osje\u0107a zbog filma? ||| {{ answer_choices\
+      \ [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Sentiment Feeling
+    reference: ''
+  96538f30-f2c1-430e-8fc6-936a16966d9c: !Template
+    answer_choices: negativan ||| pozitivan
+    id: 96538f30-f2c1-430e-8fc6-936a16966d9c
+    jinja: "{{text}} Kakvo je osje\u0107anje pisac izra\u017Eava za film? ||| {{ answer_choices\
+      \ [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Writer Expressed Sentiment
+    reference: ''
+  af51297c-38a3-4d6c-a8b5-04b1243d7443: !Template
+    answer_choices: negativan ||| pozitivan
+    id: af51297c-38a3-4d6c-a8b5-04b1243d7443
+    jinja: "{{text}} Osje\u0107aji izra\u017Eeni za film je ||| {{ answer_choices\
+      \ [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment
+    reference: ''
+  b93b74ac-fe95-40b4-9610-318b46ab820f: !Template
+    answer_choices: negativan ||| pozitivan
+    id: b93b74ac-fe95-40b4-9610-318b46ab820f
+    jinja: "{{text}} Koji je osje\u0107aj izra\u017Een u ovom tekstu? ||| {{ answer_choices\
+      \ [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Text Expressed Sentiment
+    reference: ''
+  b9b5d79d-f0b3-4bec-a724-f585db3e93ff: !Template
+    answer_choices: negativan ||| pozitivan
+    id: b9b5d79d-f0b3-4bec-a724-f585db3e93ff
+    jinja: '{{text}} Ovo definitivno nije recenzija ||| {{ answer_choices [1-label]}}.'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Negation template for positive and negative
+    reference: ''
+  bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9: !Template
+    answer_choices: Ne ||| Da
+    id: bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9
+    jinja: "{{text}} Je li recenzent u\u017Eivao u filmu? ||| {{ answer_choices [label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment Yes No
+    reference: ''
+  c70d1687-2421-49a2-9553-91b8bac4cfbe: !Template
+    answer_choices: negativan ||| pozitivan
+    id: c70d1687-2421-49a2-9553-91b8bac4cfbe
+    jinja: "{{text}} Koji je osje\u0107aj koji recenzent izra\u017Eava za film? |||\
+      \ {{ answer_choices [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Expressed Sentiment
+    reference: ''
+  e01970ab-42c0-4e6e-a08f-4940d889ef37: !Template
+    answer_choices: Nije im se svidjelo! ||| Svidjelo im se
+    id: e01970ab-42c0-4e6e-a08f-4940d889ef37
+    jinja: "{{text}} Kako se recenzent osje\u0107a zbog filma? ||| {{ answer_choices\
+      \ [label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment
+    reference: ''

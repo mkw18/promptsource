@@ -1,0 +1,131 @@
+dataset: duorc
+subset: SelfRC_et
+templates:
+  1f544641-ba15-44ef-bfcd-c951d320eb9a: !Template
+    answer_choices: null
+    id: 1f544641-ba15-44ef-bfcd-c951d320eb9a
+    jinja: "{% if no_answer == false%}\nGenereerige k\xFCsimus, millel on j\xE4rgmine\
+      \ vastus: \n{{answers|choice}} \nJ\xE4rgmise filmi s\xFC\u017Eee jaoks: \n{{plot}}\n\
+      |||\n{{question}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question_by_answer
+    reference: Given the passage and the answer, generate a question which has that
+      answer.
+  289254d0-e382-4c9d-9638-984c01fe7391: !Template
+    answer_choices: null
+    id: 289254d0-e382-4c9d-9638-984c01fe7391
+    jinja: "Olen filmire\u017Eiss\xF6\xF6r ja sain just j\xE4rgmise filmi s\xFC\u017E\
+      ee.Kas saaksite aidata mul sellele k\xFCsimusele vastata?Kui ei, siis andke\
+      \ mulle teada kirjutades \"{{\"Ei vastuta\"}}\".\n\nKrundi pealkiri: {{title}}\n\
+      Filmi s\xFC\u017Eee: {{plot}}\nMinu k\xFCsimus: {{question}}\n|||\n{% if no_answer\
+      \ %}\nEi vastuta\n{% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: movie_director
+    reference: ''
+  606e9fc0-d07d-45e6-a828-b786fd3a10da: !Template
+    answer_choices: null
+    id: 606e9fc0-d07d-45e6-a828-b786fd3a10da
+    jinja: "V\xE4ljastage vastus j\xE4rgmisele k\xFCsimusele filmi s\xFC\u017Eeest.Kui\
+      \ k\xFCsimus pole vastuivas, palun v\xE4ljutage \"{{\"Ei saa vastata\"}}\".\n\
+      K\xFCsimus: {{question}}\nPealkiri: {{title}}\nFilmi s\xFC\u017Eee: {{plot}}\n\
+      |||\n{% if no_answer %}\nEi saa vastata\n{% else %}\n{{answers | choice }}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: extract_answer
+    reference: ''
+  af62f222-a8d2-439f-9586-52e0279d25cc: !Template
+    answer_choices: null
+    id: af62f222-a8d2-439f-9586-52e0279d25cc
+    jinja: "Genereerige k\xFCsimus j\xE4rgmise filmi s\xFC\u017Eee kohta: {{ plot\
+      \ }}\n|||\n{{ question }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: Given the plot, generate a question.
+  c1829c38-eae3-49a9-a047-f89316f58140: !Template
+    answer_choices: null
+    id: c1829c38-eae3-49a9-a047-f89316f58140
+    jinja: "Palun vastake j\xE4rgmisele k\xFCsimusele selle filmi s\xFC\u017Eee kohta.Kui\
+      \ see on vastumeelne, palun v\xE4ljutage \"{{\"Vastus pole\"}}\".\n\nK\xFCsimus:\
+      \ {{question}}\nFilmi s\xFC\u017Eee pealkiri: {{title}}\nFilmi s\xFC\u017Eee:\
+      \ {{plot}}\n|||\n{% if no_answer %}\nVastus pole\n{% else %}\n{{answers | choice\
+      \ }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question
+    reference: ''
+  c76b38f1-b47a-4354-960d-58d2f0974d14: !Template
+    answer_choices: null
+    id: c76b38f1-b47a-4354-960d-58d2f0974d14
+    jinja: "{% if no_answer == false%}\nEhitage selle \xFCmber filmi s\xFC\u017Eee:\
+      \ {{ question }} {{answers|choice}}\n|||\n{{ plot }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: build_story_around_qa
+    reference: Given the question-answer pair, generate a relevant plot.
+  c917a801-28fe-4c78-93d8-8e43897aa613: !Template
+    answer_choices: null
+    id: c917a801-28fe-4c78-93d8-8e43897aa613
+    jinja: "K\xFCsimus: {{question}}\nKui vastust pole, palun v\xE4ljutage \"{{\"\
+      Ebapiisav teave vastuse saamiseks.\"}}\".\nFilmi pealkiri: {{title}}\nKontekst:\
+      \ {{plot}}\n|||\n{% if no_answer %}\nEbapiisav teave vastuse saamiseks.\n{%\
+      \ else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_answering
+    reference: Given a passage and a question, generate an answer.
+  d486ac96-de6b-403a-8628-5adb23252194: !Template
+    answer_choices: null
+    id: d486ac96-de6b-403a-8628-5adb23252194
+    jinja: "Soovitage j\xE4rgmise filmi s\xFC\u017Eee jaoks filmi pealkiri: {{plot}}\n\
+      |||\n{{title}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: title_generation
+    reference: Given the plot for the movie, suggest a title.
+  f64279e3-dc9b-4480-9aa6-72d9d1ca2287: !Template
+    answer_choices: null
+    id: f64279e3-dc9b-4480-9aa6-72d9d1ca2287
+    jinja: "P\xFC\xFCan otsustada, kas sellesse filmiettepanekusse investeerimiseks\
+      \ on seda v\xE4\xE4rt.Kas saate aidata mul m\xF5nele k\xFCsimusele vastata?Kui\
+      \ te ei saa, palun \xF6elge \"{{\"Ei, ma ei saa\"}}\".\n\nK\xFCsimus: {{question}}\n\
+      Filmi pealkiri: {{title}}\nFilmi s\xFC\u017Eee: {{plot}}\n|||\n{% if no_answer\
+      \ %}\nEi, ma ei saa\n{% else %}\n{{answers|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: decide_worth_it
+    reference: ''

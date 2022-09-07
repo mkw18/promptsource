@@ -1,0 +1,84 @@
+dataset: glue
+subset: qqp_vi
+templates:
+  8e711799-a57c-4941-833b-466bedfb80ad: !Template
+    answer_choices: "kh\xF4ng ||| V\xE2ng"
+    id: 8e711799-a57c-4941-833b-466bedfb80ad
+    jinja: "T\xF4i l\xE0 qu\u1EA3n tr\u1ECB vi\xEAn tr\xEAn trang web Quora.C\xF3\
+      \ hai b\xE0i vi\u1EBFt, m\u1ED9t b\xE0i vi\u1EBFt \"{{question1}}\" v\xE0 m\u1ED9\
+      t b\xE0i kh\xE1c h\u1ECFi \"{{question2}}\".T\xF4i c\xF3 th\u1EC3 h\u1EE3p nh\u1EA5\
+      t c\xE1c c\xE2u h\u1ECFi n\u1EBFu h\u1ECD \u0111ang h\u1ECFi \u0111i\u1EC1u\
+      \ t\u01B0\u01A1ng t\u1EF1.T\xF4i c\xF3 th\u1EC3 h\u1EE3p nh\u1EA5t hai c\xE2\
+      u h\u1ECFi n\xE0y kh\xF4ng? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: quora
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: "kh\xF4ng sao ch\xE9p ||| sao ch\xE9p"
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: "{{question1}}\n{{question2}}\nCh\u1ECDn m\u1ED9t: Nh\u1EEFng c\xE2u h\u1ECF\
+      i n\xE0y l\xE0 \"{{\"sao ch\xE9p\"}}\" ho\u1EB7c \"{{\"kh\xF4ng sao ch\xE9p\"\
+      }}\".\n|||\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not
+    reference: ''
+  a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b: !Template
+    answer_choices: "kh\xF4ng ||| V\xE2ng"
+    id: a45ad5cd-a3ba-4ab2-a728-a9ea0f27102b
+    jinja: "C\xE1c c\xE2u h\u1ECFi \"{{question1}}\" v\xE0 \"{{question2}}\" c\xF3\
+      \ h\u1ECFi \u0111i\u1EC1u t\u01B0\u01A1ng t\u1EF1 kh\xF4ng? ||| {{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''
+  c0182cd1-c7ac-4abe-829f-4651536af951: !Template
+    answer_choices: "kh\xF4ng ||| V\xE2ng"
+    id: c0182cd1-c7ac-4abe-829f-4651536af951
+    jinja: "M\u1ED9t c\xE2u tr\u1EA3 l\u1EDDi cho \"{{question1}}\" c\u0169ng \u0111\
+      \u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 tr\u1EA3 l\u1EDDi \"{{question2}}\"\
+      ? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: answer
+    reference: ''
+  c0724198-97e7-44a1-89d8-c51e97ce0b04: !Template
+    answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
+    id: c0724198-97e7-44a1-89d8-c51e97ce0b04
+    jinja: "C\xE2u h\u1ECFi 1: {{question1}}\nC\xE2u h\u1ECFi 2: {{question2}}\n\n\
+      Hai c\xE2u h\u1ECFi n\xE0y c\xF3 truy\u1EC1n \u0111\u1EA1t c\xF9ng m\u1ED9t\
+      \ \xFD ngh\u0129a kh\xF4ng?C\xF3 hay kh\xF4ng? ||| {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: meaning
+    reference: ''
+  fd244bd3-ca3b-4e4f-9722-fd006c50e157: !Template
+    answer_choices: "kh\xF4ng ||| V\xE2ng"
+    id: fd244bd3-ca3b-4e4f-9722-fd006c50e157
+    jinja: "T\xF4i \u0111\xE3 nh\u1EADn \u0111\u01B0\u1EE3c c\xE1c c\xE2u h\u1ECF\
+      i \"{{question1}}\" v\xE0 \"{{question2}}\".H\u1ECD c\xF3 tr\xF9ng l\u1EB7p\
+      \ kh\xF4ng? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate
+    reference: ''

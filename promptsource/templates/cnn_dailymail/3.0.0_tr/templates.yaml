@@ -1,0 +1,152 @@
+dataset: cnn_dailymail
+subset: 3.0.0_tr
+templates:
+  0556fd07-f7de-4daf-a0ae-4cda4fc239c8: !Template
+    answer_choices: null
+    id: 0556fd07-f7de-4daf-a0ae-4cda4fc239c8
+    jinja: 'Aşağıdaki makalenin ana hatlarını birkaç noktada yazabilir misiniz?
+
+
+      Madde: {{article}}|||
+
+      {{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: write_an_outline
+    reference: ''
+  1c446bde-b3e6-4629-860f-9125681c72a1: !Template
+    answer_choices: null
+    id: 1c446bde-b3e6-4629-860f-9125681c72a1
+    jinja: 'Makaleyi özetleyin:
+
+
+      {{article}} |||
+
+      {{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: news_summary
+    reference: ''
+  6e46894f-b5ff-4259-a691-63f1da8405da: !Template
+    answer_choices: null
+    id: 6e46894f-b5ff-4259-a691-63f1da8405da
+    jinja: '2 veya 3 cümlede, bu haber makalesinden hatırlanması gereken ana noktalar nelerdir?
+
+
+      Madde: {{article}} |||
+
+      {{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: 2_or_3_sentences
+    reference: ''
+  892cbf90-2c19-4664-943e-a004a0c9a7fa: !Template
+    answer_choices: null
+    id: 892cbf90-2c19-4664-943e-a004a0c9a7fa
+    jinja: 'Aşağıdaki haber makalesinin bir TLDR (Too Long Didn''t Read) özetini oluşturabilir misiniz?
+
+
+      Madde: {{article}} |||
+
+      {{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: tldr_summary
+    reference: ''
+  9b7c6abf-5110-4b31-8345-be6b2eeea580: !Template
+    answer_choices: null
+    id: 9b7c6abf-5110-4b31-8345-be6b2eeea580
+    jinja: 'Mobil haber uygulamalarında kısa kartlar şeklinde sunmak için makaleyi 
+      temel konulara kadar özetleyin:
+
+
+      {{article}} |||
+
+      {{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: news_card_view
+    reference: ''
+  b4ff2f63-8539-4d9c-9858-42fa5f95ba56: !Template
+    answer_choices: null
+    id: b4ff2f63-8539-4d9c-9858-42fa5f95ba56
+    jinja: 'Önemli arsa noktalarından bir hikaye oluşturun:
+
+
+      {{highlights}} |||
+
+      {{article}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_story
+    reference: ''
+  c20ac3c5-da85-408a-bba9-8b12ef2ae379: !Template
+    answer_choices: null
+    id: c20ac3c5-da85-408a-bba9-8b12ef2ae379
+    jinja: 'Aşağıdaki makaleyi kısaca özetleyin: {{article}}|||{{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: sum_in_brief
+    reference: ''
+  e047b4ec-abff-4b36-896a-83f5f1ea6759: !Template
+    answer_choices: null
+    id: e047b4ec-abff-4b36-896a-83f5f1ea6759
+    jinja: 'Borsanın tepki gösterebileceği makaleden önemli noktaları çıkarın:
+
+
+      {{article}} |||
+
+      {{highlights}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: news_stock
+    reference: ''
+  efa42de6-7a20-4e35-92fc-919a5eb0b77e: !Template
+    answer_choices: null
+    id: efa42de6-7a20-4e35-92fc-919a5eb0b77e
+    jinja: 'Daha ilgi çekici ve bilgilendirici hale getirmek için bir hikayeye hangi ayrıntıları eklersiniz?
+
+
+      {{highlights}} |||
+
+      {{article}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: spice_up_story
+    reference: ''

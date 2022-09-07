@@ -1,0 +1,188 @@
+dataset: wiki_qa
+subset: el
+templates:
+  148e8e91-4f38-4427-8806-8a407268cda9: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 148e8e91-4f38-4427-8806-8a407268cda9
+    jinja: "\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{question}}?\n\u0398\u03B1\
+      \ \u03AE\u03C4\u03B1\u03BD \u03BC\u03B9\u03B1 \u03BB\u03BF\u03B3\u03B9\u03BA\
+      \u03AE \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \"{{answer}}\"; |||\n\
+      {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is This True?
+    reference: Model is inserted both question and answer and output whether the answer
+      is correct or not.
+  2395d5ce-5abd-4193-9cf1-863c7271a4f0: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: 2395d5ce-5abd-4193-9cf1-863c7271a4f0
+    jinja: "\u0395\u03C0\u03B1\u03BB\u03AE\u03B3\u03C9 \u03C4\u03B9\u03C2 \u03B1\u03C0\
+      \u03B1\u03BD\u03C4\u03AE\u03C3\u03B5\u03B9\u03C2 \u03C0\u03BF\u03C5 \u03B4\u03B7\
+      \u03BC\u03B9\u03BF\u03C5\u03C1\u03B3\u03BF\u03CD\u03BD\u03C4\u03B1\u03B9 \u03B1\
+      \u03C0\u03CC \u03AD\u03BD\u03B1 \u03B1\u03C5\u03C4\u03CC\u03BC\u03B1\u03C4\u03BF\
+      \ \u03C3\u03CD\u03C3\u03C4\u03B7\u03BC\u03B1 \u03C3\u03C4\u03B7\u03BD \u03B1\
+      \u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\
+      \u03B7: {{question}}\n\u03A0\u03C1\u03BF\u03C4\u03B5\u03B9\u03BD\u03CC\u03BC\
+      \u03B5\u03BD\u03B7 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7: {{answer}}\n\
+      \u03A0\u03C1\u03AD\u03C0\u03B5\u03B9 \u03BD\u03B1 \u03B5\u03C0\u03B9\u03BA\u03C5\
+      \u03C1\u03CE\u03C3\u03C9 \u03B1\u03C5\u03C4\u03AE\u03BD \u03C4\u03B7\u03BD \u03B1\
+      \u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7;\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: automatic_system
+    reference: ''
+  3480df1e-88bb-4b3d-90df-3f292463eb76: !Template
+    answer_choices: null
+    id: 3480df1e-88bb-4b3d-90df-3f292463eb76
+    jinja: "{% if label == 1 %}\n\u03A0\u03BF\u03B9\u03B1 \u03B5\u03AF\u03BD\u03B1\
+      \u03B9 \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: \"{{answer}}\";\u03A4\
+      \u03BF \u03B8\u03AD\u03BC\u03B1 \u03B5\u03AF\u03BD\u03B1\u03B9 {{document_title}}.|||\n\
+      \"{{question}}?\"\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Jeopardy style
+    reference: Given a passage (an answer), generate the question.
+  8a9f2146-aa30-4e17-b1e2-aeb858b08b55: !Template
+    answer_choices: null
+    id: 8a9f2146-aa30-4e17-b1e2-aeb858b08b55
+    jinja: "{% if label == 1 %}\n\u03A0\u03C1\u03BF\u03C3\u03B4\u03B9\u03BF\u03C1\u03AF\
+      \u03C3\u03C4\u03B5 \u03C4\u03BF \u03B8\u03AD\u03BC\u03B1 \u03C4\u03BF\u03C5\
+      \ \u03B6\u03B5\u03CD\u03B3\u03BF\u03C5\u03C2 \u03B5\u03C1\u03C9\u03C4\u03AE\u03C3\
+      \u03B5\u03C9\u03BD-\u03B1\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\u03B5\u03C9\u03BD\
+      .\n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: \"{{question}}?\";  \u0391\u03C0\
+      \u03AC\u03BD\u03C4\u03B7\u03C3\u03B7: \"{{answer}}\"? \u0398\u03AD\u03BC\u03B1\
+      : |||\n{{document_title}}\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Topic Prediction - Question and Answer Pair
+    reference: Given a correct Question-Answer pair, generate the topic.
+  a99a68fa-46ae-4331-8b97-fcf751db3f6f: !Template
+    answer_choices: null
+    id: a99a68fa-46ae-4331-8b97-fcf751db3f6f
+    jinja: "{% if label == 1 %}\n\u0394\u03B7\u03BC\u03B9\u03BF\u03C5\u03C1\u03B3\u03AE\
+      \u03C3\u03C4\u03B5 \u03BC\u03B9\u03B1 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7\
+      \ \u03C3\u03C7\u03B5\u03C4\u03B9\u03BA\u03AC \u03BC\u03B5 \u03C4\u03BF \u03B8\
+      \u03AD\u03BC\u03B1 \"{{document_title}}\" \u03C4\u03B7\u03C2 \u03BF\u03C0\u03BF\
+      \u03AF\u03B1\u03C2 \u03B7 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03B8\
+      \u03B1 \u03AE\u03C4\u03B1\u03BD: {{answer}}.|||\n{{question}}?\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Generate Question from Topic
+    reference: Given a topic, generate a question.
+  add469e1-b8d9-4926-8f38-3a60c85a7d2b: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: add469e1-b8d9-4926-8f38-3a60c85a7d2b
+    jinja: "\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{question}}\n\u0392\u03C1\
+      \u03AE\u03BA\u03B1 \u03C4\u03B7\u03BD \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\
+      \u03B7 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03C3\u03C4\u03BF Google:\
+      \ {{answer}}\n\u0395\u03AF\u03BD\u03B1\u03B9 \u03BC\u03B9\u03B1 \u03C3\u03C9\
+      \u03C3\u03C4\u03AE \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7;\u039D\u03B1\
+      \u03B9 \u03AE \u03CC\u03C7\u03B9.\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: found_on_google
+    reference: ''
+  b0ad07f8-8799-4dd8-8f55-82f3f817f1fd: !Template
+    answer_choices: null
+    id: b0ad07f8-8799-4dd8-8f55-82f3f817f1fd
+    jinja: "{% if label == 1 %}\n\u03A0\u03C1\u03BF\u03C3\u03B4\u03B9\u03BF\u03C1\u03AF\
+      \u03C3\u03C4\u03B5 \u03C4\u03BF \u03B8\u03AD\u03BC\u03B1 \u03C4\u03B7\u03C2\
+      \ \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7\u03C2.\n\u0395\u03C1\u03CE\u03C4\
+      \u03B7\u03C3\u03B7: \"{{question}}?\"\n\u0398\u03AD\u03BC\u03B1: |||\n{{document_title}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Topic Prediction - Question Only
+    reference: Given a Question, generate the topic.
+  bfa3adac-d75b-4e09-aa92-dc38e334937f: !Template
+    answer_choices: "\u03A8\u03B5\u03C5\u03B4\u03AE\u03C2 ||| \u0391\u03BB\u03B7\u03B8\
+      \u03AE\u03C2"
+    id: bfa3adac-d75b-4e09-aa92-dc38e334937f
+    jinja: "\u0397 \u03AC\u03C3\u03BA\u03B7\u03C3\u03B7 \u03B5\u03AF\u03BD\u03B1\u03B9\
+      \ \u03BD\u03B1 \u03B1\u03C0\u03BF\u03C6\u03B1\u03C3\u03AF\u03C3\u03B5\u03B9\
+      \ \u03B5\u03AC\u03BD \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03B4\
+      \u03AD\u03C7\u03B5\u03C4\u03B1\u03B9 \u03C4\u03B7\u03BD \u03C0\u03C1\u03BF\u03C4\
+      \u03B5\u03B9\u03BD\u03CC\u03BC\u03B5\u03BD\u03B7 \u03C0\u03C1\u03CC\u03C4\u03B1\
+      \u03C3\u03B7 \u03C9\u03C2 \u03C3\u03C9\u03C3\u03C4\u03AE \u03B1\u03C0\u03AC\u03BD\
+      \u03C4\u03B7\u03C3\u03B7.\u0395\u03AC\u03BD \u03BD\u03B1\u03B9, \u03B3\u03C1\
+      \u03AC\u03C8\u03C4\u03B5 \"{{answer_choices[1]}}\", \u03B1\u03BB\u03BB\u03B9\
+      \u03CE\u03C2 \u03B3\u03C1\u03AC\u03C8\u03C4\u03B5 \"{{answer_choices[0]}}\"\
+      .\nQuestion: {{question}}\nSuggestion: {{answer}}\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: exercise
+    reference: ''
+  c802cf19-59a7-4a3e-a6ab-5cbb1f169c70: !Template
+    answer_choices: "\u039F\u03C7\u03B9 ||| \u039D\u03B1\u03AF"
+    id: c802cf19-59a7-4a3e-a6ab-5cbb1f169c70
+    jinja: "\u0391\u03C5\u03C4\u03AE \u03B5\u03AF\u03BD\u03B1\u03B9 \u03BC\u03B9\u03B1\
+      \ \u03C3\u03C9\u03C3\u03C4\u03AE \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7\
+      \ \u03C3\u03C4\u03B7\u03BD \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03B7\
+      \ \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03C3\u03C7\u03B5\u03C4\u03B9\u03BA\
+      \u03AC \u03BC\u03B5 \u03C4\u03BF {{document_title}}.\u039D\u03B1\u03B9 \u03AE\
+      \ \u03CC\u03C7\u03B9?\n\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7: {{answer}}\n\
+      \u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{question}}\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Decide_good_answer
+    reference: ''
+  cdc54124-723e-4e1c-878c-aeaabf55c28c: !Template
+    answer_choices: null
+    id: cdc54124-723e-4e1c-878c-aeaabf55c28c
+    jinja: "{% if label == 1 %}\n\u03A0\u03C1\u03BF\u03C3\u03B4\u03B9\u03BF\u03C1\u03AF\
+      \u03C3\u03C4\u03B5 \u03C4\u03BF \u03B8\u03AD\u03BC\u03B1 \u03C4\u03BF\u03C5\
+      \ \u03C0\u03B5\u03C1\u03AC\u03C3\u03BC\u03B1\u03C4\u03BF\u03C2.\n\"{{answer}}\"\
+      \n\u0398\u03AD\u03BC\u03B1:|||\n{{document_title}}\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Topic Prediction - Answer Only
+    reference: Given a correct Answer (as a text passage), generate the topic.
+  d827a178-ff54-4bbf-bc6d-8756950ae5c5: !Template
+    answer_choices: null
+    id: d827a178-ff54-4bbf-bc6d-8756950ae5c5
+    jinja: "{% if label == 1 %}\n\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B5\
+      \ \u03C3\u03B5 \u03B1\u03C5\u03C4\u03AE \u03C4\u03B7\u03BD \u03B5\u03C1\u03CE\
+      \u03C4\u03B7\u03C3\u03B7: {{question}}?|||\n{{answer}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: Direct Answer to Question
+    reference: Generates an answers given a question.

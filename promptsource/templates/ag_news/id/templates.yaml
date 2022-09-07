@@ -1,0 +1,95 @@
+dataset: ag_news
+subset: id
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: Politik dunia ||| Olahraga ||| Bisnis ||| Ilmu pengetahuan dan teknologi
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "Label apa yang paling menggambarkan artikel berita ini?\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: Politik dunia ||| Olahraga ||| Bisnis ||| Ilmu pengetahuan dan teknologi
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "Apakah ini berita tentang {{\"politik dunia, olahraga, bisnis, atau sains\
+      \ dan teknologi\"}}?\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: Politisi ||| Atlet ||| Eksekutif bisnis ||| Ilmuwan
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: 'Apakah Anda akan merekomendasikan artikel berikut kepada {{"politikus"}}, {{"atlet"}}, 
+      {{"eksekutif bisnis"}}, atau {{"ilmuwan"}}?
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: Berita Dunia ||| Olahraga ||| Bisnis ||| Ilmu pengetahuan dan teknologi
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\nManakah dari bagian surat kabar berikut yang kemungkinan besar akan menampilkan\
+      \ artikel ini? {{\"Berita Dunia\"}}, {{\"Olahraga\"}}, {{\"Bisnis\"}}, atau {{\"Ilmu Pengetahuan dan Teknologi\"\
+      }}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: Berita Dunia ||| Olahraga ||| Bisnis ||| Ilmu pengetahuan dan teknologi
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\nBagian mana dari surat kabar yang kemungkinan akan memuat artikel\
+      \ ini? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: Politik dunia ||| Olahraga ||| Bisnis ||| Ilmu pengetahuan dan teknologi
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \nApakah ini berita tentang {{\"politik dunia, olahraga, bisnis,\
+      \ atau sains dan teknologi\"}}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: Politik dunia ||| Olahraga ||| Bisnis ||| Ilmu pengetahuan dan teknologi
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \nLabel apa yang paling menggambarkan artikel berita ini? ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

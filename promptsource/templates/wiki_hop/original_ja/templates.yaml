@@ -1,0 +1,159 @@
+dataset: wiki_hop
+subset: original_ja
+templates:
+  0bb6b603-115e-4ae9-b17b-881fa72b2e81: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 0bb6b603-115e-4ae9-b17b-881fa72b2e81
+    jinja: "\u60C5\u5831\uFF1A\n{% for support in supports %}\n- {{ support }}\n{%\
+      \ endfor %}\n\n{% set question_split = question.split(' ') %}\n'{{{question_split[0]\
+      \ | replace(\"_\", \" \")}}'\u3068\u4EF6\u540D '{{question_split[1:] | join(\"\
+      \ \")}}'\u3068\u306E\u95A2\u4FC2\u304C\u3042\u308B\u30AA\u30D6\u30B8\u30A7\u30AF\
+      \u30C8\u30A8\u30F3\u30C6\u30A3\u30C6\u30A3\u306F\uFF1F\n\n\u9078\u629E\u80A2\
+      \uFF1A\n- {{answer_choices | join(\"\\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_interrogative_1
+    reference: Given information and subject and relation, choose the best object
+      entity (interrogative instruction).
+  23e0d05a-8777-45c4-8692-13f3dc5a40bb: !Template
+    answer_choices: null
+    id: 23e0d05a-8777-45c4-8692-13f3dc5a40bb
+    jinja: "\u60C5\u5831\uFF1A\n{% for support in supports %}\n- {{ support }}\n{%\
+      \ endfor %}\n\n{% set question_split = question.split(' ') %}\n'{{{question_split[1:]\
+      \ | join(\" \")}}'\u3068 '{{answer}}'\u306E\u95A2\u4FC2\u306F\u4F55\u3067\u3059\
+      \u304B\uFF1F\n\n|||\n{{ question_split[0] | replace(\"_\", \" \") }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: explain_relation
+    reference: Given information, explain the relation between the subject entity
+      and the object entity.
+  2fadafea-f814-4ff1-a3aa-cace9067f31f: !Template
+    answer_choices: null
+    id: 2fadafea-f814-4ff1-a3aa-cace9067f31f
+    jinja: "\u60C5\u5831\uFF1A\n{% for support in supports %}\n- {{ support }}\n{%\
+      \ endfor %}\n\n{% set question_split = question.split(' ') %}\n\u300C{{question_split[1:]\
+      \ | join(\" \")}}\u300D\u306B\u306F\u3069\u306E\u30A8\u30F3\u30C6\u30A3\u30C6\
+      \u30A3\u304C\u3042\u308A\u307E\u3059\u304B\uFF1F\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_object
+    reference: Given information, generate the best object entity (without answer
+      choices in prompt).
+  40bdb0e7-def9-4829-9a37-a05d354ef7cd: !Template
+    answer_choices: null
+    id: 40bdb0e7-def9-4829-9a37-a05d354ef7cd
+    jinja: "\u60C5\u5831\uFF1A\n{% for support in supports %}\n- {{ support }}\n{%\
+      \ endfor %}\n\n{% set question_split = question.split(' ') %}\n\u4E0A\u8A18\u306E\
+      \u6BB5\u843D\u3092\u8003\u3048\u308B\u3068\u3001\u300C{{answer}}\u300D\u3068\
+      \u306E\u95A2\u4FC2\u300C{{question_split[0] | replace(\"_\", \" \")}}\u300D\u304C\
+      \u3042\u308B\u30A8\u30F3\u30C6\u30A3\u30C6\u30A3\u304C\u3042\u308B\u304B\u3069\
+      \u3046\u304B\u3092\u6C7A\u5B9A\u3057\u307E\u3059\u3002\n\n|||\n{{ question_split[1:]\
+      \ | join(\" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_subject
+    reference: Given information, generate the best subject entity for the fact triple.
+  4836e754-b2c9-4697-b386-6770494dc5f5: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 4836e754-b2c9-4697-b386-6770494dc5f5
+    jinja: "\u60C5\u5831\uFF1A\n{% for support in supports %}\n- {{ support }}\n{%\
+      \ endfor %}\n\n{% set question_split = question.split(' ') %}\n\u4E0A\u8A18\u306E\
+      \u60C5\u5831\u3092\u6307\u5B9A\u3059\u308B\u3068\u3001\u4EF6\u540D\u300C{{question_split[0]\
+      \ | replace(\"_\", \" \")}}\u300D\u3092\u4EF6\u540D\u3092\u793A\u3059\u30AA\u30D6\
+      \u30B8\u30A7\u30AF\u30C8\u30A8\u30F3\u30C6\u30A3\u30C6\u30A3\u306E\u4E0B\u306E\
+      \u30EA\u30B9\u30C8\u304B\u3089\u9078\u629E\u3057\u307E\u3059 '{{question_split[1:]\
+      \ | join(\" \")}}'\u3002\n\n\u9078\u629E\u80A2\uFF1A\n- {{answer_choices | join(\"\
+      \\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_1
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  4a1b61f6-c619-4d3d-aec2-f41a8986641c: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 4a1b61f6-c619-4d3d-aec2-f41a8986641c
+    jinja: "\u60C5\u5831\uFF1A\n{% for support in supports %}\n- {{ support }}\n{%\
+      \ endfor %}\n\n{% set question_split = question.split(' ') %}\n\u4E0A\u8A18\u306E\
+      \u6BB5\u843D\u3092\u8AAD\u3093\u3060\u5F8C\u3001\u300C{{question_split[1:] |\
+      \ join(\" \")}}\u300D\u304C\u300C{{question_split[0] | replace(\"_\", \" \"\
+      )}}\u300D\u306E\u95A2\u4FC2\u3092\u793A\u3059\u5B9F\u4F53\u3092\u77E5\u308B\u3053\
+      \u3068\u306B\u8208\u5473\u304C\u3042\u308A\u307E\u3059\u3002\u4EE5\u4E0B\u306E\
+      \u9078\u629E\u304B\u3089\u7B54\u3048\u3092\u898B\u3064\u3051\u3066\u304F\u3060\
+      \u3055\u3044\u3002\n\n\u9078\u629E\u80A2\uFF1A\n- {{answer_choices | join(\"\
+      \\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_3
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  c4675106-0ac5-4bf0-a400-f628daae81db: !Template
+    answer_choices: null
+    id: c4675106-0ac5-4bf0-a400-f628daae81db
+    jinja: "\u60C5\u5831\uFF1A\n{% for support in supports %}\n- {{ support }}\n{%\
+      \ endfor %}\n\n{% set question_split = question.split(' ') %}\n\u60C5\u5831\u304C\
+      \u4E0E\u3048\u3089\u308C\u305F\u5834\u5408\u3001\u300C{{question_split[0] |\
+      \ replace(\"_\", \" \")}}\u300D\u306E\u95A2\u4FC2\u3092\u6301\u3064\u4E3B\u984C\
+      \u3068\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u306E\u30A8\u30F3\u30C6\u30A3\u30C6\
+      \u30A3\u3092\u9078\u629E\u3057\u307E\u3059\u3002\n\n|||\n{{ question_split[1:]\
+      \ | join(\" \") }} , {{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_subject_and_object
+    reference: Given information and relation, generate the subject and object.
+  e4dc7abf-d56a-4217-ba7f-7470cd959e8e: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: e4dc7abf-d56a-4217-ba7f-7470cd959e8e
+    jinja: "\u60C5\u5831\uFF1A\n{% for support in supports %}\n- {{ support }}\n{%\
+      \ endfor %}\n\n{% set question_split = question.split(' ') %}\n\u4E0A\u8A18\u306E\
+      \u6BB5\u843D\u3092\u8AAD\u3093\u3060\u5F8C\u3001 '{{{question_split[1:] | join(\"\
+      \ \")}}' '\u306B\u95A2\u9023\u3059\u308B\u30A8\u30F3\u30C6\u30A3\u30C6\u30A3\
+      \u306E\u6700\u826F\u306E\u56DE\u7B54\u3092\u9078\u629E\u3057\u307E\u3059\u3002\
+      \n\n\u9078\u629E\u80A2\uFF1A\n- {{answer_choices | join(\"\\n - \") }}\n\n|||\n\
+      {{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_2
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  f44936e1-cbde-4d41-b462-6150cce8c1c8: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: f44936e1-cbde-4d41-b462-6150cce8c1c8
+    jinja: "\u60C5\u5831\uFF1A\n{% for support in supports %}\n- {{ support }}\n{%\
+      \ endfor %}\n\n{% set question_split = question.split(' ') %}\n'{{question_split[1:]\
+      \ | join(\" \")}}'\u306F\u3001 '{{question_split[0] | replace(\"_\", \" \")}}'\u306E\
+      \u95A2\u4FC2\u3092\u901A\u3058\u3066\u3069\u306E\u30AA\u30D6\u30B8\u30A7\u30AF\
+      \u30C8\u30A8\u30F3\u30C6\u30A3\u30C6\u30A3\u306B\u95A2\u9023\u3057\u3066\u3044\
+      \u307E\u3059\u304B\uFF1F\n\n\u9078\u629E\u80A2\uFF1A\n- {{answer_choices | join(\"\
+      \\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_interrogative_2
+    reference: Given information and subject and relation, choose the best object
+      entity (interrogative instruction).

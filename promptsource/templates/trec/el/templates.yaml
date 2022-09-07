@@ -1,0 +1,389 @@
+dataset: trec
+subset: el
+templates:
+  21d04668-c5b3-4418-bbb6-663f1ffdb97c: !Template
+    answer_choices: "\u03A0\u03B5\u03C1\u03B9\u03B3\u03C1\u03B1\u03C6\u03AE ||| \u039F\
+      \u03BD\u03C4\u03CC\u03C4\u03B7\u03C4\u03B1 ||| \u03A3\u03C5\u03BD\u03C4\u03BF\
+      \u03BC\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1 ||| \u03A0\u03C1\u03CC\u03C3\
+      \u03C9\u03C0\u03BF ||| \u03A0\u03BF\u03C3\u03CC\u03C4\u03B7\u03C4\u03B1 |||\
+      \ \u03A4\u03BF\u03C0\u03BF\u03B8\u03B5\u03C3\u03AF\u03B1"
+    id: 21d04668-c5b3-4418-bbb6-663f1ffdb97c
+    jinja: "\u039A\u03B1\u03C4\u03B7\u03B3\u03BF\u03C1\u03AF\u03B5\u03C2: {{', '.join(answer_choices)}}\n\
+      \n\u03A0\u03BF\u03B9\u03B1 \u03BA\u03B1\u03C4\u03B7\u03B3\u03BF\u03C1\u03AF\u03B1\
+      \ \u03C0\u03B5\u03C1\u03B9\u03B3\u03C1\u03AC\u03C6\u03B5\u03B9 \u03BA\u03B1\u03BB\
+      \u03CD\u03C4\u03B5\u03C1\u03B1: {{text}} \n\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\
+      \u03C3\u03B7: ||| {{ answer_choices [label_coarse] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: what_category_best_describe
+    reference: ''
+  2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6: !Template
+    answer_choices: "\u03C0\u03CC\u03BB\u03B7 ||| \u03A7\u03CE\u03C1\u03B1 ||| \u03B2\
+      \u03BF\u03C5\u03BD\u03CC ||| \u03BA\u03B1\u03C4\u03AC\u03C3\u03C4\u03B1\u03C3\
+      \u03B7 ||| \u03AC\u03BB\u03BB\u03B7 \u03C4\u03BF\u03C0\u03BF\u03B8\u03B5\u03C3\
+      \u03AF\u03B1"
+    id: 2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6
+    jinja: "{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}\n{% if label_coarse\
+      \ == 5 %}\n\u0391\u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\
+      \u03B7 \u03B6\u03B7\u03C4\u03AC {{', '.join(answer_choices)}};\n{{text}}\n|||\n\
+      {{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_LOC
+    reference: Fine grained labels with coarse-label `LOC`, context after question
+  309bf243-2185-4090-ac66-a24f44d89966: !Template
+    answer_choices: "\u03BA\u03CE\u03B4\u03B9\u03BA\u03B1\u03C2 ||| \u03BC\u03B5\u03C4\
+      \u03C1\u03CE ||| \u03B7\u03BC\u03B5\u03C1\u03BF\u03BC\u03B7\u03BD\u03AF\u03B1\
+      \ ||| \u03B1\u03C0\u03CC\u03C3\u03C4\u03B1\u03C3\u03B7 ||| \u03C4\u03B9\u03BC\
+      \u03AE ||| \u03A3\u03B5\u03B9\u03C1\u03AC ||| \u03C7\u03C1\u03BF\u03BD\u03B9\
+      \u03BA\u03CC \u03B4\u03B9\u03AC\u03C3\u03C4\u03B7\u03BC\u03B1 ||| \u03C0\u03BF\
+      \u03C3\u03BF\u03C3\u03C4\u03CC ||| \u03A4\u03B1\u03C7\u03CD\u03C4\u03B7\u03C4\
+      \u03B1 ||| \u03B8\u03B5\u03C1\u03BC\u03BF\u03BA\u03C1\u03B1\u03C3\u03AF\u03B1\
+      \ ||| \u039C\u03AD\u03B3\u03B5\u03B8\u03BF\u03C2 ||| \u03B2\u03AC\u03C1\u03BF\
+      \u03C2 ||| \u03AC\u03BB\u03BB\u03BF\u03C2 \u03B1\u03C1\u03B9\u03B8\u03BC\u03CC\
+      \u03C2"
+    id: 309bf243-2185-4090-ac66-a24f44d89966
+    jinja: "{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,\
+      \ 35:8, 41:9, 32:10, 45:11, 14:12} %}\n{% if label_coarse == 4 %}\n{{text}}\n\
+      \n\u0391\u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7\
+      \ \u03B6\u03B7\u03C4\u03AC {{', '.join(answer_choices)}};\n|||\n{{ answer_choices\
+      \ [label_mapping[label_fine]] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_NUM_context_first
+    reference: Fine grained labels with coarse-label `NUM`, context provided first
+  3aff84f3-e478-4598-abe8-40aa24cec1fa: !Template
+    answer_choices: "\u03AD\u03BD\u03B1 \u03B6\u03CE\u03BF ||| \u03AD\u03BD\u03B1\
+      \ \u03CC\u03C1\u03B3\u03B1\u03BD\u03BF \u03C4\u03BF\u03C5 \u03C3\u03CE\u03BC\
+      \u03B1\u03C4\u03BF\u03C2 ||| \u03AD\u03BD\u03B1 \u03C7\u03C1\u03CE\u03BC\u03B1\
+      \ ||| \u03B4\u03B7\u03BC\u03B9\u03BF\u03C5\u03C1\u03B3\u03B9\u03BA\u03CC \u03BA\
+      \u03BF\u03BC\u03BC\u03AC\u03C4\u03B9 ||| \u03BD\u03CC\u03BC\u03B9\u03C3\u03BC\
+      \u03B1 ||| \u03B1\u03C3\u03B8\u03AD\u03BD\u03B5\u03B9\u03B1 \u03AE \u03C6\u03AC\
+      \u03C1\u03BC\u03B1\u03BA\u03BF ||| \u0395\u03BA\u03B4\u03AE\u03BB\u03C9\u03C3\
+      \u03B7 ||| \u03C6\u03B1\u03B3\u03B7\u03C4\u03CC ||| \u03BC\u03BF\u03C5\u03C3\
+      \u03B9\u03BA\u03CC \u03CC\u03C1\u03B3\u03B1\u03BD\u03BF ||| \u0393\u03BB\u03CE\
+      \u03C3\u03C3\u03B1 ||| \u03B3\u03C1\u03AC\u03BC\u03BC\u03B1 ||| \u03C6\u03C5\
+      \u03C4\u03CC ||| \u03C0\u03C1\u03BF\u03CA\u03CC\u03BD ||| \u03B8\u03C1\u03B7\
+      \u03C3\u03BA\u03B5\u03AF\u03B1 ||| \u03AC\u03B8\u03BB\u03B7\u03BC\u03B1 |||\
+      \ \u03BF\u03C5\u03C3\u03AF\u03B1 ||| \u03C3\u03CD\u03BC\u03B2\u03BF\u03BB\u03BF\
+      \ ||| \u03C4\u03B5\u03C7\u03BD\u03B9\u03BA\u03AE ||| \u03CC\u03C1\u03BF\u03C2\
+      \ ||| \u03CC\u03C7\u03B7\u03BC\u03B1 ||| \u03BB\u03AD\u03BE\u03B7 ||| \u03AC\
+      \u03BB\u03BB\u03B7 \u03BF\u03BD\u03C4\u03CC\u03C4\u03B7\u03C4\u03B1"
+    id: 3aff84f3-e478-4598-abe8-40aa24cec1fa
+    jinja: "{% set label_mapping = {2:0, 22:1, 19:2, 1:3, 46:3, 23:4, 10:5, 17:6,\
+      \ 33:7, 37:8, 15:9, 30:10, 26:11, 16:12, 28:13, 42:14, 31:15, 20:16, 44:17,\
+      \ 36:18, 14:19} %}\n{% if label_coarse == 1 %}\n\u0391\u03C5\u03C4\u03AE \u03B7\
+      \ \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03B6\u03B7\u03C4\u03AC {{', '.join(answer_choices)}};\n\
+      {{text}}\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_ENTY
+    reference: Fine grained labels with coarse-label `ENTY`, context after question
+  43a188a2-b6dd-46a7-af2e-81a64b90b92a: !Template
+    answer_choices: "\u03BA\u03CE\u03B4\u03B9\u03BA\u03B1\u03C2 ||| \u03BC\u03B5\u03C4\
+      \u03C1\u03CE ||| \u03B7\u03BC\u03B5\u03C1\u03BF\u03BC\u03B7\u03BD\u03AF\u03B1\
+      \ ||| \u03B1\u03C0\u03CC\u03C3\u03C4\u03B1\u03C3\u03B7 ||| \u03C4\u03B9\u03BC\
+      \u03AE ||| \u03A3\u03B5\u03B9\u03C1\u03AC ||| \u03C7\u03C1\u03BF\u03BD\u03B9\
+      \u03BA\u03CC \u03B4\u03B9\u03AC\u03C3\u03C4\u03B7\u03BC\u03B1 ||| \u03C0\u03BF\
+      \u03C3\u03BF\u03C3\u03C4\u03CC ||| \u03A4\u03B1\u03C7\u03CD\u03C4\u03B7\u03C4\
+      \u03B1 ||| \u03B8\u03B5\u03C1\u03BC\u03BF\u03BA\u03C1\u03B1\u03C3\u03AF\u03B1\
+      \ ||| \u039C\u03AD\u03B3\u03B5\u03B8\u03BF\u03C2 ||| \u03B2\u03AC\u03C1\u03BF\
+      \u03C2 ||| \u03AC\u03BB\u03BB\u03BF\u03C2 \u03B1\u03C1\u03B9\u03B8\u03BC\u03CC\
+      \u03C2"
+    id: 43a188a2-b6dd-46a7-af2e-81a64b90b92a
+    jinja: "{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,\
+      \ 35:8, 41:9, 32:10, 45:11, 14:12} %}\n{% if label_coarse == 4 %}\n\u0391\u03C5\
+      \u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03B6\u03B7\u03C4\
+      \u03AC {{', '.join(answer_choices)}};\n{{text}}\n|||\n{{ answer_choices [label_mapping[label_fine]]\
+      \ }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_NUM
+    reference: Fine grained labels with coarse-label `NUM`
+  6c391f4f-027b-4425-88de-1dbb6aa706ee: !Template
+    answer_choices: "\u03A0\u03B5\u03C1\u03B9\u03B3\u03C1\u03B1\u03C6\u03AE ||| \u039F\
+      \u03BD\u03C4\u03CC\u03C4\u03B7\u03C4\u03B1 ||| \u03A3\u03C5\u03BD\u03C4\u03BF\
+      \u03BC\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1 ||| \u03A0\u03C1\u03CC\u03C3\
+      \u03C9\u03C0\u03BF ||| \u03A0\u03BF\u03C3\u03CC\u03C4\u03B7\u03C4\u03B1 |||\
+      \ \u03A4\u03BF\u03C0\u03BF\u03B8\u03B5\u03C3\u03AF\u03B1"
+    id: 6c391f4f-027b-4425-88de-1dbb6aa706ee
+    jinja: "\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{text}}\n\n\u03A0\u03B5\u03C1\
+      \u03B9\u03B3\u03C1\u03B1\u03C6\u03B5\u03AF\u03C2: {{', '.join(answer_choices)}}\n\
+      \n\u039A\u03B1\u03BB\u03CD\u03C4\u03B5\u03C1\u03BF\u03C2 \u03C0\u03B5\u03C1\u03B9\
+      \u03B3\u03C1\u03B1\u03C6\u03AD\u03B1\u03C2;\n|||\n{{answer_choices[label_coarse]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_the_best_descriptor
+    reference: ''
+  71090d59-dd02-4cbd-8032-ad86179b9bd4: !Template
+    answer_choices: "\u03A4\u03C1\u03CC\u03C0\u03BF\u03C2 ||| \u0394\u03B7\u03BC\u03B9\
+      \u03BF\u03C5\u03C1\u03B3\u03B9\u03BA\u03CC \u03BA\u03BF\u03BC\u03BC\u03AC\u03C4\
+      \u03B9 ||| \u0396\u03CE\u03BF ||| \u03A3\u03C5\u03BD\u03C4\u03BF\u03BC\u03B5\
+      \u03C5\u03BC\u03AD\u03BD\u03B7 \u03AD\u03BA\u03C6\u03C1\u03B1\u03C3\u03B7 |||\
+      \ \u0391\u03C4\u03BF\u03BC\u03BF ||| \u039F\u03BC\u03AC\u03B4\u03B1 ||| \u03A4\
+      \u03AF\u03C4\u03BB\u03BF\u03C2 ||| \u03BF\u03C1\u03B9\u03C3\u03BC\u03CC\u03C2\
+      \ ||| \u0397\u03BC\u03B5\u03C1\u03BF\u03BC\u03B7\u03BD\u03AF\u03B1 ||| \u039B\
+      \u03CC\u03B3\u03BF\u03C2 ||| \u0395\u03BA\u03B4\u03AE\u03BB\u03C9\u03C3\u03B7\
+      \ ||| \u03BA\u03B1\u03C4\u03AC\u03C3\u03C4\u03B1\u03C3\u03B7 ||| \u03A0\u03B5\
+      \u03C1\u03B9\u03B3\u03C1\u03B1\u03C6\u03AE ||| \u03BC\u03B5\u03C4\u03C1\u03CE\
+      \ ||| \u0391\u03BB\u03BB\u03B1 ||| \u0393\u03C1\u03AC\u03BC\u03BC\u03B1 |||\
+      \ \u0398\u03C1\u03B7\u03C3\u03BA\u03B5\u03AF\u03B1 ||| \u03A6\u03B1\u03B3\u03B7\
+      \u03C4\u03CC ||| \u03BC\u03B5\u03C4\u03C1\u03CEry ||| \u03A7\u03C1\u03CE\u03BC\
+      \u03B1 ||| \u039F\u03C1\u03BF\u03C2 ||| \u03A0\u03CC\u03BB\u03B7 ||| \u038C\u03C1\
+      \u03B3\u03B1\u03BD\u03BF \u03C4\u03BF\u03C5 \u03C3\u03CE\u03BC\u03B1\u03C4\u03BF\
+      \u03C2 ||| \u0391\u03C3\u03B8\u03AD\u03BD\u03B5\u03B9\u03B1 \u03AE \u03C6\u03AC\
+      \u03C1\u03BC\u03B1\u03BA\u03BF ||| \u0392\u03BF\u03C5\u03BD\u03CC ||| \u03A4\
+      \u03B9\u03BC\u03AE ||| \u03A0\u03C1\u03BF\u03CA\u03CC\u03BD ||| \u03A0\u03B5\
+      \u03C1\u03AF\u03BF\u03B4\u03BF\u03C2 ||| \u039F\u03C5\u03C3\u03AF\u03B1 |||\
+      \ \u0391\u03B8\u03BB\u03B7\u03BC\u03B1 ||| \u03A6\u03C5\u03C4\u03CC ||| \u03A4\
+      \u03B5\u03C7\u03BD\u03B9\u03BA\u03AE ||| \u039C\u03AD\u03B3\u03B5\u03B8\u03BF\
+      \u03C2 ||| \u039F\u03C1\u03B3\u03B1\u03BD\u03BF ||| \u03A3\u03C5\u03BD\u03C4\
+      \u03BF\u03BC\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1 ||| \u03A4\u03B1\u03C7\
+      \u03CD\u03C4\u03B7\u03C4\u03B1 ||| \u039B\u03AD\u03BE\u03B7 ||| \u0393\u03BB\
+      \u03CE\u03C3\u03C3\u03B1 ||| \u03A0\u03BF\u03C3\u03BF\u03C3\u03C4\u03CC |||\
+      \ \u039A\u03CE\u03B4\u03B9\u03BA\u03B1\u03C2 ||| \u0391\u03C0\u03CC\u03C3\u03C4\
+      \u03B1\u03C3\u03B7 ||| \u0398\u03B5\u03C1\u03BC\u03BF\u03BA\u03C1\u03B1\u03C3\
+      \u03AF\u03B1 ||| \u03A3\u03CD\u03BC\u03B2\u03BF\u03BB\u03BF ||| \u03A3\u03B5\
+      \u03B9\u03C1\u03AC ||| \u039F\u03C7\u03B7\u03BC\u03B1 ||| \u0392\u03AC\u03C1\
+      \u03BF\u03C2 ||| \u039D\u03CC\u03BC\u03B9\u03C3\u03BC\u03B1"
+    id: 71090d59-dd02-4cbd-8032-ad86179b9bd4
+    jinja: "{{text}}\n\n\u03A4\u03B9 \u03B8\u03AD\u03C4\u03B5\u03B9 \u03B1\u03C5\u03C4\
+      \u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7;\n|||\n{{answer_choices[label_fine]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fine_grained_open_context_first
+    reference: Fine grained classes without providing choices, context first.
+  736b2629-ed57-48ce-a458-4cbc435c499b: !Template
+    answer_choices: "\u03C0\u03CC\u03BB\u03B7 ||| \u03A7\u03CE\u03C1\u03B1 ||| \u03B2\
+      \u03BF\u03C5\u03BD\u03CC ||| \u03BA\u03B1\u03C4\u03AC\u03C3\u03C4\u03B1\u03C3\
+      \u03B7 ||| \u03AC\u03BB\u03BB\u03B7 \u03C4\u03BF\u03C0\u03BF\u03B8\u03B5\u03C3\
+      \u03AF\u03B1"
+    id: 736b2629-ed57-48ce-a458-4cbc435c499b
+    jinja: "{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}\n{% if label_coarse\
+      \ == 5 %}\n{{text}}\n\n\u0391\u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\
+      \u03B7\u03C3\u03B7 \u03B6\u03B7\u03C4\u03AC {{', '.join(answer_choices)}};\n\
+      |||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_LOC_context_first
+    reference: Fine grained labels with coarse-label `LOC`, context provided first
+  7a3ed4dd-af89-493c-8efb-c67622f63034: !Template
+    answer_choices: "\u03A0\u03B5\u03C1\u03B9\u03B3\u03C1\u03B1\u03C6\u03AE ||| \u039F\
+      \u03BD\u03C4\u03CC\u03C4\u03B7\u03C4\u03B1 ||| \u03A3\u03C5\u03BD\u03C4\u03BF\
+      \u03BC\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1 ||| \u03A0\u03C1\u03CC\u03C3\
+      \u03C9\u03C0\u03BF ||| \u03A0\u03BF\u03C3\u03CC\u03C4\u03B7\u03C4\u03B1 |||\
+      \ \u03A4\u03BF\u03C0\u03BF\u03B8\u03B5\u03C3\u03AF\u03B1"
+    id: 7a3ed4dd-af89-493c-8efb-c67622f63034
+    jinja: "\u03A0\u03BF\u03B9\u03B1 \u03BA\u03B1\u03C4\u03B7\u03B3\u03BF\u03C1\u03AF\
+      \u03B1 \u03C0\u03B5\u03C1\u03B9\u03B3\u03C1\u03AC\u03C6\u03B5\u03B9 \u03BA\u03B1\
+      \u03BB\u03CD\u03C4\u03B5\u03C1\u03B1 \u03C4\u03B7\u03BD \u03B1\u03BA\u03CC\u03BB\
+      \u03BF\u03C5\u03B8\u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{text}}\
+      \ \n\n\u0395\u03C0\u03B9\u03BB\u03AD\u03BE\u03C4\u03B5 \u03B1\u03C0\u03CC \u03C4\
+      \u03B7\u03BD \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03B7 \u03BB\u03AF\u03C3\
+      \u03C4\u03B1: \n{{', '.join(answer_choices)}}\n ||| {{ answer_choices [label_coarse]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_category_best_describes
+    reference: ''
+  7a9e6f3c-1dee-45b0-a315-1badaf59a7b8: !Template
+    answer_choices: "\u03BF\u03C1\u03B9\u03C3\u03BC\u03CC\u03C2 ||| \u03C0\u03B5\u03C1\
+      \u03B9\u03B3\u03C1\u03B1\u03C6\u03AE ||| \u03C4\u03C1\u03CC\u03C0\u03BF\u03C2\
+      \ \u03B4\u03C1\u03AC\u03C3\u03B7\u03C2 ||| \u03BB\u03CC\u03B3\u03BF\u03C2"
+    id: 7a9e6f3c-1dee-45b0-a315-1badaf59a7b8
+    jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
+      \ 0 %}\n\u0391\u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\
+      \u03B7 \u03B6\u03B7\u03C4\u03AC {{', '.join(answer_choices)}};\n{{text}}\n|||\n\
+      {{ answer_choices[label_mapping[label_fine]] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_DESC
+    reference: Fine grained labels with coarse-label `DESC`, context after question
+  861d1a48-1113-4f35-b777-2b2f12ab9d5d: !Template
+    answer_choices: "\u03A0\u03B5\u03C1\u03B9\u03B3\u03C1\u03B1\u03C6\u03AE ||| \u039F\
+      \u03BD\u03C4\u03CC\u03C4\u03B7\u03C4\u03B1 ||| \u03A3\u03C5\u03BD\u03C4\u03BF\
+      \u03BC\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1 ||| \u03A0\u03C1\u03CC\u03C3\
+      \u03C9\u03C0\u03BF ||| \u03A0\u03BF\u03C3\u03CC\u03C4\u03B7\u03C4\u03B1 |||\
+      \ \u03A4\u03BF\u03C0\u03BF\u03B8\u03B5\u03C3\u03AF\u03B1"
+    id: 861d1a48-1113-4f35-b777-2b2f12ab9d5d
+    jinja: "{{text}}\n\n\u0395\u03AF\u03BD\u03B1\u03B9 \u03B1\u03C5\u03C4\u03CC \u03C4\
+      \u03BF \u03B5\u03C1\u03CE\u03C4\u03B7\u03BC\u03B1 \u03B3\u03B9\u03B1 {{(',')\
+      \ .join (answer_choices)}};\n|||\n{{ answer_choices [label_coarse] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: trec1
+    reference: Context then prompt
+  93a06e72-2c15-4f8a-a46c-6a10919c4ea4: !Template
+    answer_choices: "\u03C3\u03C5\u03BD\u03C4\u03BF\u03BC\u03BF\u03B3\u03C1\u03B1\u03C6\
+      \u03AF\u03B1 ||| \u03C3\u03C5\u03BD\u03C4\u03BF\u03BC\u03B5\u03C5\u03BC\u03AD\
+      \u03BD\u03B7 \u03AD\u03BA\u03C6\u03C1\u03B1\u03C3\u03B7"
+    id: 93a06e72-2c15-4f8a-a46c-6a10919c4ea4
+    jinja: "{% set label_mapping={34:0, 3:1} %} \n{% if label_coarse == 2 %}\n\u0391\
+      \u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03B6\u03B7\
+      \u03C4\u03AC \u03AD\u03BD\u03B1 {{', '.join(answer_choices)}};\n{{text}}\n|||\n\
+      {{answer_choices[label_mapping[label_fine]] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_ABBR
+    reference: Fine grained labels with coarse-label `ABBR`, context after question
+  a0096044-3b4c-4c80-b139-25eac8fe692a: !Template
+    answer_choices: "\u03C3\u03C5\u03BD\u03C4\u03BF\u03BC\u03BF\u03B3\u03C1\u03B1\u03C6\
+      \u03AF\u03B1 ||| \u03C3\u03C5\u03BD\u03C4\u03BF\u03BC\u03B5\u03C5\u03BC\u03AD\
+      \u03BD\u03B7 \u03AD\u03BA\u03C6\u03C1\u03B1\u03C3\u03B7"
+    id: a0096044-3b4c-4c80-b139-25eac8fe692a
+    jinja: "{% set label_mapping = {34:0, 3:1} %} \n{% if label_coarse == 2 %}\n{{text}}\n\
+      \n\u0391\u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7\
+      \ \u03B6\u03B7\u03C4\u03AC \u03AD\u03BD\u03B1 {{', '.join(answer_choices)}};\n\
+      |||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_ABBR_context_first
+    reference: Fine grained labels with coarse-label `ABBR`, context provided first
+  aad2def1-b694-40ee-9c26-3d1cf5c577da: !Template
+    answer_choices: "\u03A0\u03B5\u03C1\u03B9\u03B3\u03C1\u03B1\u03C6\u03AE ||| \u039F\
+      \u03BD\u03C4\u03CC\u03C4\u03B7\u03C4\u03B1 ||| \u03A3\u03C5\u03BD\u03C4\u03BF\
+      \u03BC\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1 ||| \u03A0\u03C1\u03CC\u03C3\
+      \u03C9\u03C0\u03BF ||| \u03A0\u03BF\u03C3\u03CC\u03C4\u03B7\u03C4\u03B1 |||\
+      \ \u03A4\u03BF\u03C0\u03BF\u03B8\u03B5\u03C3\u03AF\u03B1"
+    id: aad2def1-b694-40ee-9c26-3d1cf5c577da
+    jinja: "\u0395\u03AF\u03BD\u03B1\u03B9 \u03B7 \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\
+      \u03B8\u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03B3\u03B9\u03B1 {{',\
+      \ '.join(answer_choices)}};\n\n{{text}}\n|||\n{{ answer_choices [label_coarse]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: trec2
+    reference: Prompt then context
+  bc58ba18-24a5-4553-be0a-2dba60efdad6: !Template
+    answer_choices: "\u03BF\u03BC\u03AC\u03B4\u03B1 ||| \u03AC\u03C4\u03BF\u03BC\u03BF\
+      \ ||| \u03C4\u03AF\u03C4\u03BB\u03BF\u03C2 ||| \u03C0\u03B5\u03C1\u03B9\u03B3\
+      \u03C1\u03B1\u03C6\u03AE"
+    id: bc58ba18-24a5-4553-be0a-2dba60efdad6
+    jinja: "{% set label_mapping = {5:0, 4:1, 6:2, 12:3} %}\n{% if label_coarse ==\
+      \ 3 %}\n\u0391\u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\
+      \u03B7 \u03B6\u03B7\u03C4\u03AC {{', '.join(answer_choices)}};\n{{text}}\n|||\n\
+      {{ answer_choices[label_mapping[label_fine]] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_HUM
+    reference: Fine grained labels with coarse-label `HUM`, context after question
+  cfa8fde0-8320-4050-8d6e-7619ab14adea: !Template
+    answer_choices: "\u03A4\u03C1\u03CC\u03C0\u03BF\u03C2 ||| \u0394\u03B7\u03BC\u03B9\
+      \u03BF\u03C5\u03C1\u03B3\u03B9\u03BA\u03CC \u03BA\u03BF\u03BC\u03BC\u03AC\u03C4\
+      \u03B9 ||| \u0396\u03CE\u03BF ||| \u03A3\u03C5\u03BD\u03C4\u03BF\u03BC\u03B5\
+      \u03C5\u03BC\u03AD\u03BD\u03B7 \u03AD\u03BA\u03C6\u03C1\u03B1\u03C3\u03B7 |||\
+      \ \u0391\u03C4\u03BF\u03BC\u03BF ||| \u039F\u03BC\u03AC\u03B4\u03B1 ||| \u03A4\
+      \u03AF\u03C4\u03BB\u03BF\u03C2 ||| \u03BF\u03C1\u03B9\u03C3\u03BC\u03CC\u03C2\
+      \ ||| \u0397\u03BC\u03B5\u03C1\u03BF\u03BC\u03B7\u03BD\u03AF\u03B1 ||| \u039B\
+      \u03CC\u03B3\u03BF\u03C2 ||| \u0395\u03BA\u03B4\u03AE\u03BB\u03C9\u03C3\u03B7\
+      \ ||| \u03BA\u03B1\u03C4\u03AC\u03C3\u03C4\u03B1\u03C3\u03B7 ||| \u03A0\u03B5\
+      \u03C1\u03B9\u03B3\u03C1\u03B1\u03C6\u03AE ||| \u03BC\u03B5\u03C4\u03C1\u03CE\
+      \ ||| \u0391\u03BB\u03BB\u03B1 ||| \u0393\u03C1\u03AC\u03BC\u03BC\u03B1 |||\
+      \ \u0398\u03C1\u03B7\u03C3\u03BA\u03B5\u03AF\u03B1 ||| \u03A6\u03B1\u03B3\u03B7\
+      \u03C4\u03CC ||| \u03BC\u03B5\u03C4\u03C1\u03CEry ||| \u03A7\u03C1\u03CE\u03BC\
+      \u03B1 ||| \u039F\u03C1\u03BF\u03C2 ||| \u03A0\u03CC\u03BB\u03B7 ||| \u038C\u03C1\
+      \u03B3\u03B1\u03BD\u03BF \u03C4\u03BF\u03C5 \u03C3\u03CE\u03BC\u03B1\u03C4\u03BF\
+      \u03C2 ||| \u0391\u03C3\u03B8\u03AD\u03BD\u03B5\u03B9\u03B1 \u03AE \u03C6\u03AC\
+      \u03C1\u03BC\u03B1\u03BA\u03BF ||| \u0392\u03BF\u03C5\u03BD\u03CC ||| \u03A4\
+      \u03B9\u03BC\u03AE ||| \u03A0\u03C1\u03BF\u03CA\u03CC\u03BD ||| \u03A0\u03B5\
+      \u03C1\u03AF\u03BF\u03B4\u03BF\u03C2 ||| \u039F\u03C5\u03C3\u03AF\u03B1 |||\
+      \ \u0391\u03B8\u03BB\u03B7\u03BC\u03B1 ||| \u03A6\u03C5\u03C4\u03CC ||| \u03A4\
+      \u03B5\u03C7\u03BD\u03B9\u03BA\u03AE ||| \u039C\u03AD\u03B3\u03B5\u03B8\u03BF\
+      \u03C2 ||| \u039F\u03C1\u03B3\u03B1\u03BD\u03BF ||| \u03A3\u03C5\u03BD\u03C4\
+      \u03BF\u03BC\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1 ||| \u03A4\u03B1\u03C7\
+      \u03CD\u03C4\u03B7\u03C4\u03B1 ||| \u039B\u03AD\u03BE\u03B7 ||| \u0393\u03BB\
+      \u03CE\u03C3\u03C3\u03B1 ||| \u03A0\u03BF\u03C3\u03BF\u03C3\u03C4\u03CC |||\
+      \ \u039A\u03CE\u03B4\u03B9\u03BA\u03B1\u03C2 ||| \u0391\u03C0\u03CC\u03C3\u03C4\
+      \u03B1\u03C3\u03B7 ||| \u0398\u03B5\u03C1\u03BC\u03BF\u03BA\u03C1\u03B1\u03C3\
+      \u03AF\u03B1 ||| \u03A3\u03CD\u03BC\u03B2\u03BF\u03BB\u03BF ||| \u03A3\u03B5\
+      \u03B9\u03C1\u03AC ||| \u039F\u03C7\u03B7\u03BC\u03B1 ||| \u0392\u03AC\u03C1\
+      \u03BF\u03C2 ||| \u039D\u03CC\u03BC\u03B9\u03C3\u03BC\u03B1"
+    id: cfa8fde0-8320-4050-8d6e-7619ab14adea
+    jinja: "\u03A4\u03B9 \u03B8\u03AD\u03C4\u03B5\u03B9 \u03B1\u03C5\u03C4\u03AE \u03B7\
+      \ \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7;\n\n{{text}}\n|||\n{{ answer_choices[label_fine]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fine_grained_open
+    reference: Fine grained classes without providing choices.
+  e98b9294-76b4-4172-a78c-9c6e5fdfe73b: !Template
+    answer_choices: "\u03BF\u03BC\u03AC\u03B4\u03B1 ||| \u03AC\u03C4\u03BF\u03BC\u03BF\
+      \ ||| \u03C4\u03AF\u03C4\u03BB\u03BF\u03C2 ||| \u03C0\u03B5\u03C1\u03B9\u03B3\
+      \u03C1\u03B1\u03C6\u03AE"
+    id: e98b9294-76b4-4172-a78c-9c6e5fdfe73b
+    jinja: "{% set label_mapping = {5:0, 4:1, 6:2, 12:3} %}\n{% if label_coarse ==\
+      \ 3 %}\n{{text}}\n\n\u0391\u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\
+      \u03B7\u03C3\u03B7 \u03B6\u03B7\u03C4\u03AC {{', '.join(answer_choices)}};\n\
+      |||\n{{ answer_choices [label_mapping[label_fine]] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_HUM_context_first
+    reference: Fine grained labels with coarse-label `HUM`, context provided first
+  fa588c55-5c69-4fd0-a0b1-edbfa092f710: !Template
+    answer_choices: "\u03BF\u03C1\u03B9\u03C3\u03BC\u03CC\u03C2 ||| \u03C0\u03B5\u03C1\
+      \u03B9\u03B3\u03C1\u03B1\u03C6\u03AE ||| \u03C4\u03C1\u03CC\u03C0\u03BF\u03C2\
+      \ \u03B4\u03C1\u03AC\u03C3\u03B7\u03C2 ||| \u03BB\u03CC\u03B3\u03BF\u03C2"
+    id: fa588c55-5c69-4fd0-a0b1-edbfa092f710
+    jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
+      \ 0 %}\n{{text}}\n\n\u0391\u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\
+      \u03B7\u03C3\u03B7 \u03B6\u03B7\u03C4\u03AC {{', '.join(answer_choices)}};\n\
+      |||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_DESC_context_first
+    reference: Fine grained labels with coarse-label `DESC`, context provided first

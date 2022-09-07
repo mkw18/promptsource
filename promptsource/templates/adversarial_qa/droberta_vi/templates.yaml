@@ -1,0 +1,75 @@
+dataset: adversarial_qa
+subset: droberta_vi
+templates:
+  00755780-f3c0-44b4-b159-8f3873cdb163: !Template
+    answer_choices: null
+    id: 00755780-f3c0-44b4-b159-8f3873cdb163
+    jinja: "T\xF4i mu\u1ED1n ki\u1EC3m tra kh\u1EA3 n\u0103ng c\u1EE7a h\u1ECDc sinh\
+      \ \u0111\u1ECDc m\u1ED9t \u0111o\u1EA1n v\u0103n v\xE0 tr\u1EA3 l\u1EDDi c\xE1\
+      c c\xE2u h\u1ECFi v\u1EC1 n\xF3.B\u1EA1n c\xF3 th\u1EC3 vui l\xF2ng \u0111\u01B0\
+      a ra m\u1ED9t c\xE2u h\u1ECFi hay cho \u0111o\u1EA1n v\u0103n \"{{context}}\"\
+      ? |||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  3b2459cc-6600-443c-abf8-8f60c34cd993: !Template
+    answer_choices: null
+    id: 3b2459cc-6600-443c-abf8-8f60c34cd993
+    jinja: "{% if metadata.split != \"test\" %}\nT\xF4i bi\u1EBFt r\u1EB1ng c\xE2\
+      u tr\u1EA3 l\u1EDDi cho c\xE2u h\u1ECFi \"{{question}}\" n\u1EB1m trong \"{{context}}\"\
+      .B\u1EA1n c\xF3 th\u1EC3 cho t\xF4i bi\u1EBFt n\xF3 l\xE0 g\xEC? |||\n\n{{answers.text\
+      \ | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  5bdb1815-5c6f-49a3-ad1d-367344420703: !Template
+    answer_choices: null
+    id: 5bdb1815-5c6f-49a3-ad1d-367344420703
+    jinja: "{% if metadata.split != \"test\" %}\nC\xE2u h\u1ECFi: \"{{question}}\"\
+      \n\n\u0110\u1ECBnh ngh\u0129a b\xE0i v\u0103n: \"{{context}}\"\n\nC\xE2u tr\u1EA3\
+      \ l\u1EDDi:\n|||\n{{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'
+  a0872cde-2f19-4ae6-919a-868da47bfbc3: !Template
+    answer_choices: null
+    id: a0872cde-2f19-4ae6-919a-868da47bfbc3
+    jinja: "{% if metadata.split != \"test\" %}\nTr\xEDch xu\u1EA5t c\xE2u tr\u1EA3\
+      \ l\u1EDDi cho c\xE2u h\u1ECFi t\u1EEB b\u1ED1i c\u1EA3nh sau.\nC\xE2u h\u1ECF\
+      i: {{question}}\n\u0110\u1ECBnh ngh\u0129a b\xE0i v\u0103n: {{context}}|||\n\
+      {{answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  a64d5a15-68e2-4d1c-b30a-ca8250c860f3: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860f3
+    jinja: "{% if metadata.split != \"test\" %}\n\u0110\u01B0a ra \u0111o\u1EA1n v\u0103\
+      n sau\n\n\"{{context}}\",\n\ntr\u1EA3 l\u1EDDi c\xE2u h\u1ECFi sau.L\u01B0u\
+      \ \xFD r\u1EB1ng c\xE2u tr\u1EA3 l\u1EDDi c\xF3 m\u1EB7t trong v\u0103n b\u1EA3\
+      n.\n\nC\xE2u h\u1ECFi: {{question}} |||\n{{answers.text | choice}}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'

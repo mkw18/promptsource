@@ -1,0 +1,320 @@
+dataset: trec
+subset: ko
+templates:
+  21d04668-c5b3-4418-bbb6-663f1ffdb97c: !Template
+    answer_choices: "\uC124\uBA85 ||| \uC2E4\uC7AC ||| \uC57D\uC5B4 ||| Person |||\
+      \ \uC218\uB7C9 ||| \uC704\uCE58"
+    id: 21d04668-c5b3-4418-bbb6-663f1ffdb97c
+    jinja: "Categories: {{', '.join(answer_choices)}}\n\n\uAC00\uC7A5 \uC798 \uC124\
+      \uBA85\uD558\uB294 \uBC94\uC8FC : {{text}} \n\uB300\uB2F5: ||| {{ answer_choices\
+      \ [label_coarse] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: what_category_best_describe
+    reference: ''
+  2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6: !Template
+    answer_choices: "\uB3C4\uC2DC ||| \uAD6D\uAC00 ||| \uC0B0 ||| \uC0C1\uD0DC |||\
+      \ other location"
+    id: 2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6
+    jinja: "{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}\n{% if label_coarse\
+      \ == 5 %}\n\uC774 \uC9C8\uBB38\uC774 {{', '.join(answer_choices)}}\uB97C \uC694\
+      \uAD6C \uD558\uB294\uAC00?\n{{text}}\n|||\n{{ answer_choices [label_mapping[label_fine]]\
+      \ }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_LOC
+    reference: Fine grained labels with coarse-label `LOC`, context after question
+  309bf243-2185-4090-ac66-a24f44d89966: !Template
+    answer_choices: "\uC554\uD638 ||| \uC138\uB2E4 ||| date ||| \uAC70\uB9AC ||| \uAC00\
+      \uACA9 ||| \uC8FC\uBB38\uD558\uB2E4 ||| period of time ||| \uBC31\uBD84\uC728\
+      \ ||| \uC18D\uB3C4 ||| temperature ||| size ||| \uBB34\uAC8C ||| \uB2E4\uB978\
+      \ \uBC88\uD638"
+    id: 309bf243-2185-4090-ac66-a24f44d89966
+    jinja: "{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,\
+      \ 35:8, 41:9, 32:10, 45:11, 14:12} %}\n{% if label_coarse == 4 %}\n{{text}}\n\
+      \n\uC774 \uC9C8\uBB38\uC774 {{', '.join(answer_choices)}}\uB97C \uC694\uAD6C\
+      \ \uD558\uB294\uAC00?\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_NUM_context_first
+    reference: Fine grained labels with coarse-label `NUM`, context provided first
+  3aff84f3-e478-4598-abe8-40aa24cec1fa: !Template
+    answer_choices: "\uB3D9\uBB3C ||| \uBAB8\uC758 \uAE30\uAD00 ||| \uC0C9\uC0C1 |||\
+      \ creative piece ||| currency ||| \uC9C8\uBCD1 \uB610\uB294 \uC57D ||| \uC774\
+      \uBCA4\uD2B8 ||| \uC74C\uC2DD ||| musical instrument ||| \uC5B8\uC5B4 ||| \uD3B8\
+      \uC9C0 ||| plant ||| product ||| religion ||| \uC2A4\uD3EC\uCE20 ||| substance\
+      \ ||| \uC0C1\uC9D5 ||| \uAE30\uC220 ||| \uAE30\uAC04 ||| \uCC28\uB7C9 ||| \uB2E8\
+      \uC5B4 ||| \uB2E4\uB978 \uB2E8\uCCB4"
+    id: 3aff84f3-e478-4598-abe8-40aa24cec1fa
+    jinja: "{% set label_mapping = {2:0, 22:1, 19:2, 1:3, 46:3, 23:4, 10:5, 17:6,\
+      \ 33:7, 37:8, 15:9, 30:10, 26:11, 16:12, 28:13, 42:14, 31:15, 20:16, 44:17,\
+      \ 36:18, 14:19} %}\n{% if label_coarse == 1 %}\n\uC774 \uC9C8\uBB38\uC774 {{',\
+      \ '.join(answer_choices)}}\uB97C \uC694\uAD6C \uD558\uB294\uAC00?\n{{text}}\n\
+      |||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_ENTY
+    reference: Fine grained labels with coarse-label `ENTY`, context after question
+  43a188a2-b6dd-46a7-af2e-81a64b90b92a: !Template
+    answer_choices: "\uC554\uD638 ||| \uC138\uB2E4 ||| \uB370\uC774\uD2B8 ||| \uAC70\
+      \uB9AC ||| \uAC00\uACA9 ||| \uC8FC\uBB38\uD558\uB2E4 ||| \uC2DC\uAC04 ||| \uBC31\
+      \uBD84\uC728 ||| \uC18D\uB3C4 ||| \uC628\uB3C4 ||| \uD06C\uAE30 ||| \uBB34\uAC8C\
+      \ ||| \uB2E4\uB978 \uBC88\uD638"
+    id: 43a188a2-b6dd-46a7-af2e-81a64b90b92a
+    jinja: "{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,\
+      \ 35:8, 41:9, 32:10, 45:11, 14:12} %}\n{% if label_coarse == 4 %}\n\uC774 \uC9C8\
+      \uBB38\uC774 {{', '.join(answer_choices)}}\uB97C \uC694\uAD6C \uD558\uB294\uAC00\
+      ?\n{{text}}\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_NUM
+    reference: Fine grained labels with coarse-label `NUM`
+  6c391f4f-027b-4425-88de-1dbb6aa706ee: !Template
+    answer_choices: "Description ||| Entity ||| \uC57D\uC5B4 ||| Person ||| Quantity\
+      \ ||| \uC704\uCE58"
+    id: 6c391f4f-027b-4425-88de-1dbb6aa706ee
+    jinja: "\uC758\uBB38: {{text}}\n\nDescriptors: {{', '.join(answer_choices)}}\n\
+      \n\uCD5C\uACE0\uC758 \uC124\uBA85\uC790?\n|||\n{{answer_choices[label_coarse]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_the_best_descriptor
+    reference: ''
+  71090d59-dd02-4cbd-8032-ad86179b9bd4: !Template
+    answer_choices: "\uBC29\uBC95 ||| Creative Piece ||| \uB3D9\uBB3C ||| \uD45C\uD604\
+      \uC740 \uC57D\uC2DD ||| \uAC1C\uC778 ||| \uADF8\uB8F9 ||| \uC81C\uBAA9 ||| \uC815\
+      \uC758 ||| Date ||| \uC774\uC720 ||| \uC774\uBCA4\uD2B8 ||| \uC0C1\uD0DC |||\
+      \ Description ||| \uC138\uB2E4 ||| \uB2E4\uB978 ||| Letter ||| Religion |||\
+      \ Food ||| \uC138\uB2E4ry ||| \uC0C9\uAE54 ||| \uC6A9\uC5B4 ||| \uB3C4\uC2DC\
+      \ ||| Organ of the body ||| \uC9C8\uBCD1 \uB610\uB294 \uC57D ||| Mountain |||\
+      \ Price ||| \uC81C\uD488 ||| Period ||| \uBB3C\uC9C8 ||| Sport ||| \uC2DD\uBB3C\
+      \ ||| \uAE30\uC220 ||| \uD06C\uAE30 ||| Instrument ||| \uC57D\uC5B4 ||| Speed\
+      \ ||| Word ||| \uC5B8\uC5B4 ||| \uBC31\uBD84\uC728 ||| Code ||| \uAC70\uB9AC\
+      \ ||| Temperature ||| \uC0C1\uC9D5 ||| \uC8FC\uBB38\uD558\uB2E4 ||| Vehicle\
+      \ ||| \uBB34\uAC8C ||| \uD1B5\uD654"
+    id: 71090d59-dd02-4cbd-8032-ad86179b9bd4
+    jinja: '{{text}}
+
+
+      What is this question asking for?
+
+      |||
+
+      {{answer_choices[label_fine] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fine_grained_open_context_first
+    reference: Fine grained classes without providing choices, context first.
+  736b2629-ed57-48ce-a458-4cbc435c499b: !Template
+    answer_choices: "\uB3C4\uC2DC ||| \uAD6D\uAC00 ||| mountain ||| \uC0C1\uD0DC |||\
+      \ other location"
+    id: 736b2629-ed57-48ce-a458-4cbc435c499b
+    jinja: "{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}\n{% if label_coarse\
+      \ == 5 %}\n{{text}}\n\n\uC774 \uC9C8\uBB38\uC774 {{', '.join(answer_choices)}}\uB97C\
+      \ \uC694\uAD6C \uD558\uB294\uAC00?\n|||\n{{ answer_choices [label_mapping[label_fine]]\
+      \ }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_LOC_context_first
+    reference: Fine grained labels with coarse-label `LOC`, context provided first
+  7a3ed4dd-af89-493c-8efb-c67622f63034: !Template
+    answer_choices: "Description ||| Entity ||| \uC57D\uC5B4 ||| \uC0AC\uB78C |||\
+      \ \uC218\uB7C9 ||| \uC704\uCE58"
+    id: 7a3ed4dd-af89-493c-8efb-c67622f63034
+    jinja: "Which category best describes the following question: {{text}} \n\nChoose\
+      \ from the following list: \n{{', '.join(answer_choices)}}\n ||| {{ answer_choices\
+      \ [label_coarse] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_category_best_describes
+    reference: ''
+  7a9e6f3c-1dee-45b0-a315-1badaf59a7b8: !Template
+    answer_choices: "\uC815\uC758 ||| \uC124\uBA85 ||| \uD589\uB3D9 \uBC29\uC2DD |||\
+      \ \uC774\uC720"
+    id: 7a9e6f3c-1dee-45b0-a315-1badaf59a7b8
+    jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
+      \ 0 %}\n\uC774 \uC9C8\uBB38\uC774 {{', '.join(answer_choices)}}\uB97C \uC694\
+      \uAD6C \uD558\uB294\uAC00?\n{{text}}\n|||\n{{ answer_choices[label_mapping[label_fine]]\
+      \ }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_DESC
+    reference: Fine grained labels with coarse-label `DESC`, context after question
+  861d1a48-1113-4f35-b777-2b2f12ab9d5d: !Template
+    answer_choices: "\uC124\uBA85 ||| Entity ||| Abbreviation ||| Person ||| \uC218\
+      \uB7C9 ||| \uC704\uCE58"
+    id: 861d1a48-1113-4f35-b777-2b2f12ab9d5d
+    jinja: '{{text}}
+
+
+      Is this asking about {{('', '').join(answer_choices)}}?
+
+      |||
+
+      {{ answer_choices [label_coarse] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: trec1
+    reference: Context then prompt
+  93a06e72-2c15-4f8a-a46c-6a10919c4ea4: !Template
+    answer_choices: "\uC57D\uC5B4 ||| expression abbreviated"
+    id: 93a06e72-2c15-4f8a-a46c-6a10919c4ea4
+    jinja: "{% set label_mapping={34:0, 3:1} %} \n{% if label_coarse == 2 %}\n\uC774\
+      \ \uC9C8\uBB38\uC774 {{', '.join(answer_choices)}}\uB97C \uC694\uAD6C \uD558\
+      \uB294\uAC00?\n{{text}}\n|||\n{{answer_choices[label_mapping[label_fine]] }}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_ABBR
+    reference: Fine grained labels with coarse-label `ABBR`, context after question
+  a0096044-3b4c-4c80-b139-25eac8fe692a: !Template
+    answer_choices: "\uC57D\uC5B4 ||| \uD45C\uD604\uC740 \uC57D\uC2DD"
+    id: a0096044-3b4c-4c80-b139-25eac8fe692a
+    jinja: "{% set label_mapping = {34:0, 3:1} %} \n{% if label_coarse == 2 %}\n{{text}}\n\
+      \nIs this question asking for an {{', '.join(answer_choices)}}?\n|||\n{{ answer_choices\
+      \ [label_mapping[label_fine]] }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_ABBR_context_first
+    reference: Fine grained labels with coarse-label `ABBR`, context provided first
+  aad2def1-b694-40ee-9c26-3d1cf5c577da: !Template
+    answer_choices: "\uC124\uBA85 ||| \uC2E4\uC7AC ||| \uC57D\uC5B4 ||| Person |||\
+      \ Quantity ||| \uC704\uCE58"
+    id: aad2def1-b694-40ee-9c26-3d1cf5c577da
+    jinja: 'Is the following question asking about {{'', ''.join(answer_choices)}}?
+
+
+      {{text}}
+
+      |||
+
+      {{ answer_choices [label_coarse] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: trec2
+    reference: Prompt then context
+  bc58ba18-24a5-4553-be0a-2dba60efdad6: !Template
+    answer_choices: "\uADF8\uB8F9 ||| \uAC1C\uC778 ||| \uC81C\uBAA9 ||| description"
+    id: bc58ba18-24a5-4553-be0a-2dba60efdad6
+    jinja: '{% set label_mapping = {5:0, 4:1, 6:2, 12:3} %}
+
+      {% if label_coarse == 3 %}
+
+      Is this question asking for {{'', ''.join(answer_choices)}}?
+
+      {{text}}
+
+      |||
+
+      {{ answer_choices[label_mapping[label_fine]] }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_HUM
+    reference: Fine grained labels with coarse-label `HUM`, context after question
+  cfa8fde0-8320-4050-8d6e-7619ab14adea: !Template
+    answer_choices: "\uBC29\uBC95 ||| \uCC3D\uC758\uC801\uC778 \uC791\uD488 ||| Animal\
+      \ ||| Expression abbreviated ||| \uAC1C\uC778 ||| \uADF8\uB8F9 ||| Title |||\
+      \ \uC815\uC758 ||| Date ||| Reason ||| Event ||| \uC0C1\uD0DC ||| \uC124\uBA85\
+      \ ||| \uC138\uB2E4 ||| \uB2E4\uB978 ||| \uD3B8\uC9C0 ||| Religion ||| Food |||\
+      \ \uC138\uB2E4ry ||| \uC0C9\uAE54 ||| \uC6A9\uC5B4 ||| \uB3C4\uC2DC ||| Organ\
+      \ of the body ||| Disease or medicine ||| \uC0B0 ||| \uAC00\uACA9 ||| \uC81C\
+      \uD488 ||| Period ||| Substance ||| \uC2A4\uD3EC\uCE20 ||| Plant ||| Technique\
+      \ ||| Size ||| Instrument ||| Abbreviation ||| \uC18D\uB3C4 ||| Word ||| \uC5B8\
+      \uC5B4 ||| \uBC31\uBD84\uC728 ||| \uC554\uD638 ||| Distance ||| \uC628\uB3C4\
+      \ ||| \uC0C1\uC9D5 ||| Order ||| Vehicle ||| Weight ||| Currency"
+    id: cfa8fde0-8320-4050-8d6e-7619ab14adea
+    jinja: "\uC774 \uC9C8\uBB38\uC740 \uBB34\uC5C7\uC744 \uC694\uAD6C\uD569\uB2C8\uAE4C\
+      ?\n\n{{text}}\n|||\n{{ answer_choices[label_fine] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fine_grained_open
+    reference: Fine grained classes without providing choices.
+  e98b9294-76b4-4172-a78c-9c6e5fdfe73b: !Template
+    answer_choices: "group ||| \uAC1C\uC778 ||| \uC81C\uBAA9 ||| description"
+    id: e98b9294-76b4-4172-a78c-9c6e5fdfe73b
+    jinja: "{% set label_mapping = {5:0, 4:1, 6:2, 12:3} %}\n{% if label_coarse ==\
+      \ 3 %}\n{{text}}\n\n\uC774 \uC9C8\uBB38\uC774 {{', '.join(answer_choices)}}\uB97C\
+      \ \uC694\uAD6C \uD558\uB294\uAC00?\n|||\n{{ answer_choices [label_mapping[label_fine]]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_HUM_context_first
+    reference: Fine grained labels with coarse-label `HUM`, context provided first
+  fa588c55-5c69-4fd0-a0b1-edbfa092f710: !Template
+    answer_choices: definition ||| description ||| manner of action ||| reason
+    id: fa588c55-5c69-4fd0-a0b1-edbfa092f710
+    jinja: '{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}
+
+      {% if label_coarse == 0 %}
+
+      {{text}}
+
+
+      Is this question asking for {{'', ''.join(answer_choices)}}?
+
+      |||
+
+      {{ answer_choices [label_mapping[label_fine]] }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: fine_grained_DESC_context_first
+    reference: Fine grained labels with coarse-label `DESC`, context provided first

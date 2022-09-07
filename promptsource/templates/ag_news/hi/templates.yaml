@@ -1,0 +1,95 @@
+dataset: ag_news
+subset: hi
+templates:
+  24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
+    answer_choices: विश्व राजनीति ||| खेल ||| व्यापार ||| विज्ञान और प्रौद्योगिकी
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "कौन सा लेबल इस समाचार लेख का सबसे अच्छा वर्णन करता है?\n{{text}} ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
+    answer_choices: विश्व राजनीति ||| खेल ||| व्यापार ||| विज्ञान और प्रौद्योगिकी
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "क्या यह {{\"विश्व राजनीति, खेल, व्यवसाय, या विज्ञान और प्रौद्योगिकी\"}}\
+      \ से संबंधित समाचार है?\n{{text}} \n||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  918267e0-af68-4117-892d-2dbe66a58ce9: !Template
+    answer_choices: राजनेता ||| एथलीट ||| व्यापार कार्यकारी ||| वैज्ञानिक
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: 'क्या आप एक {{"राजनीतिज्ञ"}}, एक {{"एथलीट"}}, एक {{"व्यापार कार्यकारी"}}, या एक {{"वैज्ञानिक"}} 
+      को निम्नलिखित लेख की अनुशंसा करेंगे?
+
+
+      {{ text }}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  9345df33-4f23-4944-a33c-eef94e626862: !Template
+    answer_choices: विश्व समाचार ||| खेल ||| व्यापार ||| विज्ञान और तकनीक
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "{{text}} \n\nयह लेख किसी समाचार पत्र के निम्नलिखित में से किस अनुभाग में प्रदर्शित\
+      \ होने की संभावना है? {{\"विश्व समाचार\"}}, {{\"खेल\"}}, {{\"व्यवसाय\"}}, या {{\"विज्ञान और प्रौद्योगिकी\"\
+      }}? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  98534347-fff7-4c39-a795-4e69a44791f7: !Template
+    answer_choices: विश्व समाचार ||| खेल ||| व्यापार ||| विज्ञान और तकनीक
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "{{text}} \n\nयह लेख संभवतः किसी समाचार पत्र के किस अनुभाग में दिखाई\
+      \ देगा? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
+    answer_choices: विश्व राजनीति ||| खेल ||| व्यापार ||| विज्ञान और प्रौद्योगिकी
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "{{text}} \nक्या यह {{\"विश्व राजनीति, खेल, व्यवसाय, या विज्ञान और प्रौद्योगिकी\"}}\
+      \ से संबंधित समाचार है? ||| \n{{answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  cb355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: विश्व राजनीति ||| खेल ||| व्यापार ||| विज्ञान और प्रौद्योगिकी
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "{{text}} \nकौन सा लेबल इस समाचार लेख का सबसे अच्छा वर्णन करता है? ||| \n{{answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''

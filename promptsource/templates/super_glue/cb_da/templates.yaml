@@ -1,0 +1,197 @@
+dataset: super_glue
+subset: cb_da
+templates:
+  2e76cd0f-68ca-4f03-83ed-11cf15b25a84: !Template
+    answer_choices: "Ja ||| Ingen ||| m\xE5ske"
+    id: 2e76cd0f-68ca-4f03-83ed-11cf15b25a84
+    jinja: "Formode {{premise}} Kan vi udlede, at \"{{hypothesis}}\"? Ja, nej, eller\
+      \ m\xE5ske? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: can we infer
+    reference: Webson & Pavlick 2021
+  358860fd-61ad-45fd-92a6-a72ca9107ebc: !Template
+    answer_choices: "Ja ||| Ingen ||| m\xE5ske"
+    id: 358860fd-61ad-45fd-92a6-a72ca9107ebc
+    jinja: "{{premise}} Baseret p\xE5 den forrige passage, er det sandt, at \"{{hypothesis}}\"\
+      ? Ja, nej, eller m\xE5ske? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based on the previous passage
+    reference: "Adapted from the BoolQ prompts in Schick & Sch\xFCtze 2021."
+  3f43a599-ffdb-490e-8952-c0ce41dd4621: !Template
+    answer_choices: Rigtigt ||| Falsk ||| Uoverensstemmende
+    id: 3f43a599-ffdb-490e-8952-c0ce41dd4621
+    jinja: "{{premise}} Baseret p\xE5 disse oplysninger er p\xE5standen: \"{{hypothesis}}\"\
+      \ {{\"rigtigt\"}}, {{\"falsk\"}} eller {{\"uoverensstemmende\"}}? ||| {% if\
+      \ label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: claim true/false/inconclusive
+    reference: Sanh et al. 2021
+  404eed25-558a-4d39-9515-7de46d60d4e0: !Template
+    answer_choices: "Ja ||| Ingen ||| m\xE5ske"
+    id: 404eed25-558a-4d39-9515-7de46d60d4e0
+    jinja: "I betragtning af det {{premise}} F\xF8lger det, at {{hypothesis}} Ja,\
+      \ nej, eller m\xE5ske? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does it follow that
+    reference: Sanh et al. 2021
+  5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260: !Template
+    answer_choices: "Ja ||| Ingen ||| m\xE5ske"
+    id: 5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260
+    jinja: "{{premise}} Er vi berettigede til at sige, at \"{{hypothesis}}\"? Ja,\
+      \ nej, eller m\xE5ske? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: justified in saying
+    reference: Webson & Pavlick 2021
+  6b0c6191-183d-4731-8050-ab17c909335c: !Template
+    answer_choices: Altid ||| Aldrig ||| Sommetider
+    id: 6b0c6191-183d-4731-8050-ab17c909335c
+    jinja: Antag, at det er sandt {{premise}} Derefter er "{{hypothesis}}" {{"altid"}},
+      {{"undertiden"}} eller {{"aldrig"}} sandt? ||| {% if label !=-1 %}{{ answer_choices[label]
+      }}{% endif %}
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: always/sometimes/never
+    reference: Sanh et al. 2021
+  75db2bc2-3caa-4956-9653-13c7dd6255df: !Template
+    answer_choices: "Rigtigt ||| Falsk ||| Ingen af \u200B\u200Bdem"
+    id: 75db2bc2-3caa-4956-9653-13c7dd6255df
+    jinja: "{{premise}}\nSp\xF8rgsm\xE5l: {{hypothesis}} Sandt, falsk eller ingen\
+      \ af dem? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 style
+    reference: 'Same as reported in Figure G7 of the GPT-3 paper, except that there
+      is no task identifying tokens like "anli R1: ".'
+  87237a07-7cce-470a-80ac-3e5e3a5283ba: !Template
+    answer_choices: Altid ||| Aldrig ||| Sommetider
+    id: 87237a07-7cce-470a-80ac-3e5e3a5283ba
+    jinja: "{{premise}} \n\nHusk ovenst\xE5ende tekst, overvej: {{hypothesis}} Er\
+      \ dette {{\"altid\"}}, {{\"undertiden\"}} eller {{\"aldrig\"}} korrekt? |||\
+      \ {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: consider always/sometimes/never
+    reference: Sanh et al. 2021
+  8798b8a4-1f59-4c72-9c1b-3e3044a7462a: !Template
+    answer_choices: "Ja ||| Ingen ||| m\xE5ske"
+    id: 8798b8a4-1f59-4c72-9c1b-3e3044a7462a
+    jinja: "Givet {{premise}} Er det garanteret sandt, at \"{{hypothesis}}\"? Ja,\
+      \ nej, eller m\xE5ske? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: guaranteed true
+    reference: Webson & Pavlick 2021
+  8e3b8d3d-1362-47dc-922a-82c03f965989: !Template
+    answer_choices: "Ja ||| Ingen ||| m\xE5ske"
+    id: 8e3b8d3d-1362-47dc-922a-82c03f965989
+    jinja: "I betragtning af det {{premise}} Derfor skal det v\xE6re sandt, at \"\
+      {{hypothesis}}\"? Ja, nej, eller m\xE5ske? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: must be true
+    reference: Sanh et al. 2021
+  90ab1002-093c-4e54-b48f-626655e36b65: !Template
+    answer_choices: Garanteret ||| Umulig ||| Muligt
+    id: 90ab1002-093c-4e54-b48f-626655e36b65
+    jinja: "Antag, at det er sandt {{premise}} \n\nDerfor er \"{{hypothesis}}\" {{\"\
+      garanteret\"}}, {{\"mulig\"}} eller {{\"umulig\"}}? ||| {% if label !=-1 %}{{\
+      \ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: guaranteed/possible/impossible
+    reference: Sanh et al. 2021
+  a485d120-6eef-4ff6-8684-42df1639b101: !Template
+    answer_choices: "Ja ||| Ingen ||| m\xE5ske"
+    id: a485d120-6eef-4ff6-8684-42df1639b101
+    jinja: "{{premise}} \n\nSp\xF8rgsm\xE5l: Betyder dette, at \"{{hypothesis}}\"\
+      ? Ja, nej, eller m\xE5ske? ||| {% if label !=-1 %}{{answer_choices[label]}}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does this imply
+    reference: Sanh et al. 2021
+  bee62bfa-5307-4e1c-97b2-2ad2f7bcb179: !Template
+    answer_choices: Korrekt ||| Ukorrekt ||| Uoverensstemmende
+    id: bee62bfa-5307-4e1c-97b2-2ad2f7bcb179
+    jinja: "{{premise}} Brug kun ovenst\xE5ende beskrivelse og hvad du ved om verden,\
+      \ \"{{hypothesis}}\" er bestemt korrekt, forkert eller uoverensstemmende? |||\
+      \ {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: MNLI crowdsource
+    reference: Adapted from Williams et al. 2018's instructions to crowdsourcing workers.
+  e503b148-8e6c-43b5-9ed6-312794c54d9b: !Template
+    answer_choices: "Ja ||| Ingen ||| m\xE5ske"
+    id: e503b148-8e6c-43b5-9ed6-312794c54d9b
+    jinja: "Givet {{premise}} B\xF8r vi antage, at \"{{hypothesis}}\" er sandt? Ja,\
+      \ nej, eller m\xE5ske? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: should assume
+    reference: Webson & Pavlick 2021
+  ea56b7f3-6e07-45bc-b619-c527eac4a41b: !Template
+    answer_choices: Rigtigt ||| Falsk ||| Uoverensstemmende
+    id: ea56b7f3-6e07-45bc-b619-c527eac4a41b
+    jinja: "Tag f\xF8lgende som sandhed: {{premise}}\nS\xE5 f\xF8lgende udsagn: \"\
+      {{hypothesis}}\" er {{\"rigtigt\"}}, {{\"falsk\"}} eller {{\"uoverensstemmende\"\
+      }}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: take the following as truth
+    reference: Sanh et al. 2021

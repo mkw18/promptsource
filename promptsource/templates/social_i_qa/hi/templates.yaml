@@ -1,0 +1,95 @@
+dataset: social_i_qa
+subset: hi
+templates:
+  605691e9-df59-415d-a622-530734c7df38: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 605691e9-df59-415d-a622-530734c7df38
+    jinja: "\u092E\u0948\u0902\u0928\u0947 \u0938\u0941\u0928\u093E \u0939\u0948 \u0915\
+      \u093F {{context}}\n\n\u0914\u0930 \u092E\u0948\u0902 \u0938\u094B\u091A \u0930\
+      \u0939\u093E \u0925\u093E {{question}}\n\n|||\n\n{{answer_choices[label | int\
+      \ - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: I was wondering
+    reference: ''
+  666f415b-e3ac-47bf-a79b-19024c4a4143: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 666f415b-e3ac-47bf-a79b-19024c4a4143
+    jinja: "{{context}}\n\n\u0938\u0902\u0926\u0930\u094D\u092D \u0915\u094B \u0926\
+      \u0947\u0916\u0924\u0947 \u0939\u0941\u090F: {{question}}\n\n\u0938\u0902\u092D\
+      \u093E\u0935\u093F\u0924 \u0909\u0924\u094D\u0924\u0930: {{answer_choices |\
+      \ join(\", \")}}\n\n|||\n\n{{answer_choices[label | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate answer
+    reference: ''
+  991f78cc-82d3-482f-b1de-f37a7179a316: !Template
+    answer_choices: "\u0939\u093E\u0901 ||| \u0928\u0939\u0940\u0902"
+    id: 991f78cc-82d3-482f-b1de-f37a7179a316
+    jinja: "{% set random_answer_id = range(0,2) | choice%}\n{% set answers = [answerA,\
+      \ answerB, answerC] %}\n{{context}}\n\n\u092A\u094D\u0930\u0936\u094D\u0928\
+      \ \"{{question}}\" \u0915\u094B \u0926\u0947\u0916\u0924\u0947 \u0939\u0941\u090F\
+      , \"{{answers[random_answer_id]}}\" \u090F\u0915 \u092E\u093E\u0928\u094D\u092F\
+      \ \u0909\u0924\u094D\u0924\u0930 \u0939\u0948?\n\n|||\n\n{% if (label | int)\
+      \ - 1 == random_answer_id %}\n    \u0939\u093E\u0901\n{% else %}\n    \u0928\
+      \u0939\u0940\u0902\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Check if a random answer is valid or not
+    reference: ''
+  b980667e-b4ca-44ce-aba9-5b47d3ccf406: !Template
+    answer_choices: null
+    id: b980667e-b4ca-44ce-aba9-5b47d3ccf406
+    jinja: "{{context}}\n\n\u092F\u0939 \u0926\u0947\u0916\u0924\u0947 \u0939\u0941\
+      \u090F \u0915\u093F \u0915\u093F\u0938\u0940 \u092A\u094D\u0930\u0936\u094D\u0928\
+      \ \u0915\u093E \u0909\u0924\u094D\u0924\u0930 \"{{{\"1\": answerA, \"2\": answerB,\
+      \ \"3\": answerC}[label]}}\" \u0939\u0948, \u0915\u094D\u092F\u093E \u0938\u0935\
+      \u093E\u0932 \u0939\u0948?\n\n|||\n\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Generate the question from the answer
+    reference: ''
+  cbad777f-5794-4d71-bf3d-54da6043e5f1: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: cbad777f-5794-4d71-bf3d-54da6043e5f1
+    jinja: "{{context}}\n\n\u0938\u0902\u0926\u0930\u094D\u092D \u0915\u094B \u0926\
+      \u0947\u0916\u0924\u0947 \u0939\u0941\u090F: {{question}}\n\n|||\n\n{{answer_choices[label\
+      \ | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Generate answer
+    reference: ''
+  e2316120-2461-4664-943d-962a85008e23: !Template
+    answer_choices: A ||| B ||| C
+    id: e2316120-2461-4664-943d-962a85008e23
+    jinja: "\u0938\u0902\u0926\u0930\u094D\u092D: {{context}}\n\n\u092A\u094D\u0930\
+      \u0936\u094D\u0928: {{question}}\n\n\u0907\u0928\u092E\u0947\u0902 \u0938\u0947\
+      \ \u0915\u094C\u0928 \u0938\u093E \u0909\u0924\u094D\u0924\u0930 \u0938\u0902\
+      \u0926\u0930\u094D\u092D \u0915\u0947 \u0905\u0928\u0941\u0938\u093E\u0930 \u092A\
+      \u094D\u0930\u0936\u094D\u0928 \u0915\u093E \u0938\u092C\u0938\u0947 \u0905\u091A\
+      \u094D\u091B\u093E \u0909\u0924\u094D\u0924\u0930 \u0926\u0947\u0924\u093E \u0939\
+      \u0948?\n\nA: {{answerA}}\n\nB: {{answerB}}\n\nC: {{answerC}}\n\n|||\n\n{{{\"\
+      1\": \"A\", \"2\": \"B\", \"3\": \"C\"}[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate index
+    reference: ''

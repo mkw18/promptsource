@@ -1,0 +1,156 @@
+dataset: wiki_hop
+subset: original_ko
+templates:
+  0bb6b603-115e-4ae9-b17b-881fa72b2e81: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 0bb6b603-115e-4ae9-b17b-881fa72b2e81
+    jinja: "\uC815\uBCF4:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\n'{{question_split[0]\
+      \ | replace(\"_\", \" \")}}'\uC640 \uAD00\uB828\uB41C \uAC1D\uCCB4 \uC5D4\uD2F0\
+      \uD2F0\uB294 '{{question_split[1:] | join(\" \")}}'\uACFC \uAD00\uB828\uC774\
+      \ \uC788\uC2B5\uB2C8\uAE4C?\n\n\uC120\uD0DD :\n- {{answer_choices | join(\"\\\
+      n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_interrogative_1
+    reference: Given information and subject and relation, choose the best object
+      entity (interrogative instruction).
+  23e0d05a-8777-45c4-8692-13f3dc5a40bb: !Template
+    answer_choices: null
+    id: 23e0d05a-8777-45c4-8692-13f3dc5a40bb
+    jinja: "\uC815\uBCF4:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\n'{{question_split[1:]\
+      \ | join(\" \")}}'\uC640 '{{answer}}'\uC0AC\uC774\uC758 \uAD00\uACC4\uB294 \uBB34\
+      \uC5C7\uC785\uB2C8\uAE4C?\n\n|||\n{{ question_split[0] | replace(\"_\", \" \"\
+      ) }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: explain_relation
+    reference: Given information, explain the relation between the subject entity
+      and the object entity.
+  2fadafea-f814-4ff1-a3aa-cace9067f31f: !Template
+    answer_choices: null
+    id: 2fadafea-f814-4ff1-a3aa-cace9067f31f
+    jinja: "\uC815\uBCF4:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\n'{{question_split[1:]\
+      \ | join(\" \")}}'\uB294 \uC5B4\uB5A4 \uC5D4\uD2F0\uD2F0\uAC00 '{{question_split[0]\
+      \ | replace(\"_\", \" \")}}'\uC640 \uAD00\uACC4\uAC00 \uC788\uC2B5\uB2C8\uAE4C\
+      ?\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_object
+    reference: Given information, generate the best object entity (without answer
+      choices in prompt).
+  40bdb0e7-def9-4829-9a37-a05d354ef7cd: !Template
+    answer_choices: null
+    id: 40bdb0e7-def9-4829-9a37-a05d354ef7cd
+    jinja: "\uC815\uBCF4:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\n\uC704\uC758 \uB2E8\uB77D\
+      \uC774 \uC8FC\uC5B4\uC9C0\uBA74 '{{question_split[0] | replace(\"_\", \" \"\
+      )}}'{{{answer}} '\uAD00\uACC4\uAC00\uC788\uB294 \uC5D4\uD2F0\uD2F0\uAC00 \uC5B4\
+      \uB5A4 \uC5D4\uD2F0\uD2F0\uAC00 \uAD00\uACC4\uAC00 \uC788\uB294\uC9C0 \uACB0\
+      \uC815\uD558\uC2ED\uC2DC\uC624.\n\n|||\n{{ question_split[1:] | join(\" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_subject
+    reference: Given information, generate the best subject entity for the fact triple.
+  4836e754-b2c9-4697-b386-6770494dc5f5: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 4836e754-b2c9-4697-b386-6770494dc5f5
+    jinja: "\uC815\uBCF4:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\n\uC704\uC758 \uC815\uBCF4\
+      \uAC00 \uC8FC\uC5B4\uC9C0\uBA74 '{{question_split[0] | replace(\"_\", \" \"\
+      )}}'{{question_split[1:] | join(\" \")}} '\uC640 \uAD00\uACC4\uB97C \uB098\uD0C0\
+      \uB0B4\uB294 \uAC1D\uCCB4 \uC5D4\uD2F0\uD2F0 \uC544\uB798 \uBAA9\uB85D \uC911\
+      \uC5D0\uC11C \uC120\uD0DD\uD558\uC2ED\uC2DC\uC624.\n\n\uC120\uD0DD :\n- {{answer_choices\
+      \ | join(\"\\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_1
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  4a1b61f6-c619-4d3d-aec2-f41a8986641c: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 4a1b61f6-c619-4d3d-aec2-f41a8986641c
+    jinja: "\uC815\uBCF4:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\n\uC704\uC758 \uB2E8\uB77D\
+      \uC744 \uC77D\uC740 \uD6C4, \uC6B0\uB9AC\uB294 '{{question_split[1:] | join(\"\
+      \ \")}}'\uAC00 '{{question_split[0] | replace(\"_\", \" \")}}'\uC758 \uAD00\uACC4\
+      \uB97C \uBCF4\uC5EC\uC8FC\uB294 \uC5D4\uD2F0\uD2F0\uB97C \uC54C\uACE0 \uC2F6\
+      \uC5B4\uD569\uB2C8\uB2E4.\uC544\uB798 \uC120\uD0DD\uC5D0\uC11C \uB2F5\uC744\
+      \ \uCC3E\uC73C\uC2ED\uC2DC\uC624.\n\n\uC120\uD0DD :\n- {{answer_choices | join(\"\
+      \\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_3
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  c4675106-0ac5-4bf0-a400-f628daae81db: !Template
+    answer_choices: null
+    id: c4675106-0ac5-4bf0-a400-f628daae81db
+    jinja: "\uC815\uBCF4:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\n\uC815\uBCF4\uAC00 \uC8FC\
+      \uC5B4\uC9C0\uBA74 '{{question_split[0] | replace(\"_\", \" \")}}'\uC640 \uAD00\
+      \uACC4\uAC00\uC788\uB294 \uC8FC\uC81C \uBC0F \uAC1D\uCCB4 \uC5D4\uD2F0\uD2F0\
+      \uB97C \uC120\uD0DD\uD558\uC2ED\uC2DC\uC624.\n\n|||\n{{ question_split[1:] |\
+      \ join(\" \") }} , {{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_subject_and_object
+    reference: Given information and relation, generate the subject and object.
+  e4dc7abf-d56a-4217-ba7f-7470cd959e8e: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: e4dc7abf-d56a-4217-ba7f-7470cd959e8e
+    jinja: "\uC815\uBCF4:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\n\uC704\uC758 \uB2E8\uB77D\
+      \uC744 \uC77D\uC740 \uD6C4 '{{question_split[0] | replace(\"_\", \" \")}}'\uC758\
+      \ \uAD00\uACC4\uC640 '{{question_split[1:] | join(\" \")}}'\uACFC \uAD00\uB828\
+      \uB41C \uC5D4\uD2F0\uD2F0\uC5D0 \uB300\uD55C \uCD5C\uC0C1\uC758 \uB2F5\uBCC0\
+      \uC744 \uC120\uD0DD\uD558\uC2ED\uC2DC\uC624.\n\n\uC120\uD0DD :\n- {{answer_choices\
+      \ | join(\"\\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_2
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  f44936e1-cbde-4d41-b462-6150cce8c1c8: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: f44936e1-cbde-4d41-b462-6150cce8c1c8
+    jinja: "\uC815\uBCF4:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
+      \ %}\n\n{% set question_split = question.split(' ') %}\n'{{question_split[1:]\
+      \ | join(\" \")}}'\uC740 '{{question_split[0] | replace(\"_\", \" \")}}'\uC758\
+      \ \uAD00\uACC4\uB97C \uD1B5\uD574 \uC5B4\uB5A4 \uAC1C\uCCB4 \uC5D4\uD2F0\uD2F0\
+      \uC640 \uAD00\uB828\uC774 \uC788\uC2B5\uB2C8\uAE4C?\n\n\uC120\uD0DD :\n- {{answer_choices\
+      \ | join(\"\\n - \") }}\n\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_interrogative_2
+    reference: Given information and subject and relation, choose the best object
+      entity (interrogative instruction).

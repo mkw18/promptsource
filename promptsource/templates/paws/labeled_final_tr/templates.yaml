@@ -1,0 +1,150 @@
+dataset: paws
+subset: labeled_final_tr
+templates:
+  0be7cecd-b427-4ec9-9b0e-666d6dae0063: !Template
+    answer_choices: Numara ||| Evet
+    id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
+    jinja: "A\u015Fa\u011F\u0131daki iki c\xFCmlenin birbirini yorumlay\u0131p yorumlamad\u0131\
+      \u011F\u0131n\u0131 belirleyin.\nC\xFCmle 1: {{sentence1}}\nC\xFCmle 2: {{sentence2}}\n\
+      ||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: task_description-no-label
+    reference: Generalized prompt format, task_description-input.
+  472fe5eb-b499-4952-a930-f72f4ca9ed43: !Template
+    answer_choices: Numara ||| Evet
+    id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
+    jinja: "C\xFCmle 1: {{sentence1}}\nC\xFCmle 2: {{sentence2}}\nSoru: C\xFCmle 1\
+      \ ve C\xFCmle 2 ayn\u0131 anlam\u0131 ifade ediyor mu?Evet veya Hay\u0131r?\
+      \ \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Meaning
+    reference: Natural question
+  4c8d4e4c-eae4-45f6-bdf0-d132ae198d09: !Template
+    answer_choices: Numara ||| Evet
+    id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
+    jinja: "{{sentence1}}\nIs that a paraphrase of the following sentence?\n{{sentence2}}?\n\
+      ||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context-question-no-label
+    reference: Generalized prompt format, context-question without any label
+  678400f8-1a5c-4a40-b5ef-abeaa41e20ec: !Template
+    answer_choices: Numara ||| Evet
+    id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
+    jinja: "C\xFCmle 1: {{sentence1}}\nC\xFCmle 2: {{sentence2}}\nQuestion: Can we\
+      \ rewrite Sentence 1 to Sentence 2? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Rewrite-no-label
+    reference: Natural Question without label
+  7c205a61-64d4-4673-bb8e-bfa77562eede: !Template
+    answer_choices: No ||| Yes
+    id: 7c205a61-64d4-4673-bb8e-bfa77562eede
+    jinja: "{{sentence1}}\nBu a\u015Fa\u011F\u0131daki c\xFCmlenin bir a\xE7\u0131\
+      klamas\u0131 m\u0131?\n{{sentence2}}?\nYes or No.\n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context-question
+    reference: Generalized prompt format, context-question
+  8c259e88-7646-4a50-a4ca-90393920f281: !Template
+    answer_choices: Numara ||| Evet
+    id: 8c259e88-7646-4a50-a4ca-90393920f281
+    jinja: "C\xFCmle 1: {{sentence1}}\nC\xFCmle 2: {{sentence2}}\nSoru: C\xFCmle 1\
+      \ C\xFCmle 2?Evet veya Hay\u0131r? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Concatenation
+    reference: Concatenation of sentence 1 and sentence 2
+  a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
+    answer_choices: null
+    id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
+    jinja: "{% if label == 1 %} \nC\xFCmleyi yorumlay\u0131n: {{sentence1}} \n|||\
+      \ \n{{sentence2}} \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: paraphrase-task
+    reference: Create a generative paraphrase task
+  a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076: !Template
+    answer_choices: Numara ||| Yes
+    id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
+    jinja: "Sentence 1: {{sentence1}}\nC\xFCmle 2: {{sentence2}}\nSoru: C\xFCmle 1\
+      \ C\xFCmle 2? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Concatenation-no-label
+    reference: Concatenation of sentence 1 and sentence 2 without any label
+  d5239f5f-2014-47c9-a0c1-4896f76f82a4: !Template
+    answer_choices: Numara ||| Evet
+    id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
+    jinja: "C\xFCmle 1: {{sentence1}}\nC\xFCmle 2: {{sentence2}}\nSoru: C\xFCmle 1\
+      \ ve C\xFCmle 2 ayn\u0131 anlam\u0131 ifade ediyor mu? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Meaning-no-label
+    reference: Natural question without label
+  d9911dad-75fe-4506-9843-3a46ba5e49be: !Template
+    answer_choices: "False ||| Do\u011Fru"
+    id: d9911dad-75fe-4506-9843-3a46ba5e49be
+    jinja: "{{sentence1}} Question: {{sentence2}} True or False? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: PAWS-ANLI GPT3
+    reference: ANLI prompt format from Table G7 in the GPT3 paper
+  dd52359b-dc56-4241-8179-c98c636f0335: !Template
+    answer_choices: No ||| Yes
+    id: dd52359b-dc56-4241-8179-c98c636f0335
+    jinja: "C\xFCmle 1: {{sentence1}}\nSentence 2: {{sentence2}}\nQuestion: Can we\
+      \ rewrite Sentence 1 to Sentence 2? Yes or No? \n||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Rewrite
+    reference: Natural Question
+  f0866713-c59a-4c5d-a307-95e80a935f99: !Template
+    answer_choices: Numara ||| Yes
+    id: f0866713-c59a-4c5d-a307-95e80a935f99
+    jinja: "{{sentence1}} Soru: {{sentence2}} Yetkili mi yoksa de\u011Fil mi?\n|||\
+      \ \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: PAWS-ANLI GPT3-no-label
+    reference: ANLI prompt format from Table G7 in the GPT3 paper. Additionally added
+      task information without any label.

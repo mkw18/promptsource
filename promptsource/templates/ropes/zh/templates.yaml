@@ -1,0 +1,191 @@
+dataset: ropes
+subset: zh
+templates:
+  0791ec30-6361-4e62-8dce-ca9cbf997acc: !Template
+    answer_choices: null
+    id: 0791ec30-6361-4e62-8dce-ca9cbf997acc
+    jinja: "{% if answers.text %}\n\u8BF7\u6B63\u786E\u56DE\u7B54\u4E0E\u4E0B\u9762\
+      \u6BB5\u843D\u6709\u5173\u7684\u4EE5\u4E0B\u95EE\u9898\u3002 \n\n{{ question\
+      \ }}\n\n{{ situation }}\n\n\u6697\u793A\uFF1A {{ background }}\n|||\n{{ answers.text\
+      \ | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: prompt_beginning
+    reference: ''
+  0909d72d-50c7-4cbb-bec4-1f891123717c: !Template
+    answer_choices: null
+    id: 0909d72d-50c7-4cbb-bec4-1f891123717c
+    jinja: "{% if answers.text %}\n{{ situation }}\n\n\u9274\u4E8E\u4E0A\u9762\u7684\
+      \u6BB5\u843D\uFF0C\u8BF7\u6B63\u786E\u56DE\u7B54\u4EE5\u4E0B\u95EE\u9898\uFF1A\
+      \ \n\n{{ question }}\n|||\n{{ answers.text | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: prompt_bottom_no_hint
+    reference: ''
+  1e4944e7-4d5b-475c-8b04-4b523e96bc51: !Template
+    answer_choices: null
+    id: 1e4944e7-4d5b-475c-8b04-4b523e96bc51
+    jinja: "{% if answers.text %}\n\u80CC\u666F\uFF1A {{ background }}\n\n\u6BB5\u843D\
+      \uFF1A {{ situation }}\n\n\u9274\u4E8E\u4E0A\u9762\u7684\u6BB5\u843D\uFF0C\u8BF7\
+      \u6B63\u786E\u56DE\u7B54\u4EE5\u4E0B\u95EE\u9898\uFF1A {{ question }}\n|||\n\
+      {{ answers.text | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: prompt_bottom_hint_beginning
+    reference: ''
+  27fb16c6-a563-46ef-af73-42e15183824e: !Template
+    answer_choices: null
+    id: 27fb16c6-a563-46ef-af73-42e15183824e
+    jinja: "{% if answers.text %}\n\u7ED9\u5B9A\u80CC\u666F\uFF1A {{background}}\n\
+      \n\u548C\u60C5\u51B5\uFF1A {{situation}}\n\n\u56DE\u7B54\u4EE5\u4E0B\u95EE\u9898\
+      \uFF1A {{question}}|||\n{{ answers.text | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: given_background_situation
+    reference: ''
+  31faf808-80ff-47af-ac49-d2cd7a7abcaf: !Template
+    answer_choices: null
+    id: 31faf808-80ff-47af-ac49-d2cd7a7abcaf
+    jinja: '{% if answers.text %}
+
+      {{ situation }}
+
+
+      {{ question }}
+
+
+      |||
+
+      {{ answers.text | choice }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: false
+    name: plain_no_background
+    reference: Task without background
+  473f2c9c-9731-443c-a641-5e43770f7df6: !Template
+    answer_choices: null
+    id: 473f2c9c-9731-443c-a641-5e43770f7df6
+    jinja: "{% if answers.text %}\n{{ situation }}\n\n{{ question }}\n\n\u6697\u793A\
+      \uFF1A {{ background }}\n|||\n{{ answers.text | choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: plain_bottom_hint
+    reference: ''
+  a04f69ac-8122-4618-8426-185fc043feca: !Template
+    answer_choices: null
+    id: a04f69ac-8122-4618-8426-185fc043feca
+    jinja: '{% if answers.text %}
+
+      {{ background }}
+
+
+      {{ situation }}
+
+
+      {{ question }}
+
+      |||
+
+      {{ answers.text | choice }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: plain_background_situation
+    reference: ''
+  a17aefbb-c571-4127-8170-379e2ec83774: !Template
+    answer_choices: null
+    id: a17aefbb-c571-4127-8170-379e2ec83774
+    jinja: "{% if answers.text %}\n\u6211\u53EF\u4EE5\u4F7F\u7528\u6B64\u80CC\u666F\
+      \uFF1A {{background}}\n\n\u73B0\u5728\uFF0C\u6211\u6709\u4E00\u4E2A\u65B0\u7684\
+      \u60C5\u51B5\uFF1A {{situation}}\n\n\u8BF7\u56DE\u7B54\u8FD9\u4E2A\u95EE\u9898\
+      \uFF1A {{question}}|||\n{{ answers.text | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: background_new_situation_answer
+    reference: ''
+  b6da4f12-5384-46f5-a74e-c703c19d1698: !Template
+    answer_choices: null
+    id: b6da4f12-5384-46f5-a74e-c703c19d1698
+    jinja: "{% if answers.text %}\n\u60A8\u6709\u4E00\u4E2A\u65B0\u60C5\u51B5\uFF1A\
+      \ {{situation}}\n\n\u5E76\u63D0\u793A\uFF1A {{background}}\n\n\u8BF7\u56DE\u7B54\
+      \u8FD9\u4E2A\u95EE\u9898\uFF1A {{question}}|||\n{{ answers.text | choice }}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: background_situation_middle
+    reference: ''
+  cc747655-6472-4023-95e4-03cb85d5a1c5: !Template
+    answer_choices: null
+    id: cc747655-6472-4023-95e4-03cb85d5a1c5
+    jinja: "{% if answers.text %}\n\u6211\u6709\u4E00\u4E2A\u65B0\u7684\u60C5\u51B5\
+      \uFF1A {{situation}}\n\n\u4F46\u662F\u6211\u53EF\u4EE5\u4F7F\u7528\u4EE5\u4E0B\
+      \u80CC\u666F\uFF1A {{background}}\n\n\u8FD9\u4E2A\u95EE\u9898\u7684\u7B54\u6848\
+      \u662F\u4EC0\u4E48\uFF1A {{question}}|||\n{{ answers.text | choice }}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: new_situation_background_answer
+    reference: ''
+  cc8f3c6b-b800-4b47-b6ec-e8febfdaad6f: !Template
+    answer_choices: null
+    id: cc8f3c6b-b800-4b47-b6ec-e8febfdaad6f
+    jinja: "{% if answers.text %}\n{{ situation }}\n\n\u9274\u4E8E\u4E0A\u9762\u7684\
+      \u6BB5\u843D\uFF0C\u8BF7\u6B63\u786E\u56DE\u7B54\u4EE5\u4E0B\u95EE\u9898\uFF1A\
+      \ \n\n{{ question }}\n\n\u6697\u793A\uFF1A {{ background }}\n|||\n{{ answers.text\
+      \ | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: prompt_mix
+    reference: ''
+  f62e0adb-ca74-4280-8ed3-8b53411d87ce: !Template
+    answer_choices: null
+    id: f62e0adb-ca74-4280-8ed3-8b53411d87ce
+    jinja: "{% if answers.text %}\n\u524D\u51E0\u5929\u6211\u8BFB\u4E86\u8FD9\u7BC7\
+      \u80CC\u666F\u6587\u7AE0\uFF1A {{background}}\n\n\u6211\u4ECA\u5929\u9762\u4E34\
+      \u7740\u65B0\u7684\u60C5\u51B5\uFF1A {{situation}}\n\n\u4F7F\u7528\u6211\u4ECE\
+      \u80CC\u666F\u6587\u7AE0\u4E2D\u83B7\u5F97\u7684\u77E5\u8BC6\uFF0C\u6211\u5E94\
+      \u8BE5\u5982\u4F55\u6B63\u786E\u56DE\u7B54\u6709\u5173\u6211\u7684\u65B0\u60C5\
+      \u51B5\u7684\u4EE5\u4E0B\u95EE\u9898\uFF1A {{question}}|||\n{{ answers.text\
+      \ | choice }}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: read_background_situation
+    reference: ''
