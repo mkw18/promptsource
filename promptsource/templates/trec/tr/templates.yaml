@@ -15,7 +15,7 @@ templates:
     name: what_category_best_describe
     reference: ''
   2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6: !Template
-    answer_choices: "Kent ||| \xFClke ||| da\u011F ||| durum ||| other location"
+    answer_choices: "Kent ||| \xFClke ||| da\u011F ||| durum ||| Di\u011Fer konum"
     id: 2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6
     jinja: "{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}\n{% if label_coarse\
       \ == 5 %}\nBu soru {{', '.join(answer_choices)}} i\xE7in mi istiyor?\n{{text}}\n\
@@ -30,7 +30,7 @@ templates:
   309bf243-2185-4090-ac66-a24f44d89966: !Template
     answer_choices: "kodlamak ||| saymak ||| tarih ||| mesafe ||| fiyat ||| emir |||\
       \ zaman aral\u0131\u011F\u0131 ||| y\xFCzde ||| h\u0131z ||| s\u0131cakl\u0131\
-      k ||| size ||| a\u011F\u0131rl\u0131k ||| ba\u015Fka say\u0131"
+      k ||| boyut ||| a\u011F\u0131rl\u0131k ||| ba\u015Fka say\u0131"
     id: 309bf243-2185-4090-ac66-a24f44d89966
     jinja: "{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,\
       \ 35:8, 41:9, 32:10, 45:11, 14:12} %}\n{% if label_coarse == 4 %}\n{{text}}\n\
@@ -44,11 +44,11 @@ templates:
     name: fine_grained_NUM_context_first
     reference: Fine grained labels with coarse-label `NUM`, context provided first
   3aff84f3-e478-4598-abe8-40aa24cec1fa: !Template
-    answer_choices: "bir hayvan ||| v\xFCcudun bir organ\u0131 ||| a color ||| yarat\u0131\
+    answer_choices: "bir hayvan ||| v\xFCcudun bir organ\u0131 ||| bir renk ||| yarat\u0131\
       c\u0131 par\xE7a ||| para birimi ||| hastal\u0131k veya ila\xE7 ||| Etkinlik\
-      \ ||| G\u0131da ||| m\xFCzik aleti ||| dil ||| mektup ||| bitki ||| \xFCr\xFC\
-      n ||| din ||| spor ||| madde ||| sembol ||| teknik ||| terim ||| ara\xE7 |||\
-      \ kelime ||| Di\u011Fer Varl\u0131k"
+      \ ||| food ||| m\xFCzik aleti ||| dil ||| mektup ||| bitki ||| \xFCr\xFCn |||\
+      \ din ||| spor ||| madde ||| sembol ||| teknik ||| terim ||| ara\xE7 ||| kelime\
+      \ ||| Di\u011Fer Varl\u0131k"
     id: 3aff84f3-e478-4598-abe8-40aa24cec1fa
     jinja: "{% set label_mapping = {2:0, 22:1, 19:2, 1:3, 46:3, 23:4, 10:5, 17:6,\
       \ 33:7, 37:8, 15:9, 30:10, 26:11, 16:12, 28:13, 42:14, 31:15, 20:16, 44:17,\
@@ -161,8 +161,14 @@ templates:
     answer_choices: "Tan\u0131m ||| Varl\u0131k ||| K\u0131saltma ||| Ki\u015Fi |||\
       \ Miktar ||| Konum"
     id: 861d1a48-1113-4f35-b777-2b2f12ab9d5d
-    jinja: "{{text}}\n\nBu {{(',') .join (cevap_choices)}} hakk\u0131nda m\u0131 soruyor?\n\
-      |||\n{{ answer_choices [label_coarse] }}"
+    jinja: '{{text}}
+
+
+      Is this asking about {{('', '').join(answer_choices)}}?
+
+      |||
+
+      {{ answer_choices [label_coarse] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

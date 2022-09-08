@@ -43,7 +43,7 @@ templates:
     id: 25863d16-34be-4c5f-9040-11d5c6398b4b
     jinja: "\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: {{question}}\n\n\u0BA4\u0BC7\u0BB0\
       \u0BCD\u0BB5\u0BC1\u0B95\u0BB3\u0BCD: \n- {{ choices | join(\"\\n- \") }}\n\n\
-      \u0BAA\u0BA4\u0BBF\u0BB2\u0BC8\u0BAA\u0BCD \u0BAA\u0BCB\u0BB2\u0BB5\u0BC7 {{a}\
+      \u0BAA\u0BA4\u0BBF\u0BB2\u0BC8\u0BAA\u0BCD \u0BAA\u0BCB\u0BB2\u0BB5\u0BC7 \"{{answer}}\"\
       \ the \u0BA4\u0BC7\u0BB0\u0BCD\u0BB5\u0BC1 \u0B9A\u0BC6\u0BAF\u0BCD\u0BB5\u0BA4\
       \u0BB1\u0BCD\u0B95\u0BBE\u0BA9 \u0BAA\u0B95\u0BC1\u0BA4\u0BCD\u0BA4\u0BB1\u0BBF\
       \u0BB5\u0BC1: |||\n{{abstractive_explanation}}"

@@ -150,8 +150,14 @@ templates:
   861d1a48-1113-4f35-b777-2b2f12ab9d5d: !Template
     answer_choices: "Kirjeldus ||| \xDCksus ||| L\xFChend ||| Isik ||| Kogus ||| Asukoht"
     id: 861d1a48-1113-4f35-b777-2b2f12ab9d5d
-    jinja: "{{text}}\n\nKas see k\xFCsib {{{(',') .Join (Answer_choices)}} kohta?\n\
-      |||\n{{ answer_choices [label_coarse] }}"
+    jinja: '{{text}}
+
+
+      Is this asking about {{('', '').join(answer_choices)}}?
+
+      |||
+
+      {{ answer_choices [label_coarse] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

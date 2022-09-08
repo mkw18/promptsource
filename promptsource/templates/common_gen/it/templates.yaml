@@ -48,7 +48,7 @@ templates:
     answer_choices: null
     id: b2033df4-7922-45b8-a113-e7784135cea9
     jinja: "{% set seq = [ \n'Dai concetti menzionati di seguito, genera una frase:',\
-      \ \n'Converti i concetti in una frase:', \n'Dato l'elenco dei concetti, scrivi\
+      \ \n'Converti i concetti in una frase:', \n'Dato l''elenco dei concetti, scrivi\
       \ una frase:'\n] %} \n{{ seq | choice }}\n{{ concepts | join(\", \") }}\n|||\n\
       {{target}}"
     metadata: !TemplateMetadata

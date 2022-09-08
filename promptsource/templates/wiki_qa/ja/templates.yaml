@@ -63,7 +63,7 @@ templates:
     answer_choices: null
     id: a99a68fa-46ae-4331-8b97-fcf751db3f6f
     jinja: "{% if label == 1 %}\n\u7B54\u3048\u304C\u6B21\u306E\u3088\u3046\u306A\u30C8\
-      \u30D4\u30C3\u30AF\u300C{{{document_title}}\u300D\u306B\u3064\u3044\u3066\u8CEA\
+      \u30D4\u30C3\u30AF\u300C {{document_title}} \u300D\u306B\u3064\u3044\u3066\u8CEA\
       \u554F\u3092\u751F\u6210\u3057\u307E\u3059\u3002 {{answer}}.|||\n{{question}}?\n\
       {% endif %}\n"
     metadata: !TemplateMetadata

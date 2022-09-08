@@ -235,7 +235,7 @@ templates:
     jinja: '{{text}}
 
 
-      Fragt das nach {{('','') .join (Antwort_Choices)}}?
+      Is this asking about {{('', '').join(answer_choices)}}?
 
       |||
 

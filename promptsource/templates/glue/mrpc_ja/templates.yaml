@@ -74,7 +74,7 @@ templates:
   ee82d511-908c-4244-804f-6d0d907c68c7: !Template
     answer_choices: "\u756A\u53F7 ||| \u306F\u3044"
     id: ee82d511-908c-4244-804f-6d0d907c68c7
-    jinja: "\u6587{{{a}}\u3092\u6587{{{b}}\u306B\u7F6E\u304D\u63DB\u3048\u3066\u3001\
+    jinja: "\u6587{{sentence1}}\u3092\u6587{{sentence2}}\u306B\u7F6E\u304D\u63DB\u3048\u3066\u3001\
       \u540C\u3058\u3053\u3068\u3092\u610F\u5473\u3057\u307E\u3059\u304B\uFF1F\n|||\n\
       {{ answer_choices[label] }}"
     metadata: !TemplateMetadata

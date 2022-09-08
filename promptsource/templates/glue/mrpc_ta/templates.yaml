@@ -88,7 +88,7 @@ templates:
     id: ee82d511-908c-4244-804f-6d0d907c68c7
     jinja: "\u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BA4\u0BCD\u0BA4\u0BC8\n{{sentence1}}\n\
       \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BA4\u0BCD\u0BA4\u0BC1\u0B9F\u0BA9\
-      \u0BCD {{b} for \u0B89\u0B9F\u0BA9\u0BCD \u0BAE\u0BBE\u0BB1\u0BCD\u0BB1 \u0BAE\
+      \u0BCD {{sentence2}} for \u0B89\u0B9F\u0BA9\u0BCD \u0BAE\u0BBE\u0BB1\u0BCD\u0BB1 \u0BAE\
       \u0BC1\u0B9F\u0BBF\u0BAF\u0BC1\u0BAE\u0BBE?\n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false

@@ -230,10 +230,14 @@ templates:
       \u0B95\u0BAE\u0BCD ||| \u0BA8\u0BAA\u0BB0\u0BCD ||| \u0B85\u0BB3\u0BB5\u0BC1\
       \ ||| \u0B87\u0B9F\u0BAE\u0BCD"
     id: 861d1a48-1113-4f35-b777-2b2f12ab9d5d
-    jinja: "{{text}}\n\n\u0B87\u0BA4\u0BC1 {{(',') \u0BAA\u0BB1\u0BCD\u0BB1\u0BBF\
-      \ \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BBE .\u0B9C\u0BCB\u0BAF\
-      \u0BBF\u0BA9\u0BCD (\u0BAA\u0BA4\u0BBF\u0BB2\u0BCD_\u0B9A\u0BCB\u0BAF\u0BB8\u0BCD\
-      )}}?\n|||\n{{ answer_choices [label_coarse] }}"
+    jinja: '{{text}}
+
+
+      Is this asking about {{('', '').join(answer_choices)}}?
+
+      |||
+
+      {{ answer_choices [label_coarse] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

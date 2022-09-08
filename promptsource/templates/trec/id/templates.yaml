@@ -166,7 +166,7 @@ templates:
     name: fine_grained_open_context_first
     reference: Fine grained classes without providing choices, context first.
   736b2629-ed57-48ce-a458-4cbc435c499b: !Template
-    answer_choices: city ||| country ||| gunung ||| negara ||| lokasi yang lain
+    answer_choices: kota ||| negara ||| gunung ||| negara ||| lokasi yang lain
     id: 736b2629-ed57-48ce-a458-4cbc435c499b
     jinja: '{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}
 
@@ -204,7 +204,7 @@ templates:
     name: which_category_best_describes
     reference: ''
   7a9e6f3c-1dee-45b0-a315-1badaf59a7b8: !Template
-    answer_choices: definisi ||| keterangan ||| cara tindakan ||| alasan
+    answer_choices: definisi ||| keterangan ||| cara tindakan ||| reason
     id: 7a9e6f3c-1dee-45b0-a315-1badaf59a7b8
     jinja: '{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}
 
@@ -228,12 +228,12 @@ templates:
     reference: Fine grained labels with coarse-label `DESC`, context after question
   861d1a48-1113-4f35-b777-2b2f12ab9d5d: !Template
     answer_choices: Keterangan ||| Kesatuan ||| Singkatan ||| Orang ||| Kuantitas
-      ||| Location
+      ||| Lokasi
     id: 861d1a48-1113-4f35-b777-2b2f12ab9d5d
     jinja: '{{text}}
 
 
-      Apakah ini bertanya tentang {{('','') .join (ansages_choices)}}?
+      Is this asking about {{('', '').join(answer_choices)}}?
 
       |||
 
@@ -246,7 +246,7 @@ templates:
     name: trec1
     reference: Context then prompt
   93a06e72-2c15-4f8a-a46c-6a10919c4ea4: !Template
-    answer_choices: singkatan ||| ekspresi disingkat
+    answer_choices: singkatan ||| expression abbreviated
     id: 93a06e72-2c15-4f8a-a46c-6a10919c4ea4
     jinja: "{% set label_mapping={34:0, 3:1} %} \n{% if label_coarse == 2 %}\nApakah\
       \ pertanyaan ini menanyakan {{', '.join(answer_choices)}}?\n{{text}}\n|||\n\
@@ -316,11 +316,11 @@ templates:
   cfa8fde0-8320-4050-8d6e-7619ab14adea: !Template
     answer_choices: Tata krama ||| Karya kreatif ||| Satwa ||| Ekspresi disingkat
       ||| Individu ||| Kelompok ||| Judul ||| definisi ||| Tanggal ||| Alasan |||
-      Peristiwa ||| Negara ||| Keterangan ||| Count ||| Lainnya ||| Surat ||| Agama
-      ||| Makanan ||| Country ||| Warna ||| Ketentuan ||| Kota ||| Organ Tubuh |||
-      Disease or medicine ||| Gunung ||| Price ||| Produk ||| Periode ||| Zat |||
-      Olahraga ||| Tanaman ||| Teknik ||| Ukuran ||| Instrument ||| Singkatan |||
-      Speed ||| Kata ||| Language ||| Persentase ||| Kode ||| Jarak ||| Temperature
+      Peristiwa ||| Negara ||| Keterangan ||| Menghitung ||| Lainnya ||| Surat |||
+      Agama ||| Makanan ||| Menghitungry ||| Warna ||| Ketentuan ||| Kota ||| Organ
+      Tubuh ||| Penyakit atau obat ||| Gunung ||| Harga ||| Produk ||| Periode |||
+      Zat ||| Olahraga ||| Tanaman ||| Teknik ||| Ukuran ||| Instrumen ||| Singkatan
+      ||| Kecepatan ||| Kata ||| Bahasa ||| Persentase ||| Kode ||| Jarak ||| Suhu
       ||| Simbol ||| Memesan ||| Kendaraan ||| Bobot ||| Mata uang
     id: cfa8fde0-8320-4050-8d6e-7619ab14adea
     jinja: 'Apa pertanyaan ini diminta?
@@ -348,7 +348,7 @@ templates:
       {{text}}
 
 
-      Is this question asking for {{'', ''.join(answer_choices)}}?
+      Apakah pertanyaan ini menanyakan {{'', ''.join(answer_choices)}}?
 
       |||
 
@@ -361,7 +361,7 @@ templates:
     name: fine_grained_HUM_context_first
     reference: Fine grained labels with coarse-label `HUM`, context provided first
   fa588c55-5c69-4fd0-a0b1-edbfa092f710: !Template
-    answer_choices: definisi ||| keterangan ||| cara tindakan ||| reason
+    answer_choices: definisi ||| keterangan ||| cara tindakan ||| alasan
     id: fa588c55-5c69-4fd0-a0b1-edbfa092f710
     jinja: '{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}
 

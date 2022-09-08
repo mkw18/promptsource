@@ -100,7 +100,8 @@ templates:
     answer_choices: '{{choices.text | join("|||")}}'
     id: b5b61423-8655-408d-a8e6-81a5eaaac2aa
     jinja: "\u0627\u06AF\u0631 {{ combinedfact[0]|lower }}{{ combinedfact[1:]|trim|trim('.')\
-      \ }} \u060C \u0633\u067E\u0633 {{b}\u061F\n\n\u06AF\u0632\u06CC\u0646\u0647\
+      \ }} \u060C \u0633\u067E\u0633 {{ question[0]|lower }}{{question[1:]|trim|trim('?') }}\
+      \u061F\n\n\u06AF\u0632\u06CC\u0646\u0647\
       \ \u0647\u0627\u06CC \u067E\u0627\u0633\u062E:\n- {{answer_choices | join(\"\
       \\n - \") }}\n||| \n\n{% for choice in choices.label %} {% if choice == answerKey\
       \ %}{{ answer_choices[loop.index - 1] }}{% endif %}{% endfor %}  "

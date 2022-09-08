@@ -150,7 +150,7 @@ templates:
       \ ||| Prix ||| Produit ||| P\xE9riode ||| Substance ||| sport ||| Plante |||\
       \ Technique ||| Taille ||| Instrument ||| Abr\xE9viation ||| La rapidit\xE9\
       \ ||| Mot ||| Langue ||| Pourcentage ||| Code ||| Distance ||| Temp\xE9rature\
-      \ ||| Symbole ||| Ordre ||| V\xE9hicule ||| Lester ||| Devise"
+      \ ||| Symbole ||| Ordre ||| V\xE9hicule ||| Weight ||| Currency"
     id: 71090d59-dd02-4cbd-8032-ad86179b9bd4
     jinja: '{{text}}
 
@@ -168,7 +168,7 @@ templates:
     name: fine_grained_open_context_first
     reference: Fine grained classes without providing choices, context first.
   736b2629-ed57-48ce-a458-4cbc435c499b: !Template
-    answer_choices: ville ||| pays ||| Montagne ||| Etat ||| autre location
+    answer_choices: ville ||| pays ||| Montagne ||| state ||| autre location
     id: 736b2629-ed57-48ce-a458-4cbc435c499b
     jinja: '{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}
 
@@ -192,8 +192,8 @@ templates:
     name: fine_grained_LOC_context_first
     reference: Fine grained labels with coarse-label `LOC`, context provided first
   7a3ed4dd-af89-493c-8efb-c67622f63034: !Template
-    answer_choices: "La description ||| Entit\xE9 ||| Abr\xE9viation ||| La personne\
-      \ ||| Quantit\xE9 ||| Emplacement"
+    answer_choices: "La description ||| Entit\xE9 ||| Abr\xE9viation ||| Person |||\
+      \ Quantit\xE9 ||| Emplacement"
     id: 7a3ed4dd-af89-493c-8efb-c67622f63034
     jinja: "Quelle cat\xE9gorie d\xE9crit le mieux la question suivante: {{text}}\
       \ \n\nChoisissez parmi la liste suivante: \n{{', '.join(answer_choices)}}\n\
@@ -232,8 +232,14 @@ templates:
     answer_choices: "La description ||| Entit\xE9 ||| Abr\xE9viation ||| La personne\
       \ ||| Quantit\xE9 ||| Emplacement"
     id: 861d1a48-1113-4f35-b777-2b2f12ab9d5d
-    jinja: "{{text}}\n\nCela demande-t-il sur {{(',') .join (r\xE9ponse_choices)}}?\n\
-      |||\n{{ answer_choices [label_coarse] }}"
+    jinja: '{{text}}
+
+
+      Is this asking about {{('', '').join(answer_choices)}}?
+
+      |||
+
+      {{ answer_choices [label_coarse] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -255,7 +261,7 @@ templates:
     name: fine_grained_ABBR
     reference: Fine grained labels with coarse-label `ABBR`, context after question
   a0096044-3b4c-4c80-b139-25eac8fe692a: !Template
-    answer_choices: "abr\xE9viation ||| Expression abr\xE9g\xE9e"
+    answer_choices: "abr\xE9viation ||| expression abbreviated"
     id: a0096044-3b4c-4c80-b139-25eac8fe692a
     jinja: "{% set label_mapping = {34:0, 3:1} %} \n{% if label_coarse == 2 %}\n{{text}}\n\
       \nCette question demande-t-elle un {{', '.join(answer_choices)}}?\n|||\n{{ answer_choices\
@@ -268,7 +274,7 @@ templates:
     name: fine_grained_ABBR_context_first
     reference: Fine grained labels with coarse-label `ABBR`, context provided first
   aad2def1-b694-40ee-9c26-3d1cf5c577da: !Template
-    answer_choices: "La description ||| Entit\xE9 ||| Abr\xE9viation ||| La personne\
+    answer_choices: "La description ||| Entit\xE9 ||| Abbreviation ||| La personne\
       \ ||| Quantit\xE9 ||| Emplacement"
     id: aad2def1-b694-40ee-9c26-3d1cf5c577da
     jinja: 'La question suivante se pose-t-elle sur {{'', ''.join(answer_choices)}}?
@@ -311,16 +317,16 @@ templates:
     reference: Fine grained labels with coarse-label `HUM`, context after question
   cfa8fde0-8320-4050-8d6e-7619ab14adea: !Template
     answer_choices: "Mani\xE8re ||| Pi\xE8ce cr\xE9ative ||| Animal ||| Expression\
-      \ abr\xE9g\xE9e ||| Individual ||| Groupe ||| Titre ||| d\xE9finition ||| Date\
+      \ abbreviated ||| Individual ||| Groupe ||| Titre ||| d\xE9finition ||| Date\
       \ ||| Raison ||| \xC9v\xE9nement ||| \xC9tat ||| La description ||| Compter\
       \ ||| Autre ||| Lettre ||| La religion ||| Aliments ||| Compterry ||| Couleur\
-      \ ||| Terme ||| Ville ||| Organe du corps ||| Maladie ou m\xE9decine ||| Montagne\
-      \ ||| Prix ||| Produit ||| P\xE9riode ||| Substance ||| sport ||| Plante |||\
+      \ ||| Terme ||| Ville ||| Organe du corps ||| Disease or medicine ||| Montagne\
+      \ ||| Price ||| Produit ||| P\xE9riode ||| Substance ||| sport ||| Plant |||\
       \ Technique ||| Taille ||| Instrument ||| Abr\xE9viation ||| La rapidit\xE9\
       \ ||| Mot ||| Langue ||| Pourcentage ||| Code ||| Distance ||| Temp\xE9rature\
-      \ ||| Symbole ||| Ordre ||| V\xE9hicule ||| Lester ||| Devise"
+      \ ||| Symbole ||| Order ||| V\xE9hicule ||| Lester ||| Devise"
     id: cfa8fde0-8320-4050-8d6e-7619ab14adea
-    jinja: 'Quelle est cette question qui demande?
+    jinja: 'What is this question asking for?
 
 
       {{text}}
@@ -358,7 +364,7 @@ templates:
     name: fine_grained_HUM_context_first
     reference: Fine grained labels with coarse-label `HUM`, context provided first
   fa588c55-5c69-4fd0-a0b1-edbfa092f710: !Template
-    answer_choices: "d\xE9finition ||| la description ||| mode d'action ||| raison"
+    answer_choices: "d\xE9finition ||| la description ||| mode d'action ||| reason"
     id: fa588c55-5c69-4fd0-a0b1-edbfa092f710
     jinja: '{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}
 

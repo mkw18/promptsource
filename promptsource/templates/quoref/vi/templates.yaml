@@ -4,8 +4,8 @@ templates:
   4120bebc-9c8f-44af-8d1a-a65e443ce010: !Template
     answer_choices: null
     id: 4120bebc-9c8f-44af-8d1a-a65e443ce010
-    jinja: "C\xE2u tr\u1EA3 l\u1EDDi cho c\xE2u h\u1ECFi: {{c\xE2u h\u1ECFi}} n\u1EB1\
-      m trong b\xE0i vi\u1EBFt: {{b\u1ED1i c\u1EA3nh}}, b\u1EA1n c\xF3 \u0111o\xE1\
+    jinja: "C\xE2u tr\u1EA3 l\u1EDDi cho c\xE2u h\u1ECFi: {{question}} n\u1EB1\
+      m trong b\xE0i vi\u1EBFt: {{context}}, b\u1EA1n c\xF3 \u0111o\xE1\
       n \u0111\u01B0\u1EE3c kh\xF4ng?\n\n|||\n{{answers.text | choice}}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -30,7 +30,7 @@ templates:
     answer_choices: null
     id: 9493f80a-daf5-4c30-a9fc-7bc5bc61b5e9
     jinja: "B\xE0i vi\u1EBFt sau \u0111\xE2y ch\u1EE9a c\xE2u tr\u1EA3 l\u1EDDi cho\
-      \ c\xE2u h\u1ECFi: {{c\xE2u h\u1ECFi}}, b\u1EA1n c\xF3 th\u1EC3 vui l\xF2ng\
+      \ c\xE2u h\u1ECFi: {{question}}, b\u1EA1n c\xF3 th\u1EC3 vui l\xF2ng\
       \ t\xECm th\u1EA5y n\xF3 kh\xF4ng? \n\n{{context}}|||\n{{answers.text | choice}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -42,8 +42,8 @@ templates:
   a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb: !Template
     answer_choices: null
     id: a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb
-    jinja: "B\xE0i vi\u1EBFt n\xE0y: {{b\u1ED1i c\u1EA3nh}} ch\u1EE9a c\xE2u tr\u1EA3\
-      \ l\u1EDDi cho c\xE2u h\u1ECFi: {{c\xE2u h\u1ECFi}}, n\xF3 l\xE0 g\xEC?\n|||\n\
+    jinja: "B\xE0i vi\u1EBFt n\xE0y: {{context}} ch\u1EE9a c\xE2u tr\u1EA3\
+      \ l\u1EDDi cho c\xE2u h\u1ECFi: {{question}}, n\xF3 l\xE0 g\xEC?\n|||\n\
       {{answers.text | choice}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -68,7 +68,7 @@ templates:
   abdfa570-2de5-406c-9051-caa6a1362796: !Template
     answer_choices: null
     id: abdfa570-2de5-406c-9051-caa6a1362796
-    jinja: "C\xE2u tr\u1EA3 l\u1EDDi cho c\xE2u h\u1ECFi: {{c\xE2u h\u1ECFi}} t\u1EEB\
+    jinja: "C\xE2u tr\u1EA3 l\u1EDDi cho c\xE2u h\u1ECFi: {{question}} t\u1EEB\
       \ b\xE0i vi\u1EBFt sau l\xE0 g\xEC?\n\n{{context}}|||\n{{answers.text | choice}}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -82,7 +82,7 @@ templates:
     id: b3ec0888-dd6f-466a-abd4-b2fbcacfdb8b
     jinja: "T\xF4i c\xF3 m\u1ED9t b\xE0i ki\u1EC3m tra trong \u0111\xF3 t\xF4i \u0111\
       \u01B0\u1EE3c \u0111\u01B0a ra b\xE0i vi\u1EBFt sau, c\xE2u tr\u1EA3 l\u1EDD\
-      i cho c\xE2u h\u1ECFi: {{c\xE2u h\u1ECFi}} l\xE0 g\xEC?\n\n{{context}}|||\n\
+      i cho c\xE2u h\u1ECFi: {{question}} l\xE0 g\xEC?\n\n{{context}}|||\n\
       {{answers.text | choice}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -122,8 +122,8 @@ templates:
     answer_choices: null
     id: d1abb8a0-03c4-41ef-865c-aa275278a0e4
     jinja: "M\u1ED9t ng\u01B0\u1EDDi b\u1EA1n \u0111\xE3 y\xEAu c\u1EA7u t\xF4i tr\u1EA3\
-      \ l\u1EDDi c\xE2u h\u1ECFi n\xE0y: {{c\xE2u h\u1ECFi}}, s\u1EED d\u1EE5ng b\xE0\
-      i vi\u1EBFt: {{b\u1ED1i c\u1EA3nh}}, c\xE2u tr\u1EA3 l\u1EDDi s\u1EBD l\xE0\
+      \ l\u1EDDi c\xE2u h\u1ECFi n\xE0y: {{question}}, s\u1EED d\u1EE5ng b\xE0\
+      i vi\u1EBFt: {{context}}, c\xE2u tr\u1EA3 l\u1EDDi s\u1EBD l\xE0\
       \ g\xEC?\n\n|||\n{{answers.text | choice}}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false

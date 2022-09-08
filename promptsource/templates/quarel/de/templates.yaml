@@ -4,7 +4,7 @@ templates:
   5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
-    jinja: "Frage: {{question}}\n\nVerwenden Sie nicht {{\"A\"}} und {{{\"b\"}}, um\
+    jinja: "Frage: {{question}}\n\nVerwenden Sie nicht {{\"A\"}} und {{\"B\"}}, um\
       \ die Frage zu beantworten, sondern w\xE4hlen Sie stattdessen zwischen \"{{answer_choices[0]}}\"\
       \ und \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata

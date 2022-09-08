@@ -2,7 +2,7 @@ dataset: trec
 subset: sw
 templates:
   21d04668-c5b3-4418-bbb6-663f1ffdb97c: !Template
-    answer_choices: Maelezo ||| Chombo ||| Ufupisho ||| Person ||| Wingi ||| Mahali
+    answer_choices: Maelezo ||| Chombo ||| Ufupisho ||| Mtu ||| Wingi ||| Location
     id: 21d04668-c5b3-4418-bbb6-663f1ffdb97c
     jinja: "Jamii: {{', '.join(answer_choices)}}\n\nJe! Ni jamii gani inayoelezea\
       \ vizuri: {{text}} \nJibu: ||| {{ answer_choices [label_coarse] }}"
@@ -38,7 +38,7 @@ templates:
     reference: Fine grained labels with coarse-label `LOC`, context after question
   309bf243-2185-4090-ac66-a24f44d89966: !Template
     answer_choices: Nambari ||| Hesabu ||| tarehe ||| Umbali ||| bei ||| agizo |||
-      kipindi cha muda ||| asilimia ||| kasi ||| Joto ||| saizi ||| uzito ||| Nambari
+      kipindi cha muda ||| asilimia ||| kasi ||| Joto ||| size ||| uzito ||| Nambari
       nyingine
     id: 309bf243-2185-4090-ac66-a24f44d89966
     jinja: '{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,
@@ -64,10 +64,10 @@ templates:
     name: fine_grained_NUM_context_first
     reference: Fine grained labels with coarse-label `NUM`, context provided first
   3aff84f3-e478-4598-abe8-40aa24cec1fa: !Template
-    answer_choices: mnyama ||| chombo cha mwili ||| rangi ||| kipande cha ubunifu
-      ||| sarafu ||| ugonjwa au dawa ||| tukio ||| chakula ||| musical instrument
-      ||| lugha ||| barua ||| mmea ||| Bidhaa ||| Dini ||| Mchezo ||| dutu ||| ishara
-      ||| Mbinu ||| neno ||| gari ||| neno ||| chombo kingine
+    answer_choices: mnyama ||| chombo cha mwili ||| rangi ||| creative piece ||| currency
+      ||| ugonjwa au dawa ||| tukio ||| chakula ||| ala ya muziki ||| lugha ||| barua
+      ||| mmea ||| Bidhaa ||| Dini ||| Mchezo ||| dutu ||| ishara ||| Mbinu ||| neno
+      ||| gari ||| neno ||| other entity
     id: 3aff84f3-e478-4598-abe8-40aa24cec1fa
     jinja: '{% set label_mapping = {2:0, 22:1, 19:2, 1:3, 46:3, 23:4, 10:5, 17:6,
       33:7, 37:8, 15:9, 30:10, 26:11, 16:12, 28:13, 42:14, 31:15, 20:16, 44:17, 36:18,
@@ -92,7 +92,7 @@ templates:
     name: fine_grained_ENTY
     reference: Fine grained labels with coarse-label `ENTY`, context after question
   43a188a2-b6dd-46a7-af2e-81a64b90b92a: !Template
-    answer_choices: Nambari ||| Hesabu ||| tarehe ||| Umbali ||| bei ||| agizo |||
+    answer_choices: Nambari ||| Hesabu ||| tarehe ||| distance ||| bei ||| agizo |||
       kipindi cha muda ||| asilimia ||| kasi ||| Joto ||| saizi ||| uzito ||| Nambari
       nyingine
     id: 43a188a2-b6dd-46a7-af2e-81a64b90b92a
@@ -140,9 +140,9 @@ templates:
     reference: ''
   71090d59-dd02-4cbd-8032-ad86179b9bd4: !Template
     answer_choices: Njia ||| Kipande cha ubunifu ||| Mnyama ||| Maonyesho yaliyofupishwa
-      ||| Mtu binafsi ||| Kikundi ||| Kichwa ||| Ufafanuzi ||| Tarehe ||| Sababu |||
-      Tukio ||| Jimbo ||| Maelezo ||| Hesabu ||| Nyingine ||| Barua ||| Dini ||| Chakula
-      ||| Hesabury ||| Rangi ||| Neno ||| Mji ||| Chombo cha mwili ||| Ugonjwa au
+      ||| Individual ||| Kikundi ||| Kichwa ||| Ufafanuzi ||| Tarehe ||| Sababu |||
+      Event ||| Jimbo ||| Maelezo ||| Hesabu ||| Nyingine ||| Barua ||| Dini ||| Chakula
+      ||| Hesabury ||| Color ||| Neno ||| Mji ||| Chombo cha mwili ||| Ugonjwa au
       dawa ||| Mlima ||| Bei ||| Bidhaa ||| Kipindi ||| Dutu ||| Mchezo ||| Mmea |||
       Mbinu ||| Saizi ||| Chombo ||| Ufupisho ||| Kasi ||| Neno ||| Lugha ||| Asilimia
       ||| Nambari ||| Umbali ||| Joto ||| Ishara ||| Agizo ||| Gari ||| Uzito |||
@@ -229,7 +229,7 @@ templates:
     jinja: '{{text}}
 
 
-      Je! Hii inauliza juu ya {{('','') .Join (jibu_choices)}}?
+      Is this asking about {{('', '').join(answer_choices)}}?
 
       |||
 

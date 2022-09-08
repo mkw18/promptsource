@@ -118,7 +118,7 @@ templates:
     id: e4dc7abf-d56a-4217-ba7f-7470cd959e8e
     jinja: "\u4FE1\u606F\uFF1A\n{% for support in supports %}\n- {{ support }}\n{%\
       \ endfor %}\n\n{% set question_split = question.split(' ') %}\n\u9605\u8BFB\u4E0A\
-      \u9762\u7684\u6BB5\u843D\u540E\uFF0C\u9009\u62E9\u4E0E\u201C {{b}\u201D'\u4E0E\
+      \u9762\u7684\u6BB5\u843D\u540E\uFF0C\u9009\u62E9\u4E0E\u201C {{ question_split[1:] | join(\" \")}}\u201D'\u4E0E\
       '{{question_split[0] | replace(\"_\", \" \")}}'\u7684\u5173\u7CFB\u76F8\u5173\
       \u7684\u5B9E\u4F53\u7684\u6700\u4F73\u7B54\u6848\u3002\n\n\u9009\u62E9\uFF1A\
       \n- {{answer_choices | join(\"\\n - \") }}\n\n|||\n{{answer}}"

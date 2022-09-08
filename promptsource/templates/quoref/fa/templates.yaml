@@ -5,9 +5,9 @@ templates:
     answer_choices: null
     id: 4120bebc-9c8f-44af-8d1a-a65e443ce010
     jinja: "\u067E\u0627\u0633\u062E \u0628\u0647 \u0627\u06CC\u0646 \u0633\u0624\u0627\
-      \u0644: {{\u0633\u0648\u0627\u0644}} \u062F\u0631 \u062F\u0627\u062E\u0644 \u0645\
-      \u0642\u0627\u0644\u0647 \u0627\u0633\u062A: {{\u0632\u0645\u06CC\u0646\u0647\
-      }} \u060C \u0622\u06CC\u0627 \u0645\u06CC \u062A\u0648\u0627\u0646\u06CC\u062F\
+      \u0644: {{question}} \u062F\u0631 \u062F\u0627\u062E\u0644 \u0645\
+      \u0642\u0627\u0644\u0647 \u0627\u0633\u062A: {{context}}\
+      \ \u060C \u0622\u06CC\u0627 \u0645\u06CC \u062A\u0648\u0627\u0646\u06CC\u062F\
       \ \u0622\u0646 \u0631\u0627 \u062D\u062F\u0633 \u0628\u0632\u0646\u06CC\u062F\
       \u061F\n\n|||\n{{answers.text | choice}}\n"
     metadata: !TemplateMetadata
@@ -36,7 +36,7 @@ templates:
     id: 9493f80a-daf5-4c30-a9fc-7bc5bc61b5e9
     jinja: "\u0645\u0642\u0627\u0644\u0647 \u0632\u06CC\u0631 \u062D\u0627\u0648\u06CC\
       \ \u067E\u0627\u0633\u062E\u06CC \u0628\u0631\u0627\u06CC \u0627\u06CC\u0646\
-      \ \u0633\u0624\u0627\u0644 \u0627\u0633\u062A: {{\u0633\u0648\u0627\u0644}}\
+      \ \u0633\u0624\u0627\u0644 \u0627\u0633\u062A: {{question}}\
       \ \u060C \u0622\u06CC\u0627 \u0645\u06CC \u062A\u0648\u0627\u0646\u06CC\u062F\
       \ \u0622\u0646 \u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646\u06CC\u062F\
       \u061F \n\n{{context}}|||\n{{answers.text | choice}}"
@@ -50,10 +50,10 @@ templates:
   a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb: !Template
     answer_choices: null
     id: a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb
-    jinja: "\u0627\u06CC\u0646 \u0645\u0642\u0627\u0644\u0647: {{\u0632\u0645\u06CC\
-      \u0646\u0647}} \u062D\u0627\u0648\u06CC \u067E\u0627\u0633\u062E\u06CC \u0628\
+    jinja: "\u0627\u06CC\u0646 \u0645\u0642\u0627\u0644\u0647: {{context}}\
+      \ \u062D\u0627\u0648\u06CC \u067E\u0627\u0633\u062E\u06CC \u0628\
       \u0631\u0627\u06CC \u0627\u06CC\u0646 \u0633\u0624\u0627\u0644 \u0627\u0633\u062A\
-      : {{\u0633\u0648\u0627\u0644}} \u060C \u0627\u06CC\u0646 \u0686\u06CC\u0633\u062A\
+      : {{question}} \u060C \u0627\u06CC\u0646 \u0686\u06CC\u0633\u062A\
       \u061F\n|||\n{{answers.text | choice}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -80,8 +80,8 @@ templates:
     answer_choices: null
     id: abdfa570-2de5-406c-9051-caa6a1362796
     jinja: "\u067E\u0627\u0633\u062E\u06CC \u0628\u0631\u0627\u06CC \u0627\u06CC\u0646\
-      \ \u0633\u0648\u0627\u0644 \u0686\u06CC\u0633\u062A: {{\u0633\u0648\u0627\u0644\
-      } \u0627\u0632 \u0645\u0642\u0627\u0644\u0647 \u0632\u06CC\u0631\u061F\n\n{{context}}|||\n\
+      \ \u0633\u0648\u0627\u0644 \u0686\u06CC\u0633\u062A: {{question}}\
+      \ \u0627\u0632 \u0645\u0642\u0627\u0644\u0647 \u0632\u06CC\u0631\u061F\n\n{{context}}|||\n\
       {{answers.text | choice}}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -98,7 +98,7 @@ templates:
       \u06CC\u0631 \u0628\u0647 \u0645\u0646 \u062F\u0627\u062F\u0647 \u0634\u062F\
       \u0647 \u0627\u0633\u062A \u060C \u067E\u0627\u0633\u062E\u06CC \u0628\u0631\
       \u0627\u06CC \u0627\u06CC\u0646 \u0633\u0648\u0627\u0644 \u0686\u06CC\u0633\u062A\
-      : {{\u0633\u0648\u0627\u0644}\u061F\n\n{{context}}|||\n{{answers.text | choice}}"
+      : {{question}}\u061F\n\n{{context}}|||\n{{answers.text | choice}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -143,9 +143,9 @@ templates:
     jinja: "\u06CC\u06A9\u06CC \u0627\u0632 \u062F\u0648\u0633\u062A\u0627\u0646 \u0627\
       \u0632 \u0645\u0646 \u062E\u0648\u0627\u0633\u062A \u06A9\u0647 \u0628\u0647\
       \ \u0627\u06CC\u0646 \u0633\u0624\u0627\u0644 \u067E\u0627\u0633\u062E \u062F\
-      \u0647\u0645: {{\u0633\u0648\u0627\u0644}} \u060C \u0628\u0627 \u0627\u0633\u062A\
-      \u0641\u0627\u062F\u0647 \u0627\u0632 \u0645\u0642\u0627\u0644\u0647: {{\u0632\
-      \u0645\u06CC\u0646\u0647}} \u060C \u0686\u0647 \u067E\u0627\u0633\u062E\u06CC\
+      \u0647\u0645: {{question}} \u060C \u0628\u0627 \u0627\u0633\u062A\
+      \u0641\u0627\u062F\u0647 \u0627\u0632 \u0645\u0642\u0627\u0644\u0647: {{context}}\
+      \ \u060C \u0686\u0647 \u067E\u0627\u0633\u062E\u06CC\
       \ \u062E\u0648\u0627\u0647\u062F \u062F\u0627\u0634\u062A\u061F\n\n|||\n{{answers.text\
       \ | choice}}\n"
     metadata: !TemplateMetadata

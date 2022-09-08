@@ -160,8 +160,14 @@ templates:
     answer_choices: Deskripsyon ||| Antite ||| Abrevyasyon ||| Moun ||| Kantite |||
       Anplasman
     id: 861d1a48-1113-4f35-b777-2b2f12ab9d5d
-    jinja: "{{text}}\n\n\xC8ske sa mande sou {{(',') .Join (Answer_Choices)}}?\n|||\n\
-      {{ answer_choices [label_coarse] }}"
+    jinja: '{{text}}
+
+
+      Is this asking about {{('', '').join(answer_choices)}}?
+
+      |||
+
+      {{ answer_choices [label_coarse] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

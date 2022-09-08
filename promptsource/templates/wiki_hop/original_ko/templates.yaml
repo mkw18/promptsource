@@ -56,7 +56,7 @@ templates:
     jinja: "\uC815\uBCF4:\n{% for support in supports %}\n- {{ support }}\n{% endfor\
       \ %}\n\n{% set question_split = question.split(' ') %}\n\uC704\uC758 \uB2E8\uB77D\
       \uC774 \uC8FC\uC5B4\uC9C0\uBA74 '{{question_split[0] | replace(\"_\", \" \"\
-      )}}'{{{answer}} '\uAD00\uACC4\uAC00\uC788\uB294 \uC5D4\uD2F0\uD2F0\uAC00 \uC5B4\
+      )}}'{{answer}} '\uAD00\uACC4\uAC00\uC788\uB294 \uC5D4\uD2F0\uD2F0\uAC00 \uC5B4\
       \uB5A4 \uC5D4\uD2F0\uD2F0\uAC00 \uAD00\uACC4\uAC00 \uC788\uB294\uC9C0 \uACB0\
       \uC815\uD558\uC2ED\uC2DC\uC624.\n\n|||\n{{ question_split[1:] | join(\" \")}}"
     metadata: !TemplateMetadata

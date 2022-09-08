@@ -5,8 +5,8 @@ templates:
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
     jinja: "K\xFCsimus: {{question}}\n\n\xC4rge kasutage k\xFCsimusele vastamiseks\
-      \ {{{{{\"a\"}} ja {{\"b\"}}, vaid valige selle asemel \"{{answer_choices[0]}}\"\
-      \ ja {\"{{answer_choices[1]}}\" vahel.\n|||\n{{answer_choices[answer_index]}}"
+      \ {{\"A\"}} ja {{\"B\"}}, vaid valige selle asemel \"{{answer_choices[0]}}\"\
+      \ ja \"{{answer_choices[1]}}\" vahel.\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -35,7 +35,7 @@ templates:
   63c58389-605a-42b9-85a6-a2586a954a92: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 63c58389-605a-42b9-85a6-a2586a954a92
-    jinja: "Siin on novell: {{question}}.\n\nMis on {\"{{answer_choices[0]}}\" ja\
+    jinja: "Siin on novell: {{question}}.\n\nMis on \"{{answer_choices[0]}}\" ja\
       \ \"{{answer_choices[1]}}\" vahel k\xF5ige sensaalsem vastus?\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

@@ -104,7 +104,7 @@ templates:
     id: f3fce748-89e0-4b88-94bb-72ddb9a04d10
     jinja: "\u0622\u06CC\u0627 \u0645\u06CC \u062A\u0648\u0627\u0646\u06CC\u062F \u06CC\
       \u06A9 \u062C\u0645\u0644\u0647 \u062F\u0631 \u0645\u0648\u0631\u062F \u0645\
-      \u0648\u0636\u0648\u0639 {{A} \u0628\u0646\u0648\u06CC\u0633\u06CC\u062F\u061F\
+      \u0648\u0636\u0648\u0639 {{concepts | choice}} \u0628\u0646\u0648\u06CC\u0633\u06CC\u062F\u061F\
       \n|||\n{{target}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false

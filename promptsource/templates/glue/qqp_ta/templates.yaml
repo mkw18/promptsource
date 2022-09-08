@@ -61,8 +61,8 @@ templates:
   c0182cd1-c7ac-4abe-829f-4651536af951: !Template
     answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| \u0B86\u0BAE\u0BCD"
     id: c0182cd1-c7ac-4abe-829f-4651536af951
-    jinja: "{{A} for \u0B95\u0BCD\u0B95\u0BC1 \u0B92\u0BB0\u0BC1 \u0BAA\u0BA4\u0BBF\
-      \u0BB2\u0BC8\u0BAF\u0BC1\u0BAE\u0BCD {{b} beter \u0B95\u0BCD\u0B95\u0BC1 \u0BAA\
+    jinja: "\"{{question1}}\" for \u0B95\u0BCD\u0B95\u0BC1 \u0B92\u0BB0\u0BC1 \u0BAA\u0BA4\u0BBF\
+      \u0BB2\u0BC8\u0BAF\u0BC1\u0BAE\u0BCD \"{{question2}}\" beter \u0B95\u0BCD\u0B95\u0BC1 \u0BAA\
       \u0BAF\u0BA9\u0BCD\u0BAA\u0B9F\u0BC1\u0BA4\u0BCD\u0BA4 \u0BAE\u0BC1\u0B9F\u0BBF\
       \u0BAF\u0BC1\u0BAE\u0BBE? ||| {{ answer_choices[label] }}"
     metadata: !TemplateMetadata

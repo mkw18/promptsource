@@ -39,7 +39,7 @@ templates:
     answer_choices: null
     id: 3480df1e-88bb-4b3d-90df-3f292463eb76
     jinja: "{% if label == 1 %}\n\u0627\u06CC\u0646 \u0633\u0648\u0627\u0644 \u0686\
-      \u06CC\u0633\u062A: {{A}\u061F\u0645\u0648\u0636\u0648\u0639 {{document_title}}\
+      \u06CC\u0633\u062A: {{answer}}\u061F\u0645\u0648\u0636\u0648\u0639 {{document_title}}\
       \ \u0627\u0633\u062A.|||\n\"{{question}}?\"\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -138,7 +138,7 @@ templates:
     id: c802cf19-59a7-4a3e-a6ab-5cbb1f169c70
     jinja: "\u0627\u06CC\u0646 \u06CC\u06A9 \u067E\u0627\u0633\u062E \u0635\u062D\u06CC\
       \u062D \u0628\u0647 \u0633\u0648\u0627\u0644 \u0632\u06CC\u0631 \u062F\u0631\
-      \ \u0645\u0648\u0631\u062F {{b} \u0627\u0633\u062A.\u0622\u0631\u0647 \u06CC\
+      \ \u0645\u0648\u0631\u062F {{document_title}} \u0627\u0633\u062A.\u0622\u0631\u0647 \u06CC\
       \u0627 \u0646\u0647\u061F\n\u067E\u0627\u0633\u062E: {{answer}}\n\u0633\u0648\
       \u0627\u0644: {{question}}\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata

@@ -5,8 +5,8 @@ templates:
     answer_choices: "Descrizione ||| Entit\xE0 ||| Abbreviazione ||| Persona ||| Quantit\xE0\
       \ ||| Posizione"
     id: 21d04668-c5b3-4418-bbb6-663f1ffdb97c
-    jinja: "Categories: {{', '.join(answer_choices)}}\n\nQuale categoria descrive\
-      \ meglio: {{text}} \nRisposta: ||| {{ answer_choices [label_coarse] }}"
+    jinja: "Categorie: {{', '.join(answer_choices)}}\n\nQuale categoria descrive meglio:\
+      \ {{text}} \nRisposta: ||| {{ answer_choices [label_coarse] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -15,13 +15,13 @@ templates:
     name: what_category_best_describe
     reference: ''
   2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6: !Template
-    answer_choices: "citt\xE0 ||| country ||| mountain ||| stato ||| altro posto"
+    answer_choices: "citt\xE0 ||| nazione ||| montagna ||| stato ||| altro posto"
     id: 2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6
     jinja: '{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}
 
       {% if label_coarse == 5 %}
 
-      Is this question asking for {{'', ''.join(answer_choices)}}?
+      Questa domanda sta chiedendo {{'', ''.join(answer_choices)}}?
 
       {{text}}
 
@@ -38,9 +38,9 @@ templates:
     name: fine_grained_LOC
     reference: Fine grained labels with coarse-label `LOC`, context after question
   309bf243-2185-4090-ac66-a24f44d89966: !Template
-    answer_choices: "codice ||| count ||| date ||| distanza ||| price ||| ordine |||\
-      \ period of time ||| percentage ||| velocit\xE0 ||| temperature ||| taglia |||\
-      \ il peso ||| other number"
+    answer_choices: "codice ||| contare ||| Data ||| distanza ||| prezzo ||| ordine\
+      \ ||| periodo di tempo ||| percentuale ||| velocit\xE0 ||| temperatura ||| taglia\
+      \ ||| il peso ||| Altro numero"
     id: 309bf243-2185-4090-ac66-a24f44d89966
     jinja: '{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,
       35:8, 41:9, 32:10, 45:11, 14:12} %}
@@ -66,10 +66,10 @@ templates:
     reference: Fine grained labels with coarse-label `NUM`, context provided first
   3aff84f3-e478-4598-abe8-40aa24cec1fa: !Template
     answer_choices: "un animale ||| un organo del corpo ||| un colore ||| pezzo creativo\
-      \ ||| currency ||| disease or medicine ||| evento ||| cibo ||| strumento musicale\
-      \ ||| linguaggio ||| letter ||| pianta ||| Prodotto ||| religione ||| sport\
-      \ ||| sostanza ||| symbol ||| tecnica ||| term ||| vehicle ||| parola ||| altra\
-      \ entit\xE0"
+      \ ||| moneta ||| disease or medicine ||| evento ||| cibo ||| strumento musicale\
+      \ ||| linguaggio ||| lettera ||| pianta ||| Prodotto ||| religione ||| sport\
+      \ ||| sostanza ||| simbolo ||| tecnica ||| termine ||| veicolo ||| parola |||\
+      \ altra entit\xE0"
     id: 3aff84f3-e478-4598-abe8-40aa24cec1fa
     jinja: '{% set label_mapping = {2:0, 22:1, 19:2, 1:3, 46:3, 23:4, 10:5, 17:6,
       33:7, 37:8, 15:9, 30:10, 26:11, 16:12, 28:13, 42:14, 31:15, 20:16, 44:17, 36:18,
@@ -94,8 +94,8 @@ templates:
     name: fine_grained_ENTY
     reference: Fine grained labels with coarse-label `ENTY`, context after question
   43a188a2-b6dd-46a7-af2e-81a64b90b92a: !Template
-    answer_choices: "code ||| contare ||| Data ||| distance ||| price ||| order |||\
-      \ periodo di tempo ||| percentuale ||| velocit\xE0 ||| temperature ||| taglia\
+    answer_choices: "codice ||| contare ||| date ||| distanza ||| prezzo ||| ordine\
+      \ ||| period of time ||| percentuale ||| velocit\xE0 ||| temperatura ||| taglia\
       \ ||| il peso ||| Altro numero"
     id: 43a188a2-b6dd-46a7-af2e-81a64b90b92a
     jinja: '{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,
@@ -103,7 +103,7 @@ templates:
 
       {% if label_coarse == 4 %}
 
-      Is this question asking for {{'', ''.join(answer_choices)}}?
+      Questa domanda sta chiedendo {{'', ''.join(answer_choices)}}?
 
       {{text}}
 
@@ -120,16 +120,16 @@ templates:
     name: fine_grained_NUM
     reference: Fine grained labels with coarse-label `NUM`
   6c391f4f-027b-4425-88de-1dbb6aa706ee: !Template
-    answer_choices: "Descrizione ||| Entit\xE0 ||| Abbreviation ||| Persona ||| Quantity\
+    answer_choices: "Descrizione ||| Entit\xE0 ||| Abbreviazione ||| Persona ||| Quantit\xE0\
       \ ||| Posizione"
     id: 6c391f4f-027b-4425-88de-1dbb6aa706ee
-    jinja: 'Question: {{text}}
+    jinja: 'Domanda: {{text}}
 
 
       Descriptors: {{'', ''.join(answer_choices)}}
 
 
-      Best Descriptor?
+      Miglior descrittore?
 
       |||
 
@@ -142,12 +142,12 @@ templates:
     name: pick_the_best_descriptor
     reference: ''
   71090d59-dd02-4cbd-8032-ad86179b9bd4: !Template
-    answer_choices: "Maniera ||| Creative Piece ||| Animale ||| Espressione abbreviata\
-      \ ||| Individual ||| Gruppo ||| Titolo ||| definizione ||| Data ||| Motivo |||\
-      \ Evento ||| State ||| Descrizione ||| Contare ||| Other ||| Lettera ||| Religione\
-      \ ||| Cibo ||| Contarery ||| Colore ||| Termine ||| Citt\xE0 ||| Organo del\
-      \ corpo ||| Malattia o medicina ||| Mountain ||| Prezzo ||| Prodotto ||| Periodo\
-      \ ||| Sostanza ||| Sport ||| Pianta ||| Tecnica ||| Dimensione ||| Strumento\
+    answer_choices: "Manner ||| Pezzo creativo ||| Animale ||| Espressione abbreviata\
+      \ ||| Individuale ||| Gruppo ||| Titolo ||| definizione ||| Data ||| Motivo\
+      \ ||| Evento ||| Stato ||| Descrizione ||| Contare ||| Other ||| Lettera |||\
+      \ Religione ||| Cibo ||| Contarery ||| Colore ||| Termine ||| Citt\xE0 ||| Organo\
+      \ del corpo ||| Malattia o medicina ||| Montagna ||| Prezzo ||| Prodotto |||\
+      \ Periodo ||| Sostanza ||| Sport ||| Pianta ||| Tecnica ||| Dimensione ||| Strumento\
       \ ||| Abbreviazione ||| Velocit\xE0 ||| Parola ||| Lingua ||| Percentuale |||\
       \ Codice ||| Distanza ||| Temperatura ||| Simbolo ||| Ordine ||| Veicolo |||\
       \ Il peso ||| Moneta"
@@ -235,7 +235,7 @@ templates:
     jinja: '{{text}}
 
 
-      Questo chiede di {{('','') .Join (Risposta_Choices)}}?
+      Is this asking about {{('', '').join(answer_choices)}}?
 
       |||
 

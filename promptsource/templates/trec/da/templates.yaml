@@ -153,8 +153,14 @@ templates:
     answer_choices: Beskrivelse ||| Enhed ||| Forkortelse ||| Person ||| Antal |||
       Beliggenhed
     id: 861d1a48-1113-4f35-b777-2b2f12ab9d5d
-    jinja: "{{text}}\n\nSp\xF8rger dette om {{(',') .join (svar_choices)}}?\n|||\n\
-      {{ answer_choices [label_coarse] }}"
+    jinja: '{{text}}
+
+
+      Is this asking about {{('', '').join(answer_choices)}}?
+
+      |||
+
+      {{ answer_choices [label_coarse] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

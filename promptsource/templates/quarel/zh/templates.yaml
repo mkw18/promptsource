@@ -4,9 +4,9 @@ templates:
   5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
-    jinja: "\u95EE\u9898\uFF1A {{question}}\n\n\u8BF7\u52FF\u4F7F\u7528{{{\u201C a\u201D\
-      }}\u548C{{\u201C b\u201D}}\u56DE\u7B54\u95EE\u9898\uFF0C\u800C\u662F\u5728\"\
-      {{answer_choices[0]}}\"}\u548C{d}}\u4E4B\u95F4\u8FDB\u884C\u9009\u62E9\u3002\
+    jinja: "\u95EE\u9898\uFF1A {{question}}\n\n\u8BF7\u52FF\u4F7F\u7528{{\"A\"}}\u548C{{\"B\"}}\
+      \u56DE\u7B54\u95EE\u9898\uFF0C\u800C\u662F\u5728\"\
+      {{answer_choices[0]}}\"\u548C\"{{answer_choices[1]}}\"\u4E4B\u95F4\u8FDB\u884C\u9009\u62E9\u3002\
       \n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

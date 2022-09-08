@@ -6,7 +6,7 @@ templates:
     id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
     jinja: "\u0633\u0648\u0627\u0644: {{question}}\n\n\u0628\u0631\u0627\u06CC \u067E\
       \u0627\u0633\u062E \u0628\u0647 \u0627\u06CC\u0646 \u0633\u0648\u0627\u0644\
-      \ \u0627\u0632 {{\"A\"}} \u0648 {{\"b\"} \u0627\u0633\u062A\u0641\u0627\u062F\
+      \ \u0627\u0632 {{\"A\"}} \u0648 {{\"B\"}} \u0627\u0633\u062A\u0641\u0627\u062F\
       \u0647 \u0646\u06A9\u0646\u06CC\u062F \u060C \u0627\u0645\u0627 \u062F\u0631\
       \ \u0639\u0648\u0636 \u060C \u0628\u06CC\u0646 \"{{answer_choices[0]}}\" \u0648\
       \ \"{{answer_choices[1]}}\" \u0631\u0627 \u0627\u0646\u062A\u062E\u0627\u0628\
@@ -24,7 +24,7 @@ templates:
     jinja: "\u062F\u0631 \u0627\u06CC\u0646\u062C\u0627 \u06CC\u06A9 \u0622\u0632\u0645\
       \u0648\u0646 \u0645\u0646\u0637\u0642\u06CC \u0627\u0633\u062A: {{question}}\n\
       \n\u067E\u0627\u0633\u062E \u0628\u06CC\u0646 \"{{answer_choices[0]}}\" \u0648\
-      \ {{D} \u0631\u0627 \u0627\u0646\u062A\u062E\u0627\u0628 \u06A9\u0646\u06CC\u062F\
+      \ \"{{answer_choices[1]}}\" \u0631\u0627 \u0627\u0646\u062A\u062E\u0627\u0628 \u06A9\u0646\u06CC\u062F\
       .\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -40,7 +40,7 @@ templates:
       \u062A\u0627\u0646 \u06A9\u0648\u062A\u0627\u0647 \u0648\u062C\u0648\u062F \u062F\
       \u0627\u0631\u062F: {{question}}.\n\n\u062D\u0633\u0627\u0633 \u062A\u0631\u06CC\
       \u0646 \u067E\u0627\u0633\u062E \u0628\u06CC\u0646 \"{{answer_choices[0]}}\"\
-      \ \u0648 {{D} \u0686\u06CC\u0633\u062A\u061F\n|||\n{{answer_choices[answer_index]}}"
+      \ \u0648 \"{{answer_choices[1]}}\" \u0686\u06CC\u0633\u062A\u061F\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

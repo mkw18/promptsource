@@ -180,9 +180,14 @@ templates:
       t ||| Ng\u01B0\u1EDDi ||| S\u1ED1 l\u01B0\u1EE3ng ||| \u0110\u1ECBa \u0111i\u1EC3\
       m"
     id: 861d1a48-1113-4f35-b777-2b2f12ab9d5d
-    jinja: "{{text}}\n\n\u0110\xE2y c\xF3 ph\u1EA3i l\xE0 h\u1ECFi v\u1EC1 {{(',')\
-      \ .Join (Tr\u1EA3 l\u1EDDi_choices)}}?\n|||\n{{ answer_choices [label_coarse]\
-      \ }}"
+    jinja: '{{text}}
+
+
+      Is this asking about {{('', '').join(answer_choices)}}?
+
+      |||
+
+      {{ answer_choices [label_coarse] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -254,14 +259,13 @@ templates:
       \ Kh\xE1c ||| B\u1EE9c th\u01B0 ||| T\xF4n gi\xE1o ||| M\xF3n \u0103n ||| \u0110\
       \u1EBFmry ||| M\xE0u s\u1EAFc ||| K\u1EF3 h\u1EA1n ||| Th\xE0nh ph\u1ED1 |||\
       \ C\u01A1 quan c\u1EE7a c\u01A1 th\u1EC3 ||| B\u1EC7nh t\u1EADt ho\u1EB7c thu\u1ED1\
-      c ||| N\xFAi ||| Gi\xE1 b\xE1n ||| S\u1EA3n ph\u1EA9m ||| Giai \u0111o\u1EA1\
-      n = Stage ||| V\u1EADt ch\u1EA5t ||| Th\u1EC3 thao ||| Th\u1EF1c v\u1EADt |||\
-      \ K\u0129 thu\u1EADt ||| K\xEDch th\u01B0\u1EDBc ||| D\u1EE5ng c\u1EE5 ||| Vi\u1EBF\
-      t t\u1EAFt ||| T\u1ED1c \u0111\u1ED9, v\u1EADn t\u1ED1c ||| T\u1EEB ||| Ng\xF4\
-      n ng\u1EEF ||| T\u1EF7 l\u1EC7 ph\u1EA7n tr\u0103m ||| M\xE3 s\u1ED1 ||| Kho\u1EA3\
-      ng c\xE1ch ||| Nhi\u1EC7t \u0111\u1ED9 ||| Bi\u1EC3u t\u01B0\u1EE3ng ||| G\u1ECD\
-      i m\xF3n ||| Ph\u01B0\u01A1ng ti\u1EC7n giao th\xF4ng ||| Tr\u1ECDng l\u01B0\
-      \u1EE3ng ||| Ti\u1EC1n t\u1EC7"
+      c ||| N\xFAi ||| Gi\xE1 b\xE1n ||| S\u1EA3n ph\u1EA9m ||| Period ||| V\u1EAD\
+      t ch\u1EA5t ||| Th\u1EC3 thao ||| Th\u1EF1c v\u1EADt ||| K\u0129 thu\u1EADt\
+      \ ||| Size ||| Instrument ||| Vi\u1EBFt t\u1EAFt ||| T\u1ED1c \u0111\u1ED9,\
+      \ v\u1EADn t\u1ED1c ||| T\u1EEB ||| Ng\xF4n ng\u1EEF ||| T\u1EF7 l\u1EC7 ph\u1EA7\
+      n tr\u0103m ||| Code ||| Kho\u1EA3ng c\xE1ch ||| Nhi\u1EC7t \u0111\u1ED9 |||\
+      \ Bi\u1EC3u t\u01B0\u1EE3ng ||| G\u1ECDi m\xF3n ||| Ph\u01B0\u01A1ng ti\u1EC7\
+      n giao th\xF4ng ||| Tr\u1ECDng l\u01B0\u1EE3ng ||| Currency"
     id: cfa8fde0-8320-4050-8d6e-7619ab14adea
     jinja: "C\xE2u h\u1ECFi n\xE0y y\xEAu c\u1EA7u g\xEC?\n\n{{text}}\n|||\n{{ answer_choices[label_fine]\
       \ }}"
@@ -290,10 +294,20 @@ templates:
     answer_choices: "\u0110\u1ECBnh ngh\u0129a ||| s\u1EF1 m\xF4 t\u1EA3 ||| c\xE1\
       ch th\u1EE9c h\xE0nh \u0111\u1ED9ng ||| l\xFD do"
     id: fa588c55-5c69-4fd0-a0b1-edbfa092f710
-    jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
-      \ 0 %}\n{{text}}\n\nC\xE2u h\u1ECFi n\xE0y c\xF3 h\u1ECFi {{', '.join(answer_choices)}}\
-      \ kh\xF4ng?\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif\
-      \ %}"
+    jinja: '{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}
+
+      {% if label_coarse == 0 %}
+
+      {{text}}
+
+
+      Is this question asking for {{'', ''.join(answer_choices)}}?
+
+      |||
+
+      {{ answer_choices [label_mapping[label_fine]] }}
+
+      {% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
