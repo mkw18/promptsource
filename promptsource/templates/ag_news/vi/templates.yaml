@@ -16,7 +16,7 @@ templates:
   8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
     answer_choices: Chính trị thế giới ||| Thể thao ||| Kinh doanh ||| Khoa học và Công nghệ
     id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
-    jinja: "Đây có phải là một tin tức liên quan đến {{\ "chính trị thế giới, thể thao, kinh doanh\
+    jinja: "Đây có phải là một tin tức liên quan đến {{\"chính trị thế giới, thể thao, kinh doanh\
       \ hay khoa học và công nghệ \"}} không?\n{{text}} \n||| \n{{answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -47,8 +47,8 @@ templates:
   9345df33-4f23-4944-a33c-eef94e626862: !Template
     answer_choices: Tin tức thế giới ||| Thể thao ||| Kinh doanh ||| Khoa học và Công nghệ
     id: 9345df33-4f23-4944-a33c-eef94e626862
-    jinja: "{{text}} \n\nBài báo này có thể sẽ xuất hiện trong phần nào sau đây của một tờ báo? {{\ "Tin tức\
-      \ Thế giới \"}}, {{\ "Thể thao \"}}, {{\ "Kinh doanh \"}} hay {{\ "Khoa học và\
+    jinja: "{{text}} \n\nBài báo này có thể sẽ xuất hiện trong phần nào sau đây của một tờ báo? {{\"Tin tức\
+      \ Thế giới \"}}, {{\"Thể thao \"}}, {{\"Kinh doanh \"}} hay {{\"Khoa học và\
       \ Công nghệ \"}}? ||| \n{{answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -72,7 +72,7 @@ templates:
   b401b0ee-6ffe-4a91-8e15-77ee073cd858: !Template
     answer_choices: Chính trị thế giới ||| Thể thao ||| Kinh doanh ||| Khoa học và Công nghệ
     id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
-    jinja: "{{text}} \nĐây có phải là một tin tức liên quan đến {{\ "chính trị thế giới, thể thao,\
+    jinja: "{{text}} \nĐây có phải là một tin tức liên quan đến {{\"chính trị thế giới, thể thao,\
       \ kinh doanh hay khoa học và công nghệ \"}} không? ||| \n{{answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

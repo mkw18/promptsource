@@ -17,7 +17,7 @@ templates:
     answer_choices: 世界の政治 ||| スポーツ ||| 仕事 ||| 科学技術
     id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
     jinja: "これは{{\"世界の政治、スポーツ、ビジネス、または科学技術\"}}\
-      \に関するニュースですか?\n{{text}} \n||| \n{{answer_choices[label] }}"
+      \ に関するニュースですか?\n{{text}} \n||| \n{{answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -60,7 +60,7 @@ templates:
     answer_choices: 世界のニュース ||| スポーツ ||| 仕事 ||| 科学技術
     id: 98534347-fff7-4c39-a795-4e69a44791f7
     jinja: "{{text}} \n\nこの記事が掲載される可能性が高いのは、新聞のどのセクショ\
-      \ンですか? ||| \n{{answer_choices[label] }}"
+      \ ンですか? ||| \n{{answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -72,7 +72,7 @@ templates:
     answer_choices: 世界の政治 ||| スポーツ ||| 仕事 ||| 科学技術
     id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
     jinja: "{{text}} \nこれは{{\"世界の政治、スポーツ、ビジネス、または\
-      \科学技術\"}}に関するニュースですか? ||| \n{{answer_choices[label] }}"
+      \ 科学技術\"}}に関するニュースですか? ||| \n{{answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
