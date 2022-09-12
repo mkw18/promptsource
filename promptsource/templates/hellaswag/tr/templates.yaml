@@ -1,0 +1,159 @@
+dataset: hellaswag
+subset: tr
+templates:
+  00caa8cb-7f67-43bc-9e90-fc1d5d329432: !Template
+    answer_choices: '{{endings | join(" ||| ")}}'
+    id: 00caa8cb-7f67-43bc-9e90-fc1d5d329432
+    jinja: "A\xE7\u0131klamay\u0131 uygun bir sonla tamamlay\u0131n:\n\xD6ncelikle,\
+      \ {{ ctx_a.lower() }} O zamanlar, {{ ctx_b.lower() }} ...\n\n(a) {{ answer_choices[0]\
+      \ }}\n\n(b) {{ answer_choices[1] }}\n\n(c) {{ answer_choices[2] }}\n\n(d) {{\
+      \ answer_choices[3] }}\n|||\n{{ answer_choices[label | int()] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: complete_first_then
+    reference: ''
+  196a016d-bd25-4387-90b9-53197fd43b1e: !Template
+    answer_choices: null
+    id: 196a016d-bd25-4387-90b9-53197fd43b1e
+    jinja: "C\xFCmlenin konusu nedir: {{ctx}} \n|||\n{{activity_label}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Topic without the ending answer
+    reference: Generate the topic sentence with only the starting sentence
+  1fd44f45-d0e6-41ad-a01f-737f4c53645b: !Template
+    answer_choices: '{{endings | join(" ||| ")}}'
+    id: 1fd44f45-d0e6-41ad-a01f-737f4c53645b
+    jinja: "C\xFCmleyi tamamlay\u0131n\u0131z: {{ctx}}\n|||\n{{answer_choices[label\
+      \ | int()]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Open-ended completion
+    reference: Template for open-ended common sense completion
+  4ebf22a1-2d23-426c-a083-b43fc8567687: !Template
+    answer_choices: null
+    id: 4ebf22a1-2d23-426c-a083-b43fc8567687
+    jinja: "{{ctx}} {{endings[label | int()]}}\nParagraf\u0131n konusunu belirleyebilir\
+      \ misiniz? \n|||\n{{activity_label}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Topic of the context
+    reference: List the activity label as the topic from the sentence
+  52fbd075-46cb-49fb-a41b-00a0f4a60285: !Template
+    answer_choices: '{{endings | join(" ||| ") }}'
+    id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
+    jinja: "{% set prompts = [\n'C\xFCmle i\xE7in do\u011Fru sonu se\xE7ebilir misiniz:\
+      \ ',\n'G\xF6rev, c\xFCmlenin sonunu olu\u015Fturmakt\u0131r: ',\n'Bu c\xFCmle\
+      \ nas\u0131l bitiyor? ',\n'A\u015Fa\u011F\u0131da a\xE7\u0131klanan sonlar listesinden,\
+      \ ne sona erme c\xFCmle i\xE7in en mant\u0131kl\u0131 ',]\n%}\n{{prompts | choice}}\n\
+      {{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c) \
+      \ {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices\
+      \ [label | int()]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Randomized prompts template
+    reference: Original task template with randomized prompt template
+  663470b8-3fab-449c-84ab-6c4738da51b3: !Template
+    answer_choices: Evet ||| Numara
+    id: 663470b8-3fab-449c-84ab-6c4738da51b3
+    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nA\u015Fa\u011F\u0131daki a\xE7\
+      \u0131klamay\u0131 d\xFC\u015F\xFCn\xFCn: {{ ctx_a }}\nA\u015Fa\u011F\u0131\
+      dakiler uygun bir devam m\u0131?\n{{ ctx_b }} {{ endings[instance] }}\nEvet\
+      \ veya Hay\u0131r?\n||| \n{% if label  == instance | string() %}\n{{answer_choices[0]}}\n\
+      {% else %} \n{{answer_choices[1]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Appropriate continuation - Yes or No
+    reference: 'The template checks if the two contexts are valid continuations. '
+  6e9f8d7d-9016-45bc-b997-c42aeb2dc944: !Template
+    answer_choices: '{{endings | join("|||")}}'
+    id: 6e9f8d7d-9016-45bc-b997-c42aeb2dc944
+    jinja: "Bu c\xFCmle nas\u0131l bitiyor?\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\
+      \n(b)  {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n\
+      \n\u0130pucu: C\xFCmlenin konusu {{activity_label}}\n|||\n{{answer_choices [label\
+      \ | int()]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Predict ending with hint
+    reference: Predict the ending with the activity label as the hint
+  a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e: !Template
+    answer_choices: null
+    id: a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e
+    jinja: "C\xFCmleyi nas\u0131l ba\u015Flat\u0131rs\u0131n\u0131z:\n{{endings[label\
+      \ | int()]}}\n|||\n{{ctx}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Open-ended start
+    reference: Template asks the model to generate a premise or start for the ending
+  d95b81c4-5db7-44c1-926e-c7222c896a32: !Template
+    answer_choices: Evet ||| Numara
+    id: d95b81c4-5db7-44c1-926e-c7222c896a32
+    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nA\u015Fa\u011F\u0131daki metni\
+      \ d\xFC\u015F\xFCn\xFCn: {{ ctx_b }} {{ endings[instance] }}\nA\u015Fa\u011F\
+      \u0131daki metnin uygun bir devam\u0131 m\u0131: \n{{ ctx_a }} ?\nEvet veya\
+      \ Hay\u0131r?\n||| \n{% if label  == instance | string() %}\n{{answer_choices[0]}}\n\
+      {% else %} \n{{answer_choices[1]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Reversed appropriate continuation - Yes or No
+    reference: The template randomly selects a continuation and checks if the continuation
+      is appropriate for the given premise.
+  db8b1c25-f2db-4604-b8fc-f93d69d6fae7: !Template
+    answer_choices: "Biti\u015F 1 ||| Sonu 2 ||| 3 biti\u015F 3 ||| Sonu 4"
+    id: db8b1c25-f2db-4604-b8fc-f93d69d6fae7
+    jinja: "{{ ctx }}...\nA\xE7\u0131klama muhtemelen nas\u0131l bitiyor?\n\nBiti\u015F\
+      \ 1: {{ endings[0] }}\n\nBiti\u015F 2: {{ endings[1] }}\n\nBiti\u015F 3: {{\
+      \ endings[2] }}\n\nBiti\u015F 4: {{ endings[3] }}\n||| {{ answer_choices[label\
+      \ | int()] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: how_ends
+    reference: ''
+  def77598-682f-48de-b187-55db4d390f07: !Template
+    answer_choices: "Biti\u015F 1 ||| Sonu 2 ||| 3 biti\u015F 3 ||| Sonu 4"
+    id: def77598-682f-48de-b187-55db4d390f07
+    jinja: "Bir durumun a\xE7\u0131klamas\u0131 \u015Fu \u015Fekilde ba\u015Flarsa:\
+      \ {{ ctx }}... Then how\ndoes it continue? \n\nBiti\u015F 1: {{ endings[0] }}\n\
+      \nBiti\u015F 2: {{ endings[1] }}\n\nBiti\u015F 3: {{ endings[2] }}\n\nBiti\u015F\
+      \ 4: {{ endings[3] }}\n|||{{answer_choices[label | int()] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: if_begins_how_continues
+    reference: Returns a Ending <int> string in the template (similar to how ends
+      paraphrased)

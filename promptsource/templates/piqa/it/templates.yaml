@@ -1,0 +1,192 @@
+dataset: piqa
+subset: it
+templates:
+  16e97a16-c958-4956-bfba-279f88dafd5b: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 16e97a16-c958-4956-bfba-279f88dafd5b
+    jinja: "Obiettivo: {{goal}}\n\nQual \xE8 il finale corretto?\n- {{sol1}}\n- {{sol2}}\n\
+      \nRisposta:\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: what_is_the_correct_ending
+    reference: ''
+  3f336295-c1f7-410a-8fc6-d2ed79487aa4: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 3f336295-c1f7-410a-8fc6-d2ed79487aa4
+    jinja: "{{\"Soluzione 1\"}}: {{sol1}}\n{{\"Soluzione 2\"}}: {{sol2}}\n\nObiettivo:\
+      \ {{goal}}\n\nDato l'obiettivo, qual \xE8 la soluzione corretta?\n\nRispondi\
+      \ copiando la soluzione corretta\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_correct_choice_with_choice_given_before_goal
+    reference: ''
+  44778818-7b73-4262-a294-c00fc32b6c2c: !Template
+    answer_choices: 1 ||| 2
+    id: 44778818-7b73-4262-a294-c00fc32b6c2c
+    jinja: "Frase: {{goal}}\n\nScelta {{answer_choices[0]}}: {{sol1}}\n\nScelta {{answer_choices[1]}}:\
+      \ {{sol2}}\n\nQual \xE8 l'indice della scelta corretta per la fine per la frase?\n\
+      \nRisposta:\n\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_correct_choice_index
+    reference: ''
+  5f4b4645-9438-4375-9062-083130e6d04e: !Template
+    answer_choices: null
+    id: 5f4b4645-9438-4375-9062-083130e6d04e
+    jinja: "Dato un obiettivo e una soluzione sbagliata, riscrivilo per dare una soluzione\
+      \ corretta.\nObiettivo: {{goal}} \nSoluzione: {{[sol1, sol2][1 - label]}}\n\
+      Soluzione corretta:\n|||\n{{[sol1, sol2][label]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Correct the solution
+    reference: ''
+  94c39589-7bfb-4c09-9337-672369459545: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 94c39589-7bfb-4c09-9337-672369459545
+    jinja: 'Termina la seguente frase con la scelta migliore: {{goal}}
+
+
+      Scelte:
+
+      - {{sol1}}
+
+      - {{sol2}}
+
+
+      Risposta:
+
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: finish_sentence_with_correct_choice
+    reference: ''
+  99565244-4eaf-4004-a28b-4362ba5bcac3: !Template
+    answer_choices: "No ||| s\xEC"
+    id: 99565244-4eaf-4004-a28b-4362ba5bcac3
+    jinja: '{{goal}} {{sol2}}
+
+      Questa frase ha senso?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Does this solution make sense? sol2
+    reference: ''
+  adfef248-f856-44fa-affd-e3223718854e: !Template
+    answer_choices: Soluzione 1 ||| Soluzione 2
+    id: adfef248-f856-44fa-affd-e3223718854e
+    jinja: "Dato un obiettivo e 2 soluzioni, scegli la soluzione pi\xF9 appropriata.\n\
+      Obiettivo: {{goal}}\n- {{\"Soluzione 1\"}}: {{sol1}}\n- {{\"Soluzione 2\"}}:\
+      \ {{sol2}}\n\nRisposta tonando {{\"Soluzione 1\"}} o {{\"Soluzione 2\"}}\n|||\n\
+      {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose the most appropriate solution
+    reference: ''
+  b5c69473-eedb-4c4f-a5fa-d4e266e43535: !Template
+    answer_choices: null
+    id: b5c69473-eedb-4c4f-a5fa-d4e266e43535
+    jinja: 'Given a sentence, correct it if it doesn''t make sense. If it makes sense,
+      just return it as the answer.
+
+      Ingresso: {{goal}} {{sol2[0].lower() + sol2[1:]}}
+
+      Produzione:
+
+      |||
+
+      {{goal}} {{[sol1[0].lower() + sol1[1:], sol2[0].lower() + sol2[1:]][label]}}
+
+      '
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: 'Correct the solution if false: from sol 2'
+    reference: ''
+  c8c45ef1-2ffc-43d7-8710-b98c2fc4f699: !Template
+    answer_choices: null
+    id: c8c45ef1-2ffc-43d7-8710-b98c2fc4f699
+    jinja: '{{goal}}
+
+      |||
+
+      {{[sol1[0].lower() + sol1[1:], sol2[0].lower() + sol2[1:]][label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: no prompt needed
+    reference: ''
+  f044def7-01c2-42de-b6ad-4e8c63ab2bf1: !Template
+    answer_choices: "s\xEC ||| No"
+    id: f044def7-01c2-42de-b6ad-4e8c63ab2bf1
+    jinja: 'Questa frase ha senso?
+
+      {{goal}} {{sol1[0].lower() + sol1[1:]}}
+
+      Rispondere con {{answer_choices[0]}} o {{answer_choices[1]}}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Does this solution make sense? sol1
+    reference: ''
+  f42cd457-a14b-465a-a139-d7d2407a3bac: !Template
+    answer_choices: null
+    id: f42cd457-a14b-465a-a139-d7d2407a3bac
+    jinja: 'Frase: {{goal}} {{sol1[0].lower() + sol1[1:]}}
+
+      Se la frase non ha senso, correggerla in modo che abbia senso. Altrimenti, copialo.
+
+      Risposta:
+
+      |||
+
+      {{goal}} {{[sol1[0].lower() + sol1[1:], sol2[0].lower() + sol2[1:]][label]}}
+
+      '
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: 'Correct the solution if false: from sol 1'
+    reference: ''

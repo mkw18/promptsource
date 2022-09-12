@@ -1,0 +1,172 @@
+dataset: hellaswag
+subset: ja
+templates:
+  00caa8cb-7f67-43bc-9e90-fc1d5d329432: !Template
+    answer_choices: '{{endings | join(" ||| ")}}'
+    id: 00caa8cb-7f67-43bc-9e90-fc1d5d329432
+    jinja: "\u9069\u5207\u306A\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0\u3067\u8AAC\u660E\
+      \u3092\u5B8C\u4E86\u3057\u307E\u3059\u3002\n\u521D\u3081\u3001 {{ ctx_a.lower()\
+      \ }} \u305D\u308C\u3067\u3001 {{ ctx_b.lower() }} ...\n\n(a) {{ answer_choices[0]\
+      \ }}\n\n(b) {{ answer_choices[1] }}\n\n(c) {{ answer_choices[2] }}\n\n(d) {{\
+      \ answer_choices[3] }}\n|||\n{{ answer_choices[label | int()] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: complete_first_then
+    reference: ''
+  196a016d-bd25-4387-90b9-53197fd43b1e: !Template
+    answer_choices: null
+    id: 196a016d-bd25-4387-90b9-53197fd43b1e
+    jinja: "\u6587\u306E\u30C8\u30D4\u30C3\u30AF\u306F\u4F55\u3067\u3059\u304B\uFF1A\
+      \ {{ctx}} \n|||\n{{activity_label}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Topic without the ending answer
+    reference: Generate the topic sentence with only the starting sentence
+  1fd44f45-d0e6-41ad-a01f-737f4c53645b: !Template
+    answer_choices: '{{endings | join(" ||| ")}}'
+    id: 1fd44f45-d0e6-41ad-a01f-737f4c53645b
+    jinja: "\u6587\u7AE0\u3092\u5B8C\u6210\u3055\u305B\u3066\u304F\u3060\u3055\u3044\
+      \uFF1A {{ctx}}\n|||\n{{answer_choices[label | int()]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Open-ended completion
+    reference: Template for open-ended common sense completion
+  4ebf22a1-2d23-426c-a083-b43fc8567687: !Template
+    answer_choices: null
+    id: 4ebf22a1-2d23-426c-a083-b43fc8567687
+    jinja: "{{ctx}} {{endings[label | int()]}}\n\u6BB5\u843D\u306E\u30C8\u30D4\u30C3\
+      \u30AF\u3092\u7279\u5B9A\u3067\u304D\u307E\u3059\u304B\uFF1F \n|||\n{{activity_label}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Topic of the context
+    reference: List the activity label as the topic from the sentence
+  52fbd075-46cb-49fb-a41b-00a0f4a60285: !Template
+    answer_choices: '{{endings | join(" ||| ") }}'
+    id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
+    jinja: "{% set prompts = [\n'\u6587\u306E\u6B63\u3057\u3044\u7D50\u672B\u3092\u9078\
+      \u3076\u3053\u3068\u304C\u3067\u304D\u307E\u3059\u304B\uFF1A ',\n'\u30BF\u30B9\
+      \u30AF\u306F\u3001\u6587\u306E\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0\u3092\u751F\
+      \u6210\u3059\u308B\u3053\u3068\u3067\u3059\u3002 ',\n'\u3053\u306E\u6587\u306F\
+      \u3069\u306E\u3088\u3046\u306B\u7D42\u308F\u308A\u307E\u3059\u304B\uFF1F ',\n\
+      '\u4EE5\u4E0B\u3067\u8AAC\u660E\u3059\u308B\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0\
+      \u306E\u30EA\u30B9\u30C8\u304B\u3089\u3001\u3069\u306E\u30A8\u30F3\u30C7\u30A3\
+      \u30F3\u30B0\u304C\u6587\u306B\u3068\u3063\u3066\u6700\u3082\u7406\u306B\u304B\
+      \u306A\u3063\u3066\u3044\u307E\u3059 ',]\n%}\n{{prompts | choice}}\n{{ctx}}\n\
+      \n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\
+      \n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices [label | int()]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Randomized prompts template
+    reference: Original task template with randomized prompt template
+  663470b8-3fab-449c-84ab-6c4738da51b3: !Template
+    answer_choices: "\u306F\u3044 ||| \u3044\u3044\u3048"
+    id: 663470b8-3fab-449c-84ab-6c4738da51b3
+    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\n\u6B21\u306E\u8AAC\u660E\u3092\
+      \u691C\u8A0E\u3057\u3066\u304F\u3060\u3055\u3044\u3002 {{ ctx_a }}\n\u6B21\u306E\
+      \u3053\u3068\u306F\u9069\u5207\u306A\u7D99\u7D9A\u3067\u3059\u304B\uFF1F\n{{\
+      \ ctx_b }} {{ endings[instance] }}\n\u306F\u3044\u3001\u3082\u3057\u304F\u306F\
+      \u3001\u3044\u3044\u3048\uFF1F\n||| \n{% if label  == instance | string() %}\n\
+      {{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Appropriate continuation - Yes or No
+    reference: 'The template checks if the two contexts are valid continuations. '
+  6e9f8d7d-9016-45bc-b997-c42aeb2dc944: !Template
+    answer_choices: '{{endings | join("|||")}}'
+    id: 6e9f8d7d-9016-45bc-b997-c42aeb2dc944
+    jinja: "\u3053\u306E\u6587\u306F\u3069\u306E\u3088\u3046\u306B\u7D42\u308F\u308A\
+      \u307E\u3059\u304B\uFF1F\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\
+      \n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n\n\u30D2\u30F3\u30C8\
+      \uFF1A\u6587\u306E\u30C8\u30D4\u30C3\u30AF\u306F\u3067\u3059 {{activity_label}}\n\
+      |||\n{{answer_choices [label | int()]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Predict ending with hint
+    reference: Predict the ending with the activity label as the hint
+  a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e: !Template
+    answer_choices: null
+    id: a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e
+    jinja: "\u3069\u306E\u3088\u3046\u306B\u6587\u7AE0\u3092\u59CB\u3081\u307E\u3059\
+      \u304B\uFF1A\n{{endings[label | int()]}}\n|||\n{{ctx}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Open-ended start
+    reference: Template asks the model to generate a premise or start for the ending
+  d95b81c4-5db7-44c1-926e-c7222c896a32: !Template
+    answer_choices: "\u306F\u3044 ||| \u3044\u3044\u3048"
+    id: d95b81c4-5db7-44c1-926e-c7222c896a32
+    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\n\u6B21\u306E\u30C6\u30AD\u30B9\
+      \u30C8\u3092\u691C\u8A0E\u3057\u3066\u304F\u3060\u3055\u3044\u3002 {{ ctx_b\
+      \ }} {{ endings[instance] }}\n\u305D\u308C\u306F\u6B21\u306E\u30C6\u30AD\u30B9\
+      \u30C8\u306E\u9069\u5207\u306A\u7D99\u7D9A\u3067\u3059\u304B\uFF1A \n{{ ctx_a\
+      \ }} ?\n\u306F\u3044\u3001\u3082\u3057\u304F\u306F\u3001\u3044\u3044\u3048\uFF1F\
+      \n||| \n{% if label  == instance | string() %}\n{{answer_choices[0]}}\n{% else\
+      \ %} \n{{answer_choices[1]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Reversed appropriate continuation - Yes or No
+    reference: The template randomly selects a continuation and checks if the continuation
+      is appropriate for the given premise.
+  db8b1c25-f2db-4604-b8fc-f93d69d6fae7: !Template
+    answer_choices: "\u7D42\u4E861 ||| \u7D42\u4E862 ||| \u7D42\u4E863 ||| \u7D42\u4E86\
+      4"
+    id: db8b1c25-f2db-4604-b8fc-f93d69d6fae7
+    jinja: "{{ ctx }}...\n\u8AAC\u660E\u306F\u3069\u306E\u3088\u3046\u306B\u7D42\u4E86\
+      \u3057\u307E\u3059\u304B\uFF1F\n\n\u7D42\u4E861\uFF1A {{ endings[0] }}\n\n\u7D42\
+      \u4E862\uFF1A {{ endings[1] }}\n\n\u7D42\u4E863\uFF1A {{ endings[2] }}\n\n\u7D42\
+      \u4E864\uFF1A {{ endings[3] }}\n||| {{ answer_choices[label | int()] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: how_ends
+    reference: ''
+  def77598-682f-48de-b187-55db4d390f07: !Template
+    answer_choices: "\u7D42\u4E861 ||| \u7D42\u4E862 ||| \u7D42\u4E863 ||| \u7D42\u4E86\
+      4"
+    id: def77598-682f-48de-b187-55db4d390f07
+    jinja: "\u72B6\u6CC1\u306E\u8AAC\u660E\u304C\u3053\u306E\u3088\u3046\u306B\u59CB\
+      \u307E\u308B\u5834\u5408\uFF1A {{ ctx }}... Then how\ndoes it continue? \n\n\
+      \u7D42\u4E861\uFF1A {{ endings[0] }}\n\n\u7D42\u4E862\uFF1A {{ endings[1] }}\n\
+      \n\u7D42\u4E863\uFF1A {{ endings[2] }}\n\n\u7D42\u4E864\uFF1A {{ endings[3]\
+      \ }}\n|||{{answer_choices[label | int()] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: if_begins_how_continues
+    reference: Returns a Ending <int> string in the template (similar to how ends
+      paraphrased)

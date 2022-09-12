@@ -1,0 +1,260 @@
+dataset: squad_v2
+subset: ta
+templates:
+  17b83a3f-f748-42e6-9cdf-b2951dd8299d: !Template
+    answer_choices: null
+    id: 17b83a3f-f748-42e6-9cdf-b2951dd8299d
+    jinja: "{% set seq = [\n'\u0B9A\u0BC2\u0BB4\u0BB2\u0BC8\u0BAA\u0BCD \u0BAA\u0BCA\
+      \u0BB1\u0BC1\u0BA4\u0BCD\u0BA4\u0BC1 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\
+      \u0BCD\u0B95\u0BC1 \u0BAA\u0BA4\u0BBF\u0BB2\u0BB3\u0BBF\u0B95\u0BCD\u0B95\u0BB5\
+      \u0BC1\u0BAE\u0BCD.',\n'\u0BAA\u0BA4\u0BBF\u0BB2\u0BCD \u0B8E\u0BA9\u0BCD\u0BA9\
+      ?',\n] %}\n\n{{ seq | choice }}\n\u0B9A\u0BC2\u0BB4\u0BB2\u0BCD: {{context}};\n\
+      \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: {{question}};\n\u0BAA\u0BA4\u0BBF\u0BB2\
+      \u0BCD: |||\n{% if answers.text == [] %}\n\u0BAA\u0BA4\u0BBF\u0BB2\u0BCD \u0B9A\
+      \u0BC2\u0BB4\u0BB2\u0BBF\u0BB2\u0BCD \u0B87\u0BB2\u0BCD\u0BB2\u0BC8\n{% else\
+      \ %}\n{{answers.text[0]}}\n{% endif %}"
+    metadata: &id001 !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Questions with Context
+    reference: Given context and question, give answer
+  189dcc58-fd13-4771-ad03-7879a61c7ab7: !Template
+    answer_choices: null
+    id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
+    jinja: "{% if answers.text != [] %}\n\u0B95\u0BCA\u0B9F\u0BC1\u0B95\u0BCD\u0B95\
+      \u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F \u0B9A\u0BC2\u0BB4\u0BB2\u0BC1\u0B95\u0BCD\
+      \u0B95\u0BBE\u0BA9 \u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\u0BAE\u0BCD \u0BAA\
+      \u0BA4\u0BBF\u0BB2\u0BC8\u0BA4\u0BCD \u0BA4\u0BBF\u0BB0\u0BC1\u0BAE\u0BCD\u0BAA\
+      \u0BAA\u0BCD \u0BAA\u0BC6\u0BB1 \u0BA8\u0BC0\u0B99\u0BCD\u0B95\u0BB3\u0BCD \u0B95\
+      \u0BC7\u0B9F\u0BCD\u0B9F\u0BBF\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0B95\u0BCD\u0B95\
+      \u0BC2\u0B9F\u0BBF\u0BAF \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0BAF\u0BC8\u0BA4\
+      \u0BCD \u0BA4\u0BC0\u0BB0\u0BCD\u0BAE\u0BBE\u0BA9\u0BBF\u0B95\u0BCD\u0B95\u0BB5\
+      \u0BC1\u0BAE\u0BCD\n\u0B9A\u0BC2\u0BB4\u0BB2\u0BCD: {{context}};\n\u0BAA\u0BA4\
+      \u0BBF\u0BB2\u0BCD: {{answers.text[0]}};\n\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\
+      : |||\n{{question}}\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Jeopardy with Context
+    reference: Given context and an answer, guess the question.
+  20064b80-e4d0-41b7-9135-92c0077d5044: !Template
+    answer_choices: null
+    id: 20064b80-e4d0-41b7-9135-92c0077d5044
+    jinja: "{% set seq = [\n'\u0B87\u0BA4\u0BC1 \u0B8E\u0BA4\u0BC8 \u0BAA\u0BB1\u0BCD\
+      \u0BB1\u0BBF\u0BAF\u0BA4\u0BC1? ',\n'\u0BAA\u0BA4\u0BCD\u0BA4\u0BBF \u0B8E\u0BA4\
+      \u0BC8\u0BAA\u0BCD \u0BAA\u0BB1\u0BCD\u0BB1\u0BBF\u0BAF\u0BA4\u0BC1? ',\n'\u0B87\
+      \u0BA4\u0BBF\u0BB2\u0BBF\u0BB0\u0BC1\u0BA8\u0BCD\u0BA4\u0BC1 \u0BA4\u0BB2\u0BC8\
+      \u0BAA\u0BCD\u0BAA\u0BC8\u0BAA\u0BCD \u0BAA\u0BC6\u0BB1\u0BC1\u0B99\u0BCD\u0B95\
+      \u0BB3\u0BCD: ',\n'\u0BAA\u0BA4\u0BCD\u0BA4\u0BBF\u0BAF\u0BBF\u0BB2\u0BCD \u0B87\
+      \u0BB0\u0BC1\u0BA8\u0BCD\u0BA4\u0BC1, \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC8\
+      \u0BAA\u0BCD \u0BAA\u0BC6\u0BB1\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD',\n'\u0BA8\
+      \u0BBE\u0BA9\u0BCD \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC8 \u0B85\u0BB1\u0BBF\
+      \u0BAF \u0BB5\u0BBF\u0BB0\u0BC1\u0BAE\u0BCD\u0BAA\u0BC1\u0B95\u0BBF\u0BB1\u0BC7\
+      \u0BA9\u0BCD. ',\n'\u0BAA\u0BA4\u0BCD\u0BA4\u0BBF\u0BAF\u0BBF\u0BB2\u0BCD \u0B87\
+      \u0BB0\u0BC1\u0BA8\u0BCD\u0BA4\u0BC1 \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC1\
+      : ',\n'\u0BAA\u0BA4\u0BCD\u0BA4\u0BBF\u0BAF\u0BBF\u0BB2\u0BBF\u0BB0\u0BC1\u0BA8\
+      \u0BCD\u0BA4\u0BC1 \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC1: ',\n] %}\n{{\
+      \ seq | choice }}\n{{context}} |||\n{{title | replace(\"_\", \" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      - Other
+      original_task: false
+    name: Topic Prediction - Context with randomized prompt options
+    reference: Asks to predict the topic given the context with additional input as
+      if a person is asking another person.
+  338cc143-361e-4796-b035-31fb2201c49f: !Template
+    answer_choices: null
+    id: 338cc143-361e-4796-b035-31fb2201c49f
+    jinja: "{% set seq = [\n'\u0B87\u0BA4\u0BC1 \u0BAA\u0BB1\u0BCD\u0BB1\u0BBF ',\n\
+      '\u0B87\u0BA4\u0BC1 \u0B8E\u0BA4\u0BC8 \u0BAA\u0BB1\u0BCD\u0BB1\u0BBF\u0BAF\u0BA4\
+      \u0BC1? ',\n'\u0BAA\u0BA4\u0BCD\u0BA4\u0BBF \u0BAA\u0BB1\u0BCD\u0BB1\u0BBF ',\n\
+      '\u0BAA\u0BA4\u0BCD\u0BA4\u0BBF \u0B8E\u0BA4\u0BC8\u0BAA\u0BCD \u0BAA\u0BB1\u0BCD\
+      \u0BB1\u0BBF\u0BAF\u0BA4\u0BC1? ',\n'\u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC8\
+      \u0BAA\u0BCD \u0BAA\u0BC6\u0BB1\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD: ',\n'\u0BAA\
+      \u0BA4\u0BCD\u0BA4\u0BBF\u0BAF\u0BBF\u0BB2\u0BCD \u0B87\u0BB0\u0BC1\u0BA8\u0BCD\
+      \u0BA4\u0BC1, \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC1',\n'\u0BA8\u0BBE\u0BA9\
+      \u0BCD \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC8 \u0B85\u0BB1\u0BBF\u0BAF \u0BB5\
+      \u0BBF\u0BB0\u0BC1\u0BAE\u0BCD\u0BAA\u0BC1\u0B95\u0BBF\u0BB1\u0BC7\u0BA9\u0BCD\
+      . ',\n'\u0BAA\u0BA4\u0BCD\u0BA4\u0BBF\u0BAF\u0BBF\u0BB2\u0BCD \u0B87\u0BB0\u0BC1\
+      \u0BA8\u0BCD\u0BA4\u0BC1 \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC1: ',\n'\u0BAA\
+      \u0BA4\u0BCD\u0BA4\u0BBF\u0BAF\u0BBF\u0BB2\u0BBF\u0BB0\u0BC1\u0BA8\u0BCD\u0BA4\
+      \u0BC1 \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC1: ',\n] %}\n{{context}}\n{{\
+      \ seq | choice }}|||\n{{title | replace(\"_\", \" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      - Other
+      original_task: false
+    name: Topic Prediction - Context with randomized prompt options placed in the
+      end
+    reference: The prompt is placed at the end of Context
+  7a44cd99-7420-4456-aaaa-34e2c81d1679: !Template
+    answer_choices: null
+    id: 7a44cd99-7420-4456-aaaa-34e2c81d1679
+    jinja: "{% if answers.text != [] %}\n\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\
+      \u0BAE\u0BCD \u0BAA\u0BA4\u0BBF\u0BB2\u0BC8\u0B95\u0BCD \u0B95\u0BCA\u0B9F\u0BC1\
+      \u0B95\u0BCD\u0B95\u0BC1\u0BAE\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF \u0B8E\
+      \u0BA9\u0BCD\u0BA9?\n\u0BAA\u0BA4\u0BBF\u0BB2\u0BCD: {{answers.text[0]}};\n\u0B95\
+      \u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: |||\n{{question}}\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Jeopardy without Context
+    reference: Given an answer, output a viable question. Context is omitted.
+  8bea1123-fd8d-4bac-96bf-b8a289ee74b3: !Template
+    answer_choices: null
+    id: 8bea1123-fd8d-4bac-96bf-b8a289ee74b3
+    jinja: "{% set seq = [\n'\u0BA8\u0BC0\u0B99\u0BCD\u0B95\u0BB3\u0BCD \u0B8E\u0BA9\
+      \u0BCD\u0BA9\u0BBF\u0B9F\u0BAE\u0BCD \u0B9A\u0BCA\u0BB2\u0BCD\u0BB2 \u0BAE\u0BC1\
+      \u0B9F\u0BBF\u0BAF\u0BC1\u0BAE\u0BBE? ',\n'\u0BA4\u0BAF\u0BB5\u0BC1\u0B9A\u0BC6\
+      \u0BAF\u0BCD\u0BA4\u0BC1 \u0B9A\u0BCA\u0BB2\u0BCD\u0BB2\u0BC1\u0B99\u0BCD\u0B95\
+      \u0BB3\u0BCD ',\n'\u0B9A\u0BCA\u0BB2\u0BCD\u0BB2\u0BC1\u0B99\u0BCD\u0B95\u0BB3\
+      \u0BCD ',\n'\u0BAA\u0BA4\u0BCD\u0BA4\u0BBF\u0BAF\u0BBF\u0BB2\u0BCD \u0B87\u0BB0\
+      \u0BC1\u0BA8\u0BCD\u0BA4\u0BC1, ',\n'\u0BA8\u0BBE\u0BA9\u0BCD \u0BA4\u0BC6\u0BB0\
+      \u0BBF\u0BA8\u0BCD\u0BA4\u0BC1 \u0B95\u0BCA\u0BB3\u0BCD\u0BB3 \u0BB5\u0BBF\u0BB0\
+      \u0BC1\u0BAE\u0BCD\u0BAA\u0BC1\u0B95\u0BBF\u0BB1\u0BC7\u0BA9\u0BCD ',\n'\u0BA8\
+      \u0BBE\u0BA9\u0BCD \u0B95\u0BC7\u0B9F\u0BCD\u0B95 \u0BB5\u0BBF\u0BB0\u0BC1\u0BAE\
+      \u0BCD\u0BAA\u0BC1\u0B95\u0BBF\u0BB1\u0BC7\u0BA9\u0BCD ',\n'\u0B87\u0BA4\u0BB1\
+      \u0BCD\u0B95\u0BC1 \u0B8E\u0BA9\u0BCD\u0BA9 \u0BAA\u0BA4\u0BBF\u0BB2\u0BCD:\
+      \ ',\n'\u0B87\u0BA4\u0BB1\u0BCD\u0B95\u0BC1 \u0BAA\u0BA4\u0BBF\u0BB2\u0BC8\u0B95\
+      \u0BCD \u0B95\u0BA3\u0BCD\u0B9F\u0BB1\u0BBF\u0BAF\u0BB5\u0BC1\u0BAE\u0BCD: ',\n\
+      '\u0BAA\u0BA4\u0BBF\u0BB2\u0BCD: ',\n'',\n] %}\n{{context}} {{ seq | choice\
+      \ }}{{question}}|||\n{% if answers.text == [] %}\n\u0BAA\u0BA4\u0BBF\u0BB2\u0BCD\
+      \ \u0B9A\u0BC2\u0BB4\u0BB2\u0BBF\u0BB2\u0BCD \u0B87\u0BB2\u0BCD\u0BB2\u0BC8\n\
+      {% else %}\n{{answers.text[0]}}\n{% endif %}"
+    metadata: &id002 !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Questions with Context - Without Prompt Keywords
+    reference: Given context and question, give answer. No keywords to delineate context
+      and question is given.
+  b14c9843-fd56-42ff-817d-39e41963c847: !Template
+    answer_choices: null
+    id: b14c9843-fd56-42ff-817d-39e41963c847
+    jinja: "{% set seq = [\n'\u0B9A\u0BC2\u0BB4\u0BB2\u0BC8\u0BAA\u0BCD \u0BAA\u0BCA\
+      \u0BB1\u0BC1\u0BA4\u0BCD\u0BA4\u0BC1 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\
+      \u0BCD\u0B95\u0BC1 \u0BAA\u0BA4\u0BBF\u0BB2\u0BB3\u0BBF\u0B95\u0BCD\u0B95\u0BB5\
+      \u0BC1\u0BAE\u0BCD.',\n'\u0BAA\u0BA4\u0BBF\u0BB2\u0BCD \u0B8E\u0BA9\u0BCD\u0BA9\
+      ?',\n] %}\n\n{{ seq | choice }}\n\u0B9A\u0BC2\u0BB4\u0BB2\u0BCD: {{context}};\n\
+      \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: {{question}};\nIf you can't find the answer,\
+      \ please respond \"\u0BAA\u0BA4\u0BBF\u0BB2\u0BB3\u0BBF\u0B95\u0BCD\u0B95 \u0BAE\
+      \u0BC1\u0B9F\u0BBF\u0BAF\u0BBE\u0BA4\u0BA4\u0BC1\".\n\u0BAA\u0BA4\u0BBF\u0BB2\
+      \u0BCD: |||\n{% if answers.text == [] %}\n\u0BAA\u0BA4\u0BBF\u0BB2\u0BB3\u0BBF\
+      \u0B95\u0BCD\u0B95 \u0BAE\u0BC1\u0B9F\u0BBF\u0BAF\u0BBE\u0BA4\u0BA4\u0BC1\n\
+      {% else %}\n{{answers.text[0]}}\n{% endif %}"
+    metadata: *id001
+    name: Questions with Context +unanswerable
+    reference: Given context and question, give answer
+  d768c181-1c9b-40c3-aa01-fc78c3b29875: !Template
+    answer_choices: null
+    id: d768c181-1c9b-40c3-aa01-fc78c3b29875
+    jinja: '{% if answers.text != [] %}
+
+      {{question}}|||
+
+      {{answers.text[0]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Trivia
+    reference: Given input and directly outputs answer.
+  e1630107-8f5d-44ce-8ccd-6fa80da80328: !Template
+    answer_choices: null
+    id: e1630107-8f5d-44ce-8ccd-6fa80da80328
+    jinja: "{% set seq = [\n'\u0BA8\u0BC0\u0B99\u0BCD\u0B95\u0BB3\u0BCD \u0B8E\u0BA9\
+      \u0BCD\u0BA9\u0BBF\u0B9F\u0BAE\u0BCD \u0B9A\u0BCA\u0BB2\u0BCD\u0BB2 \u0BAE\u0BC1\
+      \u0B9F\u0BBF\u0BAF\u0BC1\u0BAE\u0BBE? ',\n'\u0BA4\u0BAF\u0BB5\u0BC1\u0B9A\u0BC6\
+      \u0BAF\u0BCD\u0BA4\u0BC1 \u0B9A\u0BCA\u0BB2\u0BCD\u0BB2\u0BC1\u0B99\u0BCD\u0B95\
+      \u0BB3\u0BCD ',\n'\u0B9A\u0BCA\u0BB2\u0BCD\u0BB2\u0BC1\u0B99\u0BCD\u0B95\u0BB3\
+      \u0BCD ',\n'\u0BAA\u0BA4\u0BCD\u0BA4\u0BBF\u0BAF\u0BBF\u0BB2\u0BCD \u0B87\u0BB0\
+      \u0BC1\u0BA8\u0BCD\u0BA4\u0BC1, ',\n'\u0BA8\u0BBE\u0BA9\u0BCD \u0BA4\u0BC6\u0BB0\
+      \u0BBF\u0BA8\u0BCD\u0BA4\u0BC1 \u0B95\u0BCA\u0BB3\u0BCD\u0BB3 \u0BB5\u0BBF\u0BB0\
+      \u0BC1\u0BAE\u0BCD\u0BAA\u0BC1\u0B95\u0BBF\u0BB1\u0BC7\u0BA9\u0BCD ',\n'\u0BA8\
+      \u0BBE\u0BA9\u0BCD \u0B95\u0BC7\u0B9F\u0BCD\u0B95 \u0BB5\u0BBF\u0BB0\u0BC1\u0BAE\
+      \u0BCD\u0BAA\u0BC1\u0B95\u0BBF\u0BB1\u0BC7\u0BA9\u0BCD ',\n'\u0B87\u0BA4\u0BB1\
+      \u0BCD\u0B95\u0BC1 \u0B8E\u0BA9\u0BCD\u0BA9 \u0BAA\u0BA4\u0BBF\u0BB2\u0BCD:\
+      \ ',\n'\u0B87\u0BA4\u0BB1\u0BCD\u0B95\u0BC1 \u0BAA\u0BA4\u0BBF\u0BB2\u0BC8\u0B95\
+      \u0BCD \u0B95\u0BA3\u0BCD\u0B9F\u0BB1\u0BBF\u0BAF\u0BB5\u0BC1\u0BAE\u0BCD: ',\n\
+      '\u0BAA\u0BA4\u0BBF\u0BB2\u0BCD: ',\n'',\n] %}\n{{context}} {{ seq | choice\
+      \ }}{{question}} If you can't find the answer, please respond \"\u0BAA\u0BA4\
+      \u0BBF\u0BB2\u0BB3\u0BBF\u0B95\u0BCD\u0B95 \u0BAE\u0BC1\u0B9F\u0BBF\u0BAF\u0BBE\
+      \u0BA4\u0BA4\u0BC1\". |||\n{% if answers.text == [] %}\n\u0BAA\u0BA4\u0BBF\u0BB2\
+      \u0BB3\u0BBF\u0B95\u0BCD\u0B95 \u0BAE\u0BC1\u0B9F\u0BBF\u0BAF\u0BBE\u0BA4\u0BA4\
+      \u0BC1\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
+    metadata: *id002
+    name: Questions with Context - Without Prompt Keywords +unanswerable
+    reference: Given context and question, give answer. No keywords to delineate context
+      and question is given.
+  e2e41877-4794-4ff9-9f92-a2a85105e2a7: !Template
+    answer_choices: "\u0B86\u0BAE\u0BCD ||| \u0B87\u0BB2\u0BCD\u0BB2\u0BC8"
+    id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
+    jinja: "\u0B9A\u0BC2\u0BB4\u0BB2\u0BCD: {{context}}; \n\n\u0B95\u0BC7\u0BB3\u0BCD\
+      \u0BB5\u0BBF: {{question}} \n\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\
+      \u0BB5\u0BBF\u0B95\u0BCD\u0B95\u0BC1 \u0BAA\u0BA4\u0BBF\u0BB2\u0BB3\u0BBF\u0B95\
+      \u0BCD\u0B95 \u0BAE\u0BC1\u0B9F\u0BBF\u0BAF\u0BC1\u0BAE\u0BBE? ||| \n{% if answers.text\
+      \ != [] %}\n{{answer_choices[0]}}\n{% else %}\n{{answer_choices[1]}}\n{% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Unanwerable question
+    reference: The template checks if the question is answerable or not
+  e51c23b9-5b10-4db3-a0d1-ba546830173d: !Template
+    answer_choices: null
+    id: e51c23b9-5b10-4db3-a0d1-ba546830173d
+    jinja: "{% set seq = [\n'\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF-\u0BAA\u0BA4\u0BBF\
+      \u0BB2\u0BCD \u0B9C\u0BCB\u0B9F\u0BBF\u0BAF\u0BBF\u0BA9\u0BCD \u0BA4\u0BB2\u0BC8\
+      \u0BAA\u0BCD\u0BAA\u0BC8 \u0BA4\u0BC0\u0BB0\u0BCD\u0BAE\u0BBE\u0BA9\u0BBF\u0B95\
+      \u0BCD\u0B95\u0BB5\u0BC1\u0BAE\u0BCD. ',\n'\u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\
+      \u0BC8\u0B95\u0BCD \u0B95\u0BA3\u0BCD\u0B9F\u0BB1\u0BBF\u0BAF\u0BB5\u0BC1\u0BAE\
+      \u0BCD. ',\n'\u0B87\u0BA4\u0BBF\u0BB2\u0BBF\u0BB0\u0BC1\u0BA8\u0BCD\u0BA4\u0BC1\
+      \ \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC1 \u0B8E\u0BA9\u0BCD\u0BA9? ',\n\
+      ] %}\n{% if answers.text != [] %}\n{{ seq | choice }}\n\u0B95\u0BC7\u0BB3\u0BCD\
+      \u0BB5\u0BBF: {{question}};  \u0BAA\u0BA4\u0BBF\u0BB2\u0BCD: {{answers.text[0]}};\
+      \ \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC1: |||\n{{title}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      - Other
+      original_task: false
+    name: Topic Prediction - Question and Answer Pair
+    reference: Given a Question-Answer pair, generate the topic.
+  fdcf132e-6c70-4188-999e-93601ee8e089: !Template
+    answer_choices: null
+    id: fdcf132e-6c70-4188-999e-93601ee8e089
+    jinja: "\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\u0BAE\u0BCD \u0BAA\u0BA4\u0BCD\
+      \u0BA4\u0BBF\u0BAF\u0BBF\u0BB2\u0BCD \u0B8E\u0BA9\u0BCD\u0BA9?\n{{context}}\
+      \ |||\n{{title | replace(\"_\", \" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      - Other
+      original_task: false
+    name: Topic Prediction - Context
+    reference: Predict the topic from the passage

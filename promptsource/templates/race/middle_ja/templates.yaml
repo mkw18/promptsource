@@ -1,0 +1,131 @@
+dataset: race
+subset: middle_ja
+templates:
+  0a47d28c-7cf5-405d-b9ef-9b82c1a20002: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 0a47d28c-7cf5-405d-b9ef-9b82c1a20002
+    jinja: "\u8A18\u4E8B\u3092\u8AAD\u3093\u3067\u3001\u30D9\u30B9\u30C8\u30A2\u30F3\
+      \u30B5\u30FC\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002\nArticle:\
+      \ {{article}}\nQuestion: {{question}}\n\u30AA\u30D7\u30B7\u30E7\u30F3\uFF1A\
+      \ {{\"A\"}}: {{options.0}}\n{{\"B\"}}: {{options.1}}\n{{\"C\"}}: {{options.2}}\n\
+      {{\"D\"}}: {{options.3}}\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Select the best answer
+    reference: ''
+  1a68b62e-404c-4037-baec-7e20cb4c3f6b: !Template
+    answer_choices: '{{ options | join("|||") }}'
+    id: 1a68b62e-404c-4037-baec-7e20cb4c3f6b
+    jinja: "Read the following article and answer the question.\n\u8AD6\u6587\uFF1A\
+      \ {{article}}\nQuestion: {{question}}\n\u7B54\u3048\uFF1A\n|||\n{{ answer_choices[{\"\
+      A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Read the article and answer the question (no option)
+    reference: ''
+  2e7f5fff-518e-4100-90f9-cca094b11e95: !Template
+    answer_choices: "\u306F\u3044 ||| \u3044\u3044\u3048"
+    id: 2e7f5fff-518e-4100-90f9-cca094b11e95
+    jinja: "{% set candidate = [\"A\", \"B\", \"C\", \"D\"] | choice %}\nArticle:\
+      \ {{article}}\nQuestion: {{question}}\n\u306F\u3044\u307E\u305F\u306F\u3044\u3044\
+      \u3048\u3001\u7B54\u3048\u3067\u3059 \"{{ [options.0,options.1,options.2,options.3][{\"\
+      A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\"?\n|||\n{% if candidate == answer\
+      \ %}\nYes\n{% else %}\nNo\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Is this the right answer
+    reference: ''
+  6f2e7b0d-9691-4e28-9666-6c4d478a1641: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 6f2e7b0d-9691-4e28-9666-6c4d478a1641
+    jinja: '{{article}}
+
+      {{question}}
+
+      {{"A)"}} {{options.0}}
+
+      {{"B)"}} {{options.1}}
+
+      {{"C)"}} {{options.2}}
+
+      {{"D)"}} {{options.3}}
+
+      |||
+
+      {{answer}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Select the best answer (no instructions)
+    reference: ''
+  9aacc46d-8863-4e02-9783-9ec931425759: !Template
+    answer_choices: '{{ options | join("|||") }}'
+    id: 9aacc46d-8863-4e02-9783-9ec931425759
+    jinja: "Read the following article and select the best answer.\nArticle: {{article}}\n\
+      \u8CEA\u554F\uFF1A {{question}}\n- {{answer_choices | join(\"\\n- \")}}\n|||\n\
+      {{answer_choices[{\"A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Select the best answer (generate span)
+    reference: ''
+  9aedaa07-b815-4a35-890b-6100f00706aa: !Template
+    answer_choices: null
+    id: 9aedaa07-b815-4a35-890b-6100f00706aa
+    jinja: "\u6B21\u306E\u8A18\u4E8B\u306B\u30DE\u30EB\u30C1\u9078\u629E\u306E\u8CEA\
+      \u554F\u3092\u66F8\u3044\u3066\u304F\u3060\u3055\u3044\u3002\n\u8AD6\u6587\uFF1A\
+      \ {{article}}\n\u30AA\u30D7\u30B7\u30E7\u30F3\uFF1A\n{{\"A\"}} {{options.0}}\n\
+      {{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\n\u7B54\
+      \u3048\uFF1A\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"A\"\
+      :0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\n\u8CEA\u554F\uFF1A \n|||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Write a multi-choice question (options given)
+    reference: ''
+  af4869c4-35af-4644-86d9-27843ca4efd5: !Template
+    answer_choices: null
+    id: af4869c4-35af-4644-86d9-27843ca4efd5
+    jinja: "\u6B21\u306E\u8A18\u4E8B\u306B\u30DE\u30EB\u30C1\u9078\u629E\u306E\u8CEA\
+      \u554F\u3092\u66F8\u304F\uFF1A\n\u8AD6\u6587\uFF1A {{article}}\n|||\n\u8CEA\u554F\
+      \uFF1A \n{{question}}\n\u30AA\u30D7\u30B7\u30E7\u30F3\uFF1A\n{{\"A\"}} {{options.0}}\n\
+      {{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\n\u7B54\
+      \u3048\uFF1A\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Write a multi-choice question for the following article
+    reference: ''
+  ebe34816-2a1f-42b3-a9ac-ce4d36633fdb: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: ebe34816-2a1f-42b3-a9ac-ce4d36633fdb
+    jinja: "I'm taking a test and have to guess the right answer to the question after\
+      \ the article.\n\u8AD6\u6587\uFF1A {{article}}\n\u8CEA\u554F\uFF1A {{question}}\n\
+      \u30AA\u30D7\u30B7\u30E7\u30F3\uFF1A {{\"A\"}}: {{options.0}}\n{{\"B\"}}: {{options.1}}\n\
+      {{\"C\"}}: {{options.2}}\n{{\"D\"}}: {{options.3}}\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Taking a test
+    reference: ''

@@ -1,0 +1,152 @@
+dataset: piqa
+subset: tr
+templates:
+  16e97a16-c958-4956-bfba-279f88dafd5b: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 16e97a16-c958-4956-bfba-279f88dafd5b
+    jinja: "Hedef: {{goal}}\n\nDo\u011Fru son hangisi?\n- {{sol1}}\n- {{sol2}}\n\n\
+      Cevap:\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: what_is_the_correct_ending
+    reference: ''
+  3f336295-c1f7-410a-8fc6-d2ed79487aa4: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 3f336295-c1f7-410a-8fc6-d2ed79487aa4
+    jinja: "{{\"\xC7\xF6z\xFCm 1\"}}: {{sol1}}\n{{\"\xC7\xF6z\xFCm 2\"}}: {{sol2}}\n\
+      \nHedef: {{goal}}\n\nAma\xE7 g\xF6z \xF6n\xFCne al\u0131nd\u0131\u011F\u0131\
+      nda, do\u011Fru \xE7\xF6z\xFCm nedir?\n\nDo\u011Fru \xE7\xF6z\xFCm\xFC kopyalayarak\
+      \ cevap\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_correct_choice_with_choice_given_before_goal
+    reference: ''
+  44778818-7b73-4262-a294-c00fc32b6c2c: !Template
+    answer_choices: 1 ||| 2
+    id: 44778818-7b73-4262-a294-c00fc32b6c2c
+    jinja: "C\xFCmle: {{goal}}\n\nSe\xE7im {{answer_choices[0]}}: {{sol1}}\n\nSe\xE7\
+      im {{answer_choices[1]}}: {{sol2}}\n\nC\xFCmle i\xE7in bitmek i\xE7in do\u011F\
+      ru se\xE7imin endeksi nedir?\n\nCevap:\n\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_correct_choice_index
+    reference: ''
+  5f4b4645-9438-4375-9062-083130e6d04e: !Template
+    answer_choices: null
+    id: 5f4b4645-9438-4375-9062-083130e6d04e
+    jinja: "Bir hedef ve yanl\u0131\u015F bir \xE7\xF6z\xFCm verildi\u011Finde, do\u011F\
+      ru bir \xE7\xF6z\xFCm vermek i\xE7in yeniden yaz\u0131n.\nHedef: {{goal}} \n\
+      \xC7\xF6z\xFCm: {{[sol1, sol2][1 - label]}}\nD\xFCzeltilmi\u015F \xC7\xF6z\xFC\
+      m:\n|||\n{{[sol1, sol2][label]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Correct the solution
+    reference: ''
+  94c39589-7bfb-4c09-9337-672369459545: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 94c39589-7bfb-4c09-9337-672369459545
+    jinja: "A\u015Fa\u011F\u0131daki c\xFCmleyi en iyi se\xE7imle bitirin: {{goal}}\n\
+      \nSe\xE7imler:\n- {{sol1}}\n- {{sol2}}\n\nCevap:\n\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: finish_sentence_with_correct_choice
+    reference: ''
+  99565244-4eaf-4004-a28b-4362ba5bcac3: !Template
+    answer_choices: Numara ||| Evet
+    id: 99565244-4eaf-4004-a28b-4362ba5bcac3
+    jinja: "{{goal}} {{sol2}}\nBu ifade mant\u0131kl\u0131 m\u0131?\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Does this solution make sense? sol2
+    reference: ''
+  adfef248-f856-44fa-affd-e3223718854e: !Template
+    answer_choices: "\xC7\xF6z\xFCm 1 ||| \xC7\xF6z\xFCm 2"
+    id: adfef248-f856-44fa-affd-e3223718854e
+    jinja: "Bir hedef ve 2 \xE7\xF6z\xFCm verildi\u011Finde, en uygun \xE7\xF6z\xFC\
+      m\xFC se\xE7in.\nHedef: {{goal}}\n- {{\"\xC7\xF6z\xFCm 1\"}}: {{sol1}}\n- {{\"\
+      \xC7\xF6z\xFCm 2\"}}: {{sol2}}\n\nYa geri d\xF6nerek cevap {{\"\xC7\xF6z\xFC\
+      m 1\"}} veya {{\"\xC7\xF6z\xFCm 2\"}}\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose the most appropriate solution
+    reference: ''
+  b5c69473-eedb-4c4f-a5fa-d4e266e43535: !Template
+    answer_choices: null
+    id: b5c69473-eedb-4c4f-a5fa-d4e266e43535
+    jinja: "Given a sentence, correct it if it doesn't make sense. If it makes sense,\
+      \ just return it as the answer.\nGiri\u015F: {{goal}} {{sol2[0].lower() + sol2[1:]}}\n\
+      \xC7\u0131kt\u0131:\n|||\n{{goal}} {{[sol1[0].lower() + sol1[1:], sol2[0].lower()\
+      \ + sol2[1:]][label]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: 'Correct the solution if false: from sol 2'
+    reference: ''
+  c8c45ef1-2ffc-43d7-8710-b98c2fc4f699: !Template
+    answer_choices: null
+    id: c8c45ef1-2ffc-43d7-8710-b98c2fc4f699
+    jinja: '{{goal}}
+
+      |||
+
+      {{[sol1[0].lower() + sol1[1:], sol2[0].lower() + sol2[1:]][label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: no prompt needed
+    reference: ''
+  f044def7-01c2-42de-b6ad-4e8c63ab2bf1: !Template
+    answer_choices: Evet ||| Numara
+    id: f044def7-01c2-42de-b6ad-4e8c63ab2bf1
+    jinja: "Bu ifade mant\u0131kl\u0131 m\u0131?\n{{goal}} {{sol1[0].lower() + sol1[1:]}}\n\
+      Cevap vermek {{answer_choices[0]}} veya {{answer_choices[1]}}\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Does this solution make sense? sol1
+    reference: ''
+  f42cd457-a14b-465a-a139-d7d2407a3bac: !Template
+    answer_choices: null
+    id: f42cd457-a14b-465a-a139-d7d2407a3bac
+    jinja: "C\xFCmle: {{goal}} {{sol1[0].lower() + sol1[1:]}}\nC\xFCmle mant\u0131\
+      kl\u0131 de\u011Filse, mant\u0131kl\u0131 olacak \u015Fekilde d\xFCzeltin. Aksi\
+      \ takdirde, kopyalay\u0131n.\nCevap:\n|||\n{{goal}} {{[sol1[0].lower() + sol1[1:],\
+      \ sol2[0].lower() + sol2[1:]][label]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: 'Correct the solution if false: from sol 1'
+    reference: ''

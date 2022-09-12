@@ -1,0 +1,200 @@
+dataset: squad_v2
+subset: vi
+templates:
+  17b83a3f-f748-42e6-9cdf-b2951dd8299d: !Template
+    answer_choices: null
+    id: 17b83a3f-f748-42e6-9cdf-b2951dd8299d
+    jinja: "{% set seq = [\n'Tr\u1EA3 l\u1EDDi c\xE2u h\u1ECFi t\xF9y thu\u1ED9c v\xE0\
+      o b\u1ED1i c\u1EA3nh.',\n'C\xE2u tr\u1EA3 l\u1EDDi l\xE0 g\xEC?',\n] %}\n\n\
+      {{ seq | choice }}\n\u0110\u1ECBnh ngh\u0129a b\xE0i v\u0103n: {{context}};\n\
+      C\xE2u h\u1ECFi: {{question}};\nC\xE2u tr\u1EA3 l\u1EDDi: |||\n{% if answers.text\
+      \ == [] %}\nTr\u1EA3 l\u1EDDi kh\xF4ng trong b\u1ED1i c\u1EA3nh\n{% else %}\n\
+      {{answers.text[0]}}\n{% endif %}"
+    metadata: &id001 !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Questions with Context
+    reference: Given context and question, give answer
+  189dcc58-fd13-4771-ad03-7879a61c7ab7: !Template
+    answer_choices: null
+    id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
+    jinja: "{% if answers.text != [] %}\nX\xE1c \u0111\u1ECBnh c\xE2u h\u1ECFi m\xE0\
+      \ b\u1EA1n c\xF3 th\u1EC3 \u0111\xE3 y\xEAu c\u1EA7u l\u1EA5y l\u1EA1i c\xE2\
+      u tr\u1EA3 l\u1EDDi sau cho b\u1ED1i c\u1EA3nh \u0111\xE3 cho\n\u0110\u1ECB\
+      nh ngh\u0129a b\xE0i v\u0103n: {{context}};\nC\xE2u tr\u1EA3 l\u1EDDi: {{answers.text[0]}};\n\
+      C\xE2u h\u1ECFi: |||\n{{question}}\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Jeopardy with Context
+    reference: Given context and an answer, guess the question.
+  20064b80-e4d0-41b7-9135-92c0077d5044: !Template
+    answer_choices: null
+    id: 20064b80-e4d0-41b7-9135-92c0077d5044
+    jinja: "{% set seq = [\n'V\u1EC1 vi\u1EC7c n\xE0y l\xE0 g\xEC? ',\n'\u0110o\u1EA1\
+      n v\u0103n v\u1EC1 l\xE0 g\xEC? ',\n'Nh\u1EADn ch\u1EE7 \u0111\u1EC1 t\u1EEB\
+      : ',\n'T\u1EEB \u0111o\u1EA1n v\u0103n, l\u1EA5y ch\u1EE7 \u0111\u1EC1',\n'T\xF4\
+      i mu\u1ED1n bi\u1EBFt ch\u1EE7 \u0111\u1EC1. ',\n'Ch\u1EE7 \u0111\u1EC1 t\u1EEB\
+      \ \u0111o\u1EA1n v\u0103n: ',\n'Ch\u1EE7 \u0111\u1EC1 t\u1EEB \u0111o\u1EA1\
+      n v\u0103n: ',\n] %}\n{{ seq | choice }}\n{{context}} |||\n{{title | replace(\"\
+      _\", \" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      - Other
+      original_task: false
+    name: Topic Prediction - Context with randomized prompt options
+    reference: Asks to predict the topic given the context with additional input as
+      if a person is asking another person.
+  338cc143-361e-4796-b035-31fb2201c49f: !Template
+    answer_choices: null
+    id: 338cc143-361e-4796-b035-31fb2201c49f
+    jinja: "{% set seq = [\n'\u0110\xE2y l\xE0 v\u1EC1 ',\n'V\u1EC1 vi\u1EC7c n\xE0\
+      y l\xE0 g\xEC? ',\n'\u0110o\u1EA1n v\u0103n l\xE0 v\u1EC1 ',\n'\u0110o\u1EA1\
+      n v\u0103n v\u1EC1 l\xE0 g\xEC? ',\n'Nh\u1EADn ch\u1EE7 \u0111\u1EC1: ',\n'T\u1EEB\
+      \ \u0111o\u1EA1n v\u0103n, ch\u1EE7 \u0111\u1EC1 l\xE0',\n'T\xF4i mu\u1ED1n\
+      \ bi\u1EBFt ch\u1EE7 \u0111\u1EC1. ',\n'Ch\u1EE7 \u0111\u1EC1 t\u1EEB \u0111\
+      o\u1EA1n v\u0103n: ',\n'Ch\u1EE7 \u0111\u1EC1 t\u1EEB \u0111o\u1EA1n v\u0103\
+      n: ',\n] %}\n{{context}}\n{{ seq | choice }}|||\n{{title | replace(\"_\", \"\
+      \ \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      - Other
+      original_task: false
+    name: Topic Prediction - Context with randomized prompt options placed in the
+      end
+    reference: The prompt is placed at the end of Context
+  7a44cd99-7420-4456-aaaa-34e2c81d1679: !Template
+    answer_choices: null
+    id: 7a44cd99-7420-4456-aaaa-34e2c81d1679
+    jinja: "{% if answers.text != [] %}\nM\u1ED9t c\xE2u h\u1ECFi s\u1EBD \u0111\u01B0\
+      a ra c\xE2u tr\u1EA3 l\u1EDDi sau l\xE0 g\xEC?\nC\xE2u tr\u1EA3 l\u1EDDi: {{answers.text[0]}};\n\
+      C\xE2u h\u1ECFi: |||\n{{question}}\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Jeopardy without Context
+    reference: Given an answer, output a viable question. Context is omitted.
+  8bea1123-fd8d-4bac-96bf-b8a289ee74b3: !Template
+    answer_choices: null
+    id: 8bea1123-fd8d-4bac-96bf-b8a289ee74b3
+    jinja: "{% set seq = [\n'B\u1EA1n c\xF3 th\u1EC3 cho t\xF4i bi\u1EBFt ',\n'Xin\
+      \ vui l\xF2ng cho t\xF4i bi\u1EBFt ',\n'N\xF3i v\u1EDBi t\xF4i ',\n'T\u1EEB\
+      \ \u0111o\u1EA1n v\u0103n, ',\n'T\xF4i mu\u1ED1n bi\u1EBFt ',\n't\xF4i mu\u1ED1\
+      n h\u1ECFi ',\n'C\xE2u tr\u1EA3 l\u1EDDi cho: ',\n'T\xECm c\xE2u tr\u1EA3 l\u1EDD\
+      i cho: ',\n'C\xE2u tr\u1EA3 l\u1EDDi: ',\n'',\n] %}\n{{context}} {{ seq | choice\
+      \ }}{{question}}|||\n{% if answers.text == [] %}\nTr\u1EA3 l\u1EDDi kh\xF4ng\
+      \ trong b\u1ED1i c\u1EA3nh\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
+    metadata: &id002 !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Questions with Context - Without Prompt Keywords
+    reference: Given context and question, give answer. No keywords to delineate context
+      and question is given.
+  b14c9843-fd56-42ff-817d-39e41963c847: !Template
+    answer_choices: null
+    id: b14c9843-fd56-42ff-817d-39e41963c847
+    jinja: "{% set seq = [\n'Tr\u1EA3 l\u1EDDi c\xE2u h\u1ECFi t\xF9y thu\u1ED9c v\xE0\
+      o b\u1ED1i c\u1EA3nh.',\n'C\xE2u tr\u1EA3 l\u1EDDi l\xE0 g\xEC?',\n] %}\n\n\
+      {{ seq | choice }}\n\u0110\u1ECBnh ngh\u0129a b\xE0i v\u0103n: {{context}};\n\
+      C\xE2u h\u1ECFi: {{question}};\nIf you can't find the answer, please respond\
+      \ \"kh\xF4ng th\u1EC3 tr\u1EA3 l\u1EDDi \u0111\u01B0\u1EE3c\".\nC\xE2u tr\u1EA3\
+      \ l\u1EDDi: |||\n{% if answers.text == [] %}\nkh\xF4ng th\u1EC3 tr\u1EA3 l\u1EDD\
+      i \u0111\u01B0\u1EE3c\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
+    metadata: *id001
+    name: Questions with Context +unanswerable
+    reference: Given context and question, give answer
+  d768c181-1c9b-40c3-aa01-fc78c3b29875: !Template
+    answer_choices: null
+    id: d768c181-1c9b-40c3-aa01-fc78c3b29875
+    jinja: '{% if answers.text != [] %}
+
+      {{question}}|||
+
+      {{answers.text[0]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Trivia
+    reference: Given input and directly outputs answer.
+  e1630107-8f5d-44ce-8ccd-6fa80da80328: !Template
+    answer_choices: null
+    id: e1630107-8f5d-44ce-8ccd-6fa80da80328
+    jinja: "{% set seq = [\n'B\u1EA1n c\xF3 th\u1EC3 cho t\xF4i bi\u1EBFt ',\n'Xin\
+      \ vui l\xF2ng cho t\xF4i bi\u1EBFt ',\n'N\xF3i v\u1EDBi t\xF4i ',\n'T\u1EEB\
+      \ \u0111o\u1EA1n v\u0103n, ',\n'T\xF4i mu\u1ED1n bi\u1EBFt ',\n't\xF4i mu\u1ED1\
+      n h\u1ECFi ',\n'C\xE2u tr\u1EA3 l\u1EDDi cho: ',\n'T\xECm c\xE2u tr\u1EA3 l\u1EDD\
+      i cho: ',\n'C\xE2u tr\u1EA3 l\u1EDDi: ',\n'',\n] %}\n{{context}} {{ seq | choice\
+      \ }}{{question}} If you can't find the answer, please respond \"kh\xF4ng th\u1EC3\
+      \ tr\u1EA3 l\u1EDDi \u0111\u01B0\u1EE3c\". |||\n{% if answers.text == [] %}\n\
+      kh\xF4ng th\u1EC3 tr\u1EA3 l\u1EDDi \u0111\u01B0\u1EE3c\n{% else %}\n{{answers.text[0]}}\n\
+      {% endif %}"
+    metadata: *id002
+    name: Questions with Context - Without Prompt Keywords +unanswerable
+    reference: Given context and question, give answer. No keywords to delineate context
+      and question is given.
+  e2e41877-4794-4ff9-9f92-a2a85105e2a7: !Template
+    answer_choices: "V\xE2ng ||| kh\xF4ng"
+    id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
+    jinja: "\u0110\u1ECBnh ngh\u0129a b\xE0i v\u0103n: {{context}}; \n\nC\xE2u h\u1ECF\
+      i: {{question}} \n\nC\xE2u h\u1ECFi n\xE0y c\xF3 th\u1EC3 tr\u1EA3 l\u1EDDi\
+      \ \u0111\u01B0\u1EE3c kh\xF4ng? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n\
+      {% else %}\n{{answer_choices[1]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Unanwerable question
+    reference: The template checks if the question is answerable or not
+  e51c23b9-5b10-4db3-a0d1-ba546830173d: !Template
+    answer_choices: null
+    id: e51c23b9-5b10-4db3-a0d1-ba546830173d
+    jinja: "{% set seq = [\n'X\xE1c \u0111\u1ECBnh ch\u1EE7 \u0111\u1EC1 c\u1EE7a\
+      \ c\u1EB7p c\xE2u h\u1ECFi. ',\n'T\xECm ch\u1EE7 \u0111\u1EC1. ',\n'Ch\u1EE7\
+      \ \u0111\u1EC1 t\u1EEB n\xE0y l\xE0 g\xEC? ',\n] %}\n{% if answers.text != []\
+      \ %}\n{{ seq | choice }}\nC\xE2u h\u1ECFi: {{question}};  C\xE2u tr\u1EA3 l\u1EDD\
+      i: {{answers.text[0]}}; Ch\u1EE7 \u0111\u1EC1: |||\n{{title}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      - Other
+      original_task: false
+    name: Topic Prediction - Question and Answer Pair
+    reference: Given a Question-Answer pair, generate the topic.
+  fdcf132e-6c70-4188-999e-93601ee8e089: !Template
+    answer_choices: null
+    id: fdcf132e-6c70-4188-999e-93601ee8e089
+    jinja: "\u0110o\u1EA1n v\u0103n sau \u0111\xE2y l\xE0 g\xEC?\n{{context}} |||\n\
+      {{title | replace(\"_\", \" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      - Other
+      original_task: false
+    name: Topic Prediction - Context
+    reference: Predict the topic from the passage

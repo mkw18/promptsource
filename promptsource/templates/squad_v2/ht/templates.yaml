@@ -1,0 +1,195 @@
+dataset: squad_v2
+subset: ht
+templates:
+  17b83a3f-f748-42e6-9cdf-b2951dd8299d: !Template
+    answer_choices: null
+    id: 17b83a3f-f748-42e6-9cdf-b2951dd8299d
+    jinja: "{% set seq = [\n'Reponn kesyon an depann sou kont\xE8ks la.',\n'Ki repons\
+      \ lan?',\n] %}\n\n{{ seq | choice }}\nKont\xE8ks: {{context}};\nKESYON: {{question}};\n\
+      Repons: |||\n{% if answers.text == [] %}\nReponn pa nan kont\xE8ks\n{% else\
+      \ %}\n{{answers.text[0]}}\n{% endif %}"
+    metadata: &id001 !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Questions with Context
+    reference: Given context and question, give answer
+  189dcc58-fd13-4771-ad03-7879a61c7ab7: !Template
+    answer_choices: null
+    id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
+    jinja: "{% if answers.text != [] %}\nDet\xE8mine kesyon an ke ou ta ka te mande\
+      \ jwenn tounen repons sa a pou kont\xE8ks la bay yo\nKont\xE8ks: {{context}};\n\
+      Repons: {{answers.text[0]}};\nKESYON: |||\n{{question}}\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Jeopardy with Context
+    reference: Given context and an answer, guess the question.
+  20064b80-e4d0-41b7-9135-92c0077d5044: !Template
+    answer_choices: null
+    id: 20064b80-e4d0-41b7-9135-92c0077d5044
+    jinja: "{% set seq = [\n'Ki sa ki sou sa a? ',\n'Ki sa ki paragraf la sou? ',\n\
+      'Jwenn sij\xE8 a soti nan: ',\n'Soti nan pasaj la, jwenn sij\xE8 a',\n'Mwen\
+      \ vle konnen sij\xE8 a. ',\n'Sij\xE8 soti nan pasaj la: ',\n'Topic soti nan\
+      \ paragraf la: ',\n] %}\n{{ seq | choice }}\n{{context}} |||\n{{title | replace(\"\
+      _\", \" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      - Other
+      original_task: false
+    name: Topic Prediction - Context with randomized prompt options
+    reference: Asks to predict the topic given the context with additional input as
+      if a person is asking another person.
+  338cc143-361e-4796-b035-31fb2201c49f: !Template
+    answer_choices: null
+    id: 338cc143-361e-4796-b035-31fb2201c49f
+    jinja: "{% set seq = [\n'Sa a se sou ',\n'Ki sa ki sou sa a? ',\n'Paragraf la\
+      \ se sou ',\n'Ki sa ki paragraf la sou? ',\n'Jwenn sij\xE8 a: ',\n'Soti nan\
+      \ pasaj la, sij\xE8 a se',\n'Mwen vle konnen sij\xE8 a. ',\n'Sij\xE8 soti nan\
+      \ pasaj la: ',\n'Topic soti nan paragraf la: ',\n] %}\n{{context}}\n{{ seq |\
+      \ choice }}|||\n{{title | replace(\"_\", \" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      - Other
+      original_task: false
+    name: Topic Prediction - Context with randomized prompt options placed in the
+      end
+    reference: The prompt is placed at the end of Context
+  7a44cd99-7420-4456-aaaa-34e2c81d1679: !Template
+    answer_choices: null
+    id: 7a44cd99-7420-4456-aaaa-34e2c81d1679
+    jinja: '{% if answers.text != [] %}
+
+      Ki sa ki se yon kesyon ki ta bay repons sa a?
+
+      Repons: {{answers.text[0]}};
+
+      KESYON: |||
+
+      {{question}}
+
+      {% endif %}
+
+      '
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Jeopardy without Context
+    reference: Given an answer, output a viable question. Context is omitted.
+  8bea1123-fd8d-4bac-96bf-b8a289ee74b3: !Template
+    answer_choices: null
+    id: 8bea1123-fd8d-4bac-96bf-b8a289ee74b3
+    jinja: "{% set seq = [\n'\xC8ske ou ka di m ' ',\n'Tanpri, di mwen ',\n'Di mwen\
+      \ ',\n'Soti nan pasaj la, ',\n'mwen vle konnen ',\n'Mwen vle mande ',\n'Ki repons\
+      \ pou: ',\n'Jwenn repons lan nan: ',\n'Repons: ',\n'',\n] %}\n{{context}} {{\
+      \ seq | choice }}{{question}}|||\n{% if answers.text == [] %}\nReponn pa nan\
+      \ kont\xE8ks\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
+    metadata: &id002 !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: Questions with Context - Without Prompt Keywords
+    reference: Given context and question, give answer. No keywords to delineate context
+      and question is given.
+  b14c9843-fd56-42ff-817d-39e41963c847: !Template
+    answer_choices: null
+    id: b14c9843-fd56-42ff-817d-39e41963c847
+    jinja: "{% set seq = [\n'Reponn kesyon an depann sou kont\xE8ks la.',\n'Ki repons\
+      \ lan?',\n] %}\n\n{{ seq | choice }}\nKont\xE8ks: {{context}};\nKESYON: {{question}};\n\
+      If you can't find the answer, please respond \"unanswerable\".\nRepons: |||\n\
+      {% if answers.text == [] %}\nunanswerable\n{% else %}\n{{answers.text[0]}}\n\
+      {% endif %}"
+    metadata: *id001
+    name: Questions with Context +unanswerable
+    reference: Given context and question, give answer
+  d768c181-1c9b-40c3-aa01-fc78c3b29875: !Template
+    answer_choices: null
+    id: d768c181-1c9b-40c3-aa01-fc78c3b29875
+    jinja: '{% if answers.text != [] %}
+
+      {{question}}|||
+
+      {{answers.text[0]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Trivia
+    reference: Given input and directly outputs answer.
+  e1630107-8f5d-44ce-8ccd-6fa80da80328: !Template
+    answer_choices: null
+    id: e1630107-8f5d-44ce-8ccd-6fa80da80328
+    jinja: "{% set seq = [\n'\xC8ske ou ka di m ' ',\n'Tanpri, di mwen ',\n'Di mwen\
+      \ ',\n'Soti nan pasaj la, ',\n'mwen vle konnen ',\n'Mwen vle mande ',\n'Ki repons\
+      \ pou: ',\n'Jwenn repons lan nan: ',\n'Repons: ',\n'',\n] %}\n{{context}} {{\
+      \ seq | choice }}{{question}} If you can't find the answer, please respond \"\
+      unanswerable\". |||\n{% if answers.text == [] %}\nunanswerable\n{% else %}\n\
+      {{answers.text[0]}}\n{% endif %}"
+    metadata: *id002
+    name: Questions with Context - Without Prompt Keywords +unanswerable
+    reference: Given context and question, give answer. No keywords to delineate context
+      and question is given.
+  e2e41877-4794-4ff9-9f92-a2a85105e2a7: !Template
+    answer_choices: wi ||| non
+    id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
+    jinja: "Kont\xE8ks: {{context}}; \n\nKESYON: {{question}} \n\n\xC8ske kesyon sa\
+      \ a responsab? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n{%\
+      \ else %}\n{{answer_choices[1]}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Unanwerable question
+    reference: The template checks if the question is answerable or not
+  e51c23b9-5b10-4db3-a0d1-ba546830173d: !Template
+    answer_choices: null
+    id: e51c23b9-5b10-4db3-a0d1-ba546830173d
+    jinja: "{% set seq = [\n'Det\xE8mine sij\xE8 a nan p\xE8 a kesyon-repons. ',\n\
+      'Jwenn sij\xE8 a. ',\n'Ki sij\xE8 sa a soti nan sa a? ',\n] %}\n{% if answers.text\
+      \ != [] %}\n{{ seq | choice }}\nKESYON: {{question}};  Repons: {{answers.text[0]}};\
+      \ Sij\xE8: |||\n{{title}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      - Other
+      original_task: false
+    name: Topic Prediction - Question and Answer Pair
+    reference: Given a Question-Answer pair, generate the topic.
+  fdcf132e-6c70-4188-999e-93601ee8e089: !Template
+    answer_choices: null
+    id: fdcf132e-6c70-4188-999e-93601ee8e089
+    jinja: 'Ki sa ki pasaj sa a sou?
+
+      {{context}} |||
+
+      {{title | replace("_", " ")}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      - Other
+      original_task: false
+    name: Topic Prediction - Context
+    reference: Predict the topic from the passage

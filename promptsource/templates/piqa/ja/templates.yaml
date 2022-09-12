@@ -1,0 +1,167 @@
+dataset: piqa
+subset: ja
+templates:
+  16e97a16-c958-4956-bfba-279f88dafd5b: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 16e97a16-c958-4956-bfba-279f88dafd5b
+    jinja: "\u30B4\u30FC\u30EB\uFF1A {{goal}}\n\n\u6B63\u3057\u3044\u7D50\u672B\u306F\
+      \u3069\u308C\u3067\u3059\u304B\uFF1F\n- {{sol1}}\n- {{sol2}}\n\n\u7B54\u3048\
+      \uFF1A\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: what_is_the_correct_ending
+    reference: ''
+  3f336295-c1f7-410a-8fc6-d2ed79487aa4: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 3f336295-c1f7-410a-8fc6-d2ed79487aa4
+    jinja: "{{\"\u89E3\u6C7A\u7B561\"}}: {{sol1}}\n{{\"\u89E3\u6C7A\u7B562\"}}: {{sol2}}\n\
+      \n\u30B4\u30FC\u30EB\uFF1A {{goal}}\n\n\u76EE\u6A19\u3092\u8003\u3048\u308B\u3068\
+      \u3001\u6B63\u3057\u3044\u89E3\u6C7A\u7B56\u306F\u4F55\u3067\u3059\u304B\uFF1F\
+      \n\n\u6B63\u3057\u3044\u30BD\u30EA\u30E5\u30FC\u30B7\u30E7\u30F3\u3092\u30B3\
+      \u30D4\u30FC\u3057\u3066\u56DE\u7B54\u3057\u307E\u3059\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_correct_choice_with_choice_given_before_goal
+    reference: ''
+  44778818-7b73-4262-a294-c00fc32b6c2c: !Template
+    answer_choices: 1 ||| 2
+    id: 44778818-7b73-4262-a294-c00fc32b6c2c
+    jinja: "\u6587\uFF1A {{goal}}\n\n\u9078\u629E {{answer_choices[0]}}: {{sol1}}\n\
+      \n\u9078\u629E {{answer_choices[1]}}: {{sol2}}\n\n\u6587\u306E\u7D42\u4E86\u306E\
+      \u305F\u3081\u306E\u6B63\u3057\u3044\u9078\u629E\u306E\u30A4\u30F3\u30C7\u30C3\
+      \u30AF\u30B9\u306F\u4F55\u3067\u3059\u304B\uFF1F\n\n\u7B54\u3048\uFF1A\n\n|||\n\
+      {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_correct_choice_index
+    reference: ''
+  5f4b4645-9438-4375-9062-083130e6d04e: !Template
+    answer_choices: null
+    id: 5f4b4645-9438-4375-9062-083130e6d04e
+    jinja: "\u76EE\u6A19\u3068\u9593\u9055\u3063\u305F\u89E3\u6C7A\u7B56\u3092\u8003\
+      \u616E\u3057\u3066\u3001\u305D\u308C\u3092\u66F8\u304D\u76F4\u3057\u3066\u6B63\
+      \u3057\u3044\u30BD\u30EA\u30E5\u30FC\u30B7\u30E7\u30F3\u3092\u63D0\u4F9B\u3057\
+      \u307E\u3059\u3002\n\u30B4\u30FC\u30EB\uFF1A {{goal}} \n\u89E3\u6C7A\uFF1A {{[sol1,\
+      \ sol2][1 - label]}}\n\u4FEE\u6B63\u3055\u308C\u305F\u30BD\u30EA\u30E5\u30FC\
+      \u30B7\u30E7\u30F3\uFF1A\n|||\n{{[sol1, sol2][label]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Correct the solution
+    reference: ''
+  94c39589-7bfb-4c09-9337-672369459545: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 94c39589-7bfb-4c09-9337-672369459545
+    jinja: "\u6700\u826F\u306E\u9078\u629E\u3067\u6B21\u306E\u6587\u3092\u7D42\u4E86\
+      \u3057\u307E\u3059\u3002 {{goal}}\n\n\u9078\u629E\u80A2\uFF1A\n- {{sol1}}\n\
+      - {{sol2}}\n\n\u7B54\u3048\uFF1A\n\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: finish_sentence_with_correct_choice
+    reference: ''
+  99565244-4eaf-4004-a28b-4362ba5bcac3: !Template
+    answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
+    id: 99565244-4eaf-4004-a28b-4362ba5bcac3
+    jinja: "{{goal}} {{sol2}}\n\u3053\u306E\u30D5\u30EC\u30FC\u30BA\u306F\u7406\u306B\
+      \u304B\u306A\u3063\u3066\u3044\u307E\u3059\u304B\uFF1F\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Does this solution make sense? sol2
+    reference: ''
+  adfef248-f856-44fa-affd-e3223718854e: !Template
+    answer_choices: "\u89E3\u6C7A\u7B561 ||| \u89E3\u6C7A\u7B562"
+    id: adfef248-f856-44fa-affd-e3223718854e
+    jinja: "\u76EE\u6A19\u30682\u3064\u306E\u30BD\u30EA\u30E5\u30FC\u30B7\u30E7\u30F3\
+      \u304C\u4E0E\u3048\u3089\u308C\u305F\u5834\u5408\u3001\u6700\u3082\u9069\u5207\
+      \u306A\u30BD\u30EA\u30E5\u30FC\u30B7\u30E7\u30F3\u3092\u9078\u629E\u3057\u307E\
+      \u3059\u3002\n\u30B4\u30FC\u30EB\uFF1A {{goal}}\n- {{\"\u89E3\u6C7A\u7B561\"\
+      }}: {{sol1}}\n- {{\"\u89E3\u6C7A\u7B562\"}}: {{sol2}}\n\n\u3069\u3061\u3089\u304B\
+      \u3092\u8FD4\u3059\u3053\u3068\u3067\u7B54\u3048\u307E\u3059 {{\"\u89E3\u6C7A\
+      \u7B561\"}} \u307E\u305F {{\"\u89E3\u6C7A\u7B562\"}}\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose the most appropriate solution
+    reference: ''
+  b5c69473-eedb-4c4f-a5fa-d4e266e43535: !Template
+    answer_choices: null
+    id: b5c69473-eedb-4c4f-a5fa-d4e266e43535
+    jinja: "Given a sentence, correct it if it doesn't make sense. If it makes sense,\
+      \ just return it as the answer.\n\u5165\u529B\uFF1A {{goal}} {{sol2[0].lower()\
+      \ + sol2[1:]}}\n\u51FA\u529B\uFF1A\n|||\n{{goal}} {{[sol1[0].lower() + sol1[1:],\
+      \ sol2[0].lower() + sol2[1:]][label]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: 'Correct the solution if false: from sol 2'
+    reference: ''
+  c8c45ef1-2ffc-43d7-8710-b98c2fc4f699: !Template
+    answer_choices: null
+    id: c8c45ef1-2ffc-43d7-8710-b98c2fc4f699
+    jinja: '{{goal}}
+
+      |||
+
+      {{[sol1[0].lower() + sol1[1:], sol2[0].lower() + sol2[1:]][label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: no prompt needed
+    reference: ''
+  f044def7-01c2-42de-b6ad-4e8c63ab2bf1: !Template
+    answer_choices: "\u306F\u3044 ||| \u3044\u3044\u3048"
+    id: f044def7-01c2-42de-b6ad-4e8c63ab2bf1
+    jinja: "\u3053\u306E\u30D5\u30EC\u30FC\u30BA\u306F\u7406\u306B\u304B\u306A\u3063\
+      \u3066\u3044\u307E\u3059\u304B\uFF1F\n{{goal}} {{sol1[0].lower() + sol1[1:]}}\n\
+      \u3067\u7B54\u3048\u307E\u3059 {{answer_choices[0]}} \u307E\u305F {{answer_choices[1]}}\n\
+      |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Does this solution make sense? sol1
+    reference: ''
+  f42cd457-a14b-465a-a139-d7d2407a3bac: !Template
+    answer_choices: null
+    id: f42cd457-a14b-465a-a139-d7d2407a3bac
+    jinja: "\u6587\uFF1A {{goal}} {{sol1[0].lower() + sol1[1:]}}\n\u6587\u304C\u610F\
+      \u5473\u3092\u306A\u3055\u306A\u3044\u5834\u5408\u306F\u3001\u7406\u306B\u304B\
+      \u306A\u3063\u3066\u3044\u308B\u3088\u3046\u306B\u4FEE\u6B63\u3057\u3066\u304F\
+      \u3060\u3055\u3044\u3002 \u305D\u308C\u4EE5\u5916\u306E\u5834\u5408\u306F\u3001\
+      \u30B3\u30D4\u30FC\u3057\u3066\u304F\u3060\u3055\u3044\u3002\n\u7B54\u3048\uFF1A\
+      \n|||\n{{goal}} {{[sol1[0].lower() + sol1[1:], sol2[0].lower() + sol2[1:]][label]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: 'Correct the solution if false: from sol 1'
+    reference: ''

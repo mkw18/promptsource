@@ -1,0 +1,71 @@
+dataset: trivia_qa
+subset: unfiltered_zh
+templates:
+  5946db1a-a068-4a31-a06f-74a7d976cb6d: !Template
+    answer_choices: null
+    id: 5946db1a-a068-4a31-a06f-74a7d976cb6d
+    jinja: "{% if answer.aliases %} \n    \u731C\u731C\u4E00\u4E2A\u6709\u7B54\u6848\
+      \u7684\u95EE\u9898 \"{{answer.aliases|choice}}\" \n    |||  \n    {{question}}\
+      \ \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: guess_question
+    reference: Guess a question.
+  7ada9605-6fd1-49a9-a56e-6d778d4a0eb6: !Template
+    answer_choices: null
+    id: 7ada9605-6fd1-49a9-a56e-6d778d4a0eb6
+    jinja: "\u76EE\u7684\u662F\u9884\u6D4B\u8F93\u5165\u82F1\u8BED\u95EE\u9898\u7684\
+      \u82F1\u8BED\u7B54\u6848\u5B57\u7B26\u4E32\u3002 \n\u95EE\u9898 \uFF1A {{question}}\n\
+      \u56DE\u7B54 \uFF1A \n||| \n{% if answer.aliases %} \n{{answer.aliases|choice}}\
+      \ \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: formal_description
+    reference: ''
+  91d9f950-a25a-4557-a16f-952d74629584: !Template
+    answer_choices: null
+    id: 91d9f950-a25a-4557-a16f-952d74629584
+    jinja: "\u56DE\u7B54\u4EE5\u4E0B\u95EE\u9898\u3002\n{{question}} \n|||\n{% if\
+      \ answer.aliases %} \n{{answer.aliases|choice}} \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: question_with_instruction
+    reference: Instruction before question.
+  bfec3d73-c024-492f-8878-64fdb6639a29: !Template
+    answer_choices: null
+    id: bfec3d73-c024-492f-8878-64fdb6639a29
+    jinja: "\u6211\u4E00\u76F4\u60F3\u77E5\u9053\uFF1A {{question}} \n||| \n{% if\
+      \ answer.aliases %} \n{{answer.aliases|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: first_person_context
+    reference: Ask a question in first person
+  c29c7072-0535-4e38-ba0c-b7ac0acdacf8: !Template
+    answer_choices: null
+    id: c29c7072-0535-4e38-ba0c-b7ac0acdacf8
+    jinja: "\u95EE\u9898 \uFF1A {{question}}\n\u56DE\u7B54 \uFF1A \n||| \n{% if answer.aliases\
+      \ %} \n{{answer.aliases|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: question_answer
+    reference: Plain Question

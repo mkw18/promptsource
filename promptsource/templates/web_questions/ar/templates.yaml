@@ -1,0 +1,64 @@
+dataset: web_questions
+subset: ar
+templates:
+  427785bc-a8f3-4c86-bd43-e54447a58615: !Template
+    answer_choices: null
+    id: 427785bc-a8f3-4c86-bd43-e54447a58615
+    jinja: "\u0623\u0639\u0637\u0646\u064A \u0627\u0644\u062D\u0642\u0627\u0626\u0642\
+      \ \u0627\u0644\u0635\u062D\u064A\u062D\u0629 \u0644\u0644\u0625\u062C\u0627\u0628\
+      \u0629 \u0639\u0644\u0649 \u0647\u0630\u0627: {{question}} ||| {{answers | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: get_the_answer
+    reference: ''
+  9f4cd4a4-79e5-40b2-bb0d-f9a86396511a: !Template
+    answer_choices: null
+    id: 9f4cd4a4-79e5-40b2-bb0d-f9a86396511a
+    jinja: "\u0623\u0639\u0637\u0646\u064A \u0625\u062C\u0627\u0628\u0629 \u0635\u062D\
+      \u064A\u062D\u0629 \u0645\u062D\u062A\u0645\u0644\u0629 \u0639\u0644\u0649 \u0627\
+      \u0644\u0633\u0624\u0627\u0644 \"{{ question }}\" ||| {{ answers | choice }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: potential-correct-answer
+    reference: ''
+  bfed45a7-b36c-440b-8c94-f117cc6c9f34: !Template
+    answer_choices: null
+    id: bfed45a7-b36c-440b-8c94-f117cc6c9f34
+    jinja: 'What''s the answer to that question: {{question}} ||| {{answers | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: whats_the_answer
+    reference: ''
+  df08956c-035b-4216-af1c-61250617faa4: !Template
+    answer_choices: null
+    id: df08956c-035b-4216-af1c-61250617faa4
+    jinja: "\u0633\u0624\u0627\u0644 \u0627\u0644\u0645\u0639\u0631\u0641\u0629 \u0627\
+      \u0644\u0639\u0627\u0645\u0629 \u0627\u0644\u0642\u0635\u064A\u0631: {{question}}\
+      \ ||| {{answers | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: short_general_knowledge_q
+    reference: ''
+  e5c72a6b-8ab4-4219-9f41-debf7224884c: !Template
+    answer_choices: null
+    id: e5c72a6b-8ab4-4219-9f41-debf7224884c
+    jinja: '{{ question|capitalize }} ||| {{ answers | choice }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question-answer
+    reference: ''

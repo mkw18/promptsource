@@ -1,0 +1,76 @@
+dataset: trivia_qa
+subset: unfiltered_ar
+templates:
+  5946db1a-a068-4a31-a06f-74a7d976cb6d: !Template
+    answer_choices: null
+    id: 5946db1a-a068-4a31-a06f-74a7d976cb6d
+    jinja: "{% if answer.aliases %} \n    \u062E\u0645\u0646 \u0633\u0624\u0627\u0644\
+      \ \u0644\u062F\u064A\u0647 \u0627\u0644\u062C\u0648\u0627\u0628 \"{{answer.aliases|choice}}\"\
+      \ \n    |||  \n    {{question}} \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: guess_question
+    reference: Guess a question.
+  7ada9605-6fd1-49a9-a56e-6d778d4a0eb6: !Template
+    answer_choices: null
+    id: 7ada9605-6fd1-49a9-a56e-6d778d4a0eb6
+    jinja: "\u0627\u0644\u0647\u062F\u0641 \u0647\u0648 \u0627\u0644\u062A\u0646\u0628\
+      \u0624 \u0628\u0633\u0644\u0633\u0644\u0629 \u0625\u062C\u0627\u0628\u0629 \u0628\
+      \u0627\u0644\u0644\u063A\u0629 \u0627\u0644\u0625\u0646\u062C\u0644\u064A\u0632\
+      \u064A\u0629 \u0644\u0633\u0624\u0627\u0644 \u0627\u0644\u0644\u063A\u0629 \u0627\
+      \u0644\u0625\u0646\u062C\u0644\u064A\u0632\u064A\u0629. \n\u0633\u0624\u0627\
+      \u0644 : {{question}}\n\u0625\u062C\u0627\u0628\u0647 : \n||| \n{% if answer.aliases\
+      \ %} \n{{answer.aliases|choice}} \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: formal_description
+    reference: ''
+  91d9f950-a25a-4557-a16f-952d74629584: !Template
+    answer_choices: null
+    id: 91d9f950-a25a-4557-a16f-952d74629584
+    jinja: "\u0623\u062C\u0628 \u0639\u0644\u0649 \u0627\u0644\u0633\u0624\u0627\u0644\
+      \ \u0627\u0644\u062A\u0627\u0644\u064A.\n{{question}} \n|||\n{% if answer.aliases\
+      \ %} \n{{answer.aliases|choice}} \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: question_with_instruction
+    reference: Instruction before question.
+  bfec3d73-c024-492f-8878-64fdb6639a29: !Template
+    answer_choices: null
+    id: bfec3d73-c024-492f-8878-64fdb6639a29
+    jinja: "\u0644\u0637\u0627\u0644\u0645\u0627 \u062A\u0633\u0627\u0621\u0644\u062A\
+      : {{question}} \n||| \n{% if answer.aliases %} \n{{answer.aliases|choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: first_person_context
+    reference: Ask a question in first person
+  c29c7072-0535-4e38-ba0c-b7ac0acdacf8: !Template
+    answer_choices: null
+    id: c29c7072-0535-4e38-ba0c-b7ac0acdacf8
+    jinja: "\u0633\u0624\u0627\u0644 : {{question}}\n\u0625\u062C\u0627\u0628\u0647\
+      \ : \n||| \n{% if answer.aliases %} \n{{answer.aliases|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: question_answer
+    reference: Plain Question

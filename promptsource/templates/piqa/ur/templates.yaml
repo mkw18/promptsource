@@ -1,0 +1,176 @@
+dataset: piqa
+subset: ur
+templates:
+  16e97a16-c958-4956-bfba-279f88dafd5b: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 16e97a16-c958-4956-bfba-279f88dafd5b
+    jinja: "\u0645\u0642\u0635\u062F: {{goal}}\n\n\u06A9\u0648\u0646 \u0633\u0627\
+      \ \u0635\u062D\u06CC\u062D \u0627\u062E\u062A\u062A\u0627\u0645 \u06C1\u06D2\
+      \u061F\n- {{sol1}}\n- {{sol2}}\n\n\u062C\u0648\u0627\u0628:\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: what_is_the_correct_ending
+    reference: ''
+  3f336295-c1f7-410a-8fc6-d2ed79487aa4: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 3f336295-c1f7-410a-8fc6-d2ed79487aa4
+    jinja: "{{\"\u062D\u0644 1\"}}: {{sol1}}\n{{\"\u062D\u0644 2\"}}: {{sol2}}\n\n\
+      \u0645\u0642\u0635\u062F: {{goal}}\n\n\u0645\u0642\u0635\u062F \u06A9\u0648\
+      \ \u062F\u06CC\u06A9\u06BE\u062A\u06D2 \u06C1\u0648\u0626\u06D2 \u060C \u0635\
+      \u062D\u06CC\u062D \u062D\u0644 \u06A9\u06CC\u0627 \u06C1\u06D2\u061F\n\n\u0635\
+      \u062D\u06CC\u062D \u062D\u0644 \u06A9\u0627\u067E\u06CC \u06A9\u0631\u06A9\u06D2\
+      \ \u062C\u0648\u0627\u0628 \u062F\u06CC\u06BA\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_correct_choice_with_choice_given_before_goal
+    reference: ''
+  44778818-7b73-4262-a294-c00fc32b6c2c: !Template
+    answer_choices: 1 ||| 2
+    id: 44778818-7b73-4262-a294-c00fc32b6c2c
+    jinja: "\u062C\u0645\u0644\u06C1: {{goal}}\n\n\u0627\u0646\u062A\u062E\u0627\u0628\
+      \ {{answer_choices[0]}}: {{sol1}}\n\n\u0627\u0646\u062A\u062E\u0627\u0628 {{answer_choices[1]}}:\
+      \ {{sol2}}\n\n\u062C\u0645\u0644\u06D2 \u06A9\u06D2 \u062E\u0627\u062A\u0645\
+      \u06D2 \u06A9\u06D2 \u0644\u0626\u06D2 \u0635\u062D\u06CC\u062D \u0627\u0646\
+      \u062A\u062E\u0627\u0628 \u06A9\u0627 \u0627\u0646\u0688\u06CC\u06A9\u0633 \u06A9\
+      \u06CC\u0627 \u06C1\u06D2\u061F\n\n\u062C\u0648\u0627\u0628:\n\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_correct_choice_index
+    reference: ''
+  5f4b4645-9438-4375-9062-083130e6d04e: !Template
+    answer_choices: null
+    id: 5f4b4645-9438-4375-9062-083130e6d04e
+    jinja: "\u0627\u06CC\u06A9 \u0645\u0642\u0635\u062F \u0627\u0648\u0631 \u063A\u0644\
+      \u0637 \u062D\u0644 \u06A9\u06D2 \u067E\u06CC\u0634 \u0646\u0638\u0631 \u060C\
+      \ \u0635\u062D\u06CC\u062D \u062D\u0644 \u062F\u06CC\u0646\u06D2 \u06A9\u06D2\
+      \ \u0644\u0626\u06D2 \u0627\u0633\u06D2 \u062F\u0648\u0628\u0627\u0631\u06C1\
+      \ \u0644\u06A9\u06BE\u06CC\u06BA\u06D4\n\u0645\u0642\u0635\u062F: {{goal}} \n\
+      \u062D\u0644: {{[sol1, sol2][1 - label]}}\n\u062F\u0631\u0633\u062A \u062D\u0644\
+      :\n|||\n{{[sol1, sol2][label]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Correct the solution
+    reference: ''
+  94c39589-7bfb-4c09-9337-672369459545: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 94c39589-7bfb-4c09-9337-672369459545
+    jinja: "\u0645\u0646\u062F\u0631\u062C\u06C1 \u0630\u06CC\u0644 \u062C\u0645\u0644\
+      \u06D2 \u06A9\u0648 \u0628\u06C1\u062A\u0631\u06CC\u0646 \u0627\u0646\u062A\u062E\
+      \u0627\u0628 \u06A9\u06D2 \u0633\u0627\u062A\u06BE \u062E\u062A\u0645 \u06A9\
+      \u0631\u06CC\u06BA: {{goal}}\n\n\u0627\u0646\u062A\u062E\u0627\u0628:\n- {{sol1}}\n\
+      - {{sol2}}\n\n\u062C\u0648\u0627\u0628:\n\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: finish_sentence_with_correct_choice
+    reference: ''
+  99565244-4eaf-4004-a28b-4362ba5bcac3: !Template
+    answer_choices: "\u0646\u06C1\u06CC\u06BA ||| \u062C\u06CC \u06C1\u0627\u06BA"
+    id: 99565244-4eaf-4004-a28b-4362ba5bcac3
+    jinja: "{{goal}} {{sol2}}\n\u06A9\u06CC\u0627 \u06CC\u06C1 \u062C\u0645\u0644\u06C1\
+      \ \u0645\u0639\u0646\u06CC \u062E\u06CC\u0632 \u06C1\u06D2\u061F\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Does this solution make sense? sol2
+    reference: ''
+  adfef248-f856-44fa-affd-e3223718854e: !Template
+    answer_choices: "\u062D\u0644 1 ||| \u062D\u0644 2"
+    id: adfef248-f856-44fa-affd-e3223718854e
+    jinja: "\u0627\u06CC\u06A9 \u0645\u0642\u0635\u062F \u0627\u0648\u0631 2 \u062D\
+      \u0644 \u06A9\u06D2 \u067E\u06CC\u0634 \u0646\u0638\u0631 \u060C \u0627\u0646\
+      \u062A\u06C1\u0627\u0626\u06CC \u0645\u0646\u0627\u0633\u0628 \u062D\u0644 \u06A9\
+      \u0627 \u0627\u0646\u062A\u062E\u0627\u0628 \u06A9\u0631\u06CC\u06BA\u06D4\n\
+      \u0645\u0642\u0635\u062F: {{goal}}\n- {{\"\u062D\u0644 1\"}}: {{sol1}}\n- {{\"\
+      \u062D\u0644 2\"}}: {{sol2}}\n\n\u06CC\u0627 \u062A\u0648 \u0644\u0648\u0679\
+      \ \u06A9\u0631 \u062C\u0648\u0627\u0628 \u062F\u06CC\u06BA {{\"\u062D\u0644\
+      \ 1\"}} \u06CC\u0627 {{\"\u062D\u0644 2\"}}\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose the most appropriate solution
+    reference: ''
+  b5c69473-eedb-4c4f-a5fa-d4e266e43535: !Template
+    answer_choices: null
+    id: b5c69473-eedb-4c4f-a5fa-d4e266e43535
+    jinja: "Given a sentence, correct it if it doesn't make sense. If it makes sense,\
+      \ just return it as the answer.\n\u0627\u0646 \u067E\u0679: {{goal}} {{sol2[0].lower()\
+      \ + sol2[1:]}}\n\u0622\u0624\u0679 \u067E\u0679:\n|||\n{{goal}} {{[sol1[0].lower()\
+      \ + sol1[1:], sol2[0].lower() + sol2[1:]][label]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: 'Correct the solution if false: from sol 2'
+    reference: ''
+  c8c45ef1-2ffc-43d7-8710-b98c2fc4f699: !Template
+    answer_choices: null
+    id: c8c45ef1-2ffc-43d7-8710-b98c2fc4f699
+    jinja: '{{goal}}
+
+      |||
+
+      {{[sol1[0].lower() + sol1[1:], sol2[0].lower() + sol2[1:]][label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: no prompt needed
+    reference: ''
+  f044def7-01c2-42de-b6ad-4e8c63ab2bf1: !Template
+    answer_choices: "\u062C\u06CC \u06C1\u0627\u06BA ||| \u0646\u06C1\u06CC\u06BA"
+    id: f044def7-01c2-42de-b6ad-4e8c63ab2bf1
+    jinja: "\u06A9\u06CC\u0627 \u06CC\u06C1 \u062C\u0645\u0644\u06C1 \u0645\u0639\u0646\
+      \u06CC \u062E\u06CC\u0632 \u06C1\u06D2\u061F\n{{goal}} {{sol1[0].lower() + sol1[1:]}}\n\
+      \u062C\u0648\u0627\u0628 \u06A9\u06D2 \u0633\u0627\u062A\u06BE {{answer_choices[0]}}\
+      \ \u06CC\u0627 {{answer_choices[1]}}\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Does this solution make sense? sol1
+    reference: ''
+  f42cd457-a14b-465a-a139-d7d2407a3bac: !Template
+    answer_choices: null
+    id: f42cd457-a14b-465a-a139-d7d2407a3bac
+    jinja: "\u062C\u0645\u0644\u06C1: {{goal}} {{sol1[0].lower() + sol1[1:]}}\n\u0627\
+      \u06AF\u0631 \u062C\u0645\u0644\u06D2 \u06A9\u0627 \u06A9\u0648\u0626\u06CC\
+      \ \u0645\u0637\u0644\u0628 \u0646\u06C1\u06CC\u06BA \u06C1\u06D2 \u062A\u0648\
+      \ \u060C \u0627\u0633\u06D2 \u062F\u0631\u0633\u062A \u06A9\u0631\u06CC\u06BA\
+      \ \u062A\u0627\u06A9\u06C1 \u0627\u0633 \u06A9\u0627 \u06A9\u0648\u0626\u06CC\
+      \ \u0645\u0637\u0644\u0628 \u06C1\u0648\u06D4 \u0628\u0635\u0648\u0631\u062A\
+      \ \u062F\u06CC\u06AF\u0631 \u060C \u0627\u0633\u06D2 \u06A9\u0627\u067E\u06CC\
+      \ \u06A9\u0631\u06CC\u06BA\u06D4\n\u062C\u0648\u0627\u0628:\n|||\n{{goal}} {{[sol1[0].lower()\
+      \ + sol1[1:], sol2[0].lower() + sol2[1:]][label]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: 'Correct the solution if false: from sol 1'
+    reference: ''

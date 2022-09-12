@@ -1,0 +1,73 @@
+dataset: trivia_qa
+subset: unfiltered_ja
+templates:
+  5946db1a-a068-4a31-a06f-74a7d976cb6d: !Template
+    answer_choices: null
+    id: 5946db1a-a068-4a31-a06f-74a7d976cb6d
+    jinja: "{% if answer.aliases %} \n    \u7B54\u3048\u304C\u3042\u308B\u8CEA\u554F\
+      \u3092\u63A8\u6E2C\u3057\u3066\u304F\u3060\u3055\u3044 \"{{answer.aliases|choice}}\"\
+      \ \n    |||  \n    {{question}} \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: guess_question
+    reference: Guess a question.
+  7ada9605-6fd1-49a9-a56e-6d778d4a0eb6: !Template
+    answer_choices: null
+    id: 7ada9605-6fd1-49a9-a56e-6d778d4a0eb6
+    jinja: "\u76EE\u6A19\u306F\u3001\u5165\u529B\u82F1\u8A9E\u306E\u8CEA\u554F\u306E\
+      \u305F\u3081\u306B\u82F1\u8A9E\u306E\u56DE\u7B54\u6587\u5B57\u5217\u3092\u4E88\
+      \u6E2C\u3059\u308B\u3053\u3068\u3067\u3059\u3002 \n\u8CEA\u554F \uFF1A {{question}}\n\
+      \u7B54\u3048 \uFF1A \n||| \n{% if answer.aliases %} \n{{answer.aliases|choice}}\
+      \ \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: formal_description
+    reference: ''
+  91d9f950-a25a-4557-a16f-952d74629584: !Template
+    answer_choices: null
+    id: 91d9f950-a25a-4557-a16f-952d74629584
+    jinja: "\u6B21\u306E\u554F\u984C\u3092\u7B54\u3048\u3066\u3002\n{{question}} \n\
+      |||\n{% if answer.aliases %} \n{{answer.aliases|choice}} \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: question_with_instruction
+    reference: Instruction before question.
+  bfec3d73-c024-492f-8878-64fdb6639a29: !Template
+    answer_choices: null
+    id: bfec3d73-c024-492f-8878-64fdb6639a29
+    jinja: "\u79C1\u306F\u3044\u3064\u3082\u7591\u554F\u306B\u601D\u3063\u3066\u3044\
+      \u307E\u3057\u305F\uFF1A {{question}} \n||| \n{% if answer.aliases %} \n{{answer.aliases|choice}}\n\
+      {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: first_person_context
+    reference: Ask a question in first person
+  c29c7072-0535-4e38-ba0c-b7ac0acdacf8: !Template
+    answer_choices: null
+    id: c29c7072-0535-4e38-ba0c-b7ac0acdacf8
+    jinja: "\u8CEA\u554F \uFF1A {{question}}\n\u7B54\u3048 \uFF1A \n||| \n{% if answer.aliases\
+      \ %} \n{{answer.aliases|choice}}\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: question_answer
+    reference: Plain Question

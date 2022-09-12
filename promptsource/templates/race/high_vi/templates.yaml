@@ -1,0 +1,131 @@
+dataset: race
+subset: high_vi
+templates:
+  26fdd0e9-9066-478f-8b5b-03fc0477bf7a: !Template
+    answer_choices: "\u0110\xFAng ||| Kh\xF4ng"
+    id: 26fdd0e9-9066-478f-8b5b-03fc0477bf7a
+    jinja: "{% set candidate = [\"A\", \"B\", \"C\", \"D\"] | choice %}\nB\xE0i b\xE1\
+      o: {{article}}\nC\xE2u h\u1ECFi: {{question}}\nC\xF3 hay kh\xF4ng, l\xE0 c\xE2\
+      u tr\u1EA3 l\u1EDDi \"{{ [options.0,options.1,options.2,options.3][{\"A\":0,\"\
+      B\":1,\"C\":2,\"D\":3}[answer]] }}\"?\n|||\n{% if candidate == answer %}\n\u0110\
+      \xFAng\n{% else %}\nKh\xF4ng\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Is this the right answer
+    reference: ''
+  46b64805-d02c-4aa3-a7c5-34503f3ad56d: !Template
+    answer_choices: null
+    id: 46b64805-d02c-4aa3-a7c5-34503f3ad56d
+    jinja: "Vi\u1EBFt m\u1ED9t c\xE2u h\u1ECFi \u0111a l\u1EF1a ch\u1ECDn cho b\xE0\
+      i vi\u1EBFt sau:\nB\xE0i b\xE1o: {{article}}\n|||\nC\xE2u h\u1ECFi: \n{{question}}\n\
+      T\xF9y ch\u1ECDn:\n{{\"A\"}} {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"\
+      }} {{options.2}}\n{{\"D\"}} {{options.3}}\nC\xE2u tr\u1EA3 l\u1EDDi:\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Write a multi-choice question for the following article
+    reference: ''
+  4ef4f2ee-6151-41b0-bdb7-e093cde8c42a: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 4ef4f2ee-6151-41b0-bdb7-e093cde8c42a
+    jinja: "I'm taking a test and have to guess the right answer to the question after\
+      \ the article.\nB\xE0i b\xE1o: {{article}}\nC\xE2u h\u1ECFi: {{question}}\n\
+      T\xF9y ch\u1ECDn: {{\"A\"}}: {{options.0}}\n{{\"B\"}}: {{options.1}}\n{{\"C\"\
+      }}: {{options.2}}\n{{\"D\"}}: {{options.3}}\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Taking a test
+    reference: ''
+  5ed5f2e9-6cf3-4fc5-b9eb-246d9a4ee511: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 5ed5f2e9-6cf3-4fc5-b9eb-246d9a4ee511
+    jinja: "\u0110\u1ECDc b\xE0i vi\u1EBFt v\xE0 ch\u1ECDn c\xE2u tr\u1EA3 l\u1EDD\
+      i t\u1ED1t nh\u1EA5t.\nB\xE0i b\xE1o: {{article}}\nC\xE2u h\u1ECFi: {{question}}\n\
+      T\xF9y ch\u1ECDn: {{\"A\"}}: {{options.0}}\n{{\"B\"}}: {{options.1}}\n{{\"C\"\
+      }}: {{options.2}}\n{{\"D\"}}: {{options.3}}\n|||\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Select the best answer
+    reference: ''
+  691f84af-ca02-458d-8912-f661aefccd52: !Template
+    answer_choices: null
+    id: 691f84af-ca02-458d-8912-f661aefccd52
+    jinja: "Vi\u1EBFt m\u1ED9t c\xE2u h\u1ECFi \u0111a l\u1EF1a ch\u1ECDn cho b\xE0\
+      i vi\u1EBFt sau, v\u1EDBi c\xE1c l\u1EF1a ch\u1ECDn v\xE0 c\xE2u tr\u1EA3 l\u1EDD\
+      i \u0111\xE3 cho:\nB\xE0i b\xE1o: {{article}}\nT\xF9y ch\u1ECDn:\n{{\"A\"}}\
+      \ {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}}\
+      \ {{options.3}}\nC\xE2u tr\u1EA3 l\u1EDDi:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"\
+      A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\nC\xE2u h\u1ECFi: \n|||\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Write a multi-choice question (options given)
+    reference: ''
+  ab253338-5b02-46e8-9959-b66d1009c34a: !Template
+    answer_choices: '{{ options | join("|||") }}'
+    id: ab253338-5b02-46e8-9959-b66d1009c34a
+    jinja: "\u0110\u1ECDc b\xE0i vi\u1EBFt sau v\xE0 ch\u1ECDn c\xE2u tr\u1EA3 l\u1EDD\
+      i t\u1ED1t nh\u1EA5t.\nB\xE0i b\xE1o: {{article}}\nC\xE2u h\u1ECFi: {{question}}\n\
+      - {{answer_choices | join(\"\\n- \")}}\n|||\n{{answer_choices[{\"A\":0,\"B\"\
+      :1,\"C\":2,\"D\":3}[answer]]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Select the best answer (generate span)
+    reference: ''
+  c8c9dcfd-69d3-4ccd-8aeb-2bdb98aba261: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: c8c9dcfd-69d3-4ccd-8aeb-2bdb98aba261
+    jinja: '{{article}}
+
+      {{question}}
+
+      {{"A)"}} {{options.0}}
+
+      {{"B)"}} {{options.1}}
+
+      {{"C)"}} {{options.2}}
+
+      {{"D)"}} {{options.3}}
+
+      |||
+
+      {{answer}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Select the best answer (no instructions)
+    reference: ''
+  e1b9d073-e18e-4940-9868-5b4a35617c35: !Template
+    answer_choices: '{{ options | join("|||") }}'
+    id: e1b9d073-e18e-4940-9868-5b4a35617c35
+    jinja: "\u0110\u1ECDc b\xE0i vi\u1EBFt sau v\xE0 tr\u1EA3 l\u1EDDi c\xE2u h\u1ECF\
+      i.\nB\xE0i b\xE1o: {{article}}\nC\xE2u h\u1ECFi: {{question}}\nC\xE2u tr\u1EA3\
+      \ l\u1EDDi:\n|||\n{{ answer_choices[{\"A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Read the article and answer the question (no option)
+    reference: ''

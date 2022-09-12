@@ -1,0 +1,160 @@
+dataset: piqa
+subset: vi
+templates:
+  16e97a16-c958-4956-bfba-279f88dafd5b: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 16e97a16-c958-4956-bfba-279f88dafd5b
+    jinja: "M\u1EE5c ti\xEAu: {{goal}}\n\nC\xE1i n\xE0o l\xE0 k\u1EBFt th\xFAc ch\xED\
+      nh x\xE1c?\n- {{sol1}}\n- {{sol2}}\n\nC\xE2u tr\u1EA3 l\u1EDDi:\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: what_is_the_correct_ending
+    reference: ''
+  3f336295-c1f7-410a-8fc6-d2ed79487aa4: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 3f336295-c1f7-410a-8fc6-d2ed79487aa4
+    jinja: "{{\"Gi\u1EA3i ph\xE1p 1\"}}: {{sol1}}\n{{\"Gi\u1EA3i ph\xE1p 2\"}}: {{sol2}}\n\
+      \nM\u1EE5c ti\xEAu: {{goal}}\n\n\u0110\u01B0a ra m\u1EE5c ti\xEAu, gi\u1EA3\
+      i ph\xE1p ch\xEDnh x\xE1c l\xE0 g\xEC?\n\nTr\u1EA3 l\u1EDDi b\u1EB1ng c\xE1\
+      ch sao ch\xE9p gi\u1EA3i ph\xE1p ch\xEDnh x\xE1c\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_correct_choice_with_choice_given_before_goal
+    reference: ''
+  44778818-7b73-4262-a294-c00fc32b6c2c: !Template
+    answer_choices: 1 ||| 2
+    id: 44778818-7b73-4262-a294-c00fc32b6c2c
+    jinja: "K\u1EBFt \xE1n: {{goal}}\n\nS\u1EF1 l\u1EF1a ch\u1ECDn {{answer_choices[0]}}:\
+      \ {{sol1}}\n\nS\u1EF1 l\u1EF1a ch\u1ECDn {{answer_choices[1]}}: {{sol2}}\n\n\
+      Ch\u1EC9 s\u1ED1 c\u1EE7a s\u1EF1 l\u1EF1a ch\u1ECDn ch\xEDnh x\xE1c \u0111\u1EC3\
+      \ k\u1EBFt th\xFAc cho c\xE2u l\xE0 g\xEC?\n\nC\xE2u tr\u1EA3 l\u1EDDi:\n\n\
+      |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_correct_choice_index
+    reference: ''
+  5f4b4645-9438-4375-9062-083130e6d04e: !Template
+    answer_choices: null
+    id: 5f4b4645-9438-4375-9062-083130e6d04e
+    jinja: "\u0110\u01B0a ra m\u1ED9t m\u1EE5c ti\xEAu v\xE0 m\u1ED9t gi\u1EA3i ph\xE1\
+      p sai, vi\u1EBFt l\u1EA1i n\xF3 \u0111\u1EC3 \u0111\u01B0a ra m\u1ED9t gi\u1EA3\
+      i ph\xE1p ch\xEDnh x\xE1c.\nM\u1EE5c ti\xEAu: {{goal}} \nDung d\u1ECBch: {{[sol1,\
+      \ sol2][1 - label]}}\nGi\u1EA3i ph\xE1p \u0111\xE3 s\u1EEDa:\n|||\n{{[sol1,\
+      \ sol2][label]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Correct the solution
+    reference: ''
+  94c39589-7bfb-4c09-9337-672369459545: !Template
+    answer_choices: '{{sol1}} ||| {{sol2}}'
+    id: 94c39589-7bfb-4c09-9337-672369459545
+    jinja: "K\u1EBFt th\xFAc c\xE2u sau v\u1EDBi s\u1EF1 l\u1EF1a ch\u1ECDn t\u1ED1\
+      t nh\u1EA5t: {{goal}}\n\nL\u1EF1a ch\u1ECDn:\n- {{sol1}}\n- {{sol2}}\n\nC\xE2\
+      u tr\u1EA3 l\u1EDDi:\n\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: finish_sentence_with_correct_choice
+    reference: ''
+  99565244-4eaf-4004-a28b-4362ba5bcac3: !Template
+    answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
+    id: 99565244-4eaf-4004-a28b-4362ba5bcac3
+    jinja: "{{goal}} {{sol2}}\nC\u1EE5m t\u1EEB n\xE0y c\xF3 \xFD ngh\u0129a kh\xF4\
+      ng?\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Does this solution make sense? sol2
+    reference: ''
+  adfef248-f856-44fa-affd-e3223718854e: !Template
+    answer_choices: "Gi\u1EA3i ph\xE1p 1 ||| Gi\u1EA3i ph\xE1p 2"
+    id: adfef248-f856-44fa-affd-e3223718854e
+    jinja: "\u0110\u01B0a ra m\u1ED9t m\u1EE5c ti\xEAu v\xE0 2 gi\u1EA3i ph\xE1p,\
+      \ ch\u1ECDn gi\u1EA3i ph\xE1p ph\xF9 h\u1EE3p nh\u1EA5t.\nM\u1EE5c ti\xEAu:\
+      \ {{goal}}\n- {{\"Gi\u1EA3i ph\xE1p 1\"}}: {{sol1}}\n- {{\"Gi\u1EA3i ph\xE1\
+      p 2\"}}: {{sol2}}\n\nTr\u1EA3 l\u1EDDi b\u1EB1ng c\xE1ch tr\u1EA3 l\u1EA1i {{\"\
+      Gi\u1EA3i ph\xE1p 1\"}} ho\u1EB7c {{\"Gi\u1EA3i ph\xE1p 2\"}}\n|||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose the most appropriate solution
+    reference: ''
+  b5c69473-eedb-4c4f-a5fa-d4e266e43535: !Template
+    answer_choices: null
+    id: b5c69473-eedb-4c4f-a5fa-d4e266e43535
+    jinja: "Given a sentence, correct it if it doesn't make sense. If it makes sense,\
+      \ just return it as the answer.\n\u0110\u1EA7u v\xE0o: {{goal}} {{sol2[0].lower()\
+      \ + sol2[1:]}}\n\u0110\u1EA7u ra:\n|||\n{{goal}} {{[sol1[0].lower() + sol1[1:],\
+      \ sol2[0].lower() + sol2[1:]][label]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: 'Correct the solution if false: from sol 2'
+    reference: ''
+  c8c45ef1-2ffc-43d7-8710-b98c2fc4f699: !Template
+    answer_choices: null
+    id: c8c45ef1-2ffc-43d7-8710-b98c2fc4f699
+    jinja: '{{goal}}
+
+      |||
+
+      {{[sol1[0].lower() + sol1[1:], sol2[0].lower() + sol2[1:]][label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: no prompt needed
+    reference: ''
+  f044def7-01c2-42de-b6ad-4e8c63ab2bf1: !Template
+    answer_choices: "\u0110\xFAng ||| Kh\xF4ng"
+    id: f044def7-01c2-42de-b6ad-4e8c63ab2bf1
+    jinja: "C\u1EE5m t\u1EEB n\xE0y c\xF3 \xFD ngh\u0129a kh\xF4ng?\n{{goal}} {{sol1[0].lower()\
+      \ + sol1[1:]}}\nTr\u1EA3 l\u1EDDi v\u1EDBi {{answer_choices[0]}} ho\u1EB7c {{answer_choices[1]}}\n\
+      |||\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Does this solution make sense? sol1
+    reference: ''
+  f42cd457-a14b-465a-a139-d7d2407a3bac: !Template
+    answer_choices: null
+    id: f42cd457-a14b-465a-a139-d7d2407a3bac
+    jinja: "K\u1EBFt \xE1n: {{goal}} {{sol1[0].lower() + sol1[1:]}}\nN\u1EBFu c\xE2\
+      u kh\xF4ng c\xF3 \xFD ngh\u0129a, h\xE3y s\u1EEDa n\xF3 \u0111\u1EC3 n\xF3 c\xF3\
+      \ \xFD ngh\u0129a. N\u1EBFu kh\xF4ng, ch\u1EC9 c\u1EA7n sao ch\xE9p n\xF3.\n\
+      C\xE2u tr\u1EA3 l\u1EDDi:\n|||\n{{goal}} {{[sol1[0].lower() + sol1[1:], sol2[0].lower()\
+      \ + sol2[1:]][label]}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: 'Correct the solution if false: from sol 1'
+    reference: ''

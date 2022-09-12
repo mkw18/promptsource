@@ -1,0 +1,61 @@
+dataset: web_questions
+subset: vi
+templates:
+  427785bc-a8f3-4c86-bd43-e54447a58615: !Template
+    answer_choices: null
+    id: 427785bc-a8f3-4c86-bd43-e54447a58615
+    jinja: "Cho t\xF4i nh\u1EEFng s\u1EF1 th\u1EADt ch\xEDnh x\xE1c \u0111\u1EC3 tr\u1EA3\
+      \ l\u1EDDi \u0111i\u1EC1u n\xE0y: {{question}} ||| {{answers | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: get_the_answer
+    reference: ''
+  9f4cd4a4-79e5-40b2-bb0d-f9a86396511a: !Template
+    answer_choices: null
+    id: 9f4cd4a4-79e5-40b2-bb0d-f9a86396511a
+    jinja: "Cho t\xF4i m\u1ED9t c\xE2u tr\u1EA3 l\u1EDDi \u0111\xFAng c\xF3 th\u1EC3\
+      \ cho c\xE2u h\u1ECFi \"{{ question }}\" ||| {{ answers | choice }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: potential-correct-answer
+    reference: ''
+  bfed45a7-b36c-440b-8c94-f117cc6c9f34: !Template
+    answer_choices: null
+    id: bfed45a7-b36c-440b-8c94-f117cc6c9f34
+    jinja: 'What''s the answer to that question: {{question}} ||| {{answers | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: whats_the_answer
+    reference: ''
+  df08956c-035b-4216-af1c-61250617faa4: !Template
+    answer_choices: null
+    id: df08956c-035b-4216-af1c-61250617faa4
+    jinja: "C\xE2u h\u1ECFi v\u1EC1 ki\u1EBFn th\u1EE9c chung ng\u1EAFn: {{question}}\
+      \ ||| {{answers | choice}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: short_general_knowledge_q
+    reference: ''
+  e5c72a6b-8ab4-4219-9f41-debf7224884c: !Template
+    answer_choices: null
+    id: e5c72a6b-8ab4-4219-9f41-debf7224884c
+    jinja: '{{ question|capitalize }} ||| {{ answers | choice }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      metrics:
+      - Squad
+      original_task: true
+    name: question-answer
+    reference: ''
