@@ -21,7 +21,7 @@ templates:
   23361c5d-b67f-4c2a-9da7-16301c55d0e1: !Template
     answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| \u0B86\u0BAE\u0BCD"
     id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
-    jinja: "{{ text }} \u0B87\u0B99\u0BCD\u0B95\u0BC7, {{b} by \u0BAE\u0BC2\u0BB2\u0BAE\
+    jinja: "{{ text }} \u0B87\u0B99\u0BCD\u0B95\u0BC7, \"{{ span2_text }}\" by \u0BAE\u0BC2\u0BB2\u0BAE\
       \u0BCD \u0B85\u0BB5\u0BC8 \"{{ span1_text }}\" \u0B8E\u0BA9\u0BCD\u0BB1\u0BC1\
       \ \u0BAA\u0BCA\u0BB0\u0BC1\u0BB3\u0BCD. \u0B86\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\
       \u0BB2\u0BA4\u0BC1 \u0B87\u0BB2\u0BCD\u0BB2\u0BC8? ||| {% if label != -1 %}{{\
@@ -69,7 +69,7 @@ templates:
     answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| \u0B86\u0BAE\u0BCD"
     id: 7482d24f-cf45-4013-b82d-369489fc958b
     jinja: "{{ text }} \u0B87\u0B99\u0BCD\u0B95\u0BC7, \"{{ span2_text.lower() }}\"\
-      \ {{a} for \u0B95\u0BCD\u0B95\u0BC1 \u0BA8\u0BBF\u0BB1\u0BCD\u0B95\u0BBF\u0BB1\
+      \ {{ span1_text }} for \u0B95\u0BCD\u0B95\u0BC1 \u0BA8\u0BBF\u0BB1\u0BCD\u0B95\u0BBF\u0BB1\
       \u0BA4\u0BBE? \u0B86\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \u0B87\
       \u0BB2\u0BCD\u0BB2\u0BC8? ||| {% if label != -1 %}{{ answer_choices[label] }}{%\
       \ endif %}"

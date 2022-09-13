@@ -92,7 +92,7 @@ templates:
   8bea1123-fd8d-4bac-96bf-b8a289ee74b3: !Template
     answer_choices: null
     id: 8bea1123-fd8d-4bac-96bf-b8a289ee74b3
-    jinja: "{% set seq = [\n'\xC8ske ou ka di m ' ',\n'Tanpri, di mwen ',\n'Di mwen\
+    jinja: "{% set seq = [\n'\xC8ske ou ka di m '' ',\n'Tanpri, di mwen ',\n'Di mwen\
       \ ',\n'Soti nan pasaj la, ',\n'mwen vle konnen ',\n'Mwen vle mande ',\n'Ki repons\
       \ pou: ',\n'Jwenn repons lan nan: ',\n'Repons: ',\n'',\n] %}\n{{context}} {{\
       \ seq | choice }}{{question}}|||\n{% if answers.text == [] %}\nReponn pa nan\
@@ -137,7 +137,7 @@ templates:
   e1630107-8f5d-44ce-8ccd-6fa80da80328: !Template
     answer_choices: null
     id: e1630107-8f5d-44ce-8ccd-6fa80da80328
-    jinja: "{% set seq = [\n'\xC8ske ou ka di m ' ',\n'Tanpri, di mwen ',\n'Di mwen\
+    jinja: "{% set seq = [\n'\xC8ske ou ka di m '' ',\n'Tanpri, di mwen ',\n'Di mwen\
       \ ',\n'Soti nan pasaj la, ',\n'mwen vle konnen ',\n'Mwen vle mande ',\n'Ki repons\
       \ pou: ',\n'Jwenn repons lan nan: ',\n'Repons: ',\n'',\n] %}\n{{context}} {{\
       \ seq | choice }}{{question}} If you can't find the answer, please respond \"\

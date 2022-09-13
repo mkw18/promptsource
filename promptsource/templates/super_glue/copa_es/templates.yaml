@@ -59,7 +59,7 @@ templates:
   744047dc-1298-45a2-8d68-d67e3f834ded: !Template
     answer_choices: '{{choice1 }} ||| {{choice2}}'
     id: 744047dc-1298-45a2-8d68-d67e3f834ded
-    jinja: '{{A o B}}? {{ premise }} {% if question == "cause" %} porque {% else %}
+    jinja: '"{{ answer_choices[0] }}" o "{{ answer_choices[0] }}"? {{ premise }} {% if question == "cause" %} porque {% else %}
       asi que {% endif %} ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif
       %}'
     metadata: !TemplateMetadata
@@ -138,7 +138,8 @@ templates:
   a8bf11c3-bea2-45ba-a533-957d8bee5e2e: !Template
     answer_choices: '{{choice1}} ||| {{choice2}}'
     id: a8bf11c3-bea2-45ba-a533-957d8bee5e2e
-    jinja: "{% if question == \"cause\" %} \n{{ premise }} \xBFPor qu\xE9? {{A o B}}?\
+    jinja: "{% if question == \"cause\" %} \n{{ premise }} \xBFPor qu\xE9? \"{{ answer_choices[0]\
+      \ }}\" o \"{{ answer_choices[0] }}\"?\
       \ ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

@@ -33,7 +33,7 @@ templates:
   20064b80-e4d0-41b7-9135-92c0077d5044: !Template
     answer_choices: null
     id: 20064b80-e4d0-41b7-9135-92c0077d5044
-    jinja: "{% set seq = [\n'De quoi s'agit-il? ',\n'De quoi parle le paragraphe?\
+    jinja: "{% set seq = [\n'De quoi s''agit-il? ',\n'De quoi parle le paragraphe?\
       \ ',\n'Obtenez le sujet de: ',\n'Du passage, obtenez le sujet',\n'Je veux conna\xEE\
       tre le sujet. ',\n'Sujet du passage: ',\n'Sujet du paragraphe: ',\n] %}\n{{\
       \ seq | choice }}\n{{context}} |||\n{{title | replace(\"_\", \" \")}}"
@@ -50,7 +50,7 @@ templates:
   338cc143-361e-4796-b035-31fb2201c49f: !Template
     answer_choices: null
     id: 338cc143-361e-4796-b035-31fb2201c49f
-    jinja: "{% set seq = [\n'C'est \xE0 propos de ',\n'Ca parle de quoi? ',\n'Le paragraphe\
+    jinja: "{% set seq = [\n'C''est \xE0 propos de ',\n'Ca parle de quoi? ',\n'Le paragraphe\
       \ est \xE0 propos ',\n'De quoi parle le paragraphe? ',\n'Obtenez le sujet: ',\n\
       'Du passage, le sujet est',\n'Je veux conna\xEEtre le sujet. ',\n'Sujet du passage:\
       \ ',\n'Sujet du paragraphe: ',\n] %}\n{{context}}\n{{ seq | choice }}|||\n{{title\
@@ -82,7 +82,7 @@ templates:
   8bea1123-fd8d-4bac-96bf-b8a289ee74b3: !Template
     answer_choices: null
     id: 8bea1123-fd8d-4bac-96bf-b8a289ee74b3
-    jinja: "{% set seq = [\n'Pouvez-vous me dire ',\n's'il vous pla\xEEt dites-moi\
+    jinja: "{% set seq = [\n'Pouvez-vous me dire ',\n's''il vous pla\xEEt dites-moi\
       \ ',\n'Dites-moi ',\n'Du passage, ',\n'Je veux savoir ',\n'Je veux demander\
       \ ',\n'Quelle est la r\xE9ponse \xE0: ',\n'Trouvez la r\xE9ponse \xE0: ',\n\
       'R\xE9ponse: ',\n'',\n] %}\n{{context}} {{ seq | choice }}{{question}}|||\n\
@@ -128,7 +128,7 @@ templates:
   e1630107-8f5d-44ce-8ccd-6fa80da80328: !Template
     answer_choices: null
     id: e1630107-8f5d-44ce-8ccd-6fa80da80328
-    jinja: "{% set seq = [\n'Pouvez-vous me dire ',\n's'il vous pla\xEEt dites-moi\
+    jinja: "{% set seq = [\n'Pouvez-vous me dire ',\n's''il vous pla\xEEt dites-moi\
       \ ',\n'Dites-moi ',\n'Du passage, ',\n'Je veux savoir ',\n'Je veux demander\
       \ ',\n'Quelle est la r\xE9ponse \xE0: ',\n'Trouvez la r\xE9ponse \xE0: ',\n\
       'R\xE9ponse: ',\n'',\n] %}\n{{context}} {{ seq | choice }}{{question}} If you\

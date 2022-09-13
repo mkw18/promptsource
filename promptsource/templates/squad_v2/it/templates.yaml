@@ -45,29 +45,11 @@ templates:
   20064b80-e4d0-41b7-9135-92c0077d5044: !Template
     answer_choices: null
     id: 20064b80-e4d0-41b7-9135-92c0077d5044
-    jinja: '{% set seq = [
-
-      ''Cosa riguarda? '',
-
-      ''Di cosa parla il paragrafo? '',
-
-      ''Ottieni l''argomento da: '',
-
-      ''Dal passaggio, ottieni l''argomento'',
-
-      ''Voglio conoscere l''argomento. '',
-
-      ''Argomento dal passaggio: '',
-
-      ''Argomento dal paragrafo: '',
-
-      ] %}
-
-      {{ seq | choice }}
-
-      {{context}} |||
-
-      {{title | replace("_", " ")}}'
+    jinja: "{% set seq = [\n'Cosa riguarda? ',\n'Di cosa parla il\
+      \ paragrafo? ',\n'Ottieni l''argomento da: ',\n'Dal passaggio,\
+      \ ottieni l''argomento',\n'Voglio conoscere l''argomento. ',\n'Argomento\
+      \ dal passaggio: ',\n'Argomento dal paragrafo: ',\n] %}\n{{ seq | choice }}\
+      \n{{context}} ||| \n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -81,9 +63,9 @@ templates:
   338cc143-361e-4796-b035-31fb2201c49f: !Template
     answer_choices: null
     id: 338cc143-361e-4796-b035-31fb2201c49f
-    jinja: "{% set seq = [\n'Questo \xE8 un po ' ',\n'Cosa riguarda? ',\n'Il paragrafo\
-      \ parla ',\n'Di cosa parla il paragrafo? ',\n'Ottieni l'argomento: ',\n'Dal\
-      \ passaggio, l'argomento \xE8',\n'Voglio conoscere l'argomento. ',\n'Argomento\
+    jinja: "{% set seq = [\n'Questo \xE8 un po '' ',\n'Cosa riguarda? ',\n'Il paragrafo\
+      \ parla ',\n'Di cosa parla il paragrafo? ',\n'Ottieni l''argomento: ',\n'Dal\
+      \ passaggio, l''argomento \xE8',\n'Voglio conoscere l''argomento. ',\n'Argomento\
       \ dal passaggio: ',\n'Argomento dal paragrafo: ',\n] %}\n{{context}}\n{{ seq\
       \ | choice }}|||\n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
@@ -184,8 +166,8 @@ templates:
   e51c23b9-5b10-4db3-a0d1-ba546830173d: !Template
     answer_choices: null
     id: e51c23b9-5b10-4db3-a0d1-ba546830173d
-    jinja: "{% set seq = [\n'Determina l'argomento della coppia di risposte. ',\n\
-      'Trova l'argomento. ',\n'Qual \xE8 l'argomento da questo? ',\n] %}\n{% if answers.text\
+    jinja: "{% set seq = [\n'Determina l''argomento della coppia di risposte. ',\n\
+      'Trova l''argomento. ',\n'Qual \xE8 l''argomento da questo? ',\n] %}\n{% if answers.text\
       \ != [] %}\n{{ seq | choice }}\nDomanda: {{question}};  Risposta: {{answers.text[0]}};\
       \ Argomento: |||\n{{title}}\n{% endif %}"
     metadata: !TemplateMetadata

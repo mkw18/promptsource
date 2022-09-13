@@ -68,7 +68,7 @@ templates:
   744047dc-1298-45a2-8d68-d67e3f834ded: !Template
     answer_choices: '{{choice1 }} ||| {{choice2}}'
     id: 744047dc-1298-45a2-8d68-d67e3f834ded
-    jinja: "{{\u0627 \u0627\u0648 \u0628}}\u061F {{ premise }} {% if question == \"\
+    jinja: "\"{{ answer_choices[0] }}\" أو \"{{ answer_choices[1] }}\"؟ {{ premise }} {% if question == \"\
       cause\" %} \u0644\u0627\u0646 {% else %} \u0644\u0630\u0627 {% endif %} |||\
       \ {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
@@ -157,7 +157,7 @@ templates:
     answer_choices: '{{choice1}} ||| {{choice2}}'
     id: a8bf11c3-bea2-45ba-a533-957d8bee5e2e
     jinja: "{% if question == \"cause\" %} \n{{ premise }} \u0644\u0645\u0627\u0630\
-      \u0627 \u0627\u061F {{\u0627 \u0627\u0648 \u0628}}\u061F ||| {% if label !=\
+      \u0627 \u0627\u061F \"{{ answer_choices[0] }}\" أو \"{{ answer_choices[1] }}\"؟ ||| {% if label !=\
       \ -1 %}{{ answer_choices[label] }}{%endif%}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

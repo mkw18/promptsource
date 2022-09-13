@@ -57,7 +57,7 @@ templates:
     id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
     jinja: "{% set prompts = [\n'Pouvez-vous choisir la fin correcte pour la phrase:\
       \ ',\n'La t\xE2che consiste \xE0 g\xE9n\xE9rer la fin de la phrase: ',\n'Comment\
-      \ cette phrase se termine-t-elle? ',\n'D'apr\xE8s la liste des fins d\xE9crites\
+      \ cette phrase se termine-t-elle? ',\n'D''apr\xE8s la liste des fins d\xE9crites\
       \ ci-dessous, la fin est le plus logique pour la phrase ',]\n%}\n{{prompts |\
       \ choice}}\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\
       \n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices\

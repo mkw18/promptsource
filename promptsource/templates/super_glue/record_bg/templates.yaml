@@ -2,9 +2,7 @@ dataset: super_glue
 subset: record_bg
 templates:
   014b669e-2e3b-40ce-bdde-418966c7d666: !Template
-    answer_choices: "{{\u0441\u0443\u0431\u0435\u043A\u0442\u0438 |\u043F\u0440\u0438\
-      \u0441\u044A\u0435\u0434\u0438\u043D\u0435\u0442\u0435 \u0441\u0435 (\"|||\"\
-      )}}"
+    answer_choices: '{{ entities | join("|||") }}'
     id: 014b669e-2e3b-40ce-bdde-418966c7d666
     jinja: "{{ passage }} \n{{ query }} \n\u041A\u043E\u0439 \u0435 \"{{\"@placeholder\"\
       }}\"? {{ entities | join(\", \") }}? ||| {% if ( answers | length ) > 0 %} {{\
@@ -17,9 +15,7 @@ templates:
     name: Which one is the placeholder?
     reference: ''
   11e27d59-b1f5-43a1-9ccc-17f1c3249173: !Template
-    answer_choices: "{{\u0441\u0443\u0431\u0435\u043A\u0442\u0438 |\u043F\u0440\u0438\
-      \u0441\u044A\u0435\u0434\u0438\u043D\u0435\u0442\u0435 \u0441\u0435 (\"|||\"\
-      )}}"
+    answer_choices: '{{ entities | join("|||") }}'
     id: 11e27d59-b1f5-43a1-9ccc-17f1c3249173
     jinja: "\u0421\u043B\u0435\u0434\u043D\u0438\u044F\u0442 \u0434\u043E\u043A\u0443\
       \u043C\u0435\u043D\u0442 \u0435 \u043F\u043E\u0432\u0440\u0435\u0434\u0435\u043D\
@@ -36,11 +32,9 @@ templates:
     name: corrupted
     reference: ''
   147656b2-2dad-4028-96c4-f19d57cd1344: !Template
-    answer_choices: "{ % \u0437\u0430 \u0441\u0443\u0431\u0435\u043A\u0442\u0438 \u0432\
-      \ \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [:-1] %} {{query |\u0417\u0430\u043C\
-      \u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\", Entity)}} ||| { % endfor %}\
-      \ {{query |\u0417\u0430\u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\"\
-      , \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [-1])}}"
+    answer_choices: '{% for entity in entities[:-1] %} {{ query | replace("@placeholder",
+      entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
+      }}'
     id: 147656b2-2dad-4028-96c4-f19d57cd1344
     jinja: "\u0420\u0435\u0437\u044E\u043C\u0435:\n\n- {{ passage.split(\"@highlight\"\
       )[1:] | join(\"\\n- \") }} \n\n\u0421\u0442\u0430\u0442\u0438\u044F:\n\n{{ passage.split(\"\
@@ -54,11 +48,9 @@ templates:
     name: Summary first (continuation choices)
     reference: ''
   24c267d4-359e-40a9-83d2-bff904d63b09: !Template
-    answer_choices: "{ % \u0437\u0430 \u0441\u0443\u0431\u0435\u043A\u0442\u0438 \u0432\
-      \ \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [:-1] %} {{query |\u0417\u0430\u043C\
-      \u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\", Entity)}} ||| { % endfor %}\
-      \ {{query |\u0417\u0430\u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\"\
-      , \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [-1])}}"
+    answer_choices: '{% for entity in entities[:-1] %} {{ query | replace("@placeholder",
+      entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
+      }}'
     id: 24c267d4-359e-40a9-83d2-bff904d63b09
     jinja: "\u0420\u0435\u0437\u044E\u043C\u0435:\n\n- {{ passage.split(\"@highlight\"\
       )[1:] | join(\"\\n- \") }} \n\n\u0421\u0442\u0430\u0442\u0438\u044F:\n\n{{ passage.split(\"\
@@ -78,9 +70,7 @@ templates:
     name: Add sentence after after (continuation choices)
     reference: ''
   441c70e3-095a-44a1-8163-bc3b666b7ea1: !Template
-    answer_choices: "{{\u0441\u0443\u0431\u0435\u043A\u0442\u0438 |\u043F\u0440\u0438\
-      \u0441\u044A\u0435\u0434\u0438\u043D\u0435\u0442\u0435 \u0441\u0435 (\"|||\"\
-      )}}"
+    answer_choices: '{{ entities | join("|||") }}'
     id: 441c70e3-095a-44a1-8163-bc3b666b7ea1
     jinja: "{{ passage }} \n{{ query }} \n\n\u0422\u0440\u044F\u0431\u0432\u0430 \u0434\
       \u0430 \u0440\u0435\u0448\u0438\u0442\u0435 \u0437\u0430 \u043A\u0430\u043A\u0432\
@@ -96,11 +86,9 @@ templates:
     name: choose_between
     reference: ''
   64013fb3-1afd-4e5a-8777-b164ca3b8e18: !Template
-    answer_choices: "{ % \u0437\u0430 \u0441\u0443\u0431\u0435\u043A\u0442\u0438 \u0432\
-      \ \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [: - 1] %} - {{query |\u0417\u0430\
-      \u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\", Entity)}} ||| { % endfor\
-      \ %} - {{query |\u0417\u0430\u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\"\
-      , \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [-1])}}"
+    answer_choices: '{% for entity in entities[:-1] %} - {{ query | replace("@placeholder",
+      entity) }} ||| {% endfor %} - {{ query | replace("@placeholder", entities[-1])
+      }}'
     id: 64013fb3-1afd-4e5a-8777-b164ca3b8e18
     jinja: "{{ passage.split(\"@highlight\")[0] }}\n\n\u0420\u0435\u0437\u044E\u043C\
       \u0435:\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\\n- \") }} \n\n\
@@ -114,11 +102,9 @@ templates:
     name: GPT-3 style summary only (continuation choices)
     reference: Brown et al. 2020
   90fc9ecb-c706-4c03-bb7e-4fe9fcd777f6: !Template
-    answer_choices: "{ % \u0437\u0430 \u0441\u0443\u0431\u0435\u043A\u0442\u0438 \u0432\
-      \ \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [:-1] %} {{query |\u0417\u0430\u043C\
-      \u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\", Entity)}} ||| { % endfor %}\
-      \ {{query |\u0417\u0430\u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\"\
-      , \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [-1])}}"
+    answer_choices: '{% for entity in entities[:-1] %} {{ query | replace("@placeholder",
+      entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
+      }}'
     id: 90fc9ecb-c706-4c03-bb7e-4fe9fcd777f6
     jinja: "\u0421\u0442\u0430\u0442\u0438\u044F:\n\n{{ passage.split(\"@highlight\"\
       )[0] }}\n\n\u0410\u043A\u0446\u0435\u043D\u0442\u0438:\n\n{{ passage.split(\"\
@@ -132,9 +118,7 @@ templates:
     name: GPT-3 style with labels without hyphens (continuation choices)
     reference: ''
   91555c1c-c1e4-469b-a2a4-fc952ce1a145: !Template
-    answer_choices: "{{\u0441\u0443\u0431\u0435\u043A\u0442\u0438 |\u043F\u0440\u0438\
-      \u0441\u044A\u0435\u0434\u0438\u043D\u0435\u0442\u0435 \u0441\u0435 (\"|||\"\
-      )}}"
+    answer_choices: '{{ entities | join("|||") }}'
     id: 91555c1c-c1e4-469b-a2a4-fc952ce1a145
     jinja: "{{ passage }} \n{{ query }} \n\u0412\u044A\u0432 \u0432\u044A\u043F\u0440\
       \u043E\u0441\u0430 \u043F\u043E -\u0433\u043E\u0440\u0435, \"{{\"@placeholder\"\
@@ -148,11 +132,9 @@ templates:
     name: In the question above, the placeholder stands for
     reference: ''
   94577b75-2eac-4eae-b367-3b413c4188c6: !Template
-    answer_choices: "{ % \u0437\u0430 \u0441\u0443\u0431\u0435\u043A\u0442\u0438 \u0432\
-      \ \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [:-1] %} {{query |\u0417\u0430\u043C\
-      \u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\", Entity)}} ||| { % endfor %}\
-      \ {{query |\u0417\u0430\u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\"\
-      , \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [-1])}}"
+    answer_choices: '{% for entity in entities[:-1] %} {{ query | replace("@placeholder",
+      entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
+      }}'
     id: 94577b75-2eac-4eae-b367-3b413c4188c6
     jinja: "\u0421\u043B\u0435\u0434 \u043A\u0430\u0442\u043E \u043F\u0440\u043E\u0447\
       \u0435\u0442\u0435\u0442\u0435 \u0441\u0442\u0430\u0442\u0438\u044F\u0442\u0430\
@@ -169,11 +151,9 @@ templates:
     name: Add sentence after (continuation choices)
     reference: ''
   9579b54e-4f0f-4e43-8907-af57112cc857: !Template
-    answer_choices: "{ % \u0437\u0430 \u0441\u0443\u0431\u0435\u043A\u0442\u0438 \u0432\
-      \ \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [:-1] %} {{query |\u0417\u0430\u043C\
-      \u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\", Entity)}} ||| { % endfor %}\
-      \ {{query |\u0417\u0430\u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\"\
-      , \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [-1])}}"
+    answer_choices: '{% for entity in entities[:-1] %} {{ query | replace("@placeholder",
+      entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
+      }}'
     id: 9579b54e-4f0f-4e43-8907-af57112cc857
     jinja: "\u041C\u043E\u043B\u044F, \u043F\u0440\u043E\u0447\u0435\u0442\u0435\u0442\
       \u0435 \u0441\u043B\u0435\u0434\u043D\u0430\u0442\u0430 \u0441\u0442\u0430\u0442\
@@ -191,9 +171,7 @@ templates:
     name: News article (continuation choices)
     reference: ''
   99dd38ce-32f3-4d58-93c5-59821002b9cc: !Template
-    answer_choices: "{{\u0441\u0443\u0431\u0435\u043A\u0442\u0438 |\u043F\u0440\u0438\
-      \u0441\u044A\u0435\u0434\u0438\u043D\u0435\u0442\u0435 \u0441\u0435 (\"|||\"\
-      )}}"
+    answer_choices: '{{ entities | join("|||") }}'
     id: 99dd38ce-32f3-4d58-93c5-59821002b9cc
     jinja: "{{ passage }} \n{{ query }} \n\u041A\u0430\u043A\u0432\u043E \u043C\u043E\
       \u0436\u0435 \u0434\u0430 \u0431\u044A\u0434\u0435 \"{{\"@placeholder\"}}\"\
@@ -207,9 +185,7 @@ templates:
     name: What could the placeholder be?
     reference: ''
   9b688cf3-28bf-4f33-94cf-e73e4fa8c608: !Template
-    answer_choices: "{{\u0441\u0443\u0431\u0435\u043A\u0442\u0438 |\u043F\u0440\u0438\
-      \u0441\u044A\u0435\u0434\u0438\u043D\u0435\u0442\u0435 \u0441\u0435 (\"|||\"\
-      )}}"
+    answer_choices: '{{entities | join("|||")}}'
     id: 9b688cf3-28bf-4f33-94cf-e73e4fa8c608
     jinja: "{{ passage }}\n{{ query }}\n\n\u041E\u043F\u0438\u0442\u0432\u0430\u043C\
       \ \u0441\u0435 \u0434\u0430 \u0440\u0435\u0448\u0430 \u043A\u0430\u043A\u0432\
@@ -227,9 +203,7 @@ templates:
     name: trying_to_decide
     reference: ''
   a5ed27ed-162b-4ac1-9c7a-85059d5214be: !Template
-    answer_choices: "{{\u0441\u0443\u0431\u0435\u043A\u0442\u0438 |\u043F\u0440\u0438\
-      \u0441\u044A\u0435\u0434\u0438\u043D\u0435\u0442\u0435 \u0441\u0435 (\"|||\"\
-      )}}"
+    answer_choices: '{{ entities | join("|||") }}'
     id: a5ed27ed-162b-4ac1-9c7a-85059d5214be
     jinja: "{{ passage }} \n{{ query }} \n\u0422\u0443\u043A \u0437\u0430\u043C\u0435\
       \u0441\u0442\u043D\u0438\u043A\u044A\u0442 \u0441\u0435 \u043E\u0442\u043D\u0430\
@@ -243,11 +217,9 @@ templates:
     name: "the placeholder refers to\u2026"
     reference: ''
   a99a92e0-e1ee-4ec3-a38a-3be4303ba017: !Template
-    answer_choices: "{ % \u0437\u0430 \u0441\u0443\u0431\u0435\u043A\u0442\u0438 \u0432\
-      \ \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [: - 1] %} - {{query |\u0417\u0430\
-      \u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\", Entity)}} ||| { % endfor\
-      \ %} - {{query |\u0417\u0430\u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\"\
-      , \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [-1])}}"
+    answer_choices: '{% for entity in entities[:-1] %} - {{ query | replace("@placeholder",
+      entity) }} ||| {% endfor %} - {{ query | replace("@placeholder", entities[-1])
+      }}'
     id: a99a92e0-e1ee-4ec3-a38a-3be4303ba017
     jinja: "{{ passage.split(\"@highlight\")[0] }}\n\n\u0410\u043A\u0446\u0435\u043D\
       \u0442\u0438:\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\\n- \") }}\
@@ -263,9 +235,7 @@ templates:
     name: New highlight (continuation choices)
     reference: ''
   d3fce74e-0d9d-404a-a009-9ebbf5794c2c: !Template
-    answer_choices: "{{\u0441\u0443\u0431\u0435\u043A\u0442\u0438 |\u043F\u0440\u0438\
-      \u0441\u044A\u0435\u0434\u0438\u043D\u0435\u0442\u0435 \u0441\u0435 (\"|||\"\
-      )}}"
+    answer_choices: '{{entities | join("|||")}}'
     id: d3fce74e-0d9d-404a-a009-9ebbf5794c2c
     jinja: "\u0423\u043F\u0440\u0430\u0436\u043D\u0435\u043D\u0438\u0435: \u0418\u0437\
       \u0432\u043B\u0435\u0447\u0435\u0442\u0435 \u043E\u0442 \u0442\u0435\u043A\u0441\
@@ -282,9 +252,7 @@ templates:
     name: exercise
     reference: ''
   de5b635e-c2f4-40bb-81ac-650f1b45564b: !Template
-    answer_choices: "{{\u0441\u0443\u0431\u0435\u043A\u0442\u0438 |\u043F\u0440\u0438\
-      \u0441\u044A\u0435\u0434\u0438\u043D\u0435\u0442\u0435 \u0441\u0435 (\"|||\"\
-      )}}"
+    answer_choices: '{{entities | join("|||")}}'
     id: de5b635e-c2f4-40bb-81ac-650f1b45564b
     jinja: "{{ passage }}\n{{ query }}\n\n\u0418\u0437\u0431\u0435\u0440\u0435\u0442\
       \u0435 \u0435\u0434\u043D\u0430 \u043E\u043F\u0446\u0438\u044F, \"{{\"@placeholder\"\
@@ -299,11 +267,9 @@ templates:
     name: pick_one_option
     reference: ''
   df8d0822-2cad-42de-8191-687ae47f6098: !Template
-    answer_choices: "{ % \u0437\u0430 \u0441\u0443\u0431\u0435\u043A\u0442\u0438 \u0432\
-      \ \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [: - 1] %} - {{query |\u0417\u0430\
-      \u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\", Entity)}} ||| { % endfor\
-      \ %} - {{query |\u0417\u0430\u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\"\
-      , \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [-1])}}"
+    answer_choices: '{% for entity in entities[:-1] %} - {{ query | replace("@placeholder",
+      entity) }} ||| {% endfor %} - {{ query | replace("@placeholder", entities[-1])
+      }}'
     id: df8d0822-2cad-42de-8191-687ae47f6098
     jinja: "{{ passage | replace(\"@highlight\", \"\\n- \") }} \n\n ||| {% if ( answers\
       \ | length ) > 0 %}- {{ query | replace(\"@placeholder\", answers | choice)\
@@ -316,11 +282,9 @@ templates:
     name: GPT-3 style (continuation choices)
     reference: Brown et al. 2020
   dfa3052f-ede8-42c2-b99a-bc5762c4fdc6: !Template
-    answer_choices: "{ % \u0437\u0430 \u0441\u0443\u0431\u0435\u043A\u0442\u0438 \u0432\
-      \ \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [: - 1] %} - {{query |\u0417\u0430\
-      \u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\", Entity)}} ||| { % endfor\
-      \ %} - {{query |\u0417\u0430\u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\"\
-      , \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [-1])}}"
+    answer_choices: '{% for entity in entities[:-1] %} - {{ query | replace("@placeholder",
+      entity) }} ||| {% endfor %} - {{ query | replace("@placeholder", entities[-1])
+      }}'
     id: dfa3052f-ede8-42c2-b99a-bc5762c4fdc6
     jinja: "\u0421\u0442\u0430\u0442\u0438\u044F:\n\n{{ passage.split(\"@highlight\"\
       )[0] }}\n\n\u0410\u043A\u0446\u0435\u043D\u0442\u0438:\n\n- {{ passage.split(\"\
@@ -334,9 +298,7 @@ templates:
     name: GPT-3 style with labels (continuation choices)
     reference: Brown et al. 2020
   e68d13c5-df75-4de0-b59e-f2eaf4af6ce7: !Template
-    answer_choices: "{{\u0441\u0443\u0431\u0435\u043A\u0442\u0438 |\u043F\u0440\u0438\
-      \u0441\u044A\u0435\u0434\u0438\u043D\u0435\u0442\u0435 \u0441\u0435 (\"|||\"\
-      )}}"
+    answer_choices: '{{ entities | join("|||") }}'
     id: e68d13c5-df75-4de0-b59e-f2eaf4af6ce7
     jinja: "{{ passage }} \n{{ query }} \n\u041C\u043E\u0436\u0435\u0442\u0435 \u043B\
       \u0438 \u0434\u0430 \u0440\u0430\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u043A\
@@ -352,11 +314,9 @@ templates:
     name: "Can you figure out\u2026"
     reference: ''
   f7a92707-c531-42cb-81b4-063976e013cb: !Template
-    answer_choices: "{ % \u0437\u0430 \u0441\u0443\u0431\u0435\u043A\u0442\u0438 \u0432\
-      \ \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [:-1] %} {{query |\u0417\u0430\u043C\
-      \u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\", Entity)}} ||| { % endfor %}\
-      \ {{query |\u0417\u0430\u043C\u0435\u043D\u0435\u0442\u0435 (\"@Placeholder\"\
-      , \u0441\u0443\u0431\u0435\u043A\u0442\u0438 [-1])}}"
+    answer_choices: '{% for entity in entities[:-1] %} {{ query | replace("@placeholder",
+      entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
+      }}'
     id: f7a92707-c531-42cb-81b4-063976e013cb
     jinja: "{{ passage | replace(\"@highlight\", \"\\n\") }} \n ||| {% if ( answers\
       \ | length ) > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}\

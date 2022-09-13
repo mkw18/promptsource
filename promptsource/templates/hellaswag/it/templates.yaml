@@ -75,8 +75,8 @@ templates:
     answer_choices: '{{endings | join(" ||| ") }}'
     id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
     jinja: "{% set prompts = [\n'Puoi scegliere il finale corretto per la frase: ',\n\
-      'L'attivit\xE0 \xE8 generare il finale per la frase: ',\n'Come finisce questa\
-      \ frase? ',\n'Dall'elenco dei finali descritti di seguito, ci\xF2 che il finale\
+      'L''attivit\xE0 \xE8 generare il finale per la frase: ',\n'Come finisce questa\
+      \ frase? ',\n'Dall''elenco dei finali descritti di seguito, ci\xF2 che il finale\
       \ ha pi\xF9 senso per la frase ',]\n%}\n{{prompts | choice}}\n{{ctx}}\n\n(a)\
       \  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\
       \n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices [label | int()]}}"

@@ -122,7 +122,7 @@ templates:
     answer_choices: '{{choice1}} ||| {{choice2}}'
     id: 8cf2ba73-aee5-4651-b5d4-b1b88afe4abb
     jinja: "{% if question == \"cause\" %} \n{{ premise }} \u0B87\u0BA4\u0BC1 \"{{\
-      \ answer_choices[0] }}\" \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 {{b} by \u0B86\
+      \ answer_choices[0] }}\" \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \"{{ answer_choices[1] }}\" by \u0B86\
       \u0BB2\u0BCD \u0B8F\u0BB1\u0BCD\u0BAA\u0B9F\u0B95\u0BCD\u0B95\u0BC2\u0B9F\u0BC1\
       \u0BAE\u0BCD? ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}\n\
       {% endif %}"

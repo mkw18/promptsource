@@ -170,7 +170,7 @@ templates:
   f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
     answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| \u0B86\u0BAE\u0BCD"
     id: f934a96d-fe4d-4075-aa47-5595b9a604c7
-    jinja: "{{sentence1}}\n{{sentence2}}\n{{A} of \u0B87\u0BA9\u0BCD \u0B92\u0BA4\u0BCD\
+    jinja: "{{sentence1}}\n{{sentence2}}\n{{word}} of \u0B87\u0BA9\u0BCD \u0B92\u0BA4\u0BCD\
       \u0BA4 \u0B89\u0BA3\u0BB0\u0BCD\u0BB5\u0BC1?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
