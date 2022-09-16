@@ -4,10 +4,10 @@ templates:
   00caa8cb-7f67-43bc-9e90-fc1d5d329432: !Template
     answer_choices: '{{endings | join(" ||| ")}}'
     id: 00caa8cb-7f67-43bc-9e90-fc1d5d329432
-    jinja: "Terminez la description avec une fin appropri\xE9e:\nPremi\xE8re, {{ ctx_a.lower()\
-      \ }} Alors, {{ ctx_b.lower() }} ...\n\n(a) {{ answer_choices[0] }}\n\n(b) {{\
-      \ answer_choices[1] }}\n\n(c) {{ answer_choices[2] }}\n\n(d) {{ answer_choices[3]\
-      \ }}\n|||\n{{ answer_choices[label | int()] }}"
+    jinja: "Compl\xE9tez la description avec une fin appropri\xE9e\_:\nPremi\xE8re,\
+      \ {{ ctx_a.lower() }} Alors, {{ ctx_b.lower() }} ...\n\n(a) {{ answer_choices[0]\
+      \ }}\n\n(b) {{ answer_choices[1] }}\n\n(c) {{ answer_choices[2] }}\n\n(d) {{\
+      \ answer_choices[3] }}\n|||\n{{ answer_choices[label | int()] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -18,7 +18,7 @@ templates:
   196a016d-bd25-4387-90b9-53197fd43b1e: !Template
     answer_choices: null
     id: 196a016d-bd25-4387-90b9-53197fd43b1e
-    jinja: "Quel est le sujet de la phrase: {{ctx}} \n|||\n{{activity_label}} "
+    jinja: "Quel est le sujet de la phrase : {{ctx}} \n|||\n{{activity_label}} "
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -43,7 +43,7 @@ templates:
     answer_choices: null
     id: 4ebf22a1-2d23-426c-a083-b43fc8567687
     jinja: "{{ctx}} {{endings[label | int()]}}\nPouvez-vous identifier le sujet du\
-      \ paragraphe? \n|||\n{{activity_label}}"
+      \ paragraphe\_? \n|||\n{{activity_label}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -55,12 +55,12 @@ templates:
   52fbd075-46cb-49fb-a41b-00a0f4a60285: !Template
     answer_choices: '{{endings | join(" ||| ") }}'
     id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
-    jinja: "{% set prompts = [\n'Pouvez-vous choisir la fin correcte pour la phrase:\
-      \ ',\n'La t\xE2che consiste \xE0 g\xE9n\xE9rer la fin de la phrase: ',\n'Comment\
-      \ cette phrase se termine-t-elle? ',\n'D''apr\xE8s la liste des fins d\xE9crites\
-      \ ci-dessous, la fin est le plus logique pour la phrase ',]\n%}\n{{prompts |\
-      \ choice}}\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\
-      \n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices\
+    jinja: "{% set prompts = [\n'Peux-tu choisir la bonne fin de phrase : ',\n'La\
+      \ t\xE2che consiste \xE0 g\xE9n\xE9rer la fin de la phrase\_: ',\n'Comment se\
+      \ termine cette phrase ? ',\n'Dans la liste des terminaisons d\xE9crites ci-dessous,\
+      \ quelle terminaison a le plus de sens pour la phrase ',]\n%}\n{{prompts | choice}}\n\
+      {{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c) \
+      \ {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices\
       \ [label | int()]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -73,9 +73,9 @@ templates:
     answer_choices: Oui ||| Non
     id: 663470b8-3fab-449c-84ab-6c4738da51b3
     jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nConsid\xE9rez la description\
-      \ suivante: {{ ctx_a }}\nEst-ce que la suite suivante est une continuation appropri\xE9\
-      e?\n{{ ctx_b }} {{ endings[instance] }}\nOui ou non?\n||| \n{% if label  ==\
-      \ instance | string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n\
+      \ suivante : {{ ctx_a }}\nCe qui suit est-il une suite appropri\xE9e\_?\n{{\
+      \ ctx_b }} {{ endings[instance] }}\nOui ou non?\n||| \n{% if label  == instance\
+      \ | string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -87,7 +87,7 @@ templates:
   6e9f8d7d-9016-45bc-b997-c42aeb2dc944: !Template
     answer_choices: '{{endings | join("|||")}}'
     id: 6e9f8d7d-9016-45bc-b997-c42aeb2dc944
-    jinja: 'Comment cette phrase se termine-t-elle?
+    jinja: 'Comment se termine cette phrase ?
 
       {{ctx}}
 
@@ -104,7 +104,7 @@ templates:
       (d)  {{answer_choices[3]}}
 
 
-      Astuce: le sujet de la phrase est {{activity_label}}
+      Indice : le sujet de la phrase est {{activity_label}}
 
       |||
 
@@ -119,13 +119,8 @@ templates:
   a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e: !Template
     answer_choices: null
     id: a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e
-    jinja: 'Comment commenceriez-vous la phrase:
-
-      {{endings[label | int()]}}
-
-      |||
-
-      {{ctx}}'
+    jinja: "Comment commenceriez-vous la phrase\_:\n{{endings[label | int()]}}\n|||\n\
+      {{ctx}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -137,11 +132,11 @@ templates:
   d95b81c4-5db7-44c1-926e-c7222c896a32: !Template
     answer_choices: Oui ||| Non
     id: d95b81c4-5db7-44c1-926e-c7222c896a32
-    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nConsid\xE9rez le texte suivant:\
-      \ {{ ctx_b }} {{ endings[instance] }}\nEst-ce une continuation appropri\xE9\
-      e du texte suivant: \n{{ ctx_a }} ?\nOui ou non?\n||| \n{% if label  == instance\
-      \ | string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n\
-      {% endif %}"
+    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nConsid\xE9rez le texte suivant\
+      \ : {{ ctx_b }} {{ endings[instance] }}\nEst-ce une suite appropri\xE9e du texte\
+      \ suivant\_: \n{{ ctx_a }} ?\nOui ou non?\n||| \n{% if label  == instance |\
+      \ string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n{%\
+      \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -153,23 +148,9 @@ templates:
   db8b1c25-f2db-4604-b8fc-f93d69d6fae7: !Template
     answer_choices: Fin 1 ||| Fin 2 ||| Fin 3 ||| Fin 4
     id: db8b1c25-f2db-4604-b8fc-f93d69d6fae7
-    jinja: '{{ ctx }}...
-
-      Comment la description se termine-t-elle probablement?
-
-
-      Fin 1: {{ endings[0] }}
-
-
-      Fin 2: {{ endings[1] }}
-
-
-      Fin 3: {{ endings[2] }}
-
-
-      Fin 4: {{ endings[3] }}
-
-      ||| {{ answer_choices[label | int()] }}'
+    jinja: "{{ ctx }}...\nComment la description se termine-t-elle probablement\_\
+      ?\n\nFin 1\_: {{ endings[0] }}\n\nFin 2\_: {{ endings[1] }}\n\nFin 3\_: {{ endings[2]\
+      \ }}\n\nFin 4\_: {{ endings[3] }}\n||| {{ answer_choices[label | int()] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -180,9 +161,9 @@ templates:
   def77598-682f-48de-b187-55db4d390f07: !Template
     answer_choices: Fin 1 ||| Fin 2 ||| Fin 3 ||| Fin 4
     id: def77598-682f-48de-b187-55db4d390f07
-    jinja: "Si une description d'une situation commence comme ceci: {{ ctx }}... Then\
-      \ how\ndoes it continue? \n\nFin 1: {{ endings[0] }}\n\nFin 2: {{ endings[1]\
-      \ }}\n\nFin 3: {{ endings[2] }}\n\nFin 4: {{ endings[3] }}\n|||{{answer_choices[label\
+    jinja: "Si la description d'une situation commence ainsi\_: {{ ctx }}... Then\
+      \ how\ndoes it continue? \n\nFin 1\_: {{ endings[0] }}\n\nFin 2\_: {{ endings[1]\
+      \ }}\n\nFin 3\_: {{ endings[2] }}\n\nFin 4\_: {{ endings[3] }}\n|||{{answer_choices[label\
       \ | int()] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

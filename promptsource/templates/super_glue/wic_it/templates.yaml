@@ -48,7 +48,7 @@ templates:
     answer_choices: "No ||| s\xEC"
     id: 611d13dc-d414-4b9b-9204-e4f325e859e7
     jinja: "Compiti a casa\n\nDecidi se la parola \"{{word}}\" \xE8 usata con lo stesso\
-      \ significato nelle due frasi seguenti. Rispondi per s\xEC o no.\n{{sentence1}}\n\
+      \ significato nelle due frasi seguenti. Rispondi con s\xEC o no.\n{{sentence1}}\n\
       {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
       \ %}"
     metadata: !TemplateMetadata
@@ -59,7 +59,7 @@ templates:
     name: grammar_homework
     reference: ''
   725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
-    answer_choices: Falso ||| True
+    answer_choices: Falso ||| Vero
     id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
     jinja: 'Frase A: {{sentence1}}
 
@@ -118,8 +118,8 @@ templates:
   cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
     answer_choices: "No ||| s\xEC"
     id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
-    jinja: "Determina se la parola '{{word}}' viene utilizzata allo stesso modo nelle\
-      \ due frasi seguenti. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n\
+    jinja: "Determina se la parola '{{word}}' \xE8 usata allo stesso modo nelle due\
+      \ frasi seguenti. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n\
       {{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -132,8 +132,8 @@ templates:
     answer_choices: "No ||| s\xEC"
     id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
     jinja: "{{sentence1}}\n{{sentence2}}\nDomanda: La parola '{{word}}' \xE8 usata\
-      \ nello stesso senso nelle due frasi sopra? Si No?\n||| {% if label != -1%}\n\
-      {{answer_choices[label]}}\n{% endif %}"
+      \ nello stesso senso nelle due frasi precedenti? Si No?\n||| {% if label !=\
+      \ -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

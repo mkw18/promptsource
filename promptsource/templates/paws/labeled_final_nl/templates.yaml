@@ -4,8 +4,8 @@ templates:
   0be7cecd-b427-4ec9-9b0e-666d6dae0063: !Template
     answer_choices: Nee ||| Ja
     id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
-    jinja: "Bepaal of de volgende twee zinnen elkaar parafraseren of niet.\nZin 1:\
-      \ {{sentence1}}\nZin 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
+    jinja: "Bepaal of de volgende twee zinnen elkaar parafraseren of niet.\nzin 1:\
+      \ {{sentence1}}\nzin 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -16,8 +16,8 @@ templates:
   472fe5eb-b499-4952-a930-f72f4ca9ed43: !Template
     answer_choices: Nee ||| Ja
     id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
-    jinja: "Zin 1: {{sentence1}}\nZin 2: {{sentence2}}\nVraag: Zin 1 en zin 2 drukken\
-      \ dezelfde betekenis uit?Ja of nee? \n||| \n{{answer_choices[label]}}"
+    jinja: "zin 1: {{sentence1}}\nzin 2: {{sentence2}}\nVraag: Hebben zin 1 en zin\
+      \ 2 dezelfde betekenis? Ja of nee? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -40,8 +40,8 @@ templates:
   678400f8-1a5c-4a40-b5ef-abeaa41e20ec: !Template
     answer_choices: Nee ||| Ja
     id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
-    jinja: "Zin 1: {{sentence1}}\nZin 2: {{sentence2}}\nVraag: Kunnen we zin 1 herschrijven\
-      \ tot zin 2? \n||| \n{{answer_choices[label]}}"
+    jinja: "zin 1: {{sentence1}}\nzin 2: {{sentence2}}\nVraag: Kunnen we zin 1 herschrijven\
+      \ naar zin 2? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -64,8 +64,8 @@ templates:
   8c259e88-7646-4a50-a4ca-90393920f281: !Template
     answer_choices: Nee ||| Ja
     id: 8c259e88-7646-4a50-a4ca-90393920f281
-    jinja: "Zin 1: {{sentence1}}\nZin 2: {{sentence2}}\nVraag: Parafrase -zin 2 van\
-      \ de zin 1?Ja of nee? \n||| \n{{answer_choices[label]}}"
+    jinja: "zin 1: {{sentence1}}\nzin 2: {{sentence2}}\nVraag: Parafraseert zin 1\
+      \ zin 2? Ja of nee? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -89,8 +89,8 @@ templates:
   a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076: !Template
     answer_choices: Nee ||| Ja
     id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
-    jinja: "Zin 1: {{sentence1}}\nZin 2: {{sentence2}}\nVraag: Parafrase -zin 2 van\
-      \ de zin 1? \n||| \n{{answer_choices[label]}}"
+    jinja: "zin 1: {{sentence1}}\nzin 2: {{sentence2}}\nVraag: Parafraseert zin 1\
+      \ zin 2? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -101,8 +101,8 @@ templates:
   d5239f5f-2014-47c9-a0c1-4896f76f82a4: !Template
     answer_choices: Nee ||| Ja
     id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
-    jinja: "Zin 1: {{sentence1}}\nZin 2: {{sentence2}}\nVraag: Zin 1 en zin 2 drukken\
-      \ dezelfde betekenis uit? \n||| \n{{answer_choices[label]}}"
+    jinja: "zin 1: {{sentence1}}\nzin 2: {{sentence2}}\nVraag: Hebben zin 1 en zin\
+      \ 2 dezelfde betekenis? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -111,7 +111,7 @@ templates:
     name: Meaning-no-label
     reference: Natural question without label
   d9911dad-75fe-4506-9843-3a46ba5e49be: !Template
-    answer_choices: Vals ||| WAAR
+    answer_choices: niet waar ||| WAAR
     id: d9911dad-75fe-4506-9843-3a46ba5e49be
     jinja: "{{sentence1}} Vraag: {{sentence2}} Waar of niet waar? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
@@ -124,8 +124,8 @@ templates:
   dd52359b-dc56-4241-8179-c98c636f0335: !Template
     answer_choices: Nee ||| Ja
     id: dd52359b-dc56-4241-8179-c98c636f0335
-    jinja: "Zin 1: {{sentence1}}\nZin 2: {{sentence2}}\nVraag: Kunnen we zin 1 herschrijven\
-      \ tot zin 2?Ja of nee? \n||| \n{{answer_choices[label]}}"
+    jinja: "zin 1: {{sentence1}}\nzin 2: {{sentence2}}\nVraag: Kunnen we zin 1 herschrijven\
+      \ naar zin 2? Ja of nee? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -136,7 +136,7 @@ templates:
   f0866713-c59a-4c5d-a307-95e80a935f99: !Template
     answer_choices: Nee ||| Ja
     id: f0866713-c59a-4c5d-a307-95e80a935f99
-    jinja: "{{sentence1}} Vraag: {{sentence2}} Parafrase of niet?\n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}} Vraag: {{sentence2}} Parafraseren of niet?\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

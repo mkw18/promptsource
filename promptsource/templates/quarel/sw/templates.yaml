@@ -7,7 +7,7 @@ templates:
     jinja: 'Swali: {{question}}
 
 
-      Usitumie {{"a"}} na {{"b"}} kujibu swali lakini badala yake, chagua kati ya
+      Usitumie {{"A"}} na {{"B"}} kujibu swali lakini badala yake, chagua kati ya
       "{{answer_choices[0]}}" na "{{answer_choices[1]}}".
 
       |||
@@ -23,7 +23,7 @@ templates:
   5b5f9d29-0ad5-4bb9-831a-11fcb115c10d: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
-    jinja: 'Hapa kuna mtihani wa mantiki: {{question}}
+    jinja: 'Hapa kuna jaribio la mantiki: {{question}}
 
 
       Chagua jibu kati ya "{{answer_choices[0]}}" na "{{answer_choices[1]}}".
@@ -44,7 +44,7 @@ templates:
     jinja: 'Hapa kuna hadithi fupi: {{question}}.
 
 
-      Je! Ni jibu gani la busara zaidi kati ya "{{answer_choices[0]}}" na "{{answer_choices[1]}}"?
+      Je, ni jibu gani la maana zaidi kati ya "{{answer_choices[0]}}" na "{{answer_choices[1]}}"?
 
       |||
 
@@ -78,7 +78,7 @@ templates:
     id: 92013fab-5387-44d4-bf0f-e29a31bcafb6
     jinja: 'Ninajaribu mantiki ya wanafunzi wangu.
 
-      Je! Ni jibu gani wanapaswa kuchagua kati ya "{{answer_choices[0]}}" na "{{answer_choices[1]}}"?
+      Je, ni jibu gani wanapaswa kuchagua kati ya "{{answer_choices[0]}}" na "{{answer_choices[1]}}"?
 
       Mtihani wa mantiki: {{question}}
 

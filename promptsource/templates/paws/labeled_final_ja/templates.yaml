@@ -2,10 +2,12 @@ dataset: paws
 subset: labeled_final_ja
 templates:
   0be7cecd-b427-4ec9-9b0e-666d6dae0063: !Template
-    answer_choices: No ||| Yes
+    answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
-    jinja: "Determine if the following two sentences paraphrase each other or not.\n\
-      Sent 1: {{sentence1}}\nSent 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
+    jinja: "\u6B21\u306E 2 \u3064\u306E\u6587\u304C\u4E92\u3044\u306B\u8A00\u3044\u63DB\
+      \u3048\u3089\u308C\u3066\u3044\u308B\u304B\u3069\u3046\u304B\u3092\u5224\u65AD\
+      \u3057\u307E\u3059\u3002\n\u6587 1: {{sentence1}}\n\u6587 2: {{sentence2}}\n\
+      ||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -14,10 +16,11 @@ templates:
     name: task_description-no-label
     reference: Generalized prompt format, task_description-input.
   472fe5eb-b499-4952-a930-f72f4ca9ed43: !Template
-    answer_choices: No ||| Yes
+    answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
-    jinja: "Sentence 1: {{sentence1}}\nSentence 2: {{sentence2}}\nQuestion: Do Sentence\
-      \ 1 and Sentence 2 express the same meaning? Yes or No? \n||| \n{{answer_choices[label]}}"
+    jinja: "\u6587 1: {{sentence1}}\n\u6587 2: {{sentence2}}\n\u8CEA\u554F: \u6587\
+      \ 1 \u3068\u6587 2 \u306F\u540C\u3058\u610F\u5473\u3067\u3059\u304B?\u306F\u3044\
+      \u3001\u3082\u3057\u304F\u306F\u3001\u3044\u3044\u3048\uFF1F \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -26,10 +29,10 @@ templates:
     name: Meaning
     reference: Natural question
   4c8d4e4c-eae4-45f6-bdf0-d132ae198d09: !Template
-    answer_choices: No ||| Yes
+    answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
-    jinja: "{{sentence1}}\nIs that a paraphrase of the following sentence?\n{{sentence2}}?\n\
-      ||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}}\n\u305D\u308C\u306F\u6B21\u306E\u6587\u306E\u8A00\u3044\u63DB\
+      \u3048\u3067\u3059\u304B\uFF1F\n{{sentence2}}?\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -38,10 +41,11 @@ templates:
     name: context-question-no-label
     reference: Generalized prompt format, context-question without any label
   678400f8-1a5c-4a40-b5ef-abeaa41e20ec: !Template
-    answer_choices: No ||| Yes
+    answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
-    jinja: "Sentence 1: {{sentence1}}\nSentence 2: {{sentence2}}\nQuestion: Can we\
-      \ rewrite Sentence 1 to Sentence 2? \n||| \n{{answer_choices[label]}}"
+    jinja: "\u6587 1: {{sentence1}}\n\u6587 2: {{sentence2}}\n\u8CEA\u554F: \u6587\
+      \ 1 \u3092\u6587 2 \u306B\u66F8\u304D\u63DB\u3048\u308B\u3053\u3068\u306F\u3067\
+      \u304D\u307E\u3059\u304B? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -50,10 +54,11 @@ templates:
     name: Rewrite-no-label
     reference: Natural Question without label
   7c205a61-64d4-4673-bb8e-bfa77562eede: !Template
-    answer_choices: No ||| Yes
+    answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 7c205a61-64d4-4673-bb8e-bfa77562eede
-    jinja: "{{sentence1}}\nIs that a paraphrase of the following sentence?\n{{sentence2}}?\n\
-      Yes or No.\n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}}\n\u305D\u308C\u306F\u6B21\u306E\u6587\u306E\u8A00\u3044\u63DB\
+      \u3048\u3067\u3059\u304B\uFF1F\n{{sentence2}}\uFF1F\n\u306F\u3044\u3001\u3082\
+      \u3057\u304F\u306F\u3001\u3044\u3044\u3048\u3002\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -62,11 +67,12 @@ templates:
     name: context-question
     reference: Generalized prompt format, context-question
   8c259e88-7646-4a50-a4ca-90393920f281: !Template
-    answer_choices: No ||| Yes
+    answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 8c259e88-7646-4a50-a4ca-90393920f281
-    jinja: "Sentence 1: {{sentence1}}\n\u65872\uFF1A {{sentence2}}\n\u8CEA\u554F\uFF1A\
-      \u65871\u8A00\u3044\u63DB\u3048\u65872\uFF1F\u306F\u3044\u3001\u3082\u3057\u304F\
-      \u306F\u3001\u3044\u3044\u3048\uFF1F \n||| \n{{answer_choices[label]}}"
+    jinja: "\u6587 1: {{sentence1}}\n\u6587 2: {{sentence2}}\n\u8CEA\u554F: \u6587\
+      \ 1 \u306F\u6587 2 \u3092\u8A00\u3044\u63DB\u3048\u3066\u3044\u307E\u3059\u304B\
+      ?\u306F\u3044\u3001\u3082\u3057\u304F\u306F\u3001\u3044\u3044\u3048\uFF1F \n\
+      ||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -77,8 +83,8 @@ templates:
   a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
     answer_choices: null
     id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
-    jinja: "{% if label == 1 %} \nParaphrase the sentence: {{sentence1}} \n||| \n\
-      {{sentence2}} \n{% endif %}"
+    jinja: "{% if label == 1 %} \n\u6587\u3092\u8A00\u3044\u63DB\u3048\u3066\u304F\
+      \u3060\u3055\u3044\uFF1A {{sentence1}} \n||| \n{{sentence2}} \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -88,10 +94,11 @@ templates:
     name: paraphrase-task
     reference: Create a generative paraphrase task
   a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076: !Template
-    answer_choices: "No ||| \u306F\u3044"
+    answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
-    jinja: "\u65871\uFF1A {{sentence1}}\nSentence 2: {{sentence2}}\n\u8CEA\u554F\uFF1A\
-      \u65871\u8A00\u3044\u63DB\u3048\u65872\uFF1F \n||| \n{{answer_choices[label]}}"
+    jinja: "\u6587 1: {{sentence1}}\n\u6587 2: {{sentence2}}\n\u8CEA\u554F: \u6587\
+      \ 1 \u306F\u6587 2 \u3092\u8A00\u3044\u63DB\u3048\u3066\u3044\u307E\u3059\u304B\
+      ? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -100,10 +107,11 @@ templates:
     name: Concatenation-no-label
     reference: Concatenation of sentence 1 and sentence 2 without any label
   d5239f5f-2014-47c9-a0c1-4896f76f82a4: !Template
-    answer_choices: "No ||| \u306F\u3044"
+    answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
-    jinja: "Sentence 1: {{sentence1}}\nSentence 2: {{sentence2}}\nQuestion: Do Sentence\
-      \ 1 and Sentence 2 express the same meaning? \n||| \n{{answer_choices[label]}}"
+    jinja: "\u6587 1: {{sentence1}}\n\u6587 2: {{sentence2}}\n\u8CEA\u554F: \u6587\
+      \ 1 \u3068\u6587 2 \u306F\u540C\u3058\u610F\u5473\u3067\u3059\u304B? \n||| \n\
+      {{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -112,9 +120,10 @@ templates:
     name: Meaning-no-label
     reference: Natural question without label
   d9911dad-75fe-4506-9843-3a46ba5e49be: !Template
-    answer_choices: "False ||| \u771F\u5B9F"
+    answer_choices: "\u9593\u9055\u3044 ||| \u771F\u5B9F"
     id: d9911dad-75fe-4506-9843-3a46ba5e49be
-    jinja: "{{sentence1}} Question: {{sentence2}} True or False? \n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}} \u8CEA\u554F\uFF1A {{sentence2}} \u6B63\u3057\u3044\u304B\
+      \u9593\u9055\u3063\u3066\u3044\u308B\u304B\uFF1F \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -123,12 +132,12 @@ templates:
     name: PAWS-ANLI GPT3
     reference: ANLI prompt format from Table G7 in the GPT3 paper
   dd52359b-dc56-4241-8179-c98c636f0335: !Template
-    answer_choices: "No ||| \u306F\u3044"
+    answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: dd52359b-dc56-4241-8179-c98c636f0335
-    jinja: "Sentence 1: {{sentence1}}\nSentence 2: {{sentence2}}\n\u8CEA\u554F\uFF1A\
-      \u65871\u3092\u65872\u306B\u66F8\u304D\u63DB\u3048\u308B\u3053\u3068\u306F\u3067\
-      \u304D\u307E\u3059\u304B\uFF1F\u306F\u3044\u3001\u3082\u3057\u304F\u306F\u3001\
-      \u3044\u3044\u3048\uFF1F \n||| \n{{answer_choices[label]}}"
+    jinja: "\u6587 1: {{sentence1}}\n\u6587 2: {{sentence2}}\n\u8CEA\u554F: \u6587\
+      \ 1 \u3092\u6587 2 \u306B\u66F8\u304D\u63DB\u3048\u308B\u3053\u3068\u306F\u3067\
+      \u304D\u307E\u3059\u304B?\u306F\u3044\u3001\u3082\u3057\u304F\u306F\u3001\u3044\
+      \u3044\u3048\uFF1F \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -139,7 +148,7 @@ templates:
   f0866713-c59a-4c5d-a307-95e80a935f99: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: f0866713-c59a-4c5d-a307-95e80a935f99
-    jinja: "{{sentence1}} Question: {{sentence2}} \u8A00\u3044\u63DB\u3048\u3066\u3044\
+    jinja: "{{sentence1}} \u8CEA\u554F\uFF1A {{sentence2}} \u8A00\u3044\u63DB\u3048\
       \u308B\u304B\u3069\u3046\u304B\uFF1F\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false

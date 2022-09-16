@@ -1,0 +1,99 @@
+dataset: winogrande
+subset: winogrande_debiased_ta
+templates:
+  1ce2be12-1815-4a07-80a7-ac3c3505b005: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 1ce2be12-1815-4a07-80a7-ac3c3505b005
+    jinja: "{{sentence}}\n\u0BAE\u0BC7\u0BB2\u0BC7 \u0B89\u0BB3\u0BCD\u0BB3 \u0BB5\
+      \u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BA4\u0BCD\u0BA4\u0BBF\u0BB2\u0BCD _ \u0B90\
+      \ \u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9 \u0BB5\u0BBF\u0BB0\u0BC1\u0BAA\u0BCD\u0BAA\
+      \u0BA4\u0BCD\u0BA4\u0BC1\u0B9F\u0BA9\u0BCD \u0BAE\u0BBE\u0BB1\u0BCD\u0BB1\u0BB5\
+      \u0BC1\u0BAE\u0BCD: \n- {{option1}}\n- {{option2}}\n|||\n{% if answer == '1'\
+      \ %} {{option1}} {% else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Replace
+    reference: ''
+  1ddbbca4-8917-4a1d-9d83-f42db77f24ba: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 1ddbbca4-8917-4a1d-9d83-f42db77f24ba
+    jinja: "{{sentence}}\n\u0BAE\u0BC7\u0BB2\u0BC7 \u0B89\u0BB3\u0BCD\u0BB3 \u0BB5\
+      \u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BA4\u0BCD\u0BA4\u0BBF\u0BB2\u0BCD \u0B89\
+      \u0BB3\u0BCD\u0BB3 _ \u0B8E\u0BA4\u0BC8\u0B95\u0BCD \u0B95\u0BC1\u0BB1\u0BBF\
+      \u0B95\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BC1? {{option1}} \u0B85\u0BB2\u0BCD\u0BB2\
+      \u0BA4\u0BC1 {{option2}}? ||| {% if answer == '1' %} {{option1}} {% else %}\
+      \ {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: underscore refer to
+    reference: ''
+  276eaba6-17e5-403a-98c7-0f8c53c35221: !Template
+    answer_choices: '{{ option1 }} ||| {{ option2 }}'
+    id: 276eaba6-17e5-403a-98c7-0f8c53c35221
+    jinja: "{{ sentence }} \u0BAE\u0BC1\u0BA8\u0BCD\u0BA4\u0BC8\u0BAF \u0BB5\u0BBE\
+      \u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BA4\u0BCD\u0BA4\u0BBF\u0BB2\u0BCD, _ \u0B8E\
+      \u0BA9\u0BCD\u0BAA\u0BA4\u0BC1 {{option1}} \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1\
+      \ {{option2}} \u0B90\u0B95\u0BCD \u0B95\u0BC1\u0BB1\u0BBF\u0B95\u0BCD\u0B95\u0BBF\
+      \u0BB1\u0BA4\u0BBE? ||| {% if answer == '1' %} {{option1}} {% else %} {{ option2\
+      \ }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does underscore refer to
+    reference: ''
+  9702d456-4261-4a7e-94c5-6a9d2a1c4859: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 9702d456-4261-4a7e-94c5-6a9d2a1c4859
+    jinja: "\u0B95\u0BC0\u0BB4\u0BC7 \u0B89\u0BB3\u0BCD\u0BB3 \u0BB5\u0BBE\u0B95\u0BCD\
+      \u0B95\u0BBF\u0BAF\u0BA4\u0BCD\u0BA4\u0BBF\u0BB2\u0BCD, _ \u0B8E\u0BA9\u0BCD\
+      \u0BAA\u0BA4\u0BC1 {{answer_choices[0]}} \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1\
+      \ {{answer_choices[1]}} \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC8\u0B95\u0BCD \u0B95\
+      \u0BC1\u0BB1\u0BBF\u0B95\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BBE?\n{{sentence}}|||\n\
+      {{answer_choices[answer | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: stand for
+    reference: ''
+  bb9b91fc-760a-45cd-bacd-dcb05a1cb2f3: !Template
+    answer_choices: "\u0B89\u0BA3\u0BCD\u0BAE\u0BC8 ||| \u0BAA\u0BCA\u0BAF\u0BCD"
+    id: bb9b91fc-760a-45cd-bacd-dcb05a1cb2f3
+    jinja: "\u0B95\u0BC0\u0BB4\u0BC7 \u0B89\u0BB3\u0BCD\u0BB3 \u0BB5\u0BBE\u0B95\u0BCD\
+      \u0B95\u0BBF\u0BAF\u0BA4\u0BCD\u0BA4\u0BBF\u0BB2\u0BCD \u0B89\u0BB3\u0BCD\u0BB3\
+      \ _ \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC1 {{option1}} \u0B8E\u0BA9\u0BCD\u0BAA\
+      \u0BA4\u0BC8\u0B95\u0BCD \u0B95\u0BC1\u0BB1\u0BBF\u0B95\u0BCD\u0B95\u0BBF\u0BB1\
+      \u0BA4\u0BC1. \u0B9A\u0BB0\u0BBF\u0BAF\u0BBE \u0BA4\u0BB5\u0BB1\u0BBE?\n{{sentence}}|||\n\
+      {{answer_choices[answer|int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: True or False
+    reference: ''
+  ebabc54d-cff4-46a7-9c22-2412b8ce00c6: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: ebabc54d-cff4-46a7-9c22-2412b8ce00c6
+    jinja: "\u0B95\u0BC0\u0BB4\u0BC7 \u0B89\u0BB3\u0BCD\u0BB3 \u0BB5\u0BBE\u0B95\u0BCD\
+      \u0B95\u0BBF\u0BAF\u0BA4\u0BCD\u0BA4\u0BBF\u0BB2\u0BCD _ \u0B90 \u0BA8\u0BBF\
+      \u0BB0\u0BAA\u0BCD\u0BAA\u0BB5\u0BC1\u0BAE\u0BCD:\n{{sentence}}\n\n\u0BA4\u0BC7\
+      \u0BB0\u0BCD\u0BB5\u0BC1\u0B95\u0BB3\u0BCD:\n- {{ option1 }}\n- {{ option2 }}\n\
+      \n\u0BAA\u0BA4\u0BBF\u0BB2\u0BCD: ||| {% if answer == '1' %} {{option1}} {%\
+      \ else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fill in the blank
+    reference: ''

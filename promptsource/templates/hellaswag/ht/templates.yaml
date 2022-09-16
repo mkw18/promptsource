@@ -4,7 +4,7 @@ templates:
   00caa8cb-7f67-43bc-9e90-fc1d5d329432: !Template
     answer_choices: '{{endings | join(" ||| ")}}'
     id: 00caa8cb-7f67-43bc-9e90-fc1d5d329432
-    jinja: "Ranpli deskripsyon an ak yon fen ki apwopriye:\nPremye, {{ ctx_a.lower()\
+    jinja: "Ranpli deskripsyon an ak yon fen ki apwopriye:\nPremy\xE8man, {{ ctx_a.lower()\
       \ }} L\xE8 sa a, {{ ctx_b.lower() }} ...\n\n(a) {{ answer_choices[0] }}\n\n\
       (b) {{ answer_choices[1] }}\n\n(c) {{ answer_choices[2] }}\n\n(d) {{ answer_choices[3]\
       \ }}\n|||\n{{ answer_choices[label | int()] }}"
@@ -30,7 +30,7 @@ templates:
   1fd44f45-d0e6-41ad-a01f-737f4c53645b: !Template
     answer_choices: '{{endings | join(" ||| ")}}'
     id: 1fd44f45-d0e6-41ad-a01f-737f4c53645b
-    jinja: 'Ranpli fraz la: {{ctx}}
+    jinja: 'Konplete fraz la: {{ctx}}
 
       |||
 
@@ -46,8 +46,8 @@ templates:
   4ebf22a1-2d23-426c-a083-b43fc8567687: !Template
     answer_choices: null
     id: 4ebf22a1-2d23-426c-a083-b43fc8567687
-    jinja: "{{ctx}} {{endings[label | int()]}}\n\xC8ske ou ka idantifye sij\xE8 a\
-      \ nan paragraf la? \n|||\n{{activity_label}}"
+    jinja: "{{ctx}} {{endings[label | int()]}}\n\xC8ske w ka idantifye sij\xE8 paragraf\
+      \ la? \n|||\n{{activity_label}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -59,10 +59,10 @@ templates:
   52fbd075-46cb-49fb-a41b-00a0f4a60285: !Template
     answer_choices: '{{endings | join(" ||| ") }}'
     id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
-    jinja: "{% set prompts = [\n'\xC8ske ou ka chwazi fini ki k\xF2r\xE8k la pou fraz\
-      \ la: ',\n'Travay la se jenere fini an pou fraz la: ',\n'Kijan fraz sa a fini?\
-      \ ',\n'Soti nan lis la nan t\xE8minezon ki dekri anba a, ki sa ki fini f\xE8\
-      \ sans ki pi pou fraz la ',]\n%}\n{{prompts | choice}}\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\
+    jinja: "{% set prompts = [\n'\xC8ske ou ka chwazi fen ki k\xF2r\xE8k la pou fraz\
+      \ la: ',\n'Travay la se jenere fen fraz la: ',\n'Ki jan fraz sa a fini? ',\n\
+      'Soti nan lis t\xE8minezon ki dekri anba a, ki sa ki fini ki gen plis sans pou\
+      \ fraz la ',]\n%}\n{{prompts | choice}}\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\
       \n(b)  {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n\
       |||\n{{answer_choices [label | int()]}}"
     metadata: !TemplateMetadata
@@ -76,7 +76,7 @@ templates:
     answer_choices: Wi ||| Non
     id: 663470b8-3fab-449c-84ab-6c4738da51b3
     jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nKonsidere deskripsyon sa a:\
-      \ {{ ctx_a }}\n\xC8ske sa ki annapre yo yon kontinyasyon ki apwopriye?\n{{ ctx_b\
+      \ {{ ctx_a }}\n\xC8ske sa ki annapre yo yon kontinyasyon apwopriye?\n{{ ctx_b\
       \ }} {{ endings[instance] }}\nWi oswa Non?\n||| \n{% if label  == instance |\
       \ string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n{%\
       \ endif %}"
@@ -90,9 +90,10 @@ templates:
   6e9f8d7d-9016-45bc-b997-c42aeb2dc944: !Template
     answer_choices: '{{endings | join("|||")}}'
     id: 6e9f8d7d-9016-45bc-b997-c42aeb2dc944
-    jinja: "Kijan fraz sa a fini?\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\
-      \n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n\nAllusion: sij\xE8\
-      \ sa a nan fraz la se {{activity_label}}\n|||\n{{answer_choices [label | int()]}}"
+    jinja: "Ki jan fraz sa a fini?\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b) \
+      \ {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n\
+      \nSijesyon: sij\xE8 fraz la se {{activity_label}}\n|||\n{{answer_choices [label\
+      \ | int()]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -116,7 +117,7 @@ templates:
     answer_choices: Wi ||| Non
     id: d95b81c4-5db7-44c1-926e-c7222c896a32
     jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nKonsidere t\xE8ks sa a: {{\
-      \ ctx_b }} {{ endings[instance] }}\n\xC8ske li yon kontinyasyon apwopriye nan\
+      \ ctx_b }} {{ endings[instance] }}\n\xC8ske se yon kontinyasyon apwopriye nan\
       \ t\xE8ks sa a: \n{{ ctx_a }} ?\nWi oswa Non?\n||| \n{% if label  == instance\
       \ | string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n\
       {% endif %}"
@@ -133,7 +134,7 @@ templates:
     id: db8b1c25-f2db-4604-b8fc-f93d69d6fae7
     jinja: '{{ ctx }}...
 
-      Ki jan deskripsyon an gen anpil chans fini?
+      Ki jan deskripsyon an fini?
 
 
       Fini 1: {{ endings[0] }}
@@ -158,9 +159,9 @@ templates:
   def77598-682f-48de-b187-55db4d390f07: !Template
     answer_choices: Fini 1 ||| Fini 2 ||| Fini 3 ||| Fini 4
     id: def77598-682f-48de-b187-55db4d390f07
-    jinja: "Si yon deskripsyon yon sitiyasyon k\xF2manse tankou sa a: {{ ctx }}...\
-      \ Then how\ndoes it continue? \n\nFini 1: {{ endings[0] }}\n\nFini 2: {{ endings[1]\
-      \ }}\n\nFini 3: {{ endings[2] }}\n\nFini 4: {{ endings[3] }}\n|||{{answer_choices[label\
+    jinja: "Si yon deskripsyon sitiyasyon an k\xF2manse konsa: {{ ctx }}... Then how\n\
+      does it continue? \n\nFini 1: {{ endings[0] }}\n\nFini 2: {{ endings[1] }}\n\
+      \nFini 3: {{ endings[2] }}\n\nFini 4: {{ endings[3] }}\n|||{{answer_choices[label\
       \ | int()] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

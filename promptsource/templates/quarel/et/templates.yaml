@@ -4,9 +4,9 @@ templates:
   5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
-    jinja: "K\xFCsimus: {{question}}\n\n\xC4rge kasutage k\xFCsimusele vastamiseks\
-      \ {{\"A\"}} ja {{\"B\"}}, vaid valige selle asemel \"{{answer_choices[0]}}\"\
-      \ ja \"{{answer_choices[1]}}\" vahel.\n|||\n{{answer_choices[answer_index]}}"
+    jinja: "k\xFCsimus: {{question}}\n\n\xC4rge kasutage k\xFCsimusele vastamiseks\
+      \ nuppe {{\"A\"}} ja {{\"B\"}}, vaid valige \"{{answer_choices[0]}}\" ja \"\
+      {{answer_choices[1]}}\" vahel.\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -17,7 +17,7 @@ templates:
   5b5f9d29-0ad5-4bb9-831a-11fcb115c10d: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
-    jinja: 'Siin on loogikatest: {{question}}
+    jinja: 'Siin on loogika test: {{question}}
 
 
       Valige vastus "{{answer_choices[0]}}" ja "{{answer_choices[1]}}" vahel.
@@ -35,8 +35,9 @@ templates:
   63c58389-605a-42b9-85a6-a2586a954a92: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 63c58389-605a-42b9-85a6-a2586a954a92
-    jinja: "Siin on novell: {{question}}.\n\nMis on \"{{answer_choices[0]}}\" ja\
-      \ \"{{answer_choices[1]}}\" vahel k\xF5ige sensaalsem vastus?\n|||\n{{answer_choices[answer_index]}}"
+    jinja: "Siin on l\xFChike lugu: {{question}}.\n\nMis on k\xF5ige m\xF5istlikum\
+      \ vastus \"{{answer_choices[0]}}\" ja \"{{answer_choices[1]}}\" vahel?\n|||\n\
+      {{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -48,7 +49,7 @@ templates:
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 73a7adbb-41b1-4b4d-b378-d7e17d030a6f
     jinja: "Valige \"{{answer_choices[0]}}\" ja \"{{answer_choices[1]}}\" vahel.\n\
-      K\xFCsimus: {{question}}\n|||\n{{answer_choices[answer_index]}}"
+      k\xFCsimus: {{question}}\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -59,9 +60,9 @@ templates:
   92013fab-5387-44d4-bf0f-e29a31bcafb6: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 92013fab-5387-44d4-bf0f-e29a31bcafb6
-    jinja: "Testin oma \xF5pilaste loogikat.\nMis on vastus, mille nad peaksid valima\
-      \ \"{{answer_choices[0]}}\" ja \"{{answer_choices[1]}}\" vahel?\nLoogika test:\
-      \ {{question}}\n|||\n{{answer_choices[answer_index]}}"
+    jinja: "Testin oma \xF5pilaste loogikat.\nMillise vastuse peaksid nad valima \"\
+      {{answer_choices[0]}}\" ja \"{{answer_choices[1]}}\" vahel?\nLoogika test: {{question}}\n\
+      |||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

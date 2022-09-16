@@ -17,7 +17,7 @@ templates:
   1a68b62e-404c-4037-baec-7e20cb4c3f6b: !Template
     answer_choices: '{{ options | join("|||") }}'
     id: 1a68b62e-404c-4037-baec-7e20cb4c3f6b
-    jinja: "Lea el siguiente art\xEDculo y responda la pregunta.\nArt\xEDculo: {{article}}\n\
+    jinja: "Lee el siguiente art\xEDculo y responde la pregunta.\nArt\xEDculo: {{article}}\n\
       Pregunta: {{question}}\nResponder:\n|||\n{{ answer_choices[{\"A\":0,\"B\":1,\"\
       C\":2,\"D\":3}[answer]] }}"
     metadata: !TemplateMetadata
@@ -31,7 +31,7 @@ templates:
     answer_choices: "S\xED ||| No"
     id: 2e7f5fff-518e-4100-90f9-cca094b11e95
     jinja: "{% set candidate = [\"A\", \"B\", \"C\", \"D\"] | choice %}\nArt\xEDculo:\
-      \ {{article}}\nPregunta: {{question}}\nSi o no, es la respuesta \"{{ [options.0,options.1,options.2,options.3][{\"\
+      \ {{article}}\nPregunta: {{question}}\nsi o no es la respuesta \"{{ [options.0,options.1,options.2,options.3][{\"\
       A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\"?\n|||\n{% if candidate == answer\
       \ %}\nS\xED\n{% else %}\nNo\n{% endif %}"
     metadata: !TemplateMetadata
@@ -82,10 +82,10 @@ templates:
   9aedaa07-b815-4a35-890b-6100f00706aa: !Template
     answer_choices: null
     id: 9aedaa07-b815-4a35-890b-6100f00706aa
-    jinja: "Escriba una pregunta m\xFAltiple para el siguiente art\xEDculo, con las\
-      \ opciones y la respuesta dadas:\nArt\xEDculo: {{article}}\nOpciones:\n{{\"\
-      A\"}} {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"\
-      D\"}} {{options.3}}\nResponder:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"\
+    jinja: "Escriba una pregunta de opci\xF3n m\xFAltiple para el siguiente art\xED\
+      culo, con las opciones y respuestas dadas:\nArt\xEDculo: {{article}}\nOpciones:\n\
+      {{\"A\"}} {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n\
+      {{\"D\"}} {{options.3}}\nResponder:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"\
       A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\nPregunta: \n|||\n{{question}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -98,10 +98,10 @@ templates:
   af4869c4-35af-4644-86d9-27843ca4efd5: !Template
     answer_choices: null
     id: af4869c4-35af-4644-86d9-27843ca4efd5
-    jinja: "Escribe una pregunta m\xFAltiple para el siguiente art\xEDculo:\nArt\xED\
-      culo: {{article}}\n|||\nPregunta: \n{{question}}\nOpciones:\n{{\"A\"}} {{options.0}}\n\
-      {{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\n\
-      Responder:\n{{answer}}"
+    jinja: "Escriba una pregunta de opci\xF3n m\xFAltiple para el siguiente art\xED\
+      culo:\nArt\xEDculo: {{article}}\n|||\nPregunta: \n{{question}}\nOpciones:\n\
+      {{\"A\"}} {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n\
+      {{\"D\"}} {{options.3}}\nResponder:\n{{answer}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

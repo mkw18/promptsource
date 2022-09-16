@@ -4,8 +4,8 @@ templates:
   5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
-    jinja: "Pitanje: {{question}}\n\nNe koristite {{\"a\"}} i {{\"b\"}} da biste odgovorili\
-      \ na pitanje, ve\u0107 umjesto toga, odaberite izme\u0111u \"{{answer_choices[0]}}\"\
+    jinja: "Pitanje: {{question}}\n\nNemojte koristiti {{\"A\"}} i {{\"B\"}} da odgovorite\
+      \ na pitanje, ve\u0107 umjesto toga odaberite izme\u0111u \"{{answer_choices[0]}}\"\
       \ i \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -29,7 +29,7 @@ templates:
   63c58389-605a-42b9-85a6-a2586a954a92: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 63c58389-605a-42b9-85a6-a2586a954a92
-    jinja: "Evo kratke pri\u010De: {{question}}.\n\nKoji je najosjetljiviji odgovor\
+    jinja: "Evo kratke pri\u010De: {{question}}.\n\nKoji je najsmisleniji odgovor\
       \ izme\u0111u \"{{answer_choices[0]}}\" i \"{{answer_choices[1]}}\"?\n|||\n\
       {{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
@@ -54,9 +54,9 @@ templates:
   92013fab-5387-44d4-bf0f-e29a31bcafb6: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 92013fab-5387-44d4-bf0f-e29a31bcafb6
-    jinja: "Testiram logiku svojih u\u010Denika.\nKoji je odgovor koji bi trebali\
-      \ birati izme\u0111u \"{{answer_choices[0]}}\" i \"{{answer_choices[1]}}\"?\n\
-      Logi\u010Dki test: {{question}}\n|||\n{{answer_choices[answer_index]}}"
+    jinja: "Ispitujem logiku svojih u\u010Denika.\nKoji bi odgovor trebali izabrati\
+      \ izme\u0111u \"{{answer_choices[0]}}\" i \"{{answer_choices[1]}}\"?\nLogi\u010D\
+      ki test: {{question}}\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

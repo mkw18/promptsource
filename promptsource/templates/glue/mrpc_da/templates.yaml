@@ -4,8 +4,8 @@ templates:
   3b88d2c4-0aeb-4c6d-9ccc-653a388250a5: !Template
     answer_choices: null
     id: 3b88d2c4-0aeb-4c6d-9ccc-653a388250a5
-    jinja: "{% if label == 1 %}\nParafraser f\xF8lgende s\xE6tning: {{sentence1}}\n\
-      |||\n{{sentence2}}\n{% endif %}"
+    jinja: "{% if label == 1 %}\nOmskriv f\xF8lgende s\xE6tning: {{sentence1}}\n|||\n\
+      {{sentence2}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -17,9 +17,8 @@ templates:
   44c2e6d9-facf-4959-8400-38e0eb8dd3a8: !Template
     answer_choices: ingen ||| Ja
     id: 44c2e6d9-facf-4959-8400-38e0eb8dd3a8
-    jinja: "Jeg vil gerne vide, om de f\xF8lgende to s\xE6tninger betyder den samme\
-      \ ting.\n{{sentence1}}\n{{sentence2}}\nG\xF8r de?\n|||\n{{ answer_choices[label]\
-      \ }}"
+    jinja: "Jeg vil gerne vide, om de f\xF8lgende to s\xE6tninger betyder det samme.\n\
+      {{sentence1}}\n{{sentence2}}\nG\xF8r de?\n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -30,8 +29,8 @@ templates:
   adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
     answer_choices: ingen ||| Ja
     id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
-    jinja: "Betyder s\xE6tningen\n{{sentence1}}\nparafrase (det vil sige det samme\
-      \ som) denne s\xE6tning?\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
+    jinja: "Omskriver s\xE6tningen\n{{sentence1}}\n(det vil sige det samme som) denne\
+      \ s\xE6tning?\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -40,10 +39,10 @@ templates:
     name: paraphrase
     reference: ''
   bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
-    answer_choices: "ikke \xE6kvivalent ||| tilsvarende"
+    answer_choices: ikke tilsvarende ||| tilsvarende
     id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
     jinja: "Er de f\xF8lgende to s\xE6tninger \"{{\"tilsvarende\"}}\" eller \"{{\"\
-      ikke \xE6kvivalent\"}}\"?\n{{sentence1}}\n{{sentence2}}\n|||\n{{ answer_choices[label]\
+      ikke tilsvarende\"}}\"?\n{{sentence1}}\n{{sentence2}}\n|||\n{{ answer_choices[label]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -55,8 +54,8 @@ templates:
   d830d7a5-abc0-4275-ac62-974e0088876f: !Template
     answer_choices: null
     id: d830d7a5-abc0-4275-ac62-974e0088876f
-    jinja: "{% if label == 1 %}\nGenerer en s\xE6tning, der betyder den samme ting\
-      \ som denne: {{sentence1}}\n|||\n{{sentence2}}\n{% endif %}"
+    jinja: "{% if label == 1 %}\nGenerer en s\xE6tning, der betyder det samme som\
+      \ denne: {{sentence1}}\n|||\n{{sentence2}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -68,8 +67,8 @@ templates:
   ee82d511-908c-4244-804f-6d0d907c68c7: !Template
     answer_choices: ingen ||| Ja
     id: ee82d511-908c-4244-804f-6d0d907c68c7
-    jinja: "Kan jeg udskifte s\xE6tningen\n{{sentence1}}\nmed s\xE6tningen\n{{sentence2}}\n\
-      og have det til at betyde den samme ting?\n|||\n{{ answer_choices[label] }}"
+    jinja: "Kan jeg erstatte s\xE6tningen\n{{sentence1}}\nmed s\xE6tningen\n{{sentence2}}\n\
+      og f\xE5 den til at betyde det samme?\n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -80,8 +79,8 @@ templates:
   eefd8606-b936-4d26-b91d-8f4bc38bfcbf: !Template
     answer_choices: ingen ||| Ja
     id: eefd8606-b936-4d26-b91d-8f4bc38bfcbf
-    jinja: "Betyder de f\xF8lgende to s\xE6tninger den samme ting?\n{{sentence1}}\n\
-      {{sentence2}}\n|||\n{{ answer_choices[label] }}"
+    jinja: "Betyder de f\xF8lgende to s\xE6tninger det samme?\n{{sentence1}}\n{{sentence2}}\n\
+      |||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

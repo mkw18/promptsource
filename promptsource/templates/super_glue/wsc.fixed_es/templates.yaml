@@ -5,7 +5,7 @@ templates:
     answer_choices: "No ||| S\xED"
     id: 212fb8b1-8436-4f64-8f37-a9094fe029f4
     jinja: "{{ text }} En la oraci\xF3n anterior, \xBFel pronombre \"{{ span2_text.lower()\
-      \ }}\" se refiere {{ span1_text }}? \xBFSi o no? ||| {% if label != -1 %}{{\
+      \ }}\" se refiere a {{ span1_text }}? \xBFSi o no? ||| {% if label != -1 %}{{\
       \ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -17,7 +17,7 @@ templates:
   23361c5d-b67f-4c2a-9da7-16301c55d0e1: !Template
     answer_choices: "No ||| S\xED"
     id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
-    jinja: "{{ text }} Aqu\xED, por \"{{ span2_text }}\" se refieren a \"{{ span1_text\
+    jinja: "{{ text }} Aqu\xED, por \"{{ span2_text }}\" quieren decir \"{{ span1_text\
       \ }}\". \xBFSi o no? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
       \ %}"
     metadata: !TemplateMetadata
@@ -43,7 +43,7 @@ templates:
   4b3e29cc-ccb8-4e4c-a845-4935ca29cf34: !Template
     answer_choices: "No ||| S\xED"
     id: 4b3e29cc-ccb8-4e4c-a845-4935ca29cf34
-    jinja: "{{ text }} Creo que quieren decir \"{{ text.split(\" \")[span2_index:]\
+    jinja: "{{ text }} creo que quieren decir \"{{ text.split(\" \")[span2_index:]\
       \ | join(\" \") | replace(span2_text, span1_text) }}\" \xBFSi o no? ||| {% if\
       \ label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
@@ -56,7 +56,7 @@ templates:
   7482d24f-cf45-4013-b82d-369489fc958b: !Template
     answer_choices: "No ||| S\xED"
     id: 7482d24f-cf45-4013-b82d-369489fc958b
-    jinja: "{{ text }} Aqu\xED, \xBF\"{{ span2_text.lower() }}\" representa {{ span1_text\
+    jinja: "{{ text }} Aqu\xED, \xBF\"{{ span2_text.lower() }}\" significa {{ span1_text\
       \ }}? \xBFSi o no? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
       \ %}"
     metadata: !TemplateMetadata
@@ -70,7 +70,7 @@ templates:
     answer_choices: "No ||| S\xED"
     id: 7d377293-d043-4b6c-8ec1-d61eaf14ec67
     jinja: "Paso: {{ text }} \n\nPregunta: En el pasaje anterior, \xBFel pronombre\
-      \ \"{{ span2_text }}\" se refiere {{ span1_text }}?\n\nResponder: ||| {% if\
+      \ \"{{ span2_text }}\" se refiere a {{ span1_text }}?\n\nResponder: ||| {% if\
       \ label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -124,8 +124,8 @@ templates:
     answer_choices: "No ||| S\xED"
     id: d88f3e21-42dc-49a5-924d-69b764a14816
     jinja: "{{ text }} \n{% if span2_text.lower()  == \"they\" or span2_text.lower()\
-      \ == \"them\" %}\nPregunta: Qui\xE9n o que son \"{{ span2_text.lower() }}\"\
-      ? {{ span1_text }}?\n{% else %}\nPregunta: Quien o que es \"{{ span2_text.lower()\
+      \ == \"them\" %}\nPregunta: quienes o que son \"{{ span2_text.lower() }}\"?\
+      \ {{ span1_text }}?\n{% else %}\nPregunta: quien o que es \"{{ span2_text.lower()\
       \ }}\"? Es una}}?\n{% endif %}\nResponder: ||| {% if label != -1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata

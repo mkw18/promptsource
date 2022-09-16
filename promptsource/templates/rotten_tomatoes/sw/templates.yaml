@@ -2,9 +2,9 @@ dataset: rotten_tomatoes
 subset: sw
 templates:
   10adbcf1-b839-4522-bd76-567f0c760474: !Template
-    answer_choices: mbaya ||| Nzuri
+    answer_choices: mbaya ||| nzuri
     id: 10adbcf1-b839-4522-bd76-567f0c760474
-    jinja: '{{text}} Je! Mhakiki alipata sinema hii {{"nzuri au mbaya"}}? ||| {{ answer_choices
+    jinja: '{{text}} Je, mkaguzi alipata filamu hii {{"nzuri au mbaya"}}? ||| {{ answer_choices
       [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -16,8 +16,8 @@ templates:
   162f7f89-4a93-42e9-9525-ba12e243ee48: !Template
     answer_choices: hasi ||| chanya
     id: 162f7f89-4a93-42e9-9525-ba12e243ee48
-    jinja: '{{text}} Je! Ni maoni gani yaliyoonyeshwa katika maandishi haya? ||| {{
-      answer_choices [label] }}'
+    jinja: '{{text}} Ni hisia gani zinazoonyeshwa katika kifungu hiki? ||| {{ answer_choices
+      [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -28,7 +28,7 @@ templates:
   37ac89b8-09f8-443d-982c-980a86f26ea0: !Template
     answer_choices: hasi ||| chanya
     id: 37ac89b8-09f8-443d-982c-980a86f26ea0
-    jinja: "{{text}} \nJe! Uhakiki huu ni {{\"chanya au hasi\"}}? ||| \n{{answer_choices[label]\
+    jinja: "{{text}} \nJe, ukaguzi huu ni {{\"chanya au hasi\"}}? ||| \n{{answer_choices[label]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -38,9 +38,9 @@ templates:
     name: 'Sentiment with choices '
     reference: ''
   59e2aa7c-696f-4b85-87e9-688ea802d968: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: 59e2aa7c-696f-4b85-87e9-688ea802d968
-    jinja: '{{text}} Je! Mhakiki alifurahiya sinema? ||| {{ answer_choices [label]
+    jinja: '{{text}} Je, mkaguzi alifurahia filamu? ||| {{ answer_choices [label]
       }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -50,9 +50,9 @@ templates:
     name: Reviewer Enjoyment Yes No
     reference: ''
   7a8ccb1c-6737-4863-b08a-61d4a2839204: !Template
-    answer_choices: Hawakuipenda ||| Walipenda
+    answer_choices: Hawakupenda ||| Waliipenda
     id: 7a8ccb1c-6737-4863-b08a-61d4a2839204
-    jinja: '{{text}} Je! Mhakiki anahisije kuhusu sinema? ||| {{ answer_choices [label]
+    jinja: '{{text}} Je, mkaguzi anahisije kuhusu filamu? ||| {{ answer_choices [label]
       }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -64,7 +64,7 @@ templates:
   94e190d5-2196-486e-908b-759f288eac6e: !Template
     answer_choices: hasi ||| chanya
     id: 94e190d5-2196-486e-908b-759f288eac6e
-    jinja: '{{text}} Maoni yaliyoonyeshwa kwa sinema ni ||| {{ answer_choices [label]
+    jinja: '{{text}} Hisia zilizoonyeshwa kwa filamu ni ||| {{ answer_choices [label]
       }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -76,7 +76,7 @@ templates:
   a8f6927e-7eca-4975-a93c-f520f8be480d: !Template
     answer_choices: hasi ||| chanya
     id: a8f6927e-7eca-4975-a93c-f520f8be480d
-    jinja: '{{text}} Je! Mwandishi anaelezea maoni gani kwa sinema? ||| {{ answer_choices
+    jinja: '{{text}} Mwandishi anaonyesha hisia gani kwa filamu hiyo? ||| {{ answer_choices
       [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -88,7 +88,7 @@ templates:
   b60cad41-6bca-422a-aef7-cb113fcc32b0: !Template
     answer_choices: hasi ||| chanya
     id: b60cad41-6bca-422a-aef7-cb113fcc32b0
-    jinja: Mapitio ya sinema yafuatayo yanaelezea maoni gani? {{text}} ||| {{ answer_choices
+    jinja: Mapitio ya filamu yafuatayo yanaonyesha maoni gani? {{text}} ||| {{ answer_choices
       [label] }}
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -100,8 +100,8 @@ templates:
   c75e322d-d6b4-4a28-b5a0-27fddfee694d: !Template
     answer_choices: hasi ||| chanya
     id: c75e322d-d6b4-4a28-b5a0-27fddfee694d
-    jinja: '{{text}} Je! Ni maoni gani yaliyoonyeshwa na mhakiki wa sinema? ||| {{
-      answer_choices [label] }}'
+    jinja: '{{text}} Je, ni maoni gani yaliyotolewa na mkaguzi wa filamu hiyo? |||
+      {{ answer_choices [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -112,8 +112,8 @@ templates:
   e05ec7b9-5a8d-4670-9723-0237c1bb1eca: !Template
     answer_choices: hasi ||| chanya
     id: e05ec7b9-5a8d-4670-9723-0237c1bb1eca
-    jinja: '{{text}} Mtazamaji anahisije kuhusu sinema? ||| {{ answer_choices [label]
-      }}'
+    jinja: '{{text}} Je, mtazamaji anahisije kuhusu filamu? ||| {{ answer_choices
+      [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

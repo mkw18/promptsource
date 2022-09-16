@@ -4,7 +4,7 @@ templates:
   02ff2949-0f45-4d97-941e-6fa4c0afbc2d: !Template
     answer_choices: negatief ||| positief
     id: 02ff2949-0f45-4d97-941e-6fa4c0afbc2d
-    jinja: De volgende filmrecensie drukt uit welk sentiment? {{text}} ||| {{ answer_choices
+    jinja: Welk sentiment drukt de volgende filmrecensie uit? {{text}} ||| {{ answer_choices
       [label] }}
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -16,8 +16,8 @@ templates:
   2351d12a-e630-4d19-8b41-e199266e38f7: !Template
     answer_choices: slechte ||| goed
     id: 2351d12a-e630-4d19-8b41-e199266e38f7
-    jinja: '{{text}} Vond de recensent deze film {{"goed of slecht"}}? ||| {{ answer_choices
-      [label] }}'
+    jinja: '{{text}} Heeft de recensent deze film {{"goed of slecht"}} gevonden? |||
+      {{ answer_choices [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -28,7 +28,7 @@ templates:
   5f372fb1-795a-47b6-8ddf-c4fd1579e76a: !Template
     answer_choices: negatief ||| positief
     id: 5f372fb1-795a-47b6-8ddf-c4fd1579e76a
-    jinja: "{{text}} \nIs deze review {{\"positief of negatief\"}}? ||| \n{{answer_choices[label]\
+    jinja: "{{text}} \nIs deze recensie {{\"positief of negatief\"}}? ||| \n{{answer_choices[label]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -40,7 +40,7 @@ templates:
   866474a5-1498-46b7-bfee-ac0c5160707f: !Template
     answer_choices: negatief ||| positief
     id: 866474a5-1498-46b7-bfee-ac0c5160707f
-    jinja: '{{text}} Wat vindt de kijker over de film? ||| {{ answer_choices [label]
+    jinja: '{{text}} Wat vindt de kijker van de film? ||| {{ answer_choices [label]
       }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -64,7 +64,7 @@ templates:
   af51297c-38a3-4d6c-a8b5-04b1243d7443: !Template
     answer_choices: negatief ||| positief
     id: af51297c-38a3-4d6c-a8b5-04b1243d7443
-    jinja: '{{text}} Het sentiment uitgedrukt voor de film is ||| {{ answer_choices
+    jinja: '{{text}} Het sentiment uitgedrukt voor de film is: ||| {{ answer_choices
       [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -76,8 +76,8 @@ templates:
   b93b74ac-fe95-40b4-9610-318b46ab820f: !Template
     answer_choices: negatief ||| positief
     id: b93b74ac-fe95-40b4-9610-318b46ab820f
-    jinja: '{{text}} Wat is het sentiment uitgedrukt in deze tekst? ||| {{ answer_choices
-      [label] }}'
+    jinja: '{{text}} Wat is het gevoel dat in deze tekst wordt uitgedrukt? ||| {{
+      answer_choices [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -88,7 +88,7 @@ templates:
   b9b5d79d-f0b3-4bec-a724-f585db3e93ff: !Template
     answer_choices: negatief ||| positief
     id: b9b5d79d-f0b3-4bec-a724-f585db3e93ff
-    jinja: '{{text}} Dit is absoluut geen ||| {{ answer_choices [1-label]}} recensie.'
+    jinja: '{{text}} Dit is zeker geen ||| {{ answer_choices [1-label]}} recensie.'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -99,8 +99,8 @@ templates:
   bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9: !Template
     answer_choices: Nee ||| Ja
     id: bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9
-    jinja: '{{text}} Heeft de recensent genoten van de film? ||| {{ answer_choices
-      [label] }}'
+    jinja: '{{text}} Vond de recensent de film leuk? ||| {{ answer_choices [label]
+      }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -111,8 +111,8 @@ templates:
   c70d1687-2421-49a2-9553-91b8bac4cfbe: !Template
     answer_choices: negatief ||| positief
     id: c70d1687-2421-49a2-9553-91b8bac4cfbe
-    jinja: '{{text}} Wat is het sentiment uitgedrukt door de recensent voor de film?
-      ||| {{ answer_choices [label] }}'
+    jinja: '{{text}} Wat is het sentiment van de recensent voor de film? ||| {{ answer_choices
+      [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

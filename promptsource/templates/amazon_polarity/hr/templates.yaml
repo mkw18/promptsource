@@ -8,7 +8,7 @@ templates:
 
       Pregled: {{content}}
 
-      Je li pregled pozitivan ili negativan? |||
+      Je li recenzija pozitivna ili negativna? |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
@@ -21,7 +21,7 @@ templates:
   3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
     answer_choices: Ne ||| Da
     id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
-    jinja: "Na temelju ovog pregleda, bi li korisnik preporu\u010Dio ovaj proizvod?\n\
+    jinja: "Na temelju ove recenzije, bi li korisnik preporu\u010Dio ovaj proizvod?\n\
       ===\nPregled: {{content}}\nOdgovor: |||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -34,7 +34,7 @@ templates:
   592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
     answer_choices: Ne ||| Da
     id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
-    jinja: 'Je li ovaj pregled proizvoda pozitivan?
+    jinja: 'Je li ova recenzija proizvoda pozitivna?
 
       Titula: {{title}}
 
@@ -57,7 +57,7 @@ templates:
 
       Pregled: {{content}}
 
-      Je li ovaj pregled proizvoda negativan?|||
+      Je li recenzija proizvoda negativna?|||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
@@ -70,7 +70,7 @@ templates:
   8abb5377-5dd3-4402-92a5-0d81adb6a325: !Template
     answer_choices: Negativan ||| Pozitivan
     id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
-    jinja: "Titula: {{title}}\nPregled: {{content}}\nPrenosi li ovaj pregled proizvoda\
+    jinja: "Titula: {{title}}\nPregled: {{content}}\nOdaje li ova recenzija proizvoda\
       \ negativan ili pozitivan osje\u0107aj?|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -82,7 +82,7 @@ templates:
   9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
     answer_choices: Negativan ||| Pozitivan
     id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
-    jinja: 'Postoji li negativan ili pozitivan ton ovog pregleda proizvoda?
+    jinja: 'Postoji li negativan ili pozitivan ton ove recenzije proizvoda?
 
       ===
 
@@ -103,8 +103,8 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
     answer_choices: nezadovoljan ||| zadovoljan
     id: b13369e8-0500-4e93-90d4-8e6814bfb97b
-    jinja: 'Evo pregleda koju je kupac ostavio na proizvodu.Biste li rekli da je bio
-      {{answer_choices[1]}} ili {{answer_choices[0]}}?
+    jinja: 'Ovdje je recenzija koju je kupac ostavio na proizvodu. Biste li rekli
+      da je bio {{answer_choices[1]}} ili {{answer_choices[0]}}?
 
       Titula: {{title}}
 
@@ -123,10 +123,10 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
     answer_choices: "smanjenje ||| pove\u0107ati"
     id: b13369e8-0500-4e93-90d4-8e6814bfb98b
-    jinja: "Razmi\u0161ljate ho\u0107ete li kupiti proizvod.Gledate recenzije.Bi li\
-      \ sljede\u0107i pregled {{answer_choices[0]}} ili {{answer_choices[1]}} \u0161\
-      anse da kupite proizvod?\nNaslov pregleda: {{title}}\nPregled proizvoda: {{content}}\n\
-      |||\n{{answer_choices[label]}} "
+    jinja: "Razmi\u0161ljate ho\u0107ete li kupiti proizvod. Pogledate recenzije.\
+      \ Bi li sljede\u0107a recenzija {{answer_choices[0]}} ili {{answer_choices[1]}}\
+      \ bile \u0161anse da kupite proizvod?\nNaslov recenzije: {{title}}\nPregled\
+      \ proizvoda: {{content}}\n|||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -135,14 +135,14 @@ templates:
     name: would_you_buy
     reference: ''
   b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
-    answer_choices: neprijatan ||| laskav
+    answer_choices: "neprijatan ||| laskaju\u0107i"
     id: b13369e8-0500-4e93-90d4-8e6814bfb99b
     jinja: 'Titula: {{title}}
 
       Pregled proizvoda: {{content}}
 
-      Da li biste rekli da ovaj pregled prikazuje proizvod u {{answer_choices[1]}}
-      ili {{answer_choices[0]}} svjetlu?
+      Biste li rekli da ova recenzija prikazuje proizvod u {{answer_choices[1]}} ili
+      {{answer_choices[0]}} svjetlu?
 
       |||
 

@@ -4,7 +4,7 @@ templates:
   0a47d28c-7cf5-405d-b9ef-9b82c1a20002: !Template
     answer_choices: A ||| B ||| C ||| D
     id: 0a47d28c-7cf5-405d-b9ef-9b82c1a20002
-    jinja: "Lugege artiklit ja valige parim vastus.\nArtikkel: {{article}}\nK\xFC\
+    jinja: "Lugege artiklit ja valige parim vastus.\nArtikkel: {{article}}\nk\xFC\
       simus: {{question}}\nValikud: {{\"A\"}}: {{options.0}}\n{{\"B\"}}: {{options.1}}\n\
       {{\"C\"}}: {{options.2}}\n{{\"D\"}}: {{options.3}}\n|||\n{{answer}}"
     metadata: !TemplateMetadata
@@ -18,7 +18,7 @@ templates:
     answer_choices: '{{ options | join("|||") }}'
     id: 1a68b62e-404c-4037-baec-7e20cb4c3f6b
     jinja: "Lugege j\xE4rgmist artiklit ja vastake k\xFCsimusele.\nArtikkel: {{article}}\n\
-      K\xFCsimus: {{question}}\nVastus:\n|||\n{{ answer_choices[{\"A\":0,\"B\":1,\"\
+      k\xFCsimus: {{question}}\nVastus:\n|||\n{{ answer_choices[{\"A\":0,\"B\":1,\"\
       C\":2,\"D\":3}[answer]] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -28,12 +28,12 @@ templates:
     name: Read the article and answer the question (no option)
     reference: ''
   2e7f5fff-518e-4100-90f9-cca094b11e95: !Template
-    answer_choices: Jah ||| Mitte
+    answer_choices: Jah ||| Ei
     id: 2e7f5fff-518e-4100-90f9-cca094b11e95
     jinja: "{% set candidate = [\"A\", \"B\", \"C\", \"D\"] | choice %}\nArtikkel:\
-      \ {{article}}\nK\xFCsimus: {{question}}\nJah v\xF5i ei, on vastus \"{{ [options.0,options.1,options.2,options.3][{\"\
+      \ {{article}}\nk\xFCsimus: {{question}}\nJah v\xF5i ei, on vastus \"{{ [options.0,options.1,options.2,options.3][{\"\
       A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\"?\n|||\n{% if candidate == answer\
-      \ %}\nJah\n{% else %}\nMitte\n{% endif %}"
+      \ %}\nJah\n{% else %}\nEi\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -70,7 +70,7 @@ templates:
     answer_choices: '{{ options | join("|||") }}'
     id: 9aacc46d-8863-4e02-9783-9ec931425759
     jinja: "Lugege j\xE4rgmist artiklit ja valige parim vastus.\nArtikkel: {{article}}\n\
-      K\xFCsimus: {{question}}\n- {{answer_choices | join(\"\\n- \")}}\n|||\n{{answer_choices[{\"\
+      k\xFCsimus: {{question}}\n- {{answer_choices | join(\"\\n- \")}}\n|||\n{{answer_choices[{\"\
       A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -82,11 +82,11 @@ templates:
   9aedaa07-b815-4a35-890b-6100f00706aa: !Template
     answer_choices: null
     id: 9aedaa07-b815-4a35-890b-6100f00706aa
-    jinja: "Kirjutage j\xE4rgmise artikli jaoks mitme valikuga k\xFCsimus, antud valikute\
-      \ ja vastusega:\nArtikkel: {{article}}\nValikud:\n{{\"A\"}} {{options.0}}\n\
+    jinja: "Kirjutage j\xE4rgmise artikli jaoks valikvastustega k\xFCsimus koos etteantud\
+      \ valikutega ja vastake:\nArtikkel: {{article}}\nValikud:\n{{\"A\"}} {{options.0}}\n\
       {{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\n\
       Vastus:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"A\":0,\"\
-      B\":1,\"C\":2,\"D\":3}[answer]] }}\nK\xFCsimus: \n|||\n{{question}}"
+      B\":1,\"C\":2,\"D\":3}[answer]] }}\nk\xFCsimus: \n|||\n{{question}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -98,8 +98,8 @@ templates:
   af4869c4-35af-4644-86d9-27843ca4efd5: !Template
     answer_choices: null
     id: af4869c4-35af-4644-86d9-27843ca4efd5
-    jinja: "Kirjutage j\xE4rgmise artikli jaoks mitme valiku k\xFCsimus:\nArtikkel:\
-      \ {{article}}\n|||\nK\xFCsimus: \n{{question}}\nValikud:\n{{\"A\"}} {{options.0}}\n\
+    jinja: "Kirjutage j\xE4rgmise artikli jaoks valikvastustega k\xFCsimus:\nArtikkel:\
+      \ {{article}}\n|||\nk\xFCsimus: \n{{question}}\nValikud:\n{{\"A\"}} {{options.0}}\n\
       {{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\n\
       Vastus:\n{{answer}}"
     metadata: !TemplateMetadata
@@ -114,7 +114,7 @@ templates:
     answer_choices: A ||| B ||| C ||| D
     id: ebe34816-2a1f-42b3-a9ac-ce4d36633fdb
     jinja: "I'm taking a test and have to guess the right answer to the question after\
-      \ the article.\nArtikkel: {{article}}\nK\xFCsimus: {{question}}\nValikud: {{\"\
+      \ the article.\nArtikkel: {{article}}\nk\xFCsimus: {{question}}\nValikud: {{\"\
       A\"}}: {{options.0}}\n{{\"B\"}}: {{options.1}}\n{{\"C\"}}: {{options.2}}\n{{\"\
       D\"}}: {{options.3}}\n|||\n{{answer}}"
     metadata: !TemplateMetadata

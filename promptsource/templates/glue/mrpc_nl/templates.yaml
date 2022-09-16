@@ -45,11 +45,11 @@ templates:
   adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
     answer_choices: nee ||| ja
     id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
-    jinja: 'Betekent de zin
+    jinja: 'Parafraseert de zin
 
       {{sentence1}}
 
-      parafrase (dat wil zeggen, hetzelfde als) deze zin?
+      (dat wil zeggen, hetzelfde als) deze zin?
 
       {{sentence2}}
 
@@ -66,7 +66,7 @@ templates:
   bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
     answer_choices: niet gelijkwaardig ||| gelijkwaardig
     id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
-    jinja: 'Zijn de volgende twee zinnen "{{"gelijkwaardig"}}" of "{{"niet equivalent"}}"?
+    jinja: 'Zijn de volgende twee zinnen "{{"gelijkwaardig"}}" of "{{"niet gelijkwaardig"}}"?
 
       {{sentence1}}
 
@@ -113,7 +113,7 @@ templates:
 
       {{sentence2}}
 
-      en hebben ik deze hetzelfde?
+      en hetzelfde betekenen?
 
       |||
 
@@ -128,7 +128,7 @@ templates:
   eefd8606-b936-4d26-b91d-8f4bc38bfcbf: !Template
     answer_choices: nee ||| ja
     id: eefd8606-b936-4d26-b91d-8f4bc38bfcbf
-    jinja: 'Betekent de volgende twee zinnen hetzelfde?
+    jinja: 'Betekenen de volgende twee zinnen hetzelfde?
 
       {{sentence1}}
 

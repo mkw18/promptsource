@@ -4,7 +4,7 @@ templates:
   3b88d2c4-0aeb-4c6d-9ccc-653a388250a5: !Template
     answer_choices: null
     id: 3b88d2c4-0aeb-4c6d-9ccc-653a388250a5
-    jinja: "{% if label == 1 %}\nParafraseando la siguiente oraci\xF3n: {{sentence1}}\n\
+    jinja: "{% if label == 1 %}\nParafrasea la siguiente oraci\xF3n: {{sentence1}}\n\
       |||\n{{sentence2}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -29,8 +29,8 @@ templates:
   adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
     answer_choices: "no ||| s\xED"
     id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
-    jinja: "\xBFLa oraci\xF3n\n{{sentence1}}\nparafraseo (es decir, significa lo mismo)\
-      \ esta oraci\xF3n?\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
+    jinja: "\xBFLa oraci\xF3n\n{{sentence1}}\nparafrasea (es decir, significa lo mismo\
+      \ que) esta oraci\xF3n?\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -41,7 +41,7 @@ templates:
   bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
     answer_choices: no equivalentee ||| equivalente
     id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
-    jinja: "\xBFSon las dos oraciones siguientes \"{{\"equivalente\"}}\" o \"{{\"\
+    jinja: "\xBFLas siguientes dos oraciones son \"{{\"equivalente\"}}\" o \"{{\"\
       no equivalente\"}}\"?\n{{sentence1}}\n{{sentence2}}\n|||\n{{ answer_choices[label]\
       \ }}"
     metadata: !TemplateMetadata
@@ -54,7 +54,7 @@ templates:
   d830d7a5-abc0-4275-ac62-974e0088876f: !Template
     answer_choices: null
     id: d830d7a5-abc0-4275-ac62-974e0088876f
-    jinja: "{% if label == 1 %}\nGenerar una oraci\xF3n que significa lo mismo que\
+    jinja: "{% if label == 1 %}\nGenera una oraci\xF3n que signifique lo mismo que\
       \ esta: {{sentence1}}\n|||\n{{sentence2}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -68,7 +68,8 @@ templates:
     answer_choices: "no ||| s\xED"
     id: ee82d511-908c-4244-804f-6d0d907c68c7
     jinja: "\xBFPuedo reemplazar la oraci\xF3n\n{{sentence1}}\ncon la oraci\xF3n\n\
-      {{sentence2}}\ny tener lo mismo?\n|||\n{{ answer_choices[label] }}"
+      {{sentence2}}\ny hacer que signifique lo mismo?\n|||\n{{ answer_choices[label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

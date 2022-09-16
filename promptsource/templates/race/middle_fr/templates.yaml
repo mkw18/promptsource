@@ -5,9 +5,9 @@ templates:
     answer_choices: A ||| B ||| C ||| D
     id: 0a47d28c-7cf5-405d-b9ef-9b82c1a20002
     jinja: "Lisez l'article et s\xE9lectionnez la meilleure r\xE9ponse.\nArticle:\
-      \ {{article}}\nQuestion: {{question}}\nOptions: {{\"A\"}}: {{options.0}}\n{{\"\
-      B\"}}: {{options.1}}\n{{\"C\"}}: {{options.2}}\n{{\"D\"}}: {{options.3}}\n|||\n\
-      {{answer}}"
+      \ {{article}}\nQuestion: {{question}}\nOption\_: {{\"A\"}}: {{options.0}}\n\
+      {{\"B\"}}: {{options.1}}\n{{\"C\"}}: {{options.2}}\n{{\"D\"}}: {{options.3}}\n\
+      |||\n{{answer}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -83,11 +83,11 @@ templates:
   9aedaa07-b815-4a35-890b-6100f00706aa: !Template
     answer_choices: null
     id: 9aedaa07-b815-4a35-890b-6100f00706aa
-    jinja: "\xC9crivez une question multi-choix pour l'article suivant, avec les choix\
-      \ et la r\xE9ponse donn\xE9s:\nArticle: {{article}}\nOptions:\n{{\"A\"}} {{options.0}}\n\
-      {{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\n\
-      R\xE9ponse:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"A\"\
-      :0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\nQuestion: \n|||\n{{question}}"
+    jinja: "R\xE9digez une question \xE0 choix multiples pour l'article suivant, avec\
+      \ les choix et la r\xE9ponse propos\xE9s\_:\nArticle: {{article}}\nOption\_\
+      :\n{{\"A\"}} {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n\
+      {{\"D\"}} {{options.3}}\nR\xE9ponse:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"\
+      A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\nQuestion: \n|||\n{{question}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -99,10 +99,10 @@ templates:
   af4869c4-35af-4644-86d9-27843ca4efd5: !Template
     answer_choices: null
     id: af4869c4-35af-4644-86d9-27843ca4efd5
-    jinja: "\xC9crivez une question multi-choix pour l'article suivant:\nArticle:\
-      \ {{article}}\n|||\nQuestion: \n{{question}}\nOptions:\n{{\"A\"}} {{options.0}}\n\
-      {{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\n\
-      R\xE9ponse:\n{{answer}}"
+    jinja: "R\xE9digez une question \xE0 choix multiples pour l'article suivant\_\
+      :\nArticle: {{article}}\n|||\nQuestion: \n{{question}}\nOption\_:\n{{\"A\"}}\
+      \ {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}}\
+      \ {{options.3}}\nR\xE9ponse:\n{{answer}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -114,24 +114,10 @@ templates:
   ebe34816-2a1f-42b3-a9ac-ce4d36633fdb: !Template
     answer_choices: A ||| B ||| C ||| D
     id: ebe34816-2a1f-42b3-a9ac-ce4d36633fdb
-    jinja: 'I''m taking a test and have to guess the right answer to the question
-      after the article.
-
-      Article: {{article}}
-
-      Question: {{question}}
-
-      Options: {{"A"}}: {{options.0}}
-
-      {{"B"}}: {{options.1}}
-
-      {{"C"}}: {{options.2}}
-
-      {{"D"}}: {{options.3}}
-
-      |||
-
-      {{answer}}'
+    jinja: "I'm taking a test and have to guess the right answer to the question after\
+      \ the article.\nArticle: {{article}}\nQuestion: {{question}}\nOption\_: {{\"\
+      A\"}}: {{options.0}}\n{{\"B\"}}: {{options.1}}\n{{\"C\"}}: {{options.2}}\n{{\"\
+      D\"}}: {{options.3}}\n|||\n{{answer}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

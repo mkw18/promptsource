@@ -4,8 +4,9 @@ templates:
   148e8e91-4f38-4427-8806-8a407268cda9: !Template
     answer_choices: "\uC544\uB2C8 ||| \uC608"
     id: 148e8e91-4f38-4427-8806-8a407268cda9
-    jinja: "\uC758\uBB38: {{question}}?\n\"{{answer}}\"\uAC00 \uD569\uB9AC\uC801\uC778\
-      \ \uB2F5\uBCC0\uC774 \uB420\uAE4C\uC694? |||\n{{ answer_choices[label] }}"
+    jinja: "\uC758\uBB38: {{question}}?\n\"{{answer}}\"\uC774(\uAC00) \uD569\uB9AC\
+      \uC801\uC778 \uB2F5\uBCC0\uC774 \uB420\uAE4C\uC694? |||\n{{ answer_choices[label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -17,11 +18,11 @@ templates:
   2395d5ce-5abd-4193-9cf1-863c7271a4f0: !Template
     answer_choices: "\uC544\uB2C8 ||| \uC608"
     id: 2395d5ce-5abd-4193-9cf1-863c7271a4f0
-    jinja: "\uC790\uB3D9 \uC2DC\uC2A4\uD15C\uC5D0\uC11C \uC0DD\uC131 \uB41C \uB2F5\
-      \uBCC0\uC744 \uB2E4\uC74C \uC9C8\uBB38\uC5D0 \uB300\uD574 \uD655\uC778\uD558\
-      \uACE0 \uC788\uC2B5\uB2C8\uB2E4. {{question}}\n\uC81C\uC548 \uB41C \uB2F5\uBCC0\
-      \ : {{answer}}\n\uC774 \uB2F5\uBCC0\uC744 \uAC80\uC99D\uD574\uC57C\uD569\uB2C8\
-      \uAE4C?\n|||\n{{answer_choices[label]}}"
+    jinja: "\uB2E4\uC74C \uC9C8\uBB38\uC5D0 \uB300\uD55C \uC790\uB3D9 \uC2DC\uC2A4\
+      \uD15C\uC5D0\uC11C \uC0DD\uC131\uB41C \uB2F5\uBCC0\uC744 \uD655\uC778\uD558\uACE0\
+      \ \uC788\uC2B5\uB2C8\uB2E4. {{question}}\n\uC81C\uC548\uB41C \uB2F5\uBCC0: {{answer}}\n\
+      \uC774 \uB2F5\uBCC0\uC744 \uD655\uC778\uD574\uC57C \uD569\uB2C8\uAE4C?\n|||\n\
+      {{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -33,7 +34,7 @@ templates:
     answer_choices: null
     id: 3480df1e-88bb-4b3d-90df-3f292463eb76
     jinja: "{% if label == 1 %}\n\"{{answer}}\"\uC5D0 \uB300\uD55C \uC9C8\uBB38\uC740\
-      \ \uBB34\uC5C7\uC785\uB2C8\uAE4C?\uC8FC\uC81C\uB294 {{document_title}}\uC785\
+      \ \uBB34\uC5C7\uC785\uB2C8\uAE4C? \uC8FC\uC81C\uB294 {{document_title}}\uC785\
       \uB2C8\uB2E4.|||\n\"{{question}}?\"\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -46,10 +47,9 @@ templates:
   8a9f2146-aa30-4e17-b1e2-aeb858b08b55: !Template
     answer_choices: null
     id: 8a9f2146-aa30-4e17-b1e2-aeb858b08b55
-    jinja: "{% if label == 1 %}\n\uC9C8\uBB38 \uC751\uB2F5 \uC30D\uC758 \uC8FC\uC81C\
-      \uB97C \uACB0\uC815\uD558\uC2ED\uC2DC\uC624.\n\uC758\uBB38: \"{{question}}?\"\
-      ;  \uB300\uB2F5: \"{{answer}}\"? \uC8FC\uC81C: |||\n{{document_title}}\n{% endif\
-      \ %}\n"
+    jinja: "{% if label == 1 %}\n\uC9C8\uBB38-\uB2F5\uBCC0 \uC30D\uC758 \uC8FC\uC81C\
+      \uB97C \uACB0\uC815\uD569\uB2C8\uB2E4.\n\uC758\uBB38: \"{{question}}?\";  \uB300\
+      \uB2F5: \"{{answer}}\"? \uC8FC\uC81C: |||\n{{document_title}}\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -61,9 +61,9 @@ templates:
   a99a68fa-46ae-4331-8b97-fcf751db3f6f: !Template
     answer_choices: null
     id: a99a68fa-46ae-4331-8b97-fcf751db3f6f
-    jinja: "{% if label == 1 %}\n\"{{document_title}}\"\uC8FC\uC81C\uC5D0 \uB300\uD55C\
-      \ \uC9C8\uBB38\uC744 \uC0DD\uC131\uD558\uC2ED\uC2DC\uC624. {{answer}}.|||\n\
-      {{question}}?\n{% endif %}\n"
+    jinja: "{% if label == 1 %}\n\uB2F5\uBCC0\uC774 \uB2E4\uC74C\uACFC \uAC19\uC740\
+      \ \uC8FC\uC81C \"{{document_title}}\"\uC5D0 \uB300\uD55C \uC9C8\uBB38\uC744\
+      \ \uC0DD\uC131\uD569\uB2C8\uB2E4. {{answer}}.|||\n{{question}}?\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -76,8 +76,8 @@ templates:
     answer_choices: "\uC544\uB2C8 ||| \uC608"
     id: add469e1-b8d9-4926-8f38-3a60c85a7d2b
     jinja: "\uC758\uBB38: {{question}}\nGoogle\uC5D0\uC11C \uB2E4\uC74C \uB2F5\uBCC0\
-      \uC744 \uCC3E\uC558\uC2B5\uB2C8\uB2E4. {{answer}}\n\uC815\uB2F5\uC785\uB2C8\uAE4C\
-      ?\uC608 \uD639\uC740 \uC544\uB2C8\uC624.\n|||\n{{answer_choices[label]}}"
+      \uC744 \uCC3E\uC558\uC2B5\uB2C8\uB2E4. {{answer}}\n\uC815\uB2F5\uC778\uAC00\uC694\
+      ? \uC608 \uD639\uC740 \uC544\uB2C8\uC624.\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -102,12 +102,12 @@ templates:
   bfa3adac-d75b-4e09-aa92-dc38e334937f: !Template
     answer_choices: "\uAC70\uC9D3 ||| \uC9C4\uC2E4"
     id: bfa3adac-d75b-4e09-aa92-dc38e334937f
-    jinja: "\uC5F0\uC2B5\uC740 \uC9C8\uBB38\uC774 \uC81C\uC548 \uB41C \uC81C\uC548\
-      \uC744 \uC815\uB2F5\uC73C\uB85C \uBC1B\uC544\uB4E4\uC774\uB294\uC9C0 \uC5EC\uBD80\
-      \uB97C \uACB0\uC815\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4.\uADF8\uB807\uB2E4\uBA74\
-      \ \"{{answer_choices[1]}}\"\uB97C \uC4F0\uBA74 \"{{answer_choices[0]}}\"\uC744\
-      \ \uC501\uB2C8\uB2E4.\nQuestion: {{question}}\nSuggestion: {{answer}}\n|||\n\
-      {{answer_choices[label]}}"
+    jinja: "\uC774 \uC5F0\uC2B5\uC740 \uC9C8\uBB38\uC774 \uC81C\uC548\uB41C \uC81C\
+      \uC548\uC744 \uC815\uB2F5\uC73C\uB85C \uBC1B\uC544\uB4E4\uC774\uB294\uC9C0 \uC5EC\
+      \uBD80\uB97C \uACB0\uC815\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uADF8\uB807\
+      \uB2E4\uBA74 \"{{answer_choices[1]}}\"\uB97C \uC4F0\uACE0, \uADF8\uB807\uC9C0\
+      \ \uC54A\uC73C\uBA74 \"{{answer_choices[0]}}\"\uB97C \uC4F0\uC2ED\uC2DC\uC624\
+      .\nQuestion: {{question}}\nSuggestion: {{answer}}\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -118,10 +118,9 @@ templates:
   c802cf19-59a7-4a3e-a6ab-5cbb1f169c70: !Template
     answer_choices: "\uC544\uB2C8 ||| \uC608"
     id: c802cf19-59a7-4a3e-a6ab-5cbb1f169c70
-    jinja: "\uC774\uAC83\uC740 {{document_title}}\uC5D0 \uB300\uD55C \uB2E4\uC74C\
-      \ \uC9C8\uBB38\uC5D0 \uB300\uD55C \uC815\uB2F5\uC785\uB2C8\uB2E4.\uC608 \uD639\
-      \uC740 \uC544\uB2C8\uC624?\n\uB300\uB2F5: {{answer}}\n\uC758\uBB38: {{question}}\n\
-      |||\n{{answer_choices[label]}}"
+    jinja: "{{document_title}}\uC5D0 \uB300\uD55C \uB2E4\uC74C \uC9C8\uBB38\uC5D0\
+      \ \uB300\uD55C \uC815\uB2F5\uC785\uB2C8\uB2E4. \uC608 \uD639\uC740 \uC544\uB2C8\
+      \uC624?\n\uB300\uB2F5: {{answer}}\n\uC758\uBB38: {{question}}\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

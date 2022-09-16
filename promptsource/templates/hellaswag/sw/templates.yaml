@@ -4,7 +4,7 @@ templates:
   00caa8cb-7f67-43bc-9e90-fc1d5d329432: !Template
     answer_choices: '{{endings | join(" ||| ")}}'
     id: 00caa8cb-7f67-43bc-9e90-fc1d5d329432
-    jinja: 'Kamilisha maelezo na mwisho unaofaa:
+    jinja: 'Kamilisha maelezo kwa mwisho unaofaa:
 
       Kwanza, {{ ctx_a.lower() }} Kisha, {{ ctx_b.lower() }} ...
 
@@ -33,7 +33,7 @@ templates:
   196a016d-bd25-4387-90b9-53197fd43b1e: !Template
     answer_choices: null
     id: 196a016d-bd25-4387-90b9-53197fd43b1e
-    jinja: "Je! Ni mada gani ya sentensi: {{ctx}} \n|||\n{{activity_label}} "
+    jinja: "Ni nini mada ya sentensi: {{ctx}} \n|||\n{{activity_label}} "
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -61,7 +61,7 @@ templates:
   4ebf22a1-2d23-426c-a083-b43fc8567687: !Template
     answer_choices: null
     id: 4ebf22a1-2d23-426c-a083-b43fc8567687
-    jinja: "{{ctx}} {{endings[label | int()]}}\nJe! Unaweza kutambua mada ya aya?\
+    jinja: "{{ctx}} {{endings[label | int()]}}\nJe, unaweza kutambua mada ya aya?\
       \ \n|||\n{{activity_label}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -76,14 +76,14 @@ templates:
     id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
     jinja: '{% set prompts = [
 
-      ''Je! Unaweza kuchagua mwisho sahihi kwa sentensi: '',
+      ''Unaweza kuchagua mwisho sahihi wa sentensi: '',
 
       ''Kazi ni kutoa mwisho wa sentensi: '',
 
-      ''Je! Sentensi hii inaishaje? '',
+      ''Je, sentensi hii inaishaje? '',
 
-      ''Kutoka kwa orodha ya miisho iliyoelezewa hapo chini, nini mwisho hufanya akili
-      zaidi kwa sentensi '',]
+      ''Kutoka kwa orodha ya miisho iliyoelezwa hapa chini, ni mwisho gani unaoleta
+      maana zaidi kwa sentensi '',]
 
       %}
 
@@ -114,11 +114,11 @@ templates:
     name: Randomized prompts template
     reference: Original task template with randomized prompt template
   663470b8-3fab-449c-84ab-6c4738da51b3: !Template
-    answer_choices: Ndio ||| Hapana
+    answer_choices: Ndiyo ||| Hapana
     id: 663470b8-3fab-449c-84ab-6c4738da51b3
     jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nFikiria maelezo yafuatayo:\
-      \ {{ ctx_a }}\nJe! Ifuatayo ni mwendelezo unaofaa?\n{{ ctx_b }} {{ endings[instance]\
-      \ }}\nNdio au hapana?\n||| \n{% if label  == instance | string() %}\n{{answer_choices[0]}}\n\
+      \ {{ ctx_a }}\nJe, ufuatao ni mwendelezo unaofaa?\n{{ ctx_b }} {{ endings[instance]\
+      \ }}\nNdiyo au Hapana?\n||| \n{% if label  == instance | string() %}\n{{answer_choices[0]}}\n\
       {% else %} \n{{answer_choices[1]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -130,7 +130,7 @@ templates:
   6e9f8d7d-9016-45bc-b997-c42aeb2dc944: !Template
     answer_choices: '{{endings | join("|||")}}'
     id: 6e9f8d7d-9016-45bc-b997-c42aeb2dc944
-    jinja: 'Je! Sentensi hii inaishaje?
+    jinja: 'Je, sentensi hii inaishaje?
 
       {{ctx}}
 
@@ -162,7 +162,7 @@ templates:
   a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e: !Template
     answer_choices: null
     id: a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e
-    jinja: 'Je! Ungeanzaje sentensi:
+    jinja: 'Unawezaje kuanza sentensi:
 
       {{endings[label | int()]}}
 
@@ -178,11 +178,11 @@ templates:
     name: Open-ended start
     reference: Template asks the model to generate a premise or start for the ending
   d95b81c4-5db7-44c1-926e-c7222c896a32: !Template
-    answer_choices: Ndio ||| Hapana
+    answer_choices: Ndiyo ||| Hapana
     id: d95b81c4-5db7-44c1-926e-c7222c896a32
     jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nFikiria maandishi yafuatayo:\
-      \ {{ ctx_b }} {{ endings[instance] }}\nJe! Ni mwendelezo sahihi wa maandishi\
-      \ yafuatayo: \n{{ ctx_a }} ?\nNdio au hapana?\n||| \n{% if label  == instance\
+      \ {{ ctx_b }} {{ endings[instance] }}\nJe, ni mwendelezo unaofaa wa maandishi\
+      \ yafuatayo: \n{{ ctx_a }} ?\nNdiyo au Hapana?\n||| \n{% if label  == instance\
       \ | string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -194,23 +194,23 @@ templates:
     reference: The template randomly selects a continuation and checks if the continuation
       is appropriate for the given premise.
   db8b1c25-f2db-4604-b8fc-f93d69d6fae7: !Template
-    answer_choices: Kuishia 1 ||| Kuishia 2 ||| Kuishia 3 ||| Kuishia 4
+    answer_choices: Mwisho 1 ||| Mwisho wa 2 ||| Mwisho wa 3 ||| Mwisho wa 4
     id: db8b1c25-f2db-4604-b8fc-f93d69d6fae7
     jinja: '{{ ctx }}...
 
-      Je! Maelezo yanawezaje kumalizika?
+      Je, maelezo hayo huenda yakaishaje?
 
 
-      Kuishia 1: {{ endings[0] }}
+      Mwisho wa 1: {{ endings[0] }}
 
 
-      Kuishia 2: {{ endings[1] }}
+      Mwisho wa 2: {{ endings[1] }}
 
 
-      Kuishia 3: {{ endings[2] }}
+      Mwisho wa 3: {{ endings[2] }}
 
 
-      Kuishia 4: {{ endings[3] }}
+      Mwisho wa 4: {{ endings[3] }}
 
       ||| {{ answer_choices[label | int()] }}'
     metadata: !TemplateMetadata
@@ -221,11 +221,11 @@ templates:
     name: how_ends
     reference: ''
   def77598-682f-48de-b187-55db4d390f07: !Template
-    answer_choices: Kuishia 1 ||| Kuishia 2 ||| Kuishia 3 ||| Kuishia 4
+    answer_choices: Mwisho 1 ||| Mwisho wa 2 ||| Mwisho wa 3 ||| Mwisho wa 4
     id: def77598-682f-48de-b187-55db4d390f07
     jinja: "Ikiwa maelezo ya hali huanza kama hii: {{ ctx }}... Then how\ndoes it\
-      \ continue? \n\nKuishia 1: {{ endings[0] }}\n\nKuishia 2: {{ endings[1] }}\n\
-      \nKuishia 3: {{ endings[2] }}\n\nKuishia 4: {{ endings[3] }}\n|||{{answer_choices[label\
+      \ continue? \n\nMwisho wa 1: {{ endings[0] }}\n\nMwisho wa 2: {{ endings[1]\
+      \ }}\n\nMwisho wa 3: {{ endings[2] }}\n\nMwisho wa 4: {{ endings[3] }}\n|||{{answer_choices[label\
       \ | int()] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

@@ -4,8 +4,8 @@ templates:
   14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
-    jinja: "T\u1EEB \"{{word}}\" c\xF3 c\xF9ng \xFD ngh\u0129a trong hai c\xE2u n\xE0\
-      y kh\xF4ng? C\xF3 kh\xF4ng?\n{{sentence1}}\n{{sentence2}}\n||| {% if label !=\
+    jinja: "T\u1EEB \"{{word}}\" c\xF3 c\xF9ng ngh\u0129a trong hai c\xE2u n\xE0y\
+      \ kh\xF4ng? C\xF3 kh\xF4ng?\n{{sentence1}}\n{{sentence2}}\n||| {% if label !=\
       \ -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -17,8 +17,8 @@ templates:
   3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
-    jinja: "T\u1EEB \"{{word}}\" c\xF3 c\xF9ng \xFD ngh\u0129a trong hai c\xE2u n\xE0\
-      y kh\xF4ng?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+    jinja: "T\u1EEB \"{{word}}\" c\xF3 c\xF9ng ngh\u0129a trong hai c\xE2u n\xE0y\
+      \ kh\xF4ng?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -32,9 +32,9 @@ templates:
     id: 611d13dc-d414-4b9b-9204-e4f325e859e7
     jinja: "B\xE0i t\u1EADp v\u1EC1 nh\xE0\n\nQuy\u1EBFt \u0111\u1ECBnh xem t\u1EEB\
       \ \"{{word}}\" c\xF3 \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng v\u1EDBi c\xF9ng\
-      \ m\u1ED9t ngh\u0129a trong hai c\xE2u sau. Tr\u1EA3 l\u1EDDi b\u1EB1ng c\xF3\
-      \ ho\u1EB7c kh\xF4ng.\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n\
-      {{answer_choices[label]}}\n{% endif %}"
+      \ m\u1ED9t ngh\u0129a trong hai c\xE2u sau hay kh\xF4ng. Tr\u1EA3 l\u1EDDi b\u1EB1\
+      ng c\xF3 ho\u1EB7c kh\xF4ng.\n{{sentence1}}\n{{sentence2}}\n||| {% if label\
+      \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -46,9 +46,8 @@ templates:
     answer_choices: "Sai ||| \u0110\xDANG V\u1EACY"
     id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
     jinja: "C\xE2u A: {{sentence1}}\nC\xE2u B: {{sentence2}}\n\n\"{{word}}\" c\xF3\
-      \ \xFD ngh\u0129a t\u01B0\u01A1ng t\u1EF1 trong c\xE1c c\xE2u A v\xE0 B. \u0110\
-      \xFAng hay sai?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
-      \ %}"
+      \ ngh\u0129a t\u01B0\u01A1ng t\u1EF1 trong c\xE2u A v\xE0 B. \u0110\xFAng hay\
+      \ sai?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -87,9 +86,9 @@ templates:
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
     jinja: "X\xE1c \u0111\u1ECBnh xem t\u1EEB '{{word}}' c\xF3 \u0111\u01B0\u1EE3\
-      c s\u1EED d\u1EE5ng theo c\xF9ng m\u1ED9t c\xE1ch trong hai c\xE2u b\xEAn d\u01B0\
-      \u1EDBi. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
-      {% endif %}"
+      c s\u1EED d\u1EE5ng theo c\xE1ch t\u01B0\u01A1ng t\u1EF1 trong hai c\xE2u d\u01B0\
+      \u1EDBi \u0111\xE2y hay kh\xF4ng. \n{{sentence1}}\n{{sentence2}}\n||| {% if\
+      \ label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -100,9 +99,9 @@ templates:
   d9e1db2a-ab0b-4621-bb41-01d5788d3873: !Template
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
-    jinja: "{{sentence1}}\n{{sentence2}}\nC\xE2u h\u1ECFi: L\xE0 t\u1EEB '{{word}}'\
+    jinja: "{{sentence1}}\n{{sentence2}}\nC\xE2u h\u1ECFi: T\u1EEB '{{word}}' c\xF3\
       \ \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng theo c\xF9ng m\u1ED9t ngh\u0129a trong\
-      \ hai c\xE2u tr\xEAn? C\xF3 kh\xF4ng?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      \ hai c\xE2u tr\xEAn kh\xF4ng? C\xF3 kh\xF4ng?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -115,10 +114,10 @@ templates:
   dd2080cf-3117-49ba-9aff-c988a21fdb69: !Template
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: dd2080cf-3117-49ba-9aff-c988a21fdb69
-    jinja: "T\u1EEB \"{{word}}\" c\xF3 nhi\u1EC1u \xFD ngh\u0129a. N\xF3 c\xF3 c\xF9\
-      ng \xFD ngh\u0129a trong c\xE2u 1 v\xE0 2? C\xF3 hay kh\xF4ng?\n\nC\xE2u 1:\
-      \ {{sentence1}}\nC\xE2u 2: {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
-      {% endif %}"
+    jinja: "T\u1EEB \"{{word}}\" c\xF3 nhi\u1EC1u ngh\u0129a. N\xF3 c\xF3 c\xF9ng\
+      \ ngh\u0129a trong c\xE2u 1 v\xE0 c\xE2u 2 kh\xF4ng? C\xF3 hay kh\xF4ng?\n\n\
+      C\xE2u 1: {{sentence1}}\nC\xE2u 2: {{sentence2}}\n||| {% if label != -1%}\n\
+      {{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -129,9 +128,8 @@ templates:
   f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: f934a96d-fe4d-4075-aa47-5595b9a604c7
-    jinja: "{{sentence1}}\n{{sentence2}}\n\xDD ngh\u0129a t\u01B0\u01A1ng t\u1EF1\
-      \ c\u1EE7a {{word}}?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{%\
-      \ endif %}"
+    jinja: "{{sentence1}}\n{{sentence2}}\n\xDD th\u1EE9c t\u01B0\u01A1ng t\u1EF1 v\u1EC1\
+      \ {{word}}?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

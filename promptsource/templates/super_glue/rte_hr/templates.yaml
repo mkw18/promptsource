@@ -4,9 +4,9 @@ templates:
   2b52a83c-0021-41fe-b44c-5aaa076d71a2: !Template
     answer_choices: Da ||| Ne
     id: 2b52a83c-0021-41fe-b44c-5aaa076d71a2
-    jinja: "{{premise}} Kori\u0161tenje samo gornjeg opisa i onoga \u0161to znate\
-      \ o svijetu je \"{{hypothesis}}\" definitivno to\u010Dno? Da ili ne? ||| {%\
-      \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} Koriste\u0107i samo gornji opis i ono \u0161to znate o svijetu,\
+      \ je li \"{{hypothesis}}\" definitivno to\u010Dan? Da ili ne? ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -17,7 +17,7 @@ templates:
   2d0d63da-ffcf-4f6e-941a-b8da922be43e: !Template
     answer_choices: Da ||| Ne
     id: 2d0d63da-ffcf-4f6e-941a-b8da922be43e
-    jinja: "Dodijeljen {{premise}} Je li zajam\u010Deno istina da \"{{hypothesis}}\"\
+    jinja: "S obzirom {{premise}} Je li zajam\u010Deno istina da je \"{{hypothesis}}\"\
       ? Da ili ne? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -29,7 +29,7 @@ templates:
   4163e6f1-1a83-4c73-b867-02eb7ac80316: !Template
     answer_choices: Da ||| Ne
     id: 4163e6f1-1a83-4c73-b867-02eb7ac80316
-    jinja: "Pretpostaviti {{premise}} Mo\u017Eemo li zaklju\u010Diti da je \"{{hypothesis}}\"\
+    jinja: "Pretpostavimo {{premise}} Mo\u017Eemo li zaklju\u010Diti da je \"{{hypothesis}}\"\
       ? Da ili ne? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -39,7 +39,7 @@ templates:
     name: can we infer
     reference: Webson & Pavlick 2021
   8fb1c6aa-20e9-438c-bece-c6af1c746449: !Template
-    answer_choices: "Pravi ||| La\u017Ean"
+    answer_choices: "Pravi ||| la\u017Eno"
     id: 8fb1c6aa-20e9-438c-bece-c6af1c746449
     jinja: "{{premise}}\nPitanje: {{hypothesis}} Istina ili la\u017E? ||| {% if label\
       \ != -1 %}{{ answer_choices[label] }}{% endif %}"
@@ -53,7 +53,7 @@ templates:
   9e078fb4-505b-413c-bb5e-3cd16ddcf5d7: !Template
     answer_choices: Da ||| Ne
     id: 9e078fb4-505b-413c-bb5e-3cd16ddcf5d7
-    jinja: "{{premise}} \n\nPitanje: Da li to podrazumijeva da \"{{hypothesis}}\"\
+    jinja: "{{premise}} \n\nPitanje: Da li ovo implicira da je \"{{hypothesis}}\"\
       ? Da ili ne? ||| {% if label != -1 %}{{answer_choices[label]}}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -65,9 +65,8 @@ templates:
   b8dc85c6-28b6-4340-979a-8e77c2a0dde8: !Template
     answer_choices: Da ||| Ne
     id: b8dc85c6-28b6-4340-979a-8e77c2a0dde8
-    jinja: Dodijeljen {{premise}} Trebamo li pretpostaviti da je "{{hypothesis}}"
-      istina? Da ili ne? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif
-      %}
+    jinja: S obzirom {{premise}} Trebamo li pretpostaviti da je "{{hypothesis}}" istinito?
+      Da ili ne? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -102,8 +101,8 @@ templates:
   ee0ce095-122a-4509-bf0b-33d1495295f7: !Template
     answer_choices: Da ||| Ne
     id: ee0ce095-122a-4509-bf0b-33d1495295f7
-    jinja: "{{premise}} Jesmo li opravdani rekav\u0161i da je \"{{hypothesis}}\"?\
-      \ Da ili ne? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} Imamo li pravo re\u0107i da \"{{hypothesis}}\"? Da ili ne?\
+      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -114,8 +113,8 @@ templates:
   fb4f8144-37f5-4977-88da-37a5d0bfd0e8: !Template
     answer_choices: Da ||| Ne
     id: fb4f8144-37f5-4977-88da-37a5d0bfd0e8
-    jinja: S obzirom na to {{premise}} Stoga mora biti istina da "{{hypothesis}}"?
-      Da ili ne? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}
+    jinja: "S obzirom na to {{premise}} Stoga, mora biti to\u010Dno da je \"{{hypothesis}}\"\
+      ? Da ili ne? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

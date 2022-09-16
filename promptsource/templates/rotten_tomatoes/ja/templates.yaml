@@ -4,9 +4,9 @@ templates:
   10adbcf1-b839-4522-bd76-567f0c760474: !Template
     answer_choices: "\u60AA\u3044 ||| \u826F\u3044"
     id: 10adbcf1-b839-4522-bd76-567f0c760474
-    jinja: "{{text}} \u30EC\u30D3\u30E5\u30A2\u30FC\u306F\u3053\u306E\u6620\u753B\u3092\
-      \u898B\u3064\u3051\u307E\u3057\u305F\u304B{{\"\u826F\u3044\u307E\u305F\u306F\
-      \u60AA\u3044\"}}\uFF1F ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} \u30EC\u30D3\u30E5\u30A2\u30FC\u306F\u3053\u306E\u6620\u753B\
+      \ {{\"\u826F\u3044\u307E\u305F\u306F\u60AA\u3044\"}} \u3092\u898B\u3064\u3051\
+      \u307E\u3057\u305F\u304B? ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -17,8 +17,8 @@ templates:
   162f7f89-4a93-42e9-9525-ba12e243ee48: !Template
     answer_choices: "\u30CD\u30AC\u30C6\u30A3\u30D6 ||| \u30DD\u30B8\u30C6\u30A3\u30D6"
     id: 162f7f89-4a93-42e9-9525-ba12e243ee48
-    jinja: "{{text}} \u3053\u306E\u30C6\u30AD\u30B9\u30C8\u3067\u8868\u660E\u3055\u308C\
-      \u305F\u611F\u60C5\u306F\u4F55\u3067\u3059\u304B\uFF1F ||| {{ answer_choices\
+    jinja: "{{text}} \u3053\u306E\u30C6\u30AD\u30B9\u30C8\u3067\u8868\u73FE\u3055\u308C\
+      \u3066\u3044\u308B\u611F\u60C5\u306F\u4F55\u3067\u3059\u304B? ||| {{ answer_choices\
       \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -44,7 +44,7 @@ templates:
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 59e2aa7c-696f-4b85-87e9-688ea802d968
     jinja: "{{text}} \u30EC\u30D3\u30E5\u30A2\u30FC\u306F\u6620\u753B\u3092\u697D\u3057\
-      \u307F\u307E\u3057\u305F\u304B\uFF1F ||| {{ answer_choices [label] }}"
+      \u3093\u3060\u304B\uFF1F ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -53,13 +53,13 @@ templates:
     name: Reviewer Enjoyment Yes No
     reference: ''
   7a8ccb1c-6737-4863-b08a-61d4a2839204: !Template
-    answer_choices: "\u5F7C\u3089\u306F\u305D\u308C\u304C\u597D\u304D\u3067\u306F\u3042\
-      \u308A\u307E\u305B\u3093\u3067\u3057\u305F ||| \u5F7C\u3089\u306F\u305D\u308C\
-      \u3092\u611B\u3057\u3066\u3044\u307E\u3057\u305F"
+    answer_choices: "\u5F7C\u3089\u306F\u305D\u308C\u304C\u597D\u304D\u3067\u306F\u306A\
+      \u304B\u3063\u305F ||| \u5F7C\u3089\u306F\u305D\u308C\u3092\u611B\u3057\u3066\
+      \u3044\u307E\u3057\u305F"
     id: 7a8ccb1c-6737-4863-b08a-61d4a2839204
-    jinja: "{{text}} \u30EC\u30D3\u30E5\u30A2\u30FC\u306F\u6620\u753B\u306B\u3064\u3044\
-      \u3066\u3069\u306E\u3088\u3046\u306B\u611F\u3058\u3066\u3044\u307E\u3059\u304B\
-      \uFF1F ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} \u30EC\u30D3\u30E5\u30A2\u30FC\u306F\u3053\u306E\u6620\u753B\u306B\
+      \u3064\u3044\u3066\u3069\u3046\u601D\u3044\u307E\u3059\u304B? ||| {{ answer_choices\
+      \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -70,8 +70,8 @@ templates:
   94e190d5-2196-486e-908b-759f288eac6e: !Template
     answer_choices: "\u30CD\u30AC\u30C6\u30A3\u30D6 ||| \u30DD\u30B8\u30C6\u30A3\u30D6"
     id: 94e190d5-2196-486e-908b-759f288eac6e
-    jinja: "{{text}} \u6620\u753B\u306E\u305F\u3081\u306B\u8868\u660E\u3055\u308C\u305F\
-      \u611F\u60C5\u306F\u3067\u3059 ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} \u6620\u753B\u306E\u611F\u60F3\u306F\u3001 ||| {{ answer_choices\
+      \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -82,9 +82,9 @@ templates:
   a8f6927e-7eca-4975-a93c-f520f8be480d: !Template
     answer_choices: "\u30CD\u30AC\u30C6\u30A3\u30D6 ||| \u30DD\u30B8\u30C6\u30A3\u30D6"
     id: a8f6927e-7eca-4975-a93c-f520f8be480d
-    jinja: "{{text}} \u4F5C\u5BB6\u306F\u6620\u753B\u306E\u305F\u3081\u306B\u3069\u306E\
+    jinja: "{{text}} \u4F5C\u5BB6\u306F\u6620\u753B\u306B\u5BFE\u3057\u3066\u3069\u306E\
       \u3088\u3046\u306A\u611F\u60C5\u3092\u8868\u73FE\u3057\u3066\u3044\u307E\u3059\
-      \u304B\uFF1F ||| {{ answer_choices [label] }}"
+      \u304B? ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -95,9 +95,9 @@ templates:
   b60cad41-6bca-422a-aef7-cb113fcc32b0: !Template
     answer_choices: "\u30CD\u30AC\u30C6\u30A3\u30D6 ||| \u30DD\u30B8\u30C6\u30A3\u30D6"
     id: b60cad41-6bca-422a-aef7-cb113fcc32b0
-    jinja: "\u6B21\u306E\u6620\u753B\u30EC\u30D3\u30E5\u30FC\u306F\u3001\u3069\u306E\
-      \u3088\u3046\u306A\u611F\u60C5\u3092\u8868\u73FE\u3057\u3066\u3044\u307E\u3059\
-      \u304B\uFF1F {{text}} ||| {{ answer_choices [label] }}"
+    jinja: "\u6B21\u306E\u6620\u753B\u306E\u30EC\u30D3\u30E5\u30FC\u306F\u3001\u3069\
+      \u306E\u3088\u3046\u306A\u611F\u60C5\u3092\u8868\u3057\u3066\u3044\u307E\u3059\
+      \u304B? {{text}} ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -109,7 +109,7 @@ templates:
     answer_choices: "\u30CD\u30AC\u30C6\u30A3\u30D6 ||| \u30DD\u30B8\u30C6\u30A3\u30D6"
     id: c75e322d-d6b4-4a28-b5a0-27fddfee694d
     jinja: "{{text}} \u6620\u753B\u306E\u30EC\u30D3\u30E5\u30A2\u30FC\u304C\u8868\u660E\
-      \u3057\u305F\u611F\u60C5\u306F\u4F55\u3067\u3059\u304B\uFF1F ||| {{ answer_choices\
+      \u3057\u305F\u611F\u60C5\u306F\u4F55\u3067\u3059\u304B? ||| {{ answer_choices\
       \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -121,9 +121,8 @@ templates:
   e05ec7b9-5a8d-4670-9723-0237c1bb1eca: !Template
     answer_choices: "\u30CD\u30AC\u30C6\u30A3\u30D6 ||| \u30DD\u30B8\u30C6\u30A3\u30D6"
     id: e05ec7b9-5a8d-4670-9723-0237c1bb1eca
-    jinja: "{{text}} \u8996\u8074\u8005\u306F\u6620\u753B\u306B\u3064\u3044\u3066\u3069\
-      \u306E\u3088\u3046\u306B\u611F\u3058\u3066\u3044\u307E\u3059\u304B\uFF1F |||\
-      \ {{ answer_choices [label] }}"
+    jinja: "{{text}} \u6620\u753B\u3092\u89B3\u305F\u4EBA\u306F\u3069\u3046\u611F\u3058\
+      \u307E\u3059\u304B\uFF1F ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

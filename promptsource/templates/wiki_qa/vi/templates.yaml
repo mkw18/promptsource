@@ -5,7 +5,8 @@ templates:
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: 148e8e91-4f38-4427-8806-8a407268cda9
     jinja: "C\xE2u h\u1ECFi: {{question}}?\n\"{{answer}}\" c\xF3 ph\u1EA3i l\xE0 m\u1ED9\
-      t c\xE2u tr\u1EA3 l\u1EDDi h\u1EE3p l\xFD? |||\n{{ answer_choices[label] }}"
+      t c\xE2u tr\u1EA3 l\u1EDDi h\u1EE3p l\xFD kh\xF4ng? |||\n{{ answer_choices[label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -32,8 +33,8 @@ templates:
   3480df1e-88bb-4b3d-90df-3f292463eb76: !Template
     answer_choices: null
     id: 3480df1e-88bb-4b3d-90df-3f292463eb76
-    jinja: "{% if label == 1 %}\nC\xE2u h\u1ECFi l\xE0 g\xEC: \"{{answer}}\" l\xE0\
-      \ g\xEC?Ch\u1EE7 \u0111\u1EC1 l\xE0 {{document_title}}.|||\n\"{{question}}?\"\
+    jinja: "{% if label == 1 %}\nC\xE2u h\u1ECFi d\xE0nh cho: \"{{answer}}\" l\xE0\
+      \ g\xEC? Ch\u1EE7 \u0111\u1EC1 l\xE0 {{document_title}}.|||\n\"{{question}}?\"\
       \n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -47,9 +48,9 @@ templates:
     answer_choices: null
     id: 8a9f2146-aa30-4e17-b1e2-aeb858b08b55
     jinja: "{% if label == 1 %}\nX\xE1c \u0111\u1ECBnh ch\u1EE7 \u0111\u1EC1 c\u1EE7\
-      a c\u1EB7p c\xE2u h\u1ECFi.\nC\xE2u h\u1ECFi: \"{{question}}?\";  C\xE2u tr\u1EA3\
-      \ l\u1EDDi: \"{{answer}}\"? Ch\u1EE7 \u0111\u1EC1: |||\n{{document_title}}\n\
-      {% endif %}\n"
+      a c\u1EB7p c\xE2u h\u1ECFi - c\xE2u tr\u1EA3 l\u1EDDi.\nC\xE2u h\u1ECFi: \"\
+      {{question}}?\";  C\xE2u tr\u1EA3 l\u1EDDi: \"{{answer}}\"? Ch\u1EE7 \u0111\u1EC1\
+      : |||\n{{document_title}}\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -62,7 +63,7 @@ templates:
     answer_choices: null
     id: a99a68fa-46ae-4331-8b97-fcf751db3f6f
     jinja: "{% if label == 1 %}\nT\u1EA1o c\xE2u h\u1ECFi v\u1EC1 ch\u1EE7 \u0111\u1EC1\
-      \ \"{{document_title}}\" c\xF3 c\xE2u tr\u1EA3 l\u1EDDi s\u1EBD l\xE0: {{answer}}.|||\n\
+      \ \"{{document_title}}\" c\xF3 c\xE2u tr\u1EA3 l\u1EDDi l\xE0: {{answer}}.|||\n\
       {{question}}?\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -77,7 +78,7 @@ templates:
     id: add469e1-b8d9-4926-8f38-3a60c85a7d2b
     jinja: "C\xE2u h\u1ECFi: {{question}}\nT\xF4i \u0111\xE3 t\xECm th\u1EA5y c\xE2\
       u tr\u1EA3 l\u1EDDi sau tr\xEAn Google: {{answer}}\n\u0110\xF3 c\xF3 ph\u1EA3\
-      i l\xE0 m\u1ED9t c\xE2u tr\u1EA3 l\u1EDDi \u0111\xFAng kh\xF4ng?C\xF3 hay kh\xF4\
+      i l\xE0 m\u1ED9t c\xE2u tr\u1EA3 l\u1EDDi ch\xEDnh x\xE1c? C\xF3 hay kh\xF4\
       ng.\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -104,10 +105,10 @@ templates:
     answer_choices: "Sai ||| \u0110\xDANG V\u1EACY"
     id: bfa3adac-d75b-4e09-aa92-dc38e334937f
     jinja: "B\xE0i t\u1EADp l\xE0 quy\u1EBFt \u0111\u1ECBnh xem c\xE2u h\u1ECFi c\xF3\
-      \ ch\u1EA5p nh\u1EADn \u0111\u1EC1 xu\u1EA5t \u0111\u01B0\u1EE3c \u0111\u1EC1\
-      \ xu\u1EA5t nh\u01B0 m\u1ED9t c\xE2u tr\u1EA3 l\u1EDDi \u0111\xFAng hay kh\xF4\
-      ng.N\u1EBFu c\xF3, h\xE3y vi\u1EBFt \"{{answer_choices[1]}}\", n\u1EBFu kh\xF4\
-      ng th\xEC vi\u1EBFt \"{{answer_choices[0]}}\".\nQuestion: {{question}}\nSuggestion:\
+      \ ch\u1EA5p nh\u1EADn g\u1EE3i \xFD \u0111\u01B0\u1EE3c \u0111\u1EC1 xu\u1EA5\
+      t nh\u01B0 m\u1ED9t c\xE2u tr\u1EA3 l\u1EDDi \u0111\xFAng hay kh\xF4ng. N\u1EBF\
+      u c\xF3, h\xE3y vi\u1EBFt \"{{answer_choices[1]}}\", n\u1EBFu kh\xF4ng th\xEC\
+      \ vi\u1EBFt \"{{answer_choices[0]}}\".\nQuestion: {{question}}\nSuggestion:\
       \ {{answer}}\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -119,9 +120,9 @@ templates:
   c802cf19-59a7-4a3e-a6ab-5cbb1f169c70: !Template
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: c802cf19-59a7-4a3e-a6ab-5cbb1f169c70
-    jinja: "\u0110\xE2y l\xE0 m\u1ED9t c\xE2u tr\u1EA3 l\u1EDDi \u0111\xFAng cho c\xE2\
-      u h\u1ECFi sau v\u1EC1 {{document_title}}.C\xF3 hay kh\xF4ng?\nC\xE2u tr\u1EA3\
-      \ l\u1EDDi: {{answer}}\nC\xE2u h\u1ECFi: {{question}}\n|||\n{{answer_choices[label]}}"
+    jinja: "\u0110\xE2y l\xE0 c\xE2u tr\u1EA3 l\u1EDDi \u0111\xFAng cho c\xE2u h\u1ECF\
+      i sau v\u1EC1 {{document_title}}. C\xF3 hay kh\xF4ng?\nC\xE2u tr\u1EA3 l\u1EDD\
+      i: {{answer}}\nC\xE2u h\u1ECFi: {{question}}\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

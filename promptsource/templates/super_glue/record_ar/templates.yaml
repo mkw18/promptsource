@@ -5,8 +5,8 @@ templates:
     answer_choices: '{{ entities | join("|||") }}'
     id: 014b669e-2e3b-40ce-bdde-418966c7d666
     jinja: "{{ passage }} \n{{ query }} \n\u0623\u064A\u0647\u0645\u0627 \u0647\u0648\
-      \ \"{{\"@placeholder\"}}\"\u061F {{ entities | join(\", \") }}\u061F ||| {%\
-      \ if ( answers | length ) > 0 %} {{ answers | choice }}\n{% endif %}"
+      \ \"{{\"@placeholder\"}}\"\u061F {{ entities | join(\", \") }}? ||| {% if (\
+      \ answers | length ) > 0 %} {{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -17,12 +17,11 @@ templates:
   11e27d59-b1f5-43a1-9ccc-17f1c3249173: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 11e27d59-b1f5-43a1-9ccc-17f1c3249173
-    jinja: "\u0648\u0642\u062F \u062A\u0627\u0644\u0641\u0629 \u0627\u0644\u0648\u062B\
-      \u064A\u0642\u0629 \u0627\u0644\u062A\u0627\u0644\u064A\u0629. \u0642\u0644\
-      \ \u0644\u064A \u0645\u0627 \u0627\u0644\u0630\u064A \u064A\u0634\u064A\u0631\
-      \ \u0625\u0644\u064A\u0647 \"{{\"@placeholder\"}}\".\n\n\u0648\u062B\u064A\u0642\
-      \u0629: {{ passage }} \n{{ query }} \n||| {% if ( answers | length ) > 0 %}{{\
-      \ answers | choice }}\n{% endif %}"
+    jinja: "\u0627\u0644\u0645\u0633\u062A\u0646\u062F \u0627\u0644\u062A\u0627\u0644\
+      \u064A \u062A\u0627\u0644\u0641. \u0623\u062E\u0628\u0631\u0646\u064A \u0628\
+      \u0645\u0627 \u064A\u0634\u064A\u0631 \u0625\u0644\u064A\u0647 \"{{\"@placeholder\"\
+      }}\".\n\n\u0648\u062B\u064A\u0642\u0629: {{ passage }} \n{{ query }} \n||| {%\
+      \ if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -56,10 +55,11 @@ templates:
       \ join(\"\\n- \") }} \n\n\u0645\u0642\u0627\u0644\u0629 - \u0633\u0644\u0639\
       \u0629:\n\n{{ passage.split(\"@highlight\")[0] }}\n\n\u0627\u0644\u0622\u0646\
       \ \u0628\u0639\u062F \u0623\u0646 \u0642\u0631\u0623\u062A \u0627\u0644\u0645\
-      \u0642\u0627\u0644 \u060C \u064A\u0631\u062C\u0649 \u0643\u062A\u0627\u0628\u0629\
-      \ \u062C\u0645\u0644\u0629 \u062C\u062F\u064A\u062F\u0629 \u0644\u0625\u0636\
-      \u0627\u0641\u062A\u0647\u0627.\n\n||| {% if ( answers | length ) > 0 %}{{ query\
-      \ | replace(\"@placeholder\", answers | choice) }} {% endif %}"
+      \u0642\u0627\u0644\u0629 \u060C \u064A\u0631\u062C\u0649 \u0643\u062A\u0627\u0628\
+      \u0629 \u062C\u0645\u0644\u0629 \u062C\u062F\u064A\u062F\u0629 \u0644\u0625\u0636\
+      \u0627\u0641\u062A\u0647\u0627 \u0625\u0644\u064A\u0647\u0627.\n\n||| {% if\
+      \ ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\", answers |\
+      \ choice) }} {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -71,10 +71,10 @@ templates:
     answer_choices: '{{ entities | join("|||") }}'
     id: 441c70e3-095a-44a1-8163-bc3b666b7ea1
     jinja: "{{ passage }} \n{{ query }} \n\n\u064A\u062C\u0628 \u0623\u0646 \u062A\
-      \u0642\u0631\u0631 \u0645\u0627 \u0627\u0644\u0630\u064A \u064A\u0634\u064A\u0631\
-      \ \u0625\u0644\u064A\u0647 \"{{\"@placeholder\"}}\". \u0627\u062E\u062A\u0631\
-      \ \u0628\u064A\u0646:\n- {{answer_choices | join(\"\\n- \")}}\n||| {% if ( answers\
-      \ | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
+      \u0642\u0631\u0631 \u0645\u0627 \u064A\u0634\u064A\u0631 \u0625\u0644\u064A\u0647\
+      \ \"{{\"@placeholder\"}}\". \u0627\u062E\u062A\u0631 \u0645\u0646 \u0628\u064A\
+      \u0646:\n- {{answer_choices | join(\"\\n- \")}}\n||| {% if ( answers | length\
+      \ ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -119,9 +119,9 @@ templates:
     answer_choices: '{{ entities | join("|||") }}'
     id: 91555c1c-c1e4-469b-a2a4-fc952ce1a145
     jinja: "{{ passage }} \n{{ query }} \n\u0641\u064A \u0627\u0644\u0633\u0624\u0627\
-      \u0644 \u0623\u0639\u0644\u0627\u0647 \u060C \u062A\u0639\u0646\u064A \"{{\"\
-      @placeholder\"}}\" ||| {% if ( answers | length ) > 0 %}{{ answers | choice\
-      \ }}{% endif %}"
+      \u0644 \u0623\u0639\u0644\u0627\u0647 \u060C \u064A\u0631\u0645\u0632 \u0627\
+      \u0644\u062D\u0631\u0641 \"{{\"@placeholder\"}}\" ||| {% if ( answers | length\
+      \ ) > 0 %}{{ answers | choice }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -136,9 +136,9 @@ templates:
     id: 94577b75-2eac-4eae-b367-3b413c4188c6
     jinja: "\u0628\u0639\u062F \u0642\u0631\u0627\u0621\u0629 \u0627\u0644\u0645\u0642\
       \u0627\u0644 \u060C \u0627\u0643\u062A\u0628 \u062C\u0645\u0644\u0629 \u0623\
-      \u062E\u0631\u0649 \u0644\u0625\u0636\u0627\u0641\u062A\u0647\u0627.\n{{ passage\
-      \ | replace(\"@highlight\", \"\\n- \") }}\n\n||| {% if ( answers | length )\
-      \ > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}{% endif %}\n"
+      \u062E\u0631\u0649 \u0644\u062A\u0636\u064A\u0641\u0647\u0627.\n{{ passage |\
+      \ replace(\"@highlight\", \"\\n- \") }}\n\n||| {% if ( answers | length ) >\
+      \ 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -155,9 +155,9 @@ templates:
       \u0642\u0627\u0644\u0629 \u0627\u0644\u0625\u062E\u0628\u0627\u0631\u064A\u0629\
       \ \u0627\u0644\u062A\u0627\u0644\u064A\u0629 \u0648\u0643\u062A\u0627\u0628\u0629\
       \ \u062C\u0645\u0644\u0629 \u0623\u062E\u0631\u0649 \u0644\u0625\u0636\u0627\
-      \u0641\u062A\u0647\u0627.\n\n{{ passage | replace(\"@highlight\", \"\\n- \"\
-      ) }} \n ||| {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\"\
-      , answers | choice) }} {% endif %}\n"
+      \u0641\u062A\u0647\u0627 \u0625\u0644\u064A\u0647\u0627.\n\n{{ passage | replace(\"\
+      @highlight\", \"\\n- \") }} \n ||| {% if ( answers | length ) > 0 %}{{ query\
+      \ | replace(\"@placeholder\", answers | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -170,8 +170,8 @@ templates:
     id: 99dd38ce-32f3-4d58-93c5-59821002b9cc
     jinja: "{{ passage }} \n{{ query }} \n\u0645\u0627\u0630\u0627 \u064A\u0645\u0643\
       \u0646 \u0623\u0646 \u064A\u0643\u0648\u0646 \"{{\"@placeholder\"}}\"\u061F\
-      \ {{ entities | join(\", \") }}\u061F ||| {% if ( answers | length ) > 0 %}{{\
-      \ answers | choice }}{% endif %}"
+      \ {{ entities | join(\", \") }}? ||| {% if ( answers | length ) > 0 %}{{ answers\
+      \ | choice }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -182,13 +182,13 @@ templates:
   9b688cf3-28bf-4f33-94cf-e73e4fa8c608: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: 9b688cf3-28bf-4f33-94cf-e73e4fa8c608
-    jinja: "{{ passage }}\n{{ query }}\n\n\u0623\u062D\u0627\u0648\u0644 \u0623\u0646\
-      \ \u0623\u0642\u0631\u0631 \u0645\u0627 \u064A\u0639\u0646\u064A\u0647 \"{{\"\
-      @placeholder\"}}\" \u0641\u064A \u0627\u0644\u0646\u0635 \u0627\u0644\u0633\u0627\
-      \u0628\u0642.\n\u0627\u0644\u0645\u0633\u0627\u0639\u062F\u0629 \u0639\u0646\
-      \ \u0637\u0631\u064A\u0642 \u0627\u062E\u062A\u064A\u0627\u0631 \u062E\u064A\
-      \u0627\u0631 \u0628\u064A\u0646:\n- {{ entities | join(\"\\n- \") }}\n||| {%\
-      \ if ( answers | length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
+    jinja: "{{ passage }}\n{{ query }}\n\n\u0623\u062D\u0627\u0648\u0644 \u062A\u062D\
+      \u062F\u064A\u062F \u0645\u0639\u0646\u0649 \"{{\"@placeholder\"}}\" \u0641\u064A\
+      \ \u0627\u0644\u0646\u0635 \u0627\u0644\u0633\u0627\u0628\u0642.\n\u0627\u0644\
+      \u0645\u0633\u0627\u0639\u062F\u0629 \u0639\u0646 \u0637\u0631\u064A\u0642 \u062A\
+      \u062D\u062F\u064A\u062F \u062E\u064A\u0627\u0631 \u0628\u064A\u0646:\n- {{\
+      \ entities | join(\"\\n- \") }}\n||| {% if ( answers | length ) > 0 %}\n{{ answers\
+      \ | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -218,9 +218,9 @@ templates:
     jinja: "{{ passage.split(\"@highlight\")[0] }}\n\n\u064A\u0633\u0644\u0637 \u0627\
       \u0644\u0636\u0648\u0621:\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\
       \\n- \") }} \n\n\u0627\u0644\u0631\u062C\u0627\u0621 \u0643\u062A\u0627\u0628\
-      \u0629 \u062A\u0633\u0644\u064A\u0637 \u0627\u0644\u0636\u0648\u0621 \u0625\u0636\
-      \u0627\u0641\u064A.\n ||| {% if ( answers | length ) > 0 %}- {{ query | replace(\"\
-      @placeholder\", answers | choice) }} {% endif %}\n"
+      \u0629 \u062A\u0645\u064A\u064A\u0632 \u0625\u0636\u0627\u0641\u064A.\n |||\
+      \ {% if ( answers | length ) > 0 %}- {{ query | replace(\"@placeholder\", answers\
+      \ | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -232,11 +232,11 @@ templates:
     answer_choices: '{{entities | join("|||")}}'
     id: d3fce74e-0d9d-404a-a009-9ebbf5794c2c
     jinja: "\u0645\u0645\u0627\u0631\u0633\u0647 \u0627\u0644\u0631\u064A\u0627\u0636\
-      \u0647: \u0627\u0633\u062A\u062E\u0631\u0627\u062C \u0645\u0646 \u0627\u0644\
-      \u0646\u0635 \u0627\u0644\u0643\u064A\u0627\u0646 \u0627\u0644\u0635\u062D\u064A\
-      \u062D \u0627\u0644\u0630\u064A \u064A\u0634\u064A\u0631 \u0625\u0644\u0649\
-      \ {A}}.\n\n{{ passage }}\n{{ query }}\n||| {% if ( answers | length ) > 0 %}\n\
-      {{ answers | choice }}\n{% endif %}"
+      \u0647: \u0627\u0633\u062A\u062E\u0631\u062C \u0645\u0646 \u0627\u0644\u0646\
+      \u0635 \u0627\u0644\u0643\u064A\u0627\u0646 \u0627\u0644\u0635\u062D\u064A\u062D\
+      \ \u0627\u0644\u0630\u064A \u064A\u0634\u064A\u0631 \u0625\u0644\u064A\u0647\
+      \ \"{{\"@placeholder\"}}\".\n\n{{ passage }}\n{{ query }}\n||| {% if ( answers\
+      \ | length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -295,9 +295,9 @@ templates:
     answer_choices: '{{ entities | join("|||") }}'
     id: e68d13c5-df75-4de0-b59e-f2eaf4af6ce7
     jinja: "{{ passage }} \n{{ query }} \n\u0647\u0644 \u064A\u0645\u0643\u0646\u0643\
-      \ \u0645\u0639\u0631\u0641\u0629 \u0645\u0627\u0630\u0627 \u064A\u0639\u0646\
-      \u064A {A}}\u061F \u0647\u0630\u0627 \u064A\u0639\u0646\u064A ||| {% if ( answers\
-      \ | length ) > 0 %}{{ answers | choice }}{% endif %}"
+      \ \u0645\u0639\u0631\u0641\u0629 \u0645\u0627 \u064A\u0639\u0646\u064A\u0647\
+      \ \"{{\"@placeholder\"}}\"\u061F \u0647\u0630\u0627 \u064A\u0639\u0646\u064A\
+      \ ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

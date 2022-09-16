@@ -4,7 +4,7 @@ templates:
   0a47d28c-7cf5-405d-b9ef-9b82c1a20002: !Template
     answer_choices: A ||| B ||| C ||| D
     id: 0a47d28c-7cf5-405d-b9ef-9b82c1a20002
-    jinja: 'Lees het artikel en selecteer het beste antwoord.
+    jinja: 'Lees het artikel en kies het beste antwoord.
 
       Artikel: {{article}}
 
@@ -107,7 +107,7 @@ templates:
   9aacc46d-8863-4e02-9783-9ec931425759: !Template
     answer_choices: '{{ options | join("|||") }}'
     id: 9aacc46d-8863-4e02-9783-9ec931425759
-    jinja: 'Lees het volgende artikel en selecteer het beste antwoord.
+    jinja: 'Lees het volgende artikel en kies het beste antwoord.
 
       Artikel: {{article}}
 
@@ -128,11 +128,11 @@ templates:
   9aedaa07-b815-4a35-890b-6100f00706aa: !Template
     answer_choices: null
     id: 9aedaa07-b815-4a35-890b-6100f00706aa
-    jinja: "Schrijf een multi-choice vraag voor het volgende artikel, met de gegeven\
-      \ keuzes en antwoord:\nArtikel: {{article}}\nOpties:\n{{\"A\"}} {{options.0}}\n\
-      {{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\n\
-      Antwoorden:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"A\"\
-      :0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\nVraag: \n|||\n{{question}}"
+    jinja: "Schrijf een meerkeuzevraag voor het volgende artikel, met de gegeven keuzes\
+      \ en antwoord:\nArtikel: {{article}}\nOpties:\n{{\"A\"}} {{options.0}}\n{{\"\
+      B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\nAntwoorden:\n\
+      {{answer}} {{ [options.0,options.1,options.2,options.3][{\"A\":0,\"B\":1,\"\
+      C\":2,\"D\":3}[answer]] }}\nVraag: \n|||\n{{question}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -144,7 +144,7 @@ templates:
   af4869c4-35af-4644-86d9-27843ca4efd5: !Template
     answer_choices: null
     id: af4869c4-35af-4644-86d9-27843ca4efd5
-    jinja: "Schrijf een multi-choice vraag voor het volgende artikel:\nArtikel: {{article}}\n\
+    jinja: "Schrijf een meerkeuzevraag voor het volgende artikel:\nArtikel: {{article}}\n\
       |||\nVraag: \n{{question}}\nOpties:\n{{\"A\"}} {{options.0}}\n{{\"B\"}} {{options.1}}\n\
       {{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\nAntwoorden:\n{{answer}}"
     metadata: !TemplateMetadata

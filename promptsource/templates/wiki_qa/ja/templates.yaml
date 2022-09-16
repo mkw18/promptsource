@@ -4,8 +4,8 @@ templates:
   148e8e91-4f38-4427-8806-8a407268cda9: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 148e8e91-4f38-4427-8806-8a407268cda9
-    jinja: "\u8CEA\u554F\uFF1A {{question}}?\n\"{{answer}}\"\u306F\u5408\u7406\u7684\
-      \u306A\u7B54\u3048\u3067\u3057\u3087\u3046\u304B\uFF1F |||\n{{ answer_choices[label]\
+    jinja: "\u8CEA\u554F\uFF1A {{question}}?\n\"{{answer}}\" \u306F\u5408\u7406\u7684\
+      \u306A\u7B54\u3048\u3067\u3057\u3087\u3046\u304B? |||\n{{ answer_choices[label]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -18,11 +18,11 @@ templates:
   2395d5ce-5abd-4193-9cf1-863c7271a4f0: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 2395d5ce-5abd-4193-9cf1-863c7271a4f0
-    jinja: "\u81EA\u52D5\u30B7\u30B9\u30C6\u30E0\u306B\u3088\u3063\u3066\u751F\u6210\
-      \u3055\u308C\u305F\u56DE\u7B54\u3092\u6B21\u306E\u8CEA\u554F\u306B\u78BA\u8A8D\
-      \u3057\u3066\u3044\u307E\u3059\u3002 {{question}}\n\u63D0\u6848\u3055\u308C\u305F\
-      \u7B54\u3048\uFF1A {{answer}}\n\u3053\u306E\u7B54\u3048\u3092\u691C\u8A3C\u3059\
-      \u308B\u5FC5\u8981\u304C\u3042\u308A\u307E\u3059\u304B\uFF1F\n|||\n{{answer_choices[label]}}"
+    jinja: "\u6B21\u306E\u8CEA\u554F\u306B\u5BFE\u3059\u308B\u81EA\u52D5\u30B7\u30B9\
+      \u30C6\u30E0\u306B\u3088\u3063\u3066\u751F\u6210\u3055\u308C\u305F\u56DE\u7B54\
+      \u3092\u691C\u8A3C\u3057\u3066\u3044\u307E\u3059\u3002 {{question}}\n\u63A8\u5968\
+      \u3055\u308C\u308B\u7B54\u3048: {{answer}}\n\u3053\u306E\u56DE\u7B54\u3092\u691C\
+      \u8A3C\u3059\u308B\u5FC5\u8981\u304C\u3042\u308A\u307E\u3059\u304B?\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -33,8 +33,8 @@ templates:
   3480df1e-88bb-4b3d-90df-3f292463eb76: !Template
     answer_choices: null
     id: 3480df1e-88bb-4b3d-90df-3f292463eb76
-    jinja: "{% if label == 1 %}\n\u8CEA\u554F\u306F\u4F55\u3067\u3059\u304B\uFF1A\"\
-      {{answer}}\"\uFF1F\u30C8\u30D4\u30C3\u30AF\u306F{{document_title}}\u3067\u3059\
+    jinja: "{% if label == 1 %}\n\"{{answer}}\"\u3078\u306E\u8CEA\u554F\u306F\u4F55\
+      \u3067\u3059\u304B?\u30C8\u30D4\u30C3\u30AF\u306F{{document_title}}\u3067\u3059\
       \u3002|||\n\"{{question}}?\"\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -47,10 +47,10 @@ templates:
   8a9f2146-aa30-4e17-b1e2-aeb858b08b55: !Template
     answer_choices: null
     id: 8a9f2146-aa30-4e17-b1e2-aeb858b08b55
-    jinja: "{% if label == 1 %}\n\u8CEA\u554F\u56DE\u7B54\u30DA\u30A2\u306E\u30C8\u30D4\
-      \u30C3\u30AF\u3092\u6C7A\u5B9A\u3057\u307E\u3059\u3002\n\u8CEA\u554F\uFF1A \"\
-      {{question}}?\";  \u7B54\u3048\uFF1A \"{{answer}}\"? \u30C8\u30D4\u30C3\u30AF\
-      \uFF1A |||\n{{document_title}}\n{% endif %}\n"
+    jinja: "{% if label == 1 %}\n\u8CEA\u554F\u3068\u56DE\u7B54\u306E\u30DA\u30A2\u306E\
+      \u30C8\u30D4\u30C3\u30AF\u3092\u6C7A\u5B9A\u3057\u307E\u3059\u3002\n\u8CEA\u554F\
+      \uFF1A \"{{question}}?\";  \u7B54\u3048\uFF1A \"{{answer}}\"? \u30C8\u30D4\u30C3\
+      \u30AF\uFF1A |||\n{{document_title}}\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -62,10 +62,10 @@ templates:
   a99a68fa-46ae-4331-8b97-fcf751db3f6f: !Template
     answer_choices: null
     id: a99a68fa-46ae-4331-8b97-fcf751db3f6f
-    jinja: "{% if label == 1 %}\n\u7B54\u3048\u304C\u6B21\u306E\u3088\u3046\u306A\u30C8\
-      \u30D4\u30C3\u30AF\u300C {{document_title}} \u300D\u306B\u3064\u3044\u3066\u8CEA\
-      \u554F\u3092\u751F\u6210\u3057\u307E\u3059\u3002 {{answer}}.|||\n{{question}}?\n\
-      {% endif %}\n"
+    jinja: "{% if label == 1 %}\n\u30C8\u30D4\u30C3\u30AF\u300C{{document_title}}\u300D\
+      \u306B\u95A2\u3059\u308B\u8CEA\u554F\u3092\u751F\u6210\u3057\u307E\u3059\u3002\
+      \u305D\u306E\u7B54\u3048\u306F\u6B21\u306E\u3068\u304A\u308A\u3067\u3059\u3002\
+      \ {{answer}}.|||\n{{question}}?\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -77,10 +77,10 @@ templates:
   add469e1-b8d9-4926-8f38-3a60c85a7d2b: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: add469e1-b8d9-4926-8f38-3a60c85a7d2b
-    jinja: "\u8CEA\u554F\uFF1A {{question}}\nGoogle\u3067\u6B21\u306E\u56DE\u7B54\u3092\
-      \u898B\u3064\u3051\u307E\u3057\u305F\uFF1A {{answer}}\n\u305D\u308C\u306F\u6B63\
-      \u3057\u3044\u7B54\u3048\u3067\u3059\u304B\uFF1F\u306F\u3044\u3001\u3082\u3057\
-      \u304F\u306F\u3001\u3044\u3044\u3048\u3002\n|||\n{{answer_choices[label]}}"
+    jinja: "\u8CEA\u554F\uFF1A {{question}}\nGoogle \u3067\u6B21\u306E\u56DE\u7B54\
+      \u3092\u898B\u3064\u3051\u307E\u3057\u305F\u3002 {{answer}}\n\u305D\u308C\u306F\
+      \u6B63\u3057\u3044\u7B54\u3048\u3067\u3059\u304B\uFF1F\u306F\u3044\u3001\u3082\
+      \u3057\u304F\u306F\u3001\u3044\u3044\u3048\u3002\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -105,13 +105,13 @@ templates:
   bfa3adac-d75b-4e09-aa92-dc38e334937f: !Template
     answer_choices: "\u9593\u9055\u3044 ||| \u771F\u5B9F"
     id: bfa3adac-d75b-4e09-aa92-dc38e334937f
-    jinja: "\u6F14\u7FD2\u306F\u3001\u8CEA\u554F\u304C\u63D0\u6848\u3055\u308C\u305F\
-      \u63D0\u6848\u3092\u6B63\u3057\u3044\u7B54\u3048\u3068\u3057\u3066\u53D7\u3051\
+    jinja: "\u8AB2\u984C\u306F\u3001\u8CEA\u554F\u304C\u63D0\u6848\u3055\u308C\u305F\
+      \u63D0\u6848\u3092\u6B63\u3057\u3044\u56DE\u7B54\u3068\u3057\u3066\u53D7\u3051\
       \u5165\u308C\u308B\u304B\u3069\u3046\u304B\u3092\u6C7A\u5B9A\u3059\u308B\u3053\
-      \u3068\u3067\u3059\u3002\u306F\u3044\u306E\u5834\u5408\u3001\"{{answer_choices[1]}}\"\
-      \u3092\u66F8\u304D\u8FBC\u307F\u3001\u305D\u308C\u4EE5\u5916\u306E\u5834\u5408\
-      \u306F\"{{answer_choices[0]}}\"\u3092\u66F8\u304D\u8FBC\u307F\u307E\u3059\u3002\
-      \nQuestion: {{question}}\nSuggestion: {{answer}}\n|||\n{{answer_choices[label]}}"
+      \u3068\u3067\u3059\u3002\u306F\u3044\u306E\u5834\u5408\u306F \"{{answer_choices[1]}}\"\
+      \ \u3068\u66F8\u304D\u3001\u305D\u3046\u3067\u306A\u3044\u5834\u5408\u306F \"\
+      {{answer_choices[0]}}\" \u3068\u66F8\u304D\u307E\u3059\u3002\nQuestion: {{question}}\n\
+      Suggestion: {{answer}}\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -122,10 +122,10 @@ templates:
   c802cf19-59a7-4a3e-a6ab-5cbb1f169c70: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: c802cf19-59a7-4a3e-a6ab-5cbb1f169c70
-    jinja: "\u3053\u308C\u306F\u3001{{document_title}}\u306B\u95A2\u3059\u308B\u6B21\
-      \u306E\u8CEA\u554F\u306B\u5BFE\u3059\u308B\u6B63\u89E3\u3067\u3059\u3002\u306F\
-      \u3044\u3001\u3082\u3057\u304F\u306F\u3001\u3044\u3044\u3048\uFF1F\n\u7B54\u3048\
-      \uFF1A {{answer}}\n\u8CEA\u554F\uFF1A {{question}}\n|||\n{{answer_choices[label]}}"
+    jinja: "{{document_title}}\u306B\u95A2\u3059\u308B\u6B21\u306E\u8CEA\u554F\u306E\
+      \u6B63\u89E3\u3067\u3059\u3002\u306F\u3044\u3001\u3082\u3057\u304F\u306F\u3001\
+      \u3044\u3044\u3048\uFF1F\n\u7B54\u3048\uFF1A {{answer}}\n\u8CEA\u554F\uFF1A\
+      \ {{question}}\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -150,8 +150,8 @@ templates:
   d827a178-ff54-4bbf-bc6d-8756950ae5c5: !Template
     answer_choices: null
     id: d827a178-ff54-4bbf-bc6d-8756950ae5c5
-    jinja: "{% if label == 1 %}\n\u3053\u306E\u8CEA\u554F\u306B\u7B54\u3048\u308B\uFF1A\
-      \ {{question}}?|||\n{{answer}}\n{% endif %}"
+    jinja: "{% if label == 1 %}\n\u3053\u306E\u8CEA\u554F\u306B\u7B54\u3048\u3066\u304F\
+      \u3060\u3055\u3044\uFF1A {{question}}?|||\n{{answer}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

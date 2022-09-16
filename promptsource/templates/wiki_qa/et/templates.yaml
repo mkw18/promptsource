@@ -2,9 +2,9 @@ dataset: wiki_qa
 subset: et
 templates:
   148e8e91-4f38-4427-8806-8a407268cda9: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: 148e8e91-4f38-4427-8806-8a407268cda9
-    jinja: "K\xFCsimus: {{question}}?\nKas \"{{answer}}\" oleks m\xF5istlik vastus?\
+    jinja: "k\xFCsimus: {{question}}?\nKas \"{{answer}}\" oleks m\xF5istlik vastus?\
       \ |||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -15,11 +15,11 @@ templates:
     reference: Model is inserted both question and answer and output whether the answer
       is correct or not.
   2395d5ce-5abd-4193-9cf1-863c7271a4f0: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: 2395d5ce-5abd-4193-9cf1-863c7271a4f0
-    jinja: "Kontrollin automaatse s\xFCsteemi loodud vastuseid j\xE4rgmisele k\xFC\
-      simusele: {{question}}\nSoovitatav vastus: {{answer}}\nKas peaksin seda vastust\
-      \ valideerima?\n|||\n{{answer_choices[label]}}"
+    jinja: "Kontrollin automaatse s\xFCsteemi poolt genereeritud vastuseid j\xE4rgmisele\
+      \ k\xFCsimusele: {{question}}\nSoovitatud vastus: {{answer}}\nKas ma peaksin\
+      \ selle vastuse kinnitama?\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -30,7 +30,7 @@ templates:
   3480df1e-88bb-4b3d-90df-3f292463eb76: !Template
     answer_choices: null
     id: 3480df1e-88bb-4b3d-90df-3f292463eb76
-    jinja: "{% if label == 1 %}\nMis on k\xFCsimus: \"{{answer}}\"?Teema on {{document_title}}.|||\n\
+    jinja: "{% if label == 1 %}\nMis on k\xFCsimus: \"{{answer}}\"? Teema on {{document_title}}.|||\n\
       \"{{question}}?\"\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -43,8 +43,8 @@ templates:
   8a9f2146-aa30-4e17-b1e2-aeb858b08b55: !Template
     answer_choices: null
     id: 8a9f2146-aa30-4e17-b1e2-aeb858b08b55
-    jinja: "{% if label == 1 %}\nM\xE4\xE4rake k\xFCsimuste ja vastuste paari teema.\n\
-      K\xFCsimus: \"{{question}}?\";  Vastus: \"{{answer}}\"? Teema: |||\n{{document_title}}\n\
+    jinja: "{% if label == 1 %}\nM\xE4\xE4rake k\xFCsimuste-vastuste paari teema.\n\
+      k\xFCsimus: \"{{question}}?\";  Vastus: \"{{answer}}\"? Teema: |||\n{{document_title}}\n\
       {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -57,8 +57,8 @@ templates:
   a99a68fa-46ae-4331-8b97-fcf751db3f6f: !Template
     answer_choices: null
     id: a99a68fa-46ae-4331-8b97-fcf751db3f6f
-    jinja: "{% if label == 1 %}\nGenereerige k\xFCsimus teema \"{{document_title}}\"\
-      \ kohta, mille vastus oleks: {{answer}}.|||\n{{question}}?\n{% endif %}\n"
+    jinja: "{% if label == 1 %}\nLooge k\xFCsimus teemal \"{{document_title}}\", mille\
+      \ vastus oleks: {{answer}}.|||\n{{question}}?\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -68,10 +68,10 @@ templates:
     name: Generate Question from Topic
     reference: Given a topic, generate a question.
   add469e1-b8d9-4926-8f38-3a60c85a7d2b: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: add469e1-b8d9-4926-8f38-3a60c85a7d2b
-    jinja: "K\xFCsimus: {{question}}\nLeidsin Google'ist j\xE4rgmise vastuse: {{answer}}\n\
-      Kas see on \xF5ige vastus?Jah v\xF5i ei.\n|||\n{{answer_choices[label]}}"
+    jinja: "k\xFCsimus: {{question}}\nGoogle'ist leidsin j\xE4rgmise vastuse: {{answer}}\n\
+      Kas see on \xF5ige vastus? Jah v\xF5i ei.\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -82,7 +82,7 @@ templates:
   b0ad07f8-8799-4dd8-8f55-82f3f817f1fd: !Template
     answer_choices: null
     id: b0ad07f8-8799-4dd8-8f55-82f3f817f1fd
-    jinja: "{% if label == 1 %}\nM\xE4\xE4rake k\xFCsimuse teema.\nK\xFCsimus: \"\
+    jinja: "{% if label == 1 %}\nM\xE4\xE4rake k\xFCsimuse teema.\nk\xFCsimus: \"\
       {{question}}?\"\nTeema: |||\n{{document_title}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -95,10 +95,10 @@ templates:
   bfa3adac-d75b-4e09-aa92-dc38e334937f: !Template
     answer_choices: "Vale ||| T\xF5si"
     id: bfa3adac-d75b-4e09-aa92-dc38e334937f
-    jinja: "Harjutus on otsustada, kas k\xFCsimus aktsepteerib pakutud soovitust \xF5\
-      ige vastusena.Kui jah, kirjutage \"{{answer_choices[1]}}\", muidu kirjutage\
-      \ \"{{answer_choices[0]}}\".\nQuestion: {{question}}\nSuggestion: {{answer}}\n\
-      |||\n{{answer_choices[label]}}"
+    jinja: "Harjutuse eesm\xE4rk on otsustada, kas k\xFCsimus aktsepteerib pakutud\
+      \ ettepanekut kui \xF5iget vastust. Kui jah, kirjutage \"{{answer_choices[1]}}\"\
+      , vastasel juhul kirjutage \"{{answer_choices[0]}}\".\nQuestion: {{question}}\n\
+      Suggestion: {{answer}}\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -107,10 +107,10 @@ templates:
     name: exercise
     reference: ''
   c802cf19-59a7-4a3e-a6ab-5cbb1f169c70: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: c802cf19-59a7-4a3e-a6ab-5cbb1f169c70
-    jinja: "See on \xF5ige vastus j\xE4rgmisele k\xFCsimusele {{document_title}} kohta.Jah\
-      \ v\xF5i ei?\nVastus: {{answer}}\nK\xFCsimus: {{question}}\n|||\n{{answer_choices[label]}}"
+    jinja: "See on \xF5ige vastus j\xE4rgmisele k\xFCsimusele teemal {{document_title}}.\
+      \ Jah v\xF5i ei?\nVastus: {{answer}}\nk\xFCsimus: {{question}}\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

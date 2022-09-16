@@ -5,7 +5,7 @@ templates:
     answer_choices: Evet ||| Numara
     id: 2b52a83c-0021-41fe-b44c-5aaa076d71a2
     jinja: "{{premise}} Yaln\u0131zca yukar\u0131daki a\xE7\u0131klamay\u0131 ve d\xFC\
-      nya hakk\u0131nda bildiklerinizi kullanmak, \"{{hypothesis}}\" kesinlikle do\u011F\
+      nya hakk\u0131nda bildiklerinizi kullanarak \"{{hypothesis}}\" kesinlikle do\u011F\
       ru mu? Evet veya Hay\u0131r? ||| {% if label != -1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
@@ -18,7 +18,7 @@ templates:
   2d0d63da-ffcf-4f6e-941a-b8da922be43e: !Template
     answer_choices: Evet ||| Numara
     id: 2d0d63da-ffcf-4f6e-941a-b8da922be43e
-    jinja: "Verilen {{premise}} \"{{hypothesis}}\" oldu\u011Fu do\u011Fru mu? Evet\
+    jinja: "verilen {{premise}} \"{{hypothesis}}\" oldu\u011Fu garantili mi? Evet\
       \ veya Hay\u0131r? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
       \ %}"
     metadata: !TemplateMetadata
@@ -31,9 +31,9 @@ templates:
   4163e6f1-1a83-4c73-b867-02eb7ac80316: !Template
     answer_choices: Evet ||| Numara
     id: 4163e6f1-1a83-4c73-b867-02eb7ac80316
-    jinja: "Sanmak {{premise}} \"{{hypothesis}}\" \u0131 \xE7\u0131karabilir miyiz?\
-      \ Evet veya Hay\u0131r? ||| {% if label != -1 %}{{ answer_choices[label] }}{%\
-      \ endif %}"
+    jinja: "Sanmak {{premise}} \"{{hypothesis}}\" oldu\u011Fu sonucunu \xE7\u0131\
+      karabilir miyiz? Evet veya Hay\u0131r? ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -69,8 +69,8 @@ templates:
   b8dc85c6-28b6-4340-979a-8e77c2a0dde8: !Template
     answer_choices: Evet ||| Numara
     id: b8dc85c6-28b6-4340-979a-8e77c2a0dde8
-    jinja: "Verilen {{premise}} \"{{hypothesis}}\" \u0131n do\u011Fru oldu\u011Funu\
-      \ varsaymal\u0131 m\u0131y\u0131z? Evet veya Hay\u0131r? ||| {% if label !=\
+    jinja: "verilen {{premise}} \"{{hypothesis}}\" ifadesinin do\u011Fru oldu\u011F\
+      unu varsaymal\u0131 m\u0131y\u0131z? Evet veya Hay\u0131r? ||| {% if label !=\
       \ -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -82,8 +82,8 @@ templates:
   e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff: !Template
     answer_choices: Evet ||| Numara
     id: e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff
-    jinja: "Verilen {{premise}} {{hypothesis}} Evet veya Hay\u0131r? ||| {% if label\
-      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "Verilen {{premise}} Bunu takip ediyor mu {{hypothesis}} Evet veya Hay\u0131\
+      r? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -94,8 +94,8 @@ templates:
   ed1f4b75-8826-4852-9bd6-aedf368678f5: !Template
     answer_choices: Evet ||| Numara
     id: ed1f4b75-8826-4852-9bd6-aedf368678f5
-    jinja: "{{premise}} \xD6nceki pasaja dayanarak, \"{{hypothesis}}\" oldu\u011F\
-      u do\u011Fru mu? Evet veya Hay\u0131r? ||| {% if label != -1 %}{{ answer_choices[label]\
+    jinja: "{{premise}} \xD6nceki pasaja g\xF6re, \"{{hypothesis}}\" oldu\u011Fu do\u011F\
+      ru mu? Evet veya Hay\u0131r? ||| {% if label != -1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -107,9 +107,9 @@ templates:
   ee0ce095-122a-4509-bf0b-33d1495295f7: !Template
     answer_choices: Evet ||| Numara
     id: ee0ce095-122a-4509-bf0b-33d1495295f7
-    jinja: "{{premise}} \"{{hypothesis}}\" oldu\u011Funu s\xF6ylemek i\xE7in hakl\u0131\
-      \ m\u0131y\u0131z? Evet veya Hay\u0131r? ||| {% if label != -1 %}{{ answer_choices[label]\
-      \ }}{% endif %}"
+    jinja: "{{premise}} \"{{hypothesis}}\" demekte hakl\u0131 m\u0131y\u0131z? Evet\
+      \ veya Hay\u0131r? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

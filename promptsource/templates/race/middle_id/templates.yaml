@@ -4,13 +4,13 @@ templates:
   0a47d28c-7cf5-405d-b9ef-9b82c1a20002: !Template
     answer_choices: A ||| B ||| C ||| D
     id: 0a47d28c-7cf5-405d-b9ef-9b82c1a20002
-    jinja: 'Read the article and select the best answer.
+    jinja: 'Baca artikel dan pilih jawaban terbaik.
 
-      Article: {{article}}
+      Artikel: {{article}}
 
-      Question: {{question}}
+      Pertanyaan: {{question}}
 
-      Options: {{"A"}}: {{options.0}}
+      Pilihan: {{"A"}}: {{options.0}}
 
       {{"B"}}: {{options.1}}
 
@@ -31,9 +31,9 @@ templates:
   1a68b62e-404c-4037-baec-7e20cb4c3f6b: !Template
     answer_choices: '{{ options | join("|||") }}'
     id: 1a68b62e-404c-4037-baec-7e20cb4c3f6b
-    jinja: 'Read the following article and answer the question.
+    jinja: 'Baca artikel berikut dan jawab pertanyaannya.
 
-      Article: {{article}}
+      Artikel: {{article}}
 
       Pertanyaan: {{question}}
 
@@ -50,26 +50,26 @@ templates:
     name: Read the article and answer the question (no option)
     reference: ''
   2e7f5fff-518e-4100-90f9-cca094b11e95: !Template
-    answer_choices: Yes ||| Tidak
+    answer_choices: Ya ||| Tidak
     id: 2e7f5fff-518e-4100-90f9-cca094b11e95
     jinja: '{% set candidate = ["A", "B", "C", "D"] | choice %}
 
-      Article: {{article}}
+      Artikel: {{article}}
 
-      Question: {{question}}
+      Pertanyaan: {{question}}
 
-      Yes or no, is the answer "{{ [options.0,options.1,options.2,options.3][{"A":0,"B":1,"C":2,"D":3}[answer]]
+      Ya atau tidak, adalah jawabannya "{{ [options.0,options.1,options.2,options.3][{"A":0,"B":1,"C":2,"D":3}[answer]]
       }}"?
 
       |||
 
       {% if candidate == answer %}
 
-      Yes
+      Ya
 
       {% else %}
 
-      No
+      Tidak
 
       {% endif %}'
     metadata: !TemplateMetadata
@@ -107,9 +107,9 @@ templates:
   9aacc46d-8863-4e02-9783-9ec931425759: !Template
     answer_choices: '{{ options | join("|||") }}'
     id: 9aacc46d-8863-4e02-9783-9ec931425759
-    jinja: 'Read the following article and select the best answer.
+    jinja: 'Baca artikel berikut dan pilih jawaban terbaik.
 
-      Article: {{article}}
+      Artikel: {{article}}
 
       Pertanyaan: {{question}}
 
@@ -128,11 +128,11 @@ templates:
   9aedaa07-b815-4a35-890b-6100f00706aa: !Template
     answer_choices: null
     id: 9aedaa07-b815-4a35-890b-6100f00706aa
-    jinja: "Tulis pertanyaan multi-pilihan untuk artikel berikut, dengan pilihan dan\
-      \ jawaban yang diberikan:\nArticle: {{article}}\nOptions:\n{{\"A\"}} {{options.0}}\n\
+    jinja: "Tulis pertanyaan pilihan ganda untuk artikel berikut, dengan pilihan dan\
+      \ jawaban yang diberikan:\nArtikel: {{article}}\nPilihan:\n{{\"A\"}} {{options.0}}\n\
       {{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\n\
-      Answer:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"A\":0,\"\
-      B\":1,\"C\":2,\"D\":3}[answer]] }}\nQuestion: \n|||\n{{question}}"
+      Menjawab:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"A\":0,\"\
+      B\":1,\"C\":2,\"D\":3}[answer]] }}\nPertanyaan: \n|||\n{{question}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -144,9 +144,9 @@ templates:
   af4869c4-35af-4644-86d9-27843ca4efd5: !Template
     answer_choices: null
     id: af4869c4-35af-4644-86d9-27843ca4efd5
-    jinja: "Write a multi-choice question for the following article:\nArtikel: {{article}}\n\
-      |||\nQuestion: \n{{question}}\nPilihan:\n{{\"A\"}} {{options.0}}\n{{\"B\"}}\
-      \ {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\nMenjawab:\n\
+    jinja: "Tulislah pertanyaan pilihan ganda untuk artikel berikut:\nArtikel: {{article}}\n\
+      |||\nPertanyaan: \n{{question}}\nPilihan:\n{{\"A\"}} {{options.0}}\n{{\"B\"\
+      }} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\nMenjawab:\n\
       {{answer}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -162,11 +162,11 @@ templates:
     jinja: 'I''m taking a test and have to guess the right answer to the question
       after the article.
 
-      Article: {{article}}
+      Artikel: {{article}}
 
-      Question: {{question}}
+      Pertanyaan: {{question}}
 
-      Options: {{"A"}}: {{options.0}}
+      Pilihan: {{"A"}}: {{options.0}}
 
       {{"B"}}: {{options.1}}
 

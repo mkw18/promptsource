@@ -2,11 +2,11 @@ dataset: super_glue
 subset: rte_et
 templates:
   2b52a83c-0021-41fe-b44c-5aaa076d71a2: !Template
-    answer_choices: Jah ||| Mitte
+    answer_choices: Jah ||| Ei
     id: 2b52a83c-0021-41fe-b44c-5aaa076d71a2
-    jinja: "{{premise}} Kasutades ainult \xFClaltoodud kirjeldust ja seda, mida teate\
-      \ maailma kohta, on \"{{hypothesis}}\" kindlasti \xF5ige? Jah v\xF5i ei? |||\
-      \ {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} Kui kasutada ainult \xFClaltoodud kirjeldust ja seda, mida\
+      \ te maailmast teate, kas \"{{hypothesis}}\" on kindlasti \xF5ige? Jah v\xF5\
+      i ei? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -15,10 +15,10 @@ templates:
     name: MNLI crowdsource
     reference: Adapted from Williams et al. 2018's instructions to crowdsourcing workers.
   2d0d63da-ffcf-4f6e-941a-b8da922be43e: !Template
-    answer_choices: Jah ||| Mitte
+    answer_choices: Jah ||| Ei
     id: 2d0d63da-ffcf-4f6e-941a-b8da922be43e
-    jinja: "Antud {{premise}} Kas on t\xF5si, et \"{{hypothesis}}\"? Jah v\xF5i ei?\
-      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "Antud {{premise}} Kas on tagatud, et \"{{hypothesis}}\" on t\xF5si? Jah\
+      \ v\xF5i ei? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -27,9 +27,9 @@ templates:
     name: guaranteed true
     reference: Webson & Pavlick 2021
   4163e6f1-1a83-4c73-b867-02eb7ac80316: !Template
-    answer_choices: Jah ||| Mitte
+    answer_choices: Jah ||| Ei
     id: 4163e6f1-1a83-4c73-b867-02eb7ac80316
-    jinja: "Arvata {{premise}} Kas me saame j\xE4reldada, et \"{{hypothesis}}\"? Jah\
+    jinja: "Oletame {{premise}} Kas saame j\xE4reldada, et \"{{hypothesis}}\"? Jah\
       \ v\xF5i ei? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -41,7 +41,7 @@ templates:
   8fb1c6aa-20e9-438c-bece-c6af1c746449: !Template
     answer_choices: "T\xF5si ||| Vale"
     id: 8fb1c6aa-20e9-438c-bece-c6af1c746449
-    jinja: "{{premise}}\nK\xFCsimus: {{hypothesis}} \xD5ige v\xF5i vale? ||| {% if\
+    jinja: "{{premise}}\nk\xFCsimus: {{hypothesis}} \xD5ige v\xF5i vale? ||| {% if\
       \ label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -51,9 +51,9 @@ templates:
     name: GPT-3 style
     reference: Same as reported in Figure G31 of the GPT-3 paper.
   9e078fb4-505b-413c-bb5e-3cd16ddcf5d7: !Template
-    answer_choices: Jah ||| Mitte
+    answer_choices: Jah ||| Ei
     id: 9e078fb4-505b-413c-bb5e-3cd16ddcf5d7
-    jinja: "{{premise}} \n\nK\xFCsimus: Kas see t\xE4hendab, et \"{{hypothesis}}\"\
+    jinja: "{{premise}} \n\nk\xFCsimus: Kas see t\xE4hendab, et \"{{hypothesis}}\"\
       ? Jah v\xF5i ei? ||| {% if label != -1 %}{{answer_choices[label]}}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -63,10 +63,10 @@ templates:
     name: does this imply
     reference: Sanh et al. 2021
   b8dc85c6-28b6-4340-979a-8e77c2a0dde8: !Template
-    answer_choices: Jah ||| Mitte
+    answer_choices: Jah ||| Ei
     id: b8dc85c6-28b6-4340-979a-8e77c2a0dde8
     jinja: "Antud {{premise}} Kas peaksime eeldama, et \"{{hypothesis}}\" on t\xF5\
-      ene? Jah v\xF5i ei? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      si? Jah v\xF5i ei? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
       \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -76,10 +76,11 @@ templates:
     name: should assume
     reference: Webson & Pavlick 2021
   e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff: !Template
-    answer_choices: Jah ||| Mitte
+    answer_choices: Jah ||| Ei
     id: e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff
-    jinja: "Arvestades seda {{premise}} Kas see j\xE4rgib seda {{hypothesis}} Jah\
-      \ v\xF5i ei? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "Arvestades seda {{premise}} Kas sellest j\xE4reldub, et {{hypothesis}}\
+      \ Jah v\xF5i ei? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -88,7 +89,7 @@ templates:
     name: does it follow that
     reference: Sanh et al. 2021
   ed1f4b75-8826-4852-9bd6-aedf368678f5: !Template
-    answer_choices: Jah ||| Mitte
+    answer_choices: Jah ||| Ei
     id: ed1f4b75-8826-4852-9bd6-aedf368678f5
     jinja: "{{premise}} Kas eelmise l\xF5igu p\xF5hjal on t\xF5si, et \"{{hypothesis}}\"\
       ? Jah v\xF5i ei? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
@@ -101,11 +102,10 @@ templates:
     name: based on the previous passage
     reference: "Adapted from the BoolQ prompts in Schick & Sch\xFCtze 2021."
   ee0ce095-122a-4509-bf0b-33d1495295f7: !Template
-    answer_choices: Jah ||| Mitte
+    answer_choices: Jah ||| Ei
     id: ee0ce095-122a-4509-bf0b-33d1495295f7
-    jinja: "{{premise}} Kas oleme \xF5igustatud, \xF6eldes, et \"{{hypothesis}}\"\
-      ? Jah v\xF5i ei? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
-      \ %}"
+    jinja: "{{premise}} Kas meil on \xF5igus \xF6elda, et \"{{hypothesis}}\"? Jah\
+      \ v\xF5i ei? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -114,7 +114,7 @@ templates:
     name: justified in saying
     reference: Webson & Pavlick 2021
   fb4f8144-37f5-4977-88da-37a5d0bfd0e8: !Template
-    answer_choices: Jah ||| Mitte
+    answer_choices: Jah ||| Ei
     id: fb4f8144-37f5-4977-88da-37a5d0bfd0e8
     jinja: "Arvestades seda {{premise}} Seet\xF5ttu peab olema t\xF5si, et \"{{hypothesis}}\"\
       ? Jah v\xF5i ei? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\

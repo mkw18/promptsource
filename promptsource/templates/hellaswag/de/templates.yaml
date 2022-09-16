@@ -4,8 +4,8 @@ templates:
   00caa8cb-7f67-43bc-9e90-fc1d5d329432: !Template
     answer_choices: '{{endings | join(" ||| ")}}'
     id: 00caa8cb-7f67-43bc-9e90-fc1d5d329432
-    jinja: "Vervollst\xE4ndigen Sie die Beschreibung mit einem geeigneten Ende:\n\
-      Zuerst, {{ ctx_a.lower() }} Dann, {{ ctx_b.lower() }} ...\n\n(a) {{ answer_choices[0]\
+    jinja: "Vervollst\xE4ndigen Sie die Beschreibung mit einem passenden Ende:\nZuerst,\
+      \ {{ ctx_a.lower() }} Dann, {{ ctx_b.lower() }} ...\n\n(a) {{ answer_choices[0]\
       \ }}\n\n(b) {{ answer_choices[1] }}\n\n(c) {{ answer_choices[2] }}\n\n(d) {{\
       \ answer_choices[3] }}\n|||\n{{ answer_choices[label | int()] }}"
     metadata: !TemplateMetadata
@@ -56,12 +56,13 @@ templates:
   52fbd075-46cb-49fb-a41b-00a0f4a60285: !Template
     answer_choices: '{{endings | join(" ||| ") }}'
     id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
-    jinja: "{% set prompts = [\n'K\xF6nnen Sie das richtige Ende f\xFCr den Satz ausw\xE4\
-      hlen: ',\n'Die Aufgabe besteht darin, das Ende f\xFCr den Satz zu generieren:\
-      \ ',\n'Wie endet dieser Satz? ',\n'Aus der unten beschriebenen Liste ist das\
-      \ Ende f\xFCr den Satz am sinnvollsten ',]\n%}\n{{prompts | choice}}\n{{ctx}}\n\
-      \n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\
-      \n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices [label | int()]}}"
+    jinja: "{% set prompts = [\n'Kannst du das richtige Ende f\xFCr den Satz ausw\xE4\
+      hlen: ',\n'Die Aufgabe besteht darin, die Endung f\xFCr den Satz zu generieren:\
+      \ ',\n'Wie endet dieser Satz? ',\n'Aus der Liste der unten beschriebenen Endungen,\
+      \ welche Endung f\xFCr den Satz am sinnvollsten ist ',]\n%}\n{{prompts | choice}}\n\
+      {{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c) \
+      \ {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices\
+      \ [label | int()]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -73,7 +74,7 @@ templates:
     answer_choices: Ja ||| Nein
     id: 663470b8-3fab-449c-84ab-6c4738da51b3
     jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nBetrachten Sie die folgende\
-      \ Beschreibung: {{ ctx_a }}\nIst die folgende Fortsetzung der angemessenen Fortsetzung?\n\
+      \ Beschreibung: {{ ctx_a }}\nIst das Folgende eine angemessene Fortsetzung?\n\
       {{ ctx_b }} {{ endings[instance] }}\nJa oder Nein?\n||| \n{% if label  == instance\
       \ | string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n\
       {% endif %}"
@@ -104,7 +105,7 @@ templates:
       (d)  {{answer_choices[3]}}
 
 
-      Tipp: Das Thema des Satzes ist {{activity_label}}
+      Hinweis: Das Thema des Satzes ist {{activity_label}}
 
       |||
 
@@ -175,9 +176,9 @@ templates:
   def77598-682f-48de-b187-55db4d390f07: !Template
     answer_choices: Ende 1 ||| Ende 2 ||| Ende 3 ||| Ende 4
     id: def77598-682f-48de-b187-55db4d390f07
-    jinja: "Wenn eine Beschreibung einer Situation so beginnt: {{ ctx }}... Then how\n\
-      does it continue? \n\nEnde 1: {{ endings[0] }}\n\nEnde 2: {{ endings[1] }}\n\
-      \nEnde 3: {{ endings[2] }}\n\nEnde 4: {{ endings[3] }}\n|||{{answer_choices[label\
+    jinja: "Wenn eine Situationsbeschreibung so beginnt: {{ ctx }}... Then how\ndoes\
+      \ it continue? \n\nEnde 1: {{ endings[0] }}\n\nEnde 2: {{ endings[1] }}\n\n\
+      Ende 3: {{ endings[2] }}\n\nEnde 4: {{ endings[3] }}\n|||{{answer_choices[label\
       \ | int()] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

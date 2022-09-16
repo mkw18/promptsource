@@ -20,9 +20,9 @@ templates:
   2395d5ce-5abd-4193-9cf1-863c7271a4f0: !Template
     answer_choices: Numara ||| Evet
     id: 2395d5ce-5abd-4193-9cf1-863c7271a4f0
-    jinja: "Otomatik bir sistem taraf\u0131ndan olu\u015Fturulan cevaplar\u0131 a\u015F\
-      a\u011F\u0131daki soruya do\u011Frul\u0131yorum: {{question}}\n\xD6nerilen cevap:\
-      \ {{answer}}\nBu cevab\u0131 do\u011Frulamal\u0131 m\u0131y\u0131m?\n|||\n{{answer_choices[label]}}"
+    jinja: "A\u015Fa\u011F\u0131daki soruya otomatik bir sistem taraf\u0131ndan olu\u015F\
+      turulan cevaplar\u0131 do\u011Fruluyorum: {{question}}\n\xD6nerilen cevap: {{answer}}\n\
+      Bu cevab\u0131 do\u011Frulamal\u0131 m\u0131y\u0131m?\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -35,7 +35,7 @@ templates:
     id: 3480df1e-88bb-4b3d-90df-3f292463eb76
     jinja: '{% if label == 1 %}
 
-      Soru nedir: "{{answer}}"?Konu {{document_title}}.|||
+      Soru ne: "{{answer}}"? Konu {{document_title}}.|||
 
       "{{question}}?"
 
@@ -67,8 +67,9 @@ templates:
   a99a68fa-46ae-4331-8b97-fcf751db3f6f: !Template
     answer_choices: null
     id: a99a68fa-46ae-4331-8b97-fcf751db3f6f
-    jinja: "{% if label == 1 %}\nCevab\u0131 olan \"{{document_title}}\" konusu hakk\u0131\
-      nda bir soru olu\u015Fturun: {{answer}}.|||\n{{question}}?\n{% endif %}\n"
+    jinja: "{% if label == 1 %}\n\"{{document_title}}\" konusu hakk\u0131nda cevab\u0131\
+      \ \u015Fu olacak bir soru olu\u015Fturun: {{answer}}.|||\n{{question}}?\n{%\
+      \ endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -80,8 +81,8 @@ templates:
   add469e1-b8d9-4926-8f38-3a60c85a7d2b: !Template
     answer_choices: Numara ||| Evet
     id: add469e1-b8d9-4926-8f38-3a60c85a7d2b
-    jinja: "Soru: {{question}}\nGoogle'da a\u015Fa\u011F\u0131daki cevab\u0131 buldum:\
-      \ {{answer}}\nBu do\u011Fru bir cevap m\u0131?Evet veya Hay\u0131r.\n|||\n{{answer_choices[label]}}"
+    jinja: "Soru: {{question}}\nGoogle'da \u015Fu cevab\u0131 buldum: {{answer}}\n\
+      Bu do\u011Fru bir cevap m\u0131? Evet veya Hay\u0131r.\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -105,8 +106,8 @@ templates:
   bfa3adac-d75b-4e09-aa92-dc38e334937f: !Template
     answer_choices: "Yanl\u0131\u015F ||| Do\u011Fru"
     id: bfa3adac-d75b-4e09-aa92-dc38e334937f
-    jinja: "Al\u0131\u015Ft\u0131rma, sorunun \xF6nerilen \xF6neriyi do\u011Fru bir\
-      \ cevap olarak kabul edip etmedi\u011Fine karar vermektir.Evet ise, \"{{answer_choices[1]}}\"\
+    jinja: "Al\u0131\u015Ft\u0131rma, sorunun \xF6nerilen \xF6neriyi do\u011Fru cevap\
+      \ olarak kabul edip etmedi\u011Fine karar vermektir. Evet ise \"{{answer_choices[1]}}\"\
       \ yaz\u0131n, aksi takdirde \"{{answer_choices[0]}}\" yaz\u0131n.\nQuestion:\
       \ {{question}}\nSuggestion: {{answer}}\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
@@ -120,7 +121,7 @@ templates:
     answer_choices: Numara ||| Evet
     id: c802cf19-59a7-4a3e-a6ab-5cbb1f169c70
     jinja: "Bu, {{document_title}} ile ilgili a\u015Fa\u011F\u0131daki sorunun do\u011F\
-      ru bir cevab\u0131d\u0131r.Evet veya Hay\u0131r?\nCevap: {{answer}}\nSoru: {{question}}\n\
+      ru cevab\u0131d\u0131r. Evet veya Hay\u0131r?\nCevap: {{answer}}\nSoru: {{question}}\n\
       |||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -132,7 +133,7 @@ templates:
   cdc54124-723e-4e1c-878c-aeaabf55c28c: !Template
     answer_choices: null
     id: cdc54124-723e-4e1c-878c-aeaabf55c28c
-    jinja: "{% if label == 1 %}\nPasaj\u0131n konusunu belirleyin.\n\"{{answer}}\"\
+    jinja: "{% if label == 1 %}\nPar\xE7an\u0131n konusunu belirleyin.\n\"{{answer}}\"\
       \nBa\u015Fl\u0131k:|||\n{{document_title}}\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false

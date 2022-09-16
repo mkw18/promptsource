@@ -4,9 +4,10 @@ templates:
   0a47d28c-7cf5-405d-b9ef-9b82c1a20002: !Template
     answer_choices: A ||| B ||| C ||| D
     id: 0a47d28c-7cf5-405d-b9ef-9b82c1a20002
-    jinja: "Pro\u010Ditajte \u010Dlanak i odaberite najbolji odgovor.\nArticle: {{article}}\n\
-      Pitanje: {{question}}\nOptions: {{\"A\"}}: {{options.0}}\n{{\"B\"}}: {{options.1}}\n\
-      {{\"C\"}}: {{options.2}}\n{{\"D\"}}: {{options.3}}\n|||\n{{answer}}"
+    jinja: "Pro\u010Ditajte \u010Dlanak i odaberite najbolji odgovor.\n\u010Clanak:\
+      \ {{article}}\nPitanje: {{question}}\nMogu\u0107nosti: {{\"A\"}}: {{options.0}}\n\
+      {{\"B\"}}: {{options.1}}\n{{\"C\"}}: {{options.2}}\n{{\"D\"}}: {{options.3}}\n\
+      |||\n{{answer}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -18,7 +19,7 @@ templates:
     answer_choices: '{{ options | join("|||") }}'
     id: 1a68b62e-404c-4037-baec-7e20cb4c3f6b
     jinja: "Pro\u010Ditajte sljede\u0107i \u010Dlanak i odgovorite na pitanje.\n\u010C\
-      lanak: {{article}}\nQuestion: {{question}}\nOdgovor:\n|||\n{{ answer_choices[{\"\
+      lanak: {{article}}\nPitanje: {{question}}\nOdgovor:\n|||\n{{ answer_choices[{\"\
       A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -28,28 +29,12 @@ templates:
     name: Read the article and answer the question (no option)
     reference: ''
   2e7f5fff-518e-4100-90f9-cca094b11e95: !Template
-    answer_choices: Yes ||| Ne
+    answer_choices: Da ||| Ne
     id: 2e7f5fff-518e-4100-90f9-cca094b11e95
-    jinja: '{% set candidate = ["A", "B", "C", "D"] | choice %}
-
-      Article: {{article}}
-
-      Question: {{question}}
-
-      Yes or no, is the answer "{{ [options.0,options.1,options.2,options.3][{"A":0,"B":1,"C":2,"D":3}[answer]]
-      }}"?
-
-      |||
-
-      {% if candidate == answer %}
-
-      Yes
-
-      {% else %}
-
-      No
-
-      {% endif %}'
+    jinja: "{% set candidate = [\"A\", \"B\", \"C\", \"D\"] | choice %}\n\u010Clanak:\
+      \ {{article}}\nPitanje: {{question}}\nDa ili ne, glasi odgovor \"{{ [options.0,options.1,options.2,options.3][{\"\
+      A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\"?\n|||\n{% if candidate == answer\
+      \ %}\nDa\n{% else %}\nNe\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -98,11 +83,11 @@ templates:
   9aedaa07-b815-4a35-890b-6100f00706aa: !Template
     answer_choices: null
     id: 9aedaa07-b815-4a35-890b-6100f00706aa
-    jinja: "Write a multi-choice question for the following article, with the given\
-      \ choices and answer:\nArticle: {{article}}\nOptions:\n{{\"A\"}} {{options.0}}\n\
-      {{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\n\
-      Odgovor:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"A\":0,\"\
-      B\":1,\"C\":2,\"D\":3}[answer]] }}\nPitanje: \n|||\n{{question}}"
+    jinja: "Napi\u0161ite pitanje s vi\u0161estrukim izborom za sljede\u0107i \u010D\
+      lanak, s ponu\u0111enim izborima i odgovorom:\n\u010Clanak: {{article}}\nMogu\u0107\
+      nosti:\n{{\"A\"}} {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n\
+      {{\"D\"}} {{options.3}}\nOdgovor:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"\
+      A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\nPitanje: \n|||\n{{question}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -114,9 +99,10 @@ templates:
   af4869c4-35af-4644-86d9-27843ca4efd5: !Template
     answer_choices: null
     id: af4869c4-35af-4644-86d9-27843ca4efd5
-    jinja: "Write a multi-choice question for the following article:\nArticle: {{article}}\n\
-      |||\nPitanje: \n{{question}}\nOptions:\n{{\"A\"}} {{options.0}}\n{{\"B\"}} {{options.1}}\n\
-      {{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\nAnswer:\n{{answer}}"
+    jinja: "Napi\u0161ite pitanje s vi\u0161e odgovora za sljede\u0107i \u010Dlanak:\n\
+      \u010Clanak: {{article}}\n|||\nPitanje: \n{{question}}\nMogu\u0107nosti:\n{{\"\
+      A\"}} {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"\
+      D\"}} {{options.3}}\nOdgovor:\n{{answer}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -128,24 +114,10 @@ templates:
   ebe34816-2a1f-42b3-a9ac-ce4d36633fdb: !Template
     answer_choices: A ||| B ||| C ||| D
     id: ebe34816-2a1f-42b3-a9ac-ce4d36633fdb
-    jinja: 'I''m taking a test and have to guess the right answer to the question
-      after the article.
-
-      Article: {{article}}
-
-      Pitanje: {{question}}
-
-      Options: {{"A"}}: {{options.0}}
-
-      {{"B"}}: {{options.1}}
-
-      {{"C"}}: {{options.2}}
-
-      {{"D"}}: {{options.3}}
-
-      |||
-
-      {{answer}}'
+    jinja: "I'm taking a test and have to guess the right answer to the question after\
+      \ the article.\n\u010Clanak: {{article}}\nPitanje: {{question}}\nMogu\u0107\
+      nosti: {{\"A\"}}: {{options.0}}\n{{\"B\"}}: {{options.1}}\n{{\"C\"}}: {{options.2}}\n\
+      {{\"D\"}}: {{options.3}}\n|||\n{{answer}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

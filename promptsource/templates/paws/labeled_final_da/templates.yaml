@@ -4,8 +4,8 @@ templates:
   0be7cecd-b427-4ec9-9b0e-666d6dae0063: !Template
     answer_choices: Ingen ||| Ja
     id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
-    jinja: "Bestem, om de f\xF8lgende to s\xE6tninger parafraserer hinanden eller\
-      \ ej.\nSetning 1: {{sentence1}}\nSetning 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
+    jinja: "Bestem, om de f\xF8lgende to s\xE6tninger omskriver hinanden eller ej.\n\
+      S\xE6tning 1: {{sentence1}}\nS\xE6tning 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -16,8 +16,9 @@ templates:
   472fe5eb-b499-4952-a930-f72f4ca9ed43: !Template
     answer_choices: Ingen ||| Ja
     id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
-    jinja: "Setning 1: {{sentence1}}\nSetning 2: {{sentence2}}\nSp\xF8rgsm\xE5l: Udtrykker\
-      \ s\xE6tning 1 og s\xE6tning 2 den samme betydning?Ja eller nej? \n||| \n{{answer_choices[label]}}"
+    jinja: "S\xE6tning 1: {{sentence1}}\nS\xE6tning 2: {{sentence2}}\nSp\xF8rgsm\xE5\
+      l: Udtrykker s\xE6tning 1 og s\xE6tning 2 samme betydning? Ja eller nej? \n\
+      ||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -28,7 +29,7 @@ templates:
   4c8d4e4c-eae4-45f6-bdf0-d132ae198d09: !Template
     answer_choices: Ingen ||| Ja
     id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
-    jinja: "{{sentence1}}\nEr det en parafrase af f\xF8lgende s\xE6tning?\n{{sentence2}}?\n\
+    jinja: "{{sentence1}}\nEr det en omskrivning af f\xF8lgende s\xE6tning?\n{{sentence2}}?\n\
       ||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -40,8 +41,8 @@ templates:
   678400f8-1a5c-4a40-b5ef-abeaa41e20ec: !Template
     answer_choices: Ingen ||| Ja
     id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
-    jinja: "Setning 1: {{sentence1}}\nSetning 2: {{sentence2}}\nSp\xF8rgsm\xE5l: Kan\
-      \ vi omskrive s\xE6tning 1 til s\xE6tning 2? \n||| \n{{answer_choices[label]}}"
+    jinja: "S\xE6tning 1: {{sentence1}}\nS\xE6tning 2: {{sentence2}}\nSp\xF8rgsm\xE5\
+      l: Kan vi omskrive s\xE6tning 1 til s\xE6tning 2? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -52,7 +53,7 @@ templates:
   7c205a61-64d4-4673-bb8e-bfa77562eede: !Template
     answer_choices: Ingen ||| Ja
     id: 7c205a61-64d4-4673-bb8e-bfa77562eede
-    jinja: "{{sentence1}}\nEr det en parafrase af f\xF8lgende s\xE6tning?\n{{sentence2}}?\n\
+    jinja: "{{sentence1}}\nEr det en omskrivning af f\xF8lgende s\xE6tning?\n{{sentence2}}?\n\
       Ja eller nej.\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -64,8 +65,8 @@ templates:
   8c259e88-7646-4a50-a4ca-90393920f281: !Template
     answer_choices: Ingen ||| Ja
     id: 8c259e88-7646-4a50-a4ca-90393920f281
-    jinja: "Setning 1: {{sentence1}}\nSetning 2: {{sentence2}}\nSp\xF8rgsm\xE5l: Parafraser\
-      \ s\xE6tning 1 Setning 2?Ja eller nej? \n||| \n{{answer_choices[label]}}"
+    jinja: "S\xE6tning 1: {{sentence1}}\nS\xE6tning 2: {{sentence2}}\nSp\xF8rgsm\xE5\
+      l: Omskriver s\xE6tning 1 s\xE6tning 2? Ja eller nej? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -76,8 +77,8 @@ templates:
   a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
     answer_choices: null
     id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
-    jinja: "{% if label == 1 %} \nParafraser s\xE6tningen: {{sentence1}} \n||| \n\
-      {{sentence2}} \n{% endif %}"
+    jinja: "{% if label == 1 %} \nOmskriv s\xE6tningen: {{sentence1}} \n||| \n{{sentence2}}\
+      \ \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -89,8 +90,8 @@ templates:
   a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076: !Template
     answer_choices: Ingen ||| Ja
     id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
-    jinja: "Setning 1: {{sentence1}}\nSetning 2: {{sentence2}}\nSp\xF8rgsm\xE5l: Parafraser\
-      \ s\xE6tning 1 Setning 2? \n||| \n{{answer_choices[label]}}"
+    jinja: "S\xE6tning 1: {{sentence1}}\nS\xE6tning 2: {{sentence2}}\nSp\xF8rgsm\xE5\
+      l: Omskriver s\xE6tning 1 s\xE6tning 2? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -101,8 +102,8 @@ templates:
   d5239f5f-2014-47c9-a0c1-4896f76f82a4: !Template
     answer_choices: Ingen ||| Ja
     id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
-    jinja: "Setning 1: {{sentence1}}\nSetning 2: {{sentence2}}\nSp\xF8rgsm\xE5l: Udtrykker\
-      \ s\xE6tning 1 og s\xE6tning 2 den samme betydning? \n||| \n{{answer_choices[label]}}"
+    jinja: "S\xE6tning 1: {{sentence1}}\nS\xE6tning 2: {{sentence2}}\nSp\xF8rgsm\xE5\
+      l: Udtrykker s\xE6tning 1 og s\xE6tning 2 samme betydning? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -125,8 +126,8 @@ templates:
   dd52359b-dc56-4241-8179-c98c636f0335: !Template
     answer_choices: Ingen ||| Ja
     id: dd52359b-dc56-4241-8179-c98c636f0335
-    jinja: "Setning 1: {{sentence1}}\nSetning 2: {{sentence2}}\nSp\xF8rgsm\xE5l: Kan\
-      \ vi omskrive s\xE6tning 1 til s\xE6tning 2?Ja eller nej? \n||| \n{{answer_choices[label]}}"
+    jinja: "S\xE6tning 1: {{sentence1}}\nS\xE6tning 2: {{sentence2}}\nSp\xF8rgsm\xE5\
+      l: Kan vi omskrive s\xE6tning 1 til s\xE6tning 2? Ja eller nej? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -137,7 +138,7 @@ templates:
   f0866713-c59a-4c5d-a307-95e80a935f99: !Template
     answer_choices: Ingen ||| Ja
     id: f0866713-c59a-4c5d-a307-95e80a935f99
-    jinja: "{{sentence1}} Sp\xF8rgsm\xE5l: {{sentence2}} Parafraser eller ej?\n|||\
+    jinja: "{{sentence1}} Sp\xF8rgsm\xE5l: {{sentence2}} Parafrasere eller ej?\n|||\
       \ \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false

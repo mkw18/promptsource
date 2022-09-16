@@ -5,7 +5,7 @@ templates:
     answer_choices: Non ||| Oui
     id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
     jinja: "D\xE9terminez si les deux phrases suivantes se paraphrasent ou non.\n\
-      Phrase 1: {{sentence1}}\nPhrase 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
+      Phrase 1\_: {{sentence1}}\nPhrase 2\_: {{sentence2}}\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -16,8 +16,8 @@ templates:
   472fe5eb-b499-4952-a930-f72f4ca9ed43: !Template
     answer_choices: Non ||| Oui
     id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
-    jinja: "Phrase 1: {{sentence1}}\nPhrase 2: {{sentence2}}\nQuestion: La phrase\
-      \ 1 et la phrase 2 expriment-elles le m\xEAme sens?Oui ou non? \n||| \n{{answer_choices[label]}}"
+    jinja: "Phrase 1\_: {{sentence1}}\nPhrase 2\_: {{sentence2}}\nQuestion : La phrase\
+      \ 1 et la phrase 2 expriment-elles le m\xEAme sens ? Oui ou non? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -28,7 +28,7 @@ templates:
   4c8d4e4c-eae4-45f6-bdf0-d132ae198d09: !Template
     answer_choices: Non ||| Oui
     id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
-    jinja: "{{sentence1}}\nEst-ce une paraphrase de la phrase suivante?\n{{sentence2}}?\n\
+    jinja: "{{sentence1}}\nEst-ce une paraphrase de la phrase suivante\_?\n{{sentence2}}?\n\
       ||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -40,8 +40,8 @@ templates:
   678400f8-1a5c-4a40-b5ef-abeaa41e20ec: !Template
     answer_choices: Non ||| Oui
     id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
-    jinja: "Phrase 1: {{sentence1}}\nPhrase 2: {{sentence2}}\nQuestion: Pouvons-nous\
-      \ r\xE9\xE9crire la phrase 1 \xE0 la phrase 2? \n||| \n{{answer_choices[label]}}"
+    jinja: "Phrase 1\_: {{sentence1}}\nPhrase 2\_: {{sentence2}}\nQuestion : Peut-on\
+      \ r\xE9\xE9crire la Phrase 1 en Phrase 2 ? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -52,7 +52,7 @@ templates:
   7c205a61-64d4-4673-bb8e-bfa77562eede: !Template
     answer_choices: Non ||| Oui
     id: 7c205a61-64d4-4673-bb8e-bfa77562eede
-    jinja: "{{sentence1}}\nEst-ce une paraphrase de la phrase suivante?\n{{sentence2}}?\n\
+    jinja: "{{sentence1}}\nEst-ce une paraphrase de la phrase suivante\_?\n{{sentence2}}?\n\
       Oui ou non.\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -64,8 +64,8 @@ templates:
   8c259e88-7646-4a50-a4ca-90393920f281: !Template
     answer_choices: Non ||| Oui
     id: 8c259e88-7646-4a50-a4ca-90393920f281
-    jinja: "Phrase 1: {{sentence1}}\nPhrase 2: {{sentence2}}\nQuestion: La phrase\
-      \ 1 paraphrase la phrase 2?Oui ou non? \n||| \n{{answer_choices[label]}}"
+    jinja: "Phrase 1\_: {{sentence1}}\nPhrase 2\_: {{sentence2}}\nQuestion : Est-ce\
+      \ que la phrase 1 paraphrase la phrase 2 ? Oui ou non? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -76,7 +76,7 @@ templates:
   a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
     answer_choices: null
     id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
-    jinja: "{% if label == 1 %} \nParaphraser la phrase: {{sentence1}} \n||| \n{{sentence2}}\
+    jinja: "{% if label == 1 %} \nParaphrasez la phrase : {{sentence1}} \n||| \n{{sentence2}}\
       \ \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -89,8 +89,8 @@ templates:
   a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076: !Template
     answer_choices: Non ||| Oui
     id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
-    jinja: "Phrase 1: {{sentence1}}\nPhrase 2: {{sentence2}}\nQuestion: La phrase\
-      \ 1 paraphrase la phrase 2? \n||| \n{{answer_choices[label]}}"
+    jinja: "Phrase 1\_: {{sentence1}}\nPhrase 2\_: {{sentence2}}\nQuestion : Est-ce\
+      \ que la phrase 1 paraphrase la phrase 2 ? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -101,8 +101,8 @@ templates:
   d5239f5f-2014-47c9-a0c1-4896f76f82a4: !Template
     answer_choices: Non ||| Oui
     id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
-    jinja: "Phrase 1: {{sentence1}}\nPhrase 2: {{sentence2}}\nQuestion: La phrase\
-      \ 1 et la phrase 2 expriment-elles le m\xEAme sens? \n||| \n{{answer_choices[label]}}"
+    jinja: "Phrase 1\_: {{sentence1}}\nPhrase 2\_: {{sentence2}}\nQuestion : La phrase\
+      \ 1 et la phrase 2 expriment-elles le m\xEAme sens ? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -124,8 +124,8 @@ templates:
   dd52359b-dc56-4241-8179-c98c636f0335: !Template
     answer_choices: Non ||| Oui
     id: dd52359b-dc56-4241-8179-c98c636f0335
-    jinja: "Phrase 1: {{sentence1}}\nPhrase 2: {{sentence2}}\nQuestion: Pouvons-nous\
-      \ r\xE9\xE9crire la phrase 1 \xE0 la phrase 2?Oui ou non? \n||| \n{{answer_choices[label]}}"
+    jinja: "Phrase 1\_: {{sentence1}}\nPhrase 2\_: {{sentence2}}\nQuestion : Peut-on\
+      \ r\xE9\xE9crire la Phrase 1 en Phrase 2 ? Oui ou non? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -136,7 +136,7 @@ templates:
   f0866713-c59a-4c5d-a307-95e80a935f99: !Template
     answer_choices: Non ||| Oui
     id: f0866713-c59a-4c5d-a307-95e80a935f99
-    jinja: "{{sentence1}} Question: {{sentence2}} Paraphrase ou pas?\n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}} Question: {{sentence2}} Paraphraser ou pas ?\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

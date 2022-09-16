@@ -4,9 +4,10 @@ templates:
   0a47d28c-7cf5-405d-b9ef-9b82c1a20002: !Template
     answer_choices: A ||| B ||| C ||| D
     id: 0a47d28c-7cf5-405d-b9ef-9b82c1a20002
-    jinja: "Lesen Sie den Artikel und w\xE4hlen Sie die beste Antwort.\nArtikel: {{article}}\n\
-      Frage: {{question}}\nOptionen: {{\"A\"}}: {{options.0}}\n{{\"B\"}}: {{options.1}}\n\
-      {{\"C\"}}: {{options.2}}\n{{\"D\"}}: {{options.3}}\n|||\n{{answer}}"
+    jinja: "Lesen Sie den Artikel und w\xE4hlen Sie die beste Antwort aus.\nArtikel:\
+      \ {{article}}\nFrage: {{question}}\nOptionen: {{\"A\"}}: {{options.0}}\n{{\"\
+      B\"}}: {{options.1}}\n{{\"C\"}}: {{options.2}}\n{{\"D\"}}: {{options.3}}\n|||\n\
+      {{answer}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -93,7 +94,7 @@ templates:
   9aacc46d-8863-4e02-9783-9ec931425759: !Template
     answer_choices: '{{ options | join("|||") }}'
     id: 9aacc46d-8863-4e02-9783-9ec931425759
-    jinja: "Lesen Sie den folgenden Artikel und w\xE4hlen Sie die beste Antwort.\n\
+    jinja: "Lesen Sie den folgenden Artikel und w\xE4hlen Sie die beste Antwort aus.\n\
       Artikel: {{article}}\nFrage: {{question}}\n- {{answer_choices | join(\"\\n-\
       \ \")}}\n|||\n{{answer_choices[{\"A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]]}}"
     metadata: !TemplateMetadata
@@ -106,8 +107,8 @@ templates:
   9aedaa07-b815-4a35-890b-6100f00706aa: !Template
     answer_choices: null
     id: 9aedaa07-b815-4a35-890b-6100f00706aa
-    jinja: "Schreiben Sie eine Multi-Choice-Frage f\xFCr den folgenden Artikel mit\
-      \ den angegebenen Auswahlm\xF6glichkeiten und Antwort:\nArtikel: {{article}}\n\
+    jinja: "Schreiben Sie eine Multiple-Choice-Frage f\xFCr den folgenden Artikel\
+      \ mit den angegebenen Auswahlm\xF6glichkeiten und Antworten:\nArtikel: {{article}}\n\
       Optionen:\n{{\"A\"}} {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n\
       {{\"D\"}} {{options.3}}\nAntworten:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"\
       A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\nFrage: \n|||\n{{question}}"

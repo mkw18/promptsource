@@ -4,8 +4,8 @@ templates:
   3b88d2c4-0aeb-4c6d-9ccc-653a388250a5: !Template
     answer_choices: null
     id: 3b88d2c4-0aeb-4c6d-9ccc-653a388250a5
-    jinja: "{% if label == 1 %}\nA\u015Fa\u011F\u0131daki c\xFCmleyi yorumlay\u0131\
-      n: {{sentence1}}\n|||\n{{sentence2}}\n{% endif %}"
+    jinja: "{% if label == 1 %}\nA\u015Fa\u011F\u0131daki c\xFCmleyi ba\u015Fka s\xF6\
+      zc\xFCklerle ifade edin: {{sentence1}}\n|||\n{{sentence2}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -17,9 +17,9 @@ templates:
   44c2e6d9-facf-4959-8400-38e0eb8dd3a8: !Template
     answer_choices: "hay\u0131r ||| evet"
     id: 44c2e6d9-facf-4959-8400-38e0eb8dd3a8
-    jinja: "A\u015Fa\u011F\u0131daki iki c\xFCmlenin ayn\u0131 \u015Fey olup olmad\u0131\
-      \u011F\u0131n\u0131 bilmek istiyorum.\n{{sentence1}}\n{{sentence2}}\nOnlar m\u0131\
-      ?\n|||\n{{ answer_choices[label] }}"
+    jinja: "A\u015Fa\u011F\u0131daki iki c\xFCmlenin ayn\u0131 anlama gelip gelmedi\u011F\
+      ini bilmek istiyorum.\n{{sentence1}}\n{{sentence2}}\nOnlar m\u0131?\n|||\n{{\
+      \ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -30,8 +30,8 @@ templates:
   adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
     answer_choices: "hay\u0131r ||| evet"
     id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
-    jinja: "Bu c\xFCmle\n{{sentence1}}\nyorum (yani, ayn\u0131 \u015Fey anlam\u0131\
-      na gelir) c\xFCmlesi midir?\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
+    jinja: "{{A}} c\xFCmlesi bu c\xFCmleyi ba\u015Fka bir deyi\u015Fle mi (yani, ayn\u0131\
+      \ anlama geliyor)?\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -42,8 +42,8 @@ templates:
   bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
     answer_choices: "e\u015Fde\u011Fer de\u011Fil ||| e\u015Fde\u011Fer"
     id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
-    jinja: "A\u015Fa\u011F\u0131daki iki c\xFCmle \"{{\"e\u015Fde\u011Fer\"}}\" veya\
-      \ \"{{\"e\u015Fde\u011Fer de\u011Fil\"}}\"?\n{{sentence1}}\n{{sentence2}}\n\
+    jinja: "A\u015Fa\u011F\u0131daki iki c\xFCmle \"{{\"e\u015Fde\u011Fer\"}}\" m\u0131\
+      \ yoksa \"{{\"e\u015Fde\u011Fer de\u011Fil\"}}\" m\u0131?\n{{sentence1}}\n{{sentence2}}\n\
       |||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -55,8 +55,8 @@ templates:
   d830d7a5-abc0-4275-ac62-974e0088876f: !Template
     answer_choices: null
     id: d830d7a5-abc0-4275-ac62-974e0088876f
-    jinja: "{% if label == 1 %}\nBununla ayn\u0131 \u015Fey anlam\u0131na gelen bir\
-      \ c\xFCmle olu\u015Fturun: {{sentence1}}\n|||\n{{sentence2}}\n{% endif %}"
+    jinja: "{% if label == 1 %}\nBununla ayn\u0131 anlama gelen bir c\xFCmle olu\u015F\
+      turun: {{sentence1}}\n|||\n{{sentence2}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -68,9 +68,9 @@ templates:
   ee82d511-908c-4244-804f-6d0d907c68c7: !Template
     answer_choices: "hay\u0131r ||| evet"
     id: ee82d511-908c-4244-804f-6d0d907c68c7
-    jinja: "{{A}} c\xFCmlesini\n{{sentence2}}\nc\xFCmlesiyle de\u011Fi\u015Ftirebilir\
-      \ miyim ve ayn\u0131 \u015Fey anlam\u0131na m\u0131 gelebilir miyim?\n|||\n\
-      {{ answer_choices[label] }}"
+    jinja: "{{A}} c\xFCmlesini\n{{sentence2}}\nc\xFCmlesiyle de\u011Fi\u015Ftirip\
+      \ ayn\u0131 anlama gelmesini sa\u011Flayabilir miyim?\n|||\n{{ answer_choices[label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -81,9 +81,8 @@ templates:
   eefd8606-b936-4d26-b91d-8f4bc38bfcbf: !Template
     answer_choices: "hay\u0131r ||| evet"
     id: eefd8606-b936-4d26-b91d-8f4bc38bfcbf
-    jinja: "A\u015Fa\u011F\u0131daki iki c\xFCmle ayn\u0131 \u015Fey anlam\u0131na\
-      \ m\u0131 geliyor?\n{{sentence1}}\n{{sentence2}}\n|||\n{{ answer_choices[label]\
-      \ }}"
+    jinja: "A\u015Fa\u011F\u0131daki iki c\xFCmle ayn\u0131 anlama m\u0131 geliyor?\n\
+      {{sentence1}}\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

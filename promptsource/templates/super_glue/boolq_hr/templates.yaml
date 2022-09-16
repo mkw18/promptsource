@@ -2,11 +2,11 @@ dataset: super_glue
 subset: boolq_hr
 templates:
   3e386463-1715-4578-9cba-07d11a0d3b61: !Template
-    answer_choices: False ||| Pravi
+    answer_choices: "la\u017Eno ||| Pravi"
     id: 3e386463-1715-4578-9cba-07d11a0d3b61
-    jinja: "Prolaz: {{passage}}\n\nNakon \u0161to sam pro\u010Ditao ovaj odlomak,\
-      \ imam pitanje: {{question}}? Istina ili la\u017E? |||\n{% if label != -1 %}\n\
-      {{answer_choices[label]}}\n{% endif %}"
+    jinja: "Prolaz: {{passage}}\n\nNakon \u010Ditanja ovog odlomka, imam pitanje:\
+      \ {{question}}? Istina ili la\u017E? |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n\
+      {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -17,7 +17,7 @@ templates:
   492f0f88-4370-46cd-839b-1de37a55aeda: !Template
     answer_choices: Ne ||| Da
     id: 492f0f88-4370-46cd-839b-1de37a55aeda
-    jinja: "{{ passage }} \nQuestion: {{ question }}\nOdgovor: ||| \n{% if label !=\
+    jinja: "{{ passage }} \nPitanje: {{ question }}\nOdgovor: ||| \n{% if label !=\
       \ -1 %}\n{{ answer_choices[label] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -29,8 +29,8 @@ templates:
   6cb6a026-c070-470a-b75d-bb8fdf424e35: !Template
     answer_choices: Ne ||| Da
     id: 6cb6a026-c070-470a-b75d-bb8fdf424e35
-    jinja: "{{ passage }} \n\n\u010Citaju\u0107i to, pitam se {{ question }}? |||\n\
-      {% if label != -1 %}\n{{ answer_choices[label] }} \n{% endif %}"
+    jinja: "{{ passage }} \n\nNakon \u0161to sam to pro\u010Ditao, pitam se {{ question\
+      \ }}? |||\n{% if label != -1 %}\n{{ answer_choices[label] }} \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -41,8 +41,8 @@ templates:
   7cf7acdf-e3a2-459f-a3e8-2e2d27dd6aa5: !Template
     answer_choices: Ne ||| Da
     id: 7cf7acdf-e3a2-459f-a3e8-2e2d27dd6aa5
-    jinja: "Tekst: {{passage}}\n\nOdgovorite na sljede\u0107e pitanje da/ne: {{question}}?\
-      \ Yes or no? |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif\
+    jinja: "Tekst: {{passage}}\n\nOdgovorite na sljede\u0107e pitanje s da/ne: {{question}}?\
+      \ Da ili ne? |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif\
       \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -67,7 +67,7 @@ templates:
   922d3e87-ac58-4731-84d1-f0a40e47afb5: !Template
     answer_choices: Ne ||| Da
     id: 922d3e87-ac58-4731-84d1-f0a40e47afb5
-    jinja: "ISPIT\n1. Odgovor da ili ne.\n\nDokument: {{passage}}\nPitanje: {{question}}?\
+    jinja: "ISPIT\n1. Odgovorite s da ili ne.\n\nDokument: {{passage}}\nPitanje: {{question}}?\
       \ ||| \n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -77,9 +77,9 @@ templates:
     name: exam
     reference: ''
   9a1bf459-8047-437c-9def-f21e960429cc: !Template
-    answer_choices: No ||| Da
+    answer_choices: Ne ||| Da
     id: 9a1bf459-8047-437c-9def-f21e960429cc
-    jinja: "Na temelju sljede\u0107eg prolaza, {{ question }}? {{ passage }}\n\n|||\n\
+    jinja: "Na temelju sljede\u0107eg odlomka, {{ question }}? {{ passage }}\n\n|||\n\
       {% if label != -1 %}\n{{ answer_choices[label] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -89,11 +89,11 @@ templates:
     name: based on the following passage
     reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
   9f4c6b0a-437b-40c0-b467-db4b7218d38d: !Template
-    answer_choices: False ||| Pravi
+    answer_choices: "la\u017Eno ||| Pravi"
     id: 9f4c6b0a-437b-40c0-b467-db4b7218d38d
-    jinja: "Vje\u017Eba: Pro\u010Ditajte tekst i odgovorite na pitanje istinitom ili\
-      \ la\u017Enom.\n\nTekst: {{passage}}\nPitanje: {{question}}? |||\n{% if label\
-      \ != -1 %}\n{{answer_choices[label]}}\n{% endif %}"
+    jinja: "Vje\u017Eba: pro\u010Ditajte tekst i odgovorite na pitanje To\u010Dno\
+      \ ili Neto\u010Dno.\n\nTekst: {{passage}}\nPitanje: {{question}}? |||\n{% if\
+      \ label != -1 %}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -118,18 +118,10 @@ templates:
     name: based on the previous passage
     reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
   eb78772c-e81e-4b8a-a77b-b75efd1c212a: !Template
-    answer_choices: "La\u017Ean ||| Pravi"
+    answer_choices: "la\u017Eno ||| Pravi"
     id: eb78772c-e81e-4b8a-a77b-b75efd1c212a
-    jinja: '{{passage}}
-
-
-      Pitanje: {{question}}? True or False? |||
-
-      {% if label != -1 %}
-
-      {{answer_choices[label]}}
-
-      {% endif %}'
+    jinja: "{{passage}}\n\nPitanje: {{question}}? Istina ili la\u017E? |||\n{% if\
+      \ label != -1 %}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

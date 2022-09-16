@@ -2,14 +2,14 @@ dataset: dbpedia_14
 subset: it
 templates:
   824ecb55-ecad-40c2-8033-f2fa0add2ddf: !Template
-    answer_choices: Azienda ||| Educational Institution ||| Artist ||| Atleta |||
-      Titolare dell'ufficio ||| Media dei trasporti ||| Costruzione ||| Luogo naturale
-      ||| Villaggio ||| Animale ||| Pianta ||| Album ||| Film ||| Lavoro scritto
+    answer_choices: Azienda ||| Istituto d'Istruzione ||| Artista ||| Atleta ||| Titolare
+      dell'ufficio ||| Mezzo di trasporto ||| Costruzione ||| Luogo naturale ||| Villaggio
+      ||| Animale ||| Pianta ||| Album ||| Film ||| Lavoro scritto
     id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
-    jinja: '{{content}} Dato un elenco di categorie: {{"company, educational institution,
-      artist, athlete, office holder, mean of transportation, building, natural place,
-      village, animal, plant, album, film or written work"}}, a quale categoria appartiene
-      il paragrafo? ||| {{ answer_choices[label] }}
+    jinja: '{{content}} Dato un elenco di categorie: {{"azienda, istituto scolastico,
+      artista, atleta, titolare dell''ufficio, mezzo di trasporto, edificio, luogo
+      naturale, villaggio, animale, pianta, album, film o opera scritta"}}, a quale
+      categoria appartiene il paragrafo? ||| {{ answer_choices[label] }}
 
 
       '
@@ -21,13 +21,13 @@ templates:
     name: given_list_what_category_does_the_paragraph_belong_to
     reference: ''
   8eda7e71-6734-486f-b883-e99d3f14c0bf: !Template
-    answer_choices: Azienda ||| Istituto d'Istruzione ||| Artist ||| Atleta ||| Titolare
-      dell'ufficio ||| Media dei trasporti ||| Costruzione ||| Luogo naturale |||
-      Villaggio ||| Animale ||| Pianta ||| Album ||| Film ||| Lavoro scritto
+    answer_choices: Azienda ||| Istituto d'Istruzione ||| Artista ||| Atleta ||| Titolare
+      dell'ufficio ||| Mezzo di trasporto ||| Costruzione ||| Luogo naturale ||| Villaggio
+      ||| Animale ||| Pianta ||| Album ||| Film ||| Lavoro scritto
     id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
-    jinja: Scegli una categoria per il seguente testo.Le opzioni sono - {{"company,
-      educational institution, artist, athlete, office holder, mean of transportation,
-      building, natural place, village, animal, plant, album, film or written work"}}.
+    jinja: Scegli una categoria per il testo seguente. Le opzioni sono - {{"azienda,
+      istituto scolastico, artista, atleta, titolare dell'ufficio, mezzo di trasporto,
+      edificio, luogo naturale, villaggio, animale, pianta, album, film o opera scritta"}}.
       {{title}} - {{content}} ||| {{ answer_choices[label] }}
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -38,13 +38,13 @@ templates:
     reference: ''
   9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67: !Template
     answer_choices: Azienda ||| Istituto d'Istruzione ||| Artista ||| Atleta ||| Titolare
-      dell'ufficio ||| Media dei trasporti ||| Costruzione ||| Natural Place ||| Villaggio
-      ||| Animale ||| Pianta ||| Album ||| Film ||| Written Work
+      dell'ufficio ||| Mezzo di trasporto ||| Costruzione ||| Luogo naturale ||| Villaggio
+      ||| Animale ||| Pianta ||| Album ||| Film ||| Lavoro scritto
     id: 9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67
-    jinja: '{{title}} - {{content}} Data una scelta di categorie {{"company, educational
-      institution, artist, athlete, office holder, mean of transportation, building,
-      natural place, village, animal, plant, album, film or written work"}}, il testo
-      si riferisce a quale? ||| {{ answer_choices[label] }}'
+    jinja: '{{title}} - {{content}} Data una scelta di categorie {{"azienda, istituto
+      scolastico, artista, atleta, titolare dell''ufficio, mezzo di trasporto, edificio,
+      luogo naturale, villaggio, animale, pianta, album, film o opera scritta"}},
+      il testo si riferisce a quale? ||| {{ answer_choices[label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -54,13 +54,13 @@ templates:
     reference: ''
   f72fa410-3278-4f62-91f0-f9edf4a4e792: !Template
     answer_choices: Azienda ||| Istituto d'Istruzione ||| Artista ||| Atleta ||| Titolare
-      dell'ufficio ||| Media dei trasporti ||| Building ||| Luogo naturale ||| Village
-      ||| Animal ||| Plant ||| Album ||| Film ||| Lavoro scritto
+      dell'ufficio ||| Mezzo di trasporto ||| Costruzione ||| Luogo naturale ||| Villaggio
+      ||| Animale ||| Pianta ||| Album ||| Film ||| Lavoro scritto
     id: f72fa410-3278-4f62-91f0-f9edf4a4e792
-    jinja: '"{{title}}", dato un elenco di categorie: {{"company, educational institution,
-      artist, athlete, office holder, mean of transportation, building, natural place,
-      village, animal, plant, album, film or written work"}}, a quale categoria appartiene
-      il titolo? ||| {{ answer_choices[label] }}
+    jinja: '"{{title}}", dato un elenco di categorie: {{"azienda, istituto scolastico,
+      artista, atleta, titolare dell''ufficio, mezzo di trasporto, edificio, luogo
+      naturale, villaggio, animale, pianta, album, film o opera scritta"}}, a quale
+      categoria appartiene il titolo? ||| {{ answer_choices[label] }}
 
 
       '

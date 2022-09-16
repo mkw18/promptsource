@@ -2,11 +2,11 @@ dataset: trec
 subset: tr
 templates:
   21d04668-c5b3-4418-bbb6-663f1ffdb97c: !Template
-    answer_choices: "Tan\u0131m ||| Varl\u0131k ||| K\u0131saltma ||| Ki\u015Fi |||\
+    answer_choices: "Tan\u0131m ||| varl\u0131k ||| K\u0131saltma ||| Ki\u015Fi |||\
       \ Miktar ||| Konum"
     id: 21d04668-c5b3-4418-bbb6-663f1ffdb97c
-    jinja: "Kategoriler: {{', '.join(answer_choices)}}\n\nKategori en iyi tan\u0131\
-      mlar: {{text}} \nCevap: ||| {{ answer_choices [label_coarse] }}"
+    jinja: "Kategoriler: {{', '.join(answer_choices)}}\n\nHangi kategoriyi en iyi\
+      \ tan\u0131mlar: {{text}} \nCevap: ||| {{ answer_choices [label_coarse] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -18,7 +18,7 @@ templates:
     answer_choices: "Kent ||| \xFClke ||| da\u011F ||| durum ||| Di\u011Fer konum"
     id: 2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6
     jinja: "{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}\n{% if label_coarse\
-      \ == 5 %}\nBu soru {{', '.join(answer_choices)}} i\xE7in mi istiyor?\n{{text}}\n\
+      \ == 5 %}\nBu soru {{', '.join(answer_choices)}} i\xE7in mi soruyor?\n{{text}}\n\
       |||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -28,13 +28,13 @@ templates:
     name: fine_grained_LOC
     reference: Fine grained labels with coarse-label `LOC`, context after question
   309bf243-2185-4090-ac66-a24f44d89966: !Template
-    answer_choices: "kodlamak ||| saymak ||| tarih ||| mesafe ||| fiyat ||| emir |||\
-      \ zaman aral\u0131\u011F\u0131 ||| y\xFCzde ||| h\u0131z ||| s\u0131cakl\u0131\
-      k ||| boyut ||| a\u011F\u0131rl\u0131k ||| ba\u015Fka say\u0131"
+    answer_choices: "kod ||| saymak ||| tarih ||| mesafe ||| fiyat ||| emir ||| zaman\
+      \ aral\u0131\u011F\u0131 ||| y\xFCzde ||| h\u0131z ||| s\u0131cakl\u0131k |||\
+      \ boyut ||| a\u011F\u0131rl\u0131k ||| di\u011Fer numara"
     id: 309bf243-2185-4090-ac66-a24f44d89966
     jinja: "{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,\
       \ 35:8, 41:9, 32:10, 45:11, 14:12} %}\n{% if label_coarse == 4 %}\n{{text}}\n\
-      \nBu soru {{', '.join(answer_choices)}} i\xE7in mi istiyor?\n|||\n{{ answer_choices\
+      \nBu soru {{', '.join(answer_choices)}} i\xE7in mi soruyor?\n|||\n{{ answer_choices\
       \ [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -46,14 +46,14 @@ templates:
   3aff84f3-e478-4598-abe8-40aa24cec1fa: !Template
     answer_choices: "bir hayvan ||| v\xFCcudun bir organ\u0131 ||| bir renk ||| yarat\u0131\
       c\u0131 par\xE7a ||| para birimi ||| hastal\u0131k veya ila\xE7 ||| Etkinlik\
-      \ ||| food ||| m\xFCzik aleti ||| dil ||| mektup ||| bitki ||| \xFCr\xFCn |||\
-      \ din ||| spor ||| madde ||| sembol ||| teknik ||| terim ||| ara\xE7 ||| kelime\
-      \ ||| Di\u011Fer Varl\u0131k"
+      \ ||| G\u0131da ||| m\xFCzik aleti ||| dil ||| mektup ||| bitki ||| \xFCr\xFC\
+      n ||| din ||| spor ||| madde ||| sembol ||| teknik ||| terim ||| ara\xE7 |||\
+      \ kelime ||| di\u011Fer varl\u0131k"
     id: 3aff84f3-e478-4598-abe8-40aa24cec1fa
     jinja: "{% set label_mapping = {2:0, 22:1, 19:2, 1:3, 46:3, 23:4, 10:5, 17:6,\
       \ 33:7, 37:8, 15:9, 30:10, 26:11, 16:12, 28:13, 42:14, 31:15, 20:16, 44:17,\
       \ 36:18, 14:19} %}\n{% if label_coarse == 1 %}\nBu soru {{', '.join(answer_choices)}}\
-      \ i\xE7in mi istiyor?\n{{text}}\n|||\n{{ answer_choices [label_mapping[label_fine]]\
+      \ i\xE7in mi soruyor?\n{{text}}\n|||\n{{ answer_choices [label_mapping[label_fine]]\
       \ }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -63,13 +63,13 @@ templates:
     name: fine_grained_ENTY
     reference: Fine grained labels with coarse-label `ENTY`, context after question
   43a188a2-b6dd-46a7-af2e-81a64b90b92a: !Template
-    answer_choices: "kodlamak ||| saymak ||| tarih ||| mesafe ||| fiyat ||| emir |||\
-      \ zaman aral\u0131\u011F\u0131 ||| y\xFCzde ||| h\u0131z ||| s\u0131cakl\u0131\
-      k ||| boyut ||| a\u011F\u0131rl\u0131k ||| ba\u015Fka say\u0131"
+    answer_choices: "kod ||| saymak ||| tarih ||| mesafe ||| fiyat ||| emir ||| zaman\
+      \ aral\u0131\u011F\u0131 ||| y\xFCzde ||| h\u0131z ||| s\u0131cakl\u0131k |||\
+      \ boyut ||| a\u011F\u0131rl\u0131k ||| di\u011Fer numara"
     id: 43a188a2-b6dd-46a7-af2e-81a64b90b92a
     jinja: "{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,\
       \ 35:8, 41:9, 32:10, 45:11, 14:12} %}\n{% if label_coarse == 4 %}\nBu soru {{',\
-      \ '.join(answer_choices)}} i\xE7in mi istiyor?\n{{text}}\n|||\n{{ answer_choices\
+      \ '.join(answer_choices)}} i\xE7in mi soruyor?\n{{text}}\n|||\n{{ answer_choices\
       \ [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -79,11 +79,11 @@ templates:
     name: fine_grained_NUM
     reference: Fine grained labels with coarse-label `NUM`
   6c391f4f-027b-4425-88de-1dbb6aa706ee: !Template
-    answer_choices: "Tan\u0131m ||| Varl\u0131k ||| K\u0131saltma ||| Ki\u015Fi |||\
+    answer_choices: "Tan\u0131m ||| varl\u0131k ||| K\u0131saltma ||| Ki\u015Fi |||\
       \ Miktar ||| Konum"
     id: 6c391f4f-027b-4425-88de-1dbb6aa706ee
     jinja: "Soru: {{text}}\n\nTan\u0131mlay\u0131c\u0131lar: {{', '.join(answer_choices)}}\n\
-      \nEn iyi tan\u0131mlay\u0131c\u0131?\n|||\n{{answer_choices[label_coarse]}}"
+      \nEn \u0130yi Tan\u0131mlay\u0131c\u0131?\n|||\n{{answer_choices[label_coarse]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -92,15 +92,15 @@ templates:
     name: pick_the_best_descriptor
     reference: ''
   71090d59-dd02-4cbd-8032-ad86179b9bd4: !Template
-    answer_choices: "Tav\u0131r ||| Yarat\u0131c\u0131 par\xE7a ||| Hayvan ||| \u0130\
+    answer_choices: "Tav\u0131r ||| Yarat\u0131c\u0131 Par\xE7a ||| Hayvan ||| \u0130\
       fade k\u0131salt\u0131lm\u0131\u015F ||| Bireysel ||| Grup ||| Ba\u015Fl\u0131\
       k ||| tan\u0131m ||| Tarih ||| Sebep ||| Etkinlik ||| Durum ||| Tan\u0131m |||\
       \ Saymak ||| Ba\u015Fka ||| Mektup ||| Din ||| G\u0131da ||| Saymakry ||| Renk\
       \ ||| Terim ||| \u015Eehir ||| V\xFCcudun organ\u0131 ||| Hastal\u0131k veya\
       \ ila\xE7 ||| Da\u011F ||| Fiyat ||| \xDCr\xFCn ||| D\xF6nem ||| Madde ||| Spor\
-      \ ||| Bitki ||| Teknik ||| Boyut ||| Enstr\xFCman ||| K\u0131saltma ||| H\u0131\
-      z ||| Kelime ||| Dil ||| Y\xFCzde ||| Kodlamak ||| Mesafe ||| S\u0131cakl\u0131\
-      k ||| Sembol ||| Emir ||| Ara\xE7 ||| A\u011F\u0131rl\u0131k ||| Para birimi"
+      \ ||| Bitki ||| teknik ||| Boyut ||| Enstr\xFCman ||| K\u0131saltma ||| H\u0131\
+      z ||| Kelime ||| Dil ||| Y\xFCzde ||| kod ||| Mesafe ||| S\u0131cakl\u0131k\
+      \ ||| Sembol ||| Emir ||| Ara\xE7 ||| A\u011F\u0131rl\u0131k ||| Para birimi"
     id: 71090d59-dd02-4cbd-8032-ad86179b9bd4
     jinja: '{{text}}
 
@@ -121,7 +121,7 @@ templates:
     answer_choices: "Kent ||| \xFClke ||| da\u011F ||| durum ||| Di\u011Fer konum"
     id: 736b2629-ed57-48ce-a458-4cbc435c499b
     jinja: "{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}\n{% if label_coarse\
-      \ == 5 %}\n{{text}}\n\nBu soru {{', '.join(answer_choices)}} i\xE7in mi istiyor?\n\
+      \ == 5 %}\n{{text}}\n\nBu soru {{', '.join(answer_choices)}} i\xE7in mi soruyor?\n\
       |||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -131,11 +131,11 @@ templates:
     name: fine_grained_LOC_context_first
     reference: Fine grained labels with coarse-label `LOC`, context provided first
   7a3ed4dd-af89-493c-8efb-c67622f63034: !Template
-    answer_choices: "Tan\u0131m ||| Varl\u0131k ||| K\u0131saltma ||| Ki\u015Fi |||\
+    answer_choices: "Tan\u0131m ||| varl\u0131k ||| K\u0131saltma ||| Ki\u015Fi |||\
       \ Miktar ||| Konum"
     id: 7a3ed4dd-af89-493c-8efb-c67622f63034
-    jinja: "A\u015Fa\u011F\u0131daki soruyu hangi kategori en iyi a\xE7\u0131klar:\
-      \ {{text}} \n\nA\u015Fa\u011F\u0131daki listeden se\xE7im: \n{{', '.join(answer_choices)}}\n\
+    jinja: "A\u015Fa\u011F\u0131daki soruyu en iyi hangi kategori tan\u0131mlar: {{text}}\
+      \ \n\nA\u015Fa\u011F\u0131daki listeden se\xE7im yap\u0131n: \n{{', '.join(answer_choices)}}\n\
       \ ||| {{ answer_choices [label_coarse] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -145,10 +145,10 @@ templates:
     name: which_category_best_describes
     reference: ''
   7a9e6f3c-1dee-45b0-a315-1badaf59a7b8: !Template
-    answer_choices: "tan\u0131m ||| tan\u0131m ||| eylem tarz\u0131 ||| sebep"
+    answer_choices: "tan\u0131m ||| tan\u0131m ||| eylem \u015Fekli ||| sebep"
     id: 7a9e6f3c-1dee-45b0-a315-1badaf59a7b8
     jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
-      \ 0 %}\nBu soru {{', '.join(answer_choices)}} i\xE7in mi istiyor?\n{{text}}\n\
+      \ 0 %}\nBu soru {{', '.join(answer_choices)}} i\xE7in mi soruyor?\n{{text}}\n\
       |||\n{{ answer_choices[label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -158,7 +158,7 @@ templates:
     name: fine_grained_DESC
     reference: Fine grained labels with coarse-label `DESC`, context after question
   861d1a48-1113-4f35-b777-2b2f12ab9d5d: !Template
-    answer_choices: "Tan\u0131m ||| Varl\u0131k ||| K\u0131saltma ||| Ki\u015Fi |||\
+    answer_choices: "Tan\u0131m ||| varl\u0131k ||| K\u0131saltma ||| Ki\u015Fi |||\
       \ Miktar ||| Konum"
     id: 861d1a48-1113-4f35-b777-2b2f12ab9d5d
     jinja: '{{text}}
@@ -180,7 +180,7 @@ templates:
     answer_choices: "k\u0131saltma ||| ifade k\u0131salt\u0131lm\u0131\u015F"
     id: 93a06e72-2c15-4f8a-a46c-6a10919c4ea4
     jinja: "{% set label_mapping={34:0, 3:1} %} \n{% if label_coarse == 2 %}\nBu soru\
-      \ bir {{', '.join(answer_choices)}} m\u0131 istiyor?\n{{text}}\n|||\n{{answer_choices[label_mapping[label_fine]]\
+      \ {{', '.join(answer_choices)}} istiyor mu?\n{{text}}\n|||\n{{answer_choices[label_mapping[label_fine]]\
       \ }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -193,7 +193,7 @@ templates:
     answer_choices: "k\u0131saltma ||| ifade k\u0131salt\u0131lm\u0131\u015F"
     id: a0096044-3b4c-4c80-b139-25eac8fe692a
     jinja: "{% set label_mapping = {34:0, 3:1} %} \n{% if label_coarse == 2 %}\n{{text}}\n\
-      \nBu soru bir {{', '.join(answer_choices)}} m\u0131 istiyor?\n|||\n{{ answer_choices\
+      \nBu soru {{', '.join(answer_choices)}} istiyor mu?\n|||\n{{ answer_choices\
       \ [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -203,11 +203,11 @@ templates:
     name: fine_grained_ABBR_context_first
     reference: Fine grained labels with coarse-label `ABBR`, context provided first
   aad2def1-b694-40ee-9c26-3d1cf5c577da: !Template
-    answer_choices: "Tan\u0131m ||| Varl\u0131k ||| K\u0131saltma ||| Ki\u015Fi |||\
+    answer_choices: "Tan\u0131m ||| varl\u0131k ||| K\u0131saltma ||| Ki\u015Fi |||\
       \ Miktar ||| Konum"
     id: aad2def1-b694-40ee-9c26-3d1cf5c577da
     jinja: "A\u015Fa\u011F\u0131daki soru {{', '.join(answer_choices)}} hakk\u0131\
-      nda soruyor mu?\n\n{{text}}\n|||\n{{ answer_choices [label_coarse] }}"
+      nda m\u0131 soruyor?\n\n{{text}}\n|||\n{{ answer_choices [label_coarse] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -219,7 +219,7 @@ templates:
     answer_choices: "grup ||| bireysel ||| Ba\u015Fl\u0131k ||| tan\u0131m"
     id: bc58ba18-24a5-4553-be0a-2dba60efdad6
     jinja: "{% set label_mapping = {5:0, 4:1, 6:2, 12:3} %}\n{% if label_coarse ==\
-      \ 3 %}\nBu soru {{', '.join(answer_choices)}} i\xE7in mi istiyor?\n{{text}}\n\
+      \ 3 %}\nBu soru {{', '.join(answer_choices)}} i\xE7in mi soruyor?\n{{text}}\n\
       |||\n{{ answer_choices[label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -229,15 +229,15 @@ templates:
     name: fine_grained_HUM
     reference: Fine grained labels with coarse-label `HUM`, context after question
   cfa8fde0-8320-4050-8d6e-7619ab14adea: !Template
-    answer_choices: "Tav\u0131r ||| Yarat\u0131c\u0131 par\xE7a ||| Hayvan ||| \u0130\
+    answer_choices: "Tav\u0131r ||| Yarat\u0131c\u0131 Par\xE7a ||| Hayvan ||| \u0130\
       fade k\u0131salt\u0131lm\u0131\u015F ||| Bireysel ||| Grup ||| Ba\u015Fl\u0131\
       k ||| tan\u0131m ||| Tarih ||| Sebep ||| Etkinlik ||| Durum ||| Tan\u0131m |||\
       \ Saymak ||| Ba\u015Fka ||| Mektup ||| Din ||| G\u0131da ||| Saymakry ||| Renk\
       \ ||| Terim ||| \u015Eehir ||| V\xFCcudun organ\u0131 ||| Hastal\u0131k veya\
       \ ila\xE7 ||| Da\u011F ||| Fiyat ||| \xDCr\xFCn ||| D\xF6nem ||| Madde ||| Spor\
-      \ ||| Bitki ||| Teknik ||| Boyut ||| Enstr\xFCman ||| K\u0131saltma ||| H\u0131\
-      z ||| Kelime ||| Dil ||| Y\xFCzde ||| Kodlamak ||| Mesafe ||| S\u0131cakl\u0131\
-      k ||| Sembol ||| Emir ||| Ara\xE7 ||| A\u011F\u0131rl\u0131k ||| Para birimi"
+      \ ||| Bitki ||| teknik ||| Boyut ||| Enstr\xFCman ||| K\u0131saltma ||| H\u0131\
+      z ||| Kelime ||| Dil ||| Y\xFCzde ||| kod ||| Mesafe ||| S\u0131cakl\u0131k\
+      \ ||| Sembol ||| Emir ||| Ara\xE7 ||| A\u011F\u0131rl\u0131k ||| Para birimi"
     id: cfa8fde0-8320-4050-8d6e-7619ab14adea
     jinja: 'Bu soru ne istiyor?
 
@@ -258,7 +258,7 @@ templates:
     answer_choices: "grup ||| bireysel ||| Ba\u015Fl\u0131k ||| tan\u0131m"
     id: e98b9294-76b4-4172-a78c-9c6e5fdfe73b
     jinja: "{% set label_mapping = {5:0, 4:1, 6:2, 12:3} %}\n{% if label_coarse ==\
-      \ 3 %}\n{{text}}\n\nBu soru {{', '.join(answer_choices)}} i\xE7in mi istiyor?\n\
+      \ 3 %}\n{{text}}\n\nBu soru {{', '.join(answer_choices)}} i\xE7in mi soruyor?\n\
       |||\n{{ answer_choices [label_mapping[label_fine]] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -268,10 +268,10 @@ templates:
     name: fine_grained_HUM_context_first
     reference: Fine grained labels with coarse-label `HUM`, context provided first
   fa588c55-5c69-4fd0-a0b1-edbfa092f710: !Template
-    answer_choices: "tan\u0131m ||| tan\u0131m ||| eylem tarz\u0131 ||| sebep"
+    answer_choices: "tan\u0131m ||| tan\u0131m ||| eylem \u015Fekli ||| sebep"
     id: fa588c55-5c69-4fd0-a0b1-edbfa092f710
     jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
-      \ 0 %}\n{{text}}\n\nBu soru {{', '.join(answer_choices)}} i\xE7in mi istiyor?\n\
+      \ 0 %}\n{{text}}\n\nBu soru {{', '.join(answer_choices)}} i\xE7in mi soruyor?\n\
       |||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false

@@ -17,14 +17,15 @@ templates:
     name: generate_paraphrase
     reference: ''
   44c2e6d9-facf-4959-8400-38e0eb8dd3a8: !Template
-    answer_choices: "\u043D\u0435 ||| \u0414\u0430"
+    answer_choices: "\u043D\u0435 ||| \u0434\u0430"
     id: 44c2e6d9-facf-4959-8400-38e0eb8dd3a8
     jinja: "\u0418\u0441\u043A\u0430\u043C \u0434\u0430 \u0437\u043D\u0430\u043C \u0434\
       \u0430\u043B\u0438 \u0441\u043B\u0435\u0434\u0432\u0430\u0449\u0438\u0442\u0435\
       \ \u0434\u0432\u0435 \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u044F\
       \ \u043E\u0437\u043D\u0430\u0447\u0430\u0432\u0430\u0442 \u0435\u0434\u043D\u043E\
       \ \u0438 \u0441\u044A\u0449\u043E \u043D\u0435\u0449\u043E.\n{{sentence1}}\n\
-      {{sentence2}}\n\u041D\u0430\u043B\u0438?\n|||\n{{ answer_choices[label] }}"
+      {{sentence2}}\n\u043F\u0440\u0430\u0432\u044F\u0442 \u043B\u0438?\n|||\n{{ answer_choices[label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -33,14 +34,14 @@ templates:
     name: want to know
     reference: ''
   adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
-    answer_choices: "\u043D\u0435 ||| \u0414\u0430"
+    answer_choices: "\u043D\u0435 ||| \u0434\u0430"
     id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
     jinja: "\u0418\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435\u0442\u043E\n{{sentence1}}\n\
-      \u043F\u0435\u0440\u0438\u0444\u0440\u0430\u0437\u0430 (\u0442\u043E\u0435\u0441\
-      \u0442 \u043E\u0437\u043D\u0430\u0447\u0430\u0432\u0430 \u0441\u044A\u0449\u043E\
-      \u0442\u043E \u043A\u0430\u0442\u043E) \u0442\u043E\u0432\u0430 \u0438\u0437\
-      \u0440\u0435\u0447\u0435\u043D\u0438\u0435?\n{{sentence2}}\n|||\n{{ answer_choices[label]\
-      \ }}"
+      \u043F\u0435\u0440\u0438\u0444\u0440\u0430\u0437\u0438\u0440\u0430 \u043B\u0438\
+      \ (\u0442.\u0435. \u043E\u0437\u043D\u0430\u0447\u0430\u0432\u0430 \u0441\u044A\
+      \u0449\u043E\u0442\u043E \u043A\u0430\u0442\u043E) \u0442\u043E\u0432\u0430\
+      \ \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435?\n{{sentence2}}\n|||\n\
+      {{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -50,14 +51,15 @@ templates:
     reference: ''
   bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
     answer_choices: "\u043D\u0435 \u0435 \u0435\u043A\u0432\u0438\u0432\u0430\u043B\
-      \u0435\u043D\u0442 ||| \u0435\u043A\u0432\u0438\u0432\u0430\u043B\u0435\u043D\
-      \u0442\u0435\u043D"
+      \u0435\u043D\u0442\u0435\u043D ||| \u0435\u043A\u0432\u0438\u0432\u0430\u043B\
+      \u0435\u043D\u0442\u0435\u043D"
     id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
     jinja: "\u0421\u043B\u0435\u0434\u043D\u0438\u0442\u0435 \u0434\u0432\u0435 \u0438\
       \u0437\u0440\u0435\u0447\u0435\u043D\u0438\u044F \"{{\"\u0435\u043A\u0432\u0438\
-      \u0432\u0430\u043B\u0435\u043D\u0442\u0435\u043D\"}}\" \u0438\u043B\u0438 \"\
-      {{\"\u043D\u0435 \u0435 \u0435\u043A\u0432\u0438\u0432\u0430\u043B\u0435\u043D\
-      \u0442\"}}\"?\n{{sentence1}}\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
+      \u0432\u0430\u043B\u0435\u043D\u0442\u0435\u043D\"}}\" \u043B\u0438 \u0441\u0430\
+      \ \u0438\u043B\u0438 \"{{\"\u043D\u0435 \u0435 \u0435\u043A\u0432\u0438\u0432\
+      \u0430\u043B\u0435\u043D\u0442\u0435\u043D\"}}\"?\n{{sentence1}}\n{{sentence2}}\n\
+      |||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -82,15 +84,14 @@ templates:
     name: generate_sentence
     reference: ''
   ee82d511-908c-4244-804f-6d0d907c68c7: !Template
-    answer_choices: "\u043D\u0435 ||| \u0414\u0430"
+    answer_choices: "\u043D\u0435 ||| \u0434\u0430"
     id: ee82d511-908c-4244-804f-6d0d907c68c7
     jinja: "\u041C\u043E\u0433\u0430 \u043B\u0438 \u0434\u0430 \u0437\u0430\u043C\u0435\
       \u043D\u044F \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435\u0442\u043E\
       \n{{sentence1}}\n\u0441 \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435\
-      \u0442\u043E\n{{sentence2}}\n\u0438 \u0442\u043E\u0432\u0430 \u043E\u0437\u043D\
-      \u0430\u0447\u0430\u0432\u0430 \u043B\u0438 \u0435\u0434\u043D\u043E \u0438\
-      \ \u0441\u044A\u0449\u043E \u043D\u0435\u0449\u043E?\n|||\n{{ answer_choices[label]\
-      \ }}"
+      \u0442\u043E\n{{sentence2}}\n\u0438 \u0442\u043E \u0434\u0430 \u043E\u0437\u043D\
+      \u0430\u0447\u0430\u0432\u0430 \u0441\u044A\u0449\u043E\u0442\u043E?\n|||\n\
+      {{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -99,7 +100,7 @@ templates:
     name: replace
     reference: ''
   eefd8606-b936-4d26-b91d-8f4bc38bfcbf: !Template
-    answer_choices: "\u043D\u0435 ||| \u0414\u0430"
+    answer_choices: "\u043D\u0435 ||| \u0434\u0430"
     id: eefd8606-b936-4d26-b91d-8f4bc38bfcbf
     jinja: "\u0421\u043B\u0435\u0434\u043D\u0438\u0442\u0435 \u0434\u0432\u0435 \u0438\
       \u0437\u0440\u0435\u0447\u0435\u043D\u0438\u044F \u043E\u0437\u043D\u0430\u0447\

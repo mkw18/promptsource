@@ -6,7 +6,7 @@ templates:
     id: 17b83a3f-f748-42e6-9cdf-b2951dd8299d
     jinja: "{% set seq = [\n'Rispondi alla domanda a seconda del contesto.',\n'Qual\
       \ \xE8 la risposta?',\n] %}\n\n{{ seq | choice }}\nContesto: {{context}};\n\
-      Domanda: {{question}};\nRisposta: |||\n{% if answers.text == [] %}\nRispondere\
+      Domanda: {{question}};\nRisposta: |||\n{% if answers.text == [] %}\nRispondi\
       \ non nel contesto\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: &id001 !TemplateMetadata
       choices_in_prompt: false
@@ -20,7 +20,7 @@ templates:
     id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
     jinja: '{% if answers.text != [] %}
 
-      Determina la domanda che potresti aver chiesto di recuperare la seguente risposta
+      Determina la domanda che potresti aver posto per ottenere la seguente risposta
       per il contesto dato
 
       Contesto: {{context}};
@@ -45,11 +45,11 @@ templates:
   20064b80-e4d0-41b7-9135-92c0077d5044: !Template
     answer_choices: null
     id: 20064b80-e4d0-41b7-9135-92c0077d5044
-    jinja: "{% set seq = [\n'Cosa riguarda? ',\n'Di cosa parla il\
-      \ paragrafo? ',\n'Ottieni l''argomento da: ',\n'Dal passaggio,\
-      \ ottieni l''argomento',\n'Voglio conoscere l''argomento. ',\n'Argomento\
-      \ dal passaggio: ',\n'Argomento dal paragrafo: ',\n] %}\n{{ seq | choice }}\
-      \n{{context}} ||| \n{{title | replace(\"_\", \" \")}}"
+    jinja: "{% set seq = [\n'Cosa riguarda? ',\n'Di cosa tratta il paragrafo?\
+      \ ',\n'Ottieni l''argomento da: ',\n'Dal passaggio, prendi l''argomento',\
+      \n'Voglio conoscere l''argomento. ',\n'Argomento tratto dal brano:\
+      \ ',\n'Argomento del paragrafo: ',\n] %}\n{{ seq | choice }}\n{{context}}\
+      \ ||| \n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -63,11 +63,11 @@ templates:
   338cc143-361e-4796-b035-31fb2201c49f: !Template
     answer_choices: null
     id: 338cc143-361e-4796-b035-31fb2201c49f
-    jinja: "{% set seq = [\n'Questo \xE8 un po '' ',\n'Cosa riguarda? ',\n'Il paragrafo\
-      \ parla ',\n'Di cosa parla il paragrafo? ',\n'Ottieni l''argomento: ',\n'Dal\
-      \ passaggio, l''argomento \xE8',\n'Voglio conoscere l''argomento. ',\n'Argomento\
-      \ dal passaggio: ',\n'Argomento dal paragrafo: ',\n] %}\n{{context}}\n{{ seq\
-      \ | choice }}|||\n{{title | replace(\"_\", \" \")}}"
+    jinja: "{% set seq = [\n'Si tratta di ',\n'Cosa riguarda? ',\n'Il paragrafo riguarda\
+      \ ',\n'Di cosa tratta il paragrafo? ',\n'Ottieni l''argomento: ',\n'Dal brano,\
+      \ l''argomento \xE8',\n'Voglio conoscere l''argomento. ',\n'Argomento tratto dal\
+      \ brano: ',\n'Argomento del paragrafo: ',\n] %}\n{{context}}\n{{ seq | choice\
+      \ }}|||\n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -98,7 +98,7 @@ templates:
     jinja: "{% set seq = [\n'Puoi dirmi ',\n'dimmelo, ti prego ',\n'Dimmi ',\n'Dal\
       \ passaggio, ',\n'voglio sapere ',\n'voglio chiedere ',\n'Qual \xE8 la risposta\
       \ a: ',\n'Trova la risposta a: ',\n'Risposta: ',\n'',\n] %}\n{{context}} {{\
-      \ seq | choice }}{{question}}|||\n{% if answers.text == [] %}\nRispondere non\
+      \ seq | choice }}{{question}}|||\n{% if answers.text == [] %}\nRispondi non\
       \ nel contesto\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: &id002 !TemplateMetadata
       choices_in_prompt: false
@@ -153,8 +153,8 @@ templates:
   e2e41877-4794-4ff9-9f92-a2a85105e2a7: !Template
     answer_choices: "s\xEC ||| No"
     id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
-    jinja: "Contesto: {{context}}; \n\nDomanda: {{question}} \n\nQuesta domanda \xE8\
-      \ responsabile? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n{%\
+    jinja: "Contesto: {{context}}; \n\nDomanda: {{question}} \n\nQuesta domanda ha\
+      \ una risposta? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n{%\
       \ else %}\n{{answer_choices[1]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -166,10 +166,10 @@ templates:
   e51c23b9-5b10-4db3-a0d1-ba546830173d: !Template
     answer_choices: null
     id: e51c23b9-5b10-4db3-a0d1-ba546830173d
-    jinja: "{% set seq = [\n'Determina l''argomento della coppia di risposte. ',\n\
-      'Trova l''argomento. ',\n'Qual \xE8 l''argomento da questo? ',\n] %}\n{% if answers.text\
-      \ != [] %}\n{{ seq | choice }}\nDomanda: {{question}};  Risposta: {{answers.text[0]}};\
-      \ Argomento: |||\n{{title}}\n{% endif %}"
+    jinja: "{% set seq = [\n'Determina l''argomento della coppia domanda-risposta.\
+      \ ',\n'Trova l''argomento. ',\n'Qual \xE8 l''argomento di questo? ',\n] %}\n{%\
+      \ if answers.text != [] %}\n{{ seq | choice }}\nDomanda: {{question}};  Risposta:\
+      \ {{answers.text[0]}}; Argomento: |||\n{{title}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -182,7 +182,7 @@ templates:
   fdcf132e-6c70-4188-999e-93601ee8e089: !Template
     answer_choices: null
     id: fdcf132e-6c70-4188-999e-93601ee8e089
-    jinja: 'Di cosa si tratta il seguente passaggio?
+    jinja: 'Di cosa tratta il seguente passaggio?
 
       {{context}} |||
 

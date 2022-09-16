@@ -2,7 +2,7 @@ dataset: super_glue
 subset: wic_et
 templates:
   14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
     jinja: "Kas s\xF5nal \"{{word}}\" on nendes kahes lauses sama t\xE4hendus? Jah\
       \ ei?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
@@ -15,7 +15,7 @@ templates:
     name: question-context-meaning-with-label
     reference: Generalized question-context format with label
   3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
     jinja: "Kas s\xF5nal \"{{word}}\" on nendes kahes lauses sama t\xE4hendus?\n{{sentence1}}\n\
       {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
@@ -28,10 +28,10 @@ templates:
     name: question-context-meaning
     reference: Generalized question-context format
   611d13dc-d414-4b9b-9204-e4f325e859e7: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: 611d13dc-d414-4b9b-9204-e4f325e859e7
     jinja: "Kodut\xF6\xF6\n\nOtsustage, kas s\xF5na \"{{word}}\" kasutatakse kahes\
-      \ j\xE4rgmises lauses sama t\xE4hendusega. VASTUS JAH v\xF5i EI.\n{{sentence1}}\n\
+      \ j\xE4rgmises lauses sama t\xE4hendusega. Vastake jah v\xF5i ei.\n{{sentence1}}\n\
       {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
       \ %}"
     metadata: !TemplateMetadata
@@ -44,8 +44,8 @@ templates:
   725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
     answer_choices: "Vale ||| T\xF5si"
     id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
-    jinja: "Lause a: {{sentence1}}\nLause B: {{sentence2}}\n\n\"{{word}}\" on lausetes\
-      \ A ja B -s sarnane t\xE4hendus. \xD5ige v\xF5i vale?\n||| {% if label != -1%}\n\
+    jinja: "Lause A: {{sentence1}}\nLause B: {{sentence2}}\n\n\"{{word}}\" on lausetes\
+      \ A ja B sarnase t\xE4hendusega. \xD5ige v\xF5i vale?\n||| {% if label != -1%}\n\
       {{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -55,9 +55,9 @@ templates:
     name: affirmation_true_or_false
     reference: ''
   c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6
-    jinja: "{{sentence1}}\n{{sentence2}}\nK\xFCsimus: Is the word '{{word}}' used\
+    jinja: "{{sentence1}}\n{{sentence2}}\nk\xFCsimus: Is the word '{{word}}' used\
       \ in the same sense in the two sentences above?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -68,11 +68,11 @@ templates:
     name: GPT-3-prompt
     reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf
   ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: ce8b5a93-1841-4897-84db-b100f1c84f4b
-    jinja: "Lause 1: {{sentence1}}\nLause 2: {{sentence2}}\n\nM\xE4\xE4rake, kas s\xF5\
-      na \"{{word}}\" kasutatakse m\xF5lemas lauses samas t\xE4henduses. Jah v\xF5\
-      i ei?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    jinja: "1. lause: {{sentence1}}\n2. lause: {{sentence2}}\n\nTehke kindlaks, kas\
+      \ s\xF5na \"{{word}}\" kasutatakse m\xF5lemas lauses samas t\xE4henduses. Jah\
+      \ v\xF5i ei?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -81,11 +81,11 @@ templates:
     name: same_sense
     reference: ''
   cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
-    jinja: "Tehke kindlaks, kas s\xF5na '{{word}}' kasutatakse allolevas kahes lauses\
-      \ samal viisil. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
-      {% endif %}"
+    jinja: "Tehke kindlaks, kas s\xF5na \u201E{{word}}\u201D kasutatakse kahes allolevas\
+      \ lauses samal viisil. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n\
+      {{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -94,11 +94,11 @@ templates:
     name: question-context
     reference: Generalized question-context format
   d9e1db2a-ab0b-4621-bb41-01d5788d3873: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
-    jinja: "{{sentence1}}\n{{sentence2}}\nK\xFCsimus: Kas s\xF5na '{{word}}' kasutatakse\
-      \ samas t\xE4henduses kahes \xFClaltoodud lauses? Jah ei?\n||| {% if label !=\
-      \ -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    jinja: "{{sentence1}}\n{{sentence2}}\nk\xFCsimus: Kas s\xF5na \u201E{{word}}\u201D\
+      \ kasutatakse kahes \xFClaltoodud lauses samas t\xE4henduses? Jah ei?\n||| {%\
+      \ if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -108,10 +108,10 @@ templates:
     reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf add additional
       label
   dd2080cf-3117-49ba-9aff-c988a21fdb69: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: dd2080cf-3117-49ba-9aff-c988a21fdb69
-    jinja: "S\xF5na \"{{word}}\" on mitu t\xE4hendust. Kas sellel on lausetes 1 ja\
-      \ 2 sama t\xE4hendus? Jah v\xF5i ei?\n\nLause 1: {{sentence1}}\nLause 2: {{sentence2}}\n\
+    jinja: "S\xF5nal \"{{word}}\" on mitu t\xE4hendust. Kas sellel on lauses 1 ja\
+      \ 2 sama t\xE4hendus? Jah v\xF5i ei?\n\n1. lause: {{sentence1}}\n2. lause: {{sentence2}}\n\
       ||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -121,19 +121,10 @@ templates:
     name: polysemous
     reference: ''
   f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: f934a96d-fe4d-4075-aa47-5595b9a604c7
-    jinja: '{{sentence1}}
-
-      {{sentence2}}
-
-      Sarnane {{word}} tunne?
-
-      ||| {% if label != -1%}
-
-      {{answer_choices[label]}}
-
-      {% endif %}'
+    jinja: "{{sentence1}}\n{{sentence2}}\nSarnane t\xE4hendus {{word}}?\n||| {% if\
+      \ label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

@@ -1,0 +1,189 @@
+dataset: xnli
+subset: hr
+templates:
+  161036e2-c397-4def-a813-4a2be119c5d6: !Template
+    answer_choices: "Pravi ||| Neuvjerljivo ||| la\u017Eno"
+    id: 161036e2-c397-4def-a813-4a2be119c5d6
+    jinja: "Uzmite sljede\u0107e kao istinu: {{premise}}\nZatim sljede\u0107a izjava:\
+      \ \"{{hypothesis}}\" is {{\"pravi\"}}, {{\"la\u017Eno\"}}, or {{\"neuvjerljiv\"\
+      }}? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: take the following as truth
+    reference: Sanh et al. 2021
+  172b73dc-d045-491c-9dc2-76bf6566c8ee: !Template
+    answer_choices: "Da ||| Mo\u017Ee biti ||| Ne"
+    id: 172b73dc-d045-491c-9dc2-76bf6566c8ee
+    jinja: "{{premise}} \n\nPitanje: Da li ovo implicira da je \"{{hypothesis}}\"\
+      ? Da, ne, ili mo\u017Eda? ||| {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does this imply
+    reference: Sanh et al. 2021
+  37d2f061-06b0-4aa3-af53-871a2b06748f: !Template
+    answer_choices: "Pravi ||| Ni ||| la\u017Eno"
+    id: 37d2f061-06b0-4aa3-af53-871a2b06748f
+    jinja: "{{premise}}\nPitanje: {{hypothesis}} To\u010Dno, neto\u010Dno ili nijedno?\
+      \ ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 style
+    reference: 'Same as reported in Figure G7 of the GPT-3 paper, except that there
+      is no task identifying tokens like "anli R1: ".'
+  5350f9f1-61bb-43a3-9471-17db720f12bc: !Template
+    answer_choices: "Da ||| Mo\u017Ee biti ||| Ne"
+    id: 5350f9f1-61bb-43a3-9471-17db720f12bc
+    jinja: "S obzirom na to {{premise}} Slijedi li to {{hypothesis}} Da, ne, ili mo\u017E\
+      da? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does it follow that
+    reference: Sanh et al. 2021
+  58536115-fd5c-4f29-a85b-420fde6fc5b0: !Template
+    answer_choices: "Da ||| Mo\u017Ee biti ||| Ne"
+    id: 58536115-fd5c-4f29-a85b-420fde6fc5b0
+    jinja: "{{premise}} Na temelju prethodnog odlomka, je li istina da \"{{hypothesis}}\"\
+      ? Da, ne, ili mo\u017Eda? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based on the previous passage
+    reference: "Adapted from the BoolQ prompts in Schick & Sch\xFCtze 2021."
+  833c65a6-6068-4e00-9833-944cf7510544: !Template
+    answer_choices: "Da ||| Mo\u017Ee biti ||| Ne"
+    id: 833c65a6-6068-4e00-9833-944cf7510544
+    jinja: "S obzirom {{premise}} Je li zajam\u010Deno istina da \"{{hypothesis}}\"\
+      ? Da, ne, ili mo\u017Eda? ||| {{ answer_choices[label] }} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: guaranteed true
+    reference: Webson & Pavlick 2021
+  854211f0-14eb-4370-9998-95c331828d6f: !Template
+    answer_choices: "Da ||| Mo\u017Ee biti ||| Ne"
+    id: 854211f0-14eb-4370-9998-95c331828d6f
+    jinja: "S obzirom {{premise}} Trebamo li pretpostaviti da je \"{{hypothesis}}\"\
+      \ istinito? Da, ne, ili mo\u017Eda? ||| {{ answer_choices[label] }} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: should assume
+    reference: Webson & Pavlick 2021
+  8eb1c093-293c-4fcc-9d8c-a1451494ef06: !Template
+    answer_choices: "Da ||| Mo\u017Ee biti ||| Ne"
+    id: 8eb1c093-293c-4fcc-9d8c-a1451494ef06
+    jinja: "S obzirom na to {{premise}} Stoga mora biti istina da je \"{{hypothesis}}\"\
+      ? Da, ne, ili mo\u017Eda? ||| {{ answer_choices[label] }} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: must be true
+    reference: Sanh et al. 2021
+  9b75ff67-bb66-413b-a33d-325707b035d7: !Template
+    answer_choices: "Da ||| Mo\u017Ee biti ||| Ne"
+    id: 9b75ff67-bb66-413b-a33d-325707b035d7
+    jinja: "Pretpostavimo {{premise}} Mo\u017Eemo li zaklju\u010Diti da \"{{hypothesis}}\"\
+      ? Da, ne, ili mo\u017Eda? ||| {{ answer_choices[label] }} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: can we infer
+    reference: Webson & Pavlick 2021
+  9bda8e36-c881-4c9a-a3a9-eec68388a6f6: !Template
+    answer_choices: "Da ||| Mo\u017Ee biti ||| Ne"
+    id: 9bda8e36-c881-4c9a-a3a9-eec68388a6f6
+    jinja: "{{premise}} Imamo li opravdanje re\u0107i da \"{{hypothesis}}\"? Da, ne,\
+      \ ili mo\u017Eda? ||| {{ answer_choices[label] }} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: justified in saying
+    reference: Webson & Pavlick 2021
+  c201719f-28f6-44c7-bb09-f82c6b049893: !Template
+    answer_choices: "Pravi ||| Neuvjerljivo ||| la\u017Eno"
+    id: c201719f-28f6-44c7-bb09-f82c6b049893
+    jinja: "{{premise}} Na temelju te informacije tvrdnja je: \"{{hypothesis}}\" {{\"\
+      pravi\"}}, {{\"la\u017Eno\"}}, or {{\"neuvjerljiv\"}}? ||| {{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: claim true/false/inconclusive
+    reference: Sanh et al. 2021
+  c96fd357-3736-489d-a409-4ba210d1be5d: !Template
+    answer_choices: Stalno ||| Ponekad ||| Nikada
+    id: c96fd357-3736-489d-a409-4ba210d1be5d
+    jinja: "{{premise}} \n\nImaju\u0107i na umu gornji tekst, razmislite o sljede\u0107\
+      em: {{hypothesis}} Is this {{\"stalno\"}}, {{\"ponekad\"}}, or {{\"nikada\"\
+      }} correct? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: consider always/sometimes/never
+    reference: Sanh et al. 2021
+  c9c79c98-2d33-45f8-ab44-e2203883f0b7: !Template
+    answer_choices: Stalno ||| Ponekad ||| Nikada
+    id: c9c79c98-2d33-45f8-ab44-e2203883f0b7
+    jinja: Pretpostavimo da je istina da {{premise}} Then, is "{{hypothesis}}" {{"stalno"}},
+      {{"ponekad"}}, or {{"nikada"}} true? ||| {{ answer_choices[label] }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: always/sometimes/never
+    reference: Sanh et al. 2021
+  d44c2947-f8e0-49ea-9770-e59f0581a921: !Template
+    answer_choices: "Zagarantiran ||| mogu\u0107e ||| Nemogu\u0107e"
+    id: d44c2947-f8e0-49ea-9770-e59f0581a921
+    jinja: "Pretpostavimo da je istina da {{premise}} \n\nTherefore, \"{{hypothesis}}\"\
+      \ is {{\"Zagarantiran\"}}, {{\"mogu\u0107e\"}}, or {{\"nemogu\u0107e\"}}? |||\
+      \ {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: guaranteed/possible/impossible
+    reference: Sanh et al. 2021
+  da368462-3a66-4222-9de1-05d66037a708: !Template
+    answer_choices: "To\u010Dno ||| Neuvjerljivo ||| Neto\u010Dno"
+    id: da368462-3a66-4222-9de1-05d66037a708
+    jinja: "{{premise}} Koriste\u0107i samo gornji opis i ono \u0161to znate o svijetu,\
+      \ \"{{hypothesis}}\" je definitivno to\u010Dno, neto\u010Dno ili neuvjerljivo?\
+      \ ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: MNLI crowdsource
+    reference: Adapted from Williams et al. 2018's instructions to crowdsourcing workers.

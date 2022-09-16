@@ -4,7 +4,7 @@ templates:
   00caa8cb-7f67-43bc-9e90-fc1d5d329432: !Template
     answer_choices: '{{endings | join(" ||| ")}}'
     id: 00caa8cb-7f67-43bc-9e90-fc1d5d329432
-    jinja: "Complete la descripci\xF3n con un final apropiado:\nFirst, {{ ctx_a.lower()\
+    jinja: "Complete la descripci\xF3n con un final apropiado:\nPrimero, {{ ctx_a.lower()\
       \ }} Despu\xE9s, {{ ctx_b.lower() }} ...\n\n(a) {{ answer_choices[0] }}\n\n\
       (b) {{ answer_choices[1] }}\n\n(c) {{ answer_choices[2] }}\n\n(d) {{ answer_choices[3]\
       \ }}\n|||\n{{ answer_choices[label | int()] }}"
@@ -18,7 +18,7 @@ templates:
   196a016d-bd25-4387-90b9-53197fd43b1e: !Template
     answer_choices: null
     id: 196a016d-bd25-4387-90b9-53197fd43b1e
-    jinja: "\xBFCu\xE1l es el tema de la oraci\xF3n? {{ctx}} \n|||\n{{activity_label}} "
+    jinja: "Cu\xE1l es el tema de la oraci\xF3n: {{ctx}} \n|||\n{{activity_label}} "
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -55,13 +55,13 @@ templates:
   52fbd075-46cb-49fb-a41b-00a0f4a60285: !Template
     answer_choices: '{{endings | join(" ||| ") }}'
     id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
-    jinja: "{% set prompts = [\n'\xBFPuedes elegir el final correcto para la oraci\xF3\
-      n? ',\n'La tarea es generar el final para la oraci\xF3n: ',\n'\xBFC\xF3mo termina\
-      \ esta oraci\xF3n? ',\n'De la lista de finales que se describen a continuaci\xF3\
-      n, qu\xE9 finalizaci\xF3n tiene m\xE1s sentido para la oraci\xF3n ',]\n%}\n\
-      {{prompts | choice}}\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\
-      \n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices\
-      \ [label | int()]}}"
+    jinja: "{% set prompts = [\n'\xBFPuedes elegir la terminaci\xF3n correcta para\
+      \ la oraci\xF3n: ',\n'La tarea es generar el final de la oraci\xF3n: ',\n'\xBF\
+      C\xF3mo termina esta frase? ',\n'De la lista de terminaciones que se describen\
+      \ a continuaci\xF3n, \xBFqu\xE9 terminaci\xF3n tiene m\xE1s sentido para la\
+      \ oraci\xF3n? ',]\n%}\n{{prompts | choice}}\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\
+      \n(b)  {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n\
+      |||\n{{answer_choices [label | int()]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -73,9 +73,10 @@ templates:
     answer_choices: "S\xED ||| No"
     id: 663470b8-3fab-449c-84ab-6c4738da51b3
     jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nConsidere la siguiente descripci\xF3\
-      n: {{ ctx_a }}\n\xBFEs la siguiente continuaci\xF3n apropiada?\n{{ ctx_b }}\
-      \ {{ endings[instance] }}\n\xBFSi o no?\n||| \n{% if label  == instance | string()\
-      \ %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n{% endif %}"
+      n: {{ ctx_a }}\n\xBFEs lo siguiente una continuaci\xF3n apropiada?\n{{ ctx_b\
+      \ }} {{ endings[instance] }}\n\xBFSi o no?\n||| \n{% if label  == instance |\
+      \ string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n{%\
+      \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -86,9 +87,9 @@ templates:
   6e9f8d7d-9016-45bc-b997-c42aeb2dc944: !Template
     answer_choices: '{{endings | join("|||")}}'
     id: 6e9f8d7d-9016-45bc-b997-c42aeb2dc944
-    jinja: "\xBFC\xF3mo termina esta oraci\xF3n?\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\
+    jinja: "\xBFC\xF3mo termina esta frase?\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\
       \n(b)  {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n\
-      \nSugerencia: el tema de la oraci\xF3n es {{activity_label}}\n|||\n{{answer_choices\
+      \nPista: el tema de la oraci\xF3n es {{activity_label}}\n|||\n{{answer_choices\
       \ [label | int()]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -100,7 +101,7 @@ templates:
   a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e: !Template
     answer_choices: null
     id: a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e
-    jinja: "\xBFC\xF3mo comenzar\xEDas la oraci\xF3n?\n{{endings[label | int()]}}\n\
+    jinja: "\xBFC\xF3mo comenzar\xEDas la oraci\xF3n?:\n{{endings[label | int()]}}\n\
       |||\n{{ctx}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -130,8 +131,8 @@ templates:
     answer_choices: Terminando 1 ||| Terminando 2 ||| Terminando 3 ||| Terminando
       4
     id: db8b1c25-f2db-4604-b8fc-f93d69d6fae7
-    jinja: "{{ ctx }}...\n\xBFC\xF3mo es probable que termine la descripci\xF3n?\n\
-      \nTerminando 1: {{ endings[0] }}\n\nTerminando 2: {{ endings[1] }}\n\nTerminando\
+    jinja: "{{ ctx }}...\n\xBFC\xF3mo termina probablemente la descripci\xF3n?\n\n\
+      Terminando 1: {{ endings[0] }}\n\nTerminando 2: {{ endings[1] }}\n\nTerminando\
       \ 3: {{ endings[2] }}\n\nTerminando 4: {{ endings[3] }}\n||| {{ answer_choices[label\
       \ | int()] }}"
     metadata: !TemplateMetadata

@@ -23,7 +23,7 @@ templates:
 
       {% if answers.text == [] %}
 
-      Antworte nicht im Kontext
+      Antwort nicht im Kontext
 
       {% else %}
 
@@ -41,9 +41,9 @@ templates:
     answer_choices: null
     id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
     jinja: "{% if answers.text != [] %}\nBestimmen Sie die Frage, die Sie m\xF6glicherweise\
-      \ gestellt haben, um die folgende Antwort f\xFCr den angegebenen Kontext zur\xFC\
-      ckzugewinnen\nKontext: {{context}};\nAntworten: {{answers.text[0]}};\nFrage:\
-      \ |||\n{{question}}\n{% endif %}\n"
+      \ gestellt haben, um die folgende Antwort f\xFCr den gegebenen Kontext zu erhalten\n\
+      Kontext: {{context}};\nAntworten: {{answers.text[0]}};\nFrage: |||\n{{question}}\n\
+      {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -55,7 +55,7 @@ templates:
   20064b80-e4d0-41b7-9135-92c0077d5044: !Template
     answer_choices: null
     id: 20064b80-e4d0-41b7-9135-92c0077d5044
-    jinja: "{% set seq = [\n'Um was geht es hierbei? ',\n'Worum geht es im Absatz?\
+    jinja: "{% set seq = [\n'Um was geht es hierbei? ',\n'Worum geht es in dem Absatz?\
       \ ',\n'Holen Sie sich das Thema von: ',\n'Holen Sie sich das Thema aus der Passage',\n\
       'Ich m\xF6chte das Thema wissen. ',\n'Thema aus der Passage: ',\n'Thema aus\
       \ dem Absatz: ',\n] %}\n{{ seq | choice }}\n{{context}} |||\n{{title | replace(\"\
@@ -74,10 +74,10 @@ templates:
     answer_choices: null
     id: 338cc143-361e-4796-b035-31fb2201c49f
     jinja: "{% set seq = [\n'Es geht um ',\n'Um was geht es hierbei? ',\n'Der Absatz\
-      \ handelt ',\n'Worum geht es im Absatz? ',\n'Holen Sie sich das Thema: ',\n\
-      'Aus der Passage ist das Thema',\n'Ich m\xF6chte das Thema wissen. ',\n'Thema\
-      \ aus der Passage: ',\n'Thema aus dem Absatz: ',\n] %}\n{{context}}\n{{ seq\
-      \ | choice }}|||\n{{title | replace(\"_\", \" \")}}"
+      \ handelt von ',\n'Worum geht es in dem Absatz? ',\n'Holen Sie sich das Thema:\
+      \ ',\n'Aus der Passage ist das Thema',\n'Ich m\xF6chte das Thema wissen. ',\n\
+      'Thema aus der Passage: ',\n'Thema aus dem Absatz: ',\n] %}\n{{context}}\n{{\
+      \ seq | choice }}|||\n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -106,10 +106,10 @@ templates:
     answer_choices: null
     id: 8bea1123-fd8d-4bac-96bf-b8a289ee74b3
     jinja: "{% set seq = [\n'Kannst du mir erz\xE4hlen ',\n'Bitte sag mir ',\n'Sag\
-      \ mir ',\n'Aus der Passage, ',\n'Ich m\xF6chte wissen ',\n'Ich will fragen ',\n\
+      \ mir ',\n'Aus dem Gang, ',\n'Ich m\xF6chte wissen ',\n'Ich will fragen ',\n\
       'Was ist die Antwort auf: ',\n'Finden Sie die Antwort auf: ',\n'Antworten: ',\n\
       '',\n] %}\n{{context}} {{ seq | choice }}{{question}}|||\n{% if answers.text\
-      \ == [] %}\nAntworte nicht im Kontext\n{% else %}\n{{answers.text[0]}}\n{% endif\
+      \ == [] %}\nAntwort nicht im Kontext\n{% else %}\n{{answers.text[0]}}\n{% endif\
       \ %}"
     metadata: &id002 !TemplateMetadata
       choices_in_prompt: false
@@ -139,7 +139,7 @@ templates:
 
       If you can''t find the answer, please respond "unbeantwortbar".
 
-      Answer: |||
+      Antworten: |||
 
       {% if answers.text == [] %}
 
@@ -175,11 +175,11 @@ templates:
     answer_choices: null
     id: e1630107-8f5d-44ce-8ccd-6fa80da80328
     jinja: "{% set seq = [\n'Kannst du mir erz\xE4hlen ',\n'Bitte sag mir ',\n'Sag\
-      \ mir ',\n'Aus der Passage, ',\n'Ich m\xF6chte wissen ',\n'I want to ask ',\n\
-      'What is the answer to: ',\n'Finden Sie die Antwort auf: ',\n'Answer: ',\n'',\n\
-      ] %}\n{{context}} {{ seq | choice }}{{question}} If you can't find the answer,\
-      \ please respond \"unanswerable\". |||\n{% if answers.text == [] %}\nunanswerable\n\
-      {% else %}\n{{answers.text[0]}}\n{% endif %}"
+      \ mir ',\n'Aus dem Gang, ',\n'Ich m\xF6chte wissen ',\n'Ich will fragen ',\n\
+      'Was ist die Antwort auf: ',\n'Finden Sie die Antwort auf: ',\n'Antworten: ',\n\
+      '',\n] %}\n{{context}} {{ seq | choice }}{{question}} If you can't find the\
+      \ answer, please respond \"unbeantwortbar\". |||\n{% if answers.text == [] %}\n\
+      unbeantwortbar\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: *id002
     name: Questions with Context - Without Prompt Keywords +unanswerable
     reference: Given context and question, give answer. No keywords to delineate context
@@ -187,7 +187,7 @@ templates:
   e2e41877-4794-4ff9-9f92-a2a85105e2a7: !Template
     answer_choices: Jawohl ||| nein
     id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
-    jinja: "Context: {{context}}; \n\nFrage: {{question}} \n\nIst diese Frage verantwortlich?\
+    jinja: "Kontext: {{context}}; \n\nFrage: {{question}} \n\nIst diese Frage beantwortbar?\
       \ ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n{% else %}\n{{answer_choices[1]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -204,9 +204,9 @@ templates:
 
       ''Bestimmen Sie das Thema des Frage-Antwort-Paares. '',
 
-      ''Find the topic. '',
+      ''Finden Sie das Thema. '',
 
-      ''Was ist das Thema davon? '',
+      ''Was ist das Thema daraus? '',
 
       ] %}
 
@@ -214,7 +214,7 @@ templates:
 
       {{ seq | choice }}
 
-      Frage: {{question}};  Antworten: {{answers.text[0]}}; Topic: |||
+      Frage: {{question}};  Antworten: {{answers.text[0]}}; Thema: |||
 
       {{title}}
 

@@ -2,17 +2,14 @@ dataset: dbpedia_14
 subset: ht
 templates:
   824ecb55-ecad-40c2-8033-f2fa0add2ddf: !Template
-    answer_choices: "Konpayi ||| Enstitisyon Edikasyon ||| Atis ||| Athlete ||| Office\
-      \ Holder ||| Vle di nan transp\xF2 ||| Konstriksyon ||| Kote natir\xE8l |||\
-      \ Bouk ||| Zannimo ||| Plante ||| Alb\xF2m ||| Fim ||| Travay ekri"
+    answer_choices: "Konpayi ||| Enstitisyon edikasyon\xE8l ||| Atis ||| Atl\xE8t\
+      \ ||| Detant\xE8 biwo ||| Mwayen nan transp\xF2 ||| Bilding ||| Kote Natir\xE8\
+      l ||| Vilaj ||| B\xE8t ||| Plant ||| Album ||| Fim ||| Travay ekri"
     id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
-    jinja: '{{content}} Bay yon lis kategori: {{"company, educational institution,
-      artist, athlete, office holder, mean of transportation, building, natural place,
-      village, animal, plant, album, film or written work"}}, ki kategori paragraf
-      la apatni a? ||| {{ answer_choices[label] }}
-
-
-      '
+    jinja: "{{content}} Bay yon lis kategori: {{\"konpayi, enstitisyon edikasyon\xE8\
+      l, atis, atl\xE8t, detant\xE8 biwo, mwayen transp\xF2, bilding, kote natir\xE8\
+      l, vilaj, b\xE8t, plant, album, fim oswa travay ekri\"}}, nan ki kategori paragraf\
+      \ la f\xE8 pati? ||| {{ answer_choices[label] }}\n\n"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -21,13 +18,13 @@ templates:
     name: given_list_what_category_does_the_paragraph_belong_to
     reference: ''
   8eda7e71-6734-486f-b883-e99d3f14c0bf: !Template
-    answer_choices: "Konpayi ||| Enstitisyon Edikasyon ||| Atis ||| Atl\xE8t ||| Office\
-      \ Holder ||| Vle di nan transp\xF2 ||| Konstriksyon ||| Kote natir\xE8l |||\
-      \ Bouk ||| Zannimo ||| Plante ||| Alb\xF2m ||| Fim ||| Travay ekri"
+    answer_choices: "Konpayi ||| Enstitisyon edikasyon\xE8l ||| Atis ||| Atl\xE8t\
+      \ ||| Detant\xE8 biwo ||| Mwayen nan transp\xF2 ||| Bilding ||| Kote Natir\xE8\
+      l ||| Vilaj ||| B\xE8t ||| Plant ||| Album ||| Fim ||| Travay ekri"
     id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
-    jinja: "Chwazi yon kategori pou t\xE8ks sa a.Opsyon yo se - {{\"company, educational\
-      \ institution, artist, athlete, office holder, mean of transportation, building,\
-      \ natural place, village, animal, plant, album, film or written work\"}}. {{title}}\
+    jinja: "Chwazi yon kategori pou t\xE8ks sa a. Opsyon yo se - {{\"konpayi, enstitisyon\
+      \ edikasyon\xE8l, atis, atl\xE8t, detant\xE8 biwo, mwayen transp\xF2, bilding,\
+      \ kote natir\xE8l, vilaj, b\xE8t, plant, album, fim oswa travay ekri\"}}. {{title}}\
       \ - {{content}} ||| {{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -37,14 +34,14 @@ templates:
     name: pick_one_category_for_the_following_text
     reference: ''
   9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67: !Template
-    answer_choices: "Konpayi ||| Enstitisyon Edikasyon ||| Atis ||| Atl\xE8t ||| Detant\xE8\
-      \ biwo ||| Mean Of Transportation ||| Building ||| Natural Place ||| Village\
-      \ ||| Zannimo ||| Plante ||| Alb\xF2m ||| Fim ||| Travay ekri"
+    answer_choices: "Konpayi ||| Enstitisyon edikasyon\xE8l ||| Atis ||| Atl\xE8t\
+      \ ||| Detant\xE8 biwo ||| Mwayen nan transp\xF2 ||| Bilding ||| Kote Natir\xE8\
+      l ||| Vilaj ||| B\xE8t ||| Plant ||| Album ||| Fim ||| Travay ekri"
     id: 9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67
-    jinja: '{{title}} - {{content}} Given a choice of categories {{"company, educational
-      institution, artist, athlete, office holder, mean of transportation, building,
-      natural place, village, animal, plant, album, film or written work"}}, the text
-      refers to which one? ||| {{ answer_choices[label] }}'
+    jinja: "{{title}} - {{content}} Bay yon chwa nan kategori {{\"konpayi, enstitisyon\
+      \ edikasyon\xE8l, atis, atl\xE8t, detant\xE8 biwo, mwayen transp\xF2, bilding,\
+      \ kote natir\xE8l, vilaj, b\xE8t, plant, album, fim oswa travay ekri\"}}, t\xE8\
+      ks la refere a ki youn? ||| {{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -53,17 +50,14 @@ templates:
     name: 'given_a_choice_of_categories '
     reference: ''
   f72fa410-3278-4f62-91f0-f9edf4a4e792: !Template
-    answer_choices: "Konpayi ||| Educational Institution ||| Atis ||| Atl\xE8t |||\
-      \ Detant\xE8 biwo ||| Vle di nan transp\xF2 ||| Konstriksyon ||| Natural Place\
-      \ ||| Bouk ||| Zannimo ||| Plante ||| Alb\xF2m ||| Fim ||| Travay ekri"
+    answer_choices: "Konpayi ||| Enstitisyon edikasyon\xE8l ||| Atis ||| Atl\xE8t\
+      \ ||| Detant\xE8 biwo ||| Mwayen nan transp\xF2 ||| Bilding ||| Kote Natir\xE8\
+      l ||| Vilaj ||| B\xE8t ||| Plant ||| Album ||| Fim ||| Travay ekri"
     id: f72fa410-3278-4f62-91f0-f9edf4a4e792
-    jinja: '"{{title}}", given a list of categories: {{"company, educational institution,
-      artist, athlete, office holder, mean of transportation, building, natural place,
-      village, animal, plant, album, film or written work"}}, what category does the
-      title belong to? ||| {{ answer_choices[label] }}
-
-
-      '
+    jinja: "\"{{title}}\", bay yon lis kategori: {{\"konpayi, enstitisyon edikasyon\xE8\
+      l, atis, atl\xE8t, detant\xE8 biwo, mwayen transp\xF2, bilding, kote natir\xE8\
+      l, vilaj, b\xE8t, plant, album, fim oswa travay ekri\"}}, nan ki kategori tit\
+      \ la f\xE8 pati? ||| {{ answer_choices[label] }}\n\n"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

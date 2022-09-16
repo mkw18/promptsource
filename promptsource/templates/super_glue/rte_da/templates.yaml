@@ -4,9 +4,9 @@ templates:
   2b52a83c-0021-41fe-b44c-5aaa076d71a2: !Template
     answer_choices: Ja ||| Ingen
     id: 2b52a83c-0021-41fe-b44c-5aaa076d71a2
-    jinja: "{{premise}} Brug kun ovenst\xE5ende beskrivelse, og hvad du ved om verden,\
-      \ er \"{{hypothesis}}\" bestemt korrekt? Ja eller nej? ||| {% if label != -1\
-      \ %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} Hvis du kun bruger ovenst\xE5ende beskrivelse og hvad du ved\
+      \ om verden, er \"{{hypothesis}}\" bestemt korrekt? Ja eller nej? ||| {% if\
+      \ label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -53,7 +53,7 @@ templates:
   9e078fb4-505b-413c-bb5e-3cd16ddcf5d7: !Template
     answer_choices: Ja ||| Ingen
     id: 9e078fb4-505b-413c-bb5e-3cd16ddcf5d7
-    jinja: "{{premise}} \n\nSp\xF8rgsm\xE5l: Betyder dette, at \"{{hypothesis}}\"\
+    jinja: "{{premise}} \n\nSp\xF8rgsm\xE5l: Indeb\xE6rer dette, at \"{{hypothesis}}\"\
       ? Ja eller nej? ||| {% if label != -1 %}{{answer_choices[label]}}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -65,8 +65,8 @@ templates:
   b8dc85c6-28b6-4340-979a-8e77c2a0dde8: !Template
     answer_choices: Ja ||| Ingen
     id: b8dc85c6-28b6-4340-979a-8e77c2a0dde8
-    jinja: "Givet {{premise}} B\xF8r vi antage, at \"{{hypothesis}}\" er sandt? Ja\
-      \ eller nej? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: Givet {{premise}} Skal vi antage, at "{{hypothesis}}" er sandt? Ja eller
+      nej? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -89,9 +89,9 @@ templates:
   ed1f4b75-8826-4852-9bd6-aedf368678f5: !Template
     answer_choices: Ja ||| Ingen
     id: ed1f4b75-8826-4852-9bd6-aedf368678f5
-    jinja: "{{premise}} Baseret p\xE5 den forrige passage, er det sandt, at \"{{hypothesis}}\"\
-      ? Ja eller nej? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
-      \ %}"
+    jinja: "{{premise}} Baseret p\xE5 den foreg\xE5ende passage, er det sandt, at\
+      \ \"{{hypothesis}}\"? Ja eller nej? ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -102,7 +102,7 @@ templates:
   ee0ce095-122a-4509-bf0b-33d1495295f7: !Template
     answer_choices: Ja ||| Ingen
     id: ee0ce095-122a-4509-bf0b-33d1495295f7
-    jinja: '{{premise}} Er vi berettigede til at sige, at "{{hypothesis}}"? Ja eller
+    jinja: '{{premise}} Er vi berettiget til at sige, at "{{hypothesis}}"? Ja eller
       nej? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -114,8 +114,8 @@ templates:
   fb4f8144-37f5-4977-88da-37a5d0bfd0e8: !Template
     answer_choices: Ja ||| Ingen
     id: fb4f8144-37f5-4977-88da-37a5d0bfd0e8
-    jinja: "I betragtning af det {{premise}} Derfor skal det v\xE6re sandt, at \"\
-      {{hypothesis}}\"? Ja eller nej? ||| {% if label != -1 %}{{ answer_choices[label]\
+    jinja: "I betragtning af det {{premise}} Derfor m\xE5 det v\xE6re rigtigt, at\
+      \ \"{{hypothesis}}\"? Ja eller nej? ||| {% if label != -1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

@@ -4,8 +4,8 @@ templates:
   02ff2949-0f45-4d97-941e-6fa4c0afbc2d: !Template
     answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
     id: 02ff2949-0f45-4d97-941e-6fa4c0afbc2d
-    jinja: "\u0110\xE1nh gi\xE1 phim sau \u0111\xE2y th\u1EC3 hi\u1EC7n t\xECnh c\u1EA3\
-      m l\xE0 g\xEC? {{text}} ||| {{ answer_choices [label] }}"
+    jinja: "B\xE0i ph\xEA b\xECnh phim sau \u0111\xE2y th\u1EC3 hi\u1EC7n t\xECnh\
+      \ c\u1EA3m g\xEC? {{text}} ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -16,9 +16,9 @@ templates:
   2351d12a-e630-4d19-8b41-e199266e38f7: !Template
     answer_choices: "x\u1EA5u ||| t\u1ED1t"
     id: 2351d12a-e630-4d19-8b41-e199266e38f7
-    jinja: "{{text}} Ng\u01B0\u1EDDi \u0111\xE1nh gi\xE1 c\xF3 t\xECm th\u1EA5y b\u1ED9\
-      \ phim n\xE0y {{\"t\u1ED1t hay x\u1EA5u\"}} kh\xF4ng? ||| {{ answer_choices\
-      \ [label] }}"
+    jinja: "{{text}} Ng\u01B0\u1EDDi \u0111\xE1nh gi\xE1 c\xF3 t\xECm th\u1EA5y phim\
+      \ n\xE0y kh\xF4ng {{\"t\u1ED1t hay x\u1EA5u\"}}? ||| {{ answer_choices [label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -29,8 +29,9 @@ templates:
   5f372fb1-795a-47b6-8ddf-c4fd1579e76a: !Template
     answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
     id: 5f372fb1-795a-47b6-8ddf-c4fd1579e76a
-    jinja: "{{text}} \nC\xF3 ph\u1EA3i \u0111\xE1nh gi\xE1 n\xE0y {{\"t\xEDch c\u1EF1\
-      c ho\u1EB7c ti\xEAu c\u1EF1c\"}}? ||| \n{{answer_choices[label] }}"
+    jinja: "{{text}} \nB\xE0i \u0111\xE1nh gi\xE1 n\xE0y c\xF3 ph\u1EA3i l\xE0 {{\"\
+      t\xEDch c\u1EF1c hay ti\xEAu c\u1EF1c\"}} kh\xF4ng? ||| \n{{answer_choices[label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -41,8 +42,8 @@ templates:
   866474a5-1498-46b7-bfee-ac0c5160707f: !Template
     answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
     id: 866474a5-1498-46b7-bfee-ac0c5160707f
-    jinja: "{{text}} Ng\u01B0\u1EDDi xem c\u1EA3m th\u1EA5y th\u1EBF n\xE0o v\u1EC1\
-      \ b\u1ED9 phim? ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} C\u1EA3m nh\u1EADn c\u1EE7a ng\u01B0\u1EDDi xem v\u1EC1 b\u1ED9\
+      \ phim nh\u01B0 th\u1EBF n\xE0o? ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -53,8 +54,8 @@ templates:
   96538f30-f2c1-430e-8fc6-936a16966d9c: !Template
     answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
     id: 96538f30-f2c1-430e-8fc6-936a16966d9c
-    jinja: "{{text}} Nh\xE0 v\u0103n th\u1EC3 hi\u1EC7n t\xECnh c\u1EA3m n\xE0o cho\
-      \ b\u1ED9 phim? ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} Ng\u01B0\u1EDDi vi\u1EBFt b\xE0y t\u1ECF t\xECnh c\u1EA3m g\xEC\
+      \ \u0111\u1ED1i v\u1EDBi b\u1ED9 phim? ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -77,8 +78,8 @@ templates:
   b93b74ac-fe95-40b4-9610-318b46ab820f: !Template
     answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
     id: b93b74ac-fe95-40b4-9610-318b46ab820f
-    jinja: "{{text}} T\xECnh c\u1EA3m th\u1EC3 hi\u1EC7n trong v\u0103n b\u1EA3n n\xE0\
-      y l\xE0 g\xEC? ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} T\xECnh c\u1EA3m \u0111\u01B0\u1EE3c th\u1EC3 hi\u1EC7n trong\
+      \ v\u0103n b\u1EA3n n\xE0y l\xE0 g\xEC? ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -90,7 +91,7 @@ templates:
     answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
     id: b9b5d79d-f0b3-4bec-a724-f585db3e93ff
     jinja: "{{text}} \u0110\xE2y ch\u1EAFc ch\u1EAFn kh\xF4ng ph\u1EA3i l\xE0 m\u1ED9\
-      t \u0111\xE1nh gi\xE1 ||| {{ answer_choices [1-label]}}."
+      t b\xE0i \u0111\xE1nh gi\xE1 ||| {{ answer_choices [1-label]}}."
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -113,9 +114,8 @@ templates:
   c70d1687-2421-49a2-9553-91b8bac4cfbe: !Template
     answer_choices: "ph\u1EE7 \u0111\u1ECBnh ||| t\xEDch c\u1EF1c"
     id: c70d1687-2421-49a2-9553-91b8bac4cfbe
-    jinja: "{{text}} T\xECnh c\u1EA3m \u0111\u01B0\u1EE3c th\u1EC3 hi\u1EC7n b\u1EDF\
-      i ng\u01B0\u1EDDi \u0111\xE1nh gi\xE1 cho b\u1ED9 phim l\xE0 g\xEC? ||| {{ answer_choices\
-      \ [label] }}"
+    jinja: "{{text}} Ng\u01B0\u1EDDi nh\u1EADn x\xE9t b\xE0y t\u1ECF t\xECnh c\u1EA3\
+      m g\xEC \u0111\u1ED1i v\u1EDBi b\u1ED9 phim? ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

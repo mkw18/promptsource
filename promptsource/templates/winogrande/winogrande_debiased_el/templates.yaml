@@ -1,0 +1,95 @@
+dataset: winogrande
+subset: winogrande_debiased_el
+templates:
+  1ce2be12-1815-4a07-80a7-ac3c3505b005: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 1ce2be12-1815-4a07-80a7-ac3c3505b005
+    jinja: "{{sentence}}\n\u0391\u03BD\u03C4\u03B9\u03BA\u03B1\u03C4\u03B1\u03C3\u03C4\
+      \u03AE\u03C3\u03C4\u03B5 \u03C4\u03BF _ \u03C3\u03C4\u03B7\u03BD \u03C0\u03B1\
+      \u03C1\u03B1\u03C0\u03AC\u03BD\u03C9 \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7\
+      \ \u03BC\u03B5 \u03C4\u03B7 \u03C3\u03C9\u03C3\u03C4\u03AE \u03B5\u03C0\u03B9\
+      \u03BB\u03BF\u03B3\u03AE: \n- {{option1}}\n- {{option2}}\n|||\n{% if answer\
+      \ == '1' %} {{option1}} {% else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Replace
+    reference: ''
+  1ddbbca4-8917-4a1d-9d83-f42db77f24ba: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 1ddbbca4-8917-4a1d-9d83-f42db77f24ba
+    jinja: "{{sentence}}\n\u03A3\u03B5 \u03C4\u03B9 \u03B1\u03BD\u03B1\u03C6\u03AD\
+      \u03C1\u03B5\u03C4\u03B1\u03B9 \u03C4\u03BF _ \u03C3\u03C4\u03B7\u03BD \u03C0\
+      \u03B1\u03C1\u03B1\u03C0\u03AC\u03BD\u03C9 \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\
+      \u03B7; {{option1}} \u03AE {{option2}}; ||| {% if answer == '1' %} {{option1}}\
+      \ {% else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: underscore refer to
+    reference: ''
+  276eaba6-17e5-403a-98c7-0f8c53c35221: !Template
+    answer_choices: '{{ option1 }} ||| {{ option2 }}'
+    id: 276eaba6-17e5-403a-98c7-0f8c53c35221
+    jinja: "{{ sentence }} \u03A3\u03C4\u03B7\u03BD \u03C0\u03C1\u03BF\u03B7\u03B3\
+      \u03BF\u03CD\u03BC\u03B5\u03BD\u03B7 \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7\
+      , \u03C4\u03BF _ \u03B1\u03BD\u03B1\u03C6\u03AD\u03C1\u03B5\u03C4\u03B1\u03B9\
+      \ \u03C3\u03C4\u03BF {{option1}} \u03AE \u03C3\u03C4\u03BF {{option2}}; |||\
+      \ {% if answer == '1' %} {{option1}} {% else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does underscore refer to
+    reference: ''
+  9702d456-4261-4a7e-94c5-6a9d2a1c4859: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 9702d456-4261-4a7e-94c5-6a9d2a1c4859
+    jinja: "\u03A3\u03C4\u03B7\u03BD \u03C0\u03B1\u03C1\u03B1\u03BA\u03AC\u03C4\u03C9\
+      \ \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7, \u03C4\u03BF _ \u03C3\u03B7\u03BC\
+      \u03B1\u03AF\u03BD\u03B5\u03B9 {{answer_choices[0]}} \u03AE {{answer_choices[1]}};\n\
+      {{sentence}}|||\n{{answer_choices[answer | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: stand for
+    reference: ''
+  bb9b91fc-760a-45cd-bacd-dcb05a1cb2f3: !Template
+    answer_choices: "\u0391\u03BB\u03B7\u03B8\u03AE\u03C2 ||| \u03A8\u03B5\u03C5\u03B4\
+      \u03AE\u03C2"
+    id: bb9b91fc-760a-45cd-bacd-dcb05a1cb2f3
+    jinja: "\u03A4\u03BF _ \u03C3\u03C4\u03B7\u03BD \u03C0\u03B1\u03C1\u03B1\u03BA\
+      \u03AC\u03C4\u03C9 \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7 \u03B1\u03BD\u03B1\
+      \u03C6\u03AD\u03C1\u03B5\u03C4\u03B1\u03B9 \u03C3\u03C4\u03BF {{option1}}. \u03A3\
+      \u03C9\u03C3\u03C4\u03CC \u03AE \u03BB\u03AC\u03B8\u03BF\u03C2?\n{{sentence}}|||\n\
+      {{answer_choices[answer|int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: True or False
+    reference: ''
+  ebabc54d-cff4-46a7-9c22-2412b8ce00c6: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: ebabc54d-cff4-46a7-9c22-2412b8ce00c6
+    jinja: "\u03A3\u03C5\u03BC\u03C0\u03BB\u03AE\u03C1\u03C9\u03C3\u03B5 \u03C4\u03BF\
+      \ _ \u03C3\u03C4\u03B7\u03BD \u03C0\u03B1\u03C1\u03B1\u03BA\u03AC\u03C4\u03C9\
+      \ \u03C0\u03C1\u03CC\u03C4\u03B1\u03C3\u03B7:\n{{sentence}}\n\n\u0395\u03C0\u03B9\
+      \u03BB\u03BF\u03B3\u03AD\u03C2:\n- {{ option1 }}\n- {{ option2 }}\n\n\u0391\u03C0\
+      \u03AC\u03BD\u03C4\u03B7\u03C3\u03B7: ||| {% if answer == '1' %} {{option1}}\
+      \ {% else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fill in the blank
+    reference: ''

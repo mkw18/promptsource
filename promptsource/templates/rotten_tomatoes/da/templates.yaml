@@ -2,7 +2,7 @@ dataset: rotten_tomatoes
 subset: da
 templates:
   10adbcf1-b839-4522-bd76-567f0c760474: !Template
-    answer_choices: "D\xE5rligt ||| godt"
+    answer_choices: "d\xE5rligt ||| godt"
     id: 10adbcf1-b839-4522-bd76-567f0c760474
     jinja: "{{text}} Fandt anmelderen denne film {{\"god eller d\xE5rlig\"}}? |||\
       \ {{ answer_choices [label] }}"
@@ -16,8 +16,8 @@ templates:
   162f7f89-4a93-42e9-9525-ba12e243ee48: !Template
     answer_choices: negativ ||| positiv
     id: 162f7f89-4a93-42e9-9525-ba12e243ee48
-    jinja: '{{text}} Hvad er stemningen udtrykt i denne tekst? ||| {{ answer_choices
-      [label] }}'
+    jinja: "{{text}} Hvad er f\xF8lelsen udtrykt i denne tekst? ||| {{ answer_choices\
+      \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -28,7 +28,7 @@ templates:
   37ac89b8-09f8-443d-982c-980a86f26ea0: !Template
     answer_choices: negativ ||| positiv
     id: 37ac89b8-09f8-443d-982c-980a86f26ea0
-    jinja: "{{text}} \nEr denne gennemgang {{\"positiv eller negativ\"}}? ||| \n{{answer_choices[label]\
+    jinja: "{{text}} \nEr denne anmeldelse {{\"positiv eller negativ\"}}? ||| \n{{answer_choices[label]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -40,8 +40,7 @@ templates:
   59e2aa7c-696f-4b85-87e9-688ea802d968: !Template
     answer_choices: Ingen ||| Ja
     id: 59e2aa7c-696f-4b85-87e9-688ea802d968
-    jinja: "{{text}} N\xF8d korrekturl\xE6seren filmen? ||| {{ answer_choices [label]\
-      \ }}"
+    jinja: '{{text}} Nyd anmelderen filmen? ||| {{ answer_choices [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -52,8 +51,8 @@ templates:
   7a8ccb1c-6737-4863-b08a-61d4a2839204: !Template
     answer_choices: De kunne ikke lide det ||| De elskede det
     id: 7a8ccb1c-6737-4863-b08a-61d4a2839204
-    jinja: "{{text}} Hvordan har korrekturl\xE6seren det om filmen? ||| {{ answer_choices\
-      \ [label] }}"
+    jinja: '{{text}} Hvad synes anmelderen om filmen? ||| {{ answer_choices [label]
+      }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -76,7 +75,7 @@ templates:
   a8f6927e-7eca-4975-a93c-f520f8be480d: !Template
     answer_choices: negativ ||| positiv
     id: a8f6927e-7eca-4975-a93c-f520f8be480d
-    jinja: "{{text}} Hvilken f\xF8lelse udtrykker forfatteren til filmen? ||| {{ answer_choices\
+    jinja: "{{text}} Hvilken f\xF8lelse udtrykker forfatteren for filmen? ||| {{ answer_choices\
       \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -88,7 +87,7 @@ templates:
   b60cad41-6bca-422a-aef7-cb113fcc32b0: !Template
     answer_choices: negativ ||| positiv
     id: b60cad41-6bca-422a-aef7-cb113fcc32b0
-    jinja: "F\xF8lgende filmanmeldelse udtrykker hvilken f\xF8lelse? {{text}} |||\
+    jinja: "Hvilken f\xF8lelse udtrykker f\xF8lgende filmanmeldelse? {{text}} |||\
       \ {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -100,8 +99,8 @@ templates:
   c75e322d-d6b4-4a28-b5a0-27fddfee694d: !Template
     answer_choices: negativ ||| positiv
     id: c75e322d-d6b4-4a28-b5a0-27fddfee694d
-    jinja: "{{text}} Hvad er stemningen udtrykt af korrekturl\xE6seren til filmen?\
-      \ ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} Hvad er f\xF8lelsen af \u200B\u200Banmelderen til filmen? |||\
+      \ {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -112,8 +111,7 @@ templates:
   e05ec7b9-5a8d-4670-9723-0237c1bb1eca: !Template
     answer_choices: negativ ||| positiv
     id: e05ec7b9-5a8d-4670-9723-0237c1bb1eca
-    jinja: "{{text}} Hvordan f\xF8ler seeren om filmen? ||| {{ answer_choices [label]\
-      \ }}"
+    jinja: '{{text}} Hvad synes seeren om filmen? ||| {{ answer_choices [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

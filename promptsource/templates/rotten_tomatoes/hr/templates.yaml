@@ -16,7 +16,7 @@ templates:
   162f7f89-4a93-42e9-9525-ba12e243ee48: !Template
     answer_choices: negativan ||| pozitivan
     id: 162f7f89-4a93-42e9-9525-ba12e243ee48
-    jinja: "{{text}} Koji je osje\u0107aj izra\u017Een u ovom tekstu? ||| {{ answer_choices\
+    jinja: "{{text}} Kakav je osje\u0107aj izra\u017Een u ovom tekstu? ||| {{ answer_choices\
       \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -28,7 +28,7 @@ templates:
   37ac89b8-09f8-443d-982c-980a86f26ea0: !Template
     answer_choices: negativan ||| pozitivan
     id: 37ac89b8-09f8-443d-982c-980a86f26ea0
-    jinja: "{{text}} \nJe li ovaj pregled {{\"Pozitivan ili negativan\"}}? ||| \n\
+    jinja: "{{text}} \nJe li ovo recenzija {{\"pozitivno ili negativno\"}}? ||| \n\
       {{answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -52,8 +52,7 @@ templates:
   7a8ccb1c-6737-4863-b08a-61d4a2839204: !Template
     answer_choices: Nije im se svidjelo ||| Svidjelo im se
     id: 7a8ccb1c-6737-4863-b08a-61d4a2839204
-    jinja: "{{text}} Kako se recenzent osje\u0107a zbog filma? ||| {{ answer_choices\
-      \ [label] }}"
+    jinja: '{{text}} Kako recenzent misli o filmu? ||| {{ answer_choices [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -64,8 +63,8 @@ templates:
   94e190d5-2196-486e-908b-759f288eac6e: !Template
     answer_choices: negativan ||| pozitivan
     id: 94e190d5-2196-486e-908b-759f288eac6e
-    jinja: "{{text}} Osje\u0107aji izra\u017Eeni za film je ||| {{ answer_choices\
-      \ [label] }}"
+    jinja: "{{text}} Osje\u0107aj izra\u017Een za film je ||| {{ answer_choices [label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -76,7 +75,7 @@ templates:
   a8f6927e-7eca-4975-a93c-f520f8be480d: !Template
     answer_choices: negativan ||| pozitivan
     id: a8f6927e-7eca-4975-a93c-f520f8be480d
-    jinja: "{{text}} Kakvo je osje\u0107anje pisac izra\u017Eava za film? ||| {{ answer_choices\
+    jinja: "{{text}} Kakve osje\u0107aje pisac izra\u017Eava prema filmu? ||| {{ answer_choices\
       \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -88,7 +87,7 @@ templates:
   b60cad41-6bca-422a-aef7-cb113fcc32b0: !Template
     answer_choices: negativan ||| pozitivan
     id: b60cad41-6bca-422a-aef7-cb113fcc32b0
-    jinja: "Sljede\u0107i pregled filma izra\u017Eava Kakve osje\u0107aje? {{text}}\
+    jinja: "Koji osje\u0107aj izra\u017Eava sljede\u0107a filmska recenzija? {{text}}\
       \ ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -100,8 +99,8 @@ templates:
   c75e322d-d6b4-4a28-b5a0-27fddfee694d: !Template
     answer_choices: negativan ||| pozitivan
     id: c75e322d-d6b4-4a28-b5a0-27fddfee694d
-    jinja: "{{text}} Koji je osje\u0107aj koji recenzent izra\u017Eava za film? |||\
-      \ {{ answer_choices [label] }}"
+    jinja: "{{text}} Kakvo je mi\u0161ljenje o filmu izrazio recenzent? ||| {{ answer_choices\
+      \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -112,8 +111,8 @@ templates:
   e05ec7b9-5a8d-4670-9723-0237c1bb1eca: !Template
     answer_choices: negativan ||| pozitivan
     id: e05ec7b9-5a8d-4670-9723-0237c1bb1eca
-    jinja: "{{text}} Kako se gledatelj osje\u0107a zbog filma? ||| {{ answer_choices\
-      \ [label] }}"
+    jinja: "{{text}} Kako gledatelj do\u017Eivljava film? ||| {{ answer_choices [label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

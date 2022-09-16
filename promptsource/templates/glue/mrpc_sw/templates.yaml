@@ -6,7 +6,7 @@ templates:
     id: 3b88d2c4-0aeb-4c6d-9ccc-653a388250a5
     jinja: '{% if label == 1 %}
 
-      Paraphrase sentensi ifuatayo: {{sentence1}}
+      Fafanua sentensi ifuatayo: {{sentence1}}
 
       |||
 
@@ -22,15 +22,15 @@ templates:
     name: generate_paraphrase
     reference: ''
   44c2e6d9-facf-4959-8400-38e0eb8dd3a8: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| ndio
     id: 44c2e6d9-facf-4959-8400-38e0eb8dd3a8
-    jinja: 'Nataka kujua ikiwa sentensi mbili zifuatazo zinamaanisha kitu kimoja.
+    jinja: 'Nataka kujua kama sentensi mbili zifuatazo zinamaanisha kitu kimoja.
 
       {{sentence1}}
 
       {{sentence2}}
 
-      Je! Wao?
+      Je!
 
       |||
 
@@ -43,13 +43,13 @@ templates:
     name: want to know
     reference: ''
   adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| ndio
     id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
-    jinja: 'Je! Sentensi
+    jinja: 'Je, sentensi
 
       {{sentence1}}
 
-      paraphrase (Hiyo ni, inamaanisha kitu sawa na) sentensi hii?
+      inafafanua (yaani, ina maana sawa na) sentensi hii?
 
       {{sentence2}}
 
@@ -66,7 +66,7 @@ templates:
   bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
     answer_choices: sio sawa ||| sawa
     id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
-    jinja: 'Je! Sentensi mbili zifuatazo "{{"sawa"}}" au "{{"sio sawa"}}"?
+    jinja: 'Je, sentensi mbili zifuatazo "{{"sawa"}}" au "{{"sio sawa"}}"?
 
       {{sentence1}}
 
@@ -87,7 +87,7 @@ templates:
     id: d830d7a5-abc0-4275-ac62-974e0088876f
     jinja: '{% if label == 1 %}
 
-      Tengeneza sentensi ambayo inamaanisha kitu kimoja na hiki: {{sentence1}}
+      Tengeneza sentensi inayomaanisha kitu sawa na hii: {{sentence1}}
 
       |||
 
@@ -103,9 +103,9 @@ templates:
     name: generate_sentence
     reference: ''
   ee82d511-908c-4244-804f-6d0d907c68c7: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| ndio
     id: ee82d511-908c-4244-804f-6d0d907c68c7
-    jinja: 'Je! Ninaweza kuchukua nafasi ya sentensi
+    jinja: 'Je, ninaweza kubadilisha sentensi
 
       {{sentence1}}
 
@@ -113,7 +113,7 @@ templates:
 
       {{sentence2}}
 
-      na inamaanisha kitu kimoja?
+      na kuifanya iwe na maana sawa?
 
       |||
 
@@ -126,9 +126,9 @@ templates:
     name: replace
     reference: ''
   eefd8606-b936-4d26-b91d-8f4bc38bfcbf: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| ndio
     id: eefd8606-b936-4d26-b91d-8f4bc38bfcbf
-    jinja: 'Je! Sentensi mbili zifuatazo zinamaanisha kitu kimoja?
+    jinja: 'Je, sentensi mbili zifuatazo zinamaanisha kitu kimoja?
 
       {{sentence1}}
 

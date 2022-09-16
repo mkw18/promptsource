@@ -17,7 +17,7 @@ templates:
   11e27d59-b1f5-43a1-9ccc-17f1c3249173: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 11e27d59-b1f5-43a1-9ccc-17f1c3249173
-    jinja: "J\xE4rgmine dokument on rikutud. \xD6elge mulle, mida \"{{\"@placeholder\"\
+    jinja: "J\xE4rgmine dokument on rikutud. R\xE4\xE4kige mulle, millele \"{{\"@placeholder\"\
       }}\" viitab.\n\nDokument: {{ passage }} \n{{ query }} \n||| {% if ( answers\
       \ | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -50,7 +50,7 @@ templates:
     id: 24c267d4-359e-40a9-83d2-bff904d63b09
     jinja: "Kokkuv\xF5te:\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\\n-\
       \ \") }} \n\nArtikkel:\n\n{{ passage.split(\"@highlight\")[0] }}\n\nN\xFC\xFC\
-      d, kui olete artiklit lugenud, kirjutage sellele lisamiseks uus lause.\n\n|||\
+      d, kui olete artiklit lugenud, kirjutage selle lisamiseks uus lause.\n\n|||\
       \ {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\", answers\
       \ | choice) }} {% endif %}"
     metadata: !TemplateMetadata
@@ -64,8 +64,9 @@ templates:
     answer_choices: '{{ entities | join("|||") }}'
     id: 441c70e3-095a-44a1-8163-bc3b666b7ea1
     jinja: "{{ passage }} \n{{ query }} \n\nPeaksite otsustama, millele \"{{\"@placeholder\"\
-      }}\" viitab. Valige:\n- {{answer_choices | join(\"\\n- \")}}\n||| {% if ( answers\
-      \ | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
+      }}\" viitab. Valige j\xE4rgmiste hulgast:\n- {{answer_choices | join(\"\\n-\
+      \ \")}}\n||| {% if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -122,9 +123,10 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 94577b75-2eac-4eae-b367-3b413c4188c6
-    jinja: "P\xE4rast artikli lugemist kirjutage sellele veel \xFCks lause.\n{{ passage\
-      \ | replace(\"@highlight\", \"\\n- \") }}\n\n||| {% if ( answers | length )\
-      \ > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}{% endif %}\n"
+    jinja: "P\xE4rast artikli lugemist kirjutage sellele lisamiseks veel \xFCks lause.\n\
+      {{ passage | replace(\"@highlight\", \"\\n- \") }}\n\n||| {% if ( answers |\
+      \ length ) > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}{%\
+      \ endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -137,10 +139,10 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 9579b54e-4f0f-4e43-8907-af57112cc857
-    jinja: "Palun lugege j\xE4rgmist uudisteartiklit ja kirjutage sellele lisamiseks\
-      \ veel \xFCks lause.\n\n{{ passage | replace(\"@highlight\", \"\\n- \") }} \n\
-      \ ||| {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\",\
-      \ answers | choice) }} {% endif %}\n"
+    jinja: "Palun lugege l\xE4bi allj\xE4rgnev uudisteartikkel ja kirjutage sellele\
+      \ lisamiseks veel \xFCks lause.\n\n{{ passage | replace(\"@highlight\", \"\\\
+      n- \") }} \n ||| {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\"\
+      , answers | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -151,9 +153,9 @@ templates:
   99dd38ce-32f3-4d58-93c5-59821002b9cc: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 99dd38ce-32f3-4d58-93c5-59821002b9cc
-    jinja: "{{ passage }} \n{{ query }} \nMilline v\xF5iks olla \"{{\"@placeholder\"\
-      }}\"? {{ entities | join(\", \") }}? ||| {% if ( answers | length ) > 0 %}{{\
-      \ answers | choice }}{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \nMis v\xF5iks olla \"{{\"@placeholder\"}}\"\
+      ? {{ entities | join(\", \") }}? ||| {% if ( answers | length ) > 0 %}{{ answers\
+      \ | choice }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -165,9 +167,9 @@ templates:
     answer_choices: '{{entities | join("|||")}}'
     id: 9b688cf3-28bf-4f33-94cf-e73e4fa8c608
     jinja: "{{ passage }}\n{{ query }}\n\nP\xFC\xFCan otsustada, mida \"{{\"@placeholder\"\
-      }}\" t\xE4hendab eelmises tekstis.\nAbi, valides valiku:\n- {{ entities | join(\"\
-      \\n- \") }}\n||| {% if ( answers | length ) > 0 %}\n{{ answers | choice }}\n\
-      {% endif %}"
+      }}\" eelmises tekstis t\xE4hendab.\nAidake, valides \xFChe j\xE4rgmistest valikutest:\n\
+      - {{ entities | join(\"\\n- \") }}\n||| {% if ( answers | length ) > 0 %}\n\
+      {{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -178,7 +180,7 @@ templates:
   a5ed27ed-162b-4ac1-9c7a-85059d5214be: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: a5ed27ed-162b-4ac1-9c7a-85059d5214be
-    jinja: "{{ passage }} \n{{ query }} \nSiin viitab kohahoidja ||| {% if ( answers\
+    jinja: "{{ passage }} \n{{ query }} \nSiin viitab kohat\xE4ide ||| {% if ( answers\
       \ | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -194,7 +196,7 @@ templates:
     id: a99a92e0-e1ee-4ec3-a38a-3be4303ba017
     jinja: "{{ passage.split(\"@highlight\")[0] }}\n\nT\xE4hts\xFCndmused:\n\n- {{\
       \ passage.split(\"@highlight\")[1:] | join(\"\\n- \") }} \n\nPalun kirjutage\
-      \ veel \xFCks esilet\xF5st.\n ||| {% if ( answers | length ) > 0 %}- {{ query\
+      \ t\xE4iendav esilet\xF5st.\n ||| {% if ( answers | length ) > 0 %}- {{ query\
       \ | replace(\"@placeholder\", answers | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -206,7 +208,7 @@ templates:
   d3fce74e-0d9d-404a-a009-9ebbf5794c2c: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: d3fce74e-0d9d-404a-a009-9ebbf5794c2c
-    jinja: "Harjutus: Ekstrakt tekstist \xF5ige olemi, millele \"{{\"@placeholder\"\
+    jinja: "Harjutus: V\xF5tke tekstist v\xE4lja \xF5ige olem, millele \"{{\"@placeholder\"\
       }}\" viitab.\n\n{{ passage }}\n{{ query }}\n||| {% if ( answers | length ) >\
       \ 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -219,7 +221,7 @@ templates:
   de5b635e-c2f4-40bb-81ac-650f1b45564b: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: de5b635e-c2f4-40bb-81ac-650f1b45564b
-    jinja: "{{ passage }}\n{{ query }}\n\nValige \xFCks suvand, \"{{\"@placeholder\"\
+    jinja: "{{ passage }}\n{{ query }}\n\nValige \xFCks variant, \"{{\"@placeholder\"\
       }}\" viitab:\n- {{answer_choices | join(\"\\n- \")}}\n||| {% if ( answers |\
       \ length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -263,9 +265,9 @@ templates:
   e68d13c5-df75-4de0-b59e-f2eaf4af6ce7: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: e68d13c5-df75-4de0-b59e-f2eaf4af6ce7
-    jinja: "{{ passage }} \n{{ query }} \nKas saate aru, mida t\xE4hendab \"{{\"@placeholder\"\
-      }}\"? See t\xE4hendab ||| {% if ( answers | length ) > 0 %}{{ answers | choice\
-      \ }}{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \nKas saate aru, mida \"{{\"@placeholder\"\
+      }}\" t\xE4hendab? See t\xE4hendab ||| {% if ( answers | length ) > 0 %}{{ answers\
+      \ | choice }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

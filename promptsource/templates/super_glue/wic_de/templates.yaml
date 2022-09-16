@@ -4,7 +4,7 @@ templates:
   14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
     answer_choices: Nein ||| Ja
     id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
-    jinja: "Hat das Wort \"{{word}}\" in diesen beiden S\xE4tzen die gleiche Bedeutung?\
+    jinja: "Hat das Wort \"{{word}}\" in diesen beiden S\xE4tzen dieselbe Bedeutung?\
       \ Ja Nein?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -17,7 +17,7 @@ templates:
   3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
     answer_choices: Nein ||| Ja
     id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
-    jinja: "Hat das Wort \"{{word}}\" in diesen beiden S\xE4tzen die gleiche Bedeutung?\n\
+    jinja: "Hat das Wort \"{{word}}\" in diesen beiden S\xE4tzen dieselbe Bedeutung?\n\
       {{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -30,10 +30,10 @@ templates:
   611d13dc-d414-4b9b-9204-e4f325e859e7: !Template
     answer_choices: Nein ||| Ja
     id: 611d13dc-d414-4b9b-9204-e4f325e859e7
-    jinja: "Hausaufgaben\n\nEntscheiden Sie, ob das Wort \"{{word}}\" in den beiden\
-      \ folgenden S\xE4tzen mit der gleichen Bedeutung verwendet wird. Antwort durch\
-      \ Ja oder Nein.\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
-      {% endif %}"
+    jinja: "Hausaufgaben\n\nEntscheiden Sie, ob das Wort \u201E{{word}}\u201C in den\
+      \ beiden folgenden S\xE4tzen mit derselben Bedeutung verwendet wird. Antwort\
+      \ mit ja oder nein.\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n\
+      {{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -44,9 +44,9 @@ templates:
   725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
     answer_choices: FALSCH ||| WAHR
     id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
-    jinja: "Satz a: {{sentence1}}\nSatz B: {{sentence2}}\n\n\"{{word}}\" hat eine\
-      \ \xE4hnliche Bedeutung in den S\xE4tzen A und B. Richtig oder falsch?\n|||\
-      \ {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    jinja: "Satz A: {{sentence1}}\nSatz B: {{sentence2}}\n\n\"{{word}}\" hat in den\
+      \ S\xE4tzen A und B eine \xE4hnliche Bedeutung. Richtig oder falsch?\n||| {%\
+      \ if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -80,8 +80,9 @@ templates:
     answer_choices: Nein ||| Ja
     id: ce8b5a93-1841-4897-84db-b100f1c84f4b
     jinja: "Satz 1: {{sentence1}}\nSatz 2: {{sentence2}}\n\nBestimmen Sie, ob das\
-      \ Wort \"{{word}}\" in beiden S\xE4tzen im selben Sinne verwendet wird. Ja oder\
-      \ Nein?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+      \ Wort \u201E{{word}}\u201C in beiden S\xE4tzen im gleichen Sinne verwendet\
+      \ wird. Ja oder Nein?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -92,9 +93,9 @@ templates:
   cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
     answer_choices: Nein ||| Ja
     id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
-    jinja: "Bestimmen Sie, ob das Wort '{{word}}' in den beiden folgenden S\xE4tzen\
-      \ auf die gleiche Weise verwendet wird. \n{{sentence1}}\n{{sentence2}}\n|||\
-      \ {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    jinja: "Bestimmen Sie, ob das Wort \u201E{{word}}\u201C in den beiden folgenden\
+      \ S\xE4tzen auf dieselbe Weise verwendet wird. \n{{sentence1}}\n{{sentence2}}\n\
+      ||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -106,8 +107,8 @@ templates:
     answer_choices: Nein ||| Ja
     id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
     jinja: "{{sentence1}}\n{{sentence2}}\nFrage: Wird das Wort '{{word}}' in den beiden\
-      \ oben genannten S\xE4tzen im selben Sinne verwendet? Ja Nein?\n||| {% if label\
-      \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+      \ obigen S\xE4tzen im gleichen Sinne verwendet? Ja Nein?\n||| {% if label !=\
+      \ -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -119,8 +120,8 @@ templates:
   dd2080cf-3117-49ba-9aff-c988a21fdb69: !Template
     answer_choices: Nein ||| Ja
     id: dd2080cf-3117-49ba-9aff-c988a21fdb69
-    jinja: "Das Wort \"{{word}}\" hat mehrere Bedeutungen. Hat es in den S\xE4tzen\
-      \ 1 und 2 die gleiche Bedeutung? Ja oder Nein?\n\nSatz 1: {{sentence1}}\nSatz\
+    jinja: "Das Wort \u201E{{word}}\u201C hat mehrere Bedeutungen. Hat es in den S\xE4\
+      tzen 1 und 2 dieselbe Bedeutung? Ja oder Nein?\n\nSatz 1: {{sentence1}}\nSatz\
       \ 2: {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
       \ %}"
     metadata: !TemplateMetadata
@@ -133,7 +134,7 @@ templates:
   f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
     answer_choices: Nein ||| Ja
     id: f934a96d-fe4d-4075-aa47-5595b9a604c7
-    jinja: "{{sentence1}}\n{{sentence2}}\n\xC4hnliches Gef\xFChl von {{word}}?\n|||\
+    jinja: "{{sentence1}}\n{{sentence2}}\n\xC4hnliche Bedeutung von {{word}}?\n|||\
       \ {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false

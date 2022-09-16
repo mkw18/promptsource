@@ -4,11 +4,10 @@ templates:
   0be7cecd-b427-4ec9-9b0e-666d6dae0063: !Template
     answer_choices: "\u0928\u0939\u0940\u0902 ||| \u0939\u093E\u0901"
     id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
-    jinja: "\u092F\u0939 \u0928\u093F\u0930\u094D\u0927\u093E\u0930\u093F\u0924 \u0915\
-      \u0930\u0947\u0902 \u0915\u093F \u0928\u093F\u092E\u094D\u0928\u0932\u093F\u0916\
-      \u093F\u0924 \u0926\u094B \u0935\u093E\u0915\u094D\u092F \u090F\u0915 \u0926\
-      \u0942\u0938\u0930\u0947 \u0915\u094B \u090F\u0915 -\u0926\u0942\u0938\u0930\
-      \u0947 \u0915\u094B \u0935\u093F\u0930\u094B\u0927\u093E\u092D\u093E\u0938 \u0915\
+    jinja: "\u0928\u093F\u0930\u094D\u0927\u093E\u0930\u093F\u0924 \u0915\u0930\u0947\
+      \u0902 \u0915\u093F \u0928\u093F\u092E\u094D\u0928\u0932\u093F\u0916\u093F\u0924\
+      \ \u0926\u094B \u0935\u093E\u0915\u094D\u092F \u090F\u0915 \u0926\u0942\u0938\
+      \u0930\u0947 \u0915\u0940 \u0935\u094D\u092F\u093E\u0916\u094D\u092F\u093E \u0915\
       \u0930\u0924\u0947 \u0939\u0948\u0902 \u092F\u093E \u0928\u0939\u0940\u0902\u0964\
       \n\u0935\u093E\u0915\u094D\u092F 1: {{sentence1}}\n\u0935\u093E\u0915\u094D\u092F\
       \ 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
@@ -26,7 +25,7 @@ templates:
       \u092F 2: {{sentence2}}\n\u092A\u094D\u0930\u0936\u094D\u0928: \u0915\u094D\u092F\
       \u093E \u0935\u093E\u0915\u094D\u092F 1 \u0914\u0930 \u0935\u093E\u0915\u094D\
       \u092F 2 \u090F\u0915 \u0939\u0940 \u0905\u0930\u094D\u0925 \u0935\u094D\u092F\
-      \u0915\u094D\u0924 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902?\u0939\u0948\
+      \u0915\u094D\u0924 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902? \u0939\u0948\
       \ \u0915\u093F \u0928\u0939\u0940\u0902? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -40,7 +39,7 @@ templates:
     id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
     jinja: "{{sentence1}}\n\u0915\u094D\u092F\u093E \u092F\u0939 \u0928\u093F\u092E\
       \u094D\u0928\u0932\u093F\u0916\u093F\u0924 \u0935\u093E\u0915\u094D\u092F \u0915\
-      \u093E \u090F\u0915 \u0935\u093F\u0930\u094B\u0927\u093E\u092D\u093E\u0938 \u0939\
+      \u093E \u090F\u0915 \u092A\u0948\u0930\u093E\u092B\u094D\u0930\u0947\u0936 \u0939\
       \u0948?\n{{sentence2}}?\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -54,7 +53,7 @@ templates:
     id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
     jinja: "\u0935\u093E\u0915\u094D\u092F 1: {{sentence1}}\n\u0935\u093E\u0915\u094D\
       \u092F 2: {{sentence2}}\n\u092A\u094D\u0930\u0936\u094D\u0928: \u0915\u094D\u092F\
-      \u093E \u0939\u092E \u0935\u093E\u0915\u094D\u092F 1 \u0915\u094B \u0935\u093E\
+      \u093E \u0939\u092E \u0935\u093E\u0915\u094D\u092F 1 \u0938\u0947 \u0935\u093E\
       \u0915\u094D\u092F 2 \u0915\u094B \u092B\u093F\u0930 \u0938\u0947 \u0932\u093F\
       \u0916 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
@@ -69,7 +68,7 @@ templates:
     id: 7c205a61-64d4-4673-bb8e-bfa77562eede
     jinja: "{{sentence1}}\n\u0915\u094D\u092F\u093E \u092F\u0939 \u0928\u093F\u092E\
       \u094D\u0928\u0932\u093F\u0916\u093F\u0924 \u0935\u093E\u0915\u094D\u092F \u0915\
-      \u093E \u090F\u0915 \u0935\u093F\u0930\u094B\u0927\u093E\u092D\u093E\u0938 \u0939\
+      \u093E \u090F\u0915 \u092A\u0948\u0930\u093E\u092B\u094D\u0930\u0947\u0936 \u0939\
       \u0948?\n{{sentence2}}?\n\u0939\u0948 \u0915\u093F \u0928\u0939\u0940\u0902\u0964\
       \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
@@ -84,8 +83,9 @@ templates:
     id: 8c259e88-7646-4a50-a4ca-90393920f281
     jinja: "\u0935\u093E\u0915\u094D\u092F 1: {{sentence1}}\n\u0935\u093E\u0915\u094D\
       \u092F 2: {{sentence2}}\n\u092A\u094D\u0930\u0936\u094D\u0928: \u0915\u094D\u092F\
-      \u093E \u0935\u093E\u0915\u094D\u092F 1 paraphrase \u0935\u093E\u0915\u094D\u092F\
-      \ 2 \u0939\u0948?\u0939\u0948 \u0915\u093F \u0928\u0939\u0940\u0902? \n||| \n\
+      \u093E \u0938\u0947\u0902\u091F\u0947\u0902\u0938 1 \u092A\u0948\u0930\u093E\
+      \u092B\u094D\u0930\u0947\u0936 \u0938\u0947\u0902\u091F\u0947\u0902\u0938 2\
+      \ \u0939\u0948? \u0939\u0948 \u0915\u093F \u0928\u0939\u0940\u0902? \n||| \n\
       {{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -97,9 +97,9 @@ templates:
   a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
     answer_choices: null
     id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
-    jinja: "{% if label == 1 %} \n\u0935\u093E\u0915\u094D\u092F \u0915\u094B \u092A\
-      \u0948\u0930\u093E\u092B\u094D\u0930\u0947\u091C\u093C: {{sentence1}} \n|||\
-      \ \n{{sentence2}} \n{% endif %}"
+    jinja: "{% if label == 1 %} \n\u0935\u093E\u0915\u094D\u092F \u0915\u0940 \u0935\
+      \u094D\u092F\u093E\u0916\u094D\u092F\u093E \u0915\u0930\u0947\u0902: {{sentence1}}\
+      \ \n||| \n{{sentence2}} \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -113,8 +113,9 @@ templates:
     id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
     jinja: "\u0935\u093E\u0915\u094D\u092F 1: {{sentence1}}\n\u0935\u093E\u0915\u094D\
       \u092F 2: {{sentence2}}\n\u092A\u094D\u0930\u0936\u094D\u0928: \u0915\u094D\u092F\
-      \u093E \u0935\u093E\u0915\u094D\u092F 1 paraphrase \u0935\u093E\u0915\u094D\u092F\
-      \ 2 \u0939\u0948? \n||| \n{{answer_choices[label]}}"
+      \u093E \u0938\u0947\u0902\u091F\u0947\u0902\u0938 1 \u092A\u0948\u0930\u093E\
+      \u092B\u094D\u0930\u0947\u0936 \u0938\u0947\u0902\u091F\u0947\u0902\u0938 2\
+      \ \u0939\u0948? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -154,9 +155,9 @@ templates:
     id: dd52359b-dc56-4241-8179-c98c636f0335
     jinja: "\u0935\u093E\u0915\u094D\u092F 1: {{sentence1}}\n\u0935\u093E\u0915\u094D\
       \u092F 2: {{sentence2}}\n\u092A\u094D\u0930\u0936\u094D\u0928: \u0915\u094D\u092F\
-      \u093E \u0939\u092E \u0935\u093E\u0915\u094D\u092F 1 \u0915\u094B \u0935\u093E\
+      \u093E \u0939\u092E \u0935\u093E\u0915\u094D\u092F 1 \u0938\u0947 \u0935\u093E\
       \u0915\u094D\u092F 2 \u0915\u094B \u092B\u093F\u0930 \u0938\u0947 \u0932\u093F\
-      \u0916 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902?\u0939\u0948 \u0915\u093F\
+      \u0916 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902? \u0939\u0948 \u0915\u093F\
       \ \u0928\u0939\u0940\u0902? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -168,8 +169,9 @@ templates:
   f0866713-c59a-4c5d-a307-95e80a935f99: !Template
     answer_choices: "\u0928\u0939\u0940\u0902 ||| \u0939\u093E\u0901"
     id: f0866713-c59a-4c5d-a307-95e80a935f99
-    jinja: "{{sentence1}} \u092A\u094D\u0930\u0936\u094D\u0928: {{sentence2}} Paraphrase\
-      \ \u092F\u093E \u0928\u0939\u0940\u0902?\n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}} \u092A\u094D\u0930\u0936\u094D\u0928: {{sentence2}} \u0926\
+      \u0943\u0937\u094D\u091F\u093E\u0902\u0924 \u0939\u0948 \u092F\u093E \u0928\u0939\
+      \u0940\u0902?\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

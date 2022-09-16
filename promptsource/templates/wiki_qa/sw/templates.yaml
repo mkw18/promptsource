@@ -2,11 +2,11 @@ dataset: wiki_qa
 subset: sw
 templates:
   148e8e91-4f38-4427-8806-8a407268cda9: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: 148e8e91-4f38-4427-8806-8a407268cda9
     jinja: 'Swali: {{question}}?
 
-      Je! "{{answer}}" itakuwa jibu la busara? |||
+      Je, "{{answer}}" jibu linalofaa? |||
 
       {{ answer_choices[label] }}'
     metadata: !TemplateMetadata
@@ -18,14 +18,14 @@ templates:
     reference: Model is inserted both question and answer and output whether the answer
       is correct or not.
   2395d5ce-5abd-4193-9cf1-863c7271a4f0: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: 2395d5ce-5abd-4193-9cf1-863c7271a4f0
-    jinja: 'Ninathibitisha majibu yanayotokana na mfumo wa moja kwa moja kwa swali
-      lifuatalo: {{question}}
+    jinja: 'Ninathibitisha majibu yanayotolewa na mfumo otomatiki kwa swali lifuatalo:
+      {{question}}
 
       Jibu lililopendekezwa: {{answer}}
 
-      Je! Ninapaswa kuhalalisha jibu hili?
+      Je, nithibitishe jibu hili?
 
       |||
 
@@ -42,7 +42,7 @@ templates:
     id: 3480df1e-88bb-4b3d-90df-3f292463eb76
     jinja: '{% if label == 1 %}
 
-      Je! Swali ni nini kwa: "{{answer}}"?Mada ni {{document_title}}.|||
+      Swali la: "{{answer}}" ni nini? Mada ni {{document_title}}.|||
 
       "{{question}}?"
 
@@ -62,7 +62,7 @@ templates:
     id: 8a9f2146-aa30-4e17-b1e2-aeb858b08b55
     jinja: '{% if label == 1 %}
 
-      Amua mada ya jozi ya maswali.
+      Amua mada ya jozi ya jibu la maswali.
 
       Swali: "{{question}}?";  Jibu: "{{answer}}"? Mada: |||
 
@@ -84,7 +84,7 @@ templates:
     id: a99a68fa-46ae-4331-8b97-fcf751db3f6f
     jinja: '{% if label == 1 %}
 
-      Tengeneza swali juu ya mada "{{document_title}}" ambayo jibu lake litakuwa:
+      Tengeneza swali kuhusu mada "{{document_title}}" ambalo jibu lake litakuwa:
       {{answer}}.|||
 
       {{question}}?
@@ -101,13 +101,13 @@ templates:
     name: Generate Question from Topic
     reference: Given a topic, generate a question.
   add469e1-b8d9-4926-8f38-3a60c85a7d2b: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: add469e1-b8d9-4926-8f38-3a60c85a7d2b
     jinja: 'Swali: {{question}}
 
       Nilipata jibu lifuatalo kwenye Google: {{answer}}
 
-      Je! Hilo ni jibu sahihi?Ndio au hapana.
+      Je, hilo ni jibu sahihi? Ndiyo au hapana.
 
       |||
 
@@ -144,8 +144,8 @@ templates:
   bfa3adac-d75b-4e09-aa92-dc38e334937f: !Template
     answer_choices: Uongo ||| Kweli
     id: bfa3adac-d75b-4e09-aa92-dc38e334937f
-    jinja: 'Zoezi ni kuamua ikiwa swali linakubali maoni yaliyopendekezwa kama jibu
-      sahihi.Ikiwa ndio, andika "{{answer_choices[1]}}", vinginevyo andika "{{answer_choices[0]}}".
+    jinja: 'Zoezi ni kuamua kama swali linakubali pendekezo lililopendekezwa kama
+      jibu sahihi. Kama ndiyo, andika "{{answer_choices[1]}}", vinginevyo andika "{{answer_choices[0]}}".
 
       Question: {{question}}
 
@@ -162,9 +162,9 @@ templates:
     name: exercise
     reference: ''
   c802cf19-59a7-4a3e-a6ab-5cbb1f169c70: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: c802cf19-59a7-4a3e-a6ab-5cbb1f169c70
-    jinja: 'Hili ni jibu sahihi kwa swali lifuatalo kuhusu {{document_title}}.Ndio
+    jinja: 'Hili ni jibu sahihi kwa swali lifuatalo kuhusu {{document_title}}. Ndiyo
       au hapana?
 
       Jibu: {{answer}}

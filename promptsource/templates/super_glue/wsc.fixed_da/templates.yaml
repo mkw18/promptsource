@@ -17,7 +17,7 @@ templates:
   23361c5d-b67f-4c2a-9da7-16301c55d0e1: !Template
     answer_choices: Ingen ||| Ja
     id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
-    jinja: '{{ text }} Her, af "{{ span2_text }}" de betyder "{{ span1_text }}". Ja
+    jinja: '{{ text }} Her betyder de med "{{ span2_text }}" "{{ span1_text }}". Ja
       eller nej? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -42,9 +42,9 @@ templates:
   4b3e29cc-ccb8-4e4c-a845-4935ca29cf34: !Template
     answer_choices: Ingen ||| Ja
     id: 4b3e29cc-ccb8-4e4c-a845-4935ca29cf34
-    jinja: '{{ text }} Jeg tror, de mener "{{ text.split(" ")[span2_index:] | join("
-      ") | replace(span2_text, span1_text) }}" Ja eller nej? ||| {% if label != -1
-      %}{{ answer_choices[label] }}{% endif %}'
+    jinja: "{{ text }} Jeg tror, \u200B\u200Bde mener \"{{ text.split(\" \")[span2_index:]\
+      \ | join(\" \") | replace(span2_text, span1_text) }}\" Ja eller nej? ||| {%\
+      \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -68,9 +68,9 @@ templates:
   7d377293-d043-4b6c-8ec1-d61eaf14ec67: !Template
     answer_choices: Ingen ||| Ja
     id: 7d377293-d043-4b6c-8ec1-d61eaf14ec67
-    jinja: "Passage: {{ text }} \n\nSp\xF8rgsm\xE5l: I passagen ovenfor henviser pronomenet\
-      \ \"{{ span2_text }}\" til {{ span1_text }}?\n\nSvar: ||| {% if label != -1\
-      \ %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "Passage: {{ text }} \n\nSp\xF8rgsm\xE5l: I afsnittet ovenfor, refererer\
+      \ pronomenet \"{{ span2_text }}\" til {{ span1_text }}?\n\nSvar: ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -81,9 +81,9 @@ templates:
   809eacd0-2f6c-4e3a-b52a-57c783879d36: !Template
     answer_choices: Ingen ||| Ja
     id: 809eacd0-2f6c-4e3a-b52a-57c783879d36
-    jinja: "{{ text }} I den foreg\xE5ende s\xE6tning, kan pronomenet \"{{ span2_text\
-      \ }}\" erstattes med \"{{ span1_text }}\"? Ja eller nej? ||| {% if label !=\
-      \ -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{ text }} Kan pronomenet \"{{ span2_text }}\" i den foreg\xE5ende s\xE6\
+      tning erstattes med \"{{ span1_text }}\"? Ja eller nej? ||| {% if label != -1\
+      \ %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -109,8 +109,8 @@ templates:
   aae24b54-c3a7-4f69-8b77-f6dc115988f8: !Template
     answer_choices: Falsk ||| Rigtigt
     id: aae24b54-c3a7-4f69-8b77-f6dc115988f8
-    jinja: "{{ text }} \nI passagen ovenfor henviser pronomenet \"{{ span2_text }}\"\
-      \ til {{ span1_text }}. Sandt eller falsk? ||| {% if label != -1 %}{{ answer_choices[label]\
+    jinja: "{{ text }} \nI afsnittet ovenfor refererer pronomenet \"{{ span2_text\
+      \ }}\" til {{ span1_text }}. Sandt eller falsk? ||| {% if label != -1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

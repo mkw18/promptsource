@@ -2,10 +2,10 @@ dataset: paws
 subset: labeled_final_sw
 templates:
   0be7cecd-b427-4ec9-9b0e-666d6dae0063: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
-    jinja: "Amua ikiwa sentensi mbili zifuatazo zinafanana au la.\nSentensi 1: {{sentence1}}\n\
-      Sentensi 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
+    jinja: "Amua ikiwa sentensi mbili zifuatazo zinafafanua kila moja au la.\nSentensi\
+      \ ya 1: {{sentence1}}\nSentensi ya 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -14,10 +14,11 @@ templates:
     name: task_description-no-label
     reference: Generalized prompt format, task_description-input.
   472fe5eb-b499-4952-a930-f72f4ca9ed43: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
-    jinja: "Sentensi 1: {{sentence1}}\nSentensi 2: {{sentence2}}\nSwali: Je! Sentensi\
-      \ ya 1 na sentensi 2 zinaonyesha maana sawa?Ndio au hapana? \n||| \n{{answer_choices[label]}}"
+    jinja: "Sentensi ya 1: {{sentence1}}\nSentensi ya 2: {{sentence2}}\nSwali: Je,\
+      \ Sentensi ya 1 na Sentensi ya 2 zinaeleza maana sawa? Ndiyo au Hapana? \n|||\
+      \ \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -26,9 +27,9 @@ templates:
     name: Meaning
     reference: Natural question
   4c8d4e4c-eae4-45f6-bdf0-d132ae198d09: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
-    jinja: "{{sentence1}}\nJe! Hiyo ni mfano wa sentensi ifuatayo?\n{{sentence2}}?\n\
+    jinja: "{{sentence1}}\nJe, huo ni muhtasari wa sentensi ifuatayo?\n{{sentence2}}?\n\
       ||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -38,10 +39,10 @@ templates:
     name: context-question-no-label
     reference: Generalized prompt format, context-question without any label
   678400f8-1a5c-4a40-b5ef-abeaa41e20ec: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
-    jinja: "Sentensi 1: {{sentence1}}\nSentensi 2: {{sentence2}}\nSwali: Je! Tunaweza\
-      \ kuandika sentensi 1 kwa sentensi 2? \n||| \n{{answer_choices[label]}}"
+    jinja: "Sentensi ya 1: {{sentence1}}\nSentensi ya 2: {{sentence2}}\nSwali: Je,\
+      \ tunaweza kuandika upya Sentensi ya 1 hadi Sentensi ya 2? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -50,10 +51,10 @@ templates:
     name: Rewrite-no-label
     reference: Natural Question without label
   7c205a61-64d4-4673-bb8e-bfa77562eede: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: 7c205a61-64d4-4673-bb8e-bfa77562eede
-    jinja: "{{sentence1}}\nJe! Hiyo ni mfano wa sentensi ifuatayo?\n{{sentence2}}?\n\
-      Ndio au Hapana.\n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}}\nJe, huo ni muhtasari wa sentensi ifuatayo?\n{{sentence2}}?\n\
+      Ndiyo au Hapana.\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -62,10 +63,10 @@ templates:
     name: context-question
     reference: Generalized prompt format, context-question
   8c259e88-7646-4a50-a4ca-90393920f281: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: 8c259e88-7646-4a50-a4ca-90393920f281
-    jinja: "Sentensi 1: {{sentence1}}\nSentensi 2: {{sentence2}}\nSwali: Je! Sentensi\
-      \ ya 1 Sentensi ya 2?Ndio au hapana? \n||| \n{{answer_choices[label]}}"
+    jinja: "Sentensi ya 1: {{sentence1}}\nSentensi ya 2: {{sentence2}}\nSwali: Je,\
+      \ Sentensi ya 1 inafafanua sentensi ya 2? Ndiyo au Hapana? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -76,7 +77,7 @@ templates:
   a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
     answer_choices: null
     id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
-    jinja: "{% if label == 1 %} \nParaphrase sentensi: {{sentence1}} \n||| \n{{sentence2}}\
+    jinja: "{% if label == 1 %} \nFafanua sentensi: {{sentence1}} \n||| \n{{sentence2}}\
       \ \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -87,10 +88,10 @@ templates:
     name: paraphrase-task
     reference: Create a generative paraphrase task
   a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
-    jinja: "Sentensi 1: {{sentence1}}\nSentensi 2: {{sentence2}}\nSwali: Je! Sentensi\
-      \ ya 1 Sentensi ya 2? \n||| \n{{answer_choices[label]}}"
+    jinja: "Sentensi ya 1: {{sentence1}}\nSentensi ya 2: {{sentence2}}\nSwali: Je,\
+      \ Sentensi ya 1 inafafanua sentensi ya 2? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -99,10 +100,10 @@ templates:
     name: Concatenation-no-label
     reference: Concatenation of sentence 1 and sentence 2 without any label
   d5239f5f-2014-47c9-a0c1-4896f76f82a4: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
-    jinja: "Sentensi 1: {{sentence1}}\nSentensi 2: {{sentence2}}\nSwali: Je! Sentensi\
-      \ ya 1 na sentensi 2 zinaonyesha maana sawa? \n||| \n{{answer_choices[label]}}"
+    jinja: "Sentensi ya 1: {{sentence1}}\nSentensi ya 2: {{sentence2}}\nSwali: Je,\
+      \ Sentensi ya 1 na Sentensi ya 2 zinaeleza maana sawa? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -113,7 +114,7 @@ templates:
   d9911dad-75fe-4506-9843-3a46ba5e49be: !Template
     answer_choices: Uongo ||| Kweli
     id: d9911dad-75fe-4506-9843-3a46ba5e49be
-    jinja: "{{sentence1}} Swali: {{sentence2}} Kweli au uongo? \n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}} Swali: {{sentence2}} Kweli au Si kweli? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -122,10 +123,11 @@ templates:
     name: PAWS-ANLI GPT3
     reference: ANLI prompt format from Table G7 in the GPT3 paper
   dd52359b-dc56-4241-8179-c98c636f0335: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: dd52359b-dc56-4241-8179-c98c636f0335
-    jinja: "Sentensi 1: {{sentence1}}\nSentensi 2: {{sentence2}}\nSwali: Je! Tunaweza\
-      \ kuandika sentensi 1 kwa sentensi 2?Ndio au hapana? \n||| \n{{answer_choices[label]}}"
+    jinja: "Sentensi ya 1: {{sentence1}}\nSentensi ya 2: {{sentence2}}\nSwali: Je,\
+      \ tunaweza kuandika upya Sentensi ya 1 hadi Sentensi ya 2? Ndiyo au Hapana?\
+      \ \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -134,7 +136,7 @@ templates:
     name: Rewrite
     reference: Natural Question
   f0866713-c59a-4c5d-a307-95e80a935f99: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: f0866713-c59a-4c5d-a307-95e80a935f99
     jinja: "{{sentence1}} Swali: {{sentence2}} Paraphrase au la?\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata

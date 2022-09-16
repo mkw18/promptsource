@@ -8,10 +8,10 @@ templates:
       \ ||| \u0B87\u0B9F\u0BAE\u0BCD"
     id: 21d04668-c5b3-4418-bbb6-663f1ffdb97c
     jinja: "\u0BB5\u0B95\u0BC8\u0B95\u0BB3\u0BCD: {{', '.join(answer_choices)}}\n\n\
-      \u0B8E\u0BA8\u0BCD\u0BA4 \u0BB5\u0B95\u0BC8 \u0B9A\u0BBF\u0BB1\u0BAA\u0BCD\u0BAA\
-      \u0BBE\u0B95 \u0BB5\u0BBF\u0BB5\u0BB0\u0BBF\u0B95\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\
-      \u0BC1: {{text}} \n\u0BAA\u0BA4\u0BBF\u0BB2\u0BCD: ||| {{ answer_choices [label_coarse]\
-      \ }}"
+      \u0B8E\u0BA8\u0BCD\u0BA4 \u0BB5\u0B95\u0BC8\u0BAF\u0BC8 \u0B9A\u0BBF\u0BB1\u0BAA\
+      \u0BCD\u0BAA\u0BBE\u0B95 \u0BB5\u0BBF\u0BB5\u0BB0\u0BBF\u0B95\u0BCD\u0B95\u0BBF\
+      \u0BB1\u0BA4\u0BC1: {{text}} \n\u0BAA\u0BA4\u0BBF\u0BB2\u0BCD: ||| {{ answer_choices\
+      \ [label_coarse] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -25,9 +25,10 @@ templates:
       \ \u0B87\u0B9F\u0BAE\u0BCD"
     id: 2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6
     jinja: "{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}\n{% if label_coarse\
-      \ == 5 %}\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF {{',\
-      \ '.join(answer_choices)}} \u0B8E\u0BA9\u0BCD\u0BB1\u0BC1 \u0B95\u0BC7\u0B9F\
-      \u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BBE?\n{{text}}\n|||\n{{ answer_choices [label_mapping[label_fine]]\
+      \ == 5 %}\n\u0B87\u0BA8\u0BCD\u0BA4\u0B95\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\
+      \u0BBF {{', '.join(answer_choices)}} \u0B95\u0BCD\u0B95\u0BBE\u0B95\u0B95\u0BCD\
+      \ \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BC1\u0B95\u0BBF\u0BB1\
+      \u0BA4\u0BBE?\n{{text}}\n|||\n{{ answer_choices [label_mapping[label_fine]]\
       \ }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -38,18 +39,19 @@ templates:
     reference: Fine grained labels with coarse-label `LOC`, context after question
   309bf243-2185-4090-ac66-a24f44d89966: !Template
     answer_choices: "\u0B95\u0BC1\u0BB1\u0BBF\u0BAF\u0BC0\u0B9F\u0BC1 ||| \u0B8E\u0BA3\
-      \u0BCD\u0BA3\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD ||| \u0BA4\u0BC7\u0BA4\u0BBF\
-      \ ||| \u0BA4\u0BC2\u0BB0\u0BAE\u0BCD ||| \u0BB5\u0BBF\u0BB2\u0BC8 ||| \u0B92\
-      \u0BB4\u0BC1\u0B99\u0BCD\u0B95\u0BC1 ||| \u0BA8\u0BC7\u0BB0\u0BAE\u0BCD \u0B95\
-      \u0BBE\u0BB2\u0BAE\u0BCD ||| \u0B9A\u0BA4\u0BB5\u0BBF\u0BA4\u0BAE\u0BCD |||\
-      \ \u0BB5\u0BC7\u0B95\u0BAE\u0BCD ||| \u0BB5\u0BC6\u0BAA\u0BCD\u0BAA \u0BA8\u0BBF\
-      \u0BB2\u0BC8 ||| \u0B85\u0BB3\u0BB5\u0BC1 ||| \u0B8E\u0B9F\u0BC8 ||| \u0BAA\u0BBF\
+      \u0BCD\u0BA3\u0BBF\u0B95\u0BCD\u0B95\u0BC8 ||| \u0BA4\u0BC7\u0BA4\u0BBF |||\
+      \ \u0BA4\u0BC2\u0BB0\u0BAE\u0BCD ||| \u0BB5\u0BBF\u0BB2\u0BC8 ||| \u0B89\u0BA4\
+      \u0BCD\u0BA4\u0BB0\u0BB5\u0BC1 ||| \u0BA8\u0BC7\u0BB0\u0BAE\u0BCD \u0B95\u0BBE\
+      \u0BB2\u0BAE\u0BCD ||| \u0B9A\u0BA4\u0BB5\u0BBF\u0BA4\u0BAE\u0BCD ||| \u0BB5\
+      \u0BC7\u0B95\u0BAE\u0BCD ||| \u0BB5\u0BC6\u0BAA\u0BCD\u0BAA \u0BA8\u0BBF\u0BB2\
+      \u0BC8 ||| \u0B85\u0BB3\u0BB5\u0BC1 ||| \u0B8E\u0B9F\u0BC8 ||| \u0BAE\u0BB1\u0BCD\
       \u0BB1 \u0B8E\u0BA3\u0BCD"
     id: 309bf243-2185-4090-ac66-a24f44d89966
     jinja: "{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,\
       \ 35:8, 41:9, 32:10, 45:11, 14:12} %}\n{% if label_coarse == 4 %}\n{{text}}\n\
-      \n\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF {{', '.join(answer_choices)}}\
-      \ \u0B8E\u0BA9\u0BCD\u0BB1\u0BC1 \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\
+      \n\u0B87\u0BA8\u0BCD\u0BA4\u0B95\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\
+      \ {{', '.join(answer_choices)}} \u0B95\u0BCD\u0B95\u0BBE\u0B95\u0B95\u0BCD \u0B95\
+      \u0BC7\u0B9F\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BC1\u0B95\u0BBF\u0BB1\u0BA4\
       \u0BBE?\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -73,14 +75,15 @@ templates:
       \u0BCA\u0BB0\u0BC1\u0BB3\u0BCD ||| \u0B9A\u0BBF\u0BA9\u0BCD\u0BA9\u0BAE\u0BCD\
       \ ||| \u0BA8\u0BC1\u0B9F\u0BCD\u0BAA\u0BAE\u0BCD ||| \u0B95\u0BBE\u0BB2 |||\
       \ \u0BB5\u0BBE\u0B95\u0BA9\u0BAE\u0BCD ||| \u0B9A\u0BC6\u0BBE\u0BB2\u0BCD |||\
-      \ \u0BAA\u0BBF\u0BB1 \u0BA8\u0BBF\u0BB1\u0BC1\u0BB5\u0BA9\u0BAE\u0BCD"
+      \ \u0BAE\u0BB1\u0BCD\u0BB1 \u0BA8\u0BBF\u0BB1\u0BC1\u0BB5\u0BA9\u0BAE\u0BCD"
     id: 3aff84f3-e478-4598-abe8-40aa24cec1fa
     jinja: "{% set label_mapping = {2:0, 22:1, 19:2, 1:3, 46:3, 23:4, 10:5, 17:6,\
       \ 33:7, 37:8, 15:9, 30:10, 26:11, 16:12, 28:13, 42:14, 31:15, 20:16, 44:17,\
-      \ 36:18, 14:19} %}\n{% if label_coarse == 1 %}\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\
-      \u0BC7\u0BB3\u0BCD\u0BB5\u0BBF {{', '.join(answer_choices)}} \u0B8E\u0BA9\u0BCD\
-      \u0BB1\u0BC1 \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BBE?\n{{text}}\n\
-      |||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
+      \ 36:18, 14:19} %}\n{% if label_coarse == 1 %}\n\u0B87\u0BA8\u0BCD\u0BA4\u0B95\
+      \u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF {{', '.join(answer_choices)}} \u0B95\
+      \u0BCD\u0B95\u0BBE\u0B95\u0B95\u0BCD \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BAA\u0BCD\
+      \u0BAA\u0B9F\u0BC1\u0B95\u0BBF\u0BB1\u0BA4\u0BBE?\n{{text}}\n|||\n{{ answer_choices\
+      \ [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -90,20 +93,20 @@ templates:
     reference: Fine grained labels with coarse-label `ENTY`, context after question
   43a188a2-b6dd-46a7-af2e-81a64b90b92a: !Template
     answer_choices: "\u0B95\u0BC1\u0BB1\u0BBF\u0BAF\u0BC0\u0B9F\u0BC1 ||| \u0B8E\u0BA3\
-      \u0BCD\u0BA3\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD ||| \u0BA4\u0BC7\u0BA4\u0BBF\
-      \ ||| \u0BA4\u0BC2\u0BB0\u0BAE\u0BCD ||| \u0BB5\u0BBF\u0BB2\u0BC8 ||| \u0B92\
-      \u0BB4\u0BC1\u0B99\u0BCD\u0B95\u0BC1 ||| \u0BA8\u0BC7\u0BB0\u0BAE\u0BCD \u0B95\
-      \u0BBE\u0BB2\u0BAE\u0BCD ||| \u0B9A\u0BA4\u0BB5\u0BBF\u0BA4\u0BAE\u0BCD |||\
-      \ \u0BB5\u0BC7\u0B95\u0BAE\u0BCD ||| \u0BB5\u0BC6\u0BAA\u0BCD\u0BAA \u0BA8\u0BBF\
-      \u0BB2\u0BC8 ||| \u0B85\u0BB3\u0BB5\u0BC1 ||| \u0B8E\u0B9F\u0BC8 ||| \u0BAA\u0BBF\
+      \u0BCD\u0BA3\u0BBF\u0B95\u0BCD\u0B95\u0BC8 ||| \u0BA4\u0BC7\u0BA4\u0BBF |||\
+      \ \u0BA4\u0BC2\u0BB0\u0BAE\u0BCD ||| \u0BB5\u0BBF\u0BB2\u0BC8 ||| \u0B89\u0BA4\
+      \u0BCD\u0BA4\u0BB0\u0BB5\u0BC1 ||| \u0BA8\u0BC7\u0BB0\u0BAE\u0BCD \u0B95\u0BBE\
+      \u0BB2\u0BAE\u0BCD ||| \u0B9A\u0BA4\u0BB5\u0BBF\u0BA4\u0BAE\u0BCD ||| \u0BB5\
+      \u0BC7\u0B95\u0BAE\u0BCD ||| \u0BB5\u0BC6\u0BAA\u0BCD\u0BAA \u0BA8\u0BBF\u0BB2\
+      \u0BC8 ||| \u0B85\u0BB3\u0BB5\u0BC1 ||| \u0B8E\u0B9F\u0BC8 ||| \u0BAE\u0BB1\u0BCD\
       \u0BB1 \u0B8E\u0BA3\u0BCD"
     id: 43a188a2-b6dd-46a7-af2e-81a64b90b92a
     jinja: "{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,\
       \ 35:8, 41:9, 32:10, 45:11, 14:12} %}\n{% if label_coarse == 4 %}\n\u0B87\u0BA8\
-      \u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF {{', '.join(answer_choices)}}\
-      \ \u0B8E\u0BA9\u0BCD\u0BB1\u0BC1 \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\
-      \u0BBE?\n{{text}}\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n{%\
-      \ endif %}"
+      \u0BCD\u0BA4\u0B95\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF {{', '.join(answer_choices)}}\
+      \ \u0B95\u0BCD\u0B95\u0BBE\u0B95\u0B95\u0BCD \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BAA\
+      \u0BCD\u0BAA\u0B9F\u0BC1\u0B95\u0BBF\u0BB1\u0BA4\u0BBE?\n{{text}}\n|||\n{{ answer_choices\
+      \ [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -117,10 +120,10 @@ templates:
       \u0B95\u0BAE\u0BCD ||| \u0BA8\u0BAA\u0BB0\u0BCD ||| \u0B85\u0BB3\u0BB5\u0BC1\
       \ ||| \u0B87\u0B9F\u0BAE\u0BCD"
     id: 6c391f4f-027b-4425-88de-1dbb6aa706ee
-    jinja: "\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: {{text}}\n\n\u0BB5\u0BBF\u0BB5\u0BB0\
-      \u0BBF\u0BAA\u0BCD\u0BAA\u0BB5\u0BB0\u0BCD\u0B95\u0BB3\u0BCD: {{', '.join(answer_choices)}}\n\
-      \n\u0B9A\u0BBF\u0BB1\u0BA8\u0BCD\u0BA4 \u0BB5\u0BBF\u0BB5\u0BB0\u0BBF\u0BAA\u0BCD\
-      \u0BAA\u0BBE\u0BB3\u0BB0\u0BCD?\n|||\n{{answer_choices[label_coarse]}}"
+    jinja: "\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: {{text}}\n\n\u0BB5\u0BBF\u0BB3\u0B95\
+      \u0BCD\u0B95\u0B99\u0BCD\u0B95\u0BB3\u0BCD: {{', '.join(answer_choices)}}\n\n\
+      \u0B9A\u0BBF\u0BB1\u0BA8\u0BCD\u0BA4 \u0BB5\u0BBF\u0BB3\u0B95\u0BCD\u0B95\u0BAE\
+      \u0BBE?\n|||\n{{answer_choices[label_coarse]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -129,39 +132,39 @@ templates:
     name: pick_the_best_descriptor
     reference: ''
   71090d59-dd02-4cbd-8032-ad86179b9bd4: !Template
-    answer_choices: "\u0BB5\u0BBF\u0BA4\u0BC8 ||| \u0BAA\u0B9F\u0BC8\u0BAA\u0BCD\u0BAA\
-      \u0BC1 \u0BA4\u0BC1\u0BA3\u0BCD\u0B9F\u0BC1 ||| \u0BB5\u0BBF\u0BB2\u0B99\u0BCD\
-      \u0B95\u0BC1 ||| \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BBE\u0B95\
-      \ \u0BB5\u0BC6\u0BB3\u0BBF\u0BAA\u0BCD\u0BAA\u0BBE\u0B9F\u0BC1 ||| \u0BA4\u0BA9\
-      \u0BBF\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F ||| \u0B95\u0BC1\u0BB4\u0BC1 |||\
-      \ \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC1 ||| \u0BB5\u0BB0\u0BC8\u0BAF\u0BB1\
-      \u0BC8 ||| \u0BA4\u0BC7\u0BA4\u0BBF ||| \u0B95\u0BBE\u0BB0\u0BA3\u0BAE\u0BCD\
-      \ ||| \u0BA8\u0BBF\u0B95\u0BB4\u0BCD\u0BB5\u0BC1 ||| \u0BA8\u0BBF\u0BB2\u0BC8\
-      \ ||| \u0BB5\u0BBF\u0BB3\u0B95\u0BCD\u0B95\u0BAE\u0BCD ||| \u0B8E\u0BA3\u0BCD\
-      \u0BA3\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD ||| \u0BAE\u0BB1\u0BCD\u0BB1\u0BCA\
-      \u0BA9\u0BCD\u0BB1\u0BC1 ||| \u0B95\u0B9F\u0BBF\u0BA4\u0BAE\u0BCD ||| \u0BAE\
-      \u0BA4\u0BAE\u0BCD ||| \u0B89\u0BA3\u0BB5\u0BC1 ||| \u0B8E\u0BA3\u0BCD\u0BA3\
-      \u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCDry ||| \u0BA8\u0BBF\u0BB1\u0BAE\u0BCD |||\
-      \ \u0B95\u0BBE\u0BB2 ||| \u0BA8\u0B95\u0BB0\u0BAE\u0BCD ||| \u0B89\u0B9F\u0BB2\
-      \u0BBF\u0BA9\u0BCD \u0B89\u0BB1\u0BC1\u0BAA\u0BCD\u0BAA\u0BC1 ||| \u0BA8\u0BCB\
-      \u0BAF\u0BCD \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \u0BAE\u0BB0\u0BC1\u0BA8\u0BCD\
-      \u0BA4\u0BC1 ||| \u0BAE\u0BB2\u0BC8 ||| \u0BB5\u0BBF\u0BB2\u0BC8 ||| \u0BA4\u0BAF\
-      \u0BBE\u0BB0\u0BBF\u0BAA\u0BCD\u0BAA\u0BC1 ||| \u0B95\u0BBE\u0BB2\u0BAE\u0BCD\
-      \ ||| \u0BAA\u0BCA\u0BB0\u0BC1\u0BB3\u0BCD ||| \u0BB5\u0BBF\u0BB3\u0BC8\u0BAF\
-      \u0BBE\u0B9F\u0BCD\u0B9F\u0BC1 ||| \u0B86\u0BB2\u0BC8 ||| \u0BA8\u0BC1\u0B9F\
-      \u0BCD\u0BAA\u0BAE\u0BCD ||| \u0B85\u0BB3\u0BB5\u0BC1 ||| \u0B95\u0BB0\u0BC1\
-      \u0BB5\u0BBF ||| \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BCD |||\
-      \ \u0BB5\u0BC7\u0B95\u0BAE\u0BCD ||| \u0B9A\u0BC6\u0BBE\u0BB2\u0BCD ||| \u0BAE\
-      \u0BCA\u0BB4\u0BBF ||| \u0B9A\u0BA4\u0BB5\u0BBF\u0BA4\u0BAE\u0BCD ||| \u0B95\
-      \u0BC1\u0BB1\u0BBF\u0BAF\u0BC0\u0B9F\u0BC1 ||| \u0BA4\u0BC2\u0BB0\u0BAE\u0BCD\
-      \ ||| \u0BB5\u0BC6\u0BAA\u0BCD\u0BAA \u0BA8\u0BBF\u0BB2\u0BC8 ||| \u0B9A\u0BBF\
-      \u0BA9\u0BCD\u0BA9\u0BAE\u0BCD ||| \u0B92\u0BB4\u0BC1\u0B99\u0BCD\u0B95\u0BC1\
-      \ ||| \u0BB5\u0BBE\u0B95\u0BA9\u0BAE\u0BCD ||| \u0B8E\u0B9F\u0BC8 ||| \u0BA8\
-      \u0BBE\u0BA3\u0BAF"
+    answer_choices: "\u0BAE\u0BC1\u0BB1\u0BC8 ||| \u0B95\u0BBF\u0BB0\u0BBF\u0BAF\u0BC7\
+      \u0B9F\u0BCD\u0B9F\u0BBF\u0BB5\u0BCD \u0BAA\u0BC0\u0BB8\u0BCD ||| \u0BB5\u0BBF\
+      \u0BB2\u0B99\u0BCD\u0B95\u0BC1 ||| \u0BB5\u0BC6\u0BB3\u0BBF\u0BAA\u0BCD\u0BAA\
+      \u0BBE\u0B9F\u0BC1 \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\
+      \u0B9F\u0BCD\u0B9F\u0BA4\u0BC1 ||| \u0BA4\u0BA9\u0BBF\u0BAA\u0BCD\u0BAA\u0B9F\
+      \u0BCD\u0B9F ||| \u0B95\u0BC1\u0BB4\u0BC1 ||| \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\
+      \u0BAA\u0BC1 ||| \u0BB5\u0BB0\u0BC8\u0BAF\u0BB1\u0BC8 ||| \u0BA4\u0BC7\u0BA4\
+      \u0BBF ||| \u0B95\u0BBE\u0BB0\u0BA3\u0BAE\u0BCD ||| \u0BA8\u0BBF\u0B95\u0BB4\
+      \u0BCD\u0BB5\u0BC1 ||| \u0BA8\u0BBF\u0BB2\u0BC8 ||| \u0BB5\u0BBF\u0BB3\u0B95\
+      \u0BCD\u0B95\u0BAE\u0BCD ||| \u0B8E\u0BA3\u0BCD\u0BA3\u0BC1\u0B99\u0BCD\u0B95\
+      \u0BB3\u0BCD ||| \u0BAE\u0BB1\u0BCD\u0BB1\u0BB5\u0BC8 ||| \u0B95\u0B9F\u0BBF\
+      \u0BA4\u0BAE\u0BCD ||| \u0BAE\u0BA4\u0BAE\u0BCD ||| \u0B89\u0BA3\u0BB5\u0BC1\
+      \ ||| \u0B8E\u0BA3\u0BCD\u0BA3\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCDry ||| \u0BA8\
+      \u0BBF\u0BB1\u0BAE\u0BCD ||| \u0B95\u0BBE\u0BB2 ||| \u0BA8\u0B95\u0BB0\u0BAE\
+      \u0BCD ||| \u0B89\u0B9F\u0BB2\u0BBF\u0BA9\u0BCD \u0B89\u0BB1\u0BC1\u0BAA\u0BCD\
+      \u0BAA\u0BC1 ||| \u0BA8\u0BCB\u0BAF\u0BCD \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1\
+      \ \u0BAE\u0BB0\u0BC1\u0BA8\u0BCD\u0BA4\u0BC1 ||| \u0BAE\u0BB2\u0BC8 ||| \u0BB5\
+      \u0BBF\u0BB2\u0BC8 ||| \u0BA4\u0BAF\u0BBE\u0BB0\u0BBF\u0BAA\u0BCD\u0BAA\u0BC1\
+      \ ||| \u0B95\u0BBE\u0BB2\u0BAE\u0BCD ||| \u0BAA\u0BCA\u0BB0\u0BC1\u0BB3\u0BCD\
+      \ ||| \u0BB5\u0BBF\u0BB3\u0BC8\u0BAF\u0BBE\u0B9F\u0BCD\u0B9F\u0BC1 ||| \u0B86\
+      \u0BB2\u0BC8 ||| \u0BA8\u0BC1\u0B9F\u0BCD\u0BAA\u0BAE\u0BCD ||| \u0B85\u0BB3\
+      \u0BB5\u0BC1 ||| \u0B95\u0BB0\u0BC1\u0BB5\u0BBF ||| \u0B9A\u0BC1\u0BB0\u0BC1\
+      \u0B95\u0BCD\u0B95\u0BAE\u0BCD ||| \u0BB5\u0BC7\u0B95\u0BAE\u0BCD ||| \u0B9A\
+      \u0BC6\u0BBE\u0BB2\u0BCD ||| \u0BAE\u0BCA\u0BB4\u0BBF ||| \u0B9A\u0BA4\u0BB5\
+      \u0BBF\u0BA4\u0BAE\u0BCD ||| \u0B95\u0BC1\u0BB1\u0BBF\u0BAF\u0BC0\u0B9F\u0BC1\
+      \ ||| \u0BA4\u0BC2\u0BB0\u0BAE\u0BCD ||| \u0BB5\u0BC6\u0BAA\u0BCD\u0BAA \u0BA8\
+      \u0BBF\u0BB2\u0BC8 ||| \u0B9A\u0BBF\u0BA9\u0BCD\u0BA9\u0BAE\u0BCD ||| \u0B86\
+      \u0BB0\u0BCD\u0B9F\u0BB0\u0BCD ||| \u0BB5\u0BBE\u0B95\u0BA9\u0BAE\u0BCD |||\
+      \ \u0B8E\u0B9F\u0BC8 ||| \u0BA8\u0BBE\u0BA3\u0BAF"
     id: 71090d59-dd02-4cbd-8032-ad86179b9bd4
-    jinja: "{{text}}\n\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\
-      \ \u0B8E\u0BA9\u0BCD\u0BA9 \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BC1\
-      ?\n|||\n{{answer_choices[label_fine] }}"
+    jinja: "{{text}}\n\n\u0B87\u0BA8\u0BCD\u0BA4\u0B95\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\
+      \u0BB5\u0BBF \u0B8E\u0BA9\u0BCD\u0BA9 \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BBF\u0BB1\
+      \u0BA4\u0BC1?\n|||\n{{answer_choices[label_fine] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -175,9 +178,10 @@ templates:
       \ \u0B87\u0B9F\u0BAE\u0BCD"
     id: 736b2629-ed57-48ce-a458-4cbc435c499b
     jinja: "{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}\n{% if label_coarse\
-      \ == 5 %}\n{{text}}\n\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\
-      \u0BBF {{', '.join(answer_choices)}} \u0B8E\u0BA9\u0BCD\u0BB1\u0BC1 \u0B95\u0BC7\
-      \u0B9F\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BBE?\n|||\n{{ answer_choices [label_mapping[label_fine]]\
+      \ == 5 %}\n{{text}}\n\n\u0B87\u0BA8\u0BCD\u0BA4\u0B95\u0BCD \u0B95\u0BC7\u0BB3\
+      \u0BCD\u0BB5\u0BBF {{', '.join(answer_choices)}} \u0B95\u0BCD\u0B95\u0BBE\u0B95\
+      \u0B95\u0BCD \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BC1\u0B95\
+      \u0BBF\u0BB1\u0BA4\u0BBE?\n|||\n{{ answer_choices [label_mapping[label_fine]]\
       \ }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -197,8 +201,8 @@ templates:
       \u0BBF\u0BB1\u0BAA\u0BCD\u0BAA\u0BBE\u0B95 \u0BB5\u0BBF\u0BB5\u0BB0\u0BBF\u0B95\
       \u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BC1: {{text}} \n\n\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\
       \u0BB0\u0BC1\u0BAE\u0BCD \u0BAA\u0B9F\u0BCD\u0B9F\u0BBF\u0BAF\u0BB2\u0BBF\u0BB2\
-      \u0BBF\u0BB0\u0BC1\u0BA8\u0BCD\u0BA4\u0BC1 \u0BA4\u0BC7\u0BB0\u0BCD\u0BB5\u0BC1\
-      \ \u0B9A\u0BC6\u0BAF\u0BCD\u0BAF\u0BB5\u0BC1\u0BAE\u0BCD: \n{{', '.join(answer_choices)}}\n\
+      \u0BCD \u0B87\u0BB0\u0BC1\u0BA8\u0BCD\u0BA4\u0BC1 \u0BA4\u0BC7\u0BB0\u0BCD\u0BB5\
+      \u0BC1 \u0B9A\u0BC6\u0BAF\u0BCD\u0BAF\u0BB5\u0BC1\u0BAE\u0BCD: \n{{', '.join(answer_choices)}}\n\
       \ ||| {{ answer_choices [label_coarse] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -209,12 +213,13 @@ templates:
     reference: ''
   7a9e6f3c-1dee-45b0-a315-1badaf59a7b8: !Template
     answer_choices: "\u0BB5\u0BB0\u0BC8\u0BAF\u0BB1\u0BC8 ||| \u0BB5\u0BBF\u0BB3\u0B95\
-      \u0BCD\u0B95\u0BAE\u0BCD ||| \u0B9A\u0BC6\u0BAF\u0BB2\u0BCD \u0BAE\u0BC1\u0BB1\
-      \u0BC8 ||| \u0B95\u0BBE\u0BB0\u0BA3\u0BAE\u0BCD"
+      \u0BCD\u0B95\u0BAE\u0BCD ||| \u0BA8\u0B9F\u0BB5\u0B9F\u0BBF\u0B95\u0BCD\u0B95\
+      \u0BC8 \u0BAE\u0BC1\u0BB1\u0BC8 ||| \u0B95\u0BBE\u0BB0\u0BA3\u0BAE\u0BCD"
     id: 7a9e6f3c-1dee-45b0-a315-1badaf59a7b8
     jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
-      \ 0 %}\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF {{', '.join(answer_choices)}}\
-      \ \u0B8E\u0BA9\u0BCD\u0BB1\u0BC1 \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\
+      \ 0 %}\n\u0B87\u0BA8\u0BCD\u0BA4\u0B95\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\
+      \ {{', '.join(answer_choices)}} \u0B95\u0BCD\u0B95\u0BBE\u0B95\u0B95\u0BCD \u0B95\
+      \u0BC7\u0B9F\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BC1\u0B95\u0BBF\u0BB1\u0BA4\
       \u0BBE?\n{{text}}\n|||\n{{ answer_choices[label_mapping[label_fine]] }}\n{%\
       \ endif %}"
     metadata: !TemplateMetadata
@@ -246,15 +251,15 @@ templates:
     name: trec1
     reference: Context then prompt
   93a06e72-2c15-4f8a-a46c-6a10919c4ea4: !Template
-    answer_choices: "\u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BCD ||| \u0B9A\
-      \u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BBE\u0B95 \u0BB5\u0BC6\u0BB3\u0BBF\
-      \u0BAA\u0BCD\u0BAA\u0BBE\u0B9F\u0BC1"
+    answer_choices: "\u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BCD ||| \u0BB5\
+      \u0BC6\u0BB3\u0BBF\u0BAA\u0BCD\u0BAA\u0BBE\u0B9F\u0BC1 \u0B9A\u0BC1\u0BB0\u0BC1\
+      \u0B95\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BA4\u0BC1"
     id: 93a06e72-2c15-4f8a-a46c-6a10919c4ea4
     jinja: "{% set label_mapping={34:0, 3:1} %} \n{% if label_coarse == 2 %}\n\u0B87\
-      \u0BA8\u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF {{', '.join(answer_choices)}}\
-      \ \u0B8E\u0BA9\u0BCD\u0BB1\u0BC1 \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\
-      \u0BBE?\n{{text}}\n|||\n{{answer_choices[label_mapping[label_fine]] }}\n{% endif\
-      \ %}"
+      \u0BA8\u0BCD\u0BA4\u0B95\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF \u0B92\u0BB0\
+      \u0BC1 {{', '.join(answer_choices)}} \u0B90\u0B95\u0BCD \u0B95\u0BC7\u0B9F\u0BCD\
+      \u0B95\u0BBF\u0BB1\u0BA4\u0BBE?\n{{text}}\n|||\n{{answer_choices[label_mapping[label_fine]]\
+      \ }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -263,14 +268,15 @@ templates:
     name: fine_grained_ABBR
     reference: Fine grained labels with coarse-label `ABBR`, context after question
   a0096044-3b4c-4c80-b139-25eac8fe692a: !Template
-    answer_choices: "\u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BCD ||| \u0B9A\
-      \u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BBE\u0B95 \u0BB5\u0BC6\u0BB3\u0BBF\
-      \u0BAA\u0BCD\u0BAA\u0BBE\u0B9F\u0BC1"
+    answer_choices: "\u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BCD ||| \u0BB5\
+      \u0BC6\u0BB3\u0BBF\u0BAA\u0BCD\u0BAA\u0BBE\u0B9F\u0BC1 \u0B9A\u0BC1\u0BB0\u0BC1\
+      \u0B95\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BA4\u0BC1"
     id: a0096044-3b4c-4c80-b139-25eac8fe692a
     jinja: "{% set label_mapping = {34:0, 3:1} %} \n{% if label_coarse == 2 %}\n{{text}}\n\
-      \n\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF {{', '.join(answer_choices)}}\
-      \ \u0B8E\u0BA9\u0BCD\u0BB1\u0BC1 \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\
-      \u0BBE?\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
+      \n\u0B87\u0BA8\u0BCD\u0BA4\u0B95\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\
+      \ \u0B92\u0BB0\u0BC1 {{', '.join(answer_choices)}} \u0B90\u0B95\u0BCD \u0B95\
+      \u0BC7\u0B9F\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BBE?\n|||\n{{ answer_choices [label_mapping[label_fine]]\
+      \ }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -301,8 +307,9 @@ templates:
       \u0BBF\u0BB3\u0B95\u0BCD\u0B95\u0BAE\u0BCD"
     id: bc58ba18-24a5-4553-be0a-2dba60efdad6
     jinja: "{% set label_mapping = {5:0, 4:1, 6:2, 12:3} %}\n{% if label_coarse ==\
-      \ 3 %}\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF {{', '.join(answer_choices)}}\
-      \ \u0B8E\u0BA9\u0BCD\u0BB1\u0BC1 \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\
+      \ 3 %}\n\u0B87\u0BA8\u0BCD\u0BA4\u0B95\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\
+      \ {{', '.join(answer_choices)}} \u0B95\u0BCD\u0B95\u0BBE\u0B95\u0B95\u0BCD \u0B95\
+      \u0BC7\u0B9F\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BC1\u0B95\u0BBF\u0BB1\u0BA4\
       \u0BBE?\n{{text}}\n|||\n{{ answer_choices[label_mapping[label_fine]] }}\n{%\
       \ endif %}"
     metadata: !TemplateMetadata
@@ -313,39 +320,39 @@ templates:
     name: fine_grained_HUM
     reference: Fine grained labels with coarse-label `HUM`, context after question
   cfa8fde0-8320-4050-8d6e-7619ab14adea: !Template
-    answer_choices: "\u0BB5\u0BBF\u0BA4\u0BC8 ||| \u0BAA\u0B9F\u0BC8\u0BAA\u0BCD\u0BAA\
-      \u0BC1 \u0BA4\u0BC1\u0BA3\u0BCD\u0B9F\u0BC1 ||| \u0BB5\u0BBF\u0BB2\u0B99\u0BCD\
-      \u0B95\u0BC1 ||| \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BBE\u0B95\
-      \ \u0BB5\u0BC6\u0BB3\u0BBF\u0BAA\u0BCD\u0BAA\u0BBE\u0B9F\u0BC1 ||| \u0BA4\u0BA9\
-      \u0BBF\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F ||| \u0B95\u0BC1\u0BB4\u0BC1 |||\
-      \ \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\u0BAA\u0BC1 ||| \u0BB5\u0BB0\u0BC8\u0BAF\u0BB1\
-      \u0BC8 ||| \u0BA4\u0BC7\u0BA4\u0BBF ||| \u0B95\u0BBE\u0BB0\u0BA3\u0BAE\u0BCD\
-      \ ||| \u0BA8\u0BBF\u0B95\u0BB4\u0BCD\u0BB5\u0BC1 ||| \u0BA8\u0BBF\u0BB2\u0BC8\
-      \ ||| \u0BB5\u0BBF\u0BB3\u0B95\u0BCD\u0B95\u0BAE\u0BCD ||| \u0B8E\u0BA3\u0BCD\
-      \u0BA3\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD ||| \u0BAE\u0BB1\u0BCD\u0BB1\u0BCA\
-      \u0BA9\u0BCD\u0BB1\u0BC1 ||| \u0B95\u0B9F\u0BBF\u0BA4\u0BAE\u0BCD ||| \u0BAE\
-      \u0BA4\u0BAE\u0BCD ||| \u0B89\u0BA3\u0BB5\u0BC1 ||| \u0B8E\u0BA3\u0BCD\u0BA3\
-      \u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCDry ||| \u0BA8\u0BBF\u0BB1\u0BAE\u0BCD |||\
-      \ \u0B95\u0BBE\u0BB2 ||| \u0BA8\u0B95\u0BB0\u0BAE\u0BCD ||| \u0B89\u0B9F\u0BB2\
-      \u0BBF\u0BA9\u0BCD \u0B89\u0BB1\u0BC1\u0BAA\u0BCD\u0BAA\u0BC1 ||| \u0BA8\u0BCB\
-      \u0BAF\u0BCD \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \u0BAE\u0BB0\u0BC1\u0BA8\u0BCD\
-      \u0BA4\u0BC1 ||| \u0BAE\u0BB2\u0BC8 ||| \u0BB5\u0BBF\u0BB2\u0BC8 ||| \u0BA4\u0BAF\
-      \u0BBE\u0BB0\u0BBF\u0BAA\u0BCD\u0BAA\u0BC1 ||| \u0B95\u0BBE\u0BB2\u0BAE\u0BCD\
-      \ ||| \u0BAA\u0BCA\u0BB0\u0BC1\u0BB3\u0BCD ||| \u0BB5\u0BBF\u0BB3\u0BC8\u0BAF\
-      \u0BBE\u0B9F\u0BCD\u0B9F\u0BC1 ||| \u0B86\u0BB2\u0BC8 ||| \u0BA8\u0BC1\u0B9F\
-      \u0BCD\u0BAA\u0BAE\u0BCD ||| \u0B85\u0BB3\u0BB5\u0BC1 ||| \u0B95\u0BB0\u0BC1\
-      \u0BB5\u0BBF ||| \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAE\u0BCD |||\
-      \ \u0BB5\u0BC7\u0B95\u0BAE\u0BCD ||| \u0B9A\u0BC6\u0BBE\u0BB2\u0BCD ||| \u0BAE\
-      \u0BCA\u0BB4\u0BBF ||| \u0B9A\u0BA4\u0BB5\u0BBF\u0BA4\u0BAE\u0BCD ||| \u0B95\
-      \u0BC1\u0BB1\u0BBF\u0BAF\u0BC0\u0B9F\u0BC1 ||| \u0BA4\u0BC2\u0BB0\u0BAE\u0BCD\
-      \ ||| \u0BB5\u0BC6\u0BAA\u0BCD\u0BAA \u0BA8\u0BBF\u0BB2\u0BC8 ||| \u0B9A\u0BBF\
-      \u0BA9\u0BCD\u0BA9\u0BAE\u0BCD ||| \u0B92\u0BB4\u0BC1\u0B99\u0BCD\u0B95\u0BC1\
-      \ ||| \u0BB5\u0BBE\u0B95\u0BA9\u0BAE\u0BCD ||| \u0B8E\u0B9F\u0BC8 ||| \u0BA8\
-      \u0BBE\u0BA3\u0BAF"
+    answer_choices: "\u0BAE\u0BC1\u0BB1\u0BC8 ||| \u0B95\u0BBF\u0BB0\u0BBF\u0BAF\u0BC7\
+      \u0B9F\u0BCD\u0B9F\u0BBF\u0BB5\u0BCD \u0BAA\u0BC0\u0BB8\u0BCD ||| \u0BB5\u0BBF\
+      \u0BB2\u0B99\u0BCD\u0B95\u0BC1 ||| \u0BB5\u0BC6\u0BB3\u0BBF\u0BAA\u0BCD\u0BAA\
+      \u0BBE\u0B9F\u0BC1 \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\
+      \u0B9F\u0BCD\u0B9F\u0BA4\u0BC1 ||| \u0BA4\u0BA9\u0BBF\u0BAA\u0BCD\u0BAA\u0B9F\
+      \u0BCD\u0B9F ||| \u0B95\u0BC1\u0BB4\u0BC1 ||| \u0BA4\u0BB2\u0BC8\u0BAA\u0BCD\
+      \u0BAA\u0BC1 ||| \u0BB5\u0BB0\u0BC8\u0BAF\u0BB1\u0BC8 ||| \u0BA4\u0BC7\u0BA4\
+      \u0BBF ||| \u0B95\u0BBE\u0BB0\u0BA3\u0BAE\u0BCD ||| \u0BA8\u0BBF\u0B95\u0BB4\
+      \u0BCD\u0BB5\u0BC1 ||| \u0BA8\u0BBF\u0BB2\u0BC8 ||| \u0BB5\u0BBF\u0BB3\u0B95\
+      \u0BCD\u0B95\u0BAE\u0BCD ||| \u0B8E\u0BA3\u0BCD\u0BA3\u0BC1\u0B99\u0BCD\u0B95\
+      \u0BB3\u0BCD ||| \u0BAE\u0BB1\u0BCD\u0BB1\u0BB5\u0BC8 ||| \u0B95\u0B9F\u0BBF\
+      \u0BA4\u0BAE\u0BCD ||| \u0BAE\u0BA4\u0BAE\u0BCD ||| \u0B89\u0BA3\u0BB5\u0BC1\
+      \ ||| \u0B8E\u0BA3\u0BCD\u0BA3\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCDry ||| \u0BA8\
+      \u0BBF\u0BB1\u0BAE\u0BCD ||| \u0B95\u0BBE\u0BB2 ||| \u0BA8\u0B95\u0BB0\u0BAE\
+      \u0BCD ||| \u0B89\u0B9F\u0BB2\u0BBF\u0BA9\u0BCD \u0B89\u0BB1\u0BC1\u0BAA\u0BCD\
+      \u0BAA\u0BC1 ||| \u0BA8\u0BCB\u0BAF\u0BCD \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1\
+      \ \u0BAE\u0BB0\u0BC1\u0BA8\u0BCD\u0BA4\u0BC1 ||| \u0BAE\u0BB2\u0BC8 ||| \u0BB5\
+      \u0BBF\u0BB2\u0BC8 ||| \u0BA4\u0BAF\u0BBE\u0BB0\u0BBF\u0BAA\u0BCD\u0BAA\u0BC1\
+      \ ||| \u0B95\u0BBE\u0BB2\u0BAE\u0BCD ||| \u0BAA\u0BCA\u0BB0\u0BC1\u0BB3\u0BCD\
+      \ ||| \u0BB5\u0BBF\u0BB3\u0BC8\u0BAF\u0BBE\u0B9F\u0BCD\u0B9F\u0BC1 ||| \u0B86\
+      \u0BB2\u0BC8 ||| \u0BA8\u0BC1\u0B9F\u0BCD\u0BAA\u0BAE\u0BCD ||| \u0B85\u0BB3\
+      \u0BB5\u0BC1 ||| \u0B95\u0BB0\u0BC1\u0BB5\u0BBF ||| \u0B9A\u0BC1\u0BB0\u0BC1\
+      \u0B95\u0BCD\u0B95\u0BAE\u0BCD ||| \u0BB5\u0BC7\u0B95\u0BAE\u0BCD ||| \u0B9A\
+      \u0BC6\u0BBE\u0BB2\u0BCD ||| \u0BAE\u0BCA\u0BB4\u0BBF ||| \u0B9A\u0BA4\u0BB5\
+      \u0BBF\u0BA4\u0BAE\u0BCD ||| \u0B95\u0BC1\u0BB1\u0BBF\u0BAF\u0BC0\u0B9F\u0BC1\
+      \ ||| \u0BA4\u0BC2\u0BB0\u0BAE\u0BCD ||| \u0BB5\u0BC6\u0BAA\u0BCD\u0BAA \u0BA8\
+      \u0BBF\u0BB2\u0BC8 ||| \u0B9A\u0BBF\u0BA9\u0BCD\u0BA9\u0BAE\u0BCD ||| \u0B86\
+      \u0BB0\u0BCD\u0B9F\u0BB0\u0BCD ||| \u0BB5\u0BBE\u0B95\u0BA9\u0BAE\u0BCD |||\
+      \ \u0B8E\u0B9F\u0BC8 ||| \u0BA8\u0BBE\u0BA3\u0BAF"
     id: cfa8fde0-8320-4050-8d6e-7619ab14adea
-    jinja: "\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF \u0B8E\u0BA9\
-      \u0BCD\u0BA9 \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BC1?\n\n{{text}}\n\
-      |||\n{{ answer_choices[label_fine] }}"
+    jinja: "\u0B87\u0BA8\u0BCD\u0BA4\u0B95\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\
+      \ \u0B8E\u0BA9\u0BCD\u0BA9 \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BC1\
+      ?\n\n{{text}}\n|||\n{{ answer_choices[label_fine] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -359,10 +366,11 @@ templates:
       \u0BBF\u0BB3\u0B95\u0BCD\u0B95\u0BAE\u0BCD"
     id: e98b9294-76b4-4172-a78c-9c6e5fdfe73b
     jinja: "{% set label_mapping = {5:0, 4:1, 6:2, 12:3} %}\n{% if label_coarse ==\
-      \ 3 %}\n{{text}}\n\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\
-      \ {{', '.join(answer_choices)}} \u0B8E\u0BA9\u0BCD\u0BB1\u0BC1 \u0B95\u0BC7\u0B9F\
-      \u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BBE?\n|||\n{{ answer_choices [label_mapping[label_fine]]\
-      \ }}{% endif %}"
+      \ 3 %}\n{{text}}\n\n\u0B87\u0BA8\u0BCD\u0BA4\u0B95\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\
+      \u0BB5\u0BBF {{', '.join(answer_choices)}} \u0B95\u0BCD\u0B95\u0BBE\u0B95\u0B95\
+      \u0BCD \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BC1\u0B95\u0BBF\
+      \u0BB1\u0BA4\u0BBE?\n|||\n{{ answer_choices [label_mapping[label_fine]] }}{%\
+      \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -372,14 +380,15 @@ templates:
     reference: Fine grained labels with coarse-label `HUM`, context provided first
   fa588c55-5c69-4fd0-a0b1-edbfa092f710: !Template
     answer_choices: "\u0BB5\u0BB0\u0BC8\u0BAF\u0BB1\u0BC8 ||| \u0BB5\u0BBF\u0BB3\u0B95\
-      \u0BCD\u0B95\u0BAE\u0BCD ||| \u0B9A\u0BC6\u0BAF\u0BB2\u0BCD \u0BAE\u0BC1\u0BB1\
-      \u0BC8 ||| \u0B95\u0BBE\u0BB0\u0BA3\u0BAE\u0BCD"
+      \u0BCD\u0B95\u0BAE\u0BCD ||| \u0BA8\u0B9F\u0BB5\u0B9F\u0BBF\u0B95\u0BCD\u0B95\
+      \u0BC8 \u0BAE\u0BC1\u0BB1\u0BC8 ||| \u0B95\u0BBE\u0BB0\u0BA3\u0BAE\u0BCD"
     id: fa588c55-5c69-4fd0-a0b1-edbfa092f710
     jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
-      \ 0 %}\n{{text}}\n\n\u0B87\u0BA8\u0BCD\u0BA4 \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\
-      \ {{', '.join(answer_choices)}} \u0B8E\u0BA9\u0BCD\u0BB1\u0BC1 \u0B95\u0BC7\u0B9F\
-      \u0BCD\u0B95\u0BBF\u0BB1\u0BA4\u0BBE?\n|||\n{{ answer_choices [label_mapping[label_fine]]\
-      \ }}\n{% endif %}"
+      \ 0 %}\n{{text}}\n\n\u0B87\u0BA8\u0BCD\u0BA4\u0B95\u0BCD \u0B95\u0BC7\u0BB3\u0BCD\
+      \u0BB5\u0BBF {{', '.join(answer_choices)}} \u0B95\u0BCD\u0B95\u0BBE\u0B95\u0B95\
+      \u0BCD \u0B95\u0BC7\u0B9F\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BC1\u0B95\u0BBF\
+      \u0BB1\u0BA4\u0BBE?\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n\
+      {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

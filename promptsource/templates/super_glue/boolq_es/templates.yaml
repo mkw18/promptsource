@@ -41,7 +41,7 @@ templates:
   7cf7acdf-e3a2-459f-a3e8-2e2d27dd6aa5: !Template
     answer_choices: "No ||| S\xED"
     id: 7cf7acdf-e3a2-459f-a3e8-2e2d27dd6aa5
-    jinja: "Texto: {{passage}}\n\nResponda la siguiente pregunta de s\xED/no: {{question}}?\
+    jinja: "Texto: {{passage}}\n\nResponda la siguiente pregunta s\xED/no: {{question}}?\
       \ \xBFSi o no? |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif\
       \ %}"
     metadata: !TemplateMetadata
@@ -54,7 +54,7 @@ templates:
   7d21d974-0624-4d4f-9e8c-644e2d009cb5: !Template
     answer_choices: "No ||| S\xED"
     id: 7d21d974-0624-4d4f-9e8c-644e2d009cb5
-    jinja: "{{ passage }} \n\nHabiendo le\xEDdo eso, \xBFpodr\xEDas decirme {{ question\
+    jinja: "{{ passage }} \n\nHabiendo le\xEDdo eso, \xBFpodr\xEDa decirme {{ question\
       \ }}? ||| {% if label != -1 %}{{ answer_choices[label] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -66,7 +66,7 @@ templates:
   922d3e87-ac58-4731-84d1-f0a40e47afb5: !Template
     answer_choices: "No ||| S\xED"
     id: 922d3e87-ac58-4731-84d1-f0a40e47afb5
-    jinja: "EXAMEN\n1. Respuesta por s\xED o no.\n\nDocumento: {{passage}}\nPregunta:\
+    jinja: "EXAMEN\n1. Responda por s\xED o no.\n\nDocumento: {{passage}}\nPregunta:\
       \ {{question}}? ||| \n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif\
       \ %}"
     metadata: !TemplateMetadata
@@ -79,8 +79,16 @@ templates:
   9a1bf459-8047-437c-9def-f21e960429cc: !Template
     answer_choices: "No ||| S\xED"
     id: 9a1bf459-8047-437c-9def-f21e960429cc
-    jinja: "\xBFBasado en el siguiente pasaje, {{ question }}? {{ passage }}\n\n|||\n\
-      {% if label != -1 %}\n{{ answer_choices[label] }}\n{% endif %}"
+    jinja: 'Basado en el siguiente pasaje, {{ question }}? {{ passage }}
+
+
+      |||
+
+      {% if label != -1 %}
+
+      {{ answer_choices[label] }}
+
+      {% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -91,7 +99,7 @@ templates:
   9f4c6b0a-437b-40c0-b467-db4b7218d38d: !Template
     answer_choices: Falso ||| Verdadero
     id: 9f4c6b0a-437b-40c0-b467-db4b7218d38d
-    jinja: 'Ejercicio: Lea el texto y responda la pregunta por verdadero o falso.
+    jinja: 'Ejercicio: Lee el texto y contesta la pregunta con Verdadero o Falso.
 
 
       Texto: {{passage}}
@@ -113,8 +121,12 @@ templates:
   b2b3cb60-d6e3-491c-a09a-8201e13e417e: !Template
     answer_choices: "No ||| S\xED"
     id: b2b3cb60-d6e3-491c-a09a-8201e13e417e
-    jinja: "{{ passage }}\n\xBFBasado en el pasaje anterior, {{ question }}? ||| {%\
-      \ if label != -1 %}{{ answer_choices[label] }}\n{% endif %}"
+    jinja: '{{ passage }}
+
+      Basado en el pasaje anterior, {{ question }}? ||| {% if label != -1 %}{{ answer_choices[label]
+      }}
+
+      {% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

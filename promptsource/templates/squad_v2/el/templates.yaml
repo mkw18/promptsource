@@ -10,10 +10,11 @@ templates:
       \u03AF\u03C3\u03B9\u03BF.',\n'\u03A0\u03BF\u03B9\u03B1 \u03B5\u03AF\u03BD\u03B1\
       \u03B9 \u03B7 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7?',\n] %}\n\n\
       {{ seq | choice }}\n\u03A3\u03C5\u03BC\u03C6\u03C1\u03B1\u03B6\u03CC\u03BC\u03B5\
-      \u03BD\u03B1: {{context}};\nQuestion: {{question}};\nAnswer: |||\n{% if answers.text\
-      \ == [] %}\n\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03CC\u03C7\u03B9\
-      \ \u03C3\u03C4\u03BF \u03C0\u03BB\u03B1\u03AF\u03C3\u03B9\u03BF\n{% else %}\n\
-      {{answers.text[0]}}\n{% endif %}"
+      \u03BD\u03B1: {{context}};\n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{question}};\n\
+      \u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7: |||\n{% if answers.text ==\
+      \ [] %}\n\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03CC\u03C7\u03B9\
+      \ \u03C3\u03C4\u03B1 \u03C3\u03C5\u03BC\u03C6\u03C1\u03B1\u03B6\u03CC\u03BC\u03B5\
+      \u03BD\u03B1\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: &id001 !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -26,15 +27,15 @@ templates:
     id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
     jinja: "{% if answers.text != [] %}\n\u03A0\u03C1\u03BF\u03C3\u03B4\u03B9\u03BF\
       \u03C1\u03AF\u03C3\u03C4\u03B5 \u03C4\u03B7\u03BD \u03B5\u03C1\u03CE\u03C4\u03B7\
-      \u03C3\u03B7 \u03C0\u03BF\u03C5 \u03AF\u03C3\u03C9\u03C2 \u03B6\u03B7\u03C4\u03AE\
-      \u03C3\u03B1\u03C4\u03B5 \u03BD\u03B1 \u03B5\u03C0\u03B9\u03C3\u03C4\u03C1\u03AD\
-      \u03C8\u03B5\u03C4\u03B5 \u03C4\u03B7\u03BD \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\
-      \u03B8\u03B7 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03B3\u03B9\u03B1\
-      \ \u03C4\u03BF \u03B4\u03B5\u03B4\u03BF\u03BC\u03AD\u03BD\u03BF \u03C0\u03BB\
-      \u03B1\u03AF\u03C3\u03B9\u03BF\n\u03A3\u03C5\u03BC\u03C6\u03C1\u03B1\u03B6\u03CC\
-      \u03BC\u03B5\u03BD\u03B1: {{context}};\n\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\
-      \u03C3\u03B7: {{answers.text[0]}};\n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7\
-      : |||\n{{question}}\n{% endif %}\n"
+      \u03C3\u03B7 \u03C0\u03BF\u03C5 \u03BC\u03C0\u03BF\u03C1\u03B5\u03AF \u03BD\u03B1\
+      \ \u03AD\u03C7\u03B5\u03C4\u03B5 \u03BA\u03AC\u03BD\u03B5\u03B9 \u03B3\u03B9\
+      \u03B1 \u03BD\u03B1 \u03BB\u03AC\u03B2\u03B5\u03C4\u03B5 \u03C0\u03AF\u03C3\u03C9\
+      \ \u03C4\u03B7\u03BD \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03B7 \u03B1\
+      \u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03B3\u03B9\u03B1 \u03C4\u03BF \u03B4\
+      \u03B5\u03B4\u03BF\u03BC\u03AD\u03BD\u03BF \u03C0\u03BB\u03B1\u03AF\u03C3\u03B9\
+      \u03BF\n\u03A3\u03C5\u03BC\u03C6\u03C1\u03B1\u03B6\u03CC\u03BC\u03B5\u03BD\u03B1\
+      : {{context}};\n\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7: {{answers.text[0]}};\n\
+      \u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: |||\n{{question}}\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -47,17 +48,18 @@ templates:
     answer_choices: null
     id: 20064b80-e4d0-41b7-9135-92c0077d5044
     jinja: "{% set seq = [\n'\u03A0\u03B5\u03C1\u03AF \u03C4\u03AF\u03BD\u03BF\u03C2\
-      \ \u03C0\u03C1\u03CC\u03BA\u03B5\u03B9\u03C4\u03B1\u03B9? ',\n'\u0393\u03B9\u03B1\
-      \ \u03C0\u03BF\u03B9\u03B1 \u03B5\u03AF\u03BD\u03B1\u03B9 \u03B7 \u03C0\u03B1\
-      \u03C1\u03AC\u03B3\u03C1\u03B1\u03C6\u03BF\u03C2; ',\n'\u039B\u03AC\u03B2\u03B5\
-      \u03C4\u03B5 \u03C4\u03BF \u03B8\u03AD\u03BC\u03B1 \u03B1\u03C0\u03CC: ',\n\
-      '\u0391\u03C0\u03CC \u03C4\u03BF \u03C0\u03AD\u03C1\u03B1\u03C3\u03BC\u03B1\
-      , \u03C0\u03AC\u03C1\u03C4\u03B5 \u03C4\u03BF \u03B8\u03AD\u03BC\u03B1',\n'I\
-      \ want to know the topic. ',\n'\u0398\u03AD\u03BC\u03B1 \u03B1\u03C0\u03CC \u03C4\
-      \u03BF \u03B1\u03C0\u03CC\u03C3\u03C0\u03B1\u03C3\u03BC\u03B1: ',\n'\u0398\u03AD\
-      \u03BC\u03B1 \u03B1\u03C0\u03CC \u03C4\u03B7\u03BD \u03C0\u03B1\u03C1\u03AC\u03B3\
-      \u03C1\u03B1\u03C6\u03BF: ',\n] %}\n{{ seq | choice }}\n{{context}} |||\n{{title\
-      \ | replace(\"_\", \" \")}}"
+      \ \u03C0\u03C1\u03CC\u03BA\u03B5\u03B9\u03C4\u03B1\u03B9? ',\n'\u03A4\u03B9\
+      \ \u03B1\u03C6\u03BF\u03C1\u03AC \u03B7 \u03C0\u03B1\u03C1\u03AC\u03B3\u03C1\
+      \u03B1\u03C6\u03BF\u03C2; ',\n'\u039B\u03AC\u03B2\u03B5\u03C4\u03B5 \u03C4\u03BF\
+      \ \u03B8\u03AD\u03BC\u03B1 \u03B1\u03C0\u03CC: ',\n'\u0391\u03C0\u03CC \u03C4\
+      \u03BF \u03B1\u03C0\u03CC\u03C3\u03C0\u03B1\u03C3\u03BC\u03B1, \u03C0\u03AC\u03C1\
+      \u03C4\u03B5 \u03C4\u03BF \u03B8\u03AD\u03BC\u03B1',\n'\u0398\u03AD\u03BB\u03C9\
+      \ \u03BD\u03B1 \u03BC\u03AC\u03B8\u03C9 \u03C4\u03BF \u03B8\u03AD\u03BC\u03B1\
+      . ',\n'\u0398\u03AD\u03BC\u03B1 \u03B1\u03C0\u03CC \u03C4\u03BF \u03B1\u03C0\
+      \u03CC\u03C3\u03C0\u03B1\u03C3\u03BC\u03B1: ',\n'\u0398\u03AD\u03BC\u03B1 \u03B1\
+      \u03C0\u03CC \u03C4\u03B7\u03BD \u03C0\u03B1\u03C1\u03AC\u03B3\u03C1\u03B1\u03C6\
+      \u03BF: ',\n] %}\n{{ seq | choice }}\n{{context}} |||\n{{title | replace(\"\
+      _\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -71,15 +73,21 @@ templates:
   338cc143-361e-4796-b035-31fb2201c49f: !Template
     answer_choices: null
     id: 338cc143-361e-4796-b035-31fb2201c49f
-    jinja: "{% set seq = [\n'This is about ',\n'What is this about? ',\n'\u0397 \u03C0\
-      \u03B1\u03C1\u03AC\u03B3\u03C1\u03B1\u03C6\u03BF\u03C2 \u03B5\u03AF\u03BD\u03B1\
-      \u03B9 \u03C0\u03B5\u03C1\u03AF\u03C0\u03BF\u03C5 ',\n'What is the paragraph\
-      \ about? ',\n'\u039B\u03AC\u03B2\u03B5\u03C4\u03B5 \u03C4\u03BF \u03B8\u03AD\
-      \u03BC\u03B1: ',\n'\u0391\u03C0\u03CC \u03C4\u03BF \u03C0\u03AD\u03C1\u03B1\u03C3\
-      \u03BC\u03B1, \u03C4\u03BF \u03B8\u03AD\u03BC\u03B1 \u03B5\u03AF\u03BD\u03B1\
-      \u03B9',\n'I want to know the topic. ',\n'Topic from the passage: ',\n'Topic\
-      \ from the paragraph: ',\n] %}\n{{context}}\n{{ seq | choice }}|||\n{{title\
-      \ | replace(\"_\", \" \")}}"
+    jinja: "{% set seq = [\n'\u0391\u03C5\u03C4\u03CC \u03B5\u03AF\u03BD\u03B1\u03B9\
+      \ \u03C0\u03B5\u03C1\u03AF\u03C0\u03BF\u03C5 ',\n'\u03A0\u03B5\u03C1\u03AF \u03C4\
+      \u03AF\u03BD\u03BF\u03C2 \u03C0\u03C1\u03CC\u03BA\u03B5\u03B9\u03C4\u03B1\u03B9\
+      ? ',\n'\u0397 \u03C0\u03B1\u03C1\u03AC\u03B3\u03C1\u03B1\u03C6\u03BF\u03C2 \u03B1\
+      \u03C6\u03BF\u03C1\u03AC ',\n'\u03A4\u03B9 \u03B1\u03C6\u03BF\u03C1\u03AC \u03B7\
+      \ \u03C0\u03B1\u03C1\u03AC\u03B3\u03C1\u03B1\u03C6\u03BF\u03C2; ',\n'\u039B\u03AC\
+      \u03B2\u03B5\u03C4\u03B5 \u03C4\u03BF \u03B8\u03AD\u03BC\u03B1: ',\n'\u0391\u03C0\
+      \u03CC \u03C4\u03BF \u03B1\u03C0\u03CC\u03C3\u03C0\u03B1\u03C3\u03BC\u03B1,\
+      \ \u03C4\u03BF \u03B8\u03AD\u03BC\u03B1 \u03B5\u03AF\u03BD\u03B1\u03B9',\n'\u0398\
+      \u03AD\u03BB\u03C9 \u03BD\u03B1 \u03BC\u03AC\u03B8\u03C9 \u03C4\u03BF \u03B8\
+      \u03AD\u03BC\u03B1. ',\n'\u0398\u03AD\u03BC\u03B1 \u03B1\u03C0\u03CC \u03C4\u03BF\
+      \ \u03B1\u03C0\u03CC\u03C3\u03C0\u03B1\u03C3\u03BC\u03B1: ',\n'\u0398\u03AD\u03BC\
+      \u03B1 \u03B1\u03C0\u03CC \u03C4\u03B7\u03BD \u03C0\u03B1\u03C1\u03AC\u03B3\u03C1\
+      \u03B1\u03C6\u03BF: ',\n] %}\n{{context}}\n{{ seq | choice }}|||\n{{title |\
+      \ replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -93,9 +101,12 @@ templates:
   7a44cd99-7420-4456-aaaa-34e2c81d1679: !Template
     answer_choices: null
     id: 7a44cd99-7420-4456-aaaa-34e2c81d1679
-    jinja: "{% if answers.text != [] %}\nWhat is a question that would give the following\
-      \ answer?\n\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7: {{answers.text[0]}};\n\
-      Question: |||\n{{question}}\n{% endif %}\n"
+    jinja: "{% if answers.text != [] %}\n\u03A0\u03BF\u03B9\u03B1 \u03B5\u03AF\u03BD\
+      \u03B1\u03B9 \u03BC\u03B9\u03B1 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03C0\
+      \u03BF\u03C5 \u03B8\u03B1 \u03AD\u03B4\u03B9\u03BD\u03B5 \u03C4\u03B7\u03BD\
+      \ \u03C0\u03B1\u03C1\u03B1\u03BA\u03AC\u03C4\u03C9 \u03B1\u03C0\u03AC\u03BD\u03C4\
+      \u03B7\u03C3\u03B7;\n\u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7: {{answers.text[0]}};\n\
+      \u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: |||\n{{question}}\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -107,12 +118,21 @@ templates:
   8bea1123-fd8d-4bac-96bf-b8a289ee74b3: !Template
     answer_choices: null
     id: 8bea1123-fd8d-4bac-96bf-b8a289ee74b3
-    jinja: "{% set seq = [\n'Can you tell me ',\n'Please tell me ',\n'Tell me ',\n\
-      'From the passage, ',\n'I want to know ',\n'I want to ask ',\n'What is the answer\
-      \ to: ',\n'\u0392\u03C1\u03B5\u03AF\u03C4\u03B5 \u03C4\u03B7\u03BD \u03B1\u03C0\
-      \u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03C3\u03C4\u03BF: ',\n'Answer: ',\n'',\n\
-      ] %}\n{{context}} {{ seq | choice }}{{question}}|||\n{% if answers.text == []\
-      \ %}\nAnswer not in context\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
+    jinja: "{% set seq = [\n'\u039C\u03C0\u03BF\u03C1\u03B5\u03AF\u03C2 \u03BD\u03B1\
+      \ \u03BC\u03BF\u03C5 \u03C0\u03B5\u03B9\u03C2 ',\n'\u03A0\u03B5\u03C2 \u03BC\
+      \u03BF\u03C5 \u03C3\u03B5 \u03C0\u03B1\u03C1\u03B1\u03BA\u03B1\u03BB\u03CE ',\n\
+      '\u03A0\u03B5\u03C2 \u03BC\u03BF\u03C5 ',\n'\u0391\u03C0\u03CC \u03C4\u03BF\
+      \ \u03C0\u03AD\u03C1\u03B1\u03C3\u03BC\u03B1, ',\n'\u0398\u03AD\u03BB\u03C9\
+      \ \u03BD\u03B1 \u03BE\u03AD\u03C1\u03C9 ',\n'\u03B8\u03AD\u03BB\u03C9 \u03BD\
+      \u03B1 \u03C1\u03C9\u03C4\u03AE\u03C3\u03C9 ',\n'\u03A0\u03BF\u03B9\u03B1 \u03B5\
+      \u03AF\u03BD\u03B1\u03B9 \u03B7 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7\
+      \ \u03C3\u03C4\u03BF: ',\n'\u0392\u03C1\u03B5\u03AF\u03C4\u03B5 \u03C4\u03B7\
+      \u03BD \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03C3\u03B5: ',\n'\u0391\
+      \u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7: ',\n'',\n] %}\n{{context}} {{ seq\
+      \ | choice }}{{question}}|||\n{% if answers.text == [] %}\n\u0391\u03C0\u03AC\
+      \u03BD\u03C4\u03B7\u03C3\u03B7 \u03CC\u03C7\u03B9 \u03C3\u03C4\u03B1 \u03C3\u03C5\
+      \u03BC\u03C6\u03C1\u03B1\u03B6\u03CC\u03BC\u03B5\u03BD\u03B1\n{% else %}\n{{answers.text[0]}}\n\
+      {% endif %}"
     metadata: &id002 !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -124,13 +144,18 @@ templates:
   b14c9843-fd56-42ff-817d-39e41963c847: !Template
     answer_choices: null
     id: b14c9843-fd56-42ff-817d-39e41963c847
-    jinja: "{% set seq = [\n'Answer the question depending on the context.',\n'What\
-      \ is the answer?',\n] %}\n\n{{ seq | choice }}\nContext: {{context}};\nQuestion:\
-      \ {{question}};\nIf you can't find the answer, please respond \"\u03B1\u03BD\
-      \u03B1\u03BD\u03C4\u03AF\u03C1\u03C1\u03B7\u03C4\u03BF\u03C2\".\n\u0391\u03C0\
-      \u03AC\u03BD\u03C4\u03B7\u03C3\u03B7: |||\n{% if answers.text == [] %}\n\u03B1\
-      \u03BD\u03B1\u03BD\u03C4\u03AF\u03C1\u03C1\u03B7\u03C4\u03BF\u03C2\n{% else\
-      \ %}\n{{answers.text[0]}}\n{% endif %}"
+    jinja: "{% set seq = [\n'\u0391\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\u03C4\u03B5\
+      \ \u03C3\u03C4\u03B7\u03BD \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03B1\
+      \u03BD\u03AC\u03BB\u03BF\u03B3\u03B1 \u03BC\u03B5 \u03C4\u03BF \u03C0\u03BB\u03B1\
+      \u03AF\u03C3\u03B9\u03BF.',\n'\u03A0\u03BF\u03B9\u03B1 \u03B5\u03AF\u03BD\u03B1\
+      \u03B9 \u03B7 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7?',\n] %}\n\n\
+      {{ seq | choice }}\n\u03A3\u03C5\u03BC\u03C6\u03C1\u03B1\u03B6\u03CC\u03BC\u03B5\
+      \u03BD\u03B1: {{context}};\n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{question}};\n\
+      If you can't find the answer, please respond \"\u03B1\u03BD\u03B1\u03BD\u03C4\
+      \u03AF\u03C1\u03C1\u03B7\u03C4\u03BF\u03C2\".\n\u0391\u03C0\u03AC\u03BD\u03C4\
+      \u03B7\u03C3\u03B7: |||\n{% if answers.text == [] %}\n\u03B1\u03BD\u03B1\u03BD\
+      \u03C4\u03AF\u03C1\u03C1\u03B7\u03C4\u03BF\u03C2\n{% else %}\n{{answers.text[0]}}\n\
+      {% endif %}"
     metadata: *id001
     name: Questions with Context +unanswerable
     reference: Given context and question, give answer
@@ -155,16 +180,21 @@ templates:
   e1630107-8f5d-44ce-8ccd-6fa80da80328: !Template
     answer_choices: null
     id: e1630107-8f5d-44ce-8ccd-6fa80da80328
-    jinja: "{% set seq = [\n'Can you tell me ',\n'\u03A0\u03B5\u03C2 \u03BC\u03BF\u03C5\
-      \ \u03C3\u03B5 \u03C0\u03B1\u03C1\u03B1\u03BA\u03B1\u03BB\u03CE ',\n'Tell me\
-      \ ',\n'\u0391\u03C0\u03CC \u03C4\u03BF \u03C0\u03AD\u03C1\u03B1\u03C3\u03BC\u03B1\
-      , ',\n'\u0398\u03AD\u03BB\u03C9 \u03BD\u03B1 \u03BE\u03AD\u03C1\u03C9 ',\n'\u03B8\
-      \u03AD\u03BB\u03C9 \u03BD\u03B1 \u03C1\u03C9\u03C4\u03AE\u03C3\u03C9 ',\n'What\
-      \ is the answer to: ',\n'Find the answer to: ',\n'\u0391\u03C0\u03AC\u03BD\u03C4\
-      \u03B7\u03C3\u03B7: ',\n'',\n] %}\n{{context}} {{ seq | choice }}{{question}}\
-      \ If you can't find the answer, please respond \"unanswerable\". |||\n{% if\
-      \ answers.text == [] %}\nunanswerable\n{% else %}\n{{answers.text[0]}}\n{% endif\
-      \ %}"
+    jinja: "{% set seq = [\n'\u039C\u03C0\u03BF\u03C1\u03B5\u03AF\u03C2 \u03BD\u03B1\
+      \ \u03BC\u03BF\u03C5 \u03C0\u03B5\u03B9\u03C2 ',\n'\u03A0\u03B5\u03C2 \u03BC\
+      \u03BF\u03C5 \u03C3\u03B5 \u03C0\u03B1\u03C1\u03B1\u03BA\u03B1\u03BB\u03CE ',\n\
+      '\u03A0\u03B5\u03C2 \u03BC\u03BF\u03C5 ',\n'\u0391\u03C0\u03CC \u03C4\u03BF\
+      \ \u03C0\u03AD\u03C1\u03B1\u03C3\u03BC\u03B1, ',\n'\u0398\u03AD\u03BB\u03C9\
+      \ \u03BD\u03B1 \u03BE\u03AD\u03C1\u03C9 ',\n'\u03B8\u03AD\u03BB\u03C9 \u03BD\
+      \u03B1 \u03C1\u03C9\u03C4\u03AE\u03C3\u03C9 ',\n'\u03A0\u03BF\u03B9\u03B1 \u03B5\
+      \u03AF\u03BD\u03B1\u03B9 \u03B7 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7\
+      \ \u03C3\u03C4\u03BF: ',\n'\u0392\u03C1\u03B5\u03AF\u03C4\u03B5 \u03C4\u03B7\
+      \u03BD \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03C3\u03B5: ',\n'\u0391\
+      \u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7: ',\n'',\n] %}\n{{context}} {{ seq\
+      \ | choice }}{{question}} If you can't find the answer, please respond \"\u03B1\
+      \u03BD\u03B1\u03BD\u03C4\u03AF\u03C1\u03C1\u03B7\u03C4\u03BF\u03C2\". |||\n\
+      {% if answers.text == [] %}\n\u03B1\u03BD\u03B1\u03BD\u03C4\u03AF\u03C1\u03C1\
+      \u03B7\u03C4\u03BF\u03C2\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: *id002
     name: Questions with Context - Without Prompt Keywords +unanswerable
     reference: Given context and question, give answer. No keywords to delineate context
@@ -174,10 +204,10 @@ templates:
     id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
     jinja: "\u03A3\u03C5\u03BC\u03C6\u03C1\u03B1\u03B6\u03CC\u03BC\u03B5\u03BD\u03B1\
       : {{context}}; \n\n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{question}}\
-      \ \n\n\u0395\u03AF\u03BD\u03B1\u03B9 \u03C5\u03C0\u03B5\u03CD\u03B8\u03C5\u03BD\
-      \u03B7 \u03B1\u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7\
-      ; ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n{% else %}\n{{answer_choices[1]}}\n\
-      {% endif %}"
+      \ \n\n\u0395\u03AF\u03BD\u03B1\u03B9 \u03B1\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\
+      \u03B9\u03BC\u03B7 \u03B1\u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\
+      \u03C3\u03B7; ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n{% else\
+      \ %}\n{{answer_choices[1]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -190,15 +220,14 @@ templates:
     id: e51c23b9-5b10-4db3-a0d1-ba546830173d
     jinja: "{% set seq = [\n'\u03A0\u03C1\u03BF\u03C3\u03B4\u03B9\u03BF\u03C1\u03AF\
       \u03C3\u03C4\u03B5 \u03C4\u03BF \u03B8\u03AD\u03BC\u03B1 \u03C4\u03BF\u03C5\
-      \ \u03B6\u03B5\u03CD\u03B3\u03BF\u03C5\u03C2 \u03B5\u03C1\u03C9\u03C4\u03AE\u03C3\
-      \u03B5\u03C9\u03BD-\u03B1\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\u03B5\u03C9\u03BD\
-      . ',\n'\u0392\u03C1\u03B5\u03AF\u03C4\u03B5 \u03C4\u03BF \u03B8\u03AD\u03BC\u03B1\
-      . ',\n'\u03A0\u03BF\u03B9\u03BF \u03B5\u03AF\u03BD\u03B1\u03B9 \u03C4\u03BF\
-      \ \u03B8\u03AD\u03BC\u03B1 \u03B1\u03C0\u03CC \u03B1\u03C5\u03C4\u03CC; ',\n\
-      ] %}\n{% if answers.text != [] %}\n{{ seq | choice }}\n\u0395\u03C1\u03CE\u03C4\
-      \u03B7\u03C3\u03B7: {{question}};  \u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\
-      \u03B7: {{answers.text[0]}}; \u0398\u03AD\u03BC\u03B1: |||\n{{title}}\n{% endif\
-      \ %}"
+      \ \u03B6\u03B5\u03CD\u03B3\u03BF\u03C5\u03C2 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\
+      \u03B7\u03C2-\u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7\u03C2. ',\n'\u0392\
+      \u03C1\u03B5\u03AF\u03C4\u03B5 \u03C4\u03BF \u03B8\u03AD\u03BC\u03B1. ',\n'\u03A0\
+      \u03BF\u03B9\u03BF \u03B5\u03AF\u03BD\u03B1\u03B9 \u03C4\u03BF \u03B8\u03AD\u03BC\
+      \u03B1 \u03B1\u03C0\u03CC \u03B1\u03C5\u03C4\u03CC; ',\n] %}\n{% if answers.text\
+      \ != [] %}\n{{ seq | choice }}\n\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7:\
+      \ {{question}};  \u0391\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7: {{answers.text[0]}};\
+      \ \u0398\u03AD\u03BC\u03B1: |||\n{{title}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -211,9 +240,9 @@ templates:
   fdcf132e-6c70-4188-999e-93601ee8e089: !Template
     answer_choices: null
     id: fdcf132e-6c70-4188-999e-93601ee8e089
-    jinja: "\u03A0\u03BF\u03B9\u03BF \u03B5\u03AF\u03BD\u03B1\u03B9 \u03C4\u03BF \u03B1\
-      \u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03BF \u03B1\u03C0\u03CC\u03C3\u03C0\u03B1\
-      \u03C3\u03BC\u03B1;\n{{context}} |||\n{{title | replace(\"_\", \" \")}}"
+    jinja: "\u03A4\u03B9 \u03B1\u03C6\u03BF\u03C1\u03AC \u03C4\u03BF \u03C0\u03B1\u03C1\
+      \u03B1\u03BA\u03AC\u03C4\u03C9 \u03B1\u03C0\u03CC\u03C3\u03C0\u03B1\u03C3\u03BC\
+      \u03B1;\n{{context}} |||\n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

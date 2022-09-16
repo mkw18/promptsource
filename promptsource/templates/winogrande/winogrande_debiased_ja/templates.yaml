@@ -1,0 +1,83 @@
+dataset: winogrande
+subset: winogrande_debiased_ja
+templates:
+  1ce2be12-1815-4a07-80a7-ac3c3505b005: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 1ce2be12-1815-4a07-80a7-ac3c3505b005
+    jinja: "{{sentence}}\n\u4E0A\u8A18\u306E\u6587\u306E _ \u3092\u6B63\u3057\u3044\
+      \u30AA\u30D7\u30B7\u30E7\u30F3\u306B\u7F6E\u304D\u63DB\u3048\u307E\u3059\u3002\
+      \ \n- {{option1}}\n- {{option2}}\n|||\n{% if answer == '1' %} {{option1}} {%\
+      \ else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Replace
+    reference: ''
+  1ddbbca4-8917-4a1d-9d83-f42db77f24ba: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 1ddbbca4-8917-4a1d-9d83-f42db77f24ba
+    jinja: "{{sentence}}\n\u4E0A\u8A18\u306E\u6587\u306E _ \u306F\u4F55\u3092\u6307\
+      \u3057\u3066\u3044\u307E\u3059\u304B? {{option1}}\u307E\u305F\u306F{{option2}}?\
+      \ ||| {% if answer == '1' %} {{option1}} {% else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: underscore refer to
+    reference: ''
+  276eaba6-17e5-403a-98c7-0f8c53c35221: !Template
+    answer_choices: '{{ option1 }} ||| {{ option2 }}'
+    id: 276eaba6-17e5-403a-98c7-0f8c53c35221
+    jinja: "{{ sentence }} \u524D\u306E\u6587\u3067\u3001_ \u306F {{option1}} \u307E\
+      \u305F\u306F {{option2}} \u3092\u6307\u3057\u3066\u3044\u307E\u3059\u304B? |||\
+      \ {% if answer == '1' %} {{option1}} {% else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does underscore refer to
+    reference: ''
+  9702d456-4261-4a7e-94c5-6a9d2a1c4859: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 9702d456-4261-4a7e-94c5-6a9d2a1c4859
+    jinja: "\u6B21\u306E\u6587\u306E _ \u306F {{answer_choices[0]}} \u307E\u305F\u306F\
+      \ {{answer_choices[1]}} \u3092\u8868\u3057\u3066\u3044\u307E\u3059\u304B?\n\
+      {{sentence}}|||\n{{answer_choices[answer | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: stand for
+    reference: ''
+  bb9b91fc-760a-45cd-bacd-dcb05a1cb2f3: !Template
+    answer_choices: "\u771F\u5B9F ||| \u9593\u9055\u3044"
+    id: bb9b91fc-760a-45cd-bacd-dcb05a1cb2f3
+    jinja: "\u4EE5\u4E0B\u306E\u6587\u306E _ \u306F {{option1}} \u3092\u6307\u3057\
+      \u307E\u3059\u3002 \u6B63\u3057\u3044\u304B\u9593\u9055\u3063\u3066\u3044\u308B\
+      \u304B\uFF1F\n{{sentence}}|||\n{{answer_choices[answer|int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: True or False
+    reference: ''
+  ebabc54d-cff4-46a7-9c22-2412b8ce00c6: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: ebabc54d-cff4-46a7-9c22-2412b8ce00c6
+    jinja: "\u6B21\u306E\u6587\u306E _ \u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\
+      \u3044\u3002\n{{sentence}}\n\n\u9078\u629E\u80A2\uFF1A\n- {{ option1 }}\n- {{\
+      \ option2 }}\n\n\u7B54\u3048\uFF1A ||| {% if answer == '1' %} {{option1}} {%\
+      \ else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fill in the blank
+    reference: ''

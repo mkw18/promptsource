@@ -4,9 +4,9 @@ templates:
   2b52a83c-0021-41fe-b44c-5aaa076d71a2: !Template
     answer_choices: "s\xEC ||| No"
     id: 2b52a83c-0021-41fe-b44c-5aaa076d71a2
-    jinja: "{{premise}} Usando solo la descrizione sopra e ci\xF2 che sai del mondo,\
-      \ \"{{hypothesis}}\" \xE8 decisamente corretto? S\xEC o no? ||| {% if label\
-      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} Utilizzando solo la descrizione di cui sopra e ci\xF2 che\
+      \ sai del mondo, \"{{hypothesis}}\" \xE8 sicuramente corretto? S\xEC o no? |||\
+      \ {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -17,7 +17,7 @@ templates:
   2d0d63da-ffcf-4f6e-941a-b8da922be43e: !Template
     answer_choices: "s\xEC ||| No"
     id: 2d0d63da-ffcf-4f6e-941a-b8da922be43e
-    jinja: "Given {{premise}} \xC8 vero che \"{{hypothesis}}\"? S\xEC o no? ||| {%\
+    jinja: "Dato {{premise}} \xC8 vero che \"{{hypothesis}}\"? S\xEC o no? ||| {%\
       \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -39,7 +39,7 @@ templates:
     name: can we infer
     reference: Webson & Pavlick 2021
   8fb1c6aa-20e9-438c-bece-c6af1c746449: !Template
-    answer_choices: True ||| Falso
+    answer_choices: Vero ||| Falso
     id: 8fb1c6aa-20e9-438c-bece-c6af1c746449
     jinja: '{{premise}}
 
@@ -67,8 +67,8 @@ templates:
   b8dc85c6-28b6-4340-979a-8e77c2a0dde8: !Template
     answer_choices: "s\xEC ||| No"
     id: b8dc85c6-28b6-4340-979a-8e77c2a0dde8
-    jinja: "Given {{premise}} Dovremmo presumere che \"{{hypothesis}}\" sia vero?\
-      \ S\xEC o no? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "Dato {{premise}} Dovremmo presumere che \"{{hypothesis}}\" sia vero? S\xEC\
+      \ o no? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -79,8 +79,8 @@ templates:
   e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff: !Template
     answer_choices: "s\xEC ||| No"
     id: e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff
-    jinja: "Dato che {{premise}} Ne segue che {{hypothesis}} S\xEC o no? ||| {% if\
-      \ label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "Dato che {{premise}} Ne consegue che {{hypothesis}} S\xEC o no? ||| {%\
+      \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -91,7 +91,7 @@ templates:
   ed1f4b75-8826-4852-9bd6-aedf368678f5: !Template
     answer_choices: "s\xEC ||| No"
     id: ed1f4b75-8826-4852-9bd6-aedf368678f5
-    jinja: "{{premise}} Basato sul passaggio precedente, \xE8 vero che \"{{hypothesis}}\"\
+    jinja: "{{premise}} Sulla base del passaggio precedente, \xE8 vero che \"{{hypothesis}}\"\
       ? S\xEC o no? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

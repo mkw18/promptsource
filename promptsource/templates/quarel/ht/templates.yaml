@@ -4,15 +4,9 @@ templates:
   5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
-    jinja: 'KESYON: {{question}}
-
-
-      Pa itilize {{"a"}} ak {{"b"}} reponn kesyon an men olye de sa, chwazi ant "{{answer_choices[0]}}"
-      ak "{{answer_choices[1]}}".
-
-      |||
-
-      {{answer_choices[answer_index]}}'
+    jinja: "Kesyon: {{question}}\n\nPa s\xE8vi ak {{\"A\"}} ak {{\"B\"}} pou reponn\
+      \ kesyon an men pito, chwazi ant \"{{answer_choices[0]}}\" ak \"{{answer_choices[1]}}\"\
+      .\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -23,8 +17,8 @@ templates:
   5b5f9d29-0ad5-4bb9-831a-11fcb115c10d: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
-    jinja: "Isit la nan yon t\xE8s lojik: {{question}}\n\nChwazi repons ki genyen\
-      \ ant \"{{answer_choices[0]}}\" ak \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
+    jinja: "Men yon t\xE8s lojik: {{question}}\n\nChwazi repons ki genyen ant \"{{answer_choices[0]}}\"\
+      \ ak \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -35,7 +29,7 @@ templates:
   63c58389-605a-42b9-85a6-a2586a954a92: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 63c58389-605a-42b9-85a6-a2586a954a92
-    jinja: 'Isit la nan yon istwa kout: {{question}}.
+    jinja: 'Men yon ti istwa: {{question}}.
 
 
       Ki repons ki pi sansib ant "{{answer_choices[0]}}" ak "{{answer_choices[1]}}"?
@@ -55,7 +49,7 @@ templates:
     id: 73a7adbb-41b1-4b4d-b378-d7e17d030a6f
     jinja: 'Chwazi ant "{{answer_choices[0]}}" ak "{{answer_choices[1]}}".
 
-      KESYON: {{question}}
+      Kesyon: {{question}}
 
       |||
 

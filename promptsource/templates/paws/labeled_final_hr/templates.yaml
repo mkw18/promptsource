@@ -4,8 +4,8 @@ templates:
   0be7cecd-b427-4ec9-9b0e-666d6dae0063: !Template
     answer_choices: Ne ||| Da
     id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
-    jinja: "Utvrdite da li sljede\u0107e dvije re\u010Denice parafraziraju jedna drugu\
-      \ ili ne.\nRe\u010Denica 1: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\n\
+    jinja: "Odredite parafraziraju li sljede\u0107e dvije re\u010Denice jedna drugu\
+      \ ili ne.\n1. re\u010Denica: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\n\
       ||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -17,9 +17,9 @@ templates:
   472fe5eb-b499-4952-a930-f72f4ca9ed43: !Template
     answer_choices: Ne ||| Da
     id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
-    jinja: "Re\u010Denica 1: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\nPitanje:\
-      \ Izra\u017Eavaju li re\u010Denica 1 i re\u010Denica 2 isto zna\u010Denje?Da\
-      \ ili ne? \n||| \n{{answer_choices[label]}}"
+    jinja: "1. re\u010Denica: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\nPitanje:\
+      \ Da li re\u010Denica 1 i re\u010Denica 2 izra\u017Eavaju isto zna\u010Denje?\
+      \ Da ili ne? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -42,8 +42,8 @@ templates:
   678400f8-1a5c-4a40-b5ef-abeaa41e20ec: !Template
     answer_choices: Ne ||| Da
     id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
-    jinja: "Re\u010Denica 1: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\nPitanje:\
-      \ Mo\u017Eemo li prepisati re\u010Denicu 1 na re\u010Denicu 2? \n||| \n{{answer_choices[label]}}"
+    jinja: "1. re\u010Denica: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\nPitanje:\
+      \ Mo\u017Eemo li re\u010Denicu 1 prepisati u re\u010Denicu 2? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -66,8 +66,8 @@ templates:
   8c259e88-7646-4a50-a4ca-90393920f281: !Template
     answer_choices: Ne ||| Da
     id: 8c259e88-7646-4a50-a4ca-90393920f281
-    jinja: "Re\u010Denica 1: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\nPitanje:\
-      \ Da li re\u010Denica 1 parafrazira re\u010Denica 2?Da ili ne? \n||| \n{{answer_choices[label]}}"
+    jinja: "1. re\u010Denica: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\nPitanje:\
+      \ Parafrazira li 1. re\u010Denica 2. re\u010Denicu? Da ili ne? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -78,7 +78,7 @@ templates:
   a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
     answer_choices: null
     id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
-    jinja: "{% if label == 1 %} \nParafrazirati re\u010Denicu: {{sentence1}} \n|||\
+    jinja: "{% if label == 1 %} \nParafraziraj re\u010Denicu: {{sentence1}} \n|||\
       \ \n{{sentence2}} \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -89,10 +89,10 @@ templates:
     name: paraphrase-task
     reference: Create a generative paraphrase task
   a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076: !Template
-    answer_choices: No ||| Yes
+    answer_choices: Ne ||| Da
     id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
-    jinja: "Sentence 1: {{sentence1}}\nSentence 2: {{sentence2}}\nQuestion: Does Sentence\
-      \ 1 paraphrase Sentence 2? \n||| \n{{answer_choices[label]}}"
+    jinja: "1. re\u010Denica: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\nPitanje:\
+      \ Parafrazira li 1. re\u010Denica 2. re\u010Denicu? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -101,10 +101,11 @@ templates:
     name: Concatenation-no-label
     reference: Concatenation of sentence 1 and sentence 2 without any label
   d5239f5f-2014-47c9-a0c1-4896f76f82a4: !Template
-    answer_choices: No ||| Yes
+    answer_choices: Ne ||| Da
     id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
-    jinja: "Sentence 1: {{sentence1}}\nSentence 2: {{sentence2}}\nPitanje: Izra\u017E\
-      avaju li re\u010Denica 1 i re\u010Denica 2 isto zna\u010Denje? \n||| \n{{answer_choices[label]}}"
+    jinja: "1. re\u010Denica: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\nPitanje:\
+      \ Da li re\u010Denica 1 i re\u010Denica 2 izra\u017Eavaju isto zna\u010Denje?\
+      \ \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -113,9 +114,9 @@ templates:
     name: Meaning-no-label
     reference: Natural question without label
   d9911dad-75fe-4506-9843-3a46ba5e49be: !Template
-    answer_choices: "La\u017Ean ||| True"
+    answer_choices: "la\u017Eno ||| Pravi"
     id: d9911dad-75fe-4506-9843-3a46ba5e49be
-    jinja: "{{sentence1}} Question: {{sentence2}} True or False? \n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}} Pitanje: {{sentence2}} Istina ili la\u017E? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -124,10 +125,11 @@ templates:
     name: PAWS-ANLI GPT3
     reference: ANLI prompt format from Table G7 in the GPT3 paper
   dd52359b-dc56-4241-8179-c98c636f0335: !Template
-    answer_choices: No ||| Da
+    answer_choices: Ne ||| Da
     id: dd52359b-dc56-4241-8179-c98c636f0335
-    jinja: "Sentence 1: {{sentence1}}\nSentence 2: {{sentence2}}\nPitanje: Mo\u017E\
-      emo li prepisati re\u010Denicu 1 na re\u010Denicu 2?Da ili ne? \n||| \n{{answer_choices[label]}}"
+    jinja: "1. re\u010Denica: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\nPitanje:\
+      \ Mo\u017Eemo li re\u010Denicu 1 prepisati u re\u010Denicu 2? Da ili ne? \n\
+      ||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -136,9 +138,9 @@ templates:
     name: Rewrite
     reference: Natural Question
   f0866713-c59a-4c5d-a307-95e80a935f99: !Template
-    answer_choices: No ||| Yes
+    answer_choices: Ne ||| Da
     id: f0866713-c59a-4c5d-a307-95e80a935f99
-    jinja: "{{sentence1}} Question: {{sentence2}} Paraphrase or not?\n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}} Pitanje: {{sentence2}} Parafrazirati ili ne?\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

@@ -4,7 +4,7 @@ templates:
   00caa8cb-7f67-43bc-9e90-fc1d5d329432: !Template
     answer_choices: '{{endings | join(" ||| ")}}'
     id: 00caa8cb-7f67-43bc-9e90-fc1d5d329432
-    jinja: "T\xE4itke kirjeldus sobiva l\xF5puga:\nEsiteks {{ ctx_a.lower() }} Siis,\
+    jinja: "T\xE4itke kirjeldus sobiva l\xF5puga:\nEsiteks {{ ctx_a.lower() }} Siis\
       \ {{ ctx_b.lower() }} ...\n\n(a) {{ answer_choices[0] }}\n\n(b) {{ answer_choices[1]\
       \ }}\n\n(c) {{ answer_choices[2] }}\n\n(d) {{ answer_choices[3] }}\n|||\n{{\
       \ answer_choices[label | int()] }}"
@@ -30,7 +30,7 @@ templates:
   1fd44f45-d0e6-41ad-a01f-737f4c53645b: !Template
     answer_choices: '{{endings | join(" ||| ")}}'
     id: 1fd44f45-d0e6-41ad-a01f-737f4c53645b
-    jinja: "T\xE4itke lause: {{ctx}}\n|||\n{{answer_choices[label | int()]}}"
+    jinja: "L\xF5peta lause: {{ctx}}\n|||\n{{answer_choices[label | int()]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -42,7 +42,7 @@ templates:
   4ebf22a1-2d23-426c-a083-b43fc8567687: !Template
     answer_choices: null
     id: 4ebf22a1-2d23-426c-a083-b43fc8567687
-    jinja: "{{ctx}} {{endings[label | int()]}}\nKas oskate l\xF5igu teema tuvastada?\
+    jinja: "{{ctx}} {{endings[label | int()]}}\nKas saate l\xF5igu teema tuvastada?\
       \ \n|||\n{{activity_label}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -55,10 +55,10 @@ templates:
   52fbd075-46cb-49fb-a41b-00a0f4a60285: !Template
     answer_choices: '{{endings | join(" ||| ") }}'
     id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
-    jinja: "{% set prompts = [\n'Kas saate lause jaoks \xF5ige l\xF5ppu valida: ',\n\
-      '\xDClesandeks on lause l\xF5pp: ',\n'Kuidas see lause l\xF5peb? ',\n'Allpool\
-      \ kirjeldatud l\xF5ppude loendist, mis l\xF5pp on lause jaoks k\xF5ige m\xF5\
-      istlikum ',]\n%}\n{{prompts | choice}}\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\
+    jinja: "{% set prompts = [\n'Kas saate valida lausele \xF5ige l\xF5pu: ',\n'\xDC\
+      lesanne on genereerida lause l\xF5pp: ',\n'Kuidas see lause l\xF5peb? ',\n'Missugune\
+      \ l\xF5pp on lause jaoks k\xF5ige m\xF5istlikum, allpool kirjeldatud l\xF5pude\
+      \ loendist ',]\n%}\n{{prompts | choice}}\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\
       \n(b)  {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n\
       |||\n{{answer_choices [label | int()]}}"
     metadata: !TemplateMetadata
@@ -69,10 +69,10 @@ templates:
     name: Randomized prompts template
     reference: Original task template with randomized prompt template
   663470b8-3fab-449c-84ab-6c4738da51b3: !Template
-    answer_choices: Jah ||| Mitte
+    answer_choices: Jah ||| Ei
     id: 663470b8-3fab-449c-84ab-6c4738da51b3
-    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nM\xF5elge j\xE4rgmisele kirjeldusele:\
-      \ {{ ctx_a }}\nKas j\xE4rgmine on asjakohane j\xE4tk?\n{{ ctx_b }} {{ endings[instance]\
+    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nKaaluge j\xE4rgmist kirjeldust:\
+      \ {{ ctx_a }}\nKas j\xE4rgnev on sobiv j\xE4tk?\n{{ ctx_b }} {{ endings[instance]\
       \ }}\nJah v\xF5i ei?\n||| \n{% if label  == instance | string() %}\n{{answer_choices[0]}}\n\
       {% else %} \n{{answer_choices[1]}}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -98,7 +98,7 @@ templates:
   a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e: !Template
     answer_choices: null
     id: a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e
-    jinja: 'Kuidas alustaksite lauset:
+    jinja: 'Kuidas sa lauset alustaksid:
 
       {{endings[label | int()]}}
 
@@ -114,13 +114,13 @@ templates:
     name: Open-ended start
     reference: Template asks the model to generate a premise or start for the ending
   d95b81c4-5db7-44c1-926e-c7222c896a32: !Template
-    answer_choices: Jah ||| Mitte
+    answer_choices: Jah ||| Ei
     id: d95b81c4-5db7-44c1-926e-c7222c896a32
     jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nM\xF5elge j\xE4rgmisele tekstile:\
-      \ {{ ctx_b }} {{ endings[instance] }}\nKas see on j\xE4rgmise teksti asjakohane\
-      \ j\xE4tk: \n{{ ctx_a }} ?\nJah v\xF5i ei?\n||| \n{% if label  == instance |\
-      \ string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n{%\
-      \ endif %}"
+      \ {{ ctx_b }} {{ endings[instance] }}\nKas see on sobiv j\xE4tk j\xE4rgmisele\
+      \ tekstile: \n{{ ctx_a }} ?\nJah v\xF5i ei?\n||| \n{% if label  == instance\
+      \ | string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n\
+      {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -145,9 +145,9 @@ templates:
   def77598-682f-48de-b187-55db4d390f07: !Template
     answer_choices: "L\xF5pp 1 ||| L\xF5pp 2 ||| L\xF5pp 3 ||| L\xF5pp 4"
     id: def77598-682f-48de-b187-55db4d390f07
-    jinja: "Kui olukorra kirjeldus algab nii: {{ ctx }}... Then how\ndoes it continue?\
-      \ \n\nL\xF5pp 1: {{ endings[0] }}\n\nL\xF5pp 2: {{ endings[1] }}\n\nL\xF5pp\
-      \ 3: {{ endings[2] }}\n\nL\xF5pp 4: {{ endings[3] }}\n|||{{answer_choices[label\
+    jinja: "Kui olukorra kirjeldus algab j\xE4rgmiselt: {{ ctx }}... Then how\ndoes\
+      \ it continue? \n\nL\xF5pp 1: {{ endings[0] }}\n\nL\xF5pp 2: {{ endings[1] }}\n\
+      \nL\xF5pp 3: {{ endings[2] }}\n\nL\xF5pp 4: {{ endings[3] }}\n|||{{answer_choices[label\
       \ | int()] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

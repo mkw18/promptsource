@@ -17,9 +17,9 @@ templates:
   11e27d59-b1f5-43a1-9ccc-17f1c3249173: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 11e27d59-b1f5-43a1-9ccc-17f1c3249173
-    jinja: "F\xF8lgende dokument er blevet \xF8delagt. Fort\xE6l mig hvad \"{{\"@placeholder\"\
-      }}\" henviser til.\n\nDokument: {{ passage }} \n{{ query }} \n||| {% if ( answers\
-      \ | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
+    jinja: "F\xF8lgende dokument er blevet beskadiget. Fort\xE6l mig, hvad \"{{\"\
+      @placeholder\"}}\" henviser til.\n\nDokument: {{ passage }} \n{{ query }} \n\
+      ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -50,7 +50,7 @@ templates:
     id: 24c267d4-359e-40a9-83d2-bff904d63b09
     jinja: "Resum\xE9:\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\\n- \"\
       ) }} \n\nArtikel:\n\n{{ passage.split(\"@highlight\")[0] }}\n\nNu hvor du har\
-      \ l\xE6st artiklen, skal du skrive en ny s\xE6tning for at tilf\xF8je den.\n\
+      \ l\xE6st artiklen, bedes du skrive en ny s\xE6tning for at tilf\xF8je den.\n\
       \n||| {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\",\
       \ answers | choice) }} {% endif %}"
     metadata: !TemplateMetadata
@@ -63,7 +63,7 @@ templates:
   441c70e3-095a-44a1-8163-bc3b666b7ea1: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 441c70e3-095a-44a1-8163-bc3b666b7ea1
-    jinja: "{{ passage }} \n{{ query }} \n\nDu skal beslutte, hvad \"{{\"@placeholder\"\
+    jinja: "{{ passage }} \n{{ query }} \n\nDu b\xF8r beslutte, hvad \"{{\"@placeholder\"\
       }}\" henviser til. V\xE6lg mellem:\n- {{answer_choices | join(\"\\n- \")}}\n\
       ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -122,10 +122,10 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 94577b75-2eac-4eae-b367-3b413c4188c6
-    jinja: "N\xE5r du har l\xE6st artiklen, skal du skrive en anden s\xE6tning for\
-      \ at tilf\xF8je den.\n{{ passage | replace(\"@highlight\", \"\\n- \") }}\n\n\
-      ||| {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\", answers\
-      \ | choice) }}{% endif %}\n"
+    jinja: "Efter at have l\xE6st artiklen, skriv endnu en s\xE6tning for at tilf\xF8\
+      je til den.\n{{ passage | replace(\"@highlight\", \"\\n- \") }}\n\n||| {% if\
+      \ ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\", answers |\
+      \ choice) }}{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -138,10 +138,10 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 9579b54e-4f0f-4e43-8907-af57112cc857
-    jinja: "L\xE6s f\xF8lgende nyhedsartikel og skriv en anden s\xE6tning for at tilf\xF8\
-      je den.\n\n{{ passage | replace(\"@highlight\", \"\\n- \") }} \n ||| {% if (\
-      \ answers | length ) > 0 %}{{ query | replace(\"@placeholder\", answers | choice)\
-      \ }} {% endif %}\n"
+    jinja: "L\xE6s venligst f\xF8lgende nyhedsartikel og skriv endnu en s\xE6tning\
+      \ for at tilf\xF8je den.\n\n{{ passage | replace(\"@highlight\", \"\\n- \")\
+      \ }} \n ||| {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\"\
+      , answers | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -165,10 +165,10 @@ templates:
   9b688cf3-28bf-4f33-94cf-e73e4fa8c608: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: 9b688cf3-28bf-4f33-94cf-e73e4fa8c608
-    jinja: "{{ passage }}\n{{ query }}\n\nJeg pr\xF8ver at beslutte, hvad \"{{\"@placeholder\"\
-      }}\" betyder i den forrige tekst.\nHj\xE6lp ved at v\xE6lge en mulighed mellem:\n\
-      - {{ entities | join(\"\\n- \") }}\n||| {% if ( answers | length ) > 0 %}\n\
-      {{ answers | choice }}\n{% endif %}"
+    jinja: "{{ passage }}\n{{ query }}\n\nJeg pr\xF8ver at afg\xF8re, hvad \"{{\"\
+      @placeholder\"}}\" betyder i den forrige tekst.\nHj\xE6lp ved at v\xE6lge en\
+      \ mulighed mellem:\n- {{ entities | join(\"\\n- \") }}\n||| {% if ( answers\
+      \ | length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -194,7 +194,7 @@ templates:
       }}'
     id: a99a92e0-e1ee-4ec3-a38a-3be4303ba017
     jinja: "{{ passage.split(\"@highlight\")[0] }}\n\nH\xF8jdepunkter:\n\n- {{ passage.split(\"\
-      @highlight\")[1:] | join(\"\\n- \") }} \n\nSkriv et ekstra h\xF8jdepunkt.\n\
+      @highlight\")[1:] | join(\"\\n- \") }} \n\nSkriv venligst et ekstra h\xF8jdepunkt.\n\
       \ ||| {% if ( answers | length ) > 0 %}- {{ query | replace(\"@placeholder\"\
       , answers | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
@@ -230,7 +230,7 @@ templates:
   de5b635e-c2f4-40bb-81ac-650f1b45564b: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: de5b635e-c2f4-40bb-81ac-650f1b45564b
-    jinja: "{{ passage }}\n{{ query }}\n\nV\xE6lg en mulighed, \"{{\"@placeholder\"\
+    jinja: "{{ passage }}\n{{ query }}\n\nV\xE6lg \xE9n mulighed, \"{{\"@placeholder\"\
       }}\" henviser til:\n- {{answer_choices | join(\"\\n- \")}}\n||| {% if ( answers\
       \ | length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -274,9 +274,9 @@ templates:
   e68d13c5-df75-4de0-b59e-f2eaf4af6ce7: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: e68d13c5-df75-4de0-b59e-f2eaf4af6ce7
-    jinja: "{{ passage }} \n{{ query }} \nKan du finde ud af, hvad betyder \"{{\"\
-      @placeholder\"}}\"? Det betyder ||| {% if ( answers | length ) > 0 %}{{ answers\
-      \ | choice }}{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \nKan du finde ud af, hvad \"{{\"@placeholder\"\
+      }}\" betyder? Det betyder ||| {% if ( answers | length ) > 0 %}{{ answers |\
+      \ choice }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

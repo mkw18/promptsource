@@ -4,8 +4,8 @@ templates:
   2e76cd0f-68ca-4f03-83ed-11cf15b25a84: !Template
     answer_choices: Ja ||| Nein ||| Vielleicht
     id: 2e76cd0f-68ca-4f03-83ed-11cf15b25a84
-    jinja: "Vermuten {{premise}} K\xF6nnen wir schlie\xDFen, dass \"{{hypothesis}}\"\
-      ? Ja, nein oder vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label]\
+    jinja: "Vermuten {{premise}} K\xF6nnen wir daraus schlie\xDFen, dass \"{{hypothesis}}\"\
+      ? Ja, nein, oder vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label]\
       \ }}{% endif %} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -17,8 +17,8 @@ templates:
   358860fd-61ad-45fd-92a6-a72ca9107ebc: !Template
     answer_choices: Ja ||| Nein ||| Vielleicht
     id: 358860fd-61ad-45fd-92a6-a72ca9107ebc
-    jinja: '{{premise}} Stimmt es basierend auf der vorherigen Passage, dass "{{hypothesis}}"?
-      Ja, nein oder vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%
+    jinja: '{{premise}} Ist es basierend auf der vorherigen Passage wahr, dass "{{hypothesis}}"?
+      Ja, nein, oder vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%
       endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -30,9 +30,9 @@ templates:
   3f43a599-ffdb-490e-8952-c0ce41dd4621: !Template
     answer_choices: "WAHR ||| FALSCH ||| Nicht schl\xFCssig"
     id: 3f43a599-ffdb-490e-8952-c0ce41dd4621
-    jinja: '{{premise}} Basierend auf diesen Informationen ist der Anspruch: "{{hypothesis}}"
-      {{"Stimmt"}}, {{{"FALSCH"}} oder {{"Inconclusive"}}? ||| {% if label !=-1 %}{{
-      answer_choices[label] }}{% endif %}'
+    jinja: "{{premise}} Ist die Behauptung basierend auf diesen Informationen: \"\
+      {{hypothesis}}\" {{\"Stimmt\"}}, {{\"FALSCH\"}} oder {{\"nicht schl\xFCssig\"\
+      }}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -43,8 +43,9 @@ templates:
   404eed25-558a-4d39-9515-7de46d60d4e0: !Template
     answer_choices: Ja ||| Nein ||| Vielleicht
     id: 404eed25-558a-4d39-9515-7de46d60d4e0
-    jinja: Angesichts dessen {{premise}} Folgt es dem {{hypothesis}} Ja, nein oder
-      vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}
+    jinja: Angesichts dessen {{premise}} Folgt daraus, dass {{hypothesis}} Ja, nein,
+      oder vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif
+      %}
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -55,8 +56,8 @@ templates:
   5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260: !Template
     answer_choices: Ja ||| Nein ||| Vielleicht
     id: 5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260
-    jinja: '{{premise}} Sind wir gerechtfertigt zu sagen, dass "{{hypothesis}}"? Ja,
-      nein oder vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif
+    jinja: '{{premise}} Sind wir berechtigt zu sagen, dass "{{hypothesis}}"? Ja, nein,
+      oder vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif
       %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -68,8 +69,8 @@ templates:
   6b0c6191-183d-4731-8050-ab17c909335c: !Template
     answer_choices: Stets ||| Niemals ||| Manchmal
     id: 6b0c6191-183d-4731-8050-ab17c909335c
-    jinja: Angenommen, es ist wahr, dass {{premise}} Dann ist "{{hypothesis}}" {{{"immer"}},
-      {{"manchmal"}} oder {{"Never"}} true? ||| {% if label !=-1 %}{{ answer_choices[label]
+    jinja: Angenommen, das stimmt {{premise}} Ist dann "{{hypothesis}}" {{"immer"}},
+      {{"manchmal"}} oder {{"nie"}} wahr? ||| {% if label !=-1 %}{{ answer_choices[label]
       }}{% endif %}
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -83,8 +84,8 @@ templates:
     id: 75db2bc2-3caa-4956-9653-13c7dd6255df
     jinja: '{{premise}}
 
-      Frage: {{hypothesis}} Wahr, falsch oder auch nicht? ||| {% if label !=-1 %}{{
-      answer_choices[label] }}{% endif %}'
+      Frage: {{hypothesis}} Wahr, falsch oder keins von beidem? ||| {% if label !=-1
+      %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -96,9 +97,9 @@ templates:
   87237a07-7cce-470a-80ac-3e5e3a5283ba: !Template
     answer_choices: Stets ||| Niemals ||| Manchmal
     id: 87237a07-7cce-470a-80ac-3e5e3a5283ba
-    jinja: "{{premise}} \n\nBeachten Sie den obigen Text, betrachten Sie: {{hypothesis}}\
-      \ Ist das {{\"immer\"}}, {{{\"manchmal\"}} oder {{\"Never\"}} richtig? ||| {%\
-      \ if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} \n\nBeachten Sie den obigen Text und \xFCberlegen Sie: {{hypothesis}}\
+      \ Ist das {{\"immer\"}}, {{\"manchmal\"}} oder {{\"nie\"}} richtig? ||| {% if\
+      \ label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -109,9 +110,9 @@ templates:
   8798b8a4-1f59-4c72-9c1b-3e3044a7462a: !Template
     answer_choices: Ja ||| Nein ||| Vielleicht
     id: 8798b8a4-1f59-4c72-9c1b-3e3044a7462a
-    jinja: Gegeben {{premise}} Ist es garantiert, dass "{{hypothesis}}"? Ja, nein
-      oder vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif
-      %}
+    jinja: Gegeben {{premise}} Ist es garantiert wahr, dass "{{hypothesis}}"? Ja,
+      nein, oder vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%
+      endif %}
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -123,7 +124,7 @@ templates:
     answer_choices: Ja ||| Nein ||| Vielleicht
     id: 8e3b8d3d-1362-47dc-922a-82c03f965989
     jinja: Angesichts dessen {{premise}} Daher muss es wahr sein, dass "{{hypothesis}}"?
-      Ja, nein oder vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%
+      Ja, nein, oder vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%
       endif %}
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -135,9 +136,9 @@ templates:
   90ab1002-093c-4e54-b48f-626655e36b65: !Template
     answer_choices: "Garantiert ||| Unm\xF6glich ||| M\xF6glich"
     id: 90ab1002-093c-4e54-b48f-626655e36b65
-    jinja: "Angenommen, es ist wahr, dass {{premise}} \n\n\"{{hypothesis}}\" ist daher\
-      \ {{{\"garanted\"}}, {{{\"m\xF6glichen\"}} oder {{\"Imm\xF6glich\"}}? ||| {%\
-      \ if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "Gehe davon aus, dass das stimmt {{premise}} \n\nDaher ist \"{{hypothesis}}\"\
+      \ {{\"garantiert\"}}, {{\"m\xF6glich\"}} oder {{\"unm\xF6glich\"}}? ||| {% if\
+      \ label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -148,7 +149,7 @@ templates:
   a485d120-6eef-4ff6-8684-42df1639b101: !Template
     answer_choices: Ja ||| Nein ||| Vielleicht
     id: a485d120-6eef-4ff6-8684-42df1639b101
-    jinja: "{{premise}} \n\nFrage: Bedeutet dies, dass \"{{hypothesis}}\"? Ja, nein\
+    jinja: "{{premise}} \n\nFrage: Bedeutet dies, dass \"{{hypothesis}}\"? Ja, nein,\
       \ oder vielleicht? ||| {% if label !=-1 %}{{answer_choices[label]}}{% endif\
       \ %}"
     metadata: !TemplateMetadata
@@ -161,9 +162,10 @@ templates:
   bee62bfa-5307-4e1c-97b2-2ad2f7bcb179: !Template
     answer_choices: "Richtig ||| Falsch ||| Nicht schl\xFCssig"
     id: bee62bfa-5307-4e1c-97b2-2ad2f7bcb179
-    jinja: "{{premise}} Verwenden Sie nur die obige Beschreibung und was Sie \xFC\
-      ber die Welt wissen, \"{{hypothesis}}\" ist definitiv korrekt, falsch oder nicht\
-      \ schl\xFCssig? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} Wenn Sie nur die obige Beschreibung und das, was Sie \xFC\
+      ber die Welt wissen, verwenden, ist \"{{hypothesis}}\" definitiv richtig, falsch\
+      \ oder nicht schl\xFCssig? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -174,8 +176,8 @@ templates:
   e503b148-8e6c-43b5-9ed6-312794c54d9b: !Template
     answer_choices: Ja ||| Nein ||| Vielleicht
     id: e503b148-8e6c-43b5-9ed6-312794c54d9b
-    jinja: Gegeben {{premise}} Sollten wir annehmen, dass "{{hypothesis}}" wahr ist?
-      Ja, nein oder vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%
+    jinja: Gegeben {{premise}} Sollen wir annehmen, dass "{{hypothesis}}" wahr ist?
+      Ja, nein, oder vielleicht? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%
       endif %}
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -187,11 +189,9 @@ templates:
   ea56b7f3-6e07-45bc-b619-c527eac4a41b: !Template
     answer_choices: "WAHR ||| FALSCH ||| Nicht schl\xFCssig"
     id: ea56b7f3-6e07-45bc-b619-c527eac4a41b
-    jinja: 'Nehmen Sie die folgende als Wahrheit: {{premise}}
-
-      Dann die folgende Aussage: "{{hypothesis}}" ist {{{"Stimmt"}}, {{"FALSCH"}}
-      oder {{{"Inconclusive"}}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%
-      endif %}'
+    jinja: "Nimm folgendes als Wahrheit: {{premise}}\nDann folgende Aussage: \"{{hypothesis}}\"\
+      \ ist {{\"Stimmt\"}}, {{\"FALSCH\"}} oder {{\"nicht schl\xFCssig\"}}? ||| {%\
+      \ if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

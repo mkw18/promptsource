@@ -7,8 +7,8 @@ templates:
     jinja: 'Pertanyaan: {{question}}
 
 
-      Jangan gunakan {{"a"}} dan {{"b"}} untuk menjawab pertanyaan tetapi sebaliknya,
-      pilih antara "{{answer_choices[0]}}" dan "{{answer_choices[1]}}".
+      Jangan gunakan {{"A"}} dan {{"B"}} untuk menjawab pertanyaan, tetapi pilih antara
+      "{{answer_choices[0]}}" dan "{{answer_choices[1]}}".
 
       |||
 
@@ -41,10 +41,10 @@ templates:
   63c58389-605a-42b9-85a6-a2586a954a92: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 63c58389-605a-42b9-85a6-a2586a954a92
-    jinja: 'Ini cerita pendek: {{question}}.
+    jinja: 'Berikut cerita singkatnya: {{question}}.
 
 
-      Apa jawaban yang paling sensikal antara "{{answer_choices[0]}}" dan "{{answer_choices[1]}}"?
+      Apa jawaban paling masuk akal antara "{{answer_choices[0]}}" dan "{{answer_choices[1]}}"?
 
       |||
 
@@ -80,7 +80,7 @@ templates:
 
       Apa jawaban yang harus mereka pilih antara "{{answer_choices[0]}}" dan "{{answer_choices[1]}}"?
 
-      Tes Logika: {{question}}
+      Tes logika: {{question}}
 
       |||
 

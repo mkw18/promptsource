@@ -50,8 +50,8 @@ templates:
     jinja: 'Huiswerk
 
 
-      Bepaal of het woord "{{word}}" met dezelfde betekenis wordt gebruikt in de twee
-      volgende zinnen. Antwoord door ja of nee.
+      Bepaal of het woord "{{word}}" in de twee volgende zinnen met dezelfde betekenis
+      wordt gebruikt. Antwoord met ja of nee.
 
       {{sentence1}}
 
@@ -70,9 +70,9 @@ templates:
     name: grammar_homework
     reference: ''
   725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
-    answer_choices: Vals ||| WAAR
+    answer_choices: niet waar ||| WAAR
     id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
-    jinja: 'Zin a: {{sentence1}}
+    jinja: 'Zin A: {{sentence1}}
 
       Zin B: {{sentence2}}
 
@@ -117,12 +117,12 @@ templates:
   ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
     answer_choices: Nee ||| Ja
     id: ce8b5a93-1841-4897-84db-b100f1c84f4b
-    jinja: 'Zin 1: {{sentence1}}
+    jinja: 'zin 1: {{sentence1}}
 
-      Zin 2: {{sentence2}}
+      zin 2: {{sentence2}}
 
 
-      Bepaal of het woord "{{word}}" in dezelfde zin in beide zinnen wordt gebruikt.
+      Bepaal of het woord "{{word}}" in beide zinnen in dezelfde zin wordt gebruikt.
       Ja of nee?
 
       ||| {% if label != -1%}
@@ -141,8 +141,8 @@ templates:
     answer_choices: Nee ||| Ja
     id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
     jinja: "Bepaal of het woord '{{word}}' op dezelfde manier wordt gebruikt in de\
-      \ onderstaande zinnen. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n\
-      {{answer_choices[label]}}\n{% endif %}"
+      \ twee onderstaande zinnen. \n{{sentence1}}\n{{sentence2}}\n||| {% if label\
+      \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -177,12 +177,12 @@ templates:
     answer_choices: Nee ||| Ja
     id: dd2080cf-3117-49ba-9aff-c988a21fdb69
     jinja: 'Het woord "{{word}}" heeft meerdere betekenissen. Heeft het dezelfde betekenis
-      in zinnen 1 en 2? Ja of nee?
+      in zin 1 en 2? Ja of nee?
 
 
-      Zin 1: {{sentence1}}
+      zin 1: {{sentence1}}
 
-      Zin 2: {{sentence2}}
+      zin 2: {{sentence2}}
 
       ||| {% if label != -1%}
 
@@ -203,7 +203,7 @@ templates:
 
       {{sentence2}}
 
-      Vergelijkbaar gevoel van {{word}}?
+      Soortgelijke betekenis van {{word}}?
 
       ||| {% if label != -1%}
 

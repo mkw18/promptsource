@@ -4,8 +4,8 @@ templates:
   212fb8b1-8436-4f64-8f37-a9094fe029f4: !Template
     answer_choices: Nee ||| Ja
     id: 212fb8b1-8436-4f64-8f37-a9094fe029f4
-    jinja: '{{ text }} In de vorige zin, verwijst het voornaamwoord "{{ span2_text.lower()
-      }}" naar {{ span1_text }}? Ja of nee? ||| {% if label != -1 %}{{ answer_choices[label]
+    jinja: '{{ text }} Verwijst het voornaamwoord "{{ span2_text.lower() }}" in de
+      vorige zin naar {{ span1_text }}? Ja of nee? ||| {% if label != -1 %}{{ answer_choices[label]
       }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -17,7 +17,7 @@ templates:
   23361c5d-b67f-4c2a-9da7-16301c55d0e1: !Template
     answer_choices: Nee ||| Ja
     id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
-    jinja: '{{ text }} Hier, met "{{ span2_text }}", betekenen ze "{{ span1_text }}".
+    jinja: '{{ text }} Hier bedoelen ze met "{{ span2_text }}" "{{ span1_text }}".
       Ja of nee? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -27,7 +27,7 @@ templates:
     name: by p they mean
     reference: ''
   2f17f18b-6daa-44ef-a2dd-dddaf04aec0e: !Template
-    answer_choices: Vals ||| WAAR
+    answer_choices: niet waar ||| WAAR
     id: 2f17f18b-6daa-44ef-a2dd-dddaf04aec0e
     jinja: "{{ text }} \n\nMet andere woorden, {{ text.split(\" \")[span2_index:]\
       \ | join(\" \") | replace(span2_text, span1_text) }} Waar of niet waar? |||\
@@ -42,7 +42,7 @@ templates:
   4b3e29cc-ccb8-4e4c-a845-4935ca29cf34: !Template
     answer_choices: Nee ||| Ja
     id: 4b3e29cc-ccb8-4e4c-a845-4935ca29cf34
-    jinja: '{{ text }} Ik denk dat ze bedoelen "{{ text.split(" ")[span2_index:] |
+    jinja: '{{ text }} ik denk dat ze bedoelen "{{ text.split(" ")[span2_index:] |
       join(" ") | replace(span2_text, span1_text) }}" Ja of nee? ||| {% if label !=
       -1 %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
@@ -55,7 +55,7 @@ templates:
   7482d24f-cf45-4013-b82d-369489fc958b: !Template
     answer_choices: Nee ||| Ja
     id: 7482d24f-cf45-4013-b82d-369489fc958b
-    jinja: '{{ text }} Hier, staat "{{ span2_text.lower() }}" voor {{ span1_text }}?
+    jinja: '{{ text }} Staat "{{ span2_text.lower() }}" hier voor {{ span1_text }}?
       Ja of nee? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -67,8 +67,8 @@ templates:
   7d377293-d043-4b6c-8ec1-d61eaf14ec67: !Template
     answer_choices: Nee ||| Ja
     id: 7d377293-d043-4b6c-8ec1-d61eaf14ec67
-    jinja: "Passage: {{ text }} \n\nVraag: In de bovenstaande passage verwijst het\
-      \ voornaamwoord \"{{ span2_text }}\" naar {{ span1_text }}?\n\nAntwoorden: |||\
+    jinja: "Passage: {{ text }} \n\nVraag: Verwijst het voornaamwoord \"{{ span2_text\
+      \ }}\" in de bovenstaande passage naar {{ span1_text }}?\n\nAntwoorden: |||\
       \ {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -80,7 +80,7 @@ templates:
   809eacd0-2f6c-4e3a-b52a-57c783879d36: !Template
     answer_choices: Nee ||| Ja
     id: 809eacd0-2f6c-4e3a-b52a-57c783879d36
-    jinja: '{{ text }} Kan het voornaamwoord "{{ span2_text }}" in de vorige zin worden
+    jinja: '{{ text }} Kan in de vorige zin het voornaamwoord "{{ span2_text }}" worden
       vervangen door "{{ span1_text }}"? Ja of nee? ||| {% if label != -1 %}{{ answer_choices[label]
       }}{% endif %}'
     metadata: !TemplateMetadata
@@ -91,7 +91,7 @@ templates:
     name: replaced with
     reference: ''
   87f97aa0-1fa9-4f0b-b8e6-89d3c1f19bd6: !Template
-    answer_choices: Vals ||| WAAR
+    answer_choices: niet waar ||| WAAR
     id: 87f97aa0-1fa9-4f0b-b8e6-89d3c1f19bd6
     jinja: "Context: {{ text }} \n\n{% if span2_text.lower()  == \"they\" or span2_text.lower()\
       \ == \"them\" %}\nQuestion: \"{{ span2_text }}\" zijn {{ span1_text }}. Waar\
@@ -106,7 +106,7 @@ templates:
     name: p is/are r
     reference: ''
   aae24b54-c3a7-4f69-8b77-f6dc115988f8: !Template
-    answer_choices: Vals ||| WAAR
+    answer_choices: niet waar ||| WAAR
     id: aae24b54-c3a7-4f69-8b77-f6dc115988f8
     jinja: "{{ text }} \nIn de bovenstaande passage verwijst het voornaamwoord \"\
       {{ span2_text }}\" naar {{ span1_text }}. Waar of niet waar? ||| {% if label\
@@ -122,8 +122,8 @@ templates:
     answer_choices: Nee ||| Ja
     id: d88f3e21-42dc-49a5-924d-69b764a14816
     jinja: "{{ text }} \n{% if span2_text.lower()  == \"they\" or span2_text.lower()\
-      \ == \"them\" %}\nVraag: Wie of wat zijn \"{{ span2_text.lower() }}\"? {{ span1_text\
-      \ }}?\n{% else %}\nVraag: Wie of wat is \"{{ span2_text.lower() }}\"? Is het\
+      \ == \"them\" %}\nVraag: Wie of wat zijn? \"{{ span2_text.lower() }}\"? {{ span1_text\
+      \ }}?\n{% else %}\nVraag: Wie of wat is? \"{{ span2_text.lower() }}\"? Is het\
       \ een}}?\n{% endif %}\nAntwoorden: ||| {% if label != -1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata

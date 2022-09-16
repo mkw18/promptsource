@@ -7,8 +7,8 @@ templates:
       m"
     id: 21d04668-c5b3-4418-bbb6-663f1ffdb97c
     jinja: "Th\u1EC3 lo\u1EA1i: {{', '.join(answer_choices)}}\n\nDanh m\u1EE5c n\xE0\
-      o m\xF4 t\u1EA3 \u0111\xFAng nh\u1EA5t: {{text}} \nC\xE2u tr\u1EA3 l\u1EDDi:\
-      \ ||| {{ answer_choices [label_coarse] }}"
+      o m\xF4 t\u1EA3 t\u1ED1t nh\u1EA5t: {{text}} \nC\xE2u tr\u1EA3 l\u1EDDi: |||\
+      \ {{ answer_choices [label_coarse] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -18,10 +18,10 @@ templates:
     reference: ''
   2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6: !Template
     answer_choices: "th\xE0nh ph\u1ED1 ||| qu\u1ED1c gia ||| n\xFAi ||| ti\u1EC3u\
-      \ bang ||| V\u1ECB tr\xED kh\xE1c"
+      \ bang ||| v\u1ECB tr\xED kh\xE1c"
     id: 2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6
     jinja: "{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}\n{% if label_coarse\
-      \ == 5 %}\nC\xE2u h\u1ECFi n\xE0y c\xF3 h\u1ECFi {{', '.join(answer_choices)}}\
+      \ == 5 %}\nC\xE2u h\u1ECFi n\xE0y c\xF3 y\xEAu c\u1EA7u cho {{', '.join(answer_choices)}}\
       \ kh\xF4ng?\n{{text}}\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -34,14 +34,15 @@ templates:
   309bf243-2185-4090-ac66-a24f44d89966: !Template
     answer_choices: "m\xE3 s\u1ED1 ||| \u0111\u1EBFm ||| ng\xE0y ||| kho\u1EA3ng c\xE1\
       ch ||| gi\xE1 b\xE1n ||| g\u1ECDi m\xF3n ||| kho\u1EA3ng th\u1EDDi gian |||\
-      \ T\u1EF7 l\u1EC7 ph\u1EA7n tr\u0103m ||| t\u1ED1c \u0111\u1ED9, v\u1EADn t\u1ED1\
+      \ t\u1EF7 l\u1EC7 ph\u1EA7n tr\u0103m ||| t\u1ED1c \u0111\u1ED9, v\u1EADn t\u1ED1\
       c ||| nhi\u1EC7t \u0111\u1ED9 ||| k\xEDch th\u01B0\u1EDBc ||| tr\u1ECDng l\u01B0\
       \u1EE3ng ||| s\u1ED1 kh\xE1c"
     id: 309bf243-2185-4090-ac66-a24f44d89966
     jinja: "{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,\
       \ 35:8, 41:9, 32:10, 45:11, 14:12} %}\n{% if label_coarse == 4 %}\n{{text}}\n\
-      \nC\xE2u h\u1ECFi n\xE0y c\xF3 h\u1ECFi {{', '.join(answer_choices)}} kh\xF4\
-      ng?\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
+      \nC\xE2u h\u1ECFi n\xE0y c\xF3 y\xEAu c\u1EA7u cho {{', '.join(answer_choices)}}\
+      \ kh\xF4ng?\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -51,19 +52,19 @@ templates:
     reference: Fine grained labels with coarse-label `NUM`, context provided first
   3aff84f3-e478-4598-abe8-40aa24cec1fa: !Template
     answer_choices: "m\u1ED9t con v\u1EADt ||| m\u1ED9t c\u01A1 quan c\u1EE7a c\u01A1\
-      \ th\u1EC3 ||| m\u1ED9t m\xE0u ||| S\xE1ng t\u1EA1o ||| ti\u1EC1n t\u1EC7 |||\
-      \ b\u1EC7nh t\u1EADt ho\u1EB7c thu\u1ED1c ||| S\u1EF1 ki\u1EC7n ||| m\xF3n \u0103\
-      n ||| nh\u1EA1c c\u1EE5 ||| ng\xF4n ng\u1EEF ||| b\u1EE9c th\u01B0 ||| th\u1EF1\
-      c v\u1EADt ||| s\u1EA3n ph\u1EA9m ||| t\xF4n gi\xE1o ||| th\u1EC3 thao ||| v\u1EAD\
-      t ch\u1EA5t ||| Bi\u1EC3u t\u01B0\u1EE3ng ||| k\u0129 thu\u1EADt ||| k\u1EF3\
-      \ h\u1EA1n ||| ph\u01B0\u01A1ng ti\u1EC7n giao th\xF4ng ||| t\u1EEB ||| th\u1EF1\
-      c th\u1EC3 kh\xE1c"
+      \ th\u1EC3 ||| m\u1ED9t m\xE0u ||| m\u1EA3nh s\xE1ng t\u1EA1o ||| ti\u1EC1n\
+      \ t\u1EC7 ||| b\u1EC7nh t\u1EADt ho\u1EB7c thu\u1ED1c men ||| S\u1EF1 ki\u1EC7\
+      n ||| m\xF3n \u0103n ||| nh\u1EA1c c\u1EE5 ||| ng\xF4n ng\u1EEF ||| b\u1EE9\
+      c th\u01B0 ||| th\u1EF1c v\u1EADt ||| s\u1EA3n ph\u1EA9m ||| t\xF4n gi\xE1o\
+      \ ||| th\u1EC3 thao ||| v\u1EADt ch\u1EA5t ||| Bi\u1EC3u t\u01B0\u1EE3ng |||\
+      \ k\u0129 thu\u1EADt ||| k\u1EF3 h\u1EA1n ||| ph\u01B0\u01A1ng ti\u1EC7n giao\
+      \ th\xF4ng ||| t\u1EEB ||| th\u1EF1c th\u1EC3 kh\xE1c"
     id: 3aff84f3-e478-4598-abe8-40aa24cec1fa
     jinja: "{% set label_mapping = {2:0, 22:1, 19:2, 1:3, 46:3, 23:4, 10:5, 17:6,\
       \ 33:7, 37:8, 15:9, 30:10, 26:11, 16:12, 28:13, 42:14, 31:15, 20:16, 44:17,\
       \ 36:18, 14:19} %}\n{% if label_coarse == 1 %}\nC\xE2u h\u1ECFi n\xE0y c\xF3\
-      \ h\u1ECFi {{', '.join(answer_choices)}} kh\xF4ng?\n{{text}}\n|||\n{{ answer_choices\
-      \ [label_mapping[label_fine]] }}\n{% endif %}"
+      \ y\xEAu c\u1EA7u cho {{', '.join(answer_choices)}} kh\xF4ng?\n{{text}}\n|||\n\
+      {{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -74,14 +75,14 @@ templates:
   43a188a2-b6dd-46a7-af2e-81a64b90b92a: !Template
     answer_choices: "m\xE3 s\u1ED1 ||| \u0111\u1EBFm ||| ng\xE0y ||| kho\u1EA3ng c\xE1\
       ch ||| gi\xE1 b\xE1n ||| g\u1ECDi m\xF3n ||| kho\u1EA3ng th\u1EDDi gian |||\
-      \ T\u1EF7 l\u1EC7 ph\u1EA7n tr\u0103m ||| t\u1ED1c \u0111\u1ED9, v\u1EADn t\u1ED1\
+      \ t\u1EF7 l\u1EC7 ph\u1EA7n tr\u0103m ||| t\u1ED1c \u0111\u1ED9, v\u1EADn t\u1ED1\
       c ||| nhi\u1EC7t \u0111\u1ED9 ||| k\xEDch th\u01B0\u1EDBc ||| tr\u1ECDng l\u01B0\
       \u1EE3ng ||| s\u1ED1 kh\xE1c"
     id: 43a188a2-b6dd-46a7-af2e-81a64b90b92a
     jinja: "{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,\
       \ 35:8, 41:9, 32:10, 45:11, 14:12} %}\n{% if label_coarse == 4 %}\nC\xE2u h\u1ECF\
-      i n\xE0y c\xF3 h\u1ECFi {{', '.join(answer_choices)}} kh\xF4ng?\n{{text}}\n\
-      |||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
+      i n\xE0y c\xF3 y\xEAu c\u1EA7u cho {{', '.join(answer_choices)}} kh\xF4ng?\n\
+      {{text}}\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -94,8 +95,8 @@ templates:
       t ||| Ng\u01B0\u1EDDi ||| S\u1ED1 l\u01B0\u1EE3ng ||| \u0110\u1ECBa \u0111i\u1EC3\
       m"
     id: 6c391f4f-027b-4425-88de-1dbb6aa706ee
-    jinja: "C\xE2u h\u1ECFi: {{text}}\n\nM\xF4 t\u1EA3: {{', '.join(answer_choices)}}\n\
-      \nM\xF4 t\u1EA3 t\u1ED1t nh\u1EA5t?\n|||\n{{answer_choices[label_coarse]}}"
+    jinja: "C\xE2u h\u1ECFi: {{text}}\n\nNg\u01B0\u1EDDi m\xF4 t\u1EA3: {{', '.join(answer_choices)}}\n\
+      \nNg\u01B0\u1EDDi m\xF4 t\u1EA3 t\u1ED1t nh\u1EA5t?\n|||\n{{answer_choices[label_coarse]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -104,25 +105,25 @@ templates:
     name: pick_the_best_descriptor
     reference: ''
   71090d59-dd02-4cbd-8032-ad86179b9bd4: !Template
-    answer_choices: "Th\xE1i \u0111\u1ED9 ||| S\xE1ng t\u1EA1o ||| \u0110\u1ED9ng\
-      \ v\u1EADt ||| Bi\u1EC3u hi\u1EC7n vi\u1EBFt t\u1EAFt ||| Ri\xEAng bi\u1EC7\
-      t, c\xE1 nh\xE2n, c\xE1 th\u1EC3 ||| T\u1EADp \u0111o\xE0n ||| Ti\xEAu \u0111\
-      \u1EC1 ||| \u0110\u1ECBnh ngh\u0129a ||| Ng\xE0y ||| L\xFD do ||| Bi\u1EBFn\
-      \ c\u1ED1 ||| Ti\u1EC3u bang ||| S\u1EF1 m\xF4 t\u1EA3 ||| \u0110\u1EBFm |||\
-      \ Kh\xE1c ||| B\u1EE9c th\u01B0 ||| T\xF4n gi\xE1o ||| M\xF3n \u0103n ||| \u0110\
-      \u1EBFmry ||| M\xE0u s\u1EAFc ||| K\u1EF3 h\u1EA1n ||| Th\xE0nh ph\u1ED1 |||\
-      \ C\u01A1 quan c\u1EE7a c\u01A1 th\u1EC3 ||| B\u1EC7nh t\u1EADt ho\u1EB7c thu\u1ED1\
-      c ||| N\xFAi ||| Gi\xE1 b\xE1n ||| S\u1EA3n ph\u1EA9m ||| Giai \u0111o\u1EA1\
-      n = Stage ||| V\u1EADt ch\u1EA5t ||| Th\u1EC3 thao ||| Th\u1EF1c v\u1EADt |||\
-      \ K\u0129 thu\u1EADt ||| K\xEDch th\u01B0\u1EDBc ||| D\u1EE5ng c\u1EE5 ||| Vi\u1EBF\
-      t t\u1EAFt ||| T\u1ED1c \u0111\u1ED9, v\u1EADn t\u1ED1c ||| T\u1EEB ||| Ng\xF4\
-      n ng\u1EEF ||| T\u1EF7 l\u1EC7 ph\u1EA7n tr\u0103m ||| M\xE3 s\u1ED1 ||| Kho\u1EA3\
-      ng c\xE1ch ||| Nhi\u1EC7t \u0111\u1ED9 ||| Bi\u1EC3u t\u01B0\u1EE3ng ||| G\u1ECD\
-      i m\xF3n ||| Ph\u01B0\u01A1ng ti\u1EC7n giao th\xF4ng ||| Tr\u1ECDng l\u01B0\
-      \u1EE3ng ||| Ti\u1EC1n t\u1EC7"
+    answer_choices: "Th\xE1i \u0111\u1ED9 ||| M\u1EA3nh s\xE1ng t\u1EA1o ||| \u0110\
+      \u1ED9ng v\u1EADt ||| Bi\u1EC3u th\u1EE9c \u0111\u01B0\u1EE3c vi\u1EBFt t\u1EAF\
+      t ||| Ri\xEAng bi\u1EC7t, c\xE1 nh\xE2n, c\xE1 th\u1EC3 ||| T\u1EADp \u0111\
+      o\xE0n ||| Ti\xEAu \u0111\u1EC1 ||| \u0110\u1ECBnh ngh\u0129a ||| Ng\xE0y |||\
+      \ L\xFD do ||| Bi\u1EBFn c\u1ED1 ||| Ti\u1EC3u bang ||| S\u1EF1 m\xF4 t\u1EA3\
+      \ ||| \u0110\u1EBFm ||| Kh\xE1c ||| B\u1EE9c th\u01B0 ||| T\xF4n gi\xE1o |||\
+      \ M\xF3n \u0103n ||| \u0110\u1EBFmry ||| M\xE0u s\u1EAFc ||| K\u1EF3 h\u1EA1\
+      n ||| Th\xE0nh ph\u1ED1 ||| C\u01A1 quan c\u1EE7a c\u01A1 th\u1EC3 ||| B\u1EC7\
+      nh t\u1EADt ho\u1EB7c thu\u1ED1c men ||| N\xFAi ||| Gi\xE1 b\xE1n ||| S\u1EA3\
+      n ph\u1EA9m ||| Giai \u0111o\u1EA1n = Stage ||| V\u1EADt ch\u1EA5t ||| Th\u1EC3\
+      \ thao ||| Th\u1EF1c v\u1EADt ||| K\u0129 thu\u1EADt ||| K\xEDch th\u01B0\u1EDB\
+      c ||| D\u1EE5ng c\u1EE5 ||| Vi\u1EBFt t\u1EAFt ||| T\u1ED1c \u0111\u1ED9, v\u1EAD\
+      n t\u1ED1c ||| T\u1EEB ||| Ng\xF4n ng\u1EEF ||| Ph\u1EA7n tr\u0103m ||| M\xE3\
+      \ s\u1ED1 ||| Kho\u1EA3ng c\xE1ch ||| Nhi\u1EC7t \u0111\u1ED9 ||| Bi\u1EC3u\
+      \ t\u01B0\u1EE3ng ||| G\u1ECDi m\xF3n ||| Ph\u01B0\u01A1ng ti\u1EC7n giao th\xF4\
+      ng ||| Tr\u1ECDng l\u01B0\u1EE3ng ||| Ti\u1EC1n t\u1EC7"
     id: 71090d59-dd02-4cbd-8032-ad86179b9bd4
-    jinja: "{{text}}\n\nC\xE2u h\u1ECFi n\xE0y y\xEAu c\u1EA7u g\xEC?\n|||\n{{answer_choices[label_fine]\
-      \ }}"
+    jinja: "{{text}}\n\nC\xE2u h\u1ECFi n\xE0y y\xEAu c\u1EA7u \u0111i\u1EC1u g\xEC\
+      ?\n|||\n{{answer_choices[label_fine] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -132,12 +133,12 @@ templates:
     reference: Fine grained classes without providing choices, context first.
   736b2629-ed57-48ce-a458-4cbc435c499b: !Template
     answer_choices: "th\xE0nh ph\u1ED1 ||| qu\u1ED1c gia ||| n\xFAi ||| ti\u1EC3u\
-      \ bang ||| V\u1ECB tr\xED kh\xE1c"
+      \ bang ||| v\u1ECB tr\xED kh\xE1c"
     id: 736b2629-ed57-48ce-a458-4cbc435c499b
     jinja: "{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}\n{% if label_coarse\
-      \ == 5 %}\n{{text}}\n\nC\xE2u h\u1ECFi n\xE0y c\xF3 h\u1ECFi {{', '.join(answer_choices)}}\
-      \ kh\xF4ng?\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif\
-      \ %}"
+      \ == 5 %}\n{{text}}\n\nC\xE2u h\u1ECFi n\xE0y c\xF3 y\xEAu c\u1EA7u cho {{',\
+      \ '.join(answer_choices)}} kh\xF4ng?\n|||\n{{ answer_choices [label_mapping[label_fine]]\
+      \ }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -162,10 +163,10 @@ templates:
     reference: ''
   7a9e6f3c-1dee-45b0-a315-1badaf59a7b8: !Template
     answer_choices: "\u0110\u1ECBnh ngh\u0129a ||| s\u1EF1 m\xF4 t\u1EA3 ||| c\xE1\
-      ch th\u1EE9c h\xE0nh \u0111\u1ED9ng ||| l\xFD do"
+      ch h\xE0nh \u0111\u1ED9ng ||| l\xFD do"
     id: 7a9e6f3c-1dee-45b0-a315-1badaf59a7b8
     jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
-      \ 0 %}\nC\xE2u h\u1ECFi n\xE0y c\xF3 h\u1ECFi {{', '.join(answer_choices)}}\
+      \ 0 %}\nC\xE2u h\u1ECFi n\xE0y c\xF3 y\xEAu c\u1EA7u cho {{', '.join(answer_choices)}}\
       \ kh\xF4ng?\n{{text}}\n|||\n{{ answer_choices[label_mapping[label_fine]] }}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -196,11 +197,12 @@ templates:
     name: trec1
     reference: Context then prompt
   93a06e72-2c15-4f8a-a46c-6a10919c4ea4: !Template
-    answer_choices: "Vi\u1EBFt t\u1EAFt ||| Bi\u1EC3u hi\u1EC7n vi\u1EBFt t\u1EAFt"
+    answer_choices: "vi\u1EBFt t\u1EAFt ||| bi\u1EC3u th\u1EE9c vi\u1EBFt t\u1EAFt"
     id: 93a06e72-2c15-4f8a-a46c-6a10919c4ea4
-    jinja: "{% set label_mapping={34:0, 3:1} %} \n{% if label_coarse == 2 %}\nC\xF3\
-      \ ph\u1EA3i c\xE2u h\u1ECFi n\xE0y \u0111ang h\u1ECFi {{', '.join(answer_choices)}}?\n\
-      {{text}}\n|||\n{{answer_choices[label_mapping[label_fine]] }}\n{% endif %}"
+    jinja: "{% set label_mapping={34:0, 3:1} %} \n{% if label_coarse == 2 %}\nC\xE2\
+      u h\u1ECFi n\xE0y c\xF3 y\xEAu c\u1EA7u m\u1ED9t {{', '.join(answer_choices)}}\
+      \ kh\xF4ng?\n{{text}}\n|||\n{{answer_choices[label_mapping[label_fine]] }}\n\
+      {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -209,11 +211,12 @@ templates:
     name: fine_grained_ABBR
     reference: Fine grained labels with coarse-label `ABBR`, context after question
   a0096044-3b4c-4c80-b139-25eac8fe692a: !Template
-    answer_choices: "Vi\u1EBFt t\u1EAFt ||| Bi\u1EC3u hi\u1EC7n vi\u1EBFt t\u1EAFt"
+    answer_choices: "vi\u1EBFt t\u1EAFt ||| bi\u1EC3u th\u1EE9c vi\u1EBFt t\u1EAFt"
     id: a0096044-3b4c-4c80-b139-25eac8fe692a
     jinja: "{% set label_mapping = {34:0, 3:1} %} \n{% if label_coarse == 2 %}\n{{text}}\n\
-      \nC\xF3 ph\u1EA3i c\xE2u h\u1ECFi n\xE0y \u0111ang h\u1ECFi {{', '.join(answer_choices)}}?\n\
-      |||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
+      \nC\xE2u h\u1ECFi n\xE0y c\xF3 y\xEAu c\u1EA7u m\u1ED9t {{', '.join(answer_choices)}}\
+      \ kh\xF4ng?\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -226,7 +229,7 @@ templates:
       t ||| Ng\u01B0\u1EDDi ||| S\u1ED1 l\u01B0\u1EE3ng ||| \u0110\u1ECBa \u0111i\u1EC3\
       m"
     id: aad2def1-b694-40ee-9c26-3d1cf5c577da
-    jinja: "C\xE2u h\u1ECFi sau \u0111\xE2y c\xF3 h\u1ECFi v\u1EC1 {{', '.join(answer_choices)}}\
+    jinja: "C\xE2u h\u1ECFi sau c\xF3 h\u1ECFi v\u1EC1 {{', '.join(answer_choices)}}\
       \ kh\xF4ng?\n\n{{text}}\n|||\n{{ answer_choices [label_coarse] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -240,7 +243,7 @@ templates:
       \ c\xE1 th\u1EC3 ||| Ti\xEAu \u0111\u1EC1 ||| s\u1EF1 m\xF4 t\u1EA3"
     id: bc58ba18-24a5-4553-be0a-2dba60efdad6
     jinja: "{% set label_mapping = {5:0, 4:1, 6:2, 12:3} %}\n{% if label_coarse ==\
-      \ 3 %}\nC\xE2u h\u1ECFi n\xE0y c\xF3 h\u1ECFi {{', '.join(answer_choices)}}\
+      \ 3 %}\nC\xE2u h\u1ECFi n\xE0y c\xF3 y\xEAu c\u1EA7u cho {{', '.join(answer_choices)}}\
       \ kh\xF4ng?\n{{text}}\n|||\n{{ answer_choices[label_mapping[label_fine]] }}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -251,24 +254,25 @@ templates:
     name: fine_grained_HUM
     reference: Fine grained labels with coarse-label `HUM`, context after question
   cfa8fde0-8320-4050-8d6e-7619ab14adea: !Template
-    answer_choices: "Th\xE1i \u0111\u1ED9 ||| S\xE1ng t\u1EA1o ||| \u0110\u1ED9ng\
-      \ v\u1EADt ||| Bi\u1EC3u hi\u1EC7n vi\u1EBFt t\u1EAFt ||| Ri\xEAng bi\u1EC7\
-      t, c\xE1 nh\xE2n, c\xE1 th\u1EC3 ||| T\u1EADp \u0111o\xE0n ||| Ti\xEAu \u0111\
-      \u1EC1 ||| \u0110\u1ECBnh ngh\u0129a ||| Ng\xE0y ||| L\xFD do ||| Bi\u1EBFn\
-      \ c\u1ED1 ||| Ti\u1EC3u bang ||| S\u1EF1 m\xF4 t\u1EA3 ||| \u0110\u1EBFm |||\
-      \ Kh\xE1c ||| B\u1EE9c th\u01B0 ||| T\xF4n gi\xE1o ||| M\xF3n \u0103n ||| \u0110\
-      \u1EBFmry ||| M\xE0u s\u1EAFc ||| K\u1EF3 h\u1EA1n ||| Th\xE0nh ph\u1ED1 |||\
-      \ C\u01A1 quan c\u1EE7a c\u01A1 th\u1EC3 ||| B\u1EC7nh t\u1EADt ho\u1EB7c thu\u1ED1\
-      c ||| N\xFAi ||| Gi\xE1 b\xE1n ||| S\u1EA3n ph\u1EA9m ||| Period ||| V\u1EAD\
-      t ch\u1EA5t ||| Th\u1EC3 thao ||| Th\u1EF1c v\u1EADt ||| K\u0129 thu\u1EADt\
-      \ ||| Size ||| Instrument ||| Vi\u1EBFt t\u1EAFt ||| T\u1ED1c \u0111\u1ED9,\
-      \ v\u1EADn t\u1ED1c ||| T\u1EEB ||| Ng\xF4n ng\u1EEF ||| T\u1EF7 l\u1EC7 ph\u1EA7\
-      n tr\u0103m ||| Code ||| Kho\u1EA3ng c\xE1ch ||| Nhi\u1EC7t \u0111\u1ED9 |||\
-      \ Bi\u1EC3u t\u01B0\u1EE3ng ||| G\u1ECDi m\xF3n ||| Ph\u01B0\u01A1ng ti\u1EC7\
-      n giao th\xF4ng ||| Tr\u1ECDng l\u01B0\u1EE3ng ||| Currency"
+    answer_choices: "Th\xE1i \u0111\u1ED9 ||| M\u1EA3nh s\xE1ng t\u1EA1o ||| \u0110\
+      \u1ED9ng v\u1EADt ||| Bi\u1EC3u th\u1EE9c \u0111\u01B0\u1EE3c vi\u1EBFt t\u1EAF\
+      t ||| Ri\xEAng bi\u1EC7t, c\xE1 nh\xE2n, c\xE1 th\u1EC3 ||| T\u1EADp \u0111\
+      o\xE0n ||| Ti\xEAu \u0111\u1EC1 ||| \u0110\u1ECBnh ngh\u0129a ||| Ng\xE0y |||\
+      \ L\xFD do ||| Bi\u1EBFn c\u1ED1 ||| Ti\u1EC3u bang ||| S\u1EF1 m\xF4 t\u1EA3\
+      \ ||| \u0110\u1EBFm ||| Kh\xE1c ||| B\u1EE9c th\u01B0 ||| T\xF4n gi\xE1o |||\
+      \ M\xF3n \u0103n ||| \u0110\u1EBFmry ||| M\xE0u s\u1EAFc ||| K\u1EF3 h\u1EA1\
+      n ||| Th\xE0nh ph\u1ED1 ||| C\u01A1 quan c\u1EE7a c\u01A1 th\u1EC3 ||| B\u1EC7\
+      nh t\u1EADt ho\u1EB7c thu\u1ED1c men ||| N\xFAi ||| Gi\xE1 b\xE1n ||| S\u1EA3\
+      n ph\u1EA9m ||| Giai \u0111o\u1EA1n = Stage ||| V\u1EADt ch\u1EA5t ||| Th\u1EC3\
+      \ thao ||| Th\u1EF1c v\u1EADt ||| K\u0129 thu\u1EADt ||| K\xEDch th\u01B0\u1EDB\
+      c ||| D\u1EE5ng c\u1EE5 ||| Vi\u1EBFt t\u1EAFt ||| T\u1ED1c \u0111\u1ED9, v\u1EAD\
+      n t\u1ED1c ||| T\u1EEB ||| Ng\xF4n ng\u1EEF ||| Ph\u1EA7n tr\u0103m ||| M\xE3\
+      \ s\u1ED1 ||| Kho\u1EA3ng c\xE1ch ||| Nhi\u1EC7t \u0111\u1ED9 ||| Bi\u1EC3u\
+      \ t\u01B0\u1EE3ng ||| G\u1ECDi m\xF3n ||| Ph\u01B0\u01A1ng ti\u1EC7n giao th\xF4\
+      ng ||| Tr\u1ECDng l\u01B0\u1EE3ng ||| Ti\u1EC1n t\u1EC7"
     id: cfa8fde0-8320-4050-8d6e-7619ab14adea
-    jinja: "C\xE2u h\u1ECFi n\xE0y y\xEAu c\u1EA7u g\xEC?\n\n{{text}}\n|||\n{{ answer_choices[label_fine]\
-      \ }}"
+    jinja: "C\xE2u h\u1ECFi n\xE0y y\xEAu c\u1EA7u \u0111i\u1EC1u g\xEC?\n\n{{text}}\n\
+      |||\n{{ answer_choices[label_fine] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -281,7 +285,7 @@ templates:
       \ c\xE1 th\u1EC3 ||| Ti\xEAu \u0111\u1EC1 ||| s\u1EF1 m\xF4 t\u1EA3"
     id: e98b9294-76b4-4172-a78c-9c6e5fdfe73b
     jinja: "{% set label_mapping = {5:0, 4:1, 6:2, 12:3} %}\n{% if label_coarse ==\
-      \ 3 %}\n{{text}}\n\nC\xE2u h\u1ECFi n\xE0y c\xF3 h\u1ECFi {{', '.join(answer_choices)}}\
+      \ 3 %}\n{{text}}\n\nC\xE2u h\u1ECFi n\xE0y c\xF3 y\xEAu c\u1EA7u cho {{', '.join(answer_choices)}}\
       \ kh\xF4ng?\n|||\n{{ answer_choices [label_mapping[label_fine]] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -292,22 +296,12 @@ templates:
     reference: Fine grained labels with coarse-label `HUM`, context provided first
   fa588c55-5c69-4fd0-a0b1-edbfa092f710: !Template
     answer_choices: "\u0110\u1ECBnh ngh\u0129a ||| s\u1EF1 m\xF4 t\u1EA3 ||| c\xE1\
-      ch th\u1EE9c h\xE0nh \u0111\u1ED9ng ||| l\xFD do"
+      ch h\xE0nh \u0111\u1ED9ng ||| l\xFD do"
     id: fa588c55-5c69-4fd0-a0b1-edbfa092f710
-    jinja: '{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}
-
-      {% if label_coarse == 0 %}
-
-      {{text}}
-
-
-      Is this question asking for {{'', ''.join(answer_choices)}}?
-
-      |||
-
-      {{ answer_choices [label_mapping[label_fine]] }}
-
-      {% endif %}'
+    jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
+      \ 0 %}\n{{text}}\n\nC\xE2u h\u1ECFi n\xE0y c\xF3 y\xEAu c\u1EA7u cho {{', '.join(answer_choices)}}\
+      \ kh\xF4ng?\n|||\n{{ answer_choices [label_mapping[label_fine]] }}\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

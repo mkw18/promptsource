@@ -6,12 +6,11 @@ templates:
     id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
     jinja: "\u0633\u0648\u0627\u0644: {{question}}\n\n\u0633\u0648\u0627\u0644 \u06A9\
       \u0627 \u062C\u0648\u0627\u0628 \u062F\u06CC\u0646\u06D2 \u06A9\u06D2 \u0644\
-      \u0626\u06D2 {{\"A\"}} \u0627\u0648\u0631 {{\"B\"}} use \u0627\u0633\u062A\u0639\
-      \u0645\u0627\u0644 \u0646\u06C1 \u06A9\u0631\u06CC\u06BA \u0644\u06CC\u06A9\u0646\
-      \ \u0627\u0633 \u06A9\u06D2 \u0628\u062C\u0627\u0626\u06D2 \u060C \"{{answer_choices[0]}}\"\
-      \ \u0627\u0648\u0631 \"{{answer_choices[1]}}\" \u06A9\u06D2 \u062F\u0631\u0645\
-      \u06CC\u0627\u0646 \u0627\u0646\u062A\u062E\u0627\u0628 \u06A9\u0631\u06CC\u06BA\
-      \u06D4\n|||\n{{answer_choices[answer_index]}}"
+      \u06CC\u06D2 {{\"A\"}} \u0627\u0648\u0631 {{\"B\"}} \u06A9\u0627 \u0627\u0633\
+      \u062A\u0639\u0645\u0627\u0644 \u0646\u06C1 \u06A9\u0631\u06CC\u06BA \u0628\u0644\
+      \u06A9\u06C1 \"{{answer_choices[0]}}\" \u0627\u0648\u0631 \"{{answer_choices[1]}}\"\
+      \ \u0645\u06CC\u06BA \u0633\u06D2 \u0627\u0646\u062A\u062E\u0627\u0628 \u06A9\
+      \u0631\u06CC\u06BA\u06D4\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -22,11 +21,11 @@ templates:
   5b5f9d29-0ad5-4bb9-831a-11fcb115c10d: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
-    jinja: "\u06CC\u06C1\u0627\u06BA \u0627\u06CC\u06A9 \u0645\u0646\u0637\u0642 \u06A9\
-      \u0627 \u0627\u0645\u062A\u062D\u0627\u0646 \u06C1\u06D2: {{question}}\n\n\"\
-      {{answer_choices[0]}}\" \u0627\u0648\u0631 \"{{answer_choices[1]}}\" \u06A9\u06D2\
-      \ \u062F\u0631\u0645\u06CC\u0627\u0646 \u062C\u0648\u0627\u0628 \u0645\u0646\
-      \u062A\u062E\u0628 \u06A9\u0631\u06CC\u06BA\u06D4\n|||\n{{answer_choices[answer_index]}}"
+    jinja: "\u06CC\u06C1\u0627\u06BA \u0627\u06CC\u06A9 \u0645\u0646\u0637\u0642\u06CC\
+      \ \u0627\u0645\u062A\u062D\u0627\u0646 \u06C1\u06D2: {{question}}\n\n\"{{answer_choices[0]}}\"\
+      \ \u0627\u0648\u0631 \"{{answer_choices[1]}}\" \u06A9\u06D2 \u062F\u0631\u0645\
+      \u06CC\u0627\u0646 \u062C\u0648\u0627\u0628 \u0645\u0646\u062A\u062E\u0628 \u06A9\
+      \u0631\u06CC\u06BA\u06D4\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -71,9 +70,10 @@ templates:
       \ \u06A9\u06CC \u0645\u0646\u0637\u0642 \u06A9\u06CC \u062C\u0627\u0646\u0686\
       \ \u06A9\u0631 \u0631\u06C1\u0627 \u06C1\u0648\u06BA\u06D4\n\u0627\u0646\u06C1\
       \u06CC\u06BA \"{{answer_choices[0]}}\" \u0627\u0648\u0631 \"{{answer_choices[1]}}\"\
-      \ \u06A9\u06D2 \u062F\u0631\u0645\u06CC\u0627\u0646 \u06A9\u06CC\u0627 \u062C\
-      \u0648\u0627\u0628 \u062F\u06CC\u0646\u0627 \u0686\u0627\u06C1\u0626\u06D2\u061F\
-      \n\u0645\u0646\u0637\u0642 \u0679\u06CC\u0633\u0679: {{question}}\n|||\n{{answer_choices[answer_index]}}"
+      \ \u06A9\u06D2 \u062F\u0631\u0645\u06CC\u0627\u0646 \u06A9\u0648\u0646 \u0633\
+      \u0627 \u062C\u0648\u0627\u0628 \u0645\u0646\u062A\u062E\u0628 \u06A9\u0631\u0646\
+      \u0627 \u0686\u0627\u06C1\u0626\u06D2\u061F\n\u0645\u0646\u0637\u0642 \u06A9\
+      \u0627 \u0627\u0645\u062A\u062D\u0627\u0646: {{question}}\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

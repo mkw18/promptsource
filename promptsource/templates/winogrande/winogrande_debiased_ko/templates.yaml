@@ -1,0 +1,82 @@
+dataset: winogrande
+subset: winogrande_debiased_ko
+templates:
+  1ce2be12-1815-4a07-80a7-ac3c3505b005: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 1ce2be12-1815-4a07-80a7-ac3c3505b005
+    jinja: "{{sentence}}\n\uC704 \uBB38\uC7A5\uC758 _\uB97C \uC62C\uBC14\uB978 \uC635\
+      \uC158\uC73C\uB85C \uBC14\uAFC9\uB2C8\uB2E4. \n- {{option1}}\n- {{option2}}\n\
+      |||\n{% if answer == '1' %} {{option1}} {% else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Replace
+    reference: ''
+  1ddbbca4-8917-4a1d-9d83-f42db77f24ba: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 1ddbbca4-8917-4a1d-9d83-f42db77f24ba
+    jinja: "{{sentence}}\n\uC704 \uBB38\uC7A5\uC5D0\uC11C _\uB294 \uBB34\uC5C7\uC744\
+      \ \uC758\uBBF8\uD569\uB2C8\uAE4C? {{option1}} \uB610\uB294 {{option2}}? |||\
+      \ {% if answer == '1' %} {{option1}} {% else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: underscore refer to
+    reference: ''
+  276eaba6-17e5-403a-98c7-0f8c53c35221: !Template
+    answer_choices: '{{ option1 }} ||| {{ option2 }}'
+    id: 276eaba6-17e5-403a-98c7-0f8c53c35221
+    jinja: "{{ sentence }} \uC55E \uBB38\uC7A5\uC5D0\uC11C _\uB294 {{option1}} \uB610\
+      \uB294 {{option2}}\uB97C \uB098\uD0C0\uB0C5\uB2C8\uAE4C? ||| {% if answer ==\
+      \ '1' %} {{option1}} {% else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does underscore refer to
+    reference: ''
+  9702d456-4261-4a7e-94c5-6a9d2a1c4859: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 9702d456-4261-4a7e-94c5-6a9d2a1c4859
+    jinja: "\uC544\uB798 \uBB38\uC7A5\uC5D0\uC11C _\uB294 {{answer_choices[0]}} \uB610\
+      \uB294 {{answer_choices[1]}}\uB97C \uB098\uD0C0\uB0C5\uB2C8\uAE4C?\n{{sentence}}|||\n\
+      {{answer_choices[answer | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: stand for
+    reference: ''
+  bb9b91fc-760a-45cd-bacd-dcb05a1cb2f3: !Template
+    answer_choices: "\uC9C4\uC2E4 ||| \uAC70\uC9D3"
+    id: bb9b91fc-760a-45cd-bacd-dcb05a1cb2f3
+    jinja: "\uC544\uB798 \uBB38\uC7A5\uC5D0\uC11C _\uB294 {{option1}}\uB97C \uB098\
+      \uD0C0\uB0C5\uB2C8\uB2E4. \uCC38\uC778\uAC00 \uAC70\uC9D3\uC778\uAC00?\n{{sentence}}|||\n\
+      {{answer_choices[answer|int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: True or False
+    reference: ''
+  ebabc54d-cff4-46a7-9c22-2412b8ce00c6: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: ebabc54d-cff4-46a7-9c22-2412b8ce00c6
+    jinja: "\uC544\uB798 \uBB38\uC7A5\uC5D0 _\uB97C \uC785\uB825\uD558\uC138\uC694\
+      .\n{{sentence}}\n\n\uC120\uD0DD:\n- {{ option1 }}\n- {{ option2 }}\n\n\uB300\
+      \uB2F5: ||| {% if answer == '1' %} {{option1}} {% else %} {{ option2 }} {% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fill in the blank
+    reference: ''

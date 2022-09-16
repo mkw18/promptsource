@@ -17,9 +17,9 @@ templates:
   11e27d59-b1f5-43a1-9ccc-17f1c3249173: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 11e27d59-b1f5-43a1-9ccc-17f1c3249173
-    jinja: "Dokiman sa a te p\xE8v\xE8ti. Di m 'ki sa \"{{\"@placeholder\"}}\" se\
-      \ refere a.\n\nDokiman: {{ passage }} \n{{ query }} \n||| {% if ( answers |\
-      \ length ) > 0 %}{{ answers | choice }}\n{% endif %}"
+    jinja: "Dokiman sa a te koripsyon. Di m kisa \"{{\"@placeholder\"}}\" ap refere.\n\
+      \nDokiman: {{ passage }} \n{{ query }} \n||| {% if ( answers | length ) > 0\
+      \ %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -50,7 +50,7 @@ templates:
     id: 24c267d4-359e-40a9-83d2-bff904d63b09
     jinja: "Rezime:\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\\n- \") }}\
       \ \n\nAtik:\n\n{{ passage.split(\"@highlight\")[0] }}\n\nKounye a ke ou te li\
-      \ atik la, tanpri ekri yon nouvo fraz yo ajoute nan li.\n\n||| {% if ( answers\
+      \ atik la, tanpri ekri yon nouvo fraz ajoute nan li.\n\n||| {% if ( answers\
       \ | length ) > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}\
       \ {% endif %}"
     metadata: !TemplateMetadata
@@ -63,9 +63,9 @@ templates:
   441c70e3-095a-44a1-8163-bc3b666b7ea1: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 441c70e3-095a-44a1-8163-bc3b666b7ea1
-    jinja: "{{ passage }} \n{{ query }} \n\nOu ta dwe deside ki sa \"{{\"@placeholder\"\
-      }}\" se refere li a. Chwazi ant:\n- {{answer_choices | join(\"\\n- \")}}\n|||\
-      \ {% if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \n\nOu ta dwe deside kisa \"{{\"@placeholder\"\
+      }}\" ap refere a. Chwazi ant:\n- {{answer_choices | join(\"\\n- \")}}\n||| {%\
+      \ if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -108,8 +108,8 @@ templates:
     answer_choices: '{{ entities | join("|||") }}'
     id: 91555c1c-c1e4-469b-a2a4-fc952ce1a145
     jinja: "{{ passage }} \n{{ query }} \nNan kesyon ki anwo a, \"{{\"@placeholder\"\
-      }}\" kanpe pou ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}{%\
-      \ endif %}"
+      }}\" vle di ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -122,7 +122,7 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 94577b75-2eac-4eae-b367-3b413c4188c6
-    jinja: "Apre ou fin li atik la, ekri yon l\xF2t fraz pou ajoute sou li.\n{{ passage\
+    jinja: "Apre ou fin li atik la, ekri yon l\xF2t fraz pou ajoute nan li.\n{{ passage\
       \ | replace(\"@highlight\", \"\\n- \") }}\n\n||| {% if ( answers | length )\
       \ > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}{% endif %}\n"
     metadata: !TemplateMetadata
@@ -137,7 +137,7 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 9579b54e-4f0f-4e43-8907-af57112cc857
-    jinja: "Tanpri, li atik nouv\xE8l sa a epi ekri yon l\xF2t fraz pou ajoute sou\
+    jinja: "Tanpri li atik sa a nouv\xE8l epi ekri yon l\xF2t fraz pou ajoute sou\
       \ li.\n\n{{ passage | replace(\"@highlight\", \"\\n- \") }} \n ||| {% if ( answers\
       \ | length ) > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}\
       \ {% endif %}\n"
@@ -151,8 +151,8 @@ templates:
   99dd38ce-32f3-4d58-93c5-59821002b9cc: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 99dd38ce-32f3-4d58-93c5-59821002b9cc
-    jinja: "{{ passage }} \n{{ query }} \nKi sa ki ta ka \"{{\"@placeholder\"}}\"\
-      ? {{ entities | join(\", \") }}? ||| {% if ( answers | length ) > 0 %}{{ answers\
+    jinja: "{{ passage }} \n{{ query }} \nKi sa ki ka \"{{\"@placeholder\"}}\" la?\
+      \ {{ entities | join(\", \") }}? ||| {% if ( answers | length ) > 0 %}{{ answers\
       \ | choice }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -164,8 +164,8 @@ templates:
   9b688cf3-28bf-4f33-94cf-e73e4fa8c608: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: 9b688cf3-28bf-4f33-94cf-e73e4fa8c608
-    jinja: "{{ passage }}\n{{ query }}\n\nMwen ap eseye deside ki sa \"{{\"@placeholder\"\
-      }}\" vle di nan t\xE8ks anvan an.\nEde pa chwazi yon opsyon ant:\n- {{ entities\
+    jinja: "{{ passage }}\n{{ query }}\n\nM ap eseye deside kisa \"{{\"@placeholder\"\
+      }}\" vle di nan t\xE8ks anvan an.\nEde w chwazi yon opsyon ant:\n- {{ entities\
       \ | join(\"\\n- \") }}\n||| {% if ( answers | length ) > 0 %}\n{{ answers |\
       \ choice }}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -178,8 +178,8 @@ templates:
   a5ed27ed-162b-4ac1-9c7a-85059d5214be: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: a5ed27ed-162b-4ac1-9c7a-85059d5214be
-    jinja: "{{ passage }} \n{{ query }} \nIsit la, plas la refere a ||| {% if ( answers\
-      \ | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \nIsit la, anplasman an refere a ||| {% if\
+      \ ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -193,8 +193,8 @@ templates:
       }}'
     id: a99a92e0-e1ee-4ec3-a38a-3be4303ba017
     jinja: "{{ passage.split(\"@highlight\")[0] }}\n\nPwen esansy\xE8l:\n\n- {{ passage.split(\"\
-      @highlight\")[1:] | join(\"\\n- \") }} \n\nTanpri ekri yon rek\xF2 adisyon\xE8\
-      l.\n ||| {% if ( answers | length ) > 0 %}- {{ query | replace(\"@placeholder\"\
+      @highlight\")[1:] | join(\"\\n- \") }} \n\nTanpri ekri yon l\xF2t rek\xF2.\n\
+      \ ||| {% if ( answers | length ) > 0 %}- {{ query | replace(\"@placeholder\"\
       , answers | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -206,9 +206,9 @@ templates:
   d3fce74e-0d9d-404a-a009-9ebbf5794c2c: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: d3fce74e-0d9d-404a-a009-9ebbf5794c2c
-    jinja: "Egz\xE8sis: Ekstr\xE8 soti nan t\xE8ks la antite ki k\xF2r\xE8k la ki\
-      \ \"{{\"@placeholder\"}}\" se refere li a.\n\n{{ passage }}\n{{ query }}\n|||\
-      \ {% if ( answers | length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
+    jinja: "Egz\xE8sis: Ekstr\xE8 nan t\xE8ks la antite ki k\xF2r\xE8k ke \"{{\"@placeholder\"\
+      }}\" ap refere a.\n\n{{ passage }}\n{{ query }}\n||| {% if ( answers | length\
+      \ ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -274,7 +274,7 @@ templates:
   e68d13c5-df75-4de0-b59e-f2eaf4af6ce7: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: e68d13c5-df75-4de0-b59e-f2eaf4af6ce7
-    jinja: "{{ passage }} \n{{ query }} \n\xC8ske ou ka konnen ki sa \"{{\"@placeholder\"\
+    jinja: "{{ passage }} \n{{ query }} \n\xC8ske w ka konnen ki sa \"{{\"@placeholder\"\
       }}\" vle di? Sa vle di ||| {% if ( answers | length ) > 0 %}{{ answers | choice\
       \ }}{% endif %}"
     metadata: !TemplateMetadata

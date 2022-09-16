@@ -7,7 +7,7 @@ templates:
     jinja: 'Vraag: {{question}}
 
 
-      Gebruik niet {{"A"}} en {{"b"}} om de vraag te beantwoorden, maar kies in plaats
+      Gebruik {{"A"}} en {{"B"}} niet om de vraag te beantwoorden, maar kies in plaats
       daarvan tussen "{{answer_choices[0]}}" en "{{answer_choices[1]}}".
 
       |||
@@ -44,7 +44,7 @@ templates:
     jinja: 'Hier is een kort verhaal: {{question}}.
 
 
-      Wat is het meest gevoelige antwoord tussen "{{answer_choices[0]}}" en "{{answer_choices[1]}}"?
+      Wat is het meest zinvolle antwoord tussen "{{answer_choices[0]}}" en "{{answer_choices[1]}}"?
 
       |||
 
@@ -80,7 +80,7 @@ templates:
 
       Wat is het antwoord dat ze moeten kiezen tussen "{{answer_choices[0]}}" en "{{answer_choices[1]}}"?
 
-      Logica -test: {{question}}
+      Logische test: {{question}}
 
       |||
 

@@ -4,8 +4,8 @@ templates:
   212fb8b1-8436-4f64-8f37-a9094fe029f4: !Template
     answer_choices: Ne ||| Da
     id: 212fb8b1-8436-4f64-8f37-a9094fe029f4
-    jinja: "{{ text }} U prethodnoj re\u010Denici odnosi li se izgovor \"{{ span2_text.lower()\
-      \ }}\" na {{ span1_text }}? Da ili ne? ||| {% if label != -1 %}{{ answer_choices[label]\
+    jinja: "{{ text }} Odnosi li se zamjenica \"{{ span2_text.lower() }}\" u prethodnoj\
+      \ re\u010Denici na {{ span1_text }}? Da ili ne? ||| {% if label != -1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -17,9 +17,8 @@ templates:
   23361c5d-b67f-4c2a-9da7-16301c55d0e1: !Template
     answer_choices: Ne ||| Da
     id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
-    jinja: "{{ text }} Ovdje pod \"{{ span2_text }}\" oni zna\u010De \"{{ span1_text\
-      \ }}\". Da ili ne? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
-      \ %}"
+    jinja: "{{ text }} Ovdje pod \"{{ span2_text }}\" zna\u010De \"{{ span1_text }}\"\
+      . Da ili ne? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -28,7 +27,7 @@ templates:
     name: by p they mean
     reference: ''
   2f17f18b-6daa-44ef-a2dd-dddaf04aec0e: !Template
-    answer_choices: "La\u017Ean ||| Pravi"
+    answer_choices: "la\u017Eno ||| Pravi"
     id: 2f17f18b-6daa-44ef-a2dd-dddaf04aec0e
     jinja: "{{ text }} \n\nDrugim rije\u010Dima, {{ text.split(\" \")[span2_index:]\
       \ | join(\" \") | replace(span2_text, span1_text) }} Istina ili la\u017E? |||\
@@ -43,9 +42,9 @@ templates:
   4b3e29cc-ccb8-4e4c-a845-4935ca29cf34: !Template
     answer_choices: Ne ||| Da
     id: 4b3e29cc-ccb8-4e4c-a845-4935ca29cf34
-    jinja: "{{ text }} Mislim da oni zna\u010De \"{{ text.split(\" \")[span2_index:]\
-      \ | join(\" \") | replace(span2_text, span1_text) }}\" Da ili ne? ||| {% if\
-      \ label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: '{{ text }} Mislim da misle "{{ text.split(" ")[span2_index:] | join("
+      ") | replace(span2_text, span1_text) }}" Da ili ne? ||| {% if label != -1 %}{{
+      answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -56,8 +55,9 @@ templates:
   7482d24f-cf45-4013-b82d-369489fc958b: !Template
     answer_choices: Ne ||| Da
     id: 7482d24f-cf45-4013-b82d-369489fc958b
-    jinja: '{{ text }} Ovdje je "{{ span2_text.lower() }}" za {{ span1_text }}? Da
-      ili ne? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}'
+    jinja: "{{ text }} Ovdje, zna\u010Di li \"{{ span2_text.lower() }}\" za {{ span1_text\
+      \ }}? Da ili ne? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -68,7 +68,7 @@ templates:
   7d377293-d043-4b6c-8ec1-d61eaf14ec67: !Template
     answer_choices: Ne ||| Da
     id: 7d377293-d043-4b6c-8ec1-d61eaf14ec67
-    jinja: "Prolaz: {{ text }} \n\nPitanje: U gornjem odlomku odnosi li se izgovor\
+    jinja: "Prolaz: {{ text }} \n\nPitanje: U gornjem odlomku, odnosi li se zamjenica\
       \ \"{{ span2_text }}\" na {{ span1_text }}?\n\nOdgovor: ||| {% if label != -1\
       \ %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
@@ -81,9 +81,9 @@ templates:
   809eacd0-2f6c-4e3a-b52a-57c783879d36: !Template
     answer_choices: Ne ||| Da
     id: 809eacd0-2f6c-4e3a-b52a-57c783879d36
-    jinja: "{{ text }} U prethodnoj re\u010Denici se mo\u017Ee zamijeniti izgovor\
-      \ \"{{ span2_text }}\" s \"{{ span1_text }}\"? Da ili ne? ||| {% if label !=\
-      \ -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{ text }} Mo\u017Ee li se u prethodnoj re\u010Denici zamjenica \"{{ span2_text\
+      \ }}\" zamijeniti sa \"{{ span1_text }}\"? Da ili ne? ||| {% if label != -1\
+      \ %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -92,10 +92,10 @@ templates:
     name: replaced with
     reference: ''
   87f97aa0-1fa9-4f0b-b8e6-89d3c1f19bd6: !Template
-    answer_choices: "La\u017Ean ||| Pravi"
+    answer_choices: "la\u017Eno ||| Pravi"
     id: 87f97aa0-1fa9-4f0b-b8e6-89d3c1f19bd6
     jinja: "Kontekst: {{ text }} \n\n{% if span2_text.lower()  == \"they\" or span2_text.lower()\
-      \ == \"them\" %}\nQuestion: \"{{ span2_text }}\" jesu {{ span1_text }}. Istina\
+      \ == \"them\" %}\nQuestion: \"{{ span2_text }}\" su {{ span1_text }}. Istina\
       \ ili la\u017E?\n{% else %}\nQuestion: \"{{ span2_text }}\" je {{ span1_text\
       \ }}. Istina ili la\u017E?\n{% endif %}\n\nOdgovor: ||| {% if label != -1 %}{{\
       \ answer_choices[label] }}{% endif %}"
@@ -107,10 +107,10 @@ templates:
     name: p is/are r
     reference: ''
   aae24b54-c3a7-4f69-8b77-f6dc115988f8: !Template
-    answer_choices: "La\u017Ean ||| Pravi"
+    answer_choices: "la\u017Eno ||| Pravi"
     id: aae24b54-c3a7-4f69-8b77-f6dc115988f8
-    jinja: "{{ text }} \nU gornjem odlomku, zamjenu \"{{ span2_text }}\" odnosi se\
-      \ na {{ span1_text }}. Istina ili la\u017E? ||| {% if label != -1 %}{{ answer_choices[label]\
+    jinja: "{{ text }} \nU gornjem odlomku, zamjenica \"{{ span2_text }}\" odnosi\
+      \ se na {{ span1_text }}. Istina ili la\u017E? ||| {% if label != -1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

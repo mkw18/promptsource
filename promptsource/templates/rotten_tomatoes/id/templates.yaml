@@ -40,7 +40,7 @@ templates:
   59e2aa7c-696f-4b85-87e9-688ea802d968: !Template
     answer_choices: Tidak ||| Ya
     id: 59e2aa7c-696f-4b85-87e9-688ea802d968
-    jinja: '{{text}} Apakah pengulas menikmati filmnya? ||| {{ answer_choices [label]
+    jinja: '{{text}} Apakah resensi menikmati filmnya? ||| {{ answer_choices [label]
       }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -52,7 +52,7 @@ templates:
   7a8ccb1c-6737-4863-b08a-61d4a2839204: !Template
     answer_choices: Mereka tidak menyukainya ||| Mereka menyukainya
     id: 7a8ccb1c-6737-4863-b08a-61d4a2839204
-    jinja: '{{text}} Bagaimana perasaan pengulas tentang film ini? ||| {{ answer_choices
+    jinja: '{{text}} Bagaimana perasaan reviewer tentang film tersebut? ||| {{ answer_choices
       [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -64,7 +64,7 @@ templates:
   94e190d5-2196-486e-908b-759f288eac6e: !Template
     answer_choices: negatif ||| positif
     id: 94e190d5-2196-486e-908b-759f288eac6e
-    jinja: '{{text}} Sentimen yang diungkapkan untuk film ini ||| {{ answer_choices
+    jinja: '{{text}} Sentimen yang diungkapkan untuk film ini adalah ||| {{ answer_choices
       [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -76,7 +76,7 @@ templates:
   a8f6927e-7eca-4975-a93c-f520f8be480d: !Template
     answer_choices: negatif ||| positif
     id: a8f6927e-7eca-4975-a93c-f520f8be480d
-    jinja: '{{text}} Sentimen apa yang diungkapkan oleh penulis untuk film ini? |||
+    jinja: '{{text}} Sentimen apa yang diungkapkan penulis untuk film tersebut? |||
       {{ answer_choices [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -88,7 +88,7 @@ templates:
   b60cad41-6bca-422a-aef7-cb113fcc32b0: !Template
     answer_choices: negatif ||| positif
     id: b60cad41-6bca-422a-aef7-cb113fcc32b0
-    jinja: Ulasan film berikut mengungkapkan sentimen apa? {{text}} ||| {{ answer_choices
+    jinja: Review film berikut mengungkapkan sentimen apa? {{text}} ||| {{ answer_choices
       [label] }}
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -100,8 +100,8 @@ templates:
   c75e322d-d6b4-4a28-b5a0-27fddfee694d: !Template
     answer_choices: negatif ||| positif
     id: c75e322d-d6b4-4a28-b5a0-27fddfee694d
-    jinja: '{{text}} Apa sentimen yang diungkapkan oleh pengulas untuk film ini? |||
-      {{ answer_choices [label] }}'
+    jinja: '{{text}} Apa sentimen yang diungkapkan oleh resensi untuk film tersebut?
+      ||| {{ answer_choices [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -112,7 +112,7 @@ templates:
   e05ec7b9-5a8d-4670-9723-0237c1bb1eca: !Template
     answer_choices: negatif ||| positif
     id: e05ec7b9-5a8d-4670-9723-0237c1bb1eca
-    jinja: '{{text}} Bagaimana perasaan pemirsa tentang film ini? ||| {{ answer_choices
+    jinja: '{{text}} Bagaimana perasaan penonton tentang film tersebut? ||| {{ answer_choices
       [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false

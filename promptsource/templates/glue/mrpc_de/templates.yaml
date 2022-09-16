@@ -6,7 +6,7 @@ templates:
     id: 3b88d2c4-0aeb-4c6d-9ccc-653a388250a5
     jinja: '{% if label == 1 %}
 
-      Paraphrase den folgenden Satz: {{sentence1}}
+      Paraphrasieren Sie den folgenden Satz: {{sentence1}}
 
       |||
 
@@ -24,7 +24,7 @@ templates:
   44c2e6d9-facf-4959-8400-38e0eb8dd3a8: !Template
     answer_choices: nein ||| Jawohl
     id: 44c2e6d9-facf-4959-8400-38e0eb8dd3a8
-    jinja: "Ich m\xF6chte wissen, ob die folgenden zwei S\xE4tze dasselbe bedeuten.\n\
+    jinja: "Ich m\xF6chte wissen, ob die beiden folgenden S\xE4tze dasselbe bedeuten.\n\
       {{sentence1}}\n{{sentence2}}\nTun sie?\n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -36,11 +36,11 @@ templates:
   adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
     answer_choices: nein ||| Jawohl
     id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
-    jinja: 'Bedeutet der Satz
+    jinja: 'Paraphrasiert der Satz
 
       {{sentence1}}
 
-      (dh das Gleiche wie) diesen Satz?
+      diesen Satz (d. h. bedeutet dasselbe wie)?
 
       {{sentence2}}
 
@@ -55,9 +55,9 @@ templates:
     name: paraphrase
     reference: ''
   bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
-    answer_choices: "nicht gleichwertig ||| \xC4quivalent"
+    answer_choices: nicht gleichwertig ||| gleichwertig
     id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
-    jinja: "Sind die folgenden zwei S\xE4tze \"{{\"\xC4quivalent\"}}\" oder \"{{\"\
+    jinja: "Sind die folgenden zwei S\xE4tze \"{{\"gleichwertig\"}}\" oder \"{{\"\
       nicht gleichwertig\"}}\"?\n{{sentence1}}\n{{sentence2}}\n|||\n{{ answer_choices[label]\
       \ }}"
     metadata: !TemplateMetadata
@@ -72,7 +72,7 @@ templates:
     id: d830d7a5-abc0-4275-ac62-974e0088876f
     jinja: '{% if label == 1 %}
 
-      Erstellen Sie einen Satz, der dasselbe bedeutet wie dieses: {{sentence1}}
+      Generieren Sie einen Satz, der dasselbe bedeutet wie dieser: {{sentence1}}
 
       |||
 
@@ -98,7 +98,7 @@ templates:
 
       {{sentence2}}
 
-      ersetzen und lassen Sie es dasselbe bedeuten?
+      ersetzen und es dasselbe bedeuten?
 
       |||
 

@@ -5,11 +5,10 @@ templates:
     answer_choices: "\u0646\u06C1\u06CC\u06BA ||| \u062C\u06CC \u06C1\u0627\u06BA"
     id: 212fb8b1-8436-4f64-8f37-a9094fe029f4
     jinja: "{{ text }} \u067E\u0686\u06BE\u0644\u06D2 \u062C\u0645\u0644\u06D2 \u0645\
-      \u06CC\u06BA \u060C \u06A9\u06CC\u0627 \u0636\u0645\u06CC\u0631 \"{{ span2_text.lower()\
-      \ }}\" {{ span1_text }} \u06A9\u0627 \u062D\u0648\u0627\u0644\u06C1 \u062F\u06CC\
-      \u062A\u0627 \u06C1\u06D2\u061F \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\
-      \u06CC\u06BA\u061F ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
-      \ %}"
+      \u06CC\u06BA\u060C \u06A9\u06CC\u0627 \u0636\u0645\u06CC\u0631 \"{{ span2_text.lower()\
+      \ }}\" \u06A9\u0627 \u062D\u0648\u0627\u0644\u06C1 {{ span1_text }} \u06C1\u06D2\
+      \u061F \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F ||| {%\
+      \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -20,11 +19,10 @@ templates:
   23361c5d-b67f-4c2a-9da7-16301c55d0e1: !Template
     answer_choices: "\u0646\u06C1\u06CC\u06BA ||| \u062C\u06CC \u06C1\u0627\u06BA"
     id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
-    jinja: "{{ text }} \u06CC\u06C1\u0627\u06BA \u060C \u0628\u0630\u0631\u06CC\u0639\
-      \u06C1 \"{{ span2_text }}\" \u0627\u0646 \u06A9\u0627 \u0645\u0637\u0644\u0628\
-      \ \"{{ span1_text }}\" \u06C1\u06D2\u06D4 \u06C1\u0627\u06BA \u06CC\u0627 \u0646\
-      \u06C1\u06CC\u06BA\u061F ||| {% if label != -1 %}{{ answer_choices[label] }}{%\
-      \ endif %}"
+    jinja: "{{ text }} \u06CC\u06C1\u0627\u06BA\u060C \"{{ span2_text }}\" \u0633\u06D2\
+      \ \u0627\u0646 \u06A9\u0627 \u0645\u0637\u0644\u0628 \u06C1\u06D2 \"{{ span1_text\
+      \ }}\"\u06D4 \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F\
+      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -33,7 +31,8 @@ templates:
     name: by p they mean
     reference: ''
   2f17f18b-6daa-44ef-a2dd-dddaf04aec0e: !Template
-    answer_choices: "\u062C\u06BE\u0648\u0679\u0627 ||| \u0633\u0686 \u06C1\u06D2"
+    answer_choices: "\u062C\u06BE\u0648\u0679\u0627\u06D4 ||| \u0633\u0686 \u06C1\u06D2\
+      \u06D4"
     id: 2f17f18b-6daa-44ef-a2dd-dddaf04aec0e
     jinja: "{{ text }} \n\n\u062F\u0648\u0633\u0631\u06D2 \u0627\u0644\u0641\u0627\
       \u0638 \u0645\u06CC\u06BA\u060C {{ text.split(\" \")[span2_index:] | join(\"\
@@ -51,8 +50,8 @@ templates:
     answer_choices: "\u0646\u06C1\u06CC\u06BA ||| \u062C\u06CC \u06C1\u0627\u06BA"
     id: 4b3e29cc-ccb8-4e4c-a845-4935ca29cf34
     jinja: "{{ text }} \u0645\u06CC\u0631\u06D2 \u062E\u06CC\u0627\u0644 \u0645\u06CC\
-      \u06BA \u0627\u0646 \u06A9\u0627 \u0645\u0637\u0644\u0628 \u06C1\u06D2 \"{{\
-      \ text.split(\" \")[span2_index:] | join(\" \") | replace(span2_text, span1_text)\
+      \u06BA \u0627\u0646 \u06A9\u0627 \u0645\u0637\u0644\u0628 \u06C1\u06D2\u06D4\
+      \ \"{{ text.split(\" \")[span2_index:] | join(\" \") | replace(span2_text, span1_text)\
       \ }}\" \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F ||| {%\
       \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
@@ -65,10 +64,10 @@ templates:
   7482d24f-cf45-4013-b82d-369489fc958b: !Template
     answer_choices: "\u0646\u06C1\u06CC\u06BA ||| \u062C\u06CC \u06C1\u0627\u06BA"
     id: 7482d24f-cf45-4013-b82d-369489fc958b
-    jinja: "{{ text }} \u06CC\u06C1\u0627\u06BA \u060C \u06A9\u06CC\u0627 \"{{ span2_text.lower()\
-      \ }}\" {{ span1_text }} \u06A9\u06D2 \u0644\u0626\u06D2 \u06A9\u06BE\u0691\u0627\
-      \ \u06C1\u06D2\u061F \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\
-      \u061F ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{ text }} \u06CC\u06C1\u0627\u06BA\u060C \u06A9\u06CC\u0627 \"{{ span2_text.lower()\
+      \ }}\" \u06A9\u0627 \u0645\u0637\u0644\u0628 {{ span1_text }} \u06C1\u06D2\u061F\
+      \ \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -79,12 +78,12 @@ templates:
   7d377293-d043-4b6c-8ec1-d61eaf14ec67: !Template
     answer_choices: "\u0646\u06C1\u06CC\u06BA ||| \u062C\u06CC \u06C1\u0627\u06BA"
     id: 7d377293-d043-4b6c-8ec1-d61eaf14ec67
-    jinja: "\u06AF\u0632\u0631\u0646\u06D2: {{ text }} \n\n\u0633\u0648\u0627\u0644\
-      : \u0645\u0630\u06A9\u0648\u0631\u06C1 \u0628\u0627\u0644\u0627 \u06AF\u0632\
-      \u0631\u0646\u06D2 \u0645\u06CC\u06BA \u060C \u06A9\u06CC\u0627 \u0636\u0645\
-      \u06CC\u0631 \"{{ span2_text }}\" {{ span1_text }} \u06A9\u0627 \u062D\u0648\
-      \u0627\u0644\u06C1 \u062F\u06CC\u062A\u0627 \u06C1\u06D2\u061F\n\n\u062C\u0648\
-      \u0627\u0628: ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "\u06AF\u0632\u0631\u0646\u0627: {{ text }} \n\n\u0633\u0648\u0627\u0644\
+      : \u0645\u0646\u062F\u0631\u062C\u06C1 \u0628\u0627\u0644\u0627 \u062D\u0648\
+      \u0627\u0644\u06C1 \u0645\u06CC\u06BA\u060C \u06A9\u06CC\u0627 \u0636\u0645\u06CC\
+      \u0631 \"{{ span2_text }}\" \u0633\u06D2 \u0645\u0631\u0627\u062F {{ span1_text\
+      \ }} \u06C1\u06D2\u061F\n\n\u062C\u0648\u0627\u0628: ||| {% if label != -1 %}{{\
+      \ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -96,12 +95,11 @@ templates:
     answer_choices: "\u0646\u06C1\u06CC\u06BA ||| \u062C\u06CC \u06C1\u0627\u06BA"
     id: 809eacd0-2f6c-4e3a-b52a-57c783879d36
     jinja: "{{ text }} \u067E\u0686\u06BE\u0644\u06D2 \u062C\u0645\u0644\u06D2 \u0645\
-      \u06CC\u06BA \u060C \u06A9\u06CC\u0627 \u0636\u0645\u06CC\u0631 \"{{ span2_text\
-      \ }}\" \u06A9\u0648 \"{{ span1_text }}\" \u06A9\u06D2 \u0633\u0627\u062A\u06BE\
-      \ \u062A\u0628\u062F\u06CC\u0644 \u06A9\u06CC\u0627 \u062C\u0627\u0633\u06A9\
-      \u062A\u0627 \u06C1\u06D2\u061F \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\
-      \u06CC\u06BA\u061F ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
-      \ %}"
+      \u06CC\u06BA\u060C \u06A9\u06CC\u0627 \u0636\u0645\u06CC\u0631 \"{{ span2_text\
+      \ }}\" \u06A9\u0648 \"{{ span1_text }}\" \u0633\u06D2 \u0628\u062F\u0644\u0627\
+      \ \u062C\u0627 \u0633\u06A9\u062A\u0627 \u06C1\u06D2\u061F \u06C1\u0627\u06BA\
+      \ \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -110,7 +108,8 @@ templates:
     name: replaced with
     reference: ''
   87f97aa0-1fa9-4f0b-b8e6-89d3c1f19bd6: !Template
-    answer_choices: "\u062C\u06BE\u0648\u0679\u0627 ||| \u0633\u0686 \u06C1\u06D2"
+    answer_choices: "\u062C\u06BE\u0648\u0679\u0627\u06D4 ||| \u0633\u0686 \u06C1\u06D2\
+      \u06D4"
     id: 87f97aa0-1fa9-4f0b-b8e6-89d3c1f19bd6
     jinja: "\u062E\u06CC\u0627\u0644\u060C \u0633\u06CC\u0627\u0642: {{ text }} \n\
       \n{% if span2_text.lower()  == \"they\" or span2_text.lower() == \"them\" %}\n\
@@ -127,12 +126,13 @@ templates:
     name: p is/are r
     reference: ''
   aae24b54-c3a7-4f69-8b77-f6dc115988f8: !Template
-    answer_choices: "\u062C\u06BE\u0648\u0679\u0627 ||| \u0633\u0686 \u06C1\u06D2"
+    answer_choices: "\u062C\u06BE\u0648\u0679\u0627\u06D4 ||| \u0633\u0686 \u06C1\u06D2\
+      \u06D4"
     id: aae24b54-c3a7-4f69-8b77-f6dc115988f8
-    jinja: "{{ text }} \n\u0645\u0630\u06A9\u0648\u0631\u06C1 \u0628\u0627\u0644\u0627\
-      \ \u06AF\u0632\u0631\u0646\u06D2 \u0645\u06CC\u06BA \u060C \u0636\u0645\u06CC\
-      \u0631 \"{{ span2_text }}\" \u0633\u06D2 \u0645\u0631\u0627\u062F {{ span1_text\
-      \ }} \u06C1\u06D2\u06D4 \u0635\u062D\u06CC\u062D \u06CC\u0627 \u063A\u0644\u0637\
+    jinja: "{{ text }} \n\u0645\u0646\u062F\u0631\u062C\u06C1 \u0628\u0627\u0644\u0627\
+      \ \u062D\u0648\u0627\u0644\u06D2 \u0645\u06CC\u06BA \u0636\u0645\u06CC\u0631\
+      \ \"{{ span2_text }}\" \u0633\u06D2 \u0645\u0631\u0627\u062F {{ span1_text }}\
+      \ \u06C1\u06D2\u06D4 \u0635\u062D\u06CC\u062D \u06CC\u0627 \u063A\u0644\u0637\
       \u061F ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -146,11 +146,11 @@ templates:
     id: d88f3e21-42dc-49a5-924d-69b764a14816
     jinja: "{{ text }} \n{% if span2_text.lower()  == \"they\" or span2_text.lower()\
       \ == \"them\" %}\n\u0633\u0648\u0627\u0644: \u06A9\u0648\u0646 \u06CC\u0627\
-      \ \u06A9\u06CC\u0627 \u06C1\u06CC\u06BA \"{{ span2_text.lower() }}\"\u061F {{\
-      \ span1_text }}\u061F\n{% else %}\n\u0633\u0648\u0627\u0644: \u06A9\u0648\u0646\
-      \ \u06C1\u06D2 \u06CC\u0627 \u06A9\u06CC\u0627 \u06C1\u06D2 \"{{ span2_text.lower()\
-      \ }}\"\u061F \u06A9\u06CC\u0627 \u06CC\u06C1 {{ span1_text }} \u06C1\u06D2\u061F\
-      \n{% endif %}\n\u062C\u0648\u0627\u0628: ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ \u06A9\u06CC\u0627 \u06C1\u06CC\u06BA\u06D4 \"{{ span2_text.lower() }}\"?\
+      \ {{ span1_text }}?\n{% else %}\n\u0633\u0648\u0627\u0644: \u06A9\u0648\u0646\
+      \ \u06CC\u0627 \u06A9\u06CC\u0627 \u06C1\u06D2\u06D4 \"{{ span2_text.lower()\
+      \ }}\"? \u06A9\u06CC\u0627 \u06CC\u06C1 {{ span1_text }} \u06C1\u06D2\u061F\n\
+      {% endif %}\n\u062C\u0648\u0627\u0628: ||| {% if label != -1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false

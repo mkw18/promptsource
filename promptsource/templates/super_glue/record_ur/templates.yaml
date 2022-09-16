@@ -4,9 +4,9 @@ templates:
   014b669e-2e3b-40ce-bdde-418966c7d666: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 014b669e-2e3b-40ce-bdde-418966c7d666
-    jinja: "{{ passage }} \n{{ query }} \nWhich one is the \"{{\"@placeholder\"}}\"\
-      \u061F {{ entities | join(\", \") }}\u061F ||| {% if ( answers | length ) >\
-      \ 0 %} {{ answers | choice }}\n{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \n\u06A9\u0648\u0646 \u0633\u0627 \"{{\"@placeholder\"\
+      }}\" \u06C1\u06D2\u061F {{ entities | join(\", \") }}? ||| {% if ( answers |\
+      \ length ) > 0 %} {{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -17,14 +17,13 @@ templates:
   11e27d59-b1f5-43a1-9ccc-17f1c3249173: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 11e27d59-b1f5-43a1-9ccc-17f1c3249173
-    jinja: "\u0645\u0646\u062F\u0631\u062C\u06C1 \u0630\u06CC\u0644 \u062F\u0633\u062A\
-      \u0627\u0648\u06CC\u0632 \u062E\u0631\u0627\u0628 \u06C1\u0648\u06AF\u0626\u06CC\
-      \ \u06C1\u06D2\u06D4 \u0645\u062C\u06BE\u06D2 \u0628\u062A\u0627\u0626\u06CC\
-      \u06BA \u06A9\u06C1 \"{{\"@placeholder\"}}\" \u06A9\u0633 \u0686\u06CC\u0632\
-      \ \u06A9\u0627 \u062D\u0648\u0627\u0644\u06C1 \u062F\u06D2 \u0631\u06C1\u0627\
-      \ \u06C1\u06D2\u06D4\n\n\u062F\u0633\u062A\u0627\u0648\u06CC\u0632: {{ passage\
-      \ }} \n{{ query }} \n||| {% if ( answers | length ) > 0 %}{{ answers | choice\
-      \ }}\n{% endif %}"
+    jinja: "\u062F\u0631\u062C \u0630\u06CC\u0644 \u062F\u0633\u062A\u0627\u0648\u06CC\
+      \u0632 \u062E\u0631\u0627\u0628 \u06C1\u0648 \u06AF\u0626\u06CC \u06C1\u06D2\
+      \u06D4 \u0645\u062C\u06BE\u06D2 \u0628\u062A\u0627\u0626\u06CC\u06BA \u06A9\u06C1\
+      \ \"{{\"@placeholder\"}}\" \u06A9\u0627 \u062D\u0648\u0627\u0644\u06C1 \u06A9\
+      \u06CC\u0627 \u06C1\u06D2\u06D4\n\n\u062F\u0633\u062A\u0627\u0648\u06CC\u0632\
+      : {{ passage }} \n{{ query }} \n||| {% if ( answers | length ) > 0 %}{{ answers\
+      \ | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -37,10 +36,10 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 147656b2-2dad-4028-96c4-f19d57cd1344
-    jinja: "Summary:\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\\n- \") }}\
-      \ \n\nArticle:\n\n{{ passage.split(\"@highlight\")[0] }}\n ||| {% if ( answers\
-      \ | length ) > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}\
-      \ {% endif %}"
+    jinja: "\u062E\u0644\u0627\u0635\u06C1:\n\n- {{ passage.split(\"@highlight\")[1:]\
+      \ | join(\"\\n- \") }} \n\n\u0645\u0636\u0645\u0648\u0646:\n\n{{ passage.split(\"\
+      @highlight\")[0] }}\n ||| {% if ( answers | length ) > 0 %}{{ query | replace(\"\
+      @placeholder\", answers | choice) }} {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -53,15 +52,16 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 24c267d4-359e-40a9-83d2-bff904d63b09
-    jinja: "Summary:\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\\n- \") }}\
-      \ \n\n\u0645\u0636\u0645\u0648\u0646:\n\n{{ passage.split(\"@highlight\")[0]\
-      \ }}\n\n\u0627\u0628 \u062C\u0628 \u0622\u067E \u0646\u06D2 \u0645\u0636\u0645\
-      \u0648\u0646 \u067E\u0691\u06BE\u0627 \u06C1\u06D2 \u062A\u0648 \u060C \u0628\
-      \u0631\u0627\u06C1 \u06A9\u0631\u0645 \u0627\u0633 \u0645\u06CC\u06BA \u0627\
-      \u0636\u0627\u0641\u06C1 \u06A9\u0631\u0646\u06D2 \u06A9\u06D2 \u0644\u0626\u06D2\
-      \ \u0627\u06CC\u06A9 \u0646\u06CC\u0627 \u062C\u0645\u0644\u06C1 \u0644\u06A9\
-      \u06BE\u06CC\u06BA\u06D4\n\n||| {% if ( answers | length ) > 0 %}{{ query |\
-      \ replace(\"@placeholder\", answers | choice) }} {% endif %}"
+    jinja: "\u062E\u0644\u0627\u0635\u06C1:\n\n- {{ passage.split(\"@highlight\")[1:]\
+      \ | join(\"\\n- \") }} \n\n\u0645\u0636\u0645\u0648\u0646:\n\n{{ passage.split(\"\
+      @highlight\")[0] }}\n\n\u0627\u0628 \u062C\u0628 \u06A9\u06C1 \u0622\u067E \u0646\
+      \u06D2 \u0645\u0636\u0645\u0648\u0646 \u067E\u0691\u06BE \u0644\u06CC\u0627\
+      \ \u06C1\u06D2\u060C \u0628\u0631\u0627\u06C1 \u06A9\u0631\u0645 \u0627\u0633\
+      \ \u0645\u06CC\u06BA \u0634\u0627\u0645\u0644 \u06A9\u0631\u0646\u06D2 \u06A9\
+      \u06D2 \u0644\u06CC\u06D2 \u0627\u06CC\u06A9 \u0646\u06CC\u0627 \u062C\u0645\
+      \u0644\u06C1 \u0644\u06A9\u06BE\u06CC\u06BA\u06D4\n\n||| {% if ( answers | length\
+      \ ) > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }} {% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -72,11 +72,13 @@ templates:
   441c70e3-095a-44a1-8163-bc3b666b7ea1: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 441c70e3-095a-44a1-8163-bc3b666b7ea1
-    jinja: "{{ passage }} \n{{ query }} \n\nYou should decide what \"{{\"@placeholder\"\
-      }}\" is referring to. \u06A9\u06D2 \u062F\u0631\u0645\u06CC\u0627\u0646 \u0627\
-      \u0646\u062A\u062E\u0627\u0628 \u06A9\u0631\u06CC\u06BA:\n- {{answer_choices\
-      \ | join(\"\\n- \")}}\n||| {% if ( answers | length ) > 0 %}{{ answers | choice\
-      \ }}\n{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \n\n\u0622\u067E \u06A9\u0648 \u0641\u06CC\
+      \u0635\u0644\u06C1 \u06A9\u0631\u0646\u0627 \u0686\u0627\u06C1\u06CC\u06D2 \u06A9\
+      \u06C1 \"{{\"@placeholder\"}}\" \u06A9\u0633 \u0686\u06CC\u0632 \u06A9\u0627\
+      \ \u062D\u0648\u0627\u0644\u06C1 \u062F\u06D2 \u0631\u06C1\u0627 \u06C1\u06D2\
+      \u06D4 \u06A9\u06D2 \u062F\u0631\u0645\u06CC\u0627\u0646 \u0627\u0646\u062A\u062E\
+      \u0627\u0628 \u06A9\u0631\u06CC\u06BA:\n- {{answer_choices | join(\"\\n- \"\
+      )}}\n||| {% if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -89,9 +91,10 @@ templates:
       entity) }} ||| {% endfor %} - {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 64013fb3-1afd-4e5a-8777-b164ca3b8e18
-    jinja: "{{ passage.split(\"@highlight\")[0] }}\n\nSummary:\n\n- {{ passage.split(\"\
-      @highlight\")[1:] | join(\"\\n- \") }} \n\n ||| {% if ( answers | length ) >\
-      \ 0 %}- {{ query | replace(\"@placeholder\", answers | choice) }} {% endif %}"
+    jinja: "{{ passage.split(\"@highlight\")[0] }}\n\n\u062E\u0644\u0627\u0635\u06C1\
+      :\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\\n- \") }} \n\n ||| {%\
+      \ if ( answers | length ) > 0 %}- {{ query | replace(\"@placeholder\", answers\
+      \ | choice) }} {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -118,9 +121,10 @@ templates:
   91555c1c-c1e4-469b-a2a4-fc952ce1a145: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 91555c1c-c1e4-469b-a2a4-fc952ce1a145
-    jinja: "{{ passage }} \n{{ query }} \nIn the question above, the \"{{\"@placeholder\"\
-      }}\" stands for ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}{%\
-      \ endif %}"
+    jinja: "{{ passage }} \n{{ query }} \n\u0627\u0648\u067E\u0631 \u0648\u0627\u0644\
+      \u06D2 \u0633\u0648\u0627\u0644 \u0645\u06CC\u06BA\u060C \"{{\"@placeholder\"\
+      }}\" \u06A9\u0627 \u0645\u0637\u0644\u0628 \u06C1\u06D2\u06D4 ||| {% if ( answers\
+      \ | length ) > 0 %}{{ answers | choice }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -133,15 +137,13 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 94577b75-2eac-4eae-b367-3b413c4188c6
-    jinja: 'After reading the article, write another sentence to add to it.
-
-      {{ passage | replace("@highlight", "\n- ") }}
-
-
-      ||| {% if ( answers | length ) > 0 %}{{ query | replace("@placeholder", answers
-      | choice) }}{% endif %}
-
-      '
+    jinja: "\u0645\u0636\u0645\u0648\u0646 \u067E\u0691\u06BE\u0646\u06D2 \u06A9\u06D2\
+      \ \u0628\u0639\u062F \u0627\u0633 \u0645\u06CC\u06BA \u0627\u0636\u0627\u0641\
+      \u06C1 \u06A9\u0631\u0646\u06D2 \u06A9\u06D2 \u0644\u06CC\u06D2 \u0627\u06CC\
+      \u06A9 \u0627\u0648\u0631 \u062C\u0645\u0644\u06C1 \u0644\u06A9\u06BE\u06CC\u06BA\
+      \u06D4\n{{ passage | replace(\"@highlight\", \"\\n- \") }}\n\n||| {% if ( answers\
+      \ | length ) > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}{%\
+      \ endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -154,10 +156,14 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 9579b54e-4f0f-4e43-8907-af57112cc857
-    jinja: "Please read the following news article and write another sentence to add\
-      \ to it.\n\n{{ passage | replace(\"@highlight\", \"\\n- \") }} \n ||| {% if\
-      \ ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\", answers |\
-      \ choice) }} {% endif %}\n"
+    jinja: "\u0628\u0631\u0627\u06C1 \u06A9\u0631\u0645 \u062F\u0631\u062C \u0630\u06CC\
+      \u0644 \u062E\u0628\u0631 \u06A9\u0627 \u0645\u0636\u0645\u0648\u0646 \u067E\
+      \u0691\u06BE\u06CC\u06BA \u0627\u0648\u0631 \u0627\u0633 \u0645\u06CC\u06BA\
+      \ \u0627\u0636\u0627\u0641\u06C1 \u06A9\u0631\u0646\u06D2 \u06A9\u06D2 \u0644\
+      \u06CC\u06D2 \u0627\u06CC\u06A9 \u0627\u0648\u0631 \u062C\u0645\u0644\u06C1\
+      \ \u0644\u06A9\u06BE\u06CC\u06BA\u06D4\n\n{{ passage | replace(\"@highlight\"\
+      , \"\\n- \") }} \n ||| {% if ( answers | length ) > 0 %}{{ query | replace(\"\
+      @placeholder\", answers | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -168,9 +174,10 @@ templates:
   99dd38ce-32f3-4d58-93c5-59821002b9cc: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 99dd38ce-32f3-4d58-93c5-59821002b9cc
-    jinja: "{{ passage }} \n{{ query }} \nWhat could the \"{{\"@placeholder\"}}\"\
-      \ be? {{ entities | join(\", \") }}? ||| {% if ( answers | length ) > 0 %}{{\
-      \ answers | choice }}{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \n\"{{\"@placeholder\"}}\" \u06A9\u06CC\u0627\
+      \ \u06C1\u0648 \u0633\u06A9\u062A\u0627 \u06C1\u06D2\u061F {{ entities | join(\"\
+      , \") }}? ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -181,22 +188,15 @@ templates:
   9b688cf3-28bf-4f33-94cf-e73e4fa8c608: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: 9b688cf3-28bf-4f33-94cf-e73e4fa8c608
-    jinja: '{{ passage }}
-
-      {{ query }}
-
-
-      I am trying to decide what "{{"@placeholder"}}" means in the previous text.
-
-      Help by choosing an option between:
-
-      - {{ entities | join("\n- ") }}
-
-      ||| {% if ( answers | length ) > 0 %}
-
-      {{ answers | choice }}
-
-      {% endif %}'
+    jinja: "{{ passage }}\n{{ query }}\n\n\u0645\u06CC\u06BA \u06CC\u06C1 \u0641\u06CC\
+      \u0635\u0644\u06C1 \u06A9\u0631\u0646\u06D2 \u06A9\u06CC \u06A9\u0648\u0634\u0634\
+      \ \u06A9\u0631 \u0631\u06C1\u0627 \u06C1\u0648\u06BA \u06A9\u06C1 \u067E\u0686\
+      \u06BE\u0644\u06D2 \u0645\u062A\u0646 \u0645\u06CC\u06BA \"{{\"@placeholder\"\
+      }}\" \u06A9\u0627 \u06A9\u06CC\u0627 \u0645\u0637\u0644\u0628 \u06C1\u06D2\u06D4\
+      \n\u06A9\u06D2 \u062F\u0631\u0645\u06CC\u0627\u0646 \u0627\u06CC\u06A9 \u0622\
+      \u067E\u0634\u0646 \u0645\u0646\u062A\u062E\u0628 \u06A9\u0631\u06A9\u06D2 \u0645\
+      \u062F\u062F \u06A9\u0631\u06CC\u06BA:\n- {{ entities | join(\"\\n- \") }}\n\
+      ||| {% if ( answers | length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -207,8 +207,10 @@ templates:
   a5ed27ed-162b-4ac1-9c7a-85059d5214be: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: a5ed27ed-162b-4ac1-9c7a-85059d5214be
-    jinja: "{{ passage }} \n{{ query }} \nHere, the placeholder refers to ||| {% if\
-      \ ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \n\u06CC\u06C1\u0627\u06BA \u067E\u0644\u06CC\
+      \u0633 \u06C1\u0648\u0644\u0688\u0631 \u0633\u06D2 \u0645\u0631\u0627\u062F\
+      \ \u06C1\u06D2\u06D4 ||| {% if ( answers | length ) > 0 %}{{ answers | choice\
+      \ }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -221,10 +223,12 @@ templates:
       entity) }} ||| {% endfor %} - {{ query | replace("@placeholder", entities[-1])
       }}'
     id: a99a92e0-e1ee-4ec3-a38a-3be4303ba017
-    jinja: "{{ passage.split(\"@highlight\")[0] }}\n\nHighlights:\n\n- {{ passage.split(\"\
-      @highlight\")[1:] | join(\"\\n- \") }} \n\nPlease write an additional highlight.\n\
-      \ ||| {% if ( answers | length ) > 0 %}- {{ query | replace(\"@placeholder\"\
-      , answers | choice) }} {% endif %}\n"
+    jinja: "{{ passage.split(\"@highlight\")[0] }}\n\n\u062C\u06BE\u0644\u06A9\u06CC\
+      \u0627\u06BA:\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\\n- \") }}\
+      \ \n\n\u0628\u0631\u0627\u06C1 \u06A9\u0631\u0645 \u0627\u06CC\u06A9 \u0627\u0636\
+      \u0627\u0641\u06CC \u06C1\u0627\u0626\u06CC \u0644\u0627\u0626\u0679 \u0644\u06A9\
+      \u06BE\u06CC\u06BA\u06D4\n ||| {% if ( answers | length ) > 0 %}- {{ query |\
+      \ replace(\"@placeholder\", answers | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -235,19 +239,11 @@ templates:
   d3fce74e-0d9d-404a-a009-9ebbf5794c2c: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: d3fce74e-0d9d-404a-a009-9ebbf5794c2c
-    jinja: 'Exercise: Extract from the text the correct entity that "{{"@placeholder"}}"
-      is referring to.
-
-
-      {{ passage }}
-
-      {{ query }}
-
-      ||| {% if ( answers | length ) > 0 %}
-
-      {{ answers | choice }}
-
-      {% endif %}'
+    jinja: "\u0648\u0631\u0632\u0634: \u0645\u062A\u0646 \u0633\u06D2 \u0648\u06C1\
+      \ \u0635\u062D\u06CC\u062D \u06C1\u0633\u062A\u06CC \u0646\u06A9\u0627\u0644\
+      \u06CC\u06BA \u062C\u0633 \u06A9\u0627 \u062D\u0648\u0627\u0644\u06C1 \"{{\"\
+      @placeholder\"}}\" \u06C1\u06D2\u06D4\n\n{{ passage }}\n{{ query }}\n||| {%\
+      \ if ( answers | length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -258,20 +254,11 @@ templates:
   de5b635e-c2f4-40bb-81ac-650f1b45564b: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: de5b635e-c2f4-40bb-81ac-650f1b45564b
-    jinja: '{{ passage }}
-
-      {{ query }}
-
-
-      Pick one option, "{{"@placeholder"}}" refers to:
-
-      - {{answer_choices | join("\n- ")}}
-
-      ||| {% if ( answers | length ) > 0 %}
-
-      {{ answers | choice }}
-
-      {% endif %}'
+    jinja: "{{ passage }}\n{{ query }}\n\n\u0627\u06CC\u06A9 \u0627\u062E\u062A\u06CC\
+      \u0627\u0631 \u0645\u0646\u062A\u062E\u0628 \u06A9\u0631\u06CC\u06BA\u060C \"\
+      {{\"@placeholder\"}}\" \u0633\u06D2 \u0645\u0631\u0627\u062F:\n- {{answer_choices\
+      \ | join(\"\\n- \")}}\n||| {% if ( answers | length ) > 0 %}\n{{ answers | choice\
+      \ }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -299,10 +286,10 @@ templates:
       entity) }} ||| {% endfor %} - {{ query | replace("@placeholder", entities[-1])
       }}'
     id: dfa3052f-ede8-42c2-b99a-bc5762c4fdc6
-    jinja: "Article:\n\n{{ passage.split(\"@highlight\")[0] }}\n\nHighlights:\n\n\
-      - {{ passage.split(\"@highlight\")[1:] | join(\"\\n- \") }} \n\n ||| {% if (\
-      \ answers | length ) > 0 %}- {{ query | replace(\"@placeholder\", answers |\
-      \ choice) }} {% endif %}"
+    jinja: "\u0645\u0636\u0645\u0648\u0646:\n\n{{ passage.split(\"@highlight\")[0]\
+      \ }}\n\n\u062C\u06BE\u0644\u06A9\u06CC\u0627\u06BA:\n\n- {{ passage.split(\"\
+      @highlight\")[1:] | join(\"\\n- \") }} \n\n ||| {% if ( answers | length ) >\
+      \ 0 %}- {{ query | replace(\"@placeholder\", answers | choice) }} {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -313,9 +300,11 @@ templates:
   e68d13c5-df75-4de0-b59e-f2eaf4af6ce7: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: e68d13c5-df75-4de0-b59e-f2eaf4af6ce7
-    jinja: "{{ passage }} \n{{ query }} \nCan you figure out what does the \"{{\"\
-      @placeholder\"}}\" mean? It means ||| {% if ( answers | length ) > 0 %}{{ answers\
-      \ | choice }}{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \n\u06A9\u06CC\u0627 \u0622\u067E \u0633\u0645\
+      \u062C\u06BE \u0633\u06A9\u062A\u06D2 \u06C1\u06CC\u06BA \u06A9\u06C1 \"{{\"\
+      @placeholder\"}}\" \u06A9\u0627 \u06A9\u06CC\u0627 \u0645\u0637\u0644\u0628\
+      \ \u06C1\u06D2\u061F \u0627\u0633 \u06A9\u0627 \u0645\u0637\u0644\u0628 \u06C1\
+      \u06D2 ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

@@ -4,9 +4,9 @@ templates:
   014b669e-2e3b-40ce-bdde-418966c7d666: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 014b669e-2e3b-40ce-bdde-418966c7d666
-    jinja: "{{ passage }} \n{{ query }} \n\u0915\u094C\u0928 \u0938\u093E \"{{\"@placeholder\"\
-      }}\" \u0939\u0948? {{ entities | join(\", \") }}? ||| {% if ( answers | length\
-      \ ) > 0 %} {{ answers | choice }}\n{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \n\"{{\"@placeholder\"}}\" \u0915\u094C\u0928\
+      \ \u0938\u093E \u0939\u0948? {{ entities | join(\", \") }}? ||| {% if ( answers\
+      \ | length ) > 0 %} {{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -17,14 +17,14 @@ templates:
   11e27d59-b1f5-43a1-9ccc-17f1c3249173: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 11e27d59-b1f5-43a1-9ccc-17f1c3249173
-    jinja: "\u0928\u093F\u092E\u094D\u0928\u0932\u093F\u0916\u093F\u0924 \u0926\u0938\
-      \u094D\u0924\u093E\u0935\u0947\u091C\u093C \u092D\u094D\u0930\u0937\u094D\u091F\
-      \ \u0939\u094B \u0917\u090F \u0939\u0948\u0902\u0964 \u092E\u0941\u091D\u0947\
-      \ \u092C\u0924\u093E\u090F\u0902 \u0915\u093F \u0915\u094D\u092F\u093E \"{{\"\
-      @placeholder\"}}\" \u0915\u093E \u091C\u093F\u0915\u094D\u0930 \u0939\u0948\u0964\
-      \n\n\u0926\u0938\u094D\u0924\u093E\u0935\u0947\u091C\u093C: {{ passage }} \n\
-      {{ query }} \n||| {% if ( answers | length ) > 0 %}{{ answers | choice }}\n\
-      {% endif %}"
+    jinja: "\u0928\u093F\u092E\u094D\u0928 \u0926\u0938\u094D\u0924\u093E\u0935\u0947\
+      \u091C\u093C \u0926\u0942\u0937\u093F\u0924 \u0939\u094B \u0917\u092F\u093E\
+      \ \u0939\u0948\u0964 \u092E\u0941\u091D\u0947 \u092C\u0924\u093E\u090F\u0902\
+      \ \u0915\u093F \"{{\"@placeholder\"}}\" \u0915\u093F\u0938\u0915\u093E \u091C\
+      \u093F\u0915\u094D\u0930 \u0915\u0930 \u0930\u0939\u093E \u0939\u0948\u0964\n\
+      \n\u0926\u0938\u094D\u0924\u093E\u0935\u0947\u091C\u093C: {{ passage }} \n{{\
+      \ query }} \n||| {% if ( answers | length ) > 0 %}{{ answers | choice }}\n{%\
+      \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -57,11 +57,11 @@ templates:
       )[1:] | join(\"\\n- \") }} \n\n\u0932\u0947\u0916:\n\n{{ passage.split(\"@highlight\"\
       )[0] }}\n\n\u0905\u092C \u091C\u092C \u0906\u092A\u0928\u0947 \u0932\u0947\u0916\
       \ \u092A\u0922\u093C \u0932\u093F\u092F\u093E \u0939\u0948, \u0924\u094B \u0915\
-      \u0943\u092A\u092F\u093E \u0907\u0938\u0947 \u091C\u094B\u0921\u093C\u0928\u0947\
-      \ \u0915\u0947 \u0932\u093F\u090F \u090F\u0915 \u0928\u092F\u093E \u0935\u093E\
-      \u0915\u094D\u092F \u0932\u093F\u0916\u0947\u0902\u0964\n\n||| {% if ( answers\
-      \ | length ) > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}\
-      \ {% endif %}"
+      \u0943\u092A\u092F\u093E \u0907\u0938\u092E\u0947\u0902 \u091C\u094B\u0921\u093C\
+      \u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u090F\u0915 \u0928\u092F\u093E\
+      \ \u0935\u093E\u0915\u094D\u092F \u0932\u093F\u0916\u0947\u0902\u0964\n\n|||\
+      \ {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\", answers\
+      \ | choice) }} {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -72,12 +72,12 @@ templates:
   441c70e3-095a-44a1-8163-bc3b666b7ea1: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 441c70e3-095a-44a1-8163-bc3b666b7ea1
-    jinja: "{{ passage }} \n{{ query }} \n\n\u0906\u092A\u0915\u094B \u092F\u0939\
-      \ \u0924\u092F \u0915\u0930\u0928\u093E \u091A\u093E\u0939\u093F\u090F \u0915\
-      \u093F \"{{\"@placeholder\"}}\" \u0915\u093E \u0909\u0932\u094D\u0932\u0947\u0916\
-      \ \u0915\u094D\u092F\u093E \u0939\u0948\u0964 \u092C\u0940\u091A \u091A\u092F\
-      \u0928:\n- {{answer_choices | join(\"\\n- \")}}\n||| {% if ( answers | length\
-      \ ) > 0 %}{{ answers | choice }}\n{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \n\n\u0906\u092A\u0915\u094B \u0924\u092F\
+      \ \u0915\u0930\u0928\u093E \u091A\u093E\u0939\u093F\u090F \u0915\u093F \"{{\"\
+      @placeholder\"}}\" \u0915\u093F\u0938\u0915\u093E \u091C\u093F\u0915\u094D\u0930\
+      \ \u0915\u0930 \u0930\u0939\u093E \u0939\u0948\u0964 \u092C\u0940\u091A \u091A\
+      \u092F\u0928:\n- {{answer_choices | join(\"\\n- \")}}\n||| {% if ( answers |\
+      \ length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -106,10 +106,11 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 90fc9ecb-c706-4c03-bb7e-4fe9fcd777f6
-    jinja: "\u0932\u0947\u0916:\n\n{{ passage.split(\"@highlight\")[0] }}\n\n\u0939\
-      \u093E\u0907\u0932\u093E\u0907\u091F\u094D\u0938:\n\n{{ passage.split(\"@highlight\"\
-      )[1:] | join(\"\\n\") }} \n\n ||| {% if ( answers | length ) > 0 %}{{ query\
-      \ | replace(\"@placeholder\", answers | choice) }} {% endif %}"
+    jinja: "\u0932\u0947\u0916:\n\n{{ passage.split(\"@highlight\")[0] }}\n\n\u092E\
+      \u0941\u0916\u094D\u092F \u0935\u093F\u0936\u0947\u0937\u0924\u093E\u090F\u0902\
+      :\n\n{{ passage.split(\"@highlight\")[1:] | join(\"\\n\") }} \n\n ||| {% if\
+      \ ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\", answers |\
+      \ choice) }} {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -120,10 +121,10 @@ templates:
   91555c1c-c1e4-469b-a2a4-fc952ce1a145: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 91555c1c-c1e4-469b-a2a4-fc952ce1a145
-    jinja: "{{ passage }} \n{{ query }} \n\u090A\u092A\u0930 \u0926\u093F\u090F \u0917\
-      \u090F \u092A\u094D\u0930\u0936\u094D\u0928 \u092E\u0947\u0902, \"{{\"@placeholder\"\
-      }}\" \u0915\u0947 \u0932\u093F\u090F \u0916\u0921\u093C\u093E \u0939\u0948 |||\
-      \ {% if ( answers | length ) > 0 %}{{ answers | choice }}{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \n\u0909\u092A\u0930\u094B\u0915\u094D\u0924\
+      \ \u092A\u094D\u0930\u0936\u094D\u0928 \u092E\u0947\u0902, \"{{\"@placeholder\"\
+      }}\" \u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948 ||| {% if ( answers\
+      \ | length ) > 0 %}{{ answers | choice }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -136,12 +137,12 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 94577b75-2eac-4eae-b367-3b413c4188c6
-    jinja: "\u0932\u0947\u0916 \u092A\u0922\u093C\u0928\u0947 \u0915\u0947 \u092C\u093E\
-      \u0926, \u0907\u0938\u0947 \u091C\u094B\u0921\u093C\u0928\u0947 \u0915\u0947\
-      \ \u0932\u093F\u090F \u090F\u0915 \u0914\u0930 \u0935\u093E\u0915\u094D\u092F\
-      \ \u0932\u093F\u0916\u0947\u0902\u0964\n{{ passage | replace(\"@highlight\"\
-      , \"\\n- \") }}\n\n||| {% if ( answers | length ) > 0 %}{{ query | replace(\"\
-      @placeholder\", answers | choice) }}{% endif %}\n"
+    jinja: "\u0932\u0947\u0916 \u0915\u094B \u092A\u0922\u093C\u0928\u0947 \u0915\u0947\
+      \ \u092C\u093E\u0926 \u0909\u0938\u092E\u0947\u0902 \u091C\u094B\u0921\u093C\
+      \u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u090F\u0915 \u0914\u0930 \u0935\
+      \u093E\u0915\u094D\u092F \u0932\u093F\u0916\u0947\u0902\u0964\n{{ passage |\
+      \ replace(\"@highlight\", \"\\n- \") }}\n\n||| {% if ( answers | length ) >\
+      \ 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -154,13 +155,14 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 9579b54e-4f0f-4e43-8907-af57112cc857
-    jinja: "\u0915\u0943\u092A\u092F\u093E \u0928\u093F\u092E\u094D\u0928 \u0938\u092E\
-      \u093E\u091A\u093E\u0930 \u0932\u0947\u0916 \u092A\u0922\u093C\u0947\u0902 \u0914\
-      \u0930 \u0907\u0938\u0947 \u091C\u094B\u0921\u093C\u0928\u0947 \u0915\u0947\
-      \ \u0932\u093F\u090F \u090F\u0915 \u0914\u0930 \u0935\u093E\u0915\u094D\u092F\
-      \ \u0932\u093F\u0916\u0947\u0902\u0964\n\n{{ passage | replace(\"@highlight\"\
-      , \"\\n- \") }} \n ||| {% if ( answers | length ) > 0 %}{{ query | replace(\"\
-      @placeholder\", answers | choice) }} {% endif %}\n"
+    jinja: "\u0915\u0943\u092A\u092F\u093E \u0928\u093F\u092E\u094D\u0928\u0932\u093F\
+      \u0916\u093F\u0924 \u0938\u092E\u093E\u091A\u093E\u0930 \u0932\u0947\u0916 \u092A\
+      \u0922\u093C\u0947\u0902 \u0914\u0930 \u0907\u0938\u092E\u0947\u0902 \u091C\u094B\
+      \u0921\u093C\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u090F\u0915 \u0914\
+      \u0930 \u0935\u093E\u0915\u094D\u092F \u0932\u093F\u0916\u0947\u0902\u0964\n\
+      \n{{ passage | replace(\"@highlight\", \"\\n- \") }} \n ||| {% if ( answers\
+      \ | length ) > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}\
+      \ {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -190,10 +192,11 @@ templates:
       \u0930 \u0930\u0939\u093E \u0939\u0942\u0902 \u0915\u093F \u092A\u093F\u091B\
       \u0932\u0947 \u092A\u093E\u0920 \u092E\u0947\u0902 \"{{\"@placeholder\"}}\"\
       \ \u0915\u093E \u0915\u094D\u092F\u093E \u0905\u0930\u094D\u0925 \u0939\u0948\
-      \u0964\n\u092C\u0940\u091A \u092E\u0947\u0902 \u090F\u0915 \u0935\u093F\u0915\
-      \u0932\u094D\u092A \u091A\u0941\u0928\u0915\u0930 \u092E\u0926\u0926 \u0915\u0930\
-      \u0947\u0902:\n- {{ entities | join(\"\\n- \") }}\n||| {% if ( answers | length\
-      \ ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
+      \u0964\n\u0907\u0928\u092E\u0947\u0902 \u0938\u0947 \u0915\u094B\u0908 \u0935\
+      \u093F\u0915\u0932\u094D\u092A \u091A\u0941\u0928\u0915\u0930 \u0938\u0939\u093E\
+      \u092F\u0924\u093E \u0915\u0930\u0947\u0902:\n- {{ entities | join(\"\\n- \"\
+      ) }}\n||| {% if ( answers | length ) > 0 %}\n{{ answers | choice }}\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -205,9 +208,9 @@ templates:
     answer_choices: '{{ entities | join("|||") }}'
     id: a5ed27ed-162b-4ac1-9c7a-85059d5214be
     jinja: "{{ passage }} \n{{ query }} \n\u092F\u0939\u093E\u0901, \u092A\u094D\u0932\
-      \u0947\u0938\u0939\u094B\u0932\u094D\u0921\u0930 \u0915\u094B \u0938\u0902\u0926\
-      \u0930\u094D\u092D\u093F\u0924 \u0915\u0930\u0924\u093E \u0939\u0948 ||| {%\
-      \ if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
+      \u0947\u0938\u0939\u094B\u0932\u094D\u0921\u0930 \u0938\u0902\u0926\u0930\u094D\
+      \u092D\u093F\u0924 \u0915\u0930\u0924\u093E \u0939\u0948 ||| {% if ( answers\
+      \ | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -220,12 +223,13 @@ templates:
       entity) }} ||| {% endfor %} - {{ query | replace("@placeholder", entities[-1])
       }}'
     id: a99a92e0-e1ee-4ec3-a38a-3be4303ba017
-    jinja: "{{ passage.split(\"@highlight\")[0] }}\n\n\u0939\u093E\u0907\u0932\u093E\
-      \u0907\u091F\u094D\u0938:\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\
-      \\n- \") }} \n\n\u0915\u0943\u092A\u092F\u093E \u090F\u0915 \u0905\u0924\u093F\
-      \u0930\u093F\u0915\u094D\u0924 \u0939\u093E\u0907\u0932\u093E\u0907\u091F \u0932\
-      \u093F\u0916\u0947\u0902\u0964\n ||| {% if ( answers | length ) > 0 %}- {{ query\
-      \ | replace(\"@placeholder\", answers | choice) }} {% endif %}\n"
+    jinja: "{{ passage.split(\"@highlight\")[0] }}\n\n\u092E\u0941\u0916\u094D\u092F\
+      \ \u0935\u093F\u0936\u0947\u0937\u0924\u093E\u090F\u0902:\n\n- {{ passage.split(\"\
+      @highlight\")[1:] | join(\"\\n- \") }} \n\n\u0915\u0943\u092A\u092F\u093E \u090F\
+      \u0915 \u0905\u0924\u093F\u0930\u093F\u0915\u094D\u0924 \u0939\u093E\u0907\u0932\
+      \u093E\u0907\u091F \u0932\u093F\u0916\u0947\u0902\u0964\n ||| {% if ( answers\
+      \ | length ) > 0 %}- {{ query | replace(\"@placeholder\", answers | choice)\
+      \ }} {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -236,12 +240,12 @@ templates:
   d3fce74e-0d9d-404a-a009-9ebbf5794c2c: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: d3fce74e-0d9d-404a-a009-9ebbf5794c2c
-    jinja: "\u0935\u094D\u092F\u093E\u092F\u093E\u092E: \u092A\u093E\u0920 \u0938\u0947\
-      \ \u0928\u093F\u0915\u093E\u0932\u0947\u0902 \u0938\u0939\u0940 \u0907\u0915\
-      \u093E\u0908 \u091C\u094B \"{{\"@placeholder\"}}\" \u0915\u093E \u0909\u0932\
-      \u094D\u0932\u0947\u0916 \u0915\u0930 \u0930\u0939\u0940 \u0939\u0948\u0964\n\
-      \n{{ passage }}\n{{ query }}\n||| {% if ( answers | length ) > 0 %}\n{{ answers\
-      \ | choice }}\n{% endif %}"
+    jinja: "\u0935\u094D\u092F\u093E\u092F\u093E\u092E: \u091F\u0947\u0915\u094D\u0938\
+      \u094D\u091F \u0938\u0947 \u0935\u0939 \u0938\u0939\u0940 \u0907\u0915\u093E\
+      \u0908 \u0928\u093F\u0915\u093E\u0932\u0947\u0902 \u091C\u093F\u0938\u0915\u093E\
+      \ \"{{\"@placeholder\"}}\" \u091C\u093F\u0915\u094D\u0930 \u0915\u0930 \u0930\
+      \u0939\u093E \u0939\u0948\u0964\n\n{{ passage }}\n{{ query }}\n||| {% if ( answers\
+      \ | length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -253,10 +257,10 @@ templates:
     answer_choices: '{{entities | join("|||")}}'
     id: de5b635e-c2f4-40bb-81ac-650f1b45564b
     jinja: "{{ passage }}\n{{ query }}\n\n\u090F\u0915 \u0935\u093F\u0915\u0932\u094D\
-      \u092A \u091A\u0941\u0928\u0947\u0902, \"{{\"@placeholder\"}}\" \u0915\u094B\
-      \ \u0938\u0902\u0926\u0930\u094D\u092D\u093F\u0924 \u0915\u0930\u0924\u093E\
-      \ \u0939\u0948:\n- {{answer_choices | join(\"\\n- \")}}\n||| {% if ( answers\
-      \ | length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
+      \u092A \u091A\u0941\u0928\u0947\u0902, \"{{\"@placeholder\"}}\" \u0915\u093E\
+      \ \u0905\u0930\u094D\u0925 \u0939\u0948:\n- {{answer_choices | join(\"\\n- \"\
+      )}}\n||| {% if ( answers | length ) > 0 %}\n{{ answers | choice }}\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -284,10 +288,11 @@ templates:
       entity) }} ||| {% endfor %} - {{ query | replace("@placeholder", entities[-1])
       }}'
     id: dfa3052f-ede8-42c2-b99a-bc5762c4fdc6
-    jinja: "\u0932\u0947\u0916:\n\n{{ passage.split(\"@highlight\")[0] }}\n\n\u0939\
-      \u093E\u0907\u0932\u093E\u0907\u091F\u094D\u0938:\n\n- {{ passage.split(\"@highlight\"\
-      )[1:] | join(\"\\n- \") }} \n\n ||| {% if ( answers | length ) > 0 %}- {{ query\
-      \ | replace(\"@placeholder\", answers | choice) }} {% endif %}"
+    jinja: "\u0932\u0947\u0916:\n\n{{ passage.split(\"@highlight\")[0] }}\n\n\u092E\
+      \u0941\u0916\u094D\u092F \u0935\u093F\u0936\u0947\u0937\u0924\u093E\u090F\u0902\
+      :\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\\n- \") }} \n\n ||| {%\
+      \ if ( answers | length ) > 0 %}- {{ query | replace(\"@placeholder\", answers\
+      \ | choice) }} {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -298,12 +303,11 @@ templates:
   e68d13c5-df75-4de0-b59e-f2eaf4af6ce7: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: e68d13c5-df75-4de0-b59e-f2eaf4af6ce7
-    jinja: "{{ passage }} \n{{ query }} \n\u0915\u094D\u092F\u093E \u0906\u092A \u092F\
-      \u0939 \u092A\u0924\u093E \u0932\u0917\u093E \u0938\u0915\u0924\u0947 \u0939\
-      \u0948\u0902 \u0915\u093F \"{{\"@placeholder\"}}\" \u0915\u093E \u0915\u094D\
-      \u092F\u093E \u0905\u0930\u094D\u0925 \u0939\u0948? \u0907\u0938\u0915\u093E\
-      \ \u092E\u0924\u0932\u092C ||| {% if ( answers | length ) > 0 %}{{ answers |\
-      \ choice }}{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \n\u0915\u094D\u092F\u093E \u0906\u092A \u0938\
+      \u092E\u091D \u0938\u0915\u0924\u0947 \u0939\u0948\u0902 \u0915\u093F \"{{\"\
+      @placeholder\"}}\" \u0915\u093E \u0915\u094D\u092F\u093E \u0905\u0930\u094D\u0925\
+      \ \u0939\u0948? \u0907\u0938\u0915\u093E \u092E\u0924\u0932\u092C ||| {% if\
+      \ ( answers | length ) > 0 %}{{ answers | choice }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

@@ -4,7 +4,7 @@ templates:
   00caa8cb-7f67-43bc-9e90-fc1d5d329432: !Template
     answer_choices: '{{endings | join(" ||| ")}}'
     id: 00caa8cb-7f67-43bc-9e90-fc1d5d329432
-    jinja: "Udfyld beskrivelsen med en passende afslutning:\nF\xF8rst, {{ ctx_a.lower()\
+    jinja: "Udfyld beskrivelsen med en passende slutning:\nF\xF8rst, {{ ctx_a.lower()\
       \ }} Derefter, {{ ctx_b.lower() }} ...\n\n(a) {{ answer_choices[0] }}\n\n(b)\
       \ {{ answer_choices[1] }}\n\n(c) {{ answer_choices[2] }}\n\n(d) {{ answer_choices[3]\
       \ }}\n|||\n{{ answer_choices[label | int()] }}"
@@ -42,7 +42,7 @@ templates:
   4ebf22a1-2d23-426c-a083-b43fc8567687: !Template
     answer_choices: null
     id: 4ebf22a1-2d23-426c-a083-b43fc8567687
-    jinja: "{{ctx}} {{endings[label | int()]}}\nKan du identificere emnet i afsnittet?\
+    jinja: "{{ctx}} {{endings[label | int()]}}\nKan du identificere emnet for afsnittet?\
       \ \n|||\n{{activity_label}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -55,12 +55,12 @@ templates:
   52fbd075-46cb-49fb-a41b-00a0f4a60285: !Template
     answer_choices: '{{endings | join(" ||| ") }}'
     id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
-    jinja: "{% set prompts = [\n'Kan du v\xE6lge den rigtige afslutning for s\xE6\
-      tningen: ',\n'Opgaven er at generere afslutningen p\xE5 s\xE6tningen: ',\n'Hvordan\
-      \ slutter denne s\xE6tning? ',\n'Fra listen over afslutninger beskrevet nedenfor,\
-      \ hvilken afslutning giver mest mening for s\xE6tningen ',]\n%}\n{{prompts |\
-      \ choice}}\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\
-      \n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices\
+    jinja: "{% set prompts = [\n'Kan du v\xE6lge den rigtige slutning til s\xE6tningen:\
+      \ ',\n'Opgaven er at generere slutningen for s\xE6tningen: ',\n'Hvordan ender\
+      \ denne s\xE6tning? ',\n'Fra listen over slutninger beskrevet nedenfor, hvilken\
+      \ slutning giver mest mening for s\xE6tningen ',]\n%}\n{{prompts | choice}}\n\
+      {{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c) \
+      \ {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices\
       \ [label | int()]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -86,9 +86,9 @@ templates:
   6e9f8d7d-9016-45bc-b997-c42aeb2dc944: !Template
     answer_choices: '{{endings | join("|||")}}'
     id: 6e9f8d7d-9016-45bc-b997-c42aeb2dc944
-    jinja: "Hvordan slutter denne s\xE6tning?\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\
+    jinja: "Hvordan ender denne s\xE6tning?\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\
       \n(b)  {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n\
-      \nTip: Emnet for s\xE6tningen er {{activity_label}}\n|||\n{{answer_choices [label\
+      \nTip: s\xE6tningens emne er {{activity_label}}\n|||\n{{answer_choices [label\
       \ | int()]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -100,7 +100,7 @@ templates:
   a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e: !Template
     answer_choices: null
     id: a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e
-    jinja: "Hvordan ville du starte s\xE6tningen:\n{{endings[label | int()]}}\n|||\n\
+    jinja: "Hvordan vil du starte s\xE6tningen:\n{{endings[label | int()]}}\n|||\n\
       {{ctx}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -127,23 +127,23 @@ templates:
     reference: The template randomly selects a continuation and checks if the continuation
       is appropriate for the given premise.
   db8b1c25-f2db-4604-b8fc-f93d69d6fae7: !Template
-    answer_choices: Slutter 1 ||| Slutter 2 ||| Slutter 3 ||| Slutter 4
+    answer_choices: Slutning 1 ||| Slutning 2 ||| Slutning 3 ||| Slutning 4
     id: db8b1c25-f2db-4604-b8fc-f93d69d6fae7
     jinja: '{{ ctx }}...
 
-      Hvordan slutter beskrivelsen sandsynligvis?
+      Hvordan ender beskrivelsen sandsynligvis?
 
 
-      Slutter 1: {{ endings[0] }}
+      Slutning 1: {{ endings[0] }}
 
 
-      Slutter 2: {{ endings[1] }}
+      Slutning 2: {{ endings[1] }}
 
 
-      Slutter 3: {{ endings[2] }}
+      Slutning 3: {{ endings[2] }}
 
 
-      Slutter 4: {{ endings[3] }}
+      Slutning 4: {{ endings[3] }}
 
       ||| {{ answer_choices[label | int()] }}'
     metadata: !TemplateMetadata
@@ -154,12 +154,12 @@ templates:
     name: how_ends
     reference: ''
   def77598-682f-48de-b187-55db4d390f07: !Template
-    answer_choices: Slutter 1 ||| Slutter 2 ||| Slutter 3 ||| Slutter 4
+    answer_choices: Slutning 1 ||| Slutning 2 ||| Slutning 3 ||| Slutning 4
     id: def77598-682f-48de-b187-55db4d390f07
-    jinja: "Hvis en beskrivelse af en situation begynder som denne: {{ ctx }}... Then\
-      \ how\ndoes it continue? \n\nSlutter 1: {{ endings[0] }}\n\nSlutter 2: {{ endings[1]\
-      \ }}\n\nSlutter 3: {{ endings[2] }}\n\nSlutter 4: {{ endings[3] }}\n|||{{answer_choices[label\
-      \ | int()] }}"
+    jinja: "Hvis en beskrivelse af en situation begynder s\xE5dan: {{ ctx }}... Then\
+      \ how\ndoes it continue? \n\nSlutning 1: {{ endings[0] }}\n\nSlutning 2: {{\
+      \ endings[1] }}\n\nSlutning 3: {{ endings[2] }}\n\nSlutning 4: {{ endings[3]\
+      \ }}\n|||{{answer_choices[label | int()] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

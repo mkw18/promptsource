@@ -23,7 +23,7 @@ templates:
 
       {% if answers.text == [] %}
 
-      Jibu sio kwa muktadha
+      Usijibu katika muktadha
 
       {% else %}
 
@@ -42,8 +42,8 @@ templates:
     id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
     jinja: '{% if answers.text != [] %}
 
-      Amua swali ambalo unaweza kuwa umeuliza kurudisha jibu lifuatalo kwa muktadha
-      uliopewa
+      Amua swali ambalo unaweza kuwa umeuliza ili kupata jibu lifuatalo kwa muktadha
+      uliotolewa
 
       Muktadha: {{context}};
 
@@ -69,9 +69,9 @@ templates:
     id: 20064b80-e4d0-41b7-9135-92c0077d5044
     jinja: '{% set seq = [
 
-      ''Je! Hii ni nini? '',
+      ''Hii inahusu nini? '',
 
-      ''Aya inahusu nini? '',
+      ''Kifungu kinahusu nini? '',
 
       ''Pata mada kutoka: '',
 
@@ -107,11 +107,11 @@ templates:
 
       ''Hii ni kuhusu '',
 
-      ''Je! Hii ni nini? '',
+      ''Hii inahusu nini? '',
 
-      ''Aya ni kuhusu '',
+      ''Kifungu kinahusu '',
 
-      ''Aya inahusu nini? '',
+      ''Kifungu kinahusu nini? '',
 
       ''Pata mada: '',
 
@@ -145,7 +145,7 @@ templates:
     id: 7a44cd99-7420-4456-aaaa-34e2c81d1679
     jinja: '{% if answers.text != [] %}
 
-      Je! Ni swali gani ambalo lingetoa jibu lifuatalo?
+      Ni swali gani ambalo linaweza kutoa jibu lifuatalo?
 
       Jibu: {{answers.text[0]}};
 
@@ -181,9 +181,9 @@ templates:
 
       ''Nataka kuuliza '',
 
-      ''Jibu ni nini: '',
+      ''Jibu ni nini kwa: '',
 
-      ''Pata jibu kwa: '',
+      ''Tafuta jibu kwa: '',
 
       ''Jibu: '',
 
@@ -195,7 +195,7 @@ templates:
 
       {% if answers.text == [] %}
 
-      Jibu sio kwa muktadha
+      Usijibu katika muktadha
 
       {% else %}
 
@@ -228,13 +228,13 @@ templates:
 
       Swali: {{question}};
 
-      If you can''t find the answer, please respond "Haiwezekani".
+      If you can''t find the answer, please respond "isiyoweza kujibiwa".
 
       Jibu: |||
 
       {% if answers.text == [] %}
 
-      Haiwezekani
+      isiyoweza kujibiwa
 
       {% else %}
 
@@ -279,9 +279,9 @@ templates:
 
       ''Nataka kuuliza '',
 
-      ''Jibu ni nini: '',
+      ''Jibu ni nini kwa: '',
 
-      ''Pata jibu kwa: '',
+      ''Tafuta jibu kwa: '',
 
       ''Jibu: '',
 
@@ -290,11 +290,11 @@ templates:
       ] %}
 
       {{context}} {{ seq | choice }}{{question}} If you can''t find the answer, please
-      respond "Haiwezekani". |||
+      respond "isiyoweza kujibiwa". |||
 
       {% if answers.text == [] %}
 
-      Haiwezekani
+      isiyoweza kujibiwa
 
       {% else %}
 
@@ -306,9 +306,9 @@ templates:
     reference: Given context and question, give answer. No keywords to delineate context
       and question is given.
   e2e41877-4794-4ff9-9f92-a2a85105e2a7: !Template
-    answer_choices: Ndio ||| Hapana
+    answer_choices: ndio ||| Hapana
     id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
-    jinja: "Muktadha: {{context}}; \n\nSwali: {{question}} \n\nJe! Swali hili linajibika?\
+    jinja: "Muktadha: {{context}}; \n\nSwali: {{question}} \n\nJe, swali hili linajibiwa?\
       \ ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n{% else %}\n{{answer_choices[1]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -323,11 +323,11 @@ templates:
     id: e51c23b9-5b10-4db3-a0d1-ba546830173d
     jinja: '{% set seq = [
 
-      ''Amua mada ya jozi ya maswali. '',
+      ''Amua mada ya jozi ya jibu la maswali. '',
 
-      ''Pata mada. '',
+      ''Tafuta mada. '',
 
-      ''Je! Ni mada gani kutoka kwa hii? '',
+      ''Ni mada gani kutoka kwa hii? '',
 
       ] %}
 
@@ -352,7 +352,7 @@ templates:
   fdcf132e-6c70-4188-999e-93601ee8e089: !Template
     answer_choices: null
     id: fdcf132e-6c70-4188-999e-93601ee8e089
-    jinja: 'Je! Kifungu kifuatacho kinahusu nini?
+    jinja: 'Kifungu kifuatacho kinahusu nini?
 
       {{context}} |||
 

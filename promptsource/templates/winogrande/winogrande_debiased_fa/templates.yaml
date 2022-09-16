@@ -1,0 +1,90 @@
+dataset: winogrande
+subset: winogrande_debiased_fa
+templates:
+  1ce2be12-1815-4a07-80a7-ac3c3505b005: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 1ce2be12-1815-4a07-80a7-ac3c3505b005
+    jinja: "{{sentence}}\n\u0628\u0647 \u062C\u0627\u06CC _ \u062F\u0631 \u062C\u0645\
+      \u0644\u0647 \u0628\u0627\u0644\u0627 \u06AF\u0632\u06CC\u0646\u0647 \u0635\u062D\
+      \u06CC\u062D \u0631\u0627 \u062C\u0627\u06CC\u06AF\u0632\u06CC\u0646 \u06A9\u0646\
+      \u06CC\u062F: \n- {{option1}}\n- {{option2}}\n|||\n{% if answer == '1' %} {{option1}}\
+      \ {% else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Replace
+    reference: ''
+  1ddbbca4-8917-4a1d-9d83-f42db77f24ba: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 1ddbbca4-8917-4a1d-9d83-f42db77f24ba
+    jinja: "{{sentence}}\n_ \u062F\u0631 \u062C\u0645\u0644\u0647 \u0628\u0627\u0644\
+      \u0627 \u0628\u0647 \u0686\u0647 \u0686\u06CC\u0632\u06CC \u0627\u0634\u0627\
+      \u0631\u0647 \u062F\u0627\u0631\u062F\u061F {{option1}} \u06CC\u0627 {{option2}}\u061F\
+      \ ||| {% if answer == '1' %} {{option1}} {% else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: underscore refer to
+    reference: ''
+  276eaba6-17e5-403a-98c7-0f8c53c35221: !Template
+    answer_choices: '{{ option1 }} ||| {{ option2 }}'
+    id: 276eaba6-17e5-403a-98c7-0f8c53c35221
+    jinja: "{{ sentence }} \u062F\u0631 \u062C\u0645\u0644\u0647 \u0642\u0628\u0644\
+      \u060C _ \u0628\u0647 {{option1}} \u06CC\u0627 {{option2}} \u0627\u0634\u0627\
+      \u0631\u0647 \u062F\u0627\u0631\u062F\u061F ||| {% if answer == '1' %} {{option1}}\
+      \ {% else %} {{ option2 }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does underscore refer to
+    reference: ''
+  9702d456-4261-4a7e-94c5-6a9d2a1c4859: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: 9702d456-4261-4a7e-94c5-6a9d2a1c4859
+    jinja: "\u062F\u0631 \u062C\u0645\u0644\u0647 \u0632\u06CC\u0631\u060C _ \u0645\
+      \u062E\u0641\u0641 {{answer_choices[0]}} \u06CC\u0627 {{answer_choices[1]}}\
+      \ \u0627\u0633\u062A\u061F\n{{sentence}}|||\n{{answer_choices[answer | int -\
+      \ 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: stand for
+    reference: ''
+  bb9b91fc-760a-45cd-bacd-dcb05a1cb2f3: !Template
+    answer_choices: "\u062F\u0631\u0633\u062A \u0627\u0633\u062A\u060C \u0648\u0627\
+      \u0642\u0639\u06CC ||| \u0646\u0627\u062F\u0631\u0633\u062A"
+    id: bb9b91fc-760a-45cd-bacd-dcb05a1cb2f3
+    jinja: "_ \u062F\u0631 \u062C\u0645\u0644\u0647 \u0632\u06CC\u0631 \u0628\u0647\
+      \ {{option1}} \u0627\u0634\u0627\u0631\u0647 \u062F\u0627\u0631\u062F. \u062F\
+      \u0631\u0633\u062A \u06CC\u0627 \u063A\u0644\u0637\u061F\n{{sentence}}|||\n\
+      {{answer_choices[answer|int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: false
+    name: True or False
+    reference: ''
+  ebabc54d-cff4-46a7-9c22-2412b8ce00c6: !Template
+    answer_choices: '{{option1}} ||| {{option2}}'
+    id: ebabc54d-cff4-46a7-9c22-2412b8ce00c6
+    jinja: "_ \u0631\u0627 \u062F\u0631 \u062C\u0645\u0644\u0647 \u0632\u06CC\u0631\
+      \ \u067E\u0631 \u06A9\u0646\u06CC\u062F:\n{{sentence}}\n\n\u0627\u0646\u062A\
+      \u062E\u0627\u0628 \u0647\u0627:\n- {{ option1 }}\n- {{ option2 }}\n\n\u067E\
+      \u0627\u0633\u062E: ||| {% if answer == '1' %} {{option1}} {% else %} {{ option2\
+      \ }} {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fill in the blank
+    reference: ''

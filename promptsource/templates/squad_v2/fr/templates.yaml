@@ -7,7 +7,7 @@ templates:
     jinja: "{% set seq = [\n'R\xE9pondez \xE0 la question en fonction du contexte.',\n\
       'Quelle est la r\xE9ponse?',\n] %}\n\n{{ seq | choice }}\nLe contexte: {{context}};\n\
       Question: {{question}};\nR\xE9ponse: |||\n{% if answers.text == [] %}\nR\xE9\
-      pondre pas dans son contexte\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
+      ponse hors contexte\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: &id001 !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -19,8 +19,8 @@ templates:
     answer_choices: null
     id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
     jinja: "{% if answers.text != [] %}\nD\xE9terminez la question que vous auriez\
-      \ pu demander \xE0 r\xE9cup\xE9rer la r\xE9ponse suivante pour le contexte donn\xE9\
-      \nLe contexte: {{context}};\nR\xE9ponse: {{answers.text[0]}};\nQuestion: |||\n\
+      \ pu poser pour obtenir la r\xE9ponse suivante pour le contexte donn\xE9\nLe\
+      \ contexte: {{context}};\nR\xE9ponse: {{answers.text[0]}};\nQuestion: |||\n\
       {{question}}\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -33,10 +33,11 @@ templates:
   20064b80-e4d0-41b7-9135-92c0077d5044: !Template
     answer_choices: null
     id: 20064b80-e4d0-41b7-9135-92c0077d5044
-    jinja: "{% set seq = [\n'De quoi s''agit-il? ',\n'De quoi parle le paragraphe?\
-      \ ',\n'Obtenez le sujet de: ',\n'Du passage, obtenez le sujet',\n'Je veux conna\xEE\
-      tre le sujet. ',\n'Sujet du passage: ',\n'Sujet du paragraphe: ',\n] %}\n{{\
-      \ seq | choice }}\n{{context}} |||\n{{title | replace(\"_\", \" \")}}"
+    jinja: "{% set seq = [\n'Ca parle de quoi? ',\n'De quoi parle le paragraphe ?\
+      \ ',\n'Obtenez le sujet de: ',\n'\xC0 partir du passage, obtenez le sujet',\n\
+      'Je veux conna\xEEtre le sujet. ',\n'Sujet du passage : ',\n'Sujet du paragraphe\_\
+      : ',\n] %}\n{{ seq | choice }}\n{{context}} |||\n{{title | replace(\"_\", \"\
+      \ \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -51,10 +52,10 @@ templates:
     answer_choices: null
     id: 338cc143-361e-4796-b035-31fb2201c49f
     jinja: "{% set seq = [\n'C''est \xE0 propos de ',\n'Ca parle de quoi? ',\n'Le paragraphe\
-      \ est \xE0 propos ',\n'De quoi parle le paragraphe? ',\n'Obtenez le sujet: ',\n\
-      'Du passage, le sujet est',\n'Je veux conna\xEEtre le sujet. ',\n'Sujet du passage:\
-      \ ',\n'Sujet du paragraphe: ',\n] %}\n{{context}}\n{{ seq | choice }}|||\n{{title\
-      \ | replace(\"_\", \" \")}}"
+      \ parle de ',\n'De quoi parle le paragraphe ? ',\n'Obtenez le sujet\_: ',\n\
+      'D''apr\xE8s le passage, le sujet est',\n'Je veux conna\xEEtre le sujet. ',\n\
+      'Sujet du passage : ',\n'Sujet du paragraphe\_: ',\n] %}\n{{context}}\n{{ seq\
+      \ | choice }}|||\n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -68,8 +69,8 @@ templates:
   7a44cd99-7420-4456-aaaa-34e2c81d1679: !Template
     answer_choices: null
     id: 7a44cd99-7420-4456-aaaa-34e2c81d1679
-    jinja: "{% if answers.text != [] %}\nQuelle est une question qui donnerait la\
-      \ r\xE9ponse suivante?\nR\xE9ponse: {{answers.text[0]}};\nQuestion: |||\n{{question}}\n\
+    jinja: "{% if answers.text != [] %}\nQuelle est la question qui donnerait la r\xE9\
+      ponse suivante\_?\nR\xE9ponse: {{answers.text[0]}};\nQuestion: |||\n{{question}}\n\
       {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -83,11 +84,11 @@ templates:
     answer_choices: null
     id: 8bea1123-fd8d-4bac-96bf-b8a289ee74b3
     jinja: "{% set seq = [\n'Pouvez-vous me dire ',\n's''il vous pla\xEEt dites-moi\
-      \ ',\n'Dites-moi ',\n'Du passage, ',\n'Je veux savoir ',\n'Je veux demander\
-      \ ',\n'Quelle est la r\xE9ponse \xE0: ',\n'Trouvez la r\xE9ponse \xE0: ',\n\
+      \ ',\n'Dites-moi ',\n'Depuis le passage, ',\n'Je veux savoir ',\n'Je veux demander\
+      \ ',\n'Quelle est la r\xE9ponse \xE0 : ',\n'Trouvez la r\xE9ponse \xE0 : ',\n\
       'R\xE9ponse: ',\n'',\n] %}\n{{context}} {{ seq | choice }}{{question}}|||\n\
-      {% if answers.text == [] %}\nR\xE9pondre pas dans son contexte\n{% else %}\n\
-      {{answers.text[0]}}\n{% endif %}"
+      {% if answers.text == [] %}\nR\xE9ponse hors contexte\n{% else %}\n{{answers.text[0]}}\n\
+      {% endif %}"
     metadata: &id002 !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -129,8 +130,8 @@ templates:
     answer_choices: null
     id: e1630107-8f5d-44ce-8ccd-6fa80da80328
     jinja: "{% set seq = [\n'Pouvez-vous me dire ',\n's''il vous pla\xEEt dites-moi\
-      \ ',\n'Dites-moi ',\n'Du passage, ',\n'Je veux savoir ',\n'Je veux demander\
-      \ ',\n'Quelle est la r\xE9ponse \xE0: ',\n'Trouvez la r\xE9ponse \xE0: ',\n\
+      \ ',\n'Dites-moi ',\n'Depuis le passage, ',\n'Je veux savoir ',\n'Je veux demander\
+      \ ',\n'Quelle est la r\xE9ponse \xE0 : ',\n'Trouvez la r\xE9ponse \xE0 : ',\n\
       'R\xE9ponse: ',\n'',\n] %}\n{{context}} {{ seq | choice }}{{question}} If you\
       \ can't find the answer, please respond \"sans r\xE9ponse\". |||\n{% if answers.text\
       \ == [] %}\nsans r\xE9ponse\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
@@ -142,7 +143,7 @@ templates:
     answer_choices: oui ||| non
     id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
     jinja: "Le contexte: {{context}}; \n\nQuestion: {{question}} \n\nCette question\
-      \ est-elle responsable? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n\
+      \ a-t-elle une r\xE9ponse\_? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n\
       {% else %}\n{{answer_choices[1]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -154,10 +155,10 @@ templates:
   e51c23b9-5b10-4db3-a0d1-ba546830173d: !Template
     answer_choices: null
     id: e51c23b9-5b10-4db3-a0d1-ba546830173d
-    jinja: "{% set seq = [\n'D\xE9terminez le sujet de la paire de questions-r\xE9\
-      ponses. ',\n'Trouvez le sujet. ',\n'Quel est le sujet de cela? ',\n] %}\n{%\
-      \ if answers.text != [] %}\n{{ seq | choice }}\nQuestion: {{question}};  R\xE9\
-      ponse: {{answers.text[0]}}; Topic: |||\n{{title}}\n{% endif %}"
+    jinja: "{% set seq = [\n'D\xE9terminez le sujet de la paire question-r\xE9ponse.\
+      \ ',\n'Trouvez le sujet. ',\n'Quel est le sujet de ceci? ',\n] %}\n{% if answers.text\
+      \ != [] %}\n{{ seq | choice }}\nQuestion: {{question}};  R\xE9ponse: {{answers.text[0]}};\
+      \ Sujet: |||\n{{title}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -170,7 +171,7 @@ templates:
   fdcf132e-6c70-4188-999e-93601ee8e089: !Template
     answer_choices: null
     id: fdcf132e-6c70-4188-999e-93601ee8e089
-    jinja: 'De quel est le passage suivant?
+    jinja: 'De quoi parle le passage suivant ?
 
       {{context}} |||
 

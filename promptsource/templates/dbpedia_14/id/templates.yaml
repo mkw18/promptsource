@@ -2,14 +2,14 @@ dataset: dbpedia_14
 subset: id
 templates:
   824ecb55-ecad-40c2-8033-f2fa0add2ddf: !Template
-    answer_choices: Perusahaan ||| Lembaga pendidikan ||| Artis ||| Athlete ||| Pemegang
-      kantor ||| Berarti transportasi ||| Bangunan ||| Tempat alami ||| Desa ||| Satwa
-      ||| Tanaman ||| Album ||| Film ||| Written Work
+    answer_choices: Perusahaan ||| Lembaga pendidikan ||| Artis ||| Atlet ||| Pemegang
+      Kantor ||| Sarana Transportasi ||| Bangunan ||| Tempat Alami ||| Desa ||| Satwa
+      ||| Tanaman ||| Album ||| Film ||| Karya Tertulis
     id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
-    jinja: '{{content}} Given a list of categories: {{"company, educational institution,
-      artist, athlete, office holder, mean of transportation, building, natural place,
-      village, animal, plant, album, film or written work"}}, what category does the
-      paragraph belong to? ||| {{ answer_choices[label] }}
+    jinja: '{{content}} Diberikan daftar kategori: {{"perusahaan, lembaga pendidikan,
+      artis, atlet, pemegang jabatan, sarana transportasi, bangunan, tempat alami,
+      desa, hewan, tanaman, album, film atau karya tulis"}}, termasuk dalam kategori
+      apa paragraf tersebut? ||| {{ answer_choices[label] }}
 
 
       '
@@ -22,12 +22,12 @@ templates:
     reference: ''
   8eda7e71-6734-486f-b883-e99d3f14c0bf: !Template
     answer_choices: Perusahaan ||| Lembaga pendidikan ||| Artis ||| Atlet ||| Pemegang
-      kantor ||| Berarti transportasi ||| Bangunan ||| Tempat alami ||| Desa ||| Satwa
-      ||| Tanaman ||| Album ||| Film ||| Written Work
+      Kantor ||| Sarana Transportasi ||| Bangunan ||| Tempat Alami ||| Desa ||| Satwa
+      ||| Tanaman ||| Album ||| Film ||| Karya Tertulis
     id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
-    jinja: Pilih satu kategori untuk teks berikut.Opsi adalah - {{"Perusahaan, lembaga
-      pendidikan, artis, atlet, pemegang kantor, rata -rata transportasi, bangunan,
-      tempat alami, desa, hewan, tanaman, album, film atau karya tertulis"}}. {{title}}
+    jinja: Pilih satu kategori untuk teks berikut. Opsinya adalah - {{"perusahaan,
+      lembaga pendidikan, artis, atlet, pemegang jabatan, sarana transportasi, bangunan,
+      tempat alami, desa, hewan, tanaman, album, film atau karya tulis"}}. {{title}}
       - {{content}} ||| {{ answer_choices[label] }}
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -37,14 +37,14 @@ templates:
     name: pick_one_category_for_the_following_text
     reference: ''
   9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67: !Template
-    answer_choices: Perusahaan ||| Lembaga pendidikan ||| Artis ||| Athlete ||| Pemegang
-      kantor ||| Berarti transportasi ||| Building ||| Tempat alami ||| Desa ||| Satwa
-      ||| Tanaman ||| Album ||| Film ||| Written Work
+    answer_choices: Perusahaan ||| Lembaga pendidikan ||| Artis ||| Atlet ||| Pemegang
+      Kantor ||| Sarana Transportasi ||| Bangunan ||| Tempat Alami ||| Desa ||| Satwa
+      ||| Tanaman ||| Album ||| Film ||| Karya Tertulis
     id: 9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67
-    jinja: '{{title}} - {{content}} Diberikan pilihan kategori {{"Perusahaan, lembaga
-      pendidikan, artis, atlet, pemegang kantor, rata -rata transportasi, bangunan,
-      tempat alami, desa, hewan, tanaman, album, film atau karya tertulis"}}, teks
-      mengacu pada yang mana? ||| {{ answer_choices[label] }}'
+    jinja: '{{title}} - {{content}} Diberikan pilihan kategori {{"perusahaan, lembaga
+      pendidikan, artis, atlet, pemegang jabatan, sarana transportasi, bangunan, tempat
+      alami, desa, hewan, tanaman, album, film atau karya tulis"}}, teks mengacu pada
+      yang mana? ||| {{ answer_choices[label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -54,13 +54,13 @@ templates:
     reference: ''
   f72fa410-3278-4f62-91f0-f9edf4a4e792: !Template
     answer_choices: Perusahaan ||| Lembaga pendidikan ||| Artis ||| Atlet ||| Pemegang
-      kantor ||| Berarti transportasi ||| Building ||| Tempat alami ||| Village |||
-      Satwa ||| Tanaman ||| Album ||| Film ||| Karya tertulis
+      Kantor ||| Sarana Transportasi ||| Bangunan ||| Tempat Alami ||| Desa ||| Satwa
+      ||| Tanaman ||| Album ||| Film ||| Karya Tertulis
     id: f72fa410-3278-4f62-91f0-f9edf4a4e792
-    jinja: '"{{title}}", given a list of categories: {{"company, educational institution,
-      artist, athlete, office holder, mean of transportation, building, natural place,
-      village, animal, plant, album, film or written work"}}, what category does the
-      title belong to? ||| {{ answer_choices[label] }}
+    jinja: '"{{title}}", diberikan daftar kategori: {{"perusahaan, lembaga pendidikan,
+      artis, atlet, pemegang jabatan, sarana transportasi, bangunan, tempat alami,
+      desa, hewan, tanaman, album, film atau karya tulis"}}, judul termasuk dalam
+      kategori apa? ||| {{ answer_choices[label] }}
 
 
       '

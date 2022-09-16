@@ -6,7 +6,7 @@ templates:
     id: 3b88d2c4-0aeb-4c6d-9ccc-653a388250a5
     jinja: '{% if label == 1 %}
 
-      Reprandr fraz sa a: {{sentence1}}
+      Parafraze fraz sa a: {{sentence1}}
 
       |||
 
@@ -24,17 +24,8 @@ templates:
   44c2e6d9-facf-4959-8400-38e0eb8dd3a8: !Template
     answer_choices: non ||| wi
     id: 44c2e6d9-facf-4959-8400-38e0eb8dd3a8
-    jinja: 'Mwen vle konnen si de fraz sa yo vle di menm bagay la.
-
-      {{sentence1}}
-
-      {{sentence2}}
-
-      Yo?
-
-      |||
-
-      {{ answer_choices[label] }}'
+    jinja: "Mwen vle konnen si de fraz sa yo vle di menm bagay la.\n{{sentence1}}\n\
+      {{sentence2}}\n\xC8ske yo?\n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -45,8 +36,8 @@ templates:
   adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
     answer_choices: non ||| wi
     id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
-    jinja: "\xC8ske fraz la\n{{sentence1}}\nparafraz (ki se, vle di menm bagay la\
-      \ tankou) fraz sa a?\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
+    jinja: "\xC8ske fraz\n{{sentence1}}\nla parafraze (ki vle di menm bagay ak) fraz\
+      \ sa a?\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -69,8 +60,15 @@ templates:
   d830d7a5-abc0-4275-ac62-974e0088876f: !Template
     answer_choices: null
     id: d830d7a5-abc0-4275-ac62-974e0088876f
-    jinja: "{% if label == 1 %}\nJenere yon fraz ki vle di menm bagay la tankou yon\
-      \ s\xE8l sa a: {{sentence1}}\n|||\n{{sentence2}}\n{% endif %}"
+    jinja: '{% if label == 1 %}
+
+      Jenere yon fraz ki vle di menm bagay ak sa a: {{sentence1}}
+
+      |||
+
+      {{sentence2}}
+
+      {% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -82,8 +80,8 @@ templates:
   ee82d511-908c-4244-804f-6d0d907c68c7: !Template
     answer_choices: non ||| wi
     id: ee82d511-908c-4244-804f-6d0d907c68c7
-    jinja: "\xC8ske mwen ka ranplase fraz la\n{{sentence1}}\nak fraz la\n{{sentence2}}\n\
-      epi f\xE8 sa vle di menm bagay la?\n|||\n{{ answer_choices[label] }}"
+    jinja: "\xC8ske mwen ka ranplase fraz\n{{sentence1}}\nak fraz\n{{sentence2}}\n\
+      epi f\xE8 li vle di menm bagay la?\n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

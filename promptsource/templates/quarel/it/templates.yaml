@@ -7,7 +7,7 @@ templates:
     jinja: 'Domanda: {{question}}
 
 
-      Non utilizzare {{"a"}} e {{"b"}} per rispondere alla domanda ma invece, scegli
+      Non utilizzare {{"A"}} e {{"B"}} per rispondere alla domanda, ma scegli invece
       tra "{{answer_choices[0]}}" e "{{answer_choices[1]}}".
 
       |||
@@ -41,7 +41,7 @@ templates:
   63c58389-605a-42b9-85a6-a2586a954a92: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 63c58389-605a-42b9-85a6-a2586a954a92
-    jinja: "Ecco un racconto: {{question}}.\n\nQual \xE8 la risposta pi\xF9 sensica\
+    jinja: "Ecco una breve storia: {{question}}.\n\nQual \xE8 la risposta pi\xF9 sensata\
       \ tra \"{{answer_choices[0]}}\" e \"{{answer_choices[1]}}\"?\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -71,8 +71,8 @@ templates:
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 92013fab-5387-44d4-bf0f-e29a31bcafb6
     jinja: "Sto testando la logica dei miei studenti.\nQual \xE8 la risposta che dovrebbero\
-      \ scegliere tra \"{{answer_choices[0]}}\" e \"{{answer_choices[1]}}\"?\nTest\
-      \ logico: {{question}}\n|||\n{{answer_choices[answer_index]}}"
+      \ scegliere tra \"{{answer_choices[0]}}\" e \"{{answer_choices[1]}}\"?\nProva\
+      \ logica: {{question}}\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

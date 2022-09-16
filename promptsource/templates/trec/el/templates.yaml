@@ -124,7 +124,7 @@ templates:
     id: 6c391f4f-027b-4425-88de-1dbb6aa706ee
     jinja: "\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{text}}\n\n\u03A0\u03B5\u03C1\
       \u03B9\u03B3\u03C1\u03B1\u03C6\u03B5\u03AF\u03C2: {{', '.join(answer_choices)}}\n\
-      \n\u039A\u03B1\u03BB\u03CD\u03C4\u03B5\u03C1\u03BF\u03C2 \u03C0\u03B5\u03C1\u03B9\
+      \n\u039A\u03B1\u03BB\u03CD\u03C4\u03B5\u03C1\u03BF\u03C2 \u03A0\u03B5\u03C1\u03B9\
       \u03B3\u03C1\u03B1\u03C6\u03AD\u03B1\u03C2;\n|||\n{{answer_choices[label_coarse]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -136,8 +136,8 @@ templates:
   71090d59-dd02-4cbd-8032-ad86179b9bd4: !Template
     answer_choices: "\u03A4\u03C1\u03CC\u03C0\u03BF\u03C2 ||| \u0394\u03B7\u03BC\u03B9\
       \u03BF\u03C5\u03C1\u03B3\u03B9\u03BA\u03CC \u03BA\u03BF\u03BC\u03BC\u03AC\u03C4\
-      \u03B9 ||| \u0396\u03CE\u03BF ||| \u03A3\u03C5\u03BD\u03C4\u03BF\u03BC\u03B5\
-      \u03C5\u03BC\u03AD\u03BD\u03B7 \u03AD\u03BA\u03C6\u03C1\u03B1\u03C3\u03B7 |||\
+      \u03B9 ||| \u0396\u03CE\u03BF ||| \u0388\u03BA\u03C6\u03C1\u03B1\u03C3\u03B7\
+      \ \u03C3\u03C5\u03BD\u03C4\u03BF\u03BC\u03B5\u03C5\u03BC\u03AD\u03BD\u03B7 |||\
       \ \u0391\u03C4\u03BF\u03BC\u03BF ||| \u039F\u03BC\u03AC\u03B4\u03B1 ||| \u03A4\
       \u03AF\u03C4\u03BB\u03BF\u03C2 ||| \u03BF\u03C1\u03B9\u03C3\u03BC\u03CC\u03C2\
       \ ||| \u0397\u03BC\u03B5\u03C1\u03BF\u03BC\u03B7\u03BD\u03AF\u03B1 ||| \u039B\
@@ -165,8 +165,8 @@ templates:
       \u03B9\u03C1\u03AC ||| \u039F\u03C7\u03B7\u03BC\u03B1 ||| \u0392\u03AC\u03C1\
       \u03BF\u03C2 ||| \u039D\u03CC\u03BC\u03B9\u03C3\u03BC\u03B1"
     id: 71090d59-dd02-4cbd-8032-ad86179b9bd4
-    jinja: "{{text}}\n\n\u03A4\u03B9 \u03B8\u03AD\u03C4\u03B5\u03B9 \u03B1\u03C5\u03C4\
-      \u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7;\n|||\n{{answer_choices[label_fine]\
+    jinja: "{{text}}\n\n\u03A4\u03B9 \u03B6\u03B7\u03C4\u03AC\u03B5\u03B9 \u03B1\u03C5\
+      \u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7;\n|||\n{{answer_choices[label_fine]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -204,7 +204,7 @@ templates:
       \u03BB\u03CD\u03C4\u03B5\u03C1\u03B1 \u03C4\u03B7\u03BD \u03B1\u03BA\u03CC\u03BB\
       \u03BF\u03C5\u03B8\u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{text}}\
       \ \n\n\u0395\u03C0\u03B9\u03BB\u03AD\u03BE\u03C4\u03B5 \u03B1\u03C0\u03CC \u03C4\
-      \u03B7\u03BD \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03B7 \u03BB\u03AF\u03C3\
+      \u03B7\u03BD \u03C0\u03B1\u03C1\u03B1\u03BA\u03AC\u03C4\u03C9 \u03BB\u03AF\u03C3\
       \u03C4\u03B1: \n{{', '.join(answer_choices)}}\n ||| {{ answer_choices [label_coarse]\
       \ }}"
     metadata: !TemplateMetadata
@@ -216,8 +216,8 @@ templates:
     reference: ''
   7a9e6f3c-1dee-45b0-a315-1badaf59a7b8: !Template
     answer_choices: "\u03BF\u03C1\u03B9\u03C3\u03BC\u03CC\u03C2 ||| \u03C0\u03B5\u03C1\
-      \u03B9\u03B3\u03C1\u03B1\u03C6\u03AE ||| \u03C4\u03C1\u03CC\u03C0\u03BF\u03C2\
-      \ \u03B4\u03C1\u03AC\u03C3\u03B7\u03C2 ||| \u03BB\u03CC\u03B3\u03BF\u03C2"
+      \u03B9\u03B3\u03C1\u03B1\u03C6\u03AE ||| \u03C4\u03C1\u03CC\u03C0\u03BF \u03B4\
+      \u03C1\u03AC\u03C3\u03B7\u03C2 ||| \u03BB\u03CC\u03B3\u03BF\u03C2"
     id: 7a9e6f3c-1dee-45b0-a315-1badaf59a7b8
     jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
       \ 0 %}\n\u0391\u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\
@@ -254,8 +254,8 @@ templates:
     reference: Context then prompt
   93a06e72-2c15-4f8a-a46c-6a10919c4ea4: !Template
     answer_choices: "\u03C3\u03C5\u03BD\u03C4\u03BF\u03BC\u03BF\u03B3\u03C1\u03B1\u03C6\
-      \u03AF\u03B1 ||| \u03C3\u03C5\u03BD\u03C4\u03BF\u03BC\u03B5\u03C5\u03BC\u03AD\
-      \u03BD\u03B7 \u03AD\u03BA\u03C6\u03C1\u03B1\u03C3\u03B7"
+      \u03AF\u03B1 ||| \u03AD\u03BA\u03C6\u03C1\u03B1\u03C3\u03B7 \u03C3\u03C5\u03BD\
+      \u03C4\u03BF\u03BC\u03B5\u03C5\u03BC\u03AD\u03BD\u03B7"
     id: 93a06e72-2c15-4f8a-a46c-6a10919c4ea4
     jinja: "{% set label_mapping={34:0, 3:1} %} \n{% if label_coarse == 2 %}\n\u0391\
       \u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03B6\u03B7\
@@ -270,8 +270,8 @@ templates:
     reference: Fine grained labels with coarse-label `ABBR`, context after question
   a0096044-3b4c-4c80-b139-25eac8fe692a: !Template
     answer_choices: "\u03C3\u03C5\u03BD\u03C4\u03BF\u03BC\u03BF\u03B3\u03C1\u03B1\u03C6\
-      \u03AF\u03B1 ||| \u03C3\u03C5\u03BD\u03C4\u03BF\u03BC\u03B5\u03C5\u03BC\u03AD\
-      \u03BD\u03B7 \u03AD\u03BA\u03C6\u03C1\u03B1\u03C3\u03B7"
+      \u03AF\u03B1 ||| \u03AD\u03BA\u03C6\u03C1\u03B1\u03C3\u03B7 \u03C3\u03C5\u03BD\
+      \u03C4\u03BF\u03BC\u03B5\u03C5\u03BC\u03AD\u03BD\u03B7"
     id: a0096044-3b4c-4c80-b139-25eac8fe692a
     jinja: "{% set label_mapping = {34:0, 3:1} %} \n{% if label_coarse == 2 %}\n{{text}}\n\
       \n\u0391\u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7\
@@ -291,10 +291,9 @@ templates:
       \u03C9\u03C0\u03BF ||| \u03A0\u03BF\u03C3\u03CC\u03C4\u03B7\u03C4\u03B1 |||\
       \ \u03A4\u03BF\u03C0\u03BF\u03B8\u03B5\u03C3\u03AF\u03B1"
     id: aad2def1-b694-40ee-9c26-3d1cf5c577da
-    jinja: "\u0395\u03AF\u03BD\u03B1\u03B9 \u03B7 \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\
-      \u03B8\u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7 \u03B3\u03B9\u03B1 {{',\
-      \ '.join(answer_choices)}};\n\n{{text}}\n|||\n{{ answer_choices [label_coarse]\
-      \ }}"
+    jinja: "\u0397 \u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03B7 \u03B5\u03C1\u03CE\
+      \u03C4\u03B7\u03C3\u03B7 \u03B1\u03C6\u03BF\u03C1\u03AC \u03C4\u03BF {{', '.join(answer_choices)}};\n\
+      \n{{text}}\n|||\n{{ answer_choices [label_coarse] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -321,8 +320,8 @@ templates:
   cfa8fde0-8320-4050-8d6e-7619ab14adea: !Template
     answer_choices: "\u03A4\u03C1\u03CC\u03C0\u03BF\u03C2 ||| \u0394\u03B7\u03BC\u03B9\
       \u03BF\u03C5\u03C1\u03B3\u03B9\u03BA\u03CC \u03BA\u03BF\u03BC\u03BC\u03AC\u03C4\
-      \u03B9 ||| \u0396\u03CE\u03BF ||| \u03A3\u03C5\u03BD\u03C4\u03BF\u03BC\u03B5\
-      \u03C5\u03BC\u03AD\u03BD\u03B7 \u03AD\u03BA\u03C6\u03C1\u03B1\u03C3\u03B7 |||\
+      \u03B9 ||| \u0396\u03CE\u03BF ||| \u0388\u03BA\u03C6\u03C1\u03B1\u03C3\u03B7\
+      \ \u03C3\u03C5\u03BD\u03C4\u03BF\u03BC\u03B5\u03C5\u03BC\u03AD\u03BD\u03B7 |||\
       \ \u0391\u03C4\u03BF\u03BC\u03BF ||| \u039F\u03BC\u03AC\u03B4\u03B1 ||| \u03A4\
       \u03AF\u03C4\u03BB\u03BF\u03C2 ||| \u03BF\u03C1\u03B9\u03C3\u03BC\u03CC\u03C2\
       \ ||| \u0397\u03BC\u03B5\u03C1\u03BF\u03BC\u03B7\u03BD\u03AF\u03B1 ||| \u039B\
@@ -350,8 +349,8 @@ templates:
       \u03B9\u03C1\u03AC ||| \u039F\u03C7\u03B7\u03BC\u03B1 ||| \u0392\u03AC\u03C1\
       \u03BF\u03C2 ||| \u039D\u03CC\u03BC\u03B9\u03C3\u03BC\u03B1"
     id: cfa8fde0-8320-4050-8d6e-7619ab14adea
-    jinja: "\u03A4\u03B9 \u03B8\u03AD\u03C4\u03B5\u03B9 \u03B1\u03C5\u03C4\u03AE \u03B7\
-      \ \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7;\n\n{{text}}\n|||\n{{ answer_choices[label_fine]\
+    jinja: "\u03A4\u03B9 \u03B6\u03B7\u03C4\u03AC\u03B5\u03B9 \u03B1\u03C5\u03C4\u03AE\
+      \ \u03B7 \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7;\n\n{{text}}\n|||\n{{ answer_choices[label_fine]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -378,8 +377,8 @@ templates:
     reference: Fine grained labels with coarse-label `HUM`, context provided first
   fa588c55-5c69-4fd0-a0b1-edbfa092f710: !Template
     answer_choices: "\u03BF\u03C1\u03B9\u03C3\u03BC\u03CC\u03C2 ||| \u03C0\u03B5\u03C1\
-      \u03B9\u03B3\u03C1\u03B1\u03C6\u03AE ||| \u03C4\u03C1\u03CC\u03C0\u03BF\u03C2\
-      \ \u03B4\u03C1\u03AC\u03C3\u03B7\u03C2 ||| \u03BB\u03CC\u03B3\u03BF\u03C2"
+      \u03B9\u03B3\u03C1\u03B1\u03C6\u03AE ||| \u03C4\u03C1\u03CC\u03C0\u03BF \u03B4\
+      \u03C1\u03AC\u03C3\u03B7\u03C2 ||| \u03BB\u03CC\u03B3\u03BF\u03C2"
     id: fa588c55-5c69-4fd0-a0b1-edbfa092f710
     jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
       \ 0 %}\n{{text}}\n\n\u0391\u03C5\u03C4\u03AE \u03B7 \u03B5\u03C1\u03CE\u03C4\

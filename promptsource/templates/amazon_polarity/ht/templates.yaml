@@ -4,7 +4,7 @@ templates:
   1e90a24a-1182-43dd-9445-22f2e56e5761: !Template
     answer_choices: Negatif ||| Pozitif
     id: 1e90a24a-1182-43dd-9445-22f2e56e5761
-    jinja: "Tit: {{title}}\nRevize: {{content}}\n\xC8ske revizyon an pozitif oswa\
+    jinja: "Tit: {{title}}\nRevizyon: {{content}}\n\xC8ske revizyon an pozitif oswa\
       \ negatif? |||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -16,8 +16,8 @@ templates:
   3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
     answer_choices: Non ||| Wi
     id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
-    jinja: "Baze sou revizyon sa a, ta itilizat\xE8 a rek\xF2mande pwodui sa a?\n\
-      ===\nRevize: {{content}}\nRepons: |||\n{{answer_choices[label]}}"
+    jinja: "Dapre revizyon sa a, \xE8ske itilizat\xE8 a ta rek\xF2mande pwodui sa\
+      \ a?\n===\nRevizyon: {{content}}\nRepons: |||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -29,7 +29,7 @@ templates:
   592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
     answer_choices: Non ||| Wi
     id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
-    jinja: "\xC8ske revizyon pwodwi sa a pozitif?\nTit: {{title}}\nRevize: {{content}}\n\
+    jinja: "\xC8ske revizyon pwodwi sa a pozitif?\nTit: {{title}}\nRevizyon: {{content}}\n\
       Repons: |||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -41,7 +41,7 @@ templates:
   745b9c05-10df-4a7e-81ad-1b88cefcb166: !Template
     answer_choices: Wi ||| Non
     id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
-    jinja: "Tit: {{title}}\nRevize: {{content}}\n\xC8ske revizyon pwodwi sa a negatif?|||\n\
+    jinja: "Tit: {{title}}\nRevizyon: {{content}}\n\xC8ske revizyon pwodwi sa a negatif?|||\n\
       {{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -53,8 +53,8 @@ templates:
   8abb5377-5dd3-4402-92a5-0d81adb6a325: !Template
     answer_choices: Negatif ||| Pozitif
     id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
-    jinja: "Tit: {{title}}\nRevize: {{content}}\nRevizyon pwodwi sa a transm\xE8t\
-      \ yon santiman negatif oswa pozitif?|||\n{{answer_choices[label]}}"
+    jinja: "Tit: {{title}}\nRevizyon: {{content}}\n\xC8ske revizyon pwodwi sa a transm\xE8\
+      t yon santiman negatif oswa pozitif?|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -65,8 +65,8 @@ templates:
   9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
     answer_choices: Negatif ||| Pozitif
     id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
-    jinja: "\xC8ske gen yon ton negatif oswa pozitif nan revizyon sa a pwodwi?\n===\n\
-      Tit: {{title}}\nRevize: {{content}}\nRepons: |||\n{{answer_choices[label]}}"
+    jinja: "\xC8ske gen yon ton negatif oswa pozitif nan revizyon pwodwi sa a?\n===\n\
+      Tit: {{title}}\nRevizyon: {{content}}\nRepons: |||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -75,18 +75,11 @@ templates:
     name: negative_or_positive_tone
     reference: ''
   b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
-    answer_choices: "move ||| satisf\xE8"
+    answer_choices: "pa satisf\xE8 ||| satisf\xE8"
     id: b13369e8-0500-4e93-90d4-8e6814bfb97b
-    jinja: 'Isit la se yon revizyon kite pa yon kliyan sou yon pwodwi.Ou ta di li
-      te {{answer_choices[1]}} oswa {{answer_choices[0]}}?
-
-      Tit: {{title}}
-
-      Revize: {{content}}
-
-      |||
-
-      {{answer_choices[label]}} '
+    jinja: "Isit la se yon revizyon kite pa yon kliyan sou yon pwodwi. \xC8ske w ta\
+      \ di li te {{answer_choices[1]}} oswa {{answer_choices[0]}}?\nTit: {{title}}\n\
+      Revizyon: {{content}}\n|||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -97,10 +90,9 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
     answer_choices: diminye ||| ogmante
     id: b13369e8-0500-4e93-90d4-8e6814bfb98b
-    jinja: "Ou ap konsidere si wi ou non yo achte yon pwodwi.Ou gade revizyon yo.\xC8\
-      ske revizyon sa a {{answer_choices[0]}} oswa {{answer_choices[1]}} chans pou\
-      \ ou achte pwodwi a?\nRevize Tit: {{title}}\nRevizyon Product: {{content}}\n\
-      |||\n{{answer_choices[label]}} "
+    jinja: "Ou ap konsidere si pou achte yon pwodwi. Ou gade revi yo. \xC8ske sa a\
+      \ ta revize {{answer_choices[0]}} oswa {{answer_choices[1]}} chans pou ou achte\
+      \ pwodwi a?\nTit revizyon: {{title}}\nRevizyon pwodwi: {{content}}\n|||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -109,11 +101,11 @@ templates:
     name: would_you_buy
     reference: ''
   b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
-    answer_choices: unflate ||| flate
+    answer_choices: pa flater ||| flater
     id: b13369e8-0500-4e93-90d4-8e6814bfb99b
-    jinja: "Tit: {{title}}\nRevizyon Product: {{content}}\n\xC8ske ou ta di revizyon\
-      \ sa a pentire pwodwi a nan yon {{answer_choices[1]}} oswa {{answer_choices[0]}}\
-      \ limy\xE8?\n|||\n{{answer_choices[label]}} "
+    jinja: "Tit: {{title}}\nRevizyon pwodwi: {{content}}\n\xC8ske w ta di revizyon\
+      \ sa a montre pwodwi a nan yon limy\xE8 {{answer_choices[1]}} oswa {{answer_choices[0]}}?\n\
+      |||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

@@ -5,8 +5,8 @@ templates:
     answer_choices: null
     id: 17b83a3f-f748-42e6-9cdf-b2951dd8299d
     jinja: "{% set seq = [\n'Vastake k\xFCsimusele s\xF5ltuvalt kontekstist.',\n'Mis\
-      \ on vastus?',\n] %}\n\n{{ seq | choice }}\nKontekst: {{context}};\nK\xFCsimus:\
-      \ {{question}};\nVastus: |||\n{% if answers.text == [] %}\nVastake mitte kontekstis\n\
+      \ on vastus?',\n] %}\n\n{{ seq | choice }}\nKontekst: {{context}};\nk\xFCsimus:\
+      \ {{question}};\nVastus: |||\n{% if answers.text == [] %}\nVasta mitte kontekstis\n\
       {% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: &id001 !TemplateMetadata
       choices_in_prompt: false
@@ -18,10 +18,9 @@ templates:
   189dcc58-fd13-4771-ad03-7879a61c7ab7: !Template
     answer_choices: null
     id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
-    jinja: "{% if answers.text != [] %}\nM\xE4\xE4rake k\xFCsimus, mida oleksite v\xF5\
-      inud paluda antud konteksti jaoks j\xE4rgmine vastus tagasi saada\nKontekst:\
-      \ {{context}};\nVastus: {{answers.text[0]}};\nK\xFCsimus: |||\n{{question}}\n\
-      {% endif %}\n"
+    jinja: "{% if answers.text != [] %}\nM\xE4\xE4rake k\xFCsimus, mille v\xF5isite\
+      \ esitada, et saada antud kontekstis j\xE4rgmine vastus\nKontekst: {{context}};\n\
+      Vastus: {{answers.text[0]}};\nk\xFCsimus: |||\n{{question}}\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -33,10 +32,10 @@ templates:
   20064b80-e4d0-41b7-9135-92c0077d5044: !Template
     answer_choices: null
     id: 20064b80-e4d0-41b7-9135-92c0077d5044
-    jinja: "{% set seq = [\n'Mis see on? ',\n'Mis on l\xF5ik? ',\n'Hankige teema:\
-      \ ',\n'L\xF5igust hankige teema',\n'Ma tahan seda teemat teada. ',\n'Teema l\xF5\
-      igust: ',\n'Teema l\xF5igust: ',\n] %}\n{{ seq | choice }}\n{{context}} |||\n\
-      {{title | replace(\"_\", \" \")}}"
+    jinja: "{% set seq = [\n'Millest see jutt k\xE4ib? ',\n'Millest l\xF5ik r\xE4\xE4\
+      gib? ',\n'Teema saad siit: ',\n'L\xF5igust v\xF5ta teema k\xE4tte',\n'Ma tahan\
+      \ teemat teada. ',\n'Teema l\xF5igust: ',\n'Teema l\xF5igust: ',\n] %}\n{{ seq\
+      \ | choice }}\n{{context}} |||\n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -50,10 +49,11 @@ templates:
   338cc143-361e-4796-b035-31fb2201c49f: !Template
     answer_choices: null
     id: 338cc143-361e-4796-b035-31fb2201c49f
-    jinja: "{% set seq = [\n'See on umbes ',\n'Mis see on? ',\n'L\xF5ik on umbes ',\n\
-      'Mis on l\xF5ik? ',\n'Hankige teema: ',\n'L\xF5igust on teema',\n'Ma tahan seda\
-      \ teemat teada. ',\n'Teema l\xF5igust: ',\n'Teema l\xF5igust: ',\n] %}\n{{context}}\n\
-      {{ seq | choice }}|||\n{{title | replace(\"_\", \" \")}}"
+    jinja: "{% set seq = [\n'See on umbes ',\n'Millest see jutt k\xE4ib? ',\n'L\xF5\
+      ige on umbes ',\n'Millest l\xF5ik r\xE4\xE4gib? ',\n'Hangi teema: ',\n'L\xF5\
+      igust l\xE4htudes on teemaks',\n'Ma tahan teemat teada. ',\n'Teema l\xF5igust:\
+      \ ',\n'Teema l\xF5igust: ',\n] %}\n{{context}}\n{{ seq | choice }}|||\n{{title\
+      \ | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -68,7 +68,7 @@ templates:
     answer_choices: null
     id: 7a44cd99-7420-4456-aaaa-34e2c81d1679
     jinja: "{% if answers.text != [] %}\nMis on k\xFCsimus, mis annaks j\xE4rgmise\
-      \ vastuse?\nVastus: {{answers.text[0]}};\nK\xFCsimus: |||\n{{question}}\n{%\
+      \ vastuse?\nVastus: {{answers.text[0]}};\nk\xFCsimus: |||\n{{question}}\n{%\
       \ endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -82,10 +82,11 @@ templates:
     answer_choices: null
     id: 8bea1123-fd8d-4bac-96bf-b8a289ee74b3
     jinja: "{% set seq = [\n'Kas v\xF5iksite mulle \xF6elda ',\n'Palun \xFCtle mulle\
-      \ ',\n'\xDCtle mulle ',\n'L\xF5igust, ',\n'Ma tahan teada ',\n'ma tahan k\xFC\
-      sida ',\n'Mis on vastus: ',\n'Leidke vastus: ',\n'Vastus: ',\n'',\n] %}\n{{context}}\
-      \ {{ seq | choice }}{{question}}|||\n{% if answers.text == [] %}\nVastake mitte\
-      \ kontekstis\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
+      \ ',\n'\xDCtle mulle ',\n'L\xF5ikust, ',\n'Ma tahan teada ',\n'ma tahan k\xFC\
+      sida ',\n'Mis on vastus k\xFCsimusele: ',\n'Leia vastus k\xFCsimusele: ',\n\
+      'Vastus: ',\n'',\n] %}\n{{context}} {{ seq | choice }}{{question}}|||\n{% if\
+      \ answers.text == [] %}\nVasta mitte kontekstis\n{% else %}\n{{answers.text[0]}}\n\
+      {% endif %}"
     metadata: &id002 !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -98,9 +99,9 @@ templates:
     answer_choices: null
     id: b14c9843-fd56-42ff-817d-39e41963c847
     jinja: "{% set seq = [\n'Vastake k\xFCsimusele s\xF5ltuvalt kontekstist.',\n'Mis\
-      \ on vastus?',\n] %}\n\n{{ seq | choice }}\nKontekst: {{context}};\nK\xFCsimus:\
-      \ {{question}};\nIf you can't find the answer, please respond \"vastuseta\"\
-      .\nVastus: |||\n{% if answers.text == [] %}\nvastuseta\n{% else %}\n{{answers.text[0]}}\n\
+      \ on vastus?',\n] %}\n\n{{ seq | choice }}\nKontekst: {{context}};\nk\xFCsimus:\
+      \ {{question}};\nIf you can't find the answer, please respond \"vastamata\"\
+      .\nVastus: |||\n{% if answers.text == [] %}\nvastamata\n{% else %}\n{{answers.text[0]}}\n\
       {% endif %}"
     metadata: *id001
     name: Questions with Context +unanswerable
@@ -127,21 +128,21 @@ templates:
     answer_choices: null
     id: e1630107-8f5d-44ce-8ccd-6fa80da80328
     jinja: "{% set seq = [\n'Kas v\xF5iksite mulle \xF6elda ',\n'Palun \xFCtle mulle\
-      \ ',\n'\xDCtle mulle ',\n'L\xF5igust, ',\n'Ma tahan teada ',\n'ma tahan k\xFC\
-      sida ',\n'Mis on vastus: ',\n'Leidke vastus: ',\n'Vastus: ',\n'',\n] %}\n{{context}}\
-      \ {{ seq | choice }}{{question}} If you can't find the answer, please respond\
-      \ \"vastuseta\". |||\n{% if answers.text == [] %}\nvastuseta\n{% else %}\n{{answers.text[0]}}\n\
-      {% endif %}"
+      \ ',\n'\xDCtle mulle ',\n'L\xF5ikust, ',\n'Ma tahan teada ',\n'ma tahan k\xFC\
+      sida ',\n'Mis on vastus k\xFCsimusele: ',\n'Leia vastus k\xFCsimusele: ',\n\
+      'Vastus: ',\n'',\n] %}\n{{context}} {{ seq | choice }}{{question}} If you can't\
+      \ find the answer, please respond \"vastamata\". |||\n{% if answers.text ==\
+      \ [] %}\nvastamata\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: *id002
     name: Questions with Context - Without Prompt Keywords +unanswerable
     reference: Given context and question, give answer. No keywords to delineate context
       and question is given.
   e2e41877-4794-4ff9-9f92-a2a85105e2a7: !Template
-    answer_choices: jah ||| mitte
+    answer_choices: jah ||| ei
     id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
-    jinja: "Kontekst: {{context}}; \n\nK\xFCsimus: {{question}} \n\nKas see k\xFC\
-      simus vastutab? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n{%\
-      \ else %}\n{{answer_choices[1]}}\n{% endif %}"
+    jinja: "Kontekst: {{context}}; \n\nk\xFCsimus: {{question}} \n\nKas sellele k\xFC\
+      simusele saab vastata? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n\
+      {% else %}\n{{answer_choices[1]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -152,9 +153,9 @@ templates:
   e51c23b9-5b10-4db3-a0d1-ba546830173d: !Template
     answer_choices: null
     id: e51c23b9-5b10-4db3-a0d1-ba546830173d
-    jinja: "{% set seq = [\n'M\xE4\xE4rake k\xFCsimuste ja vastuste paari teema. ',\n\
-      'Leidke teema. ',\n'Mis teema sellest on? ',\n] %}\n{% if answers.text != []\
-      \ %}\n{{ seq | choice }}\nK\xFCsimus: {{question}};  Vastus: {{answers.text[0]}};\
+    jinja: "{% set seq = [\n'M\xE4\xE4rake k\xFCsimuste-vastuste paari teema. ',\n\
+      'Otsige teema \xFCles. ',\n'Mis teema sellest on? ',\n] %}\n{% if answers.text\
+      \ != [] %}\n{{ seq | choice }}\nk\xFCsimus: {{question}};  Vastus: {{answers.text[0]}};\
       \ Teema: |||\n{{title}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -168,8 +169,8 @@ templates:
   fdcf132e-6c70-4188-999e-93601ee8e089: !Template
     answer_choices: null
     id: fdcf132e-6c70-4188-999e-93601ee8e089
-    jinja: "Mis on j\xE4rgmine l\xF5ik?\n{{context}} |||\n{{title | replace(\"_\"\
-      , \" \")}}"
+    jinja: "Millest j\xE4rgmine l\xF5ik r\xE4\xE4gib?\n{{context}} |||\n{{title |\
+      \ replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

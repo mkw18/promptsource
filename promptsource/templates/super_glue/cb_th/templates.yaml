@@ -7,9 +7,9 @@ templates:
     id: 2e76cd0f-68ca-4f03-83ed-11cf15b25a84
     jinja: "\u0E2A\u0E21\u0E21\u0E15\u0E34 {{premise}} \u0E40\u0E23\u0E32\u0E2A\u0E32\
       \u0E21\u0E32\u0E23\u0E16\u0E2D\u0E19\u0E38\u0E21\u0E32\u0E19\u0E44\u0E14\u0E49\
-      \u0E44\u0E2B\u0E21\u0E27\u0E48\u0E32 \"{{hypothesis}}\"? \u0E43\u0E0A\u0E48\u0E44\
-      \u0E21\u0E48\u0E2B\u0E23\u0E37\u0E2D\u0E2D\u0E32\u0E08\u0E08\u0E30? ||| {% if\
-      \ label !=-1 %}{{ answer_choices[label] }}{% endif %} "
+      \u0E27\u0E48\u0E32 \"{{hypothesis}}\" \u0E44\u0E14\u0E49\u0E44\u0E2B\u0E21 \u0E43\
+      \u0E0A\u0E48 \u0E44\u0E21\u0E48 \u0E2B\u0E23\u0E37\u0E2D\u0E2D\u0E32\u0E08\u0E08\
+      \u0E30? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -21,13 +21,11 @@ templates:
     answer_choices: "\u0E43\u0E0A\u0E48 ||| \u0E44\u0E21\u0E48 ||| \u0E2D\u0E32\u0E08\
       \u0E08\u0E30"
     id: 358860fd-61ad-45fd-92a6-a72ca9107ebc
-    jinja: "{{premise}} \u0E02\u0E36\u0E49\u0E19\u0E2D\u0E22\u0E39\u0E48\u0E01\u0E31\
-      \u0E1A\u0E02\u0E49\u0E2D\u0E04\u0E27\u0E32\u0E21\u0E01\u0E48\u0E2D\u0E19\u0E2B\
-      \u0E19\u0E49\u0E32\u0E19\u0E35\u0E49\u0E40\u0E1B\u0E47\u0E19\u0E04\u0E27\u0E32\
-      \u0E21\u0E08\u0E23\u0E34\u0E07\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48\u0E27\
-      \u0E48\u0E32 \"{{hypothesis}}\"? \u0E43\u0E0A\u0E48\u0E44\u0E21\u0E48\u0E2B\u0E23\
-      \u0E37\u0E2D\u0E2D\u0E32\u0E08\u0E08\u0E30? ||| {% if label !=-1 %}{{ answer_choices[label]\
-      \ }}{% endif %}"
+    jinja: "{{premise}} \u0E08\u0E32\u0E01\u0E02\u0E49\u0E2D\u0E17\u0E35\u0E48\u0E41\
+      \u0E25\u0E49\u0E27 \"{{hypothesis}}\" \u0E40\u0E1B\u0E47\u0E19\u0E04\u0E27\u0E32\
+      \u0E21\u0E08\u0E23\u0E34\u0E07\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? \u0E43\
+      \u0E0A\u0E48 \u0E44\u0E21\u0E48 \u0E2B\u0E23\u0E37\u0E2D\u0E2D\u0E32\u0E08\u0E08\
+      \u0E30? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -36,17 +34,16 @@ templates:
     name: based on the previous passage
     reference: "Adapted from the BoolQ prompts in Schick & Sch\xFCtze 2021."
   3f43a599-ffdb-490e-8952-c0ce41dd4621: !Template
-    answer_choices: "\u0E08\u0E23\u0E34\u0E07 ||| \u0E40\u0E17\u0E47\u0E08 ||| \u0E44\
-      \u0E21\u0E48\u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E2A\u0E23\u0E38\u0E1B\u0E44\
-      \u0E14\u0E49"
+    answer_choices: "\u0E08\u0E23\u0E34\u0E07 ||| \u0E40\u0E17\u0E47\u0E08 ||| \u0E2A\
+      \u0E23\u0E38\u0E1B\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49"
     id: 3f43a599-ffdb-490e-8952-c0ce41dd4621
-    jinja: "{{premise}} \u0E08\u0E32\u0E01\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E19\
-      \u0E31\u0E49\u0E19\u0E04\u0E37\u0E2D\u0E01\u0E32\u0E23\u0E2D\u0E49\u0E32\u0E07\
-      \u0E2A\u0E34\u0E17\u0E18\u0E34\u0E4C: \"{{hypothesis}}\" {{\"\u0E08\u0E23\u0E34\
-      \u0E07\"}}, {{\"\u0E40\u0E17\u0E47\u0E08\"}}, \u0E2B\u0E23\u0E37\u0E2D {{\"\u0E44\
-      \u0E21\u0E48\u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E2A\u0E23\u0E38\u0E1B\u0E44\
-      \u0E14\u0E49\"}}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif\
-      \ %}"
+    jinja: "{{premise}} \u0E08\u0E32\u0E01\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E14\
+      \u0E31\u0E07\u0E01\u0E25\u0E48\u0E32\u0E27 \u0E01\u0E32\u0E23\u0E2D\u0E49\u0E32\
+      \u0E07\u0E2A\u0E34\u0E17\u0E18\u0E34\u0E4C\u0E04\u0E37\u0E2D \"{{hypothesis}}\"\
+      \ {{\"\u0E08\u0E23\u0E34\u0E07\"}}, {{\"\u0E40\u0E17\u0E47\u0E08\"}} \u0E2B\u0E23\
+      \u0E37\u0E2D {{\"\u0E2A\u0E23\u0E38\u0E1B\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\
+      \"}} \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48 ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -60,9 +57,9 @@ templates:
     id: 404eed25-558a-4d39-9515-7de46d60d4e0
     jinja: "\u0E23\u0E30\u0E1A\u0E38\u0E27\u0E48\u0E32 {{premise}} \u0E21\u0E31\u0E19\
       \u0E40\u0E1B\u0E47\u0E19\u0E44\u0E1B\u0E15\u0E32\u0E21\u0E19\u0E31\u0E49\u0E19\
-      \ {{hypothesis}} \u0E43\u0E0A\u0E48\u0E44\u0E21\u0E48\u0E2B\u0E23\u0E37\u0E2D\
-      \u0E2D\u0E32\u0E08\u0E08\u0E30? ||| {% if label !=-1 %}{{ answer_choices[label]\
-      \ }}{% endif %}"
+      \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48 {{hypothesis}} \u0E43\u0E0A\u0E48\
+      \ \u0E44\u0E21\u0E48 \u0E2B\u0E23\u0E37\u0E2D\u0E2D\u0E32\u0E08\u0E08\u0E30\
+      ? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -74,12 +71,11 @@ templates:
     answer_choices: "\u0E43\u0E0A\u0E48 ||| \u0E44\u0E21\u0E48 ||| \u0E2D\u0E32\u0E08\
       \u0E08\u0E30"
     id: 5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260
-    jinja: "{{premise}} \u0E40\u0E23\u0E32\u0E40\u0E1B\u0E47\u0E19\u0E04\u0E19\u0E0A\
-      \u0E2D\u0E1A\u0E18\u0E23\u0E23\u0E21\u0E43\u0E19\u0E01\u0E32\u0E23\u0E1E\u0E39\
-      \u0E14\u0E27\u0E48\u0E32 \"{{hypothesis}}\" \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\
-      \u0E48? \u0E43\u0E0A\u0E48\u0E44\u0E21\u0E48\u0E2B\u0E23\u0E37\u0E2D\u0E2D\u0E32\
-      \u0E08\u0E08\u0E30? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif\
-      \ %}"
+    jinja: "{{premise}} \u0E40\u0E23\u0E32\u0E21\u0E35\u0E40\u0E2B\u0E15\u0E38\u0E1C\
+      \u0E25\u0E43\u0E19\u0E01\u0E32\u0E23\u0E1E\u0E39\u0E14\u0E27\u0E48\u0E32 \"\
+      {{hypothesis}}\" \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? \u0E43\u0E0A\u0E48\
+      \ \u0E44\u0E21\u0E48 \u0E2B\u0E23\u0E37\u0E2D\u0E2D\u0E32\u0E08\u0E08\u0E30\
+      ? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -91,13 +87,13 @@ templates:
     answer_choices: "\u0E40\u0E2A\u0E21\u0E2D ||| \u0E44\u0E21\u0E48\u0E40\u0E04\u0E22\
       \ ||| \u0E1A\u0E32\u0E07\u0E04\u0E23\u0E31\u0E49\u0E07"
     id: 6b0c6191-183d-4731-8050-ab17c909335c
-    jinja: "\u0E2A\u0E21\u0E21\u0E15\u0E34\u0E27\u0E48\u0E32\u0E21\u0E31\u0E19\u0E40\
-      \u0E1B\u0E47\u0E19\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E08\u0E23\u0E34\u0E07\
-      \ {{premise}} \u0E08\u0E32\u0E01\u0E19\u0E31\u0E49\u0E19\u0E04\u0E37\u0E2D \"\
-      {{hypothesis}}\" {{\"\u0E40\u0E2A\u0E21\u0E2D\"}}, {{\"\u0E1A\u0E32\u0E07\u0E04\
-      \u0E23\u0E31\u0E49\u0E07\"}}, \u0E2B\u0E23\u0E37\u0E2D {{\"\u0E44\u0E21\u0E48\
-      \u0E40\u0E04\u0E22\"}} \u0E08\u0E23\u0E34\u0E07? ||| {% if label !=-1 %}{{ answer_choices[label]\
-      \ }}{% endif %}"
+    jinja: "\u0E2A\u0E21\u0E21\u0E38\u0E15\u0E34\u0E27\u0E48\u0E32\u0E40\u0E1B\u0E47\
+      \u0E19\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E08\u0E23\u0E34\u0E07 {{premise}}\
+      \ \u0E41\u0E25\u0E49\u0E27 \"{{hypothesis}}\" {{\"\u0E40\u0E2A\u0E21\u0E2D\"\
+      }}, {{\"\u0E1A\u0E32\u0E07\u0E04\u0E23\u0E31\u0E49\u0E07\"}} \u0E2B\u0E23\u0E37\
+      \u0E2D {{\"\u0E44\u0E21\u0E48\u0E40\u0E04\u0E22\"}} \u0E40\u0E1B\u0E47\u0E19\
+      \u0E08\u0E23\u0E34\u0E07\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48 ||| {% if\
+      \ label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -111,8 +107,8 @@ templates:
       \u0E22\u0E48\u0E32\u0E07"
     id: 75db2bc2-3caa-4956-9653-13c7dd6255df
     jinja: "{{premise}}\n\u0E04\u0E33\u0E16\u0E32\u0E21: {{hypothesis}} \u0E08\u0E23\
-      \u0E34\u0E07\u0E40\u0E17\u0E47\u0E08\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48\
-      ? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+      \u0E34\u0E07 \u0E40\u0E17\u0E47\u0E08 \u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E1B\u0E25\
+      \u0E48\u0E32? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -125,13 +121,14 @@ templates:
     answer_choices: "\u0E40\u0E2A\u0E21\u0E2D ||| \u0E44\u0E21\u0E48\u0E40\u0E04\u0E22\
       \ ||| \u0E1A\u0E32\u0E07\u0E04\u0E23\u0E31\u0E49\u0E07"
     id: 87237a07-7cce-470a-80ac-3e5e3a5283ba
-    jinja: "{{premise}} \n\n\u0E42\u0E1B\u0E23\u0E14\u0E08\u0E33\u0E44\u0E27\u0E49\
-      \u0E27\u0E48\u0E32\u0E02\u0E49\u0E2D\u0E04\u0E27\u0E32\u0E21\u0E02\u0E49\u0E32\
-      \u0E07\u0E15\u0E49\u0E19\u0E1E\u0E34\u0E08\u0E32\u0E23\u0E13\u0E32: {{hypothesis}}\
-      \ \u0E19\u0E35\u0E48\u0E04\u0E37\u0E2D {{\"\u0E40\u0E2A\u0E21\u0E2D\"}}, {{\"\
-      \u0E1A\u0E32\u0E07\u0E04\u0E23\u0E31\u0E49\u0E07\"}}, \u0E2B\u0E23\u0E37\u0E2D\
-      \ {{\"\u0E44\u0E21\u0E48\u0E40\u0E04\u0E22\"}} \u0E16\u0E39\u0E01\u0E15\u0E49\
-      \u0E2D\u0E07? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} \n\n\u0E1E\u0E36\u0E07\u0E23\u0E30\u0E25\u0E36\u0E01\u0E44\
+      \u0E27\u0E49\u0E40\u0E2A\u0E21\u0E2D\u0E27\u0E48\u0E32\u0E02\u0E49\u0E2D\u0E04\
+      \u0E27\u0E32\u0E21\u0E02\u0E49\u0E32\u0E07\u0E15\u0E49\u0E19 \u0E43\u0E2B\u0E49\
+      \u0E1E\u0E34\u0E08\u0E32\u0E23\u0E13\u0E32: {{hypothesis}} {{\"\u0E40\u0E2A\u0E21\
+      \u0E2D\"}}, {{\"\u0E1A\u0E32\u0E07\u0E04\u0E23\u0E31\u0E49\u0E07\"}} \u0E2B\u0E23\
+      \u0E37\u0E2D {{\"\u0E44\u0E21\u0E48\u0E40\u0E04\u0E22\"}} \u0E16\u0E39\u0E01\
+      \u0E15\u0E49\u0E2D\u0E07\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48 ||| {% if\
+      \ label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -144,11 +141,10 @@ templates:
       \u0E08\u0E30"
     id: 8798b8a4-1f59-4c72-9c1b-3e3044a7462a
     jinja: "\u0E17\u0E35\u0E48\u0E43\u0E2B\u0E49\u0E44\u0E27\u0E49 {{premise}} \u0E23\
-      \u0E31\u0E1A\u0E1B\u0E23\u0E30\u0E01\u0E31\u0E19\u0E44\u0E14\u0E49\u0E08\u0E23\
-      \u0E34\u0E07\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48\u0E27\u0E48\u0E32 \"\
-      {{hypothesis}}\"? \u0E43\u0E0A\u0E48\u0E44\u0E21\u0E48\u0E2B\u0E23\u0E37\u0E2D\
-      \u0E2D\u0E32\u0E08\u0E08\u0E30? ||| {% if label !=-1 %}{{ answer_choices[label]\
-      \ }}{% endif %}"
+      \u0E31\u0E1A\u0E1B\u0E23\u0E30\u0E01\u0E31\u0E19\u0E27\u0E48\u0E32 \"{{hypothesis}}\"\
+      \ \u0E08\u0E23\u0E34\u0E07\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? \u0E43\
+      \u0E0A\u0E48 \u0E44\u0E21\u0E48 \u0E2B\u0E23\u0E37\u0E2D\u0E2D\u0E32\u0E08\u0E08\
+      \u0E30? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -161,10 +157,11 @@ templates:
       \u0E08\u0E30"
     id: 8e3b8d3d-1362-47dc-922a-82c03f965989
     jinja: "\u0E23\u0E30\u0E1A\u0E38\u0E27\u0E48\u0E32 {{premise}} \u0E14\u0E31\u0E07\
-      \u0E19\u0E31\u0E49\u0E19\u0E08\u0E36\u0E07\u0E15\u0E49\u0E2D\u0E07\u0E40\u0E1B\
-      \u0E47\u0E19\u0E08\u0E23\u0E34\u0E07\u0E17\u0E35\u0E48 \"{{hypothesis}}\"? \u0E43\
-      \u0E0A\u0E48\u0E44\u0E21\u0E48\u0E2B\u0E23\u0E37\u0E2D\u0E2D\u0E32\u0E08\u0E08\
-      \u0E30? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+      \u0E19\u0E31\u0E49\u0E19 \u0E08\u0E36\u0E07\u0E15\u0E49\u0E2D\u0E07\u0E40\u0E1B\
+      \u0E47\u0E19\u0E04\u0E27\u0E32\u0E21\u0E08\u0E23\u0E34\u0E07\u0E27\u0E48\u0E32\
+      \ \"{{hypothesis}}\"? \u0E43\u0E0A\u0E48 \u0E44\u0E21\u0E48 \u0E2B\u0E23\u0E37\
+      \u0E2D\u0E2D\u0E32\u0E08\u0E08\u0E30? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -177,14 +174,13 @@ templates:
       \u0E1B\u0E47\u0E19\u0E44\u0E1B\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49 ||| \u0E40\
       \u0E1B\u0E47\u0E19\u0E44\u0E1B\u0E44\u0E14\u0E49"
     id: 90ab1002-093c-4e54-b48f-626655e36b65
-    jinja: "\u0E2A\u0E21\u0E21\u0E15\u0E34\u0E27\u0E48\u0E32\u0E21\u0E31\u0E19\u0E40\
-      \u0E1B\u0E47\u0E19\u0E04\u0E27\u0E32\u0E21\u0E08\u0E23\u0E34\u0E07\u0E17\u0E35\
-      \u0E48 {{premise}} \n\n\u0E14\u0E31\u0E07\u0E19\u0E31\u0E49\u0E19 \"{{hypothesis}}\"\
-      \ \u0E04\u0E37\u0E2D {{\"\u0E23\u0E31\u0E1A\u0E1B\u0E23\u0E30\u0E01\u0E31\u0E19\
-      \"}}, {{\"\u0E40\u0E1B\u0E47\u0E19\u0E44\u0E1B\u0E44\u0E14\u0E49\"}} \u0E2B\u0E23\
-      \u0E37\u0E2D {{\"\u0E40\u0E1B\u0E47\u0E19\u0E44\u0E1B\u0E44\u0E21\u0E48\u0E44\
-      \u0E14\u0E49\"}}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif\
-      \ %}"
+    jinja: "\u0E16\u0E37\u0E2D\u0E27\u0E48\u0E32\u0E08\u0E23\u0E34\u0E07\u0E2D\u0E22\
+      \u0E39\u0E48\u0E27\u0E48\u0E32 {{premise}} \n\n\u0E14\u0E31\u0E07\u0E19\u0E31\
+      \u0E49\u0E19 \"{{hypothesis}}\" \u0E04\u0E37\u0E2D {{\"\u0E23\u0E31\u0E1A\u0E1B\
+      \u0E23\u0E30\u0E01\u0E31\u0E19\"}}, {{\"\u0E40\u0E1B\u0E47\u0E19\u0E44\u0E1B\
+      \u0E44\u0E14\u0E49\"}} \u0E2B\u0E23\u0E37\u0E2D {{\"im\u0E40\u0E1B\u0E47\u0E19\
+      \u0E44\u0E1B\u0E44\u0E14\u0E49\"}}? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -196,11 +192,11 @@ templates:
     answer_choices: "\u0E43\u0E0A\u0E48 ||| \u0E44\u0E21\u0E48 ||| \u0E2D\u0E32\u0E08\
       \u0E08\u0E30"
     id: a485d120-6eef-4ff6-8684-42df1639b101
-    jinja: "{{premise}} \n\n\u0E04\u0E33\u0E16\u0E32\u0E21: \u0E2A\u0E34\u0E48\u0E07\
-      \u0E19\u0E35\u0E49\u0E1A\u0E48\u0E07\u0E1A\u0E2D\u0E01\u0E27\u0E48\u0E32 \"\
-      {{hypothesis}}\" \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? \u0E43\u0E0A\u0E48\
-      \u0E44\u0E21\u0E48\u0E2B\u0E23\u0E37\u0E2D\u0E2D\u0E32\u0E08\u0E08\u0E30? |||\
-      \ {% if label !=-1 %}{{answer_choices[label]}}{% endif %}"
+    jinja: "{{premise}} \n\n\u0E04\u0E33\u0E16\u0E32\u0E21: \u0E19\u0E35\u0E48\u0E2B\
+      \u0E21\u0E32\u0E22\u0E04\u0E27\u0E32\u0E21\u0E27\u0E48\u0E32 \"{{hypothesis}}\"\
+      \ \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48 \u0E43\u0E0A\u0E48 \u0E44\u0E21\
+      \u0E48 \u0E2B\u0E23\u0E37\u0E2D\u0E2D\u0E32\u0E08\u0E08\u0E30? ||| {% if label\
+      \ !=-1 %}{{answer_choices[label]}}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -210,18 +206,17 @@ templates:
     reference: Sanh et al. 2021
   bee62bfa-5307-4e1c-97b2-2ad2f7bcb179: !Template
     answer_choices: "\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07 ||| \u0E44\u0E21\u0E48\
-      \u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07 ||| \u0E44\u0E21\u0E48\u0E2A\u0E32\
-      \u0E21\u0E32\u0E23\u0E16\u0E2A\u0E23\u0E38\u0E1B\u0E44\u0E14\u0E49"
+      \u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07 ||| \u0E2A\u0E23\u0E38\u0E1B\u0E44\
+      \u0E21\u0E48\u0E44\u0E14\u0E49"
     id: bee62bfa-5307-4e1c-97b2-2ad2f7bcb179
-    jinja: "{{premise}} \u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49\u0E04\u0E33\u0E2D\u0E18\
-      \u0E34\u0E1A\u0E32\u0E22\u0E02\u0E49\u0E32\u0E07\u0E15\u0E49\u0E19\u0E40\u0E17\
-      \u0E48\u0E32\u0E19\u0E31\u0E49\u0E19\u0E41\u0E25\u0E30\u0E2A\u0E34\u0E48\u0E07\
-      \u0E17\u0E35\u0E48\u0E04\u0E38\u0E13\u0E23\u0E39\u0E49\u0E40\u0E01\u0E35\u0E48\
-      \u0E22\u0E27\u0E01\u0E31\u0E1A\u0E42\u0E25\u0E01 \"{{hypothesis}}\" \u0E19\u0E31\
-      \u0E49\u0E19\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07\u0E44\u0E21\u0E48\u0E16\
-      \u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07\u0E2B\u0E23\u0E37\u0E2D\u0E2A\u0E23\u0E38\
-      \u0E1B\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E41\
-      \u0E19\u0E48\u0E19\u0E2D\u0E19? ||| {% if label !=-1 %}{{ answer_choices[label]\
+    jinja: "{{premise}} \u0E43\u0E0A\u0E49\u0E40\u0E09\u0E1E\u0E32\u0E30\u0E04\u0E33\
+      \u0E2D\u0E18\u0E34\u0E1A\u0E32\u0E22\u0E02\u0E49\u0E32\u0E07\u0E15\u0E49\u0E19\
+      \u0E41\u0E25\u0E30\u0E2A\u0E34\u0E48\u0E07\u0E17\u0E35\u0E48\u0E04\u0E38\u0E13\
+      \u0E23\u0E39\u0E49\u0E40\u0E01\u0E35\u0E48\u0E22\u0E27\u0E01\u0E31\u0E1A\u0E42\
+      \u0E25\u0E01 \"{{hypothesis}}\" \u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07 \u0E44\
+      \u0E21\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07 \u0E2B\u0E23\u0E37\u0E2D\
+      \u0E2A\u0E23\u0E38\u0E1B\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\u0E2D\u0E22\u0E48\
+      \u0E32\u0E07\u0E41\u0E19\u0E48\u0E19\u0E2D\u0E19 ||| {% if label !=-1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -235,11 +230,11 @@ templates:
       \u0E08\u0E30"
     id: e503b148-8e6c-43b5-9ed6-312794c54d9b
     jinja: "\u0E17\u0E35\u0E48\u0E43\u0E2B\u0E49\u0E44\u0E27\u0E49 {{premise}} \u0E40\
-      \u0E23\u0E32\u0E04\u0E27\u0E23\u0E2A\u0E21\u0E21\u0E15\u0E34\u0E27\u0E48\u0E32\
-      \ \"{{hypothesis}}\" \u0E40\u0E1B\u0E47\u0E19\u0E08\u0E23\u0E34\u0E07\u0E2B\u0E23\
-      \u0E37\u0E2D\u0E44\u0E21\u0E48? \u0E43\u0E0A\u0E48\u0E44\u0E21\u0E48\u0E2B\u0E23\
-      \u0E37\u0E2D\u0E2D\u0E32\u0E08\u0E08\u0E30? ||| {% if label !=-1 %}{{ answer_choices[label]\
-      \ }}{% endif %}"
+      \u0E23\u0E32\u0E04\u0E27\u0E23\u0E16\u0E37\u0E2D\u0E27\u0E48\u0E32 \"{{hypothesis}}\"\
+      \ \u0E40\u0E1B\u0E47\u0E19\u0E08\u0E23\u0E34\u0E07\u0E2B\u0E23\u0E37\u0E2D\u0E44\
+      \u0E21\u0E48 \u0E43\u0E0A\u0E48 \u0E44\u0E21\u0E48 \u0E2B\u0E23\u0E37\u0E2D\u0E2D\
+      \u0E32\u0E08\u0E08\u0E30? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -248,18 +243,17 @@ templates:
     name: should assume
     reference: Webson & Pavlick 2021
   ea56b7f3-6e07-45bc-b619-c527eac4a41b: !Template
-    answer_choices: "\u0E08\u0E23\u0E34\u0E07 ||| \u0E40\u0E17\u0E47\u0E08 ||| \u0E44\
-      \u0E21\u0E48\u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E2A\u0E23\u0E38\u0E1B\u0E44\
-      \u0E14\u0E49"
+    answer_choices: "\u0E08\u0E23\u0E34\u0E07 ||| \u0E40\u0E17\u0E47\u0E08 ||| \u0E2A\
+      \u0E23\u0E38\u0E1B\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49"
     id: ea56b7f3-6e07-45bc-b619-c527eac4a41b
-    jinja: "\u0E43\u0E0A\u0E49\u0E2A\u0E34\u0E48\u0E07\u0E15\u0E48\u0E2D\u0E44\u0E1B\
-      \u0E19\u0E35\u0E49\u0E40\u0E1B\u0E47\u0E19\u0E04\u0E27\u0E32\u0E21\u0E08\u0E23\
-      \u0E34\u0E07: {{premise}}\n\u0E08\u0E32\u0E01\u0E19\u0E31\u0E49\u0E19\u0E04\u0E33\
-      \u0E2A\u0E31\u0E48\u0E07\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49: \"\
-      {{hypothesis}}\" \u0E04\u0E37\u0E2D {{\"\u0E08\u0E23\u0E34\u0E07\"}}, {{\"\u0E40\
-      \u0E17\u0E47\u0E08\"}}, \u0E2B\u0E23\u0E37\u0E2D {{\"\u0E44\u0E21\u0E48\u0E2A\
-      \u0E32\u0E21\u0E32\u0E23\u0E16\u0E41\u0E01\u0E49\u0E44\u0E02\u0E44\u0E14\u0E49\
-      \"}}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "\u0E16\u0E37\u0E2D\u0E40\u0E2D\u0E32\u0E04\u0E27\u0E32\u0E21\u0E08\u0E23\
+      \u0E34\u0E07\u0E14\u0E31\u0E07\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49\
+      \ {{premise}}\n\u0E08\u0E32\u0E01\u0E19\u0E31\u0E49\u0E19\u0E02\u0E49\u0E2D\u0E04\
+      \u0E27\u0E32\u0E21\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49: \"{{hypothesis}}\"\
+      \ \u0E04\u0E37\u0E2D {{\"\u0E08\u0E23\u0E34\u0E07\"}}, {{\"\u0E40\u0E17\u0E47\
+      \u0E08\"}} \u0E2B\u0E23\u0E37\u0E2D {{\"\u0E2A\u0E23\u0E38\u0E1B\u0E44\u0E21\
+      \u0E48\u0E44\u0E14\u0E49\"}}? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

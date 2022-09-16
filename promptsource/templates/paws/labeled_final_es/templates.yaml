@@ -4,8 +4,8 @@ templates:
   0be7cecd-b427-4ec9-9b0e-666d6dae0063: !Template
     answer_choices: "No ||| S\xED"
     id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
-    jinja: "Determine si las siguientes dos oraciones parafrasean entre s\xED o no.\n\
-      Oraci\xF3n 1: {{sentence1}}\nOraci\xF3n 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
+    jinja: "Determina si las siguientes dos oraciones se parafrasean entre s\xED o\
+      \ no.\nOraci\xF3n 1: {{sentence1}}\nOraci\xF3n 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -17,7 +17,7 @@ templates:
     answer_choices: "No ||| S\xED"
     id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
     jinja: "Oraci\xF3n 1: {{sentence1}}\nOraci\xF3n 2: {{sentence2}}\nPregunta: \xBF\
-      La oraci\xF3n 1 y la oraci\xF3n 2 expresan el mismo significado?\xBFSi o no?\
+      La Oraci\xF3n 1 y la Oraci\xF3n 2 expresan el mismo significado? \xBFSi o no?\
       \ \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -29,8 +29,8 @@ templates:
   4c8d4e4c-eae4-45f6-bdf0-d132ae198d09: !Template
     answer_choices: "No ||| S\xED"
     id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
-    jinja: "{{sentence1}}\n\xBFEs eso una par\xE1frasis de la siguiente oraci\xF3\
-      n?\n{{sentence2}}?\n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}}\n\xBFEs una par\xE1frasis de la siguiente oraci\xF3n?\n\
+      {{sentence2}}?\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -42,7 +42,7 @@ templates:
     answer_choices: "No ||| S\xED"
     id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
     jinja: "Oraci\xF3n 1: {{sentence1}}\nOraci\xF3n 2: {{sentence2}}\nPregunta: \xBF\
-      Podemos reescribir la oraci\xF3n 1 a la oraci\xF3n 2? \n||| \n{{answer_choices[label]}}"
+      Podemos reescribir la Oraci\xF3n 1 a la Oraci\xF3n 2? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -53,8 +53,8 @@ templates:
   7c205a61-64d4-4673-bb8e-bfa77562eede: !Template
     answer_choices: "No ||| S\xED"
     id: 7c205a61-64d4-4673-bb8e-bfa77562eede
-    jinja: "{{sentence1}}\n\xBFEs eso una par\xE1frasis de la siguiente oraci\xF3\
-      n?\n{{sentence2}}?\nSi o no.\n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}}\n\xBFEs una par\xE1frasis de la siguiente oraci\xF3n?\n\
+      {{sentence2}}?\nSi o no.\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -66,7 +66,7 @@ templates:
     answer_choices: "No ||| S\xED"
     id: 8c259e88-7646-4a50-a4ca-90393920f281
     jinja: "Oraci\xF3n 1: {{sentence1}}\nOraci\xF3n 2: {{sentence2}}\nPregunta: \xBF\
-      Forma 1 para parafrasear 2?\xBFSi o no? \n||| \n{{answer_choices[label]}}"
+      La oraci\xF3n 1 parafrasea la oraci\xF3n 2? \xBFSi o no? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -77,8 +77,8 @@ templates:
   a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
     answer_choices: null
     id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
-    jinja: "{% if label == 1 %} \nParafraseando la oraci\xF3n: {{sentence1}} \n|||\
-      \ \n{{sentence2}} \n{% endif %}"
+    jinja: "{% if label == 1 %} \nParafrasear la oraci\xF3n: {{sentence1}} \n||| \n\
+      {{sentence2}} \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -91,7 +91,7 @@ templates:
     answer_choices: "No ||| S\xED"
     id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
     jinja: "Oraci\xF3n 1: {{sentence1}}\nOraci\xF3n 2: {{sentence2}}\nPregunta: \xBF\
-      Forma 1 para parafrasear 2? \n||| \n{{answer_choices[label]}}"
+      La oraci\xF3n 1 parafrasea la oraci\xF3n 2? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -103,7 +103,7 @@ templates:
     answer_choices: "No ||| S\xED"
     id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
     jinja: "Oraci\xF3n 1: {{sentence1}}\nOraci\xF3n 2: {{sentence2}}\nPregunta: \xBF\
-      La oraci\xF3n 1 y la oraci\xF3n 2 expresan el mismo significado? \n||| \n{{answer_choices[label]}}"
+      La Oraci\xF3n 1 y la Oraci\xF3n 2 expresan el mismo significado? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -127,7 +127,8 @@ templates:
     answer_choices: "No ||| S\xED"
     id: dd52359b-dc56-4241-8179-c98c636f0335
     jinja: "Oraci\xF3n 1: {{sentence1}}\nOraci\xF3n 2: {{sentence2}}\nPregunta: \xBF\
-      Podemos reescribir la oraci\xF3n 1 a la oraci\xF3n 2?\xBFSi o no? \n||| \n{{answer_choices[label]}}"
+      Podemos reescribir la Oraci\xF3n 1 a la Oraci\xF3n 2? \xBFSi o no? \n||| \n\
+      {{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -138,7 +139,7 @@ templates:
   f0866713-c59a-4c5d-a307-95e80a935f99: !Template
     answer_choices: "No ||| S\xED"
     id: f0866713-c59a-4c5d-a307-95e80a935f99
-    jinja: "{{sentence1}} Pregunta: {{sentence2}} Parafraseo o no?\n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}} Pregunta: {{sentence2}} \xBFParafrasear o no?\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

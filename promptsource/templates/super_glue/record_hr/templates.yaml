@@ -17,9 +17,9 @@ templates:
   11e27d59-b1f5-43a1-9ccc-17f1c3249173: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 11e27d59-b1f5-43a1-9ccc-17f1c3249173
-    jinja: "Sljede\u0107i je dokument pokvaren. Recite mi na \u0161to se odnosi \"\
-      {{\"@placeholder\"}}\".\n\nDokument: {{ passage }} \n{{ query }} \n||| {% if\
-      \ ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
+    jinja: "Sljede\u0107i dokument je o\u0161te\u0107en. Reci mi na \u0161to \"{{\"\
+      @placeholder\"}}\" misli.\n\nDokument: {{ passage }} \n{{ query }} \n||| {%\
+      \ if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -49,9 +49,9 @@ templates:
       }}'
     id: 24c267d4-359e-40a9-83d2-bff904d63b09
     jinja: "Sa\u017Eetak:\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\\n-\
-      \ \") }} \n\n\u010Clanak:\n\n{{ passage.split(\"@highlight\")[0] }}\n\nSad kad\
-      \ ste pro\u010Ditali \u010Dlanak, napi\u0161ite novu re\u010Denicu koju \u0107\
-      ete mu dodati.\n\n||| {% if ( answers | length ) > 0 %}{{ query | replace(\"\
+      \ \") }} \n\n\u010Clanak:\n\n{{ passage.split(\"@highlight\")[0] }}\n\nSada\
+      \ kada ste pro\u010Ditali \u010Dlanak, napi\u0161ite novu re\u010Denicu koju\
+      \ \u0107ete mu dodati.\n\n||| {% if ( answers | length ) > 0 %}{{ query | replace(\"\
       @placeholder\", answers | choice) }} {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -64,7 +64,7 @@ templates:
     answer_choices: '{{ entities | join("|||") }}'
     id: 441c70e3-095a-44a1-8163-bc3b666b7ea1
     jinja: "{{ passage }} \n{{ query }} \n\nTrebali biste odlu\u010Diti na \u0161\
-      to se odnosi \"{{\"@placeholder\"}}\". Odaberite izme\u0111u:\n- {{answer_choices\
+      to se \"{{\"@placeholder\"}}\" odnosi. Odaberite izme\u0111u:\n- {{answer_choices\
       \ | join(\"\\n- \")}}\n||| {% if ( answers | length ) > 0 %}{{ answers | choice\
       \ }}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -108,8 +108,9 @@ templates:
   91555c1c-c1e4-469b-a2a4-fc952ce1a145: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 91555c1c-c1e4-469b-a2a4-fc952ce1a145
-    jinja: "{{ passage }} \n{{ query }} \nU gornjem pitanju \"{{\"@placeholder\"}}\"\
-      \ ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \nU gornjem pitanju, \"{{\"@placeholder\"\
+      }}\" ozna\u010Dava ||| {% if ( answers | length ) > 0 %}{{ answers | choice\
+      \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -122,10 +123,10 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 94577b75-2eac-4eae-b367-3b413c4188c6
-    jinja: "Nakon \u0161to ste pro\u010Ditali \u010Dlanak, napi\u0161ite drugu re\u010D\
-      enicu da biste ga dodali.\n{{ passage | replace(\"@highlight\", \"\\n- \") }}\n\
-      \n||| {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\",\
-      \ answers | choice) }}{% endif %}\n"
+    jinja: "Nakon \u0161to pro\u010Ditate \u010Dlanak, napi\u0161ite jo\u0161 jednu\
+      \ re\u010Denicu koju \u0107ete mu dodati.\n{{ passage | replace(\"@highlight\"\
+      , \"\\n- \") }}\n\n||| {% if ( answers | length ) > 0 %}{{ query | replace(\"\
+      @placeholder\", answers | choice) }}{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -138,9 +139,9 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 9579b54e-4f0f-4e43-8907-af57112cc857
-    jinja: "Pro\u010Ditajte sljede\u0107i \u010Dlanak vijesti i napi\u0161ite drugu\
-      \ re\u010Denicu koju \u0107ete mu dodati.\n\n{{ passage | replace(\"@highlight\"\
-      , \"\\n- \") }} \n ||| {% if ( answers | length ) > 0 %}{{ query | replace(\"\
+    jinja: "Pro\u010Ditajte sljede\u0107i \u010Dlanak vijesti i napi\u0161ite jo\u0161\
+      \ jednu re\u010Denicu da mu dodate.\n\n{{ passage | replace(\"@highlight\",\
+      \ \"\\n- \") }} \n ||| {% if ( answers | length ) > 0 %}{{ query | replace(\"\
       @placeholder\", answers | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -165,10 +166,10 @@ templates:
   9b688cf3-28bf-4f33-94cf-e73e4fa8c608: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: 9b688cf3-28bf-4f33-94cf-e73e4fa8c608
-    jinja: "{{ passage }}\n{{ query }}\n\nPoku\u0161avam odlu\u010Diti \u0161to \"\
-      {{\"@placeholder\"}}\" zna\u010Di u prethodnom tekstu.\nPomozite odabirom opcije\
-      \ izme\u0111u:\n- {{ entities | join(\"\\n- \") }}\n||| {% if ( answers | length\
-      \ ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
+    jinja: "{{ passage }}\n{{ query }}\n\nPoku\u0161avam odlu\u010Diti \u0161to zna\u010D\
+      i \"{{\"@placeholder\"}}\" u prethodnom tekstu.\nPomozite odabirom opcije izme\u0111\
+      u:\n- {{ entities | join(\"\\n- \") }}\n||| {% if ( answers | length ) > 0 %}\n\
+      {{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -179,8 +180,8 @@ templates:
   a5ed27ed-162b-4ac1-9c7a-85059d5214be: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: a5ed27ed-162b-4ac1-9c7a-85059d5214be
-    jinja: "{{ passage }} \n{{ query }} \nOvdje se dr\u017Ea\u010D mjesta odnosi na\
-      \ ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \nOvdje se rezervirano mjesto odnosi na |||\
+      \ {% if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -194,7 +195,7 @@ templates:
       }}'
     id: a99a92e0-e1ee-4ec3-a38a-3be4303ba017
     jinja: "{{ passage.split(\"@highlight\")[0] }}\n\nNaglasci:\n\n- {{ passage.split(\"\
-      @highlight\")[1:] | join(\"\\n- \") }} \n\nNapi\u0161ite dodatni naglasak.\n\
+      @highlight\")[1:] | join(\"\\n- \") }} \n\nNapi\u0161ite dodatno isticanje.\n\
       \ ||| {% if ( answers | length ) > 0 %}- {{ query | replace(\"@placeholder\"\
       , answers | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
@@ -207,9 +208,9 @@ templates:
   d3fce74e-0d9d-404a-a009-9ebbf5794c2c: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: d3fce74e-0d9d-404a-a009-9ebbf5794c2c
-    jinja: "Vje\u017Eba: Izvadite iz teksta ispravan entitet na koji se odnosi \"\
-      {{\"@placeholder\"}}\".\n\n{{ passage }}\n{{ query }}\n||| {% if ( answers |\
-      \ length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
+    jinja: "Vje\u017Eba: Izdvojite iz teksta to\u010Dan entitet na koji \"{{\"@placeholder\"\
+      }}\" upu\u0107uje.\n\n{{ passage }}\n{{ query }}\n||| {% if ( answers | length\
+      \ ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -225,7 +226,7 @@ templates:
       {{ query }}
 
 
-      Odaberite jednu opciju, "{{"@placeholder"}}" odnosi se na:
+      Odaberite jednu opciju, "{{"@placeholder"}}" se odnosi na:
 
       - {{answer_choices | join("\n- ")}}
 

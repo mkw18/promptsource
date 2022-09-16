@@ -50,7 +50,7 @@ templates:
     jinja: 'Pekerjaan rumah
 
 
-      Putuskan apakah kata "{{word}}" digunakan dengan makna yang sama dalam dua kalimat
+      Tentukan apakah kata "{{word}}" digunakan dengan arti yang sama dalam dua kalimat
       berikut. Jawab dengan ya atau tidak.
 
       {{sentence1}}
@@ -175,8 +175,8 @@ templates:
   dd2080cf-3117-49ba-9aff-c988a21fdb69: !Template
     answer_choices: Tidak ||| Ya
     id: dd2080cf-3117-49ba-9aff-c988a21fdb69
-    jinja: 'Kata "{{word}}" memiliki banyak makna. Apakah itu memiliki arti yang sama
-      dalam kalimat 1 dan 2? Ya atau tidak?
+    jinja: 'Kata "{{word}}" memiliki banyak arti. Apakah memiliki arti yang sama dalam
+      kalimat 1 dan 2? Ya atau tidak?
 
 
       Kalimat 1: {{sentence1}}
@@ -202,7 +202,7 @@ templates:
 
       {{sentence2}}
 
-      Rasa {{word}} yang serupa?
+      Mirip dengan {{word}}?
 
       ||| {% if label != -1%}
 

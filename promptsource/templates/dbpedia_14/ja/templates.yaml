@@ -3,17 +3,20 @@ subset: ja
 templates:
   824ecb55-ecad-40c2-8033-f2fa0add2ddf: !Template
     answer_choices: "\u4F1A\u793E ||| \u6559\u80B2\u6A5F\u95A2 ||| \u30A2\u30FC\u30C6\
-      \u30A3\u30B9\u30C8 ||| \u30A2\u30B9\u30EA\u30FC\u30C8 ||| Office Holder |||\
-      \ \u8F38\u9001\u306E\u5E73\u5747 ||| \u5EFA\u7269 ||| \u81EA\u7136\u306E\u5834\
-      \u6240 ||| \u6751 ||| \u52D5\u7269 ||| \u5DE5\u5834 ||| \u30A2\u30EB\u30D0\u30E0\
-      \ ||| Film ||| Written Work"
+      \u30A3\u30B9\u30C8 ||| \u30A2\u30B9\u30EA\u30FC\u30C8 ||| \u30AA\u30D5\u30A3\
+      \u30B9\u30DB\u30EB\u30C0\u30FC ||| \u4EA4\u901A\u624B\u6BB5 ||| \u5EFA\u7269\
+      \ ||| \u30CA\u30C1\u30E5\u30E9\u30EB\u30D7\u30EC\u30A4\u30B9 ||| \u6751 |||\
+      \ \u52D5\u7269 ||| \u5DE5\u5834 ||| \u30A2\u30EB\u30D0\u30E0 ||| \u6620\u753B\
+      \ ||| \u66F8\u304B\u308C\u305F\u4F5C\u54C1"
     id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
-    jinja: "{{content}} \u30AB\u30C6\u30B4\u30EA\u306E\u30EA\u30B9\u30C8\u3092\u6307\
-      \u5B9A\u3057\u3066\u304F\u3060\u3055\u3044\uFF1A{{\"company, educational institution,\
-      \ artist, athlete, office holder, mean of transportation, building, natural\
-      \ place, village, animal, plant, album, film or written work\"}}\u3001\u6BB5\
-      \u843D\u306F\u3069\u306E\u30AB\u30C6\u30B4\u30EA\u306B\u5C5E\u3057\u307E\u3059\
-      \u304B\uFF1F ||| {{ answer_choices[label] }}\n\n"
+    jinja: "{{content}} \u30AB\u30C6\u30B4\u30EA\u306E\u30EA\u30B9\u30C8\u304C\u4E0E\
+      \u3048\u3089\u308C\u305F\u5834\u5408: {{\"\u4F1A\u793E\u3001\u6559\u80B2\u6A5F\
+      \u95A2\u3001\u30A2\u30FC\u30C6\u30A3\u30B9\u30C8\u3001\u30A2\u30B9\u30EA\u30FC\
+      \u30C8\u3001\u5F79\u8077\u8005\u3001\u4EA4\u901A\u624B\u6BB5\u3001\u5EFA\u7269\
+      \u3001\u81EA\u7136\u306E\u5834\u6240\u3001\u6751\u3001\u52D5\u7269\u3001\u690D\
+      \u7269\u3001\u30A2\u30EB\u30D0\u30E0\u3001\u6620\u753B\u307E\u305F\u306F\u8457\
+      \u4F5C\u7269\"}}\u3001\u6BB5\u843D\u306F\u3069\u306E\u30AB\u30C6\u30B4\u30EA\
+      \u306B\u5C5E\u3057\u307E\u3059\u304B? ||| {{ answer_choices[label] }}\n\n"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -22,18 +25,22 @@ templates:
     name: given_list_what_category_does_the_paragraph_belong_to
     reference: ''
   8eda7e71-6734-486f-b883-e99d3f14c0bf: !Template
-    answer_choices: "Company ||| \u6559\u80B2\u6A5F\u95A2 ||| Artist ||| \u30A2\u30B9\
-      \u30EA\u30FC\u30C8 ||| \u30AA\u30D5\u30A3\u30B9\u30DB\u30EB\u30C0\u30FC |||\
-      \ \u8F38\u9001\u306E\u5E73\u5747 ||| \u5EFA\u7269 ||| Natural Place ||| \u6751\
-      \ ||| \u52D5\u7269 ||| \u5DE5\u5834 ||| Album ||| \u6620\u753B ||| \u66F8\u304B\
-      \u308C\u305F\u4F5C\u54C1"
+    answer_choices: "\u4F1A\u793E ||| \u6559\u80B2\u6A5F\u95A2 ||| \u30A2\u30FC\u30C6\
+      \u30A3\u30B9\u30C8 ||| \u30A2\u30B9\u30EA\u30FC\u30C8 ||| \u30AA\u30D5\u30A3\
+      \u30B9\u30DB\u30EB\u30C0\u30FC ||| \u4EA4\u901A\u624B\u6BB5 ||| \u5EFA\u7269\
+      \ ||| \u30CA\u30C1\u30E5\u30E9\u30EB\u30D7\u30EC\u30A4\u30B9 ||| \u6751 |||\
+      \ \u52D5\u7269 ||| \u5DE5\u5834 ||| \u30A2\u30EB\u30D0\u30E0 ||| \u6620\u753B\
+      \ ||| \u66F8\u304B\u308C\u305F\u4F5C\u54C1"
     id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
-    jinja: "\u6B21\u306E\u30C6\u30AD\u30B9\u30C8\u306E1\u3064\u306E\u30AB\u30C6\u30B4\
-      \u30EA\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002\u30AA\u30D7\
-      \u30B7\u30E7\u30F3\u306F -  {{\"company, educational institution, artist, athlete,\
-      \ office holder, mean of transportation, building, natural place, village, animal,\
-      \ plant, album, film or written work\"}}\u3067\u3059\u3002 {{title}} - {{content}}\
-      \ ||| {{ answer_choices[label] }}"
+    jinja: "\u6B21\u306E\u30C6\u30AD\u30B9\u30C8\u306E\u30AB\u30C6\u30B4\u30EA\u3092\
+      \ 1 \u3064\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002\u30AA\u30D7\
+      \u30B7\u30E7\u30F3\u306F - {{\"\u4F1A\u793E\u3001\u6559\u80B2\u6A5F\u95A2\u3001\
+      \u30A2\u30FC\u30C6\u30A3\u30B9\u30C8\u3001\u30A2\u30B9\u30EA\u30FC\u30C8\u3001\
+      \u5F79\u8077\u8005\u3001\u4EA4\u901A\u624B\u6BB5\u3001\u5EFA\u7269\u3001\u81EA\
+      \u7136\u306E\u5834\u6240\u3001\u6751\u3001\u52D5\u7269\u3001\u690D\u7269\u3001\
+      \u30A2\u30EB\u30D0\u30E0\u3001\u6620\u753B\u307E\u305F\u306F\u8457\u4F5C\u7269\
+      \"}} \u3067\u3059\u3002 {{title}} - {{content}} ||| {{ answer_choices[label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -42,16 +49,22 @@ templates:
     name: pick_one_category_for_the_following_text
     reference: ''
   9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67: !Template
-    answer_choices: "Company ||| \u6559\u80B2\u6A5F\u95A2 ||| Artist ||| \u30A2\u30B9\
-      \u30EA\u30FC\u30C8 ||| \u30AA\u30D5\u30A3\u30B9\u30DB\u30EB\u30C0\u30FC |||\
-      \ Mean Of Transportation ||| \u5EFA\u7269 ||| Natural Place ||| \u6751 ||| \u52D5\
-      \u7269 ||| \u5DE5\u5834 ||| \u30A2\u30EB\u30D0\u30E0 ||| \u6620\u753B ||| \u66F8\
-      \u304B\u308C\u305F\u4F5C\u54C1"
+    answer_choices: "\u4F1A\u793E ||| \u6559\u80B2\u6A5F\u95A2 ||| \u30A2\u30FC\u30C6\
+      \u30A3\u30B9\u30C8 ||| \u30A2\u30B9\u30EA\u30FC\u30C8 ||| \u30AA\u30D5\u30A3\
+      \u30B9\u30DB\u30EB\u30C0\u30FC ||| \u4EA4\u901A\u624B\u6BB5 ||| \u5EFA\u7269\
+      \ ||| \u30CA\u30C1\u30E5\u30E9\u30EB\u30D7\u30EC\u30A4\u30B9 ||| \u6751 |||\
+      \ \u52D5\u7269 ||| \u5DE5\u5834 ||| \u30A2\u30EB\u30D0\u30E0 ||| \u6620\u753B\
+      \ ||| \u66F8\u304B\u308C\u305F\u4F5C\u54C1"
     id: 9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67
-    jinja: '{{title}} - {{content}} Given a choice of categories {{"company, educational
-      institution, artist, athlete, office holder, mean of transportation, building,
-      natural place, village, animal, plant, album, film or written work"}}, the text
-      refers to which one? ||| {{ answer_choices[label] }}'
+    jinja: "{{title}} - {{content}} \u30AB\u30C6\u30B4\u30EA {{\"\u4F1A\u793E\u3001\
+      \u6559\u80B2\u6A5F\u95A2\u3001\u30A2\u30FC\u30C6\u30A3\u30B9\u30C8\u3001\u30A2\
+      \u30B9\u30EA\u30FC\u30C8\u3001\u5F79\u8077\u8005\u3001\u4EA4\u901A\u624B\u6BB5\
+      \u3001\u5EFA\u7269\u3001\u81EA\u7136\u306E\u5834\u6240\u3001\u6751\u3001\u52D5\
+      \u7269\u3001\u690D\u7269\u3001\u30A2\u30EB\u30D0\u30E0\u3001\u6620\u753B\u307E\
+      \u305F\u306F\u8457\u4F5C\u7269\"}} \u306E\u9078\u629E\u304C\u4E0E\u3048\u3089\
+      \u308C\u305F\u5834\u5408\u3001\u30C6\u30AD\u30B9\u30C8\u306F\u3069\u306E\u30AB\
+      \u30C6\u30B4\u30EA\u3092\u53C2\u7167\u3057\u3066\u3044\u307E\u3059\u304B? |||\
+      \ {{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -60,19 +73,22 @@ templates:
     name: 'given_a_choice_of_categories '
     reference: ''
   f72fa410-3278-4f62-91f0-f9edf4a4e792: !Template
-    answer_choices: "Company ||| \u6559\u80B2\u6A5F\u95A2 ||| \u30A2\u30FC\u30C6\u30A3\
-      \u30B9\u30C8 ||| Athlete ||| \u30AA\u30D5\u30A3\u30B9\u30DB\u30EB\u30C0\u30FC\
-      \ ||| \u8F38\u9001\u306E\u5E73\u5747 ||| \u5EFA\u7269 ||| \u81EA\u7136\u306E\
-      \u5834\u6240 ||| \u6751 ||| \u52D5\u7269 ||| Plant ||| \u30A2\u30EB\u30D0\u30E0\
-      \ ||| \u6620\u753B ||| Written Work"
+    answer_choices: "\u4F1A\u793E ||| \u6559\u80B2\u6A5F\u95A2 ||| \u30A2\u30FC\u30C6\
+      \u30A3\u30B9\u30C8 ||| \u30A2\u30B9\u30EA\u30FC\u30C8 ||| \u30AA\u30D5\u30A3\
+      \u30B9\u30DB\u30EB\u30C0\u30FC ||| \u4EA4\u901A\u624B\u6BB5 ||| \u5EFA\u7269\
+      \ ||| \u30CA\u30C1\u30E5\u30E9\u30EB\u30D7\u30EC\u30A4\u30B9 ||| \u6751 |||\
+      \ \u52D5\u7269 ||| \u5DE5\u5834 ||| \u30A2\u30EB\u30D0\u30E0 ||| \u6620\u753B\
+      \ ||| \u66F8\u304B\u308C\u305F\u4F5C\u54C1"
     id: f72fa410-3278-4f62-91f0-f9edf4a4e792
-    jinja: '"{{title}}", given a list of categories: {{"company, educational institution,
-      artist, athlete, office holder, mean of transportation, building, natural place,
-      village, animal, plant, album, film or written work"}}, what category does the
-      title belong to? ||| {{ answer_choices[label] }}
-
-
-      '
+    jinja: "\"{{title}}\"\u3001\u30AB\u30C6\u30B4\u30EA\u306E\u30EA\u30B9\u30C8\u304C\
+      \u4E0E\u3048\u3089\u308C\u305F\u5834\u5408: {{\"\u4F1A\u793E\u3001\u6559\u80B2\
+      \u6A5F\u95A2\u3001\u30A2\u30FC\u30C6\u30A3\u30B9\u30C8\u3001\u30A2\u30B9\u30EA\
+      \u30FC\u30C8\u3001\u5F79\u8077\u8005\u3001\u4EA4\u901A\u624B\u6BB5\u3001\u5EFA\
+      \u7269\u3001\u81EA\u7136\u306E\u5834\u6240\u3001\u6751\u3001\u52D5\u7269\u3001\
+      \u690D\u7269\u3001\u30A2\u30EB\u30D0\u30E0\u3001\u6620\u753B\u307E\u305F\u306F\
+      \u8457\u4F5C\u7269\"}}\u3001\u30BF\u30A4\u30C8\u30EB\u306F\u3069\u306E\u30AB\
+      \u30C6\u30B4\u30EA\u306B\u5C5E\u3057\u307E\u3059\u304B? ||| {{ answer_choices[label]\
+      \ }}\n\n"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

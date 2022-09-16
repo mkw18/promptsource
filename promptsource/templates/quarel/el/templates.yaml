@@ -6,12 +6,12 @@ templates:
     id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
     jinja: "\u0395\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7: {{question}}\n\n\u039C\u03B7\
       \u03BD \u03C7\u03C1\u03B7\u03C3\u03B9\u03BC\u03BF\u03C0\u03BF\u03B9\u03B5\u03AF\
-      \u03C4\u03B5 {{\"a\"}} \u03BA\u03B1\u03B9 {{\"b\"}} \u03B3\u03B9\u03B1 \u03BD\
-      \u03B1 \u03B1\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\u03B5\u03C4\u03B5 \u03C3\u03C4\
-      \u03B7\u03BD \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\u03B7, \u03B1\u03BB\u03BB\u03AC\
-      \ \u03B1\u03BD\u03C4 '\u03B1\u03C5\u03C4\u03BF\u03CD, \u03B5\u03C0\u03B9\u03BB\
-      \u03AD\u03BE\u03C4\u03B5 \u03BC\u03B5\u03C4\u03B1\u03BE\u03CD \"{{answer_choices[0]}}\"\
-      \ \u03BA\u03B1\u03B9 \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
+      \u03C4\u03B5 \u03C4\u03B1 {{\"A\"}} \u03BA\u03B1\u03B9 \u03C4\u03B1 {{\"B\"\
+      }} \u03B3\u03B9\u03B1 \u03BD\u03B1 \u03B1\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\
+      \u03B5\u03C4\u03B5 \u03C3\u03C4\u03B7\u03BD \u03B5\u03C1\u03CE\u03C4\u03B7\u03C3\
+      \u03B7, \u03B1\u03BB\u03BB\u03AC \u03B5\u03C0\u03B9\u03BB\u03AD\u03BE\u03C4\u03B5\
+      \ \u03BC\u03B5\u03C4\u03B1\u03BE\u03CD \"{{answer_choices[0]}}\" \u03BA\u03B1\
+      \u03B9 \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -22,12 +22,12 @@ templates:
   5b5f9d29-0ad5-4bb9-831a-11fcb115c10d: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
-    jinja: "\u0391\u03BA\u03BF\u03BB\u03BF\u03C5\u03B8\u03B5\u03AF \u03BC\u03B9\u03B1\
-      \ \u03BB\u03BF\u03B3\u03B9\u03BA\u03AE \u03B4\u03BF\u03BA\u03B9\u03BC\u03AE\
-      : {{question}}\n\n\u0395\u03C0\u03B9\u03BB\u03AD\u03BE\u03C4\u03B5 \u03C4\u03B7\
-      \u03BD \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03BC\u03B5\u03C4\u03B1\
-      \u03BE\u03CD \"{{answer_choices[0]}}\" \u03BA\u03B1\u03B9 \"{{answer_choices[1]}}\"\
-      .\n|||\n{{answer_choices[answer_index]}}"
+    jinja: "\u0395\u03B4\u03CE \u03B5\u03AF\u03BD\u03B1\u03B9 \u03AD\u03BD\u03B1 \u03C4\
+      \u03B5\u03C3\u03C4 \u03BB\u03BF\u03B3\u03B9\u03BA\u03AE\u03C2: {{question}}\n\
+      \n\u0395\u03C0\u03B9\u03BB\u03AD\u03BE\u03C4\u03B5 \u03C4\u03B7\u03BD \u03B1\
+      \u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03BC\u03B5\u03C4\u03B1\u03BE\u03CD\
+      \ \"{{answer_choices[0]}}\" \u03BA\u03B1\u03B9 \"{{answer_choices[1]}}\".\n\
+      |||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -41,10 +41,9 @@ templates:
     jinja: "\u0395\u03B4\u03CE \u03B5\u03AF\u03BD\u03B1\u03B9 \u03BC\u03B9\u03B1 \u03C3\
       \u03CD\u03BD\u03C4\u03BF\u03BC\u03B7 \u03B9\u03C3\u03C4\u03BF\u03C1\u03AF\u03B1\
       : {{question}}.\n\n\u03A0\u03BF\u03B9\u03B1 \u03B5\u03AF\u03BD\u03B1\u03B9 \u03B7\
-      \ \u03C0\u03B9\u03BF \u03B1\u03B9\u03C3\u03B8\u03B7\u03BC\u03B1\u03C4\u03B9\u03BA\
-      \u03AE \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03BC\u03B5\u03C4\u03B1\
-      \u03BE\u03CD \"{{answer_choices[0]}}\" \u03BA\u03B1\u03B9 \"{{answer_choices[1]}}\"\
-      ;\n|||\n{{answer_choices[answer_index]}}"
+      \ \u03C0\u03B9\u03BF \u03BB\u03BF\u03B3\u03B9\u03BA\u03AE \u03B1\u03C0\u03AC\
+      \u03BD\u03C4\u03B7\u03C3\u03B7 \u03BC\u03B5\u03C4\u03B1\u03BE\u03CD \"{{answer_choices[0]}}\"\
+      \ \u03BA\u03B1\u03B9 \"{{answer_choices[1]}}\";\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -74,8 +73,8 @@ templates:
       \u03B9 \u03B7 \u03B1\u03C0\u03AC\u03BD\u03C4\u03B7\u03C3\u03B7 \u03C0\u03BF\u03C5\
       \ \u03C0\u03C1\u03AD\u03C0\u03B5\u03B9 \u03BD\u03B1 \u03B5\u03C0\u03B9\u03BB\
       \u03AD\u03BE\u03BF\u03C5\u03BD \u03BC\u03B5\u03C4\u03B1\u03BE\u03CD \"{{answer_choices[0]}}\"\
-      \ \u03BA\u03B1\u03B9 \"{{answer_choices[1]}}\";\n\u0394\u03BF\u03BA\u03B9\u03BC\
-      \u03AE \u03BB\u03BF\u03B3\u03B9\u03BA\u03AE\u03C2: {{question}}\n|||\n{{answer_choices[answer_index]}}"
+      \ \u03BA\u03B1\u03B9 \"{{answer_choices[1]}}\";\n\u039B\u03BF\u03B3\u03B9\u03BA\
+      \u03CC \u03C4\u03B5\u03C3\u03C4: {{question}}\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

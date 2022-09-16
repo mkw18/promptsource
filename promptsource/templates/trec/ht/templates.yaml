@@ -2,8 +2,8 @@ dataset: trec
 subset: ht
 templates:
   21d04668-c5b3-4418-bbb6-663f1ffdb97c: !Template
-    answer_choices: Deskripsyon ||| Antite ||| Abrevyasyon ||| Moun ||| Kantite |||
-      Anplasman
+    answer_choices: Deskripsyon ||| Antite ||| Abreviyasyon ||| Moun ||| Kantite |||
+      Kote
     id: 21d04668-c5b3-4418-bbb6-663f1ffdb97c
     jinja: "Kategori: {{', '.join(answer_choices)}}\n\nKi kategori ki pi byen dekri:\
       \ {{text}} \nRepons: ||| {{ answer_choices [label_coarse] }}"
@@ -15,7 +15,7 @@ templates:
     name: what_category_best_describe
     reference: ''
   2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6: !Template
-    answer_choices: "lavil ||| kanpay ||| montay ||| eta ||| L\xF2t Kote"
+    answer_choices: "vil la ||| peyi ||| montay ||| eta ||| l\xF2t kote"
     id: 2d4e0add-cfca-4f54-80a2-ddd8e91f9fd6
     jinja: "{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}\n{% if label_coarse\
       \ == 5 %}\n\xC8ske kesyon sa a mande pou {{', '.join(answer_choices)}}?\n{{text}}\n\
@@ -28,9 +28,9 @@ templates:
     name: fine_grained_LOC
     reference: Fine grained labels with coarse-label `LOC`, context after question
   309bf243-2185-4090-ac66-a24f44d89966: !Template
-    answer_choices: "k\xF2d ||| konnte ||| dat ||| distans ||| pri ||| k\xF2mandman\
-      \ ||| pery\xF2d de tan ||| pousantaj ||| vit\xE8s ||| tanperati ||| tay |||\
-      \ pwa ||| L\xF2t nimewo"
+    answer_choices: "k\xF2d ||| konte ||| dat ||| distans ||| pri ||| l\xF2d ||| pery\xF2\
+      d tan ||| pousantaj ||| vit\xE8s ||| tanperati ||| gwos\xE8 ||| pwa ||| l\xF2\
+      t nimewo"
     id: 309bf243-2185-4090-ac66-a24f44d89966
     jinja: "{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,\
       \ 35:8, 41:9, 32:10, 45:11, 14:12} %}\n{% if label_coarse == 4 %}\n{{text}}\n\
@@ -45,10 +45,10 @@ templates:
     reference: Fine grained labels with coarse-label `NUM`, context provided first
   3aff84f3-e478-4598-abe8-40aa24cec1fa: !Template
     answer_choices: "yon b\xE8t ||| yon \xF2g\xE0n nan k\xF2 a ||| yon koul\xE8 |||\
-      \ Moso kreyatif ||| monnen ||| maladi oswa medikaman ||| ev\xE8nman ||| manje\
-      \ ||| enstriman mizik ||| lang ||| l\xE8t ||| plante ||| produi ||| relijyon\
-      \ ||| esp\xF2 ||| sibstans ||| senb\xF2l ||| teknik ||| t\xE8m ||| vwati |||\
-      \ par\xF2l ||| l\xF2t antite"
+      \ moso kreyatif ||| lajan ||| maladi oswa medikaman ||| ev\xE8nman ||| manje\
+      \ ||| enstriman mizik ||| lang ||| l\xE8t ||| plant ||| pwodwi ||| relijyon\
+      \ ||| esp\xF2 ||| sibstans ||| senb\xF2l ||| teknik ||| t\xE8m ||| machin |||\
+      \ mo ||| l\xF2t antite"
     id: 3aff84f3-e478-4598-abe8-40aa24cec1fa
     jinja: "{% set label_mapping = {2:0, 22:1, 19:2, 1:3, 46:3, 23:4, 10:5, 17:6,\
       \ 33:7, 37:8, 15:9, 30:10, 26:11, 16:12, 28:13, 42:14, 31:15, 20:16, 44:17,\
@@ -63,9 +63,9 @@ templates:
     name: fine_grained_ENTY
     reference: Fine grained labels with coarse-label `ENTY`, context after question
   43a188a2-b6dd-46a7-af2e-81a64b90b92a: !Template
-    answer_choices: "k\xF2d ||| konnte ||| dat ||| distans ||| pri ||| k\xF2mandman\
-      \ ||| pery\xF2d de tan ||| pousantaj ||| vit\xE8s ||| tanperati ||| tay |||\
-      \ pwa ||| L\xF2t nimewo"
+    answer_choices: "k\xF2d ||| konte ||| dat ||| distans ||| pri ||| l\xF2d ||| pery\xF2\
+      d tan ||| pousantaj ||| vit\xE8s ||| tanperati ||| gwos\xE8 ||| pwa ||| l\xF2\
+      t nimewo"
     id: 43a188a2-b6dd-46a7-af2e-81a64b90b92a
     jinja: "{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,\
       \ 35:8, 41:9, 32:10, 45:11, 14:12} %}\n{% if label_coarse == 4 %}\n\xC8ske kesyon\
@@ -79,10 +79,10 @@ templates:
     name: fine_grained_NUM
     reference: Fine grained labels with coarse-label `NUM`
   6c391f4f-027b-4425-88de-1dbb6aa706ee: !Template
-    answer_choices: Deskripsyon ||| Antite ||| Abrevyasyon ||| Moun ||| Kantite |||
-      Anplasman
+    answer_choices: Deskripsyon ||| Antite ||| Abreviyasyon ||| Moun ||| Kantite |||
+      Kote
     id: 6c391f4f-027b-4425-88de-1dbb6aa706ee
-    jinja: "KESYON: {{text}}\n\nDeskript\xE8: {{', '.join(answer_choices)}}\n\nPi\
+    jinja: "Kesyon: {{text}}\n\nDeskript\xE8: {{', '.join(answer_choices)}}\n\nPi\
       \ bon deskript\xE8?\n|||\n{{answer_choices[label_coarse]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -92,19 +92,19 @@ templates:
     name: pick_the_best_descriptor
     reference: ''
   71090d59-dd02-4cbd-8032-ad86179b9bd4: !Template
-    answer_choices: "Fason ||| Moso kreyatif ||| Zannimo ||| Ekspresyon abreje |||\
-      \ Endividy\xE8l ||| Groupe ||| Tit ||| definisyon ||| Dat ||| Rezon ||| Ev\xE8\
-      nman ||| Eta ||| Deskripsyon ||| Konnte ||| L\xF2t ||| L\xE8t ||| Relijyon |||\
-      \ Manje ||| Konntery ||| Koul\xE8 ||| T\xE8m ||| Lavil ||| \xD2g\xE0n nan k\xF2\
-      \ a ||| Maladi oswa medikaman ||| montay ||| Pri ||| Produi ||| Pey\xF2d |||\
-      \ Sibstans ||| Esp\xF2 ||| Plante ||| Teknik ||| Tay ||| Enstriman ||| Abrevyasyon\
-      \ ||| Vit\xE8s ||| Par\xF2l ||| Lang ||| Pousantaj ||| K\xF2d ||| Distans |||\
-      \ Tanperati ||| Senb\xF2l ||| K\xF2mandman ||| Vwati ||| Pwa ||| Monnen"
+    answer_choices: "Many\xE8 ||| Kreyatif moso ||| B\xE8t ||| Ekspresyon abreje |||\
+      \ Endividi ||| Gwoup ||| Tit ||| definisyon ||| Dat ||| Rezon ||| Ev\xE8nman\
+      \ ||| Eta ||| Deskripsyon ||| Konte ||| L\xF2t ||| L\xE8t ||| Relijyon ||| Manje\
+      \ ||| Kontery ||| Koul\xE8 ||| T\xE8m ||| Vil ||| \xD2g\xE0n nan k\xF2 a |||\
+      \ Maladi oswa medikaman ||| montay ||| Pri ||| Pwodwi ||| Pery\xF2d ||| Sibstans\
+      \ ||| Esp\xF2 ||| Plant ||| Teknik ||| Gwos\xE8 ||| Enstriman ||| Abreviyasyon\
+      \ ||| Vit\xE8s ||| Paw\xF2l ||| Lang ||| Pousantaj ||| K\xF2d ||| Distans |||\
+      \ Tanperati ||| Senb\xF2l ||| L\xF2d ||| Machin ||| Pwa ||| Lajan"
     id: 71090d59-dd02-4cbd-8032-ad86179b9bd4
     jinja: '{{text}}
 
 
-      Ki kesyon sa a mande?
+      Kisa kesyon sa mande?
 
       |||
 
@@ -117,7 +117,7 @@ templates:
     name: fine_grained_open_context_first
     reference: Fine grained classes without providing choices, context first.
   736b2629-ed57-48ce-a458-4cbc435c499b: !Template
-    answer_choices: "lavil ||| kanpay ||| montay ||| eta ||| L\xF2t Kote"
+    answer_choices: "vil la ||| peyi ||| montay ||| eta ||| l\xF2t kote"
     id: 736b2629-ed57-48ce-a458-4cbc435c499b
     jinja: "{% set label_mapping = {21:0, 18:1, 24:2, 11:3, 14:4} %}\n{% if label_coarse\
       \ == 5 %}\n{{text}}\n\n\xC8ske kesyon sa a mande pou {{', '.join(answer_choices)}}?\n\
@@ -130,8 +130,8 @@ templates:
     name: fine_grained_LOC_context_first
     reference: Fine grained labels with coarse-label `LOC`, context provided first
   7a3ed4dd-af89-493c-8efb-c67622f63034: !Template
-    answer_choices: Deskripsyon ||| Antite ||| Abrevyasyon ||| Moun ||| Kantite |||
-      Anplasman
+    answer_choices: Deskripsyon ||| Antite ||| Abreviyasyon ||| Moun ||| Kantite |||
+      Kote
     id: 7a3ed4dd-af89-493c-8efb-c67622f63034
     jinja: "Ki kategori ki pi byen dekri kesyon sa a: {{text}} \n\nChwazi nan lis\
       \ sa a: \n{{', '.join(answer_choices)}}\n ||| {{ answer_choices [label_coarse]\
@@ -144,7 +144,7 @@ templates:
     name: which_category_best_describes
     reference: ''
   7a9e6f3c-1dee-45b0-a315-1badaf59a7b8: !Template
-    answer_choices: definisyon ||| deskripsyon ||| fason pou aksyon ||| rezon
+    answer_choices: definisyon ||| deskripsyon ||| fason aksyon ||| rezon
     id: 7a9e6f3c-1dee-45b0-a315-1badaf59a7b8
     jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
       \ 0 %}\n\xC8ske kesyon sa a mande pou {{', '.join(answer_choices)}}?\n{{text}}\n\
@@ -157,8 +157,8 @@ templates:
     name: fine_grained_DESC
     reference: Fine grained labels with coarse-label `DESC`, context after question
   861d1a48-1113-4f35-b777-2b2f12ab9d5d: !Template
-    answer_choices: Deskripsyon ||| Antite ||| Abrevyasyon ||| Moun ||| Kantite |||
-      Anplasman
+    answer_choices: Deskripsyon ||| Antite ||| Abreviyasyon ||| Moun ||| Kantite |||
+      Kote
     id: 861d1a48-1113-4f35-b777-2b2f12ab9d5d
     jinja: '{{text}}
 
@@ -176,11 +176,11 @@ templates:
     name: trec1
     reference: Context then prompt
   93a06e72-2c15-4f8a-a46c-6a10919c4ea4: !Template
-    answer_choices: abrevyasyon ||| Ekspresyon abreje
+    answer_choices: abreviyasyon ||| ekspresyon abreje
     id: 93a06e72-2c15-4f8a-a46c-6a10919c4ea4
     jinja: "{% set label_mapping={34:0, 3:1} %} \n{% if label_coarse == 2 %}\n\xC8\
-      ske kesyon sa a mande pou yon {{', '.join(answer_choices)}}?\n{{text}}\n|||\n\
-      {{answer_choices[label_mapping[label_fine]] }}\n{% endif %}"
+      ske kesyon sa a mande yon {{', '.join(answer_choices)}}?\n{{text}}\n|||\n{{answer_choices[label_mapping[label_fine]]\
+      \ }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -189,11 +189,11 @@ templates:
     name: fine_grained_ABBR
     reference: Fine grained labels with coarse-label `ABBR`, context after question
   a0096044-3b4c-4c80-b139-25eac8fe692a: !Template
-    answer_choices: abrevyasyon ||| Ekspresyon abreje
+    answer_choices: abreviyasyon ||| ekspresyon abreje
     id: a0096044-3b4c-4c80-b139-25eac8fe692a
     jinja: "{% set label_mapping = {34:0, 3:1} %} \n{% if label_coarse == 2 %}\n{{text}}\n\
-      \n\xC8ske kesyon sa a mande pou yon {{', '.join(answer_choices)}}?\n|||\n{{\
-      \ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
+      \n\xC8ske kesyon sa a mande yon {{', '.join(answer_choices)}}?\n|||\n{{ answer_choices\
+      \ [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -202,11 +202,11 @@ templates:
     name: fine_grained_ABBR_context_first
     reference: Fine grained labels with coarse-label `ABBR`, context provided first
   aad2def1-b694-40ee-9c26-3d1cf5c577da: !Template
-    answer_choices: Deskripsyon ||| Antite ||| Abrevyasyon ||| Moun ||| Kantite |||
-      Anplasman
+    answer_choices: Deskripsyon ||| Antite ||| Abreviyasyon ||| Moun ||| Kantite |||
+      Kote
     id: aad2def1-b694-40ee-9c26-3d1cf5c577da
-    jinja: "\xC8ske kesyon sa a mande sou {{', '.join(answer_choices)}}?\n\n{{text}}\n\
-      |||\n{{ answer_choices [label_coarse] }}"
+    jinja: "\xC8ske kesyon sa a ap poze kesyon sou {{', '.join(answer_choices)}}?\n\
+      \n{{text}}\n|||\n{{ answer_choices [label_coarse] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -215,7 +215,7 @@ templates:
     name: trec2
     reference: Prompt then context
   bc58ba18-24a5-4553-be0a-2dba60efdad6: !Template
-    answer_choices: "groupe ||| endividy\xE8l ||| tit ||| deskripsyon"
+    answer_choices: gwoup ||| moun ||| tit ||| deskripsyon
     id: bc58ba18-24a5-4553-be0a-2dba60efdad6
     jinja: "{% set label_mapping = {5:0, 4:1, 6:2, 12:3} %}\n{% if label_coarse ==\
       \ 3 %}\n\xC8ske kesyon sa a mande pou {{', '.join(answer_choices)}}?\n{{text}}\n\
@@ -228,16 +228,16 @@ templates:
     name: fine_grained_HUM
     reference: Fine grained labels with coarse-label `HUM`, context after question
   cfa8fde0-8320-4050-8d6e-7619ab14adea: !Template
-    answer_choices: "Fason ||| Moso kreyatif ||| Zannimo ||| Ekspresyon abreje |||\
-      \ Endividy\xE8l ||| Groupe ||| Tit ||| definisyon ||| Dat ||| Rezon ||| Ev\xE8\
-      nman ||| Eta ||| Deskripsyon ||| Konnte ||| L\xF2t ||| L\xE8t ||| Relijyon |||\
-      \ Manje ||| Konntery ||| Koul\xE8 ||| T\xE8m ||| Lavil ||| \xD2g\xE0n nan k\xF2\
-      \ a ||| Maladi oswa medikaman ||| montay ||| Pri ||| Produi ||| Pey\xF2d |||\
-      \ Sibstans ||| Esp\xF2 ||| Plante ||| Teknik ||| Tay ||| Enstriman ||| Abrevyasyon\
-      \ ||| Vit\xE8s ||| Par\xF2l ||| Lang ||| Pousantaj ||| K\xF2d ||| Distans |||\
-      \ Tanperati ||| Senb\xF2l ||| K\xF2mandman ||| Vwati ||| Pwa ||| Monnen"
+    answer_choices: "Many\xE8 ||| Kreyatif moso ||| B\xE8t ||| Ekspresyon abreje |||\
+      \ Endividi ||| Gwoup ||| Tit ||| definisyon ||| Dat ||| Rezon ||| Ev\xE8nman\
+      \ ||| Eta ||| Deskripsyon ||| Konte ||| L\xF2t ||| L\xE8t ||| Relijyon ||| Manje\
+      \ ||| Kontery ||| Koul\xE8 ||| T\xE8m ||| Vil ||| \xD2g\xE0n nan k\xF2 a |||\
+      \ Maladi oswa medikaman ||| montay ||| Pri ||| Pwodwi ||| Pery\xF2d ||| Sibstans\
+      \ ||| Esp\xF2 ||| Plant ||| Teknik ||| Gwos\xE8 ||| Enstriman ||| Abreviyasyon\
+      \ ||| Vit\xE8s ||| Paw\xF2l ||| Lang ||| Pousantaj ||| K\xF2d ||| Distans |||\
+      \ Tanperati ||| Senb\xF2l ||| L\xF2d ||| Machin ||| Pwa ||| Lajan"
     id: cfa8fde0-8320-4050-8d6e-7619ab14adea
-    jinja: 'Ki kesyon sa a mande?
+    jinja: 'Kisa kesyon sa mande?
 
 
       {{text}}
@@ -253,7 +253,7 @@ templates:
     name: fine_grained_open
     reference: Fine grained classes without providing choices.
   e98b9294-76b4-4172-a78c-9c6e5fdfe73b: !Template
-    answer_choices: "groupe ||| endividy\xE8l ||| tit ||| deskripsyon"
+    answer_choices: gwoup ||| moun ||| tit ||| deskripsyon
     id: e98b9294-76b4-4172-a78c-9c6e5fdfe73b
     jinja: "{% set label_mapping = {5:0, 4:1, 6:2, 12:3} %}\n{% if label_coarse ==\
       \ 3 %}\n{{text}}\n\n\xC8ske kesyon sa a mande pou {{', '.join(answer_choices)}}?\n\
@@ -266,7 +266,7 @@ templates:
     name: fine_grained_HUM_context_first
     reference: Fine grained labels with coarse-label `HUM`, context provided first
   fa588c55-5c69-4fd0-a0b1-edbfa092f710: !Template
-    answer_choices: definisyon ||| deskripsyon ||| fason pou aksyon ||| rezon
+    answer_choices: definisyon ||| deskripsyon ||| fason aksyon ||| rezon
     id: fa588c55-5c69-4fd0-a0b1-edbfa092f710
     jinja: "{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}\n{% if label_coarse ==\
       \ 0 %}\n{{text}}\n\n\xC8ske kesyon sa a mande pou {{', '.join(answer_choices)}}?\n\

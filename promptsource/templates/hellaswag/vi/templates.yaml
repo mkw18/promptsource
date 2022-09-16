@@ -57,13 +57,13 @@ templates:
     answer_choices: '{{endings | join(" ||| ") }}'
     id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
     jinja: "{% set prompts = [\n'B\u1EA1n c\xF3 th\u1EC3 ch\u1ECDn k\u1EBFt th\xFA\
-      c ch\xEDnh x\xE1c cho c\xE2u: ',\n'Nhi\u1EC7m v\u1EE5 l\xE0 t\u1EA1o k\u1EBF\
-      t th\xFAc cho c\xE2u: ',\n'L\xE0m th\u1EBF n\xE0o \u0111\u1EC3 c\xE2u n\xE0\
-      y k\u1EBFt th\xFAc? ',\n'T\u1EEB danh s\xE1ch c\xE1c k\u1EBFt th\xFAc \u0111\
-      \u01B0\u1EE3c m\xF4 t\u1EA3 d\u01B0\u1EDBi \u0111\xE2y, nh\u1EEFng g\xEC k\u1EBF\
-      t th\xFAc c\xF3 \xFD ngh\u0129a nh\u1EA5t \u0111\u1ED1i v\u1EDBi c\xE2u ',]\n\
-      %}\n{{prompts | choice}}\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\
-      \n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices\
+      c \u0111\xFAng cho c\xE2u: ',\n'Nhi\u1EC7m v\u1EE5 l\xE0 t\u1EA1o ph\u1EA7n\
+      \ k\u1EBFt th\xFAc cho c\xE2u: ',\n'C\xE2u n\xE0y k\u1EBFt th\xFAc nh\u01B0\
+      \ th\u1EBF n\xE0o? ',\n'T\u1EEB danh s\xE1ch c\xE1c k\u1EBFt th\xFAc \u0111\u01B0\
+      \u1EE3c m\xF4 t\u1EA3 b\xEAn d\u01B0\u1EDBi, k\u1EBFt th\xFAc n\xE0o c\xF3 \xFD\
+      \ ngh\u0129a nh\u1EA5t \u0111\u1ED1i v\u1EDBi c\xE2u ',]\n%}\n{{prompts | choice}}\n\
+      {{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c) \
+      \ {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices\
       \ [label | int()]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -75,11 +75,11 @@ templates:
   663470b8-3fab-449c-84ab-6c4738da51b3: !Template
     answer_choices: "\u0110\xFAng ||| Kh\xF4ng"
     id: 663470b8-3fab-449c-84ab-6c4738da51b3
-    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nXem x\xE9t m\xF4 t\u1EA3 sau:\
-      \ {{ ctx_a }}\nL\xE0 m\u1ED9t ph\u1EA7n ti\u1EBFp theo th\xEDch h\u1EE3p?\n\
-      {{ ctx_b }} {{ endings[instance] }}\nC\xF3 hay kh\xF4ng?\n||| \n{% if label\
-      \  == instance | string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n\
-      {% endif %}"
+    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nH\xE3y xem x\xE9t m\xF4 t\u1EA3\
+      \ sau: {{ ctx_a }}\nSau \u0111\xE2y c\xF3 ph\u1EA3i l\xE0 m\u1ED9t s\u1EF1 ti\u1EBF\
+      p di\u1EC5n th\xEDch h\u1EE3p kh\xF4ng?\n{{ ctx_b }} {{ endings[instance] }}\n\
+      C\xF3 hay kh\xF4ng?\n||| \n{% if label  == instance | string() %}\n{{answer_choices[0]}}\n\
+      {% else %} \n{{answer_choices[1]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -90,11 +90,10 @@ templates:
   6e9f8d7d-9016-45bc-b997-c42aeb2dc944: !Template
     answer_choices: '{{endings | join("|||")}}'
     id: 6e9f8d7d-9016-45bc-b997-c42aeb2dc944
-    jinja: "L\xE0m th\u1EBF n\xE0o \u0111\u1EC3 c\xE2u n\xE0y k\u1EBFt th\xFAc?\n\
-      {{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c) \
-      \ {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n\nG\u1EE3i \xFD: Ch\u1EE7\
-      \ \u0111\u1EC1 c\u1EE7a c\xE2u l\xE0 {{activity_label}}\n|||\n{{answer_choices\
-      \ [label | int()]}}"
+    jinja: "C\xE2u n\xE0y k\u1EBFt th\xFAc nh\u01B0 th\u1EBF n\xE0o?\n{{ctx}}\n\n\
+      (a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\
+      \n(d)  {{answer_choices[3]}}\n\nG\u1EE3i \xFD: ch\u1EE7 \u0111\u1EC1 c\u1EE7\
+      a c\xE2u l\xE0 {{activity_label}}\n|||\n{{answer_choices [label | int()]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -105,8 +104,8 @@ templates:
   a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e: !Template
     answer_choices: null
     id: a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e
-    jinja: "L\xE0m th\u1EBF n\xE0o b\u1EA1n s\u1EBD b\u1EAFt \u0111\u1EA7u c\xE2u:\n\
-      {{endings[label | int()]}}\n|||\n{{ctx}}"
+    jinja: "B\u1EA1n s\u1EBD b\u1EAFt \u0111\u1EA7u c\xE2u nh\u01B0 th\u1EBF n\xE0\
+      o:\n{{endings[label | int()]}}\n|||\n{{ctx}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -118,11 +117,12 @@ templates:
   d95b81c4-5db7-44c1-926e-c7222c896a32: !Template
     answer_choices: "\u0110\xFAng ||| Kh\xF4ng"
     id: d95b81c4-5db7-44c1-926e-c7222c896a32
-    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nXem x\xE9t v\u0103n b\u1EA3\
-      n sau: {{ ctx_b }} {{ endings[instance] }}\nN\xF3 c\xF3 ph\u1EA3i l\xE0 m\u1ED9\
-      t ti\u1EBFp t\u1EE5c th\xEDch h\u1EE3p c\u1EE7a v\u0103n b\u1EA3n sau: \n{{\
-      \ ctx_a }} ?\nC\xF3 hay kh\xF4ng?\n||| \n{% if label  == instance | string()\
-      \ %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n{% endif %}"
+    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nH\xE3y xem x\xE9t v\u0103\
+      n b\u1EA3n sau: {{ ctx_b }} {{ endings[instance] }}\nN\xF3 c\xF3 ph\u1EA3i l\xE0\
+      \ s\u1EF1 ti\u1EBFp n\u1ED1i th\xEDch h\u1EE3p c\u1EE7a v\u0103n b\u1EA3n sau\
+      \ \u0111\xE2y kh\xF4ng: \n{{ ctx_a }} ?\nC\xF3 hay kh\xF4ng?\n||| \n{% if label\
+      \  == instance | string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n\
+      {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -150,11 +150,11 @@ templates:
     answer_choices: "K\u1EBFt th\xFAc 1 ||| K\u1EBFt th\xFAc 2 ||| K\u1EBFt th\xFA\
       c 3 ||| K\u1EBFt th\xFAc 4"
     id: def77598-682f-48de-b187-55db4d390f07
-    jinja: "N\u1EBFu m\u1ED9t m\xF4 t\u1EA3 v\u1EC1 m\u1ED9t t\xECnh hu\u1ED1ng b\u1EAF\
-      t \u0111\u1EA7u nh\u01B0 th\u1EBF n\xE0y: {{ ctx }}... Then how\ndoes it continue?\
-      \ \n\nK\u1EBFt th\xFAc 1: {{ endings[0] }}\n\nK\u1EBFt th\xFAc 2: {{ endings[1]\
-      \ }}\n\nK\u1EBFt th\xFAc 3: {{ endings[2] }}\n\nK\u1EBFt th\xFAc 4: {{ endings[3]\
-      \ }}\n|||{{answer_choices[label | int()] }}"
+    jinja: "N\u1EBFu m\xF4 t\u1EA3 m\u1ED9t t\xECnh hu\u1ED1ng b\u1EAFt \u0111\u1EA7\
+      u nh\u01B0 th\u1EBF n\xE0y: {{ ctx }}... Then how\ndoes it continue? \n\nK\u1EBF\
+      t th\xFAc 1: {{ endings[0] }}\n\nK\u1EBFt th\xFAc 2: {{ endings[1] }}\n\nK\u1EBF\
+      t th\xFAc 3: {{ endings[2] }}\n\nK\u1EBFt th\xFAc 4: {{ endings[3] }}\n|||{{answer_choices[label\
+      \ | int()] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

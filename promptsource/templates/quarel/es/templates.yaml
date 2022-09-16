@@ -7,8 +7,8 @@ templates:
     jinja: 'Pregunta: {{question}}
 
 
-      No use {{"A"}} y {{"b"}} para responder la pregunta, pero en su lugar, elija
-      entre "{{answer_choices[0]}}" y "{{answer_choices[1]}}".
+      No utilice {{"A"}} y {{"B"}} para responder a la pregunta, sino que elija entre
+      "{{answer_choices[0]}}" y "{{answer_choices[1]}}".
 
       |||
 
@@ -23,7 +23,7 @@ templates:
   5b5f9d29-0ad5-4bb9-831a-11fcb115c10d: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
-    jinja: "Aqu\xED hay una prueba l\xF3gica: {{question}}\n\nElija la respuesta entre\
+    jinja: "Aqu\xED hay una prueba l\xF3gica: {{question}}\n\nElige la respuesta entre\
       \ \"{{answer_choices[0]}}\" y \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -36,7 +36,7 @@ templates:
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 63c58389-605a-42b9-85a6-a2586a954a92
     jinja: "Aqu\xED hay una historia corta: {{question}}.\n\n\xBFCu\xE1l es la respuesta\
-      \ m\xE1s sensible entre \"{{answer_choices[0]}}\" y \"{{answer_choices[1]}}\"\
+      \ m\xE1s sensata entre \"{{answer_choices[0]}}\" y \"{{answer_choices[1]}}\"\
       ?\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -48,7 +48,7 @@ templates:
   73a7adbb-41b1-4b4d-b378-d7e17d030a6f: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 73a7adbb-41b1-4b4d-b378-d7e17d030a6f
-    jinja: 'Choose between "{{answer_choices[0]}}" and  "{{answer_choices[1]}}".
+    jinja: 'Elija entre "{{answer_choices[0]}}" y "{{answer_choices[1]}}".
 
       Pregunta: {{question}}
 
@@ -66,7 +66,7 @@ templates:
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 92013fab-5387-44d4-bf0f-e29a31bcafb6
     jinja: "Estoy probando la l\xF3gica de mis alumnos.\n\xBFCu\xE1l es la respuesta\
-      \ que deber\xEDan elegir entre \"{{answer_choices[0]}}\" y \"{{answer_choices[1]}}\"\
+      \ que deben elegir entre \"{{answer_choices[0]}}\" y \"{{answer_choices[1]}}\"\
       ?\nPrueba de l\xF3gica: {{question}}\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

@@ -1,0 +1,201 @@
+dataset: xnli
+subset: zh
+templates:
+  161036e2-c397-4def-a813-4a2be119c5d6: !Template
+    answer_choices: "\u771F\u7684 ||| \u65E0\u5B9A\u8BBA ||| \u9519\u8BEF\u7684"
+    id: 161036e2-c397-4def-a813-4a2be119c5d6
+    jinja: "\u4EE5\u4E0B\u5217\u4E3A\u771F\uFF1A {{premise}}\n\u7136\u540E\u662F\u4E0B\
+      \u9762\u7684\u8BED\u53E5\uFF1A \"{{hypothesis}}\" is {{\"\u771F\u7684\"}}, {{\"\
+      \u9519\u8BEF\u7684\"}}, or {{\"\u4E0D\u786E\u5B9A\u7684\"}}? ||| {{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: take the following as truth
+    reference: Sanh et al. 2021
+  172b73dc-d045-491c-9dc2-76bf6566c8ee: !Template
+    answer_choices: "\u662F\u7684 ||| \u4E5F\u8BB8 ||| \u4E0D"
+    id: 172b73dc-d045-491c-9dc2-76bf6566c8ee
+    jinja: "{{premise}} \n\n\u95EE\u9898\uFF1A\u8FD9\u662F\u5426\u610F\u5473\u7740\
+      \ \"{{hypothesis}}\"\uFF1F \u662F\u7684\uFF0C\u4E0D\u662F\u7684\uFF0C\u6216\u8005\
+      \u4E5F\u8BB8\uFF1F ||| {{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does this imply
+    reference: Sanh et al. 2021
+  37d2f061-06b0-4aa3-af53-871a2b06748f: !Template
+    answer_choices: "\u771F\u7684 ||| \u4E24\u8005\u90FD\u4E0D ||| \u9519\u8BEF\u7684"
+    id: 37d2f061-06b0-4aa3-af53-871a2b06748f
+    jinja: "{{premise}}\n\u95EE\u9898\uFF1A {{hypothesis}} \u5BF9\uFF0C\u9519\uFF0C\
+      \u8FD8\u662F\u4E24\u8005\u90FD\u4E0D\u662F\uFF1F ||| {{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 style
+    reference: 'Same as reported in Figure G7 of the GPT-3 paper, except that there
+      is no task identifying tokens like "anli R1: ".'
+  5350f9f1-61bb-43a3-9471-17db720f12bc: !Template
+    answer_choices: "\u662F\u7684 ||| \u4E5F\u8BB8 ||| \u4E0D"
+    id: 5350f9f1-61bb-43a3-9471-17db720f12bc
+    jinja: "\u9274\u4E8E {{premise}} \u662F\u5426\u9075\u5FAA {{hypothesis}} \u662F\
+      \u7684\uFF0C\u4E0D\u662F\u7684\uFF0C\u6216\u8005\u4E5F\u8BB8\uFF1F ||| {{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does it follow that
+    reference: Sanh et al. 2021
+  58536115-fd5c-4f29-a85b-420fde6fc5b0: !Template
+    answer_choices: "\u662F\u7684 ||| \u4E5F\u8BB8 ||| \u4E0D"
+    id: 58536115-fd5c-4f29-a85b-420fde6fc5b0
+    jinja: "{{premise}} \u6839\u636E\u524D\u9762\u7684\u6BB5\u843D\uFF0C\"{{hypothesis}}\"\
+      \ \u662F\u771F\u7684\u5417\uFF1F \u662F\u7684\uFF0C\u4E0D\u662F\u7684\uFF0C\u6216\
+      \u8005\u4E5F\u8BB8\uFF1F ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based on the previous passage
+    reference: "Adapted from the BoolQ prompts in Schick & Sch\xFCtze 2021."
+  833c65a6-6068-4e00-9833-944cf7510544: !Template
+    answer_choices: "\u662F\u7684 ||| \u4E5F\u8BB8 ||| \u4E0D"
+    id: 833c65a6-6068-4e00-9833-944cf7510544
+    jinja: "\u7ED9\u5B9A {{premise}} \"{{hypothesis}}\" \u53EF\u4EE5\u4FDD\u8BC1\u662F\
+      \u771F\u7684\u5417\uFF1F \u662F\u7684\uFF0C\u4E0D\u662F\u7684\uFF0C\u6216\u8005\
+      \u4E5F\u8BB8\uFF1F ||| {{ answer_choices[label] }} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: guaranteed true
+    reference: Webson & Pavlick 2021
+  854211f0-14eb-4370-9998-95c331828d6f: !Template
+    answer_choices: "\u662F\u7684 ||| \u4E5F\u8BB8 ||| \u4E0D"
+    id: 854211f0-14eb-4370-9998-95c331828d6f
+    jinja: "\u7ED9\u5B9A {{premise}} \u6211\u4EEC\u5E94\u8BE5\u5047\u8BBE \"{{hypothesis}}\"\
+      \ \u662F\u771F\u7684\u5417\uFF1F \u662F\u7684\uFF0C\u4E0D\u662F\u7684\uFF0C\u6216\
+      \u8005\u4E5F\u8BB8\uFF1F ||| {{ answer_choices[label] }} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: should assume
+    reference: Webson & Pavlick 2021
+  8eb1c093-293c-4fcc-9d8c-a1451494ef06: !Template
+    answer_choices: "\u662F\u7684 ||| \u4E5F\u8BB8 ||| \u4E0D"
+    id: 8eb1c093-293c-4fcc-9d8c-a1451494ef06
+    jinja: "\u9274\u4E8E {{premise}} \u56E0\u6B64\uFF0C\"{{hypothesis}}\"? \u662F\u7684\
+      \uFF0C\u4E0D\u662F\u7684\uFF0C\u6216\u8005\u4E5F\u8BB8\uFF1F ||| {{ answer_choices[label]\
+      \ }} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: must be true
+    reference: Sanh et al. 2021
+  9b75ff67-bb66-413b-a33d-325707b035d7: !Template
+    answer_choices: "\u662F\u7684 ||| \u4E5F\u8BB8 ||| \u4E0D"
+    id: 9b75ff67-bb66-413b-a33d-325707b035d7
+    jinja: "\u8BA4\u4E3A {{premise}} \u6211\u4EEC\u53EF\u4EE5\u63A8\u65AD\u51FA \"\
+      {{hypothesis}}\" \u5417\uFF1F \u662F\u7684\uFF0C\u4E0D\u662F\u7684\uFF0C\u6216\
+      \u8005\u4E5F\u8BB8\uFF1F ||| {{ answer_choices[label] }} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: can we infer
+    reference: Webson & Pavlick 2021
+  9bda8e36-c881-4c9a-a3a9-eec68388a6f6: !Template
+    answer_choices: "\u662F\u7684 ||| \u4E5F\u8BB8 ||| \u4E0D"
+    id: 9bda8e36-c881-4c9a-a3a9-eec68388a6f6
+    jinja: "{{premise}} \u6211\u4EEC\u6709\u7406\u7531\u8BF4\"{{hypothesis}}\"\u5417\
+      \uFF1F \u662F\u7684\uFF0C\u4E0D\u662F\u7684\uFF0C\u6216\u8005\u4E5F\u8BB8\uFF1F\
+      \ ||| {{ answer_choices[label] }} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: justified in saying
+    reference: Webson & Pavlick 2021
+  c201719f-28f6-44c7-bb09-f82c6b049893: !Template
+    answer_choices: "\u771F\u7684 ||| \u65E0\u5B9A\u8BBA ||| \u9519\u8BEF\u7684"
+    id: c201719f-28f6-44c7-bb09-f82c6b049893
+    jinja: "{{premise}} \u6839\u636E\u8BE5\u4FE1\u606F\uFF0C\u7D22\u8D54\u662F\uFF1A\
+      \ \"{{hypothesis}}\" {{\"\u771F\u7684\"}}, {{\"\u9519\u8BEF\u7684\"}}, or {{\"\
+      \u4E0D\u786E\u5B9A\u7684\"}}? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: claim true/false/inconclusive
+    reference: Sanh et al. 2021
+  c96fd357-3736-489d-a409-4ba210d1be5d: !Template
+    answer_choices: "\u603B\u662F ||| \u6709\u65F6 ||| \u7EDD\u4E0D"
+    id: c96fd357-3736-489d-a409-4ba210d1be5d
+    jinja: "{{premise}} \n\n\u8BB0\u4F4F\u4E0A\u9762\u7684\u6587\u5B57\uFF0C\u8003\
+      \u8651\uFF1A {{hypothesis}} Is this {{\"\u603B\u662F\"}}, {{\"\u6709\u65F6\"\
+      }}, or {{\"\u7EDD\u4E0D\"}} correct? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: consider always/sometimes/never
+    reference: Sanh et al. 2021
+  c9c79c98-2d33-45f8-ab44-e2203883f0b7: !Template
+    answer_choices: "\u603B\u662F ||| \u6709\u65F6 ||| \u7EDD\u4E0D"
+    id: c9c79c98-2d33-45f8-ab44-e2203883f0b7
+    jinja: "\u5047\u8BBE\u8FD9\u662F\u771F\u7684 {{premise}} Then, is \"{{hypothesis}}\"\
+      \ {{\"\u603B\u662F\"}}, {{\"\u6709\u65F6\"}}, or {{\"\u7EDD\u4E0D\"}} true?\
+      \ ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: always/sometimes/never
+    reference: Sanh et al. 2021
+  d44c2947-f8e0-49ea-9770-e59f0581a921: !Template
+    answer_choices: "\u4FDD\u8BC1 ||| \u53EF\u80FD\u7684 ||| \u4E0D\u53EF\u80FD\u7684"
+    id: d44c2947-f8e0-49ea-9770-e59f0581a921
+    jinja: "\u5047\u8BBE\u8FD9\u662F\u771F\u7684 {{premise}} \n\nTherefore, \"{{hypothesis}}\"\
+      \ is {{\"\u4FDD\u8BC1\"}}, {{\"\u53EF\u80FD\u7684\"}}, or {{\"\u4E0D\u53EF\u80FD\
+      \u7684\"}}? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: guaranteed/possible/impossible
+    reference: Sanh et al. 2021
+  da368462-3a66-4222-9de1-05d66037a708: !Template
+    answer_choices: "\u6B63\u786E\u7684 ||| \u65E0\u5B9A\u8BBA ||| \u4E0D\u6B63\u786E"
+    id: da368462-3a66-4222-9de1-05d66037a708
+    jinja: "{{premise}} \u4EC5\u4F7F\u7528\u4E0A\u8FF0\u63CF\u8FF0\u548C\u60A8\u5BF9\
+      \u4E16\u754C\u7684\u4E86\u89E3\uFF0C\"{{hypothesis}}\" \u80AF\u5B9A\u662F\u6B63\
+      \u786E\u7684\u3001\u4E0D\u6B63\u786E\u7684\u8FD8\u662F\u4E0D\u786E\u5B9A\u7684\
+      \uFF1F ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      original_task: true
+    name: MNLI crowdsource
+    reference: Adapted from Williams et al. 2018's instructions to crowdsourcing workers.

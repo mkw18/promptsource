@@ -4,7 +4,7 @@ templates:
   02ff2949-0f45-4d97-941e-6fa4c0afbc2d: !Template
     answer_choices: negatif ||| pozitif
     id: 02ff2949-0f45-4d97-941e-6fa4c0afbc2d
-    jinja: Revizyon fim sa a eksprime sa ki santiman? {{text}} ||| {{ answer_choices
+    jinja: Revizyon fim sa a eksprime ki santiman? {{text}} ||| {{ answer_choices
       [label] }}
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -16,8 +16,8 @@ templates:
   2351d12a-e630-4d19-8b41-e199266e38f7: !Template
     answer_choices: move ||| bon
     id: 2351d12a-e630-4d19-8b41-e199266e38f7
-    jinja: "{{text}} \xC8ske evalyat\xE8 a te jwenn fim sa a {{\"bon oswa move\"}}?\
-      \ ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} \xC8ske revizyon an jwenn fim sa a {{\"bon oswa move\"}}? |||\
+      \ {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -40,8 +40,8 @@ templates:
   866474a5-1498-46b7-bfee-ac0c5160707f: !Template
     answer_choices: negatif ||| pozitif
     id: 866474a5-1498-46b7-bfee-ac0c5160707f
-    jinja: '{{text}} Ki jan visualiseur a santi sou fim nan? ||| {{ answer_choices
-      [label] }}'
+    jinja: "{{text}} Ki jan telespektat\xE8 a santi sou fim nan? ||| {{ answer_choices\
+      \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -64,7 +64,7 @@ templates:
   af51297c-38a3-4d6c-a8b5-04b1243d7443: !Template
     answer_choices: negatif ||| pozitif
     id: af51297c-38a3-4d6c-a8b5-04b1243d7443
-    jinja: '{{text}} Santiman ki eksprime pou fim nan se ||| {{ answer_choices [label]
+    jinja: '{{text}} Santiman an eksprime pou fim nan se ||| {{ answer_choices [label]
       }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -88,8 +88,7 @@ templates:
   b9b5d79d-f0b3-4bec-a724-f585db3e93ff: !Template
     answer_choices: negatif ||| pozitif
     id: b9b5d79d-f0b3-4bec-a724-f585db3e93ff
-    jinja: '{{text}} Sa a se definitivman pa yon ||| {{ answer_choices [1-label]}}
-      revizyon.'
+    jinja: '{{text}} Sa a se definitivman pa yon revizyon ||| {{ answer_choices [1-label]}}.'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -100,8 +99,8 @@ templates:
   bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9: !Template
     answer_choices: Non ||| Wi
     id: bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9
-    jinja: "{{text}} \xC8ske evalyat\xE8 a te jwi fim nan? ||| {{ answer_choices [label]\
-      \ }}"
+    jinja: "{{text}} \xC8ske revizyon an te renmen fim nan? ||| {{ answer_choices\
+      \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -112,8 +111,8 @@ templates:
   c70d1687-2421-49a2-9553-91b8bac4cfbe: !Template
     answer_choices: negatif ||| pozitif
     id: c70d1687-2421-49a2-9553-91b8bac4cfbe
-    jinja: "{{text}} Ki sa ki se santiman an eksprime pa evalyat\xE8 a pou fim nan?\
-      \ ||| {{ answer_choices [label] }}"
+    jinja: '{{text}} Ki santiman revizyon an eksprime pou fim nan? ||| {{ answer_choices
+      [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -122,10 +121,10 @@ templates:
     name: Reviewer Expressed Sentiment
     reference: ''
   e01970ab-42c0-4e6e-a08f-4940d889ef37: !Template
-    answer_choices: Yo pa t 'renmen li! ||| Yo te renmen li
+    answer_choices: Yo pa t renmen li! ||| Yo te renmen li
     id: e01970ab-42c0-4e6e-a08f-4940d889ef37
-    jinja: "{{text}} Kijan evalyat\xE8 a santi sou fim nan? ||| {{ answer_choices\
-      \ [label] }}"
+    jinja: '{{text}} Ki jan revizyon an santi sou fim nan? ||| {{ answer_choices [label]
+      }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

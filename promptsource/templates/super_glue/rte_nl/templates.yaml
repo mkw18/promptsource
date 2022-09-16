@@ -4,8 +4,8 @@ templates:
   2b52a83c-0021-41fe-b44c-5aaa076d71a2: !Template
     answer_choices: Ja ||| Nee
     id: 2b52a83c-0021-41fe-b44c-5aaa076d71a2
-    jinja: '{{premise}} Alleen de bovenstaande beschrijving gebruiken en wat u weet
-      over de wereld, is "{{hypothesis}}" absoluut correct? Ja of nee? ||| {% if label
+    jinja: '{{premise}} Gebruik alleen de bovenstaande beschrijving en wat je weet
+      over de wereld, is "{{hypothesis}}" zeker correct? Ja of nee? ||| {% if label
       != -1 %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -29,7 +29,7 @@ templates:
   4163e6f1-1a83-4c73-b867-02eb7ac80316: !Template
     answer_choices: Ja ||| Nee
     id: 4163e6f1-1a83-4c73-b867-02eb7ac80316
-    jinja: Veronderstellen {{premise}} Kunnen we dat "{{hypothesis}}" afleiden? Ja
+    jinja: Veronderstellen {{premise}} Kunnen we afleiden dat "{{hypothesis}}"? Ja
       of nee? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -39,7 +39,7 @@ templates:
     name: can we infer
     reference: Webson & Pavlick 2021
   8fb1c6aa-20e9-438c-bece-c6af1c746449: !Template
-    answer_choices: WAAR ||| Vals
+    answer_choices: WAAR ||| niet waar
     id: 8fb1c6aa-20e9-438c-bece-c6af1c746449
     jinja: '{{premise}}
 
@@ -55,7 +55,7 @@ templates:
   9e078fb4-505b-413c-bb5e-3cd16ddcf5d7: !Template
     answer_choices: Ja ||| Nee
     id: 9e078fb4-505b-413c-bb5e-3cd16ddcf5d7
-    jinja: "{{premise}} \n\nVraag: Impliceert dit dat \"{{hypothesis}}\"? Ja of nee?\
+    jinja: "{{premise}} \n\nVraag: Betekent dit dat \"{{hypothesis}}\"? Ja of nee?\
       \ ||| {% if label != -1 %}{{answer_choices[label]}}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -79,8 +79,8 @@ templates:
   e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff: !Template
     answer_choices: Ja ||| Nee
     id: e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff
-    jinja: Gegeven dat {{premise}} Volgt het dat {{hypothesis}} Ja of nee? ||| {%
-      if label != -1 %}{{ answer_choices[label] }}{% endif %}
+    jinja: Gezien het feit dat {{premise}} Volgt hieruit dat {{hypothesis}} Ja of
+      nee? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -103,7 +103,7 @@ templates:
   ee0ce095-122a-4509-bf0b-33d1495295f7: !Template
     answer_choices: Ja ||| Nee
     id: ee0ce095-122a-4509-bf0b-33d1495295f7
-    jinja: '{{premise}} Zijn we gerechtvaardigd om te zeggen dat "{{hypothesis}}"?
+    jinja: '{{premise}} Is het gerechtvaardigd om te zeggen dat "{{hypothesis}}"?
       Ja of nee? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -115,7 +115,7 @@ templates:
   fb4f8144-37f5-4977-88da-37a5d0bfd0e8: !Template
     answer_choices: Ja ||| Nee
     id: fb4f8144-37f5-4977-88da-37a5d0bfd0e8
-    jinja: Gegeven dat {{premise}} Daarom moet het waar zijn dat "{{hypothesis}}"?
+    jinja: Gezien het feit dat {{premise}} Daarom moet het waar zijn dat "{{hypothesis}}"?
       Ja of nee? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}
     metadata: !TemplateMetadata
       choices_in_prompt: true

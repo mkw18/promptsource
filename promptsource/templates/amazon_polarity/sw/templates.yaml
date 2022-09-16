@@ -6,9 +6,9 @@ templates:
     id: 1e90a24a-1182-43dd-9445-22f2e56e5761
     jinja: 'Kichwa: {{title}}
 
-      Mapitio: {{content}}
+      Kagua: {{content}}
 
-      Je! Mapitio ni mazuri au hasi? |||
+      Uhakiki ni chanya au hasi? |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
@@ -19,13 +19,13 @@ templates:
     name: Is_this_review
     reference: ''
   3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
-    jinja: 'Kulingana na hakiki hii, je! Mtumiaji angependekeza bidhaa hii?
+    jinja: 'Kulingana na ukaguzi huu, je, mtumiaji anaweza kupendekeza bidhaa hii?
 
       ===
 
-      Mapitio: {{content}}
+      Kagua: {{content}}
 
       Jibu: |||
 
@@ -39,13 +39,13 @@ templates:
     reference: 'Reformulation equivalent to sent analysis: would the user recommend
       this product?'
   592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
-    answer_choices: Hapana ||| Ndio
+    answer_choices: Hapana ||| Ndiyo
     id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
-    jinja: 'Je! Mapitio ya bidhaa hii ni mazuri?
+    jinja: 'Je, ukaguzi wa bidhaa hii ni mzuri?
 
       Kichwa: {{title}}
 
-      Mapitio: {{content}}
+      Kagua: {{content}}
 
       Jibu: |||
 
@@ -58,13 +58,13 @@ templates:
     name: Is_this_product_review_positive
     reference: ''
   745b9c05-10df-4a7e-81ad-1b88cefcb166: !Template
-    answer_choices: Ndio ||| Hapana
+    answer_choices: Ndiyo ||| Hapana
     id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
     jinja: 'Kichwa: {{title}}
 
-      Mapitio: {{content}}
+      Kagua: {{content}}
 
-      Je! Uhakiki wa bidhaa hii ni mbaya?|||
+      Je, ukaguzi wa bidhaa hii ni mbaya?|||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
@@ -79,9 +79,9 @@ templates:
     id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
     jinja: 'Kichwa: {{title}}
 
-      Mapitio: {{content}}
+      Kagua: {{content}}
 
-      Je! Mapitio ya bidhaa hii yanaonyesha maoni hasi au mazuri?|||
+      Je, ukaguzi huu wa bidhaa unatoa maoni hasi au chanya?|||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
@@ -94,13 +94,13 @@ templates:
   9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
     answer_choices: Hasi ||| Chanya
     id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
-    jinja: 'Je! Kuna sauti hasi au nzuri kwa hakiki hii ya bidhaa?
+    jinja: 'Je, kuna sauti hasi au chanya kwa ukaguzi wa bidhaa hii?
 
       ===
 
       Kichwa: {{title}}
 
-      Mapitio: {{content}}
+      Kagua: {{content}}
 
       Jibu: |||
 
@@ -115,12 +115,12 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
     answer_choices: kutoridhika ||| kuridhika
     id: b13369e8-0500-4e93-90d4-8e6814bfb97b
-    jinja: 'Hapa kuna hakiki iliyoachwa na mteja kwenye bidhaa.Je! Ungesema alikuwa
-      {{answer_choices[1]}} au {{answer_choices[0]}}?
+    jinja: 'Huu hapa ni uhakiki ulioachwa na mteja kwenye bidhaa. Je, unaweza kusema
+      alikuwa {{answer_choices[1]}} au {{answer_choices[0]}}?
 
       Kichwa: {{title}}
 
-      Mapitio: {{content}}
+      Kagua: {{content}}
 
       |||
 
@@ -135,12 +135,12 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
     answer_choices: kupungua ||| Ongeza
     id: b13369e8-0500-4e93-90d4-8e6814bfb98b
-    jinja: 'Unazingatia kununua bidhaa.Unaangalia hakiki.Je! Mapitio yafuatayo {{answer_choices[0]}}
-      au {{answer_choices[1]}} nafasi za wewe kununua bidhaa?
+    jinja: 'Unafikiria kununua bidhaa. Unaangalia hakiki. Je, ukaguzi ufuatao {{answer_choices[0]}}
+      au {{answer_choices[1]}} unaweza uwezekano wa wewe kununua bidhaa?
 
-      Mapitio ya Kichwa: {{title}}
+      Kagua kichwa: {{title}}
 
-      Mapitio ya Bidhaa: {{content}}
+      Tathmini ya bidhaa: {{content}}
 
       |||
 
@@ -153,14 +153,14 @@ templates:
     name: would_you_buy
     reference: ''
   b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
-    answer_choices: Ungorofa ||| gorofa
+    answer_choices: isiyopendeza ||| kubembeleza
     id: b13369e8-0500-4e93-90d4-8e6814bfb99b
     jinja: 'Kichwa: {{title}}
 
-      Mapitio ya Bidhaa: {{content}}
+      Tathmini ya bidhaa: {{content}}
 
-      Je! Ungesema hakiki hii inaonyesha bidhaa kwenye {{answer_choices[1]}} au {{answer_choices[0]}}
-      nyepesi?
+      Je, unaweza kusema ukaguzi huu unaonyesha bidhaa katika mwanga wa {{answer_choices[1]}}
+      au {{answer_choices[0]}}?
 
       |||
 

@@ -4,7 +4,7 @@ templates:
   014b669e-2e3b-40ce-bdde-418966c7d666: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 014b669e-2e3b-40ce-bdde-418966c7d666
-    jinja: "{{ passage }} \n{{ query }} \nQual \xE8 il \"{{\"@placeholder\"}}\"? {{\
+    jinja: "{{ passage }} \n{{ query }} \nQual \xE8 la \"{{\"@placeholder\"}}\"? {{\
       \ entities | join(\", \") }}? ||| {% if ( answers | length ) > 0 %} {{ answers\
       \ | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -17,9 +17,9 @@ templates:
   11e27d59-b1f5-43a1-9ccc-17f1c3249173: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 11e27d59-b1f5-43a1-9ccc-17f1c3249173
-    jinja: "Il seguente documento \xE8 stato corrotto. Dimmi a cosa si riferisce \"\
-      {{\"@placeholder\"}}\".\n\nDocumento: {{ passage }} \n{{ query }} \n||| {% if\
-      \ ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
+    jinja: "Il seguente documento \xE8 stato danneggiato. Dimmi a cosa si riferisce\
+      \ \"{{\"@placeholder\"}}\".\n\nDocumento: {{ passage }} \n{{ query }} \n|||\
+      \ {% if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -50,9 +50,9 @@ templates:
     id: 24c267d4-359e-40a9-83d2-bff904d63b09
     jinja: "Riepilogo:\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\\n- \"\
       ) }} \n\nArticolo:\n\n{{ passage.split(\"@highlight\")[0] }}\n\nOra che hai\
-      \ letto l'articolo, ti preghiamo di scrivere una nuova frase da aggiungerlo.\n\
-      \n||| {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\",\
-      \ answers | choice) }} {% endif %}"
+      \ letto l'articolo, scrivi una nuova frase da aggiungere ad esso.\n\n||| {%\
+      \ if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\", answers\
+      \ | choice) }} {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -107,9 +107,9 @@ templates:
   91555c1c-c1e4-469b-a2a4-fc952ce1a145: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 91555c1c-c1e4-469b-a2a4-fc952ce1a145
-    jinja: "{{ passage }} \n{{ query }} \nNella domanda sopra, il \"{{\"@placeholder\"\
-      }}\" rappresenta ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}{%\
-      \ endif %}"
+    jinja: "{{ passage }} \n{{ query }} \nNella domanda precedente, \"{{\"@placeholder\"\
+      }}\" sta per ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -122,7 +122,7 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 94577b75-2eac-4eae-b367-3b413c4188c6
-    jinja: 'Dopo aver letto l''articolo, scrivi un''altra frase da aggiungerlo.
+    jinja: 'Dopo aver letto l''articolo, scrivi un''altra frase da aggiungere.
 
       {{ passage | replace("@highlight", "\n- ") }}
 
@@ -144,8 +144,8 @@ templates:
       }}'
     id: 9579b54e-4f0f-4e43-8907-af57112cc857
     jinja: "Si prega di leggere il seguente articolo di notizie e scrivere un'altra\
-      \ frase da aggiungerlo.\n\n{{ passage | replace(\"@highlight\", \"\\n- \") }}\
-      \ \n ||| {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\"\
+      \ frase da aggiungere ad esso.\n\n{{ passage | replace(\"@highlight\", \"\\\
+      n- \") }} \n ||| {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\"\
       , answers | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -177,7 +177,7 @@ templates:
 
       Sto cercando di decidere cosa significa "{{"@placeholder"}}" nel testo precedente.
 
-      Aiuto scegliendo un''opzione tra:
+      Aiutati scegliendo un''opzione tra:
 
       - {{ entities | join("\n- ") }}
 
@@ -196,8 +196,8 @@ templates:
   a5ed27ed-162b-4ac1-9c7a-85059d5214be: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: a5ed27ed-162b-4ac1-9c7a-85059d5214be
-    jinja: "{{ passage }} \n{{ query }} \nQui, il segnaposto si riferisce a ||| {%\
-      \ if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
+    jinja: "{{ passage }} \n{{ query }} \nQui si fa riferimento al segnaposto |||\
+      \ {% if ( answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -211,8 +211,8 @@ templates:
       }}'
     id: a99a92e0-e1ee-4ec3-a38a-3be4303ba017
     jinja: "{{ passage.split(\"@highlight\")[0] }}\n\nMette in risalto:\n\n- {{ passage.split(\"\
-      @highlight\")[1:] | join(\"\\n- \") }} \n\nSi prega di scrivere un punto culminante\
-      \ aggiuntivo.\n ||| {% if ( answers | length ) > 0 %}- {{ query | replace(\"\
+      @highlight\")[1:] | join(\"\\n- \") }} \n\nSi prega di scrivere un'evidenziazione\
+      \ aggiuntiva.\n ||| {% if ( answers | length ) > 0 %}- {{ query | replace(\"\
       @placeholder\", answers | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -224,9 +224,9 @@ templates:
   d3fce74e-0d9d-404a-a009-9ebbf5794c2c: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: d3fce74e-0d9d-404a-a009-9ebbf5794c2c
-    jinja: "Esercizio: Estratto dal testo L'entit\xE0 corretta a cui \"{{\"@placeholder\"\
-      }}\" si riferisce.\n\n{{ passage }}\n{{ query }}\n||| {% if ( answers | length\
-      \ ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
+    jinja: "Esercizio: Estrarre dal testo l'entit\xE0 corretta a cui si riferisce\
+      \ \"{{\"@placeholder\"}}\".\n\n{{ passage }}\n{{ query }}\n||| {% if ( answers\
+      \ | length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

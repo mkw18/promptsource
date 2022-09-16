@@ -4,10 +4,9 @@ templates:
   3e386463-1715-4578-9cba-07d11a0d3b61: !Template
     answer_choices: "\u9519\u8BEF\u7684 ||| \u771F\u7684"
     id: 3e386463-1715-4578-9cba-07d11a0d3b61
-    jinja: "\u901A\u9053\uFF1A {{passage}}\n\n\u9605\u8BFB\u8FD9\u6BB5\u6587\u7AE0\
-      \u540E\uFF0C\u6211\u6709\u4E00\u4E2A\u95EE\u9898\uFF1A {{question}}\uFF1F \u5BF9\
-      \u6216\u9519\uFF1F |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n{%\
-      \ endif %}"
+    jinja: "\u901A\u9053\uFF1A {{passage}}\n\n\u8BFB\u5B8C\u8FD9\u6BB5\u8BDD\uFF0C\
+      \u6211\u6709\u4E00\u4E2A\u95EE\u9898\uFF1A {{question}}? \u5BF9\u6216\u9519\uFF1F\
+      \ |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -30,9 +29,9 @@ templates:
   6cb6a026-c070-470a-b75d-bb8fdf424e35: !Template
     answer_choices: "\u4E0D ||| \u662F\u7684"
     id: 6cb6a026-c070-470a-b75d-bb8fdf424e35
-    jinja: "{{ passage }} \n\n\u8BFB\u8FC7\uFF0C\u6211\u60F3\u77E5\u9053{{ question\
-      \ }}\uFF1F |||\n{% if label != -1 %}\n{{ answer_choices[label] }} \n{% endif\
-      \ %}"
+    jinja: "{{ passage }} \n\n\u8BFB\u5B8C\u4E4B\u540E\uFF0C\u6211\u60F3\u77E5\u9053\
+      \ {{ question }}\uFF1F |||\n{% if label != -1 %}\n{{ answer_choices[label] }}\
+      \ \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -44,7 +43,7 @@ templates:
     answer_choices: "\u4E0D ||| \u662F\u7684"
     id: 7cf7acdf-e3a2-459f-a3e8-2e2d27dd6aa5
     jinja: "\u6587\u672C\uFF1A {{passage}}\n\n\u56DE\u7B54\u4EE5\u4E0B\u662F/\u5426\
-      \u95EE\u9898\uFF1A {{question}}\uFF1F \u662F\u8FD8\u662F\u4E0D\u662F\uFF1F |||\n\
+      \u95EE\u9898\uFF1A {{question}}? \u662F\u8FD8\u662F\u4E0D\u662F\uFF1F |||\n\
       {% if label != -1 %}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -56,9 +55,9 @@ templates:
   7d21d974-0624-4d4f-9e8c-644e2d009cb5: !Template
     answer_choices: "\u4E0D ||| \u662F\u7684"
     id: 7d21d974-0624-4d4f-9e8c-644e2d009cb5
-    jinja: "{{ passage }} \n\n\u8BFB\u8FC7\uFF0C\u60A8\u80FD\u544A\u8BC9\u6211{{ question\
-      \ }}\u5417\uFF1F ||| {% if label != -1 %}{{ answer_choices[label] }}\n{% endif\
-      \ %}"
+    jinja: "{{ passage }} \n\n\u8BFB\u5B8C\u4E4B\u540E\uFF0C\u4F60\u80FD\u544A\u8BC9\
+      \u6211{{ question }}\u5417\uFF1F ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -69,7 +68,7 @@ templates:
   922d3e87-ac58-4731-84d1-f0a40e47afb5: !Template
     answer_choices: "\u4E0D ||| \u662F\u7684"
     id: 922d3e87-ac58-4731-84d1-f0a40e47afb5
-    jinja: "\u8003\u8BD5\n1.\u901A\u8FC7\u662F\u6216\u5426\u56DE\u7B54\u3002\n\nDocument:\
+    jinja: "\u8003\u8BD5\n1. \u56DE\u7B54\u662F\u6216\u5426\u3002\n\n\u6587\u6863\uFF1A\
       \ {{passage}}\n\u95EE\u9898\uFF1A {{question}}? ||| \n{% if label != -1 %}\n\
       {{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -82,7 +81,7 @@ templates:
   9a1bf459-8047-437c-9def-f21e960429cc: !Template
     answer_choices: "\u4E0D ||| \u662F\u7684"
     id: 9a1bf459-8047-437c-9def-f21e960429cc
-    jinja: "\u57FA\u4E8E\u4EE5\u4E0B\u6BB5\u843D\uFF0C{{ question }}\uFF1F {{ passage\
+    jinja: "\u6839\u636E\u4EE5\u4E0B\u6BB5\u843D\uFF0C{{ question }}\uFF1F {{ passage\
       \ }}\n\n|||\n{% if label != -1 %}\n{{ answer_choices[label] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -94,10 +93,10 @@ templates:
   9f4c6b0a-437b-40c0-b467-db4b7218d38d: !Template
     answer_choices: "\u9519\u8BEF\u7684 ||| \u771F\u7684"
     id: 9f4c6b0a-437b-40c0-b467-db4b7218d38d
-    jinja: "\u953B\u70BC\uFF1A \u9605\u8BFB\u6587\u672C\u5E76\u901A\u8FC7\u771F\u6216\
-      \u9519\u8BEF\u56DE\u7B54\u95EE\u9898\u3002\n\n\u6587\u672C\uFF1A {{passage}}\n\
-      \u95EE\u9898\uFF1A {{question}}? |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n\
-      {% endif %}"
+    jinja: "\u953B\u70BC\uFF1A \u9605\u8BFB\u8BFE\u6587\u5E76\u7528\u771F\u5047\u56DE\
+      \u7B54\u95EE\u9898\u3002\n\n\u6587\u672C\uFF1A {{passage}}\n\u95EE\u9898\uFF1A\
+      \ {{question}}? |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -108,8 +107,8 @@ templates:
   b2b3cb60-d6e3-491c-a09a-8201e13e417e: !Template
     answer_choices: "\u4E0D ||| \u662F\u7684"
     id: b2b3cb60-d6e3-491c-a09a-8201e13e417e
-    jinja: "{{ passage }}\n\u57FA\u4E8E\u4E0A\u4E00\u6BB5{{ question }}\uFF1F |||\
-      \ {% if label != -1 %}{{ answer_choices[label] }}\n{% endif %}"
+    jinja: "{{ passage }}\n\u6839\u636E\u524D\u9762\u7684\u6BB5\u843D\uFF0C{{ question\
+      \ }}\uFF1F ||| {% if label != -1 %}{{ answer_choices[label] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -120,8 +119,8 @@ templates:
   eb78772c-e81e-4b8a-a77b-b75efd1c212a: !Template
     answer_choices: "\u9519\u8BEF\u7684 ||| \u771F\u7684"
     id: eb78772c-e81e-4b8a-a77b-b75efd1c212a
-    jinja: "{{passage}}\n\n\u95EE\u9898\uFF1A {{question}}\uFF1F \u5BF9\u6216\u9519\
-      \uFF1F |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif %}"
+    jinja: "{{passage}}\n\n\u95EE\u9898\uFF1A {{question}}? \u5BF9\u6216\u9519\uFF1F\
+      \ |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

@@ -4,10 +4,10 @@ templates:
   17b83a3f-f748-42e6-9cdf-b2951dd8299d: !Template
     answer_choices: null
     id: 17b83a3f-f748-42e6-9cdf-b2951dd8299d
-    jinja: "{% set seq = [\n'Soruyu ba\u011Flama ba\u011Fl\u0131 olarak cevaplay\u0131\
-      n.',\n'Cevap nedir?',\n] %}\n\n{{ seq | choice }}\nBa\u011Flam: {{context}};\n\
-      Soru: {{question}};\nCevap: |||\n{% if answers.text == [] %}\nCevap de\u011F\
-      il Ba\u011Flamda de\u011Fil\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
+    jinja: "{% set seq = [\n'Soruyu duruma g\xF6re cevaplay\u0131n\u0131z.',\n'Cevap\
+      \ nedir?',\n] %}\n\n{{ seq | choice }}\nBa\u011Flam: {{context}};\nSoru: {{question}};\n\
+      Cevap: |||\n{% if answers.text == [] %}\nCevap ba\u011Flam i\xE7inde de\u011F\
+      il\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: &id001 !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -19,9 +19,9 @@ templates:
     answer_choices: null
     id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
     jinja: "{% if answers.text != [] %}\nVerilen ba\u011Flam i\xE7in a\u015Fa\u011F\
-      \u0131daki cevab\u0131 geri alman\u0131z isteyebilece\u011Finiz soruyu belirleyin\n\
-      Ba\u011Flam: {{context}};\nCevap: {{answers.text[0]}};\nSoru: |||\n{{question}}\n\
-      {% endif %}\n"
+      \u0131daki cevab\u0131 geri almak i\xE7in sormu\u015F olabilece\u011Finiz soruyu\
+      \ belirleyin\nBa\u011Flam: {{context}};\nCevap: {{answers.text[0]}};\nSoru:\
+      \ |||\n{{question}}\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -34,9 +34,9 @@ templates:
     answer_choices: null
     id: 20064b80-e4d0-41b7-9135-92c0077d5044
     jinja: "{% set seq = [\n'Bu ne hakk\u0131nda? ',\n'Paragraf ne hakk\u0131nda?\
-      \ ',\n'Konuyu \u015Furadan al\u0131n: ',\n'Pasajdan konuyu al\u0131n',\n'Konuyu\
-      \ bilmek istiyorum. ',\n'Pasajdan Konu: ',\n'Paragraftan konu: ',\n] %}\n{{\
-      \ seq | choice }}\n{{context}} |||\n{{title | replace(\"_\", \" \")}}"
+      \ ',\n'Konuyu \u015Furadan al\u0131n: ',\n'Pasajdan konuyu al',\n'konuyu \xF6\
+      \u011Frenmek istiyorum. ',\n'Par\xE7adan konu: ',\n'Paragraftan konu: ',\n]\
+      \ %}\n{{ seq | choice }}\n{{context}} |||\n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -50,11 +50,11 @@ templates:
   338cc143-361e-4796-b035-31fb2201c49f: !Template
     answer_choices: null
     id: 338cc143-361e-4796-b035-31fb2201c49f
-    jinja: "{% set seq = [\n'Bu ... Hakk\u0131nda ',\n'Bu ne hakk\u0131nda? ',\n'Paragraf\
-      \ hakk\u0131nda ',\n'Paragraf ne hakk\u0131nda? ',\n'Konuyu Al\u0131n: ',\n\
-      'Pasajdan konu',\n'Konuyu bilmek istiyorum. ',\n'Pasajdan Konu: ',\n'Paragraftan\
-      \ konu: ',\n] %}\n{{context}}\n{{ seq | choice }}|||\n{{title | replace(\"_\"\
-      , \" \")}}"
+    jinja: "{% set seq = [\n'Bu ... Hakk\u0131nda ',\n'Bu ne hakk\u0131nda? ',\n'paragraf\
+      \ hakk\u0131nda ',\n'Paragraf ne hakk\u0131nda? ',\n'Konuyu al\u0131n: ',\n\
+      'Par\xE7adan, konu',\n'konuyu \xF6\u011Frenmek istiyorum. ',\n'Par\xE7adan konu:\
+      \ ',\n'Paragraftan konu: ',\n] %}\n{{context}}\n{{ seq | choice }}|||\n{{title\
+      \ | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -83,11 +83,11 @@ templates:
     answer_choices: null
     id: 8bea1123-fd8d-4bac-96bf-b8a289ee74b3
     jinja: "{% set seq = [\n'Bana s\xF6yler misin ',\n'L\xFCtfen s\xF6yle bana ',\n\
-      'S\xF6yle bana ',\n'Pasajdan, ',\n'bilmek istiyorum ',\n'Ben sormak istiyorum\
-      \ ',\n'Cevab\u0131 nedir: ',\n'Cevab\u0131n\u0131 bulun: ',\n'Cevap: ',\n'',\n\
-      ] %}\n{{context}} {{ seq | choice }}{{question}}|||\n{% if answers.text == []\
-      \ %}\nCevap de\u011Fil Ba\u011Flamda de\u011Fil\n{% else %}\n{{answers.text[0]}}\n\
-      {% endif %}"
+      'S\xF6yle bana ',\n'Ge\xE7itten, ',\n'bilmek istiyorum ',\n'Ben sormak istiyorum\
+      \ ',\n'Cevab\u0131 nedir: ',\n'Cevab\u0131 bulun: ',\n'Cevap: ',\n'',\n] %}\n\
+      {{context}} {{ seq | choice }}{{question}}|||\n{% if answers.text == [] %}\n\
+      Cevap ba\u011Flam i\xE7inde de\u011Fil\n{% else %}\n{{answers.text[0]}}\n{%\
+      \ endif %}"
     metadata: &id002 !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -99,10 +99,10 @@ templates:
   b14c9843-fd56-42ff-817d-39e41963c847: !Template
     answer_choices: null
     id: b14c9843-fd56-42ff-817d-39e41963c847
-    jinja: "{% set seq = [\n'Soruyu ba\u011Flama ba\u011Fl\u0131 olarak cevaplay\u0131\
-      n.',\n'Cevap nedir?',\n] %}\n\n{{ seq | choice }}\nBa\u011Flam: {{context}};\n\
-      Soru: {{question}};\nIf you can't find the answer, please respond \"cevaps\u0131\
-      z\".\nCevap: |||\n{% if answers.text == [] %}\ncevaps\u0131z\n{% else %}\n{{answers.text[0]}}\n\
+    jinja: "{% set seq = [\n'Soruyu duruma g\xF6re cevaplay\u0131n\u0131z.',\n'Cevap\
+      \ nedir?',\n] %}\n\n{{ seq | choice }}\nBa\u011Flam: {{context}};\nSoru: {{question}};\n\
+      If you can't find the answer, please respond \"cevaps\u0131z\".\nCevap: |||\n\
+      {% if answers.text == [] %}\ncevaps\u0131z\n{% else %}\n{{answers.text[0]}}\n\
       {% endif %}"
     metadata: *id001
     name: Questions with Context +unanswerable
@@ -129,10 +129,10 @@ templates:
     answer_choices: null
     id: e1630107-8f5d-44ce-8ccd-6fa80da80328
     jinja: "{% set seq = [\n'Bana s\xF6yler misin ',\n'L\xFCtfen s\xF6yle bana ',\n\
-      'S\xF6yle bana ',\n'Pasajdan, ',\n'bilmek istiyorum ',\n'Ben sormak istiyorum\
-      \ ',\n'Cevab\u0131 nedir: ',\n'Cevab\u0131n\u0131 bulun: ',\n'Cevap: ',\n'',\n\
-      ] %}\n{{context}} {{ seq | choice }}{{question}} If you can't find the answer,\
-      \ please respond \"cevaps\u0131z\". |||\n{% if answers.text == [] %}\ncevaps\u0131\
+      'S\xF6yle bana ',\n'Ge\xE7itten, ',\n'bilmek istiyorum ',\n'Ben sormak istiyorum\
+      \ ',\n'Cevab\u0131 nedir: ',\n'Cevab\u0131 bulun: ',\n'Cevap: ',\n'',\n] %}\n\
+      {{context}} {{ seq | choice }}{{question}} If you can't find the answer, please\
+      \ respond \"cevaps\u0131z\". |||\n{% if answers.text == [] %}\ncevaps\u0131\
       z\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: *id002
     name: Questions with Context - Without Prompt Keywords +unanswerable
@@ -170,8 +170,8 @@ templates:
   fdcf132e-6c70-4188-999e-93601ee8e089: !Template
     answer_choices: null
     id: fdcf132e-6c70-4188-999e-93601ee8e089
-    jinja: "A\u015Fa\u011F\u0131daki pasaj ne hakk\u0131nda?\n{{context}} |||\n{{title\
-      \ | replace(\"_\", \" \")}}"
+    jinja: "A\u015Fa\u011F\u0131daki pasaj ne hakk\u0131ndad\u0131r?\n{{context}}\
+      \ |||\n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

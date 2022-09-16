@@ -4,8 +4,8 @@ templates:
   14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
     answer_choices: Non ||| Wi
     id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
-    jinja: "\xC8ske mo \"{{word}}\" gen menm siyifikasyon nan de fraz sa yo? Wi Non?\n\
-      {{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+    jinja: "\xC8ske mo \"{{word}}\" gen menm siyifikasyon an nan de fraz sa yo? Wi\
+      \ Non?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -17,9 +17,9 @@ templates:
   3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
     answer_choices: Non ||| Wi
     id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
-    jinja: "\xC8ske mo \"{{word}}\" gen menm siyifikasyon nan de fraz sa yo?\n{{sentence1}}\n\
-      {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
-      \ %}"
+    jinja: "\xC8ske mo \"{{word}}\" gen menm siyifikasyon an nan de fraz sa yo?\n\
+      {{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -33,8 +33,8 @@ templates:
     jinja: 'Devwa
 
 
-      Deside si mo "{{word}}" yo itilize ak menm siyifikasyon an nan de fraz sa yo.
-      Reponn pa wi oswa non.
+      Deside si mo "{{word}}" yo itilize ak menm siyifikasyon an nan de fraz ki vin
+      apre yo. Reponn pa wi ou non.
 
       {{sentence1}}
 
@@ -53,7 +53,7 @@ templates:
     name: grammar_homework
     reference: ''
   725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
-    answer_choices: "Fo ||| Fid\xE8l"
+    answer_choices: Fo ||| Se vre
     id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
     jinja: "Fraz A: {{sentence1}}\nFraz B: {{sentence2}}\n\n\"{{word}}\" gen yon siyifikasyon\
       \ menm jan an nan fraz A ak B. Vr\xE8 ou fo?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
@@ -72,7 +72,7 @@ templates:
 
       {{sentence2}}
 
-      KESYON: Is the word ''{{word}}'' used in the same sense in the two sentences
+      Kesyon: Is the word ''{{word}}'' used in the same sense in the two sentences
       above?
 
       ||| {% if label != -1%}
@@ -91,7 +91,7 @@ templates:
     answer_choices: Non ||| Wi
     id: ce8b5a93-1841-4897-84db-b100f1c84f4b
     jinja: "Fraz 1: {{sentence1}}\nFraz 2: {{sentence2}}\n\nDet\xE8mine si mo \"{{word}}\"\
-      \ yo itilize nan menm sans nan tou de fraz yo. Wi oswa Non?\n||| {% if label\
+      \ yo itilize nan menm sans nan tou de fraz yo. Wi oswa non?\n||| {% if label\
       \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -103,8 +103,8 @@ templates:
   cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
     answer_choices: Non ||| Wi
     id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
-    jinja: "Det\xE8mine si mo '{{word}}' yo itilize nan menm fason an nan de fraz\
-      \ ki anba yo. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+    jinja: "Det\xE8mine si mo '{{word}}' yo itilize menm jan an nan de fraz ki anba\
+      \ yo. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -116,7 +116,7 @@ templates:
   d9e1db2a-ab0b-4621-bb41-01d5788d3873: !Template
     answer_choices: Non ||| Wi
     id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
-    jinja: "{{sentence1}}\n{{sentence2}}\nKESYON: \xC8ske mo '{{word}}' yo itilize\
+    jinja: "{{sentence1}}\n{{sentence2}}\nKesyon: \xC8ske mo '{{word}}' yo itilize\
       \ nan menm sans nan de fraz ki anwo yo? Wi Non?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -131,7 +131,7 @@ templates:
     answer_choices: Non ||| Wi
     id: dd2080cf-3117-49ba-9aff-c988a21fdb69
     jinja: "Mo \"{{word}}\" gen plizy\xE8 siyifikasyon. \xC8ske li gen menm siyifikasyon\
-      \ nan fraz 1 ak 2? Wi oswa Non?\n\nFraz 1: {{sentence1}}\nFraz 2: {{sentence2}}\n\
+      \ an nan fraz 1 ak 2? Wi oswa non?\n\nFraz 1: {{sentence1}}\nFraz 2: {{sentence2}}\n\
       ||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -147,7 +147,7 @@ templates:
 
       {{sentence2}}
 
-      Sans ki sanble nan {{word}}?
+      Sans menm jan an nan {{word}}?
 
       ||| {% if label != -1%}
 

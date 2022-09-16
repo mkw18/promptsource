@@ -8,7 +8,7 @@ templates:
 
       Anmeldelse: {{content}}
 
-      Er gennemgangen positiv eller negativ? |||
+      Er anmeldelsen positiv eller negativ? |||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
@@ -21,7 +21,7 @@ templates:
   3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
     answer_choices: Ingen ||| Ja
     id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
-    jinja: "Baseret p\xE5 denne gennemgang, vil brugeren anbefale dette produkt?\n\
+    jinja: "Baseret p\xE5 denne anmeldelse, ville brugeren anbefale dette produkt?\n\
       ===\nAnmeldelse: {{content}}\nSvar: |||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -70,13 +70,8 @@ templates:
   8abb5377-5dd3-4402-92a5-0d81adb6a325: !Template
     answer_choices: Negativ ||| Positiv
     id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
-    jinja: 'Titel: {{title}}
-
-      Anmeldelse: {{content}}
-
-      Formidler denne produktanmeldelse en negativ eller positiv stemning?|||
-
-      {{answer_choices[label]}}'
+    jinja: "Titel: {{title}}\nAnmeldelse: {{content}}\nGiver denne produktanmeldelse\
+      \ en negativ eller positiv f\xF8lelse?|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -108,9 +103,9 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
     answer_choices: utilfreds ||| tilfreds
     id: b13369e8-0500-4e93-90d4-8e6814bfb97b
-    jinja: "Her er en gennemgang, som en kunde har efterladt p\xE5 et produkt.Vil\
-      \ du sige, at han var {{answer_choices[1]}} eller {{answer_choices[0]}}?\nTitel:\
-      \ {{title}}\nAnmeldelse: {{content}}\n|||\n{{answer_choices[label]}} "
+    jinja: "Her er en anmeldelse efterladt af en kunde p\xE5 et produkt. Vil du sige,\
+      \ at han var {{answer_choices[1]}} eller {{answer_choices[0]}}?\nTitel: {{title}}\n\
+      Anmeldelse: {{content}}\n|||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -121,10 +116,10 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
     answer_choices: "formindske ||| \xF8ge"
     id: b13369e8-0500-4e93-90d4-8e6814bfb98b
-    jinja: "Du overvejer, om du skal k\xF8be et produkt.Du ser p\xE5 anmeldelserne.Ville\
-      \ f\xF8lgende gennemgang {{answer_choices[0]}} eller {{answer_choices[1]}} chancerne\
-      \ for, at du k\xF8ber produktet?\nGennemgangstitel: {{title}}\nProduktanmeldelse:\
-      \ {{content}}\n|||\n{{answer_choices[label]}} "
+    jinja: "Du overvejer, om du skal k\xF8be et produkt. Du ser p\xE5 anmeldelserne.\
+      \ Ville f\xF8lgende gennemg\xE5 {{answer_choices[0]}} eller {{answer_choices[1]}}\
+      \ chancerne for, at du k\xF8ber produktet?\nAnmeldelsens titel: {{title}}\n\
+      Produktanmeldelse: {{content}}\n|||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -133,13 +128,13 @@ templates:
     name: would_you_buy
     reference: ''
   b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
-    answer_choices: uflatterende ||| smigrende
+    answer_choices: lidet flatterende ||| smigrende
     id: b13369e8-0500-4e93-90d4-8e6814bfb99b
     jinja: 'Titel: {{title}}
 
       Produktanmeldelse: {{content}}
 
-      Vil du sige, at denne gennemgang skildrer produktet i en {{answer_choices[1]}}
+      Vil du sige, at denne anmeldelse afbilder produktet i et {{answer_choices[1]}}
       eller {{answer_choices[0]}} lys?
 
       |||

@@ -5,7 +5,7 @@ templates:
     answer_choices: "No ||| S\xED"
     id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
     jinja: "\xBFLa palabra \"{{word}}\" tiene el mismo significado en estas dos oraciones?\
-      \ \xBFS\xED No?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      \ Yes, No?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -31,7 +31,7 @@ templates:
     answer_choices: "No ||| S\xED"
     id: 611d13dc-d414-4b9b-9204-e4f325e859e7
     jinja: "Tareas para el hogar\n\nDecide si la palabra \"{{word}}\" se usa con el\
-      \ mismo significado en las dos oraciones siguientes. Respuesta por s\xED o no.\n\
+      \ mismo significado en las dos oraciones siguientes. Responda por s\xED o no.\n\
       {{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -44,8 +44,8 @@ templates:
   725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
     answer_choices: Falso ||| Verdadero
     id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
-    jinja: "Oraci\xF3n A: {{sentence1}}\nOraci\xF3n b: {{sentence2}}\n\n\"{{word}}\"\
-      \ tiene un significado similar en las oraciones a y B. \xBFVerdadero o falso?\n\
+    jinja: "Oraci\xF3n A: {{sentence1}}\nOraci\xF3n B: {{sentence2}}\n\n\"{{word}}\"\
+      \ tiene un significado similar en las oraciones A y B. \xBFVerdadero o falso?\n\
       ||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -79,7 +79,7 @@ templates:
   ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
     answer_choices: "No ||| S\xED"
     id: ce8b5a93-1841-4897-84db-b100f1c84f4b
-    jinja: "Oraci\xF3n 1: {{sentence1}}\nOraci\xF3n 2: {{sentence2}}\n\nDetermine\
+    jinja: "Oraci\xF3n 1: {{sentence1}}\nOraci\xF3n 2: {{sentence2}}\n\nDetermina\
       \ si la palabra \"{{word}}\" se usa en el mismo sentido en ambas oraciones.\
       \ \xBFSi o no?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
       \ %}"
@@ -93,7 +93,7 @@ templates:
   cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
     answer_choices: "No ||| S\xED"
     id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
-    jinja: "Determine si la palabra '{{word}}' se usa de la misma manera en las dos\
+    jinja: "Determina si la palabra '{{word}}' se usa de la misma manera en las dos\
       \ oraciones a continuaci\xF3n. \n{{sentence1}}\n{{sentence2}}\n||| {% if label\
       \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -107,8 +107,8 @@ templates:
     answer_choices: "No ||| S\xED"
     id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
     jinja: "{{sentence1}}\n{{sentence2}}\nPregunta: \xBFSe usa la palabra '{{word}}'\
-      \ en el mismo sentido en las dos oraciones anteriores? \xBFS\xED No?\n||| {%\
-      \ if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+      \ en el mismo sentido en las dos oraciones anteriores? Yes, No?\n||| {% if label\
+      \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -134,17 +134,8 @@ templates:
   f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
     answer_choices: "No ||| S\xED"
     id: f934a96d-fe4d-4075-aa47-5595b9a604c7
-    jinja: '{{sentence1}}
-
-      {{sentence2}}
-
-      Sentido similar de {{word}}?
-
-      ||| {% if label != -1%}
-
-      {{answer_choices[label]}}
-
-      {% endif %}'
+    jinja: "{{sentence1}}\n{{sentence2}}\n\xBFSentido similar de {{word}}?\n||| {%\
+      \ if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

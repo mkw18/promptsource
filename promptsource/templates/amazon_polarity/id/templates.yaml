@@ -21,7 +21,7 @@ templates:
   3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
     answer_choices: Tidak ||| Ya
     id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
-    jinja: 'Berdasarkan ulasan ini, akankah pengguna merekomendasikan produk ini?
+    jinja: 'Berdasarkan ulasan ini, apakah pengguna akan merekomendasikan produk ini?
 
       ===
 
@@ -41,7 +41,7 @@ templates:
   592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
     answer_choices: Tidak ||| Ya
     id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
-    jinja: 'Apakah ulasan produk ini positif?
+    jinja: 'Apakah review produk ini positif?
 
       Judul: {{title}}
 
@@ -81,7 +81,7 @@ templates:
 
       Tinjauan: {{content}}
 
-      Apakah tinjauan produk ini menyampaikan sentimen negatif atau positif?|||
+      Apakah review produk ini menyampaikan sentimen negatif atau positif?|||
 
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
@@ -115,8 +115,8 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
     answer_choices: tidak puas ||| puas
     id: b13369e8-0500-4e93-90d4-8e6814bfb97b
-    jinja: 'Berikut adalah ulasan yang ditinggalkan oleh pelanggan pada suatu produk.Apakah
-      Anda akan mengatakan dia {{answer_choices[1]}} atau {{answer_choices[0]}}?
+    jinja: 'Berikut adalah review yang ditinggalkan oleh pelanggan pada suatu produk.
+      Apakah Anda akan mengatakan dia adalah {{answer_choices[1]}} atau {{answer_choices[0]}}?
 
       Judul: {{title}}
 
@@ -135,13 +135,13 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
     answer_choices: mengurangi ||| meningkat
     id: b13369e8-0500-4e93-90d4-8e6814bfb98b
-    jinja: 'Anda sedang mempertimbangkan apakah akan membeli produk.Anda melihat ulasannya.Apakah
-      ulasan berikut {{answer_choices[0]}} atau {{answer_choices[1]}} peluang Anda
-      membeli produk?
+    jinja: 'Anda sedang mempertimbangkan apakah akan membeli suatu produk. Anda melihat
+      ulasan. Akankah ulasan berikut {{answer_choices[0]}} atau {{answer_choices[1]}}
+      kemungkinan Anda membeli produk?
 
       Judul ulasan: {{title}}
 
-      Ulasan Produk: {{content}}
+      Ulasan produk: {{content}}
 
       |||
 
@@ -158,10 +158,10 @@ templates:
     id: b13369e8-0500-4e93-90d4-8e6814bfb99b
     jinja: 'Judul: {{title}}
 
-      Ulasan Produk: {{content}}
+      Ulasan produk: {{content}}
 
-      Apakah Anda mengatakan ulasan ini menggambarkan produk dalam {{answer_choices[1]}}
-      atau {{answer_choices[0]}} cahaya?
+      Apakah menurut Anda ulasan ini menggambarkan produk secara {{answer_choices[1]}}
+      atau {{answer_choices[0]}}?
 
       |||
 

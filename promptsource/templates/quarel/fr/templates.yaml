@@ -4,8 +4,8 @@ templates:
   5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
-    jinja: "Question: {{question}}\n\nN'utilisez pas {{\"a\"}} et {{\"b\"}} pour r\xE9\
-      pondre \xE0 la question mais \xE0 la place, choisissez entre \"{{answer_choices[0]}}\"\
+    jinja: "Question: {{question}}\n\nN'utilisez pas {{\"A\"}} et {{\"B\"}} pour r\xE9\
+      pondre \xE0 la question, mais choisissez plut\xF4t entre \"{{answer_choices[0]}}\"\
       \ et \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -17,7 +17,7 @@ templates:
   5b5f9d29-0ad5-4bb9-831a-11fcb115c10d: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
-    jinja: "Voici un test logique: {{question}}\n\nChoisissez la r\xE9ponse entre\
+    jinja: "Voici un test logique\_: {{question}}\n\nChoisissez la r\xE9ponse entre\
       \ \"{{answer_choices[0]}}\" et \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -29,9 +29,9 @@ templates:
   63c58389-605a-42b9-85a6-a2586a954a92: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 63c58389-605a-42b9-85a6-a2586a954a92
-    jinja: "Voici une nouvelle: {{question}}.\n\nQuelle est la r\xE9ponse la plus\
-      \ sens\xE9e entre \"{{answer_choices[0]}}\" et \"{{answer_choices[1]}}\"?\n\
-      |||\n{{answer_choices[answer_index]}}"
+    jinja: "Voici une courte histoire\_: {{question}}.\n\nQuelle est la r\xE9ponse\
+      \ la plus sens\xE9e entre \"{{answer_choices[0]}}\" et \"{{answer_choices[1]}}\"\
+      \_?\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -60,8 +60,8 @@ templates:
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 92013fab-5387-44d4-bf0f-e29a31bcafb6
     jinja: "Je teste la logique de mes \xE9l\xE8ves.\nQuelle est la r\xE9ponse qu'ils\
-      \ devraient choisir entre \"{{answer_choices[0]}}\" et \"{{answer_choices[1]}}\"\
-      ?\nTest logique: {{question}}\n|||\n{{answer_choices[answer_index]}}"
+      \ doivent choisir entre \"{{answer_choices[0]}}\" et \"{{answer_choices[1]}}\"\
+      \_?\nEssai logique\_: {{question}}\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

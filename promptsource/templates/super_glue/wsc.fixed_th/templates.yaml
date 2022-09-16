@@ -4,12 +4,12 @@ templates:
   212fb8b1-8436-4f64-8f37-a9094fe029f4: !Template
     answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
     id: 212fb8b1-8436-4f64-8f37-a9094fe029f4
-    jinja: "{{ text }} \u0E43\u0E19\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04\u0E01\u0E48\
-      \u0E2D\u0E19\u0E2B\u0E19\u0E49\u0E32\u0E04\u0E33\u0E2A\u0E23\u0E23\u0E1E\u0E19\
-      \u0E32\u0E21 \"{{ span2_text.lower() }}\" \u0E2D\u0E49\u0E32\u0E07\u0E16\u0E36\
-      \u0E07 {{ span1_text }} \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? \u0E43\u0E0A\
-      \u0E48\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? ||| {% if label != -1 %}{{\
-      \ answer_choices[label] }}{% endif %}"
+    jinja: "{{ text }} \u0E43\u0E19\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04\u0E17\u0E35\
+      \u0E48\u0E41\u0E25\u0E49\u0E27 \u0E04\u0E33\u0E2A\u0E23\u0E23\u0E1E\u0E19\u0E32\
+      \u0E21 \"{{ span2_text.lower() }}\" \u0E2B\u0E21\u0E32\u0E22\u0E16\u0E36\u0E07\
+      \ {{ span1_text }} \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48 \u0E43\u0E0A\u0E48\
+      \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -20,11 +20,10 @@ templates:
   23361c5d-b67f-4c2a-9da7-16301c55d0e1: !Template
     answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
     id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
-    jinja: "{{ text }} \u0E17\u0E35\u0E48\u0E19\u0E35\u0E48\u0E42\u0E14\u0E22 \"{{\
-      \ span2_text }}\" \u0E1E\u0E27\u0E01\u0E40\u0E02\u0E32\u0E2B\u0E21\u0E32\u0E22\
-      \u0E16\u0E36\u0E07 \"{{ span1_text }}\" \u0E43\u0E0A\u0E48\u0E2B\u0E23\u0E37\
-      \u0E2D\u0E44\u0E21\u0E48? ||| {% if label != -1 %}{{ answer_choices[label] }}{%\
-      \ endif %}"
+    jinja: "{{ text }} \u0E43\u0E19\u0E17\u0E35\u0E48\u0E19\u0E35\u0E49 \u0E42\u0E14\
+      \u0E22 \"{{ span2_text }}\" \u0E2B\u0E21\u0E32\u0E22\u0E16\u0E36\u0E07 \"{{\
+      \ span1_text }}\" \u0E43\u0E0A\u0E48\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48\
+      ? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -65,11 +64,11 @@ templates:
   7482d24f-cf45-4013-b82d-369489fc958b: !Template
     answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
     id: 7482d24f-cf45-4013-b82d-369489fc958b
-    jinja: "{{ text }} \u0E17\u0E35\u0E48\u0E19\u0E35\u0E48 \"{{ span2_text.lower()\
-      \ }}\" \u0E22\u0E37\u0E19\u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A {{ span1_text\
-      \ }} \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? \u0E43\u0E0A\u0E48\u0E2B\u0E23\
-      \u0E37\u0E2D\u0E44\u0E21\u0E48? ||| {% if label != -1 %}{{ answer_choices[label]\
-      \ }}{% endif %}"
+    jinja: "{{ text }} \u0E43\u0E19\u0E17\u0E35\u0E48\u0E19\u0E35\u0E49 \"{{ span2_text.lower()\
+      \ }}\" \u0E22\u0E48\u0E2D\u0E21\u0E32\u0E08\u0E32\u0E01 {{ span1_text }} \u0E2B\
+      \u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48 \u0E43\u0E0A\u0E48\u0E2B\u0E23\u0E37\u0E2D\
+      \u0E44\u0E21\u0E48? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -81,11 +80,11 @@ templates:
     answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
     id: 7d377293-d043-4b6c-8ec1-d61eaf14ec67
     jinja: "\u0E17\u0E32\u0E07\u0E40\u0E14\u0E34\u0E19: {{ text }} \n\n\u0E04\u0E33\
-      \u0E16\u0E32\u0E21: \u0E43\u0E19\u0E02\u0E49\u0E2D\u0E04\u0E27\u0E32\u0E21\u0E14\
-      \u0E49\u0E32\u0E19\u0E1A\u0E19\u0E04\u0E33\u0E2A\u0E23\u0E23\u0E1E\u0E19\u0E32\
-      \u0E21 \"{{ span2_text }}\" \u0E2D\u0E49\u0E32\u0E07\u0E16\u0E36\u0E07 {{ span1_text\
-      \ }} \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?\n\n\u0E15\u0E2D\u0E1A: |||\
-      \ {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+      \u0E16\u0E32\u0E21: \u0E43\u0E19\u0E02\u0E49\u0E2D\u0E02\u0E49\u0E32\u0E07\u0E1A\
+      \u0E19 \u0E04\u0E33\u0E2A\u0E23\u0E23\u0E1E\u0E19\u0E32\u0E21 \"{{ span2_text\
+      \ }}\" \u0E2B\u0E21\u0E32\u0E22\u0E16\u0E36\u0E07 {{ span1_text }} \u0E2B\u0E23\
+      \u0E37\u0E2D\u0E44\u0E21\u0E48?\n\n\u0E15\u0E2D\u0E1A: ||| {% if label != -1\
+      \ %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -96,13 +95,13 @@ templates:
   809eacd0-2f6c-4e3a-b52a-57c783879d36: !Template
     answer_choices: "\u0E44\u0E21\u0E48 ||| \u0E43\u0E0A\u0E48"
     id: 809eacd0-2f6c-4e3a-b52a-57c783879d36
-    jinja: "{{ text }} \u0E43\u0E19\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04\u0E01\u0E48\
-      \u0E2D\u0E19\u0E2B\u0E19\u0E49\u0E32\u0E04\u0E33\u0E2A\u0E23\u0E23\u0E1E\u0E19\
-      \u0E32\u0E21 \"{{ span2_text }}\" \u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E16\
-      \u0E39\u0E01\u0E41\u0E17\u0E19\u0E17\u0E35\u0E48\u0E14\u0E49\u0E27\u0E22 \"\
-      {{ span1_text }}\" \u0E44\u0E14\u0E49\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48\
-      ? \u0E43\u0E0A\u0E48\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? ||| {% if label\
-      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{ text }} \u0E43\u0E19\u0E1B\u0E23\u0E30\u0E42\u0E22\u0E04\u0E17\u0E35\
+      \u0E48\u0E41\u0E25\u0E49\u0E27 \u0E04\u0E33\u0E2A\u0E23\u0E23\u0E1E\u0E19\u0E32\
+      \u0E21 \"{{ span2_text }}\" \u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E41\u0E17\
+      \u0E19\u0E17\u0E35\u0E48\u0E14\u0E49\u0E27\u0E22 \"{{ span1_text }}\" \u0E44\
+      \u0E14\u0E49\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48 \u0E43\u0E0A\u0E48\u0E2B\
+      \u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48? ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -130,11 +129,11 @@ templates:
   aae24b54-c3a7-4f69-8b77-f6dc115988f8: !Template
     answer_choices: "\u0E40\u0E17\u0E47\u0E08 ||| \u0E08\u0E23\u0E34\u0E07"
     id: aae24b54-c3a7-4f69-8b77-f6dc115988f8
-    jinja: "{{ text }} \n\u0E43\u0E19\u0E02\u0E49\u0E2D\u0E04\u0E27\u0E32\u0E21\u0E14\
-      \u0E49\u0E32\u0E19\u0E1A\u0E19\u0E04\u0E33\u0E2A\u0E23\u0E23\u0E1E\u0E19\u0E32\
-      \u0E21 \"{{ span2_text }}\" \u0E2B\u0E21\u0E32\u0E22\u0E16\u0E36\u0E07 {{ span1_text\
-      \ }} \u0E08\u0E23\u0E34\u0E07\u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E17\u0E47\u0E08\
-      ? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{ text }} \n\u0E43\u0E19\u0E02\u0E49\u0E2D\u0E04\u0E27\u0E32\u0E21\u0E02\
+      \u0E49\u0E32\u0E07\u0E15\u0E49\u0E19 \u0E04\u0E33\u0E2A\u0E23\u0E23\u0E1E\u0E19\
+      \u0E32\u0E21 \"{{ span2_text }}\" \u0E2B\u0E21\u0E32\u0E22\u0E16\u0E36\u0E07\
+      \ {{ span1_text }} \u0E08\u0E23\u0E34\u0E07\u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E17\
+      \u0E47\u0E08? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -150,8 +149,9 @@ templates:
       \u0E37\u0E2D\u0E2D\u0E30\u0E44\u0E23 \"{{ span2_text.lower() }}\"? {{ span1_text\
       \ }}?\n{% else %}\n\u0E04\u0E33\u0E16\u0E32\u0E21: \u0E43\u0E04\u0E23\u0E2B\u0E23\
       \u0E37\u0E2D\u0E2D\u0E30\u0E44\u0E23 \"{{ span2_text.lower() }}\"? \u0E21\u0E31\
-      \u0E19\u0E04\u0E37\u0E2D {{ span1_text }}?\n{% endif %}\n\u0E15\u0E2D\u0E1A\
-      : ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+      \u0E19\u0E04\u0E37\u0E2D {{ span1_text }} \u0E43\u0E0A\u0E48\u0E44\u0E2B\u0E21\
+      \n{% endif %}\n\u0E15\u0E2D\u0E1A: ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

@@ -4,11 +4,11 @@ templates:
   14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
     answer_choices: "\u0646\u06C1\u06CC\u06BA ||| \u062C\u06CC \u06C1\u0627\u06BA"
     id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
-    jinja: "\u06A9\u06CC\u0627 \u0627\u0646 \u062F\u0648 \u062C\u0645\u0644\u0648\u06BA\
-      \ \u0645\u06CC\u06BA \u0644\u0641\u0638 \"{{word}}\" \u06A9\u0627 \u0627\u06CC\
-      \u06A9 \u06C1\u06CC \u0645\u0639\u0646\u06CC \u06C1\u06D2\u061F \u06C1\u0627\
-      \u06BA \u0646\u06C1\u06CC\u06BA\u061F\n{{sentence1}}\n{{sentence2}}\n||| {%\
-      \ if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    jinja: "\u06A9\u06CC\u0627 \u0627\u0646 \u062F\u0648\u0646\u0648\u06BA \u062C\u0645\
+      \u0644\u0648\u06BA \u0645\u06CC\u06BA \u0644\u0641\u0638 \"{{word}}\" \u06A9\
+      \u0627 \u0627\u06CC\u06A9 \u06C1\u06CC \u0645\u0637\u0644\u0628 \u06C1\u06D2\
+      \u061F \u06C1\u0627\u06BA \u0646\u06C1\u06CC\u06BA\u061F\n{{sentence1}}\n{{sentence2}}\n\
+      ||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -19,11 +19,11 @@ templates:
   3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
     answer_choices: "\u0646\u06C1\u06CC\u06BA ||| \u062C\u06CC \u06C1\u0627\u06BA"
     id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
-    jinja: "\u06A9\u06CC\u0627 \u0627\u0646 \u062F\u0648 \u062C\u0645\u0644\u0648\u06BA\
-      \ \u0645\u06CC\u06BA \u0644\u0641\u0638 \"{{word}}\" \u06A9\u0627 \u0627\u06CC\
-      \u06A9 \u06C1\u06CC \u0645\u0639\u0646\u06CC \u06C1\u06D2\u061F\n{{sentence1}}\n\
-      {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
-      \ %}"
+    jinja: "\u06A9\u06CC\u0627 \u0627\u0646 \u062F\u0648\u0646\u0648\u06BA \u062C\u0645\
+      \u0644\u0648\u06BA \u0645\u06CC\u06BA \u0644\u0641\u0638 \"{{word}}\" \u06A9\
+      \u0627 \u0627\u06CC\u06A9 \u06C1\u06CC \u0645\u0637\u0644\u0628 \u06C1\u06D2\
+      \u061F\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -37,13 +37,12 @@ templates:
     jinja: "\u06AF\u06BE\u0631 \u06A9\u0627 \u06A9\u0627\u0645\n\n\u0641\u06CC\u0635\
       \u0644\u06C1 \u06A9\u0631\u06CC\u06BA \u06A9\u06C1 \u0622\u06CC\u0627 \u0644\
       \u0641\u0638 \"{{word}}\" \u0645\u0646\u062F\u0631\u062C\u06C1 \u0630\u06CC\u0644\
-      \ \u062F\u0648 \u062C\u0645\u0644\u06D2 \u0645\u06CC\u06BA \u0627\u0633\u06CC\
-      \ \u0645\u0639\u0646\u06CC \u06A9\u06D2 \u0633\u0627\u062A\u06BE \u0627\u0633\
-      \u062A\u0639\u0645\u0627\u0644 \u06A9\u06CC\u0627 \u06AF\u06CC\u0627 \u06C1\u06D2\
-      \u06D4 \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA \u06A9\u06D2\
-      \ \u0630\u0631\u06CC\u0639\u06C1 \u062C\u0648\u0627\u0628 \u062F\u06CC\u06BA\
-      \u06D4\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
-      {% endif %}"
+      \ \u062F\u0648 \u062C\u0645\u0644\u0648\u06BA \u0645\u06CC\u06BA \u0627\u06CC\
+      \u06A9 \u06C1\u06CC \u0645\u0639\u0646\u06CC \u06A9\u06D2 \u0633\u0627\u062A\
+      \u06BE \u0627\u0633\u062A\u0639\u0645\u0627\u0644 \u06C1\u0648\u0627 \u06C1\u06D2\
+      \u06D4 \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u0627\u06BA \u0645\u06CC\u06BA\
+      \ \u062C\u0648\u0627\u0628 \u062F\u06CC\u06BA\u06D4\n{{sentence1}}\n{{sentence2}}\n\
+      ||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -52,14 +51,15 @@ templates:
     name: grammar_homework
     reference: ''
   725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
-    answer_choices: "\u062C\u06BE\u0648\u0679\u0627 ||| \u0633\u0686 \u06C1\u06D2"
+    answer_choices: "\u062C\u06BE\u0648\u0679\u0627\u06D4 ||| \u0633\u0686 \u06C1\u06D2\
+      \u06D4"
     id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
-    jinja: "\u0633\u0632\u0627 a: {{sentence1}}\n\u0633\u0632\u0627 b: {{sentence2}}\n\
-      \n\"{{word}}\" \u062C\u0645\u0644\u06D2 A \u0627\u0648\u0631 B \u0645\u06CC\u06BA\
-      \ \u0627\u0633\u06CC \u0637\u0631\u062D \u06A9\u06D2 \u0645\u0639\u0646\u06CC\
-      \ \u0631\u06A9\u06BE\u062A\u06D2 \u06C1\u06CC\u06BA\u06D4 \u0635\u062D\u06CC\
-      \u062D \u06CC\u0627 \u063A\u0644\u0637\u061F\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
-      {% endif %}"
+    jinja: "\u062C\u0645\u0644\u06C1 A: {{sentence1}}\n\u062C\u0645\u0644\u06C1 B:\
+      \ {{sentence2}}\n\n\"{{word}}\" A \u0627\u0648\u0631 B \u062C\u0645\u0644\u0648\
+      \u06BA \u0645\u06CC\u06BA \u0627\u06CC\u06A9 \u062C\u06CC\u0633\u06D2 \u0645\
+      \u0639\u0646\u06CC \u0631\u06A9\u06BE\u062A\u0627 \u06C1\u06D2\u06D4 \u0635\u062D\
+      \u06CC\u062D \u06CC\u0627 \u063A\u0644\u0637\u061F\n||| {% if label != -1%}\n\
+      {{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -83,12 +83,12 @@ templates:
   ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
     answer_choices: "\u0646\u06C1\u06CC\u06BA ||| \u062C\u06CC \u06C1\u0627\u06BA"
     id: ce8b5a93-1841-4897-84db-b100f1c84f4b
-    jinja: "\u0633\u0632\u0627 1: {{sentence1}}\n\u0633\u0632\u0627 2: {{sentence2}}\n\
-      \n\u0627\u0633 \u0628\u0627\u062A \u06A9\u0627 \u062A\u0639\u06CC\u0646 \u06A9\
-      \u0631\u06CC\u06BA \u06A9\u06C1 \u0622\u06CC\u0627 \u0644\u0641\u0638 \"{{word}}\"\
-      \ \u062F\u0648\u0646\u0648\u06BA \u062C\u0645\u0644\u0648\u06BA \u0645\u06CC\
-      \u06BA \u0627\u06CC\u06A9 \u06C1\u06CC \u0645\u0639\u0646\u06CC \u0645\u06CC\
-      \u06BA \u0627\u0633\u062A\u0639\u0645\u0627\u0644 \u06A9\u06CC\u0627 \u06AF\u06CC\
+    jinja: "\u062C\u0645\u0644\u06C1 1: {{sentence1}}\n\u062C\u0645\u0644\u06C1 2:\
+      \ {{sentence2}}\n\n\u0627\u0633 \u0628\u0627\u062A \u06A9\u0627 \u062A\u0639\
+      \u06CC\u0646 \u06A9\u0631\u06CC\u06BA \u06A9\u06C1 \u0622\u06CC\u0627 \u0644\
+      \u0641\u0638 \"{{word}}\" \u062F\u0648\u0646\u0648\u06BA \u062C\u0645\u0644\u0648\
+      \u06BA \u0645\u06CC\u06BA \u0627\u06CC\u06A9 \u06C1\u06CC \u0645\u0639\u0646\
+      \u06CC \u0645\u06CC\u06BA \u0627\u0633\u062A\u0639\u0645\u0627\u0644 \u06C1\u0648\
       \u0627 \u06C1\u06D2\u06D4 \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\
       \u06BA\u061F\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -103,10 +103,11 @@ templates:
     id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
     jinja: "\u0627\u0633 \u0628\u0627\u062A \u06A9\u0627 \u062A\u0639\u06CC\u0646\
       \ \u06A9\u0631\u06CC\u06BA \u06A9\u06C1 \u0622\u06CC\u0627 \u0644\u0641\u0638\
-      \ '{{word}}' \u0627\u0633\u06CC \u0637\u0631\u062D \u0627\u0633\u062A\u0639\u0645\
-      \u0627\u0644 \u06A9\u06CC\u0627 \u06AF\u06CC\u0627 \u06C1\u06D2\u06D4 \n{{sentence1}}\n\
-      {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
-      \ %}"
+      \ '{{word}}' \u0630\u06CC\u0644 \u06A9\u06D2 \u062F\u0648 \u062C\u0645\u0644\
+      \u0648\u06BA \u0645\u06CC\u06BA \u0627\u0633\u06CC \u0637\u0631\u062D \u0627\
+      \u0633\u062A\u0639\u0645\u0627\u0644 \u06C1\u0648\u0627 \u06C1\u06D2\u06D4 \n\
+      {{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -118,12 +119,12 @@ templates:
     answer_choices: "\u0646\u06C1\u06CC\u06BA ||| \u062C\u06CC \u06C1\u0627\u06BA"
     id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
     jinja: "{{sentence1}}\n{{sentence2}}\n\u0633\u0648\u0627\u0644: \u06A9\u06CC\u0627\
-      \ \u0644\u0641\u0638 '{{word}}' \u0645\u0630\u06A9\u0648\u0631\u06C1 \u062F\u0648\
-      \ \u062C\u0645\u0644\u0648\u06BA \u0645\u06CC\u06BA \u0627\u0633\u06CC \u0645\
-      \u0639\u0646\u06CC \u0645\u06CC\u06BA \u0627\u0633\u062A\u0639\u0645\u0627\u0644\
-      \ \u06A9\u06CC\u0627 \u06AF\u06CC\u0627 \u06C1\u06D2\u061F \u06C1\u0627\u06BA\
-      \ \u0646\u06C1\u06CC\u06BA\u061F\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
-      {% endif %}"
+      \ \u0645\u0630\u06A9\u0648\u0631\u06C1 \u0628\u0627\u0644\u0627 \u062F\u0648\
+      \u0646\u0648\u06BA \u062C\u0645\u0644\u0648\u06BA \u0645\u06CC\u06BA \u0644\u0641\
+      \u0638 '{{word}}' \u0627\u06CC\u06A9 \u06C1\u06CC \u0645\u0639\u0646\u06CC \u0645\
+      \u06CC\u06BA \u0627\u0633\u062A\u0639\u0645\u0627\u0644 \u06C1\u0648\u0627 \u06C1\
+      \u06D2\u061F \u06C1\u0627\u06BA \u0646\u06C1\u06CC\u06BA\u061F\n||| {% if label\
+      \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -136,11 +137,11 @@ templates:
     answer_choices: "\u0646\u06C1\u06CC\u06BA ||| \u062C\u06CC \u06C1\u0627\u06BA"
     id: dd2080cf-3117-49ba-9aff-c988a21fdb69
     jinja: "\u0644\u0641\u0638 \"{{word}}\" \u06A9\u06D2 \u0645\u062A\u0639\u062F\u062F\
-      \ \u0645\u0639\u0646\u06CC \u06C1\u06CC\u06BA\u06D4 \u06A9\u06CC\u0627 \u0627\
-      \u0633 \u06A9\u06D2 \u062C\u0645\u0644\u06D2 1 \u0627\u0648\u0631 2 \u0645\u06CC\
-      \u06BA \u0627\u06CC\u06A9 \u06C1\u06CC \u0645\u0639\u0646\u06CC \u06C1\u06CC\
-      \u06BA\u061F \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F\n\
-      \n\u0633\u0632\u0627 1: {{sentence1}}\n\u0633\u0632\u0627 2: {{sentence2}}\n\
+      \ \u0645\u0639\u0646\u06CC \u06C1\u06CC\u06BA\u06D4 \u06A9\u06CC\u0627 \u062C\
+      \u0645\u0644\u06D2 1 \u0627\u0648\u0631 2 \u0645\u06CC\u06BA \u0627\u0633 \u06A9\
+      \u0627 \u0627\u06CC\u06A9 \u06C1\u06CC \u0645\u0637\u0644\u0628 \u06C1\u06D2\
+      \u061F \u06C1\u0627\u06BA \u06CC\u0627 \u0646\u06C1\u06CC\u06BA\u061F\n\n\u062C\
+      \u0645\u0644\u06C1 1: {{sentence1}}\n\u062C\u0645\u0644\u06C1 2: {{sentence2}}\n\
       ||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

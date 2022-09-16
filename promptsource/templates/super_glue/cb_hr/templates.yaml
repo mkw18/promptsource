@@ -4,7 +4,7 @@ templates:
   2e76cd0f-68ca-4f03-83ed-11cf15b25a84: !Template
     answer_choices: "Da ||| Ne ||| Mo\u017Ee biti"
     id: 2e76cd0f-68ca-4f03-83ed-11cf15b25a84
-    jinja: "Pretpostaviti {{premise}} Mo\u017Eemo li zaklju\u010Diti da je \"{{hypothesis}}\"\
+    jinja: "Pretpostavimo {{premise}} Mo\u017Eemo li zaklju\u010Diti da je \"{{hypothesis}}\"\
       ? Da, ne, ili mo\u017Eda? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
       \ endif %} "
     metadata: !TemplateMetadata
@@ -28,11 +28,11 @@ templates:
     name: based on the previous passage
     reference: "Adapted from the BoolQ prompts in Schick & Sch\xFCtze 2021."
   3f43a599-ffdb-490e-8952-c0ce41dd4621: !Template
-    answer_choices: "Pravi ||| La\u017Ean ||| Neuvjerljivo"
+    answer_choices: "Pravi ||| la\u017Eno ||| Neuvjerljivo"
     id: 3f43a599-ffdb-490e-8952-c0ce41dd4621
-    jinja: "{{premise}} Na temelju tih podataka, je li tvrdnja: \"{{hypothesis}}\"\
-      \ {{\"pravi\"}}, {{\"la\u017Ean\"}}, ili {{\"Nepovjerljivo\"}}? ||| {% if label\
-      \ !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: '{{premise}} Na temelju te informacije, je li tvrdnja: "{{hypothesis}}"
+      {{"istinita"}}, {{"neistinita"}} ili {{"neuvjerljiva"}}? ||| {% if label !=-1
+      %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -55,9 +55,8 @@ templates:
   5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260: !Template
     answer_choices: "Da ||| Ne ||| Mo\u017Ee biti"
     id: 5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260
-    jinja: "{{premise}} Jesmo li opravdani rekav\u0161i da je \"{{hypothesis}}\"?\
-      \ Da, ne, ili mo\u017Eda? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
-      \ endif %}"
+    jinja: "{{premise}} Imamo li pravo re\u0107i da \"{{hypothesis}}\"? Da, ne, ili\
+      \ mo\u017Eda? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -68,9 +67,9 @@ templates:
   6b0c6191-183d-4731-8050-ab17c909335c: !Template
     answer_choices: Stalno ||| Nikada ||| Ponekad
     id: 6b0c6191-183d-4731-8050-ab17c909335c
-    jinja: Pretpostavimo da je istina da {{premise}} Zatim je "{{hypothesis}}" {{"uvijek"}},
-      {{"ponekad"}}, ili {{"nikad"}} istina? ||| {% if label !=-1 %}{{ answer_choices[label]
-      }}{% endif %}
+    jinja: Pretpostavimo da je istina da {{premise}} Zatim, je li "{{hypothesis}}"
+      {{"uvijek"}}, {{"ponekad"}} ili {{"nikad"}} istina? ||| {% if label !=-1 %}{{
+      answer_choices[label] }}{% endif %}
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -79,10 +78,10 @@ templates:
     name: always/sometimes/never
     reference: Sanh et al. 2021
   75db2bc2-3caa-4956-9653-13c7dd6255df: !Template
-    answer_choices: "Pravi ||| La\u017Ean ||| Ni"
+    answer_choices: "Pravi ||| la\u017Eno ||| Ni"
     id: 75db2bc2-3caa-4956-9653-13c7dd6255df
-    jinja: "{{premise}}\nPitanje: {{hypothesis}} Istina, la\u017Eno ili nijedno? |||\
-      \ {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}}\nPitanje: {{hypothesis}} To\u010Dno, neto\u010Dno ili nijedno?\
+      \ ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -94,9 +93,9 @@ templates:
   87237a07-7cce-470a-80ac-3e5e3a5283ba: !Template
     answer_choices: Stalno ||| Nikada ||| Ponekad
     id: 87237a07-7cce-470a-80ac-3e5e3a5283ba
-    jinja: "{{premise}} \n\nImaju\u0107i u vidu gornji tekst, razmislite: {{hypothesis}}\
-      \ Je li to {{\"uvijek\"}}, {{\"ponekad\"}}, ili {{\"nikad\"}} ispravno? |||\
-      \ {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} \n\nImaju\u0107i na umu gornji tekst, razmislite o sljede\u0107\
+      em: {{hypothesis}} Je li ovo {{\"uvijek\"}}, {{\"ponekad\"}} ili {{\"nikad\"\
+      }} to\u010Dno? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -107,7 +106,7 @@ templates:
   8798b8a4-1f59-4c72-9c1b-3e3044a7462a: !Template
     answer_choices: "Da ||| Ne ||| Mo\u017Ee biti"
     id: 8798b8a4-1f59-4c72-9c1b-3e3044a7462a
-    jinja: "Dodijeljen {{premise}} Je li zajam\u010Deno istina da \"{{hypothesis}}\"\
+    jinja: "S obzirom {{premise}} Je li zajam\u010Deno istina da je \"{{hypothesis}}\"\
       ? Da, ne, ili mo\u017Eda? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
       \ endif %}"
     metadata: !TemplateMetadata
@@ -120,7 +119,7 @@ templates:
   8e3b8d3d-1362-47dc-922a-82c03f965989: !Template
     answer_choices: "Da ||| Ne ||| Mo\u017Ee biti"
     id: 8e3b8d3d-1362-47dc-922a-82c03f965989
-    jinja: "S obzirom na to {{premise}} Stoga mora biti istina da \"{{hypothesis}}\"\
+    jinja: "S obzirom na to {{premise}} Stoga, mora biti to\u010Dno da je \"{{hypothesis}}\"\
       ? Da, ne, ili mo\u017Eda? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
       \ endif %}"
     metadata: !TemplateMetadata
@@ -131,10 +130,10 @@ templates:
     name: must be true
     reference: Sanh et al. 2021
   90ab1002-093c-4e54-b48f-626655e36b65: !Template
-    answer_choices: "Zagarantiran ||| Nemogu\u0107e ||| Mogu\u0107"
+    answer_choices: "Zagarantiran ||| Nemogu\u0107e ||| mogu\u0107e"
     id: 90ab1002-093c-4e54-b48f-626655e36b65
     jinja: "Pretpostavimo da je istina da {{premise}} \n\nStoga je \"{{hypothesis}}\"\
-      \ {{\"zajam\u010Deno\"}}, {{\"mogu\u0107e\"}}, ili {{\"nemogu\u0107e\"}}? |||\
+      \ {{\"zajam\u010Deno\"}}, {{\"mogu\u0107e\"}} ili {{\"nemogu\u0107e\"}}? |||\
       \ {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -146,7 +145,7 @@ templates:
   a485d120-6eef-4ff6-8684-42df1639b101: !Template
     answer_choices: "Da ||| Ne ||| Mo\u017Ee biti"
     id: a485d120-6eef-4ff6-8684-42df1639b101
-    jinja: "{{premise}} \n\nPitanje: Da li to podrazumijeva da \"{{hypothesis}}\"\
+    jinja: "{{premise}} \n\nPitanje: Da li ovo implicira da je \"{{hypothesis}}\"\
       ? Da, ne, ili mo\u017Eda? ||| {% if label !=-1 %}{{answer_choices[label]}}{%\
       \ endif %}"
     metadata: !TemplateMetadata
@@ -157,11 +156,11 @@ templates:
     name: does this imply
     reference: Sanh et al. 2021
   bee62bfa-5307-4e1c-97b2-2ad2f7bcb179: !Template
-    answer_choices: "Ispravan ||| Neto\u010Dno ||| Neuvjerljivo"
+    answer_choices: "To\u010Dno ||| Neto\u010Dno ||| Neuvjerljivo"
     id: bee62bfa-5307-4e1c-97b2-2ad2f7bcb179
-    jinja: "{{premise}} Kori\u0161tenje samo gornjeg opisa i onoga \u0161to znate\
-      \ o svijetu, \"{{hypothesis}}\" je definitivno to\u010Dan, neto\u010Dan ili\
-      \ neuvjerljiv? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} Koriste\u0107i samo gornji opis i ono \u0161to znate o svijetu,\
+      \ \"{{hypothesis}}\" je definitivno to\u010Dan, neto\u010Dan ili neuvjerljiv?\
+      \ ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -172,8 +171,8 @@ templates:
   e503b148-8e6c-43b5-9ed6-312794c54d9b: !Template
     answer_choices: "Da ||| Ne ||| Mo\u017Ee biti"
     id: e503b148-8e6c-43b5-9ed6-312794c54d9b
-    jinja: "Dodijeljen {{premise}} Trebamo li pretpostaviti da je \"{{hypothesis}}\"\
-      \ istina? Da, ne, ili mo\u017Eda? ||| {% if label !=-1 %}{{ answer_choices[label]\
+    jinja: "S obzirom {{premise}} Trebamo li pretpostaviti da je \"{{hypothesis}}\"\
+      \ istinito? Da, ne, ili mo\u017Eda? ||| {% if label !=-1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -183,10 +182,10 @@ templates:
     name: should assume
     reference: Webson & Pavlick 2021
   ea56b7f3-6e07-45bc-b619-c527eac4a41b: !Template
-    answer_choices: "Pravi ||| La\u017Ean ||| Neuvjerljivo"
+    answer_choices: "Pravi ||| la\u017Eno ||| Neuvjerljivo"
     id: ea56b7f3-6e07-45bc-b619-c527eac4a41b
     jinja: "Uzmite sljede\u0107e kao istinu: {{premise}}\nZatim sljede\u0107a izjava:\
-      \ \"{{hypothesis}}\" je {{\"pravi\"}}, {{\"la\u017Ean\"}}, ili {{\"Inclumble\"\
+      \ \"{{hypothesis}}\" je {{\"pravi\"}}, {{\"la\u017Eno\"}} ili {{\"neuvjerljiv\"\
       }}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

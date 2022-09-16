@@ -21,7 +21,7 @@ templates:
 
       {% if label_coarse == 5 %}
 
-      Ist diese Frage nach {{'', ''.join(answer_choices)}}?
+      Fragt diese Frage nach {{'', ''.join(answer_choices)}}?
 
       {{text}}
 
@@ -40,7 +40,7 @@ templates:
   309bf243-2185-4090-ac66-a24f44d89966: !Template
     answer_choices: "Code ||| z\xE4hlen ||| Datum ||| Distanz ||| Preis ||| bestellen\
       \ ||| Zeitspanne ||| Prozentsatz ||| Geschwindigkeit ||| Temperatur ||| Gr\xF6\
-      \xDFe ||| Gewicht ||| andere Zahl"
+      \xDFe ||| Gewicht ||| andere Nummer"
     id: 309bf243-2185-4090-ac66-a24f44d89966
     jinja: '{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,
       35:8, 41:9, 32:10, 45:11, 14:12} %}
@@ -50,7 +50,7 @@ templates:
       {{text}}
 
 
-      Ist diese Frage nach {{'', ''.join(answer_choices)}}?
+      Fragt diese Frage nach {{'', ''.join(answer_choices)}}?
 
       |||
 
@@ -65,11 +65,11 @@ templates:
     name: fine_grained_NUM_context_first
     reference: Fine grained labels with coarse-label `NUM`, context provided first
   3aff84f3-e478-4598-abe8-40aa24cec1fa: !Template
-    answer_choices: "ein Tier ||| ein Organ des K\xF6rpers ||| eine Farbe ||| Kreatives\
+    answer_choices: "ein Tier ||| ein Organ des K\xF6rpers ||| eine Farbe ||| kreatives\
       \ St\xFCck ||| W\xE4hrung ||| Krankheit oder Medizin ||| Veranstaltung ||| Lebensmittel\
       \ ||| Musikinstrument ||| Sprache ||| Buchstabe ||| Pflanze ||| Produkt |||\
       \ Religion ||| Sport ||| Substanz ||| Symbol ||| Technik ||| Begriff ||| Fahrzeug\
-      \ ||| Wort ||| Andere Entit\xE4t"
+      \ ||| Wort ||| andere Instanz"
     id: 3aff84f3-e478-4598-abe8-40aa24cec1fa
     jinja: '{% set label_mapping = {2:0, 22:1, 19:2, 1:3, 46:3, 23:4, 10:5, 17:6,
       33:7, 37:8, 15:9, 30:10, 26:11, 16:12, 28:13, 42:14, 31:15, 20:16, 44:17, 36:18,
@@ -77,7 +77,7 @@ templates:
 
       {% if label_coarse == 1 %}
 
-      Ist diese Frage nach {{'', ''.join(answer_choices)}}?
+      Fragt diese Frage nach {{'', ''.join(answer_choices)}}?
 
       {{text}}
 
@@ -96,14 +96,14 @@ templates:
   43a188a2-b6dd-46a7-af2e-81a64b90b92a: !Template
     answer_choices: "Code ||| z\xE4hlen ||| Datum ||| Distanz ||| Preis ||| bestellen\
       \ ||| Zeitspanne ||| Prozentsatz ||| Geschwindigkeit ||| Temperatur ||| Gr\xF6\
-      \xDFe ||| Gewicht ||| andere Zahl"
+      \xDFe ||| Gewicht ||| andere Nummer"
     id: 43a188a2-b6dd-46a7-af2e-81a64b90b92a
     jinja: '{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,
       35:8, 41:9, 32:10, 45:11, 14:12} %}
 
       {% if label_coarse == 4 %}
 
-      Ist diese Frage nach {{'', ''.join(answer_choices)}}?
+      Fragt diese Frage nach {{'', ''.join(answer_choices)}}?
 
       {{text}}
 
@@ -129,7 +129,7 @@ templates:
       Deskriptoren: {{'', ''.join(answer_choices)}}
 
 
-      Bester Deskriptor?
+      Beste Beschreibung?
 
       |||
 
@@ -146,16 +146,16 @@ templates:
       rzt ||| Individuell ||| Gruppe ||| Titel ||| Definition ||| Datum ||| Grund\
       \ ||| Vorfall ||| Bundesland ||| Beschreibung ||| Z\xE4hlen ||| Sonstiges |||\
       \ Brief ||| Religion ||| Essen ||| Z\xE4hlenry ||| Farbe ||| Begriff ||| Stadt\
-      \ ||| K\xF6rperorgan ||| Krankheit oder Medizin ||| Berg ||| Preis ||| Produkt\
-      \ ||| Zeitraum ||| Substanz ||| Sport ||| Anlage ||| Technik ||| Gr\xF6\xDF\
-      e ||| Instrument ||| Abk\xFCrzung ||| Geschwindigkeit ||| Wort ||| Sprache |||\
-      \ Prozentsatz ||| Code ||| Distanz ||| Temperatur ||| Symbol ||| Befehl |||\
-      \ Fahrzeug ||| Gewicht ||| W\xE4hrung"
+      \ ||| Organ des K\xF6rpers ||| Krankheit oder Medizin ||| Berg ||| Preis |||\
+      \ Produkt ||| Zeitraum ||| Substanz ||| Sport ||| Anlage ||| Technik ||| Gr\xF6\
+      \xDFe ||| Instrument ||| Abk\xFCrzung ||| Geschwindigkeit ||| Wort ||| Sprache\
+      \ ||| Prozentsatz ||| Code ||| Distanz ||| Temperatur ||| Symbol ||| Befehl\
+      \ ||| Fahrzeug ||| Gewicht ||| W\xE4hrung"
     id: 71090d59-dd02-4cbd-8032-ad86179b9bd4
     jinja: '{{text}}
 
 
-      Was stellt diese Frage?
+      Wonach fragt diese Frage?
 
       |||
 
@@ -177,7 +177,7 @@ templates:
       {{text}}
 
 
-      Ist diese Frage nach {{'', ''.join(answer_choices)}}?
+      Fragt diese Frage nach {{'', ''.join(answer_choices)}}?
 
       |||
 
@@ -206,13 +206,14 @@ templates:
     name: which_category_best_describes
     reference: ''
   7a9e6f3c-1dee-45b0-a315-1badaf59a7b8: !Template
-    answer_choices: Definition ||| Bezeichnung ||| Handlungsart ||| Grund
+    answer_choices: Definition ||| Bezeichnung ||| Art und Weise des Handelns |||
+      Grund
     id: 7a9e6f3c-1dee-45b0-a315-1badaf59a7b8
     jinja: '{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}
 
       {% if label_coarse == 0 %}
 
-      Ist diese Frage nach {{'', ''.join(answer_choices)}}?
+      Fragt diese Frage nach {{'', ''.join(answer_choices)}}?
 
       {{text}}
 
@@ -250,9 +251,9 @@ templates:
   93a06e72-2c15-4f8a-a46c-6a10919c4ea4: !Template
     answer_choices: "Abk\xFCrzung ||| Ausdruck abgek\xFCrzt"
     id: 93a06e72-2c15-4f8a-a46c-6a10919c4ea4
-    jinja: "{% set label_mapping={34:0, 3:1} %} \n{% if label_coarse == 2 %}\nWird\
-      \ diese Frage nach einem {{', '.join(answer_choices)}} gestellt?\n{{text}}\n\
-      |||\n{{answer_choices[label_mapping[label_fine]] }}\n{% endif %}"
+    jinja: "{% set label_mapping={34:0, 3:1} %} \n{% if label_coarse == 2 %}\nFragt\
+      \ diese Frage nach einem {{', '.join(answer_choices)}}?\n{{text}}\n|||\n{{answer_choices[label_mapping[label_fine]]\
+      \ }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -264,8 +265,8 @@ templates:
     answer_choices: "Abk\xFCrzung ||| Ausdruck abgek\xFCrzt"
     id: a0096044-3b4c-4c80-b139-25eac8fe692a
     jinja: "{% set label_mapping = {34:0, 3:1} %} \n{% if label_coarse == 2 %}\n{{text}}\n\
-      \nWird diese Frage nach einem {{', '.join(answer_choices)}} gestellt?\n|||\n\
-      {{ answer_choices [label_mapping[label_fine]] }}\n{% endif %}"
+      \nFragt diese Frage nach einem {{', '.join(answer_choices)}}?\n|||\n{{ answer_choices\
+      \ [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -277,7 +278,7 @@ templates:
     answer_choices: "Beschreibung ||| Einheit ||| Abk\xFCrzung ||| Person ||| Menge\
       \ ||| Ort"
     id: aad2def1-b694-40ee-9c26-3d1cf5c577da
-    jinja: 'Wird die folgende Frage nach {{'', ''.join(answer_choices)}} gestellt?
+    jinja: 'Bezieht sich die folgende Frage auf {{'', ''.join(answer_choices)}}?
 
 
       {{text}}
@@ -299,7 +300,7 @@ templates:
 
       {% if label_coarse == 3 %}
 
-      Ist diese Frage nach {{'', ''.join(answer_choices)}}?
+      Fragt diese Frage nach {{'', ''.join(answer_choices)}}?
 
       {{text}}
 
@@ -320,13 +321,13 @@ templates:
       rzt ||| Individuell ||| Gruppe ||| Titel ||| Definition ||| Datum ||| Grund\
       \ ||| Vorfall ||| Bundesland ||| Beschreibung ||| Z\xE4hlen ||| Sonstiges |||\
       \ Brief ||| Religion ||| Essen ||| Z\xE4hlenry ||| Farbe ||| Begriff ||| Stadt\
-      \ ||| K\xF6rperorgan ||| Krankheit oder Medizin ||| Berg ||| Preis ||| Produkt\
-      \ ||| Zeitraum ||| Substanz ||| Sport ||| Anlage ||| Technik ||| Gr\xF6\xDF\
-      e ||| Instrument ||| Abk\xFCrzung ||| Geschwindigkeit ||| Wort ||| Sprache |||\
-      \ Prozentsatz ||| Code ||| Distanz ||| Temperatur ||| Symbol ||| Befehl |||\
-      \ Fahrzeug ||| Gewicht ||| W\xE4hrung"
+      \ ||| Organ des K\xF6rpers ||| Krankheit oder Medizin ||| Berg ||| Preis |||\
+      \ Produkt ||| Zeitraum ||| Substanz ||| Sport ||| Anlage ||| Technik ||| Gr\xF6\
+      \xDFe ||| Instrument ||| Abk\xFCrzung ||| Geschwindigkeit ||| Wort ||| Sprache\
+      \ ||| Prozentsatz ||| Code ||| Distanz ||| Temperatur ||| Symbol ||| Befehl\
+      \ ||| Fahrzeug ||| Gewicht ||| W\xE4hrung"
     id: cfa8fde0-8320-4050-8d6e-7619ab14adea
-    jinja: 'Was stellt diese Frage?
+    jinja: 'Wonach fragt diese Frage?
 
 
       {{text}}
@@ -351,7 +352,7 @@ templates:
       {{text}}
 
 
-      Ist diese Frage nach {{'', ''.join(answer_choices)}}?
+      Fragt diese Frage nach {{'', ''.join(answer_choices)}}?
 
       |||
 
@@ -364,7 +365,8 @@ templates:
     name: fine_grained_HUM_context_first
     reference: Fine grained labels with coarse-label `HUM`, context provided first
   fa588c55-5c69-4fd0-a0b1-edbfa092f710: !Template
-    answer_choices: Definition ||| Bezeichnung ||| Handlungsart ||| Grund
+    answer_choices: Definition ||| Bezeichnung ||| Art und Weise des Handelns |||
+      Grund
     id: fa588c55-5c69-4fd0-a0b1-edbfa092f710
     jinja: '{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}
 
@@ -373,7 +375,7 @@ templates:
       {{text}}
 
 
-      Ist diese Frage nach {{'', ''.join(answer_choices)}}?
+      Fragt diese Frage nach {{'', ''.join(answer_choices)}}?
 
       |||
 

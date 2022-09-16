@@ -5,7 +5,7 @@ templates:
     answer_choices: Olumsuz ||| Pozitif
     id: 1e90a24a-1182-43dd-9445-22f2e56e5761
     jinja: "Ba\u015Fl\u0131k: {{title}}\nG\xF6zden ge\xE7irmek: {{content}}\n\u0130\
-      nceleme olumlu mu negatif mi? |||\n{{answer_choices[label]}}"
+      nceleme olumlu mu olumsuz mu? |||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -16,8 +16,8 @@ templates:
   3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
     answer_choices: Numara ||| Evet
     id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
-    jinja: "Bu incelemeye dayanarak, kullan\u0131c\u0131 bu \xFCr\xFCn\xFC tavsiye\
-      \ eder mi?\n===\nG\xF6zden ge\xE7irmek: {{content}}\nCevap: |||\n{{answer_choices[label]}}"
+    jinja: "Bu incelemeye g\xF6re, kullan\u0131c\u0131 bu \xFCr\xFCn\xFC tavsiye eder\
+      \ mi?\n===\nG\xF6zden ge\xE7irmek: {{content}}\nCevap: |||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -54,7 +54,8 @@ templates:
     answer_choices: Olumsuz ||| Pozitif
     id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
     jinja: "Ba\u015Fl\u0131k: {{title}}\nG\xF6zden ge\xE7irmek: {{content}}\nBu \xFC\
-      r\xFCn incelemesi olumsuz veya olumlu bir duygu ta\u015F\u0131yor mu?|||\n{{answer_choices[label]}}"
+      r\xFCn incelemesi olumsuz mu yoksa olumlu bir duygu mu aktar\u0131yor?|||\n\
+      {{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -78,8 +79,8 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
     answer_choices: "ho\u015Fnutsuz ||| memnun"
     id: b13369e8-0500-4e93-90d4-8e6814bfb97b
-    jinja: "\u0130\u015Fte bir m\xFC\u015Fteri taraf\u0131ndan bir \xFCr\xFCn \xFC\
-      zerinde b\u0131rak\u0131lan bir inceleme.{{answer_choices[1]}} veya {{answer_choices[0]}}\
+    jinja: "\u0130\u015Fte bir m\xFC\u015Fteri taraf\u0131ndan bir \xFCr\xFCne b\u0131\
+      rak\u0131lan bir inceleme. {{answer_choices[1]}} veya {{answer_choices[0]}}\
       \ oldu\u011Funu s\xF6yleyebilir misiniz?\nBa\u015Fl\u0131k: {{title}}\nG\xF6\
       zden ge\xE7irmek: {{content}}\n|||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
@@ -92,12 +93,11 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
     answer_choices: "azalmak ||| artt\u0131rmak"
     id: b13369e8-0500-4e93-90d4-8e6814bfb98b
-    jinja: "Bir \xFCr\xFCn sat\u0131n al\u0131p almayaca\u011F\u0131n\u0131z\u0131\
-      \ d\xFC\u015F\xFCn\xFCyorsunuz.\u0130ncelemelere bak\u0131yorsunuz.A\u015Fa\u011F\
-      \u0131daki inceleme {{answer_choices[0]}} veya {{answer_choices[1]}} \xFCr\xFC\
-      n\xFC sat\u0131n alma \u015Fans\u0131n\u0131z olur mu?\n\u0130nceleme Ba\u015F\
-      l\u0131\u011F\u0131: {{title}}\n\xDCr\xFCn \u0130ncelemesi: {{content}}\n|||\n\
-      {{answer_choices[label]}} "
+    jinja: "Bir \xFCr\xFCn sat\u0131n al\u0131p almamay\u0131 d\xFC\u015F\xFCn\xFC\
+      yorsunuz. \u0130ncelemelere bak\u0131yorsun. A\u015Fa\u011F\u0131dakiler, \xFC\
+      r\xFCn\xFC sat\u0131n alma \u015Fans\u0131n\u0131z\u0131 {{answer_choices[0]}}\
+      \ veya {{answer_choices[1]}} inceler mi?\n\u0130nceleme ba\u015Fl\u0131\u011F\
+      \u0131: {{title}}\n\xDCr\xFCn incelemesi: {{content}}\n|||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -106,12 +106,12 @@ templates:
     name: would_you_buy
     reference: ''
   b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
-    answer_choices: "\xE7irkin ||| gurur verici"
+    answer_choices: "\u015F\u0131mar\u0131k ||| gurur verici"
     id: b13369e8-0500-4e93-90d4-8e6814bfb99b
-    jinja: "Ba\u015Fl\u0131k: {{title}}\n\xDCr\xFCn \u0130ncelemesi: {{content}}\n\
-      Bu incelemenin \xFCr\xFCn\xFC {{answer_choices[1]}} veya {{answer_choices[0]}}\
-      \ \u0131\u015F\u0131kta g\xF6sterdi\u011Fini s\xF6yleyebilir misiniz?\n|||\n\
-      {{answer_choices[label]}} "
+    jinja: "Ba\u015Fl\u0131k: {{title}}\n\xDCr\xFCn incelemesi: {{content}}\nBu incelemenin\
+      \ \xFCr\xFCn\xFC bir {{answer_choices[1]}} veya {{answer_choices[0]}} \u0131\
+      \u015F\u0131\u011F\u0131nda tasvir etti\u011Fini s\xF6yleyebilir misiniz?\n\
+      |||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

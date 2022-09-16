@@ -43,7 +43,7 @@ templates:
     jinja: '{% if answers.text != [] %}
 
       Bepaal de vraag die u mogelijk heeft gesteld om het volgende antwoord voor de
-      gegeven context terug te krijgen
+      gegeven context terug te krijgen:
 
       Context: {{context}};
 
@@ -71,17 +71,17 @@ templates:
 
       ''Waar gaat dit over? '',
 
-      ''Waar gaat de paragraaf over? '',
+      ''Waar gaat de alinea over? '',
 
-      ''Haal het onderwerp van: '',
+      ''Haal het onderwerp uit: '',
 
-      ''Krijg het onderwerp uit de passage'',
+      ''Haal het onderwerp uit de passage'',
 
       ''Ik wil het onderwerp weten. '',
 
       ''Onderwerp uit de passage: '',
 
-      ''Onderwerp uit de paragraaf: '',
+      ''Onderwerp uit de alinea: '',
 
       ] %}
 
@@ -109,19 +109,19 @@ templates:
 
       ''Waar gaat dit over? '',
 
-      ''De paragraaf gaat over '',
+      ''De alinea gaat over '',
 
-      ''Waar gaat de paragraaf over? '',
+      ''Waar gaat de alinea over? '',
 
       ''Krijg het onderwerp: '',
 
-      ''Uit de passage is het onderwerp'',
+      ''Uit de passage is het onderwerp:'',
 
       ''Ik wil het onderwerp weten. '',
 
       ''Onderwerp uit de passage: '',
 
-      ''Onderwerp uit de paragraaf: '',
+      ''Onderwerp uit de alinea: '',
 
       ] %}
 
@@ -175,13 +175,13 @@ templates:
 
       ''Zeg eens '',
 
-      ''Van de passage, '',
+      ''Vanuit de doorgang, '',
 
       ''ik wil het weten '',
 
       ''ik wil vragen '',
 
-      ''Waar is het antwoord op: '',
+      ''Wat is het antwoord op: '',
 
       ''Vind het antwoord op: '',
 
@@ -228,13 +228,13 @@ templates:
 
       Vraag: {{question}};
 
-      If you can''t find the answer, please respond "onbewodend".
+      If you can''t find the answer, please respond "onbeantwoordbaar".
 
       Antwoorden: |||
 
       {% if answers.text == [] %}
 
-      onbewodend
+      onbeantwoordbaar
 
       {% else %}
 
@@ -273,13 +273,13 @@ templates:
 
       ''Zeg eens '',
 
-      ''Van de passage, '',
+      ''Vanuit de doorgang, '',
 
       ''ik wil het weten '',
 
       ''ik wil vragen '',
 
-      ''Waar is het antwoord op: '',
+      ''Wat is het antwoord op: '',
 
       ''Vind het antwoord op: '',
 
@@ -290,11 +290,11 @@ templates:
       ] %}
 
       {{context}} {{ seq | choice }}{{question}} If you can''t find the answer, please
-      respond "onbewodend". |||
+      respond "onbeantwoordbaar". |||
 
       {% if answers.text == [] %}
 
-      onbewodend
+      onbeantwoordbaar
 
       {% else %}
 
@@ -308,7 +308,7 @@ templates:
   e2e41877-4794-4ff9-9f92-a2a85105e2a7: !Template
     answer_choices: ja ||| nee
     id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
-    jinja: "Context: {{context}}; \n\nVraag: {{question}} \n\nIs deze vraag verantwoordelijk?\
+    jinja: "Context: {{context}}; \n\nVraag: {{question}} \n\nIs deze vraag te beantwoorden?\
       \ ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n{% else %}\n{{answer_choices[1]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -325,7 +325,7 @@ templates:
 
       ''Bepaal het onderwerp van het vraag-antwoordpaar. '',
 
-      ''Vind het onderwerp. '',
+      ''Zoek het onderwerp. '',
 
       ''Wat is het onderwerp hiervan? '',
 

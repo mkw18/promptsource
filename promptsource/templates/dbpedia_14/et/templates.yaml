@@ -3,13 +3,13 @@ subset: et
 templates:
   824ecb55-ecad-40c2-8033-f2fa0add2ddf: !Template
     answer_choices: "Ettev\xF5te ||| Haridusasutus ||| Kunstnik ||| Sportlane |||\
-      \ B\xFCrooomanik ||| Transpordi keskmine ||| Hoone ||| Loomulik koht ||| K\xFC\
-      la ||| Loom ||| Taim ||| Album ||| Film ||| Kirjat\xF6\xF6"
+      \ Kontori omanik ||| Transpordivahend ||| Hoone ||| Looduslik koht ||| K\xFC\
+      la ||| Loom ||| Taim ||| Album ||| Film ||| Kirjalik t\xF6\xF6"
     id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
-    jinja: "{{content}} Arvestades kategooriate loendit: {{\"Ettev\xF5tte, haridusasutus,\
-      \ kunstnik, sportlane, kontorihoidja, transpordi, hoone, loodusliku koht, k\xFC\
-      la, loom, taim, album, film v\xF5i kirjalik teos\"}}, millisesse kategooriasse\
-      \ l\xF5iku kuulub? ||| {{ answer_choices[label] }}\n\n"
+    jinja: "{{content}} Kui antud kategooriate loend: {{\"ettev\xF5te, \xF5ppeasutus,\
+      \ kunstnik, sportlane, ametiomanik, transpordivahend, hoone, looduskoht, k\xFC\
+      la, loom, taim, album, film v\xF5i kirjalik t\xF6\xF6\"}}, millisesse kategooriasse\
+      \ see l\xF5ik kuulub? ||| {{ answer_choices[label] }}\n\n"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -19,13 +19,13 @@ templates:
     reference: ''
   8eda7e71-6734-486f-b883-e99d3f14c0bf: !Template
     answer_choices: "Ettev\xF5te ||| Haridusasutus ||| Kunstnik ||| Sportlane |||\
-      \ B\xFCrooomanik ||| Transpordi keskmine ||| Hoone ||| Loomulik koht ||| K\xFC\
-      la ||| Loom ||| Taim ||| Album ||| Film ||| Kirjat\xF6\xF6"
+      \ Kontori omanik ||| Transpordivahend ||| Hoone ||| Looduslik koht ||| K\xFC\
+      la ||| Loom ||| Taim ||| Album ||| Film ||| Kirjalik t\xF6\xF6"
     id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
-    jinja: "Valige j\xE4rgmise teksti jaoks \xFCks kategooria.Valikud on - {{\"Ettev\xF5\
-      tte, haridusasutus, kunstnik, sportlane, kontorihoidja, transpordi, hoone, loodusliku\
-      \ koht, k\xFCla, loom, taim, album, film v\xF5i kirjalik teos\"}}. {{title}}\
-      \ - {{content}} ||| {{ answer_choices[label] }}"
+    jinja: "Valige j\xE4rgmise teksti jaoks \xFCks kategooria. Valikud on - {{\"ettev\xF5\
+      te, \xF5ppeasutus, kunstnik, sportlane, ametiomanik, transpordivahend, hoone,\
+      \ looduskoht, k\xFCla, loom, taim, album, film v\xF5i kirjalik t\xF6\xF6\"}}.\
+      \ {{title}} - {{content}} ||| {{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -35,13 +35,13 @@ templates:
     reference: ''
   9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67: !Template
     answer_choices: "Ettev\xF5te ||| Haridusasutus ||| Kunstnik ||| Sportlane |||\
-      \ B\xFCrooomanik ||| Transpordi keskmine ||| Hoone ||| Loomulik koht ||| K\xFC\
-      la ||| Loom ||| Taim ||| Album ||| Film ||| Kirjat\xF6\xF6"
+      \ Kontori omanik ||| Transpordivahend ||| Hoone ||| Looduslik koht ||| K\xFC\
+      la ||| Loom ||| Taim ||| Album ||| Film ||| Kirjalik t\xF6\xF6"
     id: 9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67
-    jinja: "{{title}} - {{content}} Arvestades kategooriate valikut {{\"Ettev\xF5\
-      tte, haridusasutus, kunstnik, sportlane, kontorihoidja, transpordi, hoone, loodusliku\
-      \ koht, k\xFCla, loom, taim, album, film v\xF5i kirjalik teos\"}}, viitab tekst\
-      \ kummale? ||| {{ answer_choices[label] }}"
+    jinja: "{{title}} - {{content}} Millisele kategooriale {{\"ettev\xF5te, \xF5ppeasutus,\
+      \ kunstnik, sportlane, ametiomanik, transpordivahend, hoone, looduskoht, k\xFC\
+      la, loom, taim, album, film v\xF5i kirjalik t\xF6\xF6\"}} viitab tekst? |||\
+      \ {{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -51,13 +51,13 @@ templates:
     reference: ''
   f72fa410-3278-4f62-91f0-f9edf4a4e792: !Template
     answer_choices: "Ettev\xF5te ||| Haridusasutus ||| Kunstnik ||| Sportlane |||\
-      \ B\xFCrooomanik ||| Transpordi keskmine ||| Hoone ||| Loomulik koht ||| K\xFC\
-      la ||| Loom ||| Taim ||| Album ||| Film ||| Kirjat\xF6\xF6"
+      \ Kontori omanik ||| Transpordivahend ||| Hoone ||| Looduslik koht ||| K\xFC\
+      la ||| Loom ||| Taim ||| Album ||| Film ||| Kirjalik t\xF6\xF6"
     id: f72fa410-3278-4f62-91f0-f9edf4a4e792
-    jinja: "\"{{title}}\", Arvestades kategooriate loendit: {{\"Ettev\xF5tte, haridusasutus,\
-      \ kunstnik, sportlane, kontorihoidja, transpordi, hoone, loodusliku koht, k\xFC\
-      la, loom, taim, album, film v\xF5i kirjalik teos\"}}, millisele kategooriale\
-      \ pealkiri kuulub? ||| {{ answer_choices[label] }}\n\n"
+    jinja: "\"{{title}}\", kui on antud kategooriate loend: {{\"ettev\xF5te, \xF5\
+      ppeasutus, kunstnik, sportlane, ametiomanik, transpordivahend, hoone, looduskoht,\
+      \ k\xFCla, loom, taim, album, film v\xF5i kirjalik t\xF6\xF6\"}}, millisesse\
+      \ kategooriasse pealkiri kuulub? ||| {{ answer_choices[label] }}\n\n"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

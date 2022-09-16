@@ -31,7 +31,7 @@ templates:
     answer_choices: Evet ||| Numara
     id: 2e7f5fff-518e-4100-90f9-cca094b11e95
     jinja: "{% set candidate = [\"A\", \"B\", \"C\", \"D\"] | choice %}\nMadde: {{article}}\n\
-      Soru: {{question}}\nEvet veya hay\u0131r, cevap \"{{ [options.0,options.1,options.2,options.3][{\"\
+      Soru: {{question}}\nevet mi hay\u0131r m\u0131 cevap \"{{ [options.0,options.1,options.2,options.3][{\"\
       A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\"?\n|||\n{% if candidate == answer\
       \ %}\nEvet\n{% else %}\nNumara\n{% endif %}"
     metadata: !TemplateMetadata
@@ -82,9 +82,9 @@ templates:
   9aedaa07-b815-4a35-890b-6100f00706aa: !Template
     answer_choices: null
     id: 9aedaa07-b815-4a35-890b-6100f00706aa
-    jinja: "Verilen se\xE7eneklerle ve cevapla a\u015Fa\u011F\u0131daki makale i\xE7\
-      in \xE7ok ki\u015Filik bir soru yaz\u0131n:\nMadde: {{article}}\nSe\xE7enekler:\n\
-      {{\"A\"}} {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n\
+    jinja: "A\u015Fa\u011F\u0131daki makale i\xE7in verilen se\xE7enekler ve cevab\u0131\
+      \ ile \xE7oktan se\xE7meli bir soru yaz\u0131n:\nMadde: {{article}}\nSe\xE7\
+      enekler:\n{{\"A\"}} {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n\
       {{\"D\"}} {{options.3}}\nCevap:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"\
       A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\nSoru: \n|||\n{{question}}"
     metadata: !TemplateMetadata
@@ -98,10 +98,10 @@ templates:
   af4869c4-35af-4644-86d9-27843ca4efd5: !Template
     answer_choices: null
     id: af4869c4-35af-4644-86d9-27843ca4efd5
-    jinja: "A\u015Fa\u011F\u0131daki makale i\xE7in \xE7ok ki\u015Filik bir soru yaz\u0131\
-      n:\nMadde: {{article}}\n|||\nSoru: \n{{question}}\nSe\xE7enekler:\n{{\"A\"}}\
-      \ {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}}\
-      \ {{options.3}}\nCevap:\n{{answer}}"
+    jinja: "A\u015Fa\u011F\u0131daki makale i\xE7in \xE7oktan se\xE7meli bir soru\
+      \ yaz\u0131n:\nMadde: {{article}}\n|||\nSoru: \n{{question}}\nSe\xE7enekler:\n\
+      {{\"A\"}} {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n\
+      {{\"D\"}} {{options.3}}\nCevap:\n{{answer}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

@@ -4,7 +4,7 @@ templates:
   0be7cecd-b427-4ec9-9b0e-666d6dae0063: !Template
     answer_choices: Nein ||| Ja
     id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
-    jinja: "Bestimmen Sie, ob sich die folgenden zwei S\xE4tze gegenseitig paraphrasieren\
+    jinja: "Bestimmen Sie, ob die folgenden zwei S\xE4tze einander paraphrasieren\
       \ oder nicht.\nSatz 1: {{sentence1}}\nSatz 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -16,8 +16,8 @@ templates:
   472fe5eb-b499-4952-a930-f72f4ca9ed43: !Template
     answer_choices: Nein ||| Ja
     id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
-    jinja: "Satz 1: {{sentence1}}\nSatz 2: {{sentence2}}\nFrage: Dr\xFCcken Sie Satz\
-      \ 1 und Satz 2 die gleiche Bedeutung aus?Ja oder Nein? \n||| \n{{answer_choices[label]}}"
+    jinja: "Satz 1: {{sentence1}}\nSatz 2: {{sentence2}}\nFrage: Dr\xFCcken Satz 1\
+      \ und Satz 2 dieselbe Bedeutung aus? Ja oder Nein? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -28,7 +28,7 @@ templates:
   4c8d4e4c-eae4-45f6-bdf0-d132ae198d09: !Template
     answer_choices: Nein ||| Ja
     id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
-    jinja: "{{sentence1}}\nIst das eine Paraphrase des folgenden Satzes?\n{{sentence2}}?\n\
+    jinja: "{{sentence1}}\nIst das eine Umschreibung des folgenden Satzes?\n{{sentence2}}?\n\
       ||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -52,7 +52,7 @@ templates:
   7c205a61-64d4-4673-bb8e-bfa77562eede: !Template
     answer_choices: Nein ||| Ja
     id: 7c205a61-64d4-4673-bb8e-bfa77562eede
-    jinja: "{{sentence1}}\nIst das eine Paraphrase des folgenden Satzes?\n{{sentence2}}?\n\
+    jinja: "{{sentence1}}\nIst das eine Umschreibung des folgenden Satzes?\n{{sentence2}}?\n\
       Ja oder Nein.\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -64,8 +64,8 @@ templates:
   8c259e88-7646-4a50-a4ca-90393920f281: !Template
     answer_choices: Nein ||| Ja
     id: 8c259e88-7646-4a50-a4ca-90393920f281
-    jinja: "Satz 1: {{sentence1}}\nSatz 2: {{sentence2}}\nFRAGE: SCHLIESSEN SIE SCHALT\
-      \ 1 SURT 2?Ja oder Nein? \n||| \n{{answer_choices[label]}}"
+    jinja: "Satz 1: {{sentence1}}\nSatz 2: {{sentence2}}\nFrage: Paraphrasiert Satz\
+      \ 1 Satz 2? Ja oder Nein? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -76,7 +76,7 @@ templates:
   a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
     answer_choices: null
     id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
-    jinja: "{% if label == 1 %} \nParaphrase den Satz: {{sentence1}} \n||| \n{{sentence2}}\
+    jinja: "{% if label == 1 %} \nParaphrasiere den Satz: {{sentence1}} \n||| \n{{sentence2}}\
       \ \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -89,8 +89,8 @@ templates:
   a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076: !Template
     answer_choices: Nein ||| Ja
     id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
-    jinja: "Satz 1: {{sentence1}}\nSatz 2: {{sentence2}}\nFRAGE: SCHLIESSEN SIE SCHALT\
-      \ 1 SURT 2? \n||| \n{{answer_choices[label]}}"
+    jinja: "Satz 1: {{sentence1}}\nSatz 2: {{sentence2}}\nFrage: Paraphrasiert Satz\
+      \ 1 Satz 2? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -101,8 +101,8 @@ templates:
   d5239f5f-2014-47c9-a0c1-4896f76f82a4: !Template
     answer_choices: Nein ||| Ja
     id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
-    jinja: "Satz 1: {{sentence1}}\nSatz 2: {{sentence2}}\nFrage: Dr\xFCcken Sie Satz\
-      \ 1 und Satz 2 die gleiche Bedeutung aus? \n||| \n{{answer_choices[label]}}"
+    jinja: "Satz 1: {{sentence1}}\nSatz 2: {{sentence2}}\nFrage: Dr\xFCcken Satz 1\
+      \ und Satz 2 dieselbe Bedeutung aus? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -125,7 +125,7 @@ templates:
     answer_choices: Nein ||| Ja
     id: dd52359b-dc56-4241-8179-c98c636f0335
     jinja: "Satz 1: {{sentence1}}\nSatz 2: {{sentence2}}\nFrage: K\xF6nnen wir Satz\
-      \ 1 in Satz 2 umschreiben?Ja oder Nein? \n||| \n{{answer_choices[label]}}"
+      \ 1 in Satz 2 umschreiben? Ja oder Nein? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -136,7 +136,8 @@ templates:
   f0866713-c59a-4c5d-a307-95e80a935f99: !Template
     answer_choices: Nein ||| Ja
     id: f0866713-c59a-4c5d-a307-95e80a935f99
-    jinja: "{{sentence1}} Frage: {{sentence2}} Paraphrase oder nicht?\n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}} Frage: {{sentence2}} Paraphrasieren oder nicht?\n||| \n\
+      {{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

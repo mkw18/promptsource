@@ -5,7 +5,7 @@ templates:
     answer_choices: Non ||| Oui
     id: 148e8e91-4f38-4427-8806-8a407268cda9
     jinja: "Question: {{question}}?\nEst-ce que \"{{answer}}\" serait une r\xE9ponse\
-      \ raisonnable? |||\n{{ answer_choices[label] }}"
+      \ raisonnable\_? |||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -18,8 +18,8 @@ templates:
     answer_choices: Non ||| Oui
     id: 2395d5ce-5abd-4193-9cf1-863c7271a4f0
     jinja: "Je v\xE9rifie les r\xE9ponses g\xE9n\xE9r\xE9es par un syst\xE8me automatique\
-      \ \xE0 la question suivante: {{question}}\nR\xE9ponse sugg\xE9r\xE9e: {{answer}}\n\
-      Dois-je valider cette r\xE9ponse?\n|||\n{{answer_choices[label]}}"
+      \ \xE0 la question suivante\_: {{question}}\nR\xE9ponse sugg\xE9r\xE9e: {{answer}}\n\
+      Dois-je valider cette r\xE9ponse ?\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -30,8 +30,8 @@ templates:
   3480df1e-88bb-4b3d-90df-3f292463eb76: !Template
     answer_choices: null
     id: 3480df1e-88bb-4b3d-90df-3f292463eb76
-    jinja: "{% if label == 1 %}\nQuelle est la question \xE0: \"{{answer}}\"?Le sujet\
-      \ est {{document_title}}.|||\n\"{{question}}?\"\n{% endif %}\n"
+    jinja: "{% if label == 1 %}\nQuelle est la question \xE0\_: \"{{answer}}\"\_?\
+      \ Le sujet est {{document_title}}.|||\n\"{{question}}?\"\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -43,8 +43,8 @@ templates:
   8a9f2146-aa30-4e17-b1e2-aeb858b08b55: !Template
     answer_choices: null
     id: 8a9f2146-aa30-4e17-b1e2-aeb858b08b55
-    jinja: "{% if label == 1 %}\nD\xE9terminez le sujet de la paire de questions-r\xE9\
-      ponses.\nQuestion: \"{{question}}?\";  R\xE9ponse: \"{{answer}}\"? Topic: |||\n\
+    jinja: "{% if label == 1 %}\nD\xE9terminez le sujet de la paire question-r\xE9\
+      ponse.\nQuestion: \"{{question}}?\";  R\xE9ponse: \"{{answer}}\"? Sujet: |||\n\
       {{document_title}}\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -57,8 +57,8 @@ templates:
   a99a68fa-46ae-4331-8b97-fcf751db3f6f: !Template
     answer_choices: null
     id: a99a68fa-46ae-4331-8b97-fcf751db3f6f
-    jinja: "{% if label == 1 %}\nG\xE9n\xE9rer une question sur le sujet \"{{document_title}}\"\
-      \ dont la r\xE9ponse serait: {{answer}}.|||\n{{question}}?\n{% endif %}\n"
+    jinja: "{% if label == 1 %}\nG\xE9n\xE9rez une question sur le sujet \"{{document_title}}\"\
+      \ dont la r\xE9ponse serait\_: {{answer}}.|||\n{{question}}?\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -70,8 +70,8 @@ templates:
   add469e1-b8d9-4926-8f38-3a60c85a7d2b: !Template
     answer_choices: Non ||| Oui
     id: add469e1-b8d9-4926-8f38-3a60c85a7d2b
-    jinja: "Question: {{question}}\nJ'ai trouv\xE9 la r\xE9ponse suivante sur Google:\
-      \ {{answer}}\nEst-ce une r\xE9ponse correcte?Oui ou non.\n|||\n{{answer_choices[label]}}"
+    jinja: "Question: {{question}}\nJ'ai trouv\xE9 la r\xE9ponse suivante sur Google\
+      \ : {{answer}}\nEst-ce une bonne r\xE9ponse\_? Oui ou non.\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -83,7 +83,7 @@ templates:
     answer_choices: null
     id: b0ad07f8-8799-4dd8-8f55-82f3f817f1fd
     jinja: "{% if label == 1 %}\nD\xE9terminez le sujet de la question.\nQuestion:\
-      \ \"{{question}}?\"\nTopic: |||\n{{document_title}}\n{% endif %}"
+      \ \"{{question}}?\"\nSujet: |||\n{{document_title}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -95,9 +95,9 @@ templates:
   bfa3adac-d75b-4e09-aa92-dc38e334937f: !Template
     answer_choices: Faux ||| Vrai
     id: bfa3adac-d75b-4e09-aa92-dc38e334937f
-    jinja: "L'exercice est de d\xE9cider si la question accepte la suggestion propos\xE9\
-      e comme une bonne r\xE9ponse.Si oui, \xE9crivez \"{{answer_choices[1]}}\", sinon\
-      \ \xE9crivez \"{{answer_choices[0]}}\".\nQuestion: {{question}}\nSuggestion:\
+    jinja: "L'exercice consiste \xE0 d\xE9cider si la question accepte la suggestion\
+      \ propos\xE9e comme r\xE9ponse correcte. Si oui, \xE9crivez \"{{answer_choices[1]}}\"\
+      , sinon \xE9crivez \"{{answer_choices[0]}}\".\nQuestion: {{question}}\nSuggestion:\
       \ {{answer}}\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -109,8 +109,8 @@ templates:
   c802cf19-59a7-4a3e-a6ab-5cbb1f169c70: !Template
     answer_choices: Non ||| Oui
     id: c802cf19-59a7-4a3e-a6ab-5cbb1f169c70
-    jinja: "Ceci est une bonne r\xE9ponse \xE0 la question suivante sur {{document_title}}.Oui\
-      \ ou non?\nR\xE9ponse: {{answer}}\nQuestion: {{question}}\n|||\n{{answer_choices[label]}}"
+    jinja: "Il s'agit d'une r\xE9ponse correcte \xE0 la question suivante sur {{document_title}}.\
+      \ Oui ou non?\nR\xE9ponse: {{answer}}\nQuestion: {{question}}\n|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -122,7 +122,7 @@ templates:
     answer_choices: null
     id: cdc54124-723e-4e1c-878c-aeaabf55c28c
     jinja: "{% if label == 1 %}\nD\xE9terminez le sujet du passage.\n\"{{answer}}\"\
-      \nTopic:|||\n{{document_title}}\n{% endif %}\n"
+      \nSujet:|||\n{{document_title}}\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

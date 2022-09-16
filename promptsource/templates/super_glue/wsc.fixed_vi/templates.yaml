@@ -4,9 +4,9 @@ templates:
   212fb8b1-8436-4f64-8f37-a9094fe029f4: !Template
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: 212fb8b1-8436-4f64-8f37-a9094fe029f4
-    jinja: "{{ text }} Trong c\xE2u tr\u01B0\u1EDBc, ph\xE1t sinh \"{{ span2_text.lower()\
-      \ }}\" c\xF3 tham kh\u1EA3o {{ span1_text }} kh\xF4ng? C\xF3 hay kh\xF4ng? |||\
-      \ {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{ text }} Trong c\xE2u tr\u01B0\u1EDBc, \u0111\u1EA1i t\u1EEB \"{{ span2_text.lower()\
+      \ }}\" c\xF3 ch\u1EC9 {{ span1_text }} kh\xF4ng? C\xF3 hay kh\xF4ng? ||| {%\
+      \ if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -17,9 +17,9 @@ templates:
   23361c5d-b67f-4c2a-9da7-16301c55d0e1: !Template
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
-    jinja: "{{ text }} \u1EDE \u0111\xE2y, b\u1EDFi \"{{ span2_text }}\" ch\xFAng\
-      \ c\xF3 ngh\u0129a l\xE0 \"{{ span1_text }}\". C\xF3 hay kh\xF4ng? ||| {% if\
-      \ label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{ text }} \u1EDE \u0111\xE2y, b\u1EDFi \"{{ span2_text }}\" h\u1ECD c\xF3\
+      \ ngh\u0129a l\xE0 \"{{ span1_text }}\". C\xF3 hay kh\xF4ng? ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -58,8 +58,8 @@ templates:
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: 7482d24f-cf45-4013-b82d-369489fc958b
     jinja: "{{ text }} \u1EDE \u0111\xE2y, \"{{ span2_text.lower() }}\" c\xF3 ph\u1EA3\
-      i l\xE0 {{ span1_text }} kh\xF4ng? C\xF3 hay kh\xF4ng? ||| {% if label != -1\
-      \ %}{{ answer_choices[label] }}{% endif %}"
+      i l\xE0 vi\u1EBFt t\u1EAFt c\u1EE7a {{ span1_text }} kh\xF4ng? C\xF3 hay kh\xF4\
+      ng? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -71,9 +71,9 @@ templates:
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: 7d377293-d043-4b6c-8ec1-d61eaf14ec67
     jinja: "\u0110o\u1EA1n v\u0103n: {{ text }} \n\nC\xE2u h\u1ECFi: Trong \u0111\
-      o\u1EA1n v\u0103n tr\xEAn, ph\xE1t sinh \"{{ span2_text }}\" c\xF3 tham kh\u1EA3\
-      o {{ span1_text }} kh\xF4ng?\n\nC\xE2u tr\u1EA3 l\u1EDDi: ||| {% if label !=\
-      \ -1 %}{{ answer_choices[label] }}{% endif %}"
+      o\u1EA1n v\u0103n tr\xEAn, \u0111\u1EA1i t\u1EEB \"{{ span2_text }}\" c\xF3\
+      \ d\xF9ng \u0111\u1EC3 ch\u1EC9 {{ span1_text }} kh\xF4ng?\n\nC\xE2u tr\u1EA3\
+      \ l\u1EDDi: ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -84,7 +84,7 @@ templates:
   809eacd0-2f6c-4e3a-b52a-57c783879d36: !Template
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: 809eacd0-2f6c-4e3a-b52a-57c783879d36
-    jinja: "{{ text }} Trong c\xE2u tr\u01B0\u1EDBc, ph\xE1t sinh \"{{ span2_text\
+    jinja: "{{ text }} Trong c\xE2u tr\u01B0\u1EDBc, \u0111\u1EA1i t\u1EEB \"{{ span2_text\
       \ }}\" c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c thay th\u1EBF b\u1EB1ng \"{{ span1_text\
       \ }}\" kh\xF4ng? C\xF3 hay kh\xF4ng? ||| {% if label != -1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
@@ -115,9 +115,9 @@ templates:
     answer_choices: "Sai ||| \u0110\xDANG V\u1EACY"
     id: aae24b54-c3a7-4f69-8b77-f6dc115988f8
     jinja: "{{ text }} \nTrong \u0111o\u1EA1n v\u0103n tr\xEAn, \u0111\u1EA1i t\u1EEB\
-      \ \"{{ span2_text }}\" \u0111\u1EC1 c\u1EADp \u0111\u1EBFn {{ span1_text }}.\
-      \ \u0110\xFAng hay sai? ||| {% if label != -1 %}{{ answer_choices[label] }}{%\
-      \ endif %}"
+      \ \"{{ span2_text }}\" d\xF9ng \u0111\u1EC3 ch\u1EC9 {{ span1_text }}. \u0110\
+      \xFAng hay sai? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -129,10 +129,10 @@ templates:
     answer_choices: "Kh\xF4ng ||| \u0110\xFAng"
     id: d88f3e21-42dc-49a5-924d-69b764a14816
     jinja: "{{ text }} \n{% if span2_text.lower()  == \"they\" or span2_text.lower()\
-      \ == \"them\" %}\nC\xE2u h\u1ECFi: Ai ho\u1EB7c l\xE0 g\xEC \"{{ span2_text.lower()\
-      \ }}\"? {{ span1_text }}?\n{% else %}\nC\xE2u h\u1ECFi: Ai ho\u1EB7c l\xE0 g\xEC\
-      \ \"{{ span2_text.lower() }}\"? C\xF3 ph\u1EA3i {{ span1_text }}?\n{% endif\
-      \ %}\nC\xE2u tr\u1EA3 l\u1EDDi: ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ == \"them\" %}\nC\xE2u h\u1ECFi: Ai hay c\xE1i g\xEC \"{{ span2_text.lower()\
+      \ }}\"? {{ span1_text }}?\n{% else %}\nC\xE2u h\u1ECFi: Ai hay c\xE1i g\xEC\
+      \ \"{{ span2_text.lower() }}\"? C\xF3 ph\u1EA3i l\xE0 {{ span1_text }} kh\xF4\
+      ng?\n{% endif %}\nC\xE2u tr\u1EA3 l\u1EDDi: ||| {% if label != -1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false

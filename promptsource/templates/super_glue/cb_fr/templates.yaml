@@ -4,9 +4,9 @@ templates:
   2e76cd0f-68ca-4f03-83ed-11cf15b25a84: !Template
     answer_choices: "Oui ||| Non ||| Peut-\xEAtre"
     id: 2e76cd0f-68ca-4f03-83ed-11cf15b25a84
-    jinja: "Supposer {{premise}} Pouvons-nous d\xE9duire que \"{{hypothesis}}\"? Oui,\
-      \ non, ou peut-\xEAtre? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
-      \ endif %} "
+    jinja: "Supposer {{premise}} Pouvons-nous d\xE9duire que \"{{hypothesis}}\"\_\
+      ? Oui, non, ou peut-\xEAtre ? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ }}{% endif %} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -17,8 +17,8 @@ templates:
   358860fd-61ad-45fd-92a6-a72ca9107ebc: !Template
     answer_choices: "Oui ||| Non ||| Peut-\xEAtre"
     id: 358860fd-61ad-45fd-92a6-a72ca9107ebc
-    jinja: "{{premise}} Sur la base du passage pr\xE9c\xE9dent, est-il vrai que \"\
-      {{hypothesis}}\"? Oui, non, ou peut-\xEAtre? ||| {% if label !=-1 %}{{ answer_choices[label]\
+    jinja: "{{premise}} D'apr\xE8s le passage pr\xE9c\xE9dent, est-il vrai que \"\
+      {{hypothesis}}\"\_? Oui, non, ou peut-\xEAtre ? ||| {% if label !=-1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -28,11 +28,11 @@ templates:
     name: based on the previous passage
     reference: "Adapted from the BoolQ prompts in Schick & Sch\xFCtze 2021."
   3f43a599-ffdb-490e-8952-c0ce41dd4621: !Template
-    answer_choices: Vrai ||| Faux ||| Peu concluant
+    answer_choices: Vrai ||| Faux ||| Non concluant
     id: 3f43a599-ffdb-490e-8952-c0ce41dd4621
-    jinja: '{{premise}} Sur la base de ces informations, la revendication est-elle:
-      "{{hypothesis}}" {{"true"}}, {{"faux"}}, ou {{"Inconclusive"}}? ||| {% if label
-      !=-1 %}{{ answer_choices[label] }}{% endif %}'
+    jinja: "{{premise}} D'apr\xE8s ces informations, l'affirmation\_: \"{{hypothesis}}\"\
+      \ {{\"vrai\"}}, {{\"faux\"}} ou {{\"peu concluant\"}}\_? ||| {% if label !=-1\
+      \ %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -43,9 +43,9 @@ templates:
   404eed25-558a-4d39-9515-7de46d60d4e0: !Template
     answer_choices: "Oui ||| Non ||| Peut-\xEAtre"
     id: 404eed25-558a-4d39-9515-7de46d60d4e0
-    jinja: "\xC9tant donn\xE9 que {{premise}} Suit-il que {{hypothesis}} Oui, non,\
-      \ ou peut-\xEAtre? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif\
-      \ %}"
+    jinja: "\xC9tant donn\xE9 que {{premise}} S'ensuit-il que {{hypothesis}} Oui,\
+      \ non, ou peut-\xEAtre ? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -56,9 +56,9 @@ templates:
   5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260: !Template
     answer_choices: "Oui ||| Non ||| Peut-\xEAtre"
     id: 5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260
-    jinja: "{{premise}} Sommes-nous justifi\xE9s de dire que \"{{hypothesis}}\"? Oui,\
-      \ non, ou peut-\xEAtre? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
-      \ endif %}"
+    jinja: "{{premise}} Sommes-nous justifi\xE9s de dire que \"{{hypothesis}}\"\_\
+      ? Oui, non, ou peut-\xEAtre ? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -69,9 +69,9 @@ templates:
   6b0c6191-183d-4731-8050-ab17c909335c: !Template
     answer_choices: Toujours ||| Jamais ||| quelquefois
     id: 6b0c6191-183d-4731-8050-ab17c909335c
-    jinja: Supposons que ce soit vrai {{premise}} Alors, est "{{hypothesis}}" {{"toujours"}},
-      {{"parfois"}}, ou {{"Never"}} true? ||| {% if label !=-1 %}{{ answer_choices[label]
-      }}{% endif %}
+    jinja: "Supposons qu'il soit vrai que {{premise}} Alors, est-ce que \"{{hypothesis}}\"\
+      \ {{\"toujours\"}}, {{\"parfois\"}} ou {{\"jamais\"}} est vrai\_? ||| {% if\
+      \ label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -82,10 +82,8 @@ templates:
   75db2bc2-3caa-4956-9653-13c7dd6255df: !Template
     answer_choices: Vrai ||| Faux ||| Ni
     id: 75db2bc2-3caa-4956-9653-13c7dd6255df
-    jinja: '{{premise}}
-
-      Question: {{hypothesis}} Vrai, faux ou ni l''un ni l''autre? ||| {% if label
-      !=-1 %}{{ answer_choices[label] }}{% endif %}'
+    jinja: "{{premise}}\nQuestion: {{hypothesis}} Vrai, faux ou ni l'un ni l'autre\_\
+      ? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -97,9 +95,9 @@ templates:
   87237a07-7cce-470a-80ac-3e5e3a5283ba: !Template
     answer_choices: Toujours ||| Jamais ||| quelquefois
     id: 87237a07-7cce-470a-80ac-3e5e3a5283ba
-    jinja: "{{premise}} \n\nGardez \xE0 l'esprit le texte ci-dessus, consid\xE9rez:\
-      \ {{hypothesis}} Est-ce {{\"toujours\"}}, {{\"parfois\"}}, ou {{\"Never\"}}\
-      \ correct? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} \n\nEn gardant \xE0 l'esprit le texte ci-dessus, consid\xE9\
+      rez: {{hypothesis}} Est-ce {{\"toujours\"}}, {{\"parfois\"}} ou {{\"jamais\"\
+      }} correct\_? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -110,8 +108,9 @@ templates:
   8798b8a4-1f59-4c72-9c1b-3e3044a7462a: !Template
     answer_choices: "Oui ||| Non ||| Peut-\xEAtre"
     id: 8798b8a4-1f59-4c72-9c1b-3e3044a7462a
-    jinja: "Given {{premise}} Est-il garanti que \"{{hypothesis}}\"? Oui, non, ou\
-      \ peut-\xEAtre? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "Donn\xE9 {{premise}} Est-il garanti vrai que \"{{hypothesis}}\"\_? Oui,\
+      \ non, ou peut-\xEAtre ? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -123,8 +122,8 @@ templates:
     answer_choices: "Oui ||| Non ||| Peut-\xEAtre"
     id: 8e3b8d3d-1362-47dc-922a-82c03f965989
     jinja: "\xC9tant donn\xE9 que {{premise}} Par cons\xE9quent, il doit \xEAtre vrai\
-      \ que \"{{hypothesis}}\"? Oui, non, ou peut-\xEAtre? ||| {% if label !=-1 %}{{\
-      \ answer_choices[label] }}{% endif %}"
+      \ que \"{{hypothesis}}\"\_? Oui, non, ou peut-\xEAtre ? ||| {% if label !=-1\
+      \ %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -133,11 +132,11 @@ templates:
     name: must be true
     reference: Sanh et al. 2021
   90ab1002-093c-4e54-b48f-626655e36b65: !Template
-    answer_choices: Guaranteed ||| Impossible ||| Possible
+    answer_choices: Garanti ||| Impossible ||| Possible
     id: 90ab1002-093c-4e54-b48f-626655e36b65
     jinja: "Supposons qu'il est vrai que {{premise}} \n\nPar cons\xE9quent, \"{{hypothesis}}\"\
-      \ est {{\"Garantied\"}}, {{\"possible\"}}, ou {{\"impossible\"}}? ||| {% if\
-      \ label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+      \ est {{\"garanti\"}}, {{\"possible\"}} ou {{\"impossible\"}}\_? ||| {% if label\
+      \ !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -148,9 +147,9 @@ templates:
   a485d120-6eef-4ff6-8684-42df1639b101: !Template
     answer_choices: "Oui ||| Non ||| Peut-\xEAtre"
     id: a485d120-6eef-4ff6-8684-42df1639b101
-    jinja: "{{premise}} \n\nQuestion: Cela implique-t-il que \"{{hypothesis}}\"? Oui,\
-      \ non, ou peut-\xEAtre? ||| {% if label !=-1 %}{{answer_choices[label]}}{% endif\
-      \ %}"
+    jinja: "{{premise}} \n\nQuestion: Cela implique-t-il que \"{{hypothesis}}\"\_\
+      ? Oui, non, ou peut-\xEAtre ? ||| {% if label !=-1 %}{{answer_choices[label]}}{%\
+      \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -159,11 +158,11 @@ templates:
     name: does this imply
     reference: Sanh et al. 2021
   bee62bfa-5307-4e1c-97b2-2ad2f7bcb179: !Template
-    answer_choices: Corriger ||| Incorrect ||| Peu concluant
+    answer_choices: Corriger ||| Incorrect ||| Non concluant
     id: bee62bfa-5307-4e1c-97b2-2ad2f7bcb179
-    jinja: "{{premise}} Utiliser uniquement la description ci-dessus et ce que vous\
-      \ savez sur le monde, \"{{hypothesis}}\" est d\xE9finitivement correct, incorrect\
-      \ ou non concluant? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif\
+    jinja: "{{premise}} En utilisant uniquement la description ci-dessus et ce que\
+      \ vous savez du monde, \"{{hypothesis}}\" est d\xE9finitivement correct, incorrect\
+      \ ou non concluant\_? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif\
       \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -175,8 +174,8 @@ templates:
   e503b148-8e6c-43b5-9ed6-312794c54d9b: !Template
     answer_choices: "Oui ||| Non ||| Peut-\xEAtre"
     id: e503b148-8e6c-43b5-9ed6-312794c54d9b
-    jinja: "Given {{premise}} Devrions-nous supposer que \"{{hypothesis}}\" est vrai?\
-      \ Oui, non, ou peut-\xEAtre? ||| {% if label !=-1 %}{{ answer_choices[label]\
+    jinja: "Donn\xE9 {{premise}} Doit-on supposer que \"{{hypothesis}}\" est vrai\_\
+      ? Oui, non, ou peut-\xEAtre ? ||| {% if label !=-1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -186,11 +185,11 @@ templates:
     name: should assume
     reference: Webson & Pavlick 2021
   ea56b7f3-6e07-45bc-b619-c527eac4a41b: !Template
-    answer_choices: Vrai ||| Faux ||| Peu concluant
+    answer_choices: Vrai ||| Faux ||| Non concluant
     id: ea56b7f3-6e07-45bc-b619-c527eac4a41b
-    jinja: "Prenez ce qui suit comme v\xE9rit\xE9: {{premise}}\nPuis la d\xE9claration\
-      \ suivante: \"{{hypothesis}}\" est {{\"true\"}}, {{\"faux\"}}, ou {{\"inconclusif\"\
-      }}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "Prenez ce qui suit comme v\xE9rit\xE9\_: {{premise}}\nPuis l'\xE9nonc\xE9\
+      \ suivant : \"{{hypothesis}}\" est {{\"vrai\"}}, {{\"faux\"}} ou {{\"non concluant\"\
+      }}\_? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

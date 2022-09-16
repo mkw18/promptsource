@@ -4,7 +4,7 @@ templates:
   3b88d2c4-0aeb-4c6d-9ccc-653a388250a5: !Template
     answer_choices: null
     id: 3b88d2c4-0aeb-4c6d-9ccc-653a388250a5
-    jinja: "{% if label == 1 %}\n\u89E3\u91CA\u4EE5\u4E0B\u53E5\u5B50\uFF1A {{sentence1}}\n\
+    jinja: "{% if label == 1 %}\n\u8F6C\u8FF0\u4EE5\u4E0B\u53E5\u5B50\uFF1A {{sentence1}}\n\
       |||\n{{sentence2}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -18,7 +18,7 @@ templates:
     answer_choices: "\u4E0D ||| \u662F\u7684"
     id: 44c2e6d9-facf-4959-8400-38e0eb8dd3a8
     jinja: "\u6211\u60F3\u77E5\u9053\u4EE5\u4E0B\u4E24\u4E2A\u53E5\u5B50\u662F\u5426\
-      \u610F\u5473\u7740\u540C\u4E00\u4EF6\u4E8B\u3002\n{{sentence1}}\n{{sentence2}}\n\
+      \u8868\u793A\u76F8\u540C\u7684\u610F\u601D\u3002\n{{sentence1}}\n{{sentence2}}\n\
       \u4ED6\u4EEC\u5417\uFF1F\n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -30,9 +30,9 @@ templates:
   adf659af-4e2d-4e7e-ab89-b33cfc0b5a50: !Template
     answer_choices: "\u4E0D ||| \u662F\u7684"
     id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
-    jinja: "\u53E5\u5B50{{a}}\u91CA\u4E49\uFF08\u5373\uFF0C\u4E0E\u6B64\u53E5\u5B50\
-      \u76F8\u540C\uFF09\u5417\uFF1F\n{{sentence2}}\n|||\n{{ answer_choices[label]\
-      \ }}"
+    jinja: "\u53E5\u5B50\n{{sentence1}}\n\u662F\u5426\u610F\u8BD1\uFF08\u5373\uFF0C\
+      \u4E0E\u8BE5\u53E5\u5B50\u76F8\u540C\u7684\u610F\u601D\uFF09\uFF1F\n{{sentence2}}\n\
+      |||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -41,11 +41,11 @@ templates:
     name: paraphrase
     reference: ''
   bbb395c2-2c70-4eaa-ad2f-2cf18a81da93: !Template
-    answer_choices: "\u4E0D\u7B49\u6548 ||| \u76F8\u7B49\u7684"
+    answer_choices: "\u4E0D\u7B49\u4EF7 ||| \u76F8\u7B49\u7684"
     id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
-    jinja: "\u4EE5\u4E0B\u4E24\u4E2A\u53E5\u5B50\"{{\"\u76F8\u7B49\u7684\"}}\"\u8FD8\
-      \u662F\"{{\"\u4E0D\u7B49\u6548\"}}\"\uFF1F\n{{sentence1}}\n{{sentence2}}\n|||\n\
-      {{ answer_choices[label] }}"
+    jinja: "\u4E0B\u9762\u4E24\u53E5\u662F\"{{\"\u76F8\u7B49\u7684\"}}\"\u8FD8\u662F\
+      \"{{\"\u4E0D\u7B49\u4EF7\"}}\"\uFF1F\n{{sentence1}}\n{{sentence2}}\n|||\n{{\
+      \ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -56,8 +56,9 @@ templates:
   d830d7a5-abc0-4275-ac62-974e0088876f: !Template
     answer_choices: null
     id: d830d7a5-abc0-4275-ac62-974e0088876f
-    jinja: "{% if label == 1 %}\n\u751F\u6210\u4E00\u53E5\u8BDD\u4E0E\u6B64\u76F8\u540C\
-      \u7684\u53E5\u5B50\uFF1A {{sentence1}}\n|||\n{{sentence2}}\n{% endif %}"
+    jinja: "{% if label == 1 %}\n\u751F\u6210\u4E00\u4E2A\u4E0E\u8FD9\u4E2A\u610F\u601D\
+      \u76F8\u540C\u7684\u53E5\u5B50\uFF1A {{sentence1}}\n|||\n{{sentence2}}\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -69,9 +70,9 @@ templates:
   ee82d511-908c-4244-804f-6d0d907c68c7: !Template
     answer_choices: "\u4E0D ||| \u662F\u7684"
     id: ee82d511-908c-4244-804f-6d0d907c68c7
-    jinja: "\u6211\u53EF\u4EE5\u7528\u53E5\u5B50{{b}}\u66FF\u6362\u53E5\u5B50{{a}}\uFF0C\
-      \u5E76\u610F\u5473\u7740\u540C\u6837\u7684\u4E8B\u60C5\u5417\uFF1F\n|||\n{{\
-      \ answer_choices[label] }}"
+    jinja: "\u6211\u53EF\u4EE5\u7528\u53E5\u5B50\n{{sentence2}}\n\u66FF\u6362\u53E5\
+      \u5B50\n{{sentence1}}\n\u5E76\u4F7F\u5176\u610F\u601D\u76F8\u540C\u5417\uFF1F\
+      \n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -82,9 +83,8 @@ templates:
   eefd8606-b936-4d26-b91d-8f4bc38bfcbf: !Template
     answer_choices: "\u4E0D ||| \u662F\u7684"
     id: eefd8606-b936-4d26-b91d-8f4bc38bfcbf
-    jinja: "\u4EE5\u4E0B\u4E24\u4E2A\u53E5\u5B50\u610F\u5473\u7740\u540C\u4E00\u4EF6\
-      \u4E8B\u5417\uFF1F\n{{sentence1}}\n{{sentence2}}\n|||\n{{ answer_choices[label]\
-      \ }}"
+    jinja: "\u4E0B\u9762\u4E24\u53E5\u8BDD\u7684\u610F\u601D\u662F\u4E00\u6837\u7684\
+      \u5417\uFF1F\n{{sentence1}}\n{{sentence2}}\n|||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

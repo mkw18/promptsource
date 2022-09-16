@@ -6,14 +6,12 @@ templates:
     id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
     jinja: "\u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\u0BC1\u0BAE\u0BCD \u0B87\u0BB0\u0BA3\
       \u0BCD\u0B9F\u0BC1 \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0B99\u0BCD\u0B95\
-      \u0BB3\u0BCD \u0B92\u0BB0\u0BC1\u0BB5\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BCA\u0BB0\
-      \u0BC1\u0BB5\u0BB0\u0BCD \u0BAA\u0BCA\u0BB4\u0BBF\u0BAA\u0BCD\u0BAA\u0BC1\u0BB0\
-      \u0BC8 \u0B9A\u0BC6\u0BAF\u0BCD\u0B95\u0BBF\u0BA9\u0BCD\u0BB1\u0BA9\u0BB5\u0BBE\
-      \ \u0B87\u0BB2\u0BCD\u0BB2\u0BC8\u0BAF\u0BBE \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC8\
-      \ \u0BA4\u0BC0\u0BB0\u0BCD\u0BAE\u0BBE\u0BA9\u0BBF\u0B95\u0BCD\u0B95\u0BB5\u0BC1\
-      \u0BAE\u0BCD.\n\u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 1: {{sentence1}}\n\
-      \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2: {{sentence2}}\n|||\
-      \ \n{{answer_choices[label]}}"
+      \u0BB3\u0BCD \u0B92\u0BA9\u0BCD\u0BB1\u0BC8\u0BAF\u0BCA\u0BA9\u0BCD\u0BB1\u0BC1\
+      \ \u0B89\u0BB0\u0BC8\u0BA4\u0BCD\u0BA4\u0BA4\u0BBE \u0B87\u0BB2\u0BCD\u0BB2\u0BC8\
+      \u0BAF\u0BBE \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC8\u0BA4\u0BCD \u0BA4\u0BC0\u0BB0\
+      \u0BCD\u0BAE\u0BBE\u0BA9\u0BBF\u0B95\u0BCD\u0B95\u0BB5\u0BC1\u0BAE\u0BCD.\n\u0BB5\
+      \u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 1: {{sentence1}}\n\u0BB5\u0BBE\
+      \u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -28,11 +26,11 @@ templates:
       \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2: {{sentence2}}\n\u0B95\
       \u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\
       \u0BCD 1 \u0BAE\u0BB1\u0BCD\u0BB1\u0BC1\u0BAE\u0BCD \u0BB5\u0BBE\u0B95\u0BCD\
-      \u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2 \u0B92\u0BB0\u0BC7 \u0B85\u0BB0\u0BCD\u0BA4\
-      \u0BCD\u0BA4\u0BA4\u0BCD\u0BA4\u0BC8 \u0BB5\u0BC6\u0BB3\u0BBF\u0BAA\u0BCD\u0BAA\
-      \u0B9F\u0BC1\u0BA4\u0BCD\u0BA4\u0BC1\u0B95\u0BBF\u0BB1\u0BA4\u0BBE?\u0B86\u0BAE\
-      \u0BCD \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \u0B87\u0BB2\u0BCD\u0BB2\u0BC8?\
-      \ \n||| \n{{answer_choices[label]}}"
+      \u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2 \u0B92\u0BB0\u0BC7 \u0BAA\u0BCA\u0BB0\u0BC1\
+      \u0BB3\u0BC8 \u0BB5\u0BC6\u0BB3\u0BBF\u0BAA\u0BCD\u0BAA\u0B9F\u0BC1\u0BA4\u0BCD\
+      \u0BA4\u0BC1\u0B95\u0BBF\u0BA9\u0BCD\u0BB1\u0BA9\u0BB5\u0BBE? \u0B86\u0BAE\u0BCD\
+      \ \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \u0B87\u0BB2\u0BCD\u0BB2\u0BC8? \n|||\
+      \ \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -41,12 +39,12 @@ templates:
     name: Meaning
     reference: Natural question
   4c8d4e4c-eae4-45f6-bdf0-d132ae198d09: !Template
-    answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| Yes"
+    answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| \u0B86\u0BAE\u0BCD"
     id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
     jinja: "{{sentence1}}\n\u0B87\u0BA4\u0BC1 \u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\
       \u0BC1\u0BAE\u0BCD \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BA4\u0BCD\u0BA4\
-      \u0BBF\u0BA9\u0BCD \u0BAA\u0BCA\u0BB4\u0BBF\u0BAA\u0BCD\u0BAA\u0BC1\u0BB0\u0BC8\
-      \u0BAF\u0BBE?\n{{sentence2}}?\n||| \n{{answer_choices[label]}}"
+      \u0BBF\u0BA9\u0BCD \u0BAA\u0BA4\u0BCD\u0BA4\u0BBF\u0BAA\u0BCD\u0BAA\u0BC6\u0BAF\
+      \u0BB0\u0BBE?\n{{sentence2}}?\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -58,11 +56,12 @@ templates:
     answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| \u0B86\u0BAE\u0BCD"
     id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
     jinja: "\u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 1: {{sentence1}}\n\
-      Sentence 2: {{sentence2}}\n\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: \u0BB5\u0BBE\
-      \u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 1 \u0B95\u0BCD\u0B95\u0BC1 \u0BB5\
-      \u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2 \u0B95\u0BCD\u0B95\u0BC1\
-      \ \u0BAE\u0BC0\u0BA3\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0B8E\u0BB4\u0BC1\u0BA4\
-      \ \u0BAE\u0BC1\u0B9F\u0BBF\u0BAF\u0BC1\u0BAE\u0BBE? \n||| \n{{answer_choices[label]}}"
+      \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2: {{sentence2}}\n\u0B95\
+      \u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\
+      \u0BCD 1 \u0BAE\u0BC1\u0BA4\u0BB2\u0BCD \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\
+      \u0BAF\u0BAE\u0BCD 2 \u0BB5\u0BB0\u0BC8 \u0BAE\u0BC0\u0BA3\u0BCD\u0B9F\u0BC1\
+      \u0BAE\u0BCD \u0B8E\u0BB4\u0BC1\u0BA4 \u0BAE\u0BC1\u0B9F\u0BBF\u0BAF\u0BC1\u0BAE\
+      \u0BBE? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -75,8 +74,8 @@ templates:
     id: 7c205a61-64d4-4673-bb8e-bfa77562eede
     jinja: "{{sentence1}}\n\u0B87\u0BA4\u0BC1 \u0BAA\u0BBF\u0BA9\u0BCD\u0BB5\u0BB0\
       \u0BC1\u0BAE\u0BCD \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BA4\u0BCD\u0BA4\
-      \u0BBF\u0BA9\u0BCD \u0BAA\u0BCA\u0BB4\u0BBF\u0BAA\u0BCD\u0BAA\u0BC1\u0BB0\u0BC8\
-      \u0BAF\u0BBE?\n{{sentence2}}?\n\u0B86\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\
+      \u0BBF\u0BA9\u0BCD \u0BAA\u0BA4\u0BCD\u0BA4\u0BBF\u0BAA\u0BCD\u0BAA\u0BC6\u0BAF\
+      \u0BB0\u0BBE?\n{{sentence2}}?\n\u0B86\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\
       \u0BC1 \u0B87\u0BB2\u0BCD\u0BB2\u0BC8.\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -91,9 +90,10 @@ templates:
     jinja: "\u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 1: {{sentence1}}\n\
       \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2: {{sentence2}}\n\u0B95\
       \u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\
-      \u0BCD 1 \u0BAA\u0BCA\u0BB4\u0BBF\u0BAA\u0BCD\u0BAA\u0BC1\u0BB0\u0BC8 \u0BB5\
-      \u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2?\u0B86\u0BAE\u0BCD \u0B85\
-      \u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \u0B87\u0BB2\u0BCD\u0BB2\u0BC8? \n||| \n{{answer_choices[label]}}"
+      \u0BCD 1, \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2\u0B90 \u0BAA\
+      \u0BA4\u0BCD\u0BA4\u0BBF \u0B9A\u0BCA\u0BB2\u0BCD\u0BB2\u0BC1\u0B95\u0BBF\u0BB1\
+      \u0BA4\u0BBE? \u0B86\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \u0B87\
+      \u0BB2\u0BCD\u0BB2\u0BC8? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -105,8 +105,8 @@ templates:
     answer_choices: null
     id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
     jinja: "{% if label == 1 %} \n\u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BA4\
-      \u0BCD\u0BA4\u0BC8 \u0BAA\u0BCA\u0BB4\u0BBF\u0BAA\u0BCD\u0BAA\u0BC1\u0BB0\u0BC8\
-      : {{sentence1}} \n||| \n{{sentence2}} \n{% endif %}"
+      \u0BCD\u0BA4\u0BC8 \u0B9A\u0BC1\u0BB0\u0BC1\u0B95\u0BCD\u0B95\u0BB5\u0BC1\u0BAE\
+      \u0BCD: {{sentence1}} \n||| \n{{sentence2}} \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -121,8 +121,9 @@ templates:
     jinja: "\u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 1: {{sentence1}}\n\
       \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2: {{sentence2}}\n\u0B95\
       \u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\
-      \u0BCD 1 \u0BAA\u0BCA\u0BB4\u0BBF\u0BAA\u0BCD\u0BAA\u0BC1\u0BB0\u0BC8 \u0BB5\
-      \u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2? \n||| \n{{answer_choices[label]}}"
+      \u0BCD 1, \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2\u0B90 \u0BAA\
+      \u0BA4\u0BCD\u0BA4\u0BBF \u0B9A\u0BCA\u0BB2\u0BCD\u0BB2\u0BC1\u0B95\u0BBF\u0BB1\
+      \u0BA4\u0BBE? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -137,10 +138,9 @@ templates:
       \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2: {{sentence2}}\n\u0B95\
       \u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\
       \u0BCD 1 \u0BAE\u0BB1\u0BCD\u0BB1\u0BC1\u0BAE\u0BCD \u0BB5\u0BBE\u0B95\u0BCD\
-      \u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2 \u0B92\u0BB0\u0BC7 \u0B85\u0BB0\u0BCD\u0BA4\
-      \u0BCD\u0BA4\u0BA4\u0BCD\u0BA4\u0BC8 \u0BB5\u0BC6\u0BB3\u0BBF\u0BAA\u0BCD\u0BAA\
-      \u0B9F\u0BC1\u0BA4\u0BCD\u0BA4\u0BC1\u0B95\u0BBF\u0BB1\u0BA4\u0BBE? \n||| \n\
-      {{answer_choices[label]}}"
+      \u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2 \u0B92\u0BB0\u0BC7 \u0BAA\u0BCA\u0BB0\u0BC1\
+      \u0BB3\u0BC8 \u0BB5\u0BC6\u0BB3\u0BBF\u0BAA\u0BCD\u0BAA\u0B9F\u0BC1\u0BA4\u0BCD\
+      \u0BA4\u0BC1\u0B95\u0BBF\u0BA9\u0BCD\u0BB1\u0BA9\u0BB5\u0BBE? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -149,7 +149,7 @@ templates:
     name: Meaning-no-label
     reference: Natural question without label
   d9911dad-75fe-4506-9843-3a46ba5e49be: !Template
-    answer_choices: "\u0BA4\u0BB5\u0BB1\u0BC1 ||| \u0B89\u0BA3\u0BCD\u0BAE\u0BC8"
+    answer_choices: "\u0BAA\u0BCA\u0BAF\u0BCD ||| \u0B89\u0BA3\u0BCD\u0BAE\u0BC8"
     id: d9911dad-75fe-4506-9843-3a46ba5e49be
     jinja: "{{sentence1}} \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: {{sentence2}} \u0B9A\
       \u0BB0\u0BBF\u0BAF\u0BBE \u0BA4\u0BB5\u0BB1\u0BBE? \n||| \n{{answer_choices[label]}}"
@@ -161,15 +161,16 @@ templates:
     name: PAWS-ANLI GPT3
     reference: ANLI prompt format from Table G7 in the GPT3 paper
   dd52359b-dc56-4241-8179-c98c636f0335: !Template
-    answer_choices: No ||| Yes
+    answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| \u0B86\u0BAE\u0BCD"
     id: dd52359b-dc56-4241-8179-c98c636f0335
     jinja: "\u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 1: {{sentence1}}\n\
-      Sentence 2: {{sentence2}}\n\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: \u0BB5\u0BBE\
-      \u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 1 \u0B95\u0BCD\u0B95\u0BC1 \u0BB5\
-      \u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2 \u0B95\u0BCD\u0B95\u0BC1\
-      \ \u0BAE\u0BC0\u0BA3\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0B8E\u0BB4\u0BC1\u0BA4\
-      \ \u0BAE\u0BC1\u0B9F\u0BBF\u0BAF\u0BC1\u0BAE\u0BBE?\u0B86\u0BAE\u0BCD \u0B85\
-      \u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \u0B87\u0BB2\u0BCD\u0BB2\u0BC8? \n||| \n{{answer_choices[label]}}"
+      \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\u0BCD 2: {{sentence2}}\n\u0B95\
+      \u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\u0BAF\u0BAE\
+      \u0BCD 1 \u0BAE\u0BC1\u0BA4\u0BB2\u0BCD \u0BB5\u0BBE\u0B95\u0BCD\u0B95\u0BBF\
+      \u0BAF\u0BAE\u0BCD 2 \u0BB5\u0BB0\u0BC8 \u0BAE\u0BC0\u0BA3\u0BCD\u0B9F\u0BC1\
+      \u0BAE\u0BCD \u0B8E\u0BB4\u0BC1\u0BA4 \u0BAE\u0BC1\u0B9F\u0BBF\u0BAF\u0BC1\u0BAE\
+      \u0BBE? \u0B86\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2\u0BA4\u0BC1 \u0B87\u0BB2\
+      \u0BCD\u0BB2\u0BC8? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -180,8 +181,9 @@ templates:
   f0866713-c59a-4c5d-a307-95e80a935f99: !Template
     answer_choices: "\u0B87\u0BB2\u0BCD\u0BB2\u0BC8 ||| \u0B86\u0BAE\u0BCD"
     id: f0866713-c59a-4c5d-a307-95e80a935f99
-    jinja: "{{sentence1}} \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: {{sentence2}} Paraphrase\
-      \ or not?\n||| \n{{answer_choices[label]}}"
+    jinja: "{{sentence1}} \u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF: {{sentence2}} \u0BAA\
+      \u0BCA\u0BB4\u0BBF\u0BAA\u0BCD\u0BAA\u0BC1\u0BB0\u0BC8 \u0B85\u0BB2\u0BCD\u0BB2\
+      \u0BA4\u0BC1 \u0B87\u0BB2\u0BCD\u0BB2\u0BC8\u0BAF\u0BBE?\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

@@ -4,8 +4,8 @@ templates:
   14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
     answer_choices: Numara ||| Evet
     id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
-    jinja: "\"{{word}}\" kelimesinin bu iki c\xFCmlede ayn\u0131 anlam\u0131 var m\u0131\
-      ? Evet Hay\u0131r?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n\
+    jinja: "Bu iki c\xFCmlede \"{{word}}\" kelimesi ayn\u0131 anlama m\u0131 geliyor?\
+      \ Evet Hay\u0131r?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n\
       {{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -17,8 +17,8 @@ templates:
   3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
     answer_choices: Numara ||| Evet
     id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
-    jinja: "\"{{word}}\" kelimesinin bu iki c\xFCmlede ayn\u0131 anlam\u0131 var m\u0131\
-      ?\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+    jinja: "Bu iki c\xFCmlede \"{{word}}\" kelimesi ayn\u0131 anlama m\u0131 geliyor?\n\
+      {{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -30,10 +30,11 @@ templates:
   611d13dc-d414-4b9b-9204-e4f325e859e7: !Template
     answer_choices: Numara ||| Evet
     id: 611d13dc-d414-4b9b-9204-e4f325e859e7
-    jinja: "Ev \xF6devi\n\n\"{{word}}\" kelimesinin a\u015Fa\u011F\u0131daki iki c\xFC\
-      mlede ayn\u0131 anlamla kullan\u0131l\u0131p kullan\u0131lmad\u0131\u011F\u0131\
-      na karar verin. Cevap evet veya hay\u0131r ile.\n{{sentence1}}\n{{sentence2}}\n\
-      ||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    jinja: "Ev \xF6devi\n\nA\u015Fa\u011F\u0131daki iki c\xFCmlede \"{{word}}\" kelimesinin\
+      \ ayn\u0131 anlamda kullan\u0131l\u0131p kullan\u0131lmad\u0131\u011F\u0131\
+      na karar verin. Evet veya hay\u0131r olarak cevaplay\u0131n.\n{{sentence1}}\n\
+      {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -78,8 +79,8 @@ templates:
   ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
     answer_choices: Numara ||| Evet
     id: ce8b5a93-1841-4897-84db-b100f1c84f4b
-    jinja: "C\xFCmle 1: {{sentence1}}\nC\xFCmle 2: {{sentence2}}\n\n\"{{word}}\" kelimesinin\
-      \ her iki c\xFCmlede de ayn\u0131 anlamda kullan\u0131l\u0131p kullan\u0131\
+    jinja: "1. c\xFCmle: {{sentence1}}\n2. c\xFCmle: {{sentence2}}\n\n\"{{word}}\"\
+      \ kelimesinin her iki c\xFCmlede de ayn\u0131 anlamda kullan\u0131l\u0131p kullan\u0131\
       lmad\u0131\u011F\u0131n\u0131 belirleyin. Evet veya Hay\u0131r?\n||| {% if label\
       \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -92,7 +93,7 @@ templates:
   cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
     answer_choices: Numara ||| Evet
     id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
-    jinja: "'{{word}}' kelimesinin a\u015Fa\u011F\u0131daki iki c\xFCmlede ayn\u0131\
+    jinja: "A\u015Fa\u011F\u0131daki iki c\xFCmlede '{{word}}' kelimesinin ayn\u0131\
       \ \u015Fekilde kullan\u0131l\u0131p kullan\u0131lmad\u0131\u011F\u0131n\u0131\
       \ belirleyin. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
@@ -106,8 +107,8 @@ templates:
   d9e1db2a-ab0b-4621-bb41-01d5788d3873: !Template
     answer_choices: Numara ||| Evet
     id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
-    jinja: "{{sentence1}}\n{{sentence2}}\nSoru: '{{word}}' kelimesi yukar\u0131daki\
-      \ iki c\xFCmlede ayn\u0131 anlamda m\u0131 kullan\u0131l\u0131yor? Evet Hay\u0131\
+    jinja: "{{sentence1}}\n{{sentence2}}\nSoru: Yukar\u0131daki iki c\xFCmlede '{{word}}'\
+      \ kelimesi ayn\u0131 anlamda m\u0131 kullan\u0131lm\u0131\u015F? Evet Hay\u0131\
       r?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -120,10 +121,10 @@ templates:
   dd2080cf-3117-49ba-9aff-c988a21fdb69: !Template
     answer_choices: Numara ||| Evet
     id: dd2080cf-3117-49ba-9aff-c988a21fdb69
-    jinja: "\"{{word}}\" kelimesinin birden fazla anlam\u0131 vard\u0131r. 1 ve 2\
-      \ c\xFCmlelerinde ayn\u0131 anlam\u0131 var m\u0131? Evet veya Hay\u0131r?\n\
-      \nC\xFCmle 1: {{sentence1}}\nC\xFCmle 2: {{sentence2}}\n||| {% if label != -1%}\n\
-      {{answer_choices[label]}}\n{% endif %}"
+    jinja: "\"{{word}}\" kelimesinin birden \xE7ok anlam\u0131 vard\u0131r. 1. ve\
+      \ 2. c\xFCmlelerde ayn\u0131 anlama m\u0131 geliyor? Evet veya Hay\u0131r?\n\
+      \n1. c\xFCmle: {{sentence1}}\n2. c\xFCmle: {{sentence2}}\n||| {% if label !=\
+      \ -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -138,7 +139,7 @@ templates:
 
       {{sentence2}}
 
-      {{word}} benzer duygusu?
+      {{word}} ile benzer anlam?
 
       ||| {% if label != -1%}
 

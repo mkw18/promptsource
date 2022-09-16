@@ -23,7 +23,7 @@ templates:
 
       {% if answers.text == [] %}
 
-      Odgovor ne u kontekstu
+      Odgovorite ne u kontekstu
 
       {% else %}
 
@@ -40,8 +40,8 @@ templates:
   189dcc58-fd13-4771-ad03-7879a61c7ab7: !Template
     answer_choices: null
     id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
-    jinja: "{% if answers.text != [] %}\nOdredite pitanje koje ste mo\u017Eda tra\u017E\
-      ili da vratite sljede\u0107i odgovor za dani kontekst\nKontekst: {{context}};\n\
+    jinja: "{% if answers.text != [] %}\nOdredite pitanje koje ste mo\u017Eda postavili\
+      \ da dobijete sljede\u0107i odgovor za dati kontekst\nKontekst: {{context}};\n\
       Odgovor: {{answers.text[0]}};\nPitanje: |||\n{{question}}\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -54,10 +54,10 @@ templates:
   20064b80-e4d0-41b7-9135-92c0077d5044: !Template
     answer_choices: null
     id: 20064b80-e4d0-41b7-9135-92c0077d5044
-    jinja: "{% set seq = [\n'O \u010Demu se radi? ',\n'O \u010Demu je odlomak? ',\n\
-      'Nabavite temu od: ',\n'Iz odlomaka, dobijte temu',\n'\u017Delim znati temu.\
-      \ ',\n'Tema iz odlomaka: ',\n'Tema iz odlomaka: ',\n] %}\n{{ seq | choice }}\n\
-      {{context}} |||\n{{title | replace(\"_\", \" \")}}"
+    jinja: "{% set seq = [\n'o cemu se radi ',\n'O \u010Demu je odlomak? ',\n'Preuzmi\
+      \ temu od: ',\n'Iz odlomka dohvatite temu',\n'\u017Delim znati temu. ',\n'Tema\
+      \ iz odlomka: ',\n'Tema iz odlomka: ',\n] %}\n{{ seq | choice }}\n{{context}}\
+      \ |||\n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -71,11 +71,10 @@ templates:
   338cc143-361e-4796-b035-31fb2201c49f: !Template
     answer_choices: null
     id: 338cc143-361e-4796-b035-31fb2201c49f
-    jinja: "{% set seq = [\n'Ovo je otprilike ',\n'O \u010Demu se radi? ',\n'Odlomak\
-      \ govori ',\n'O \u010Demu je odlomak? ',\n'Nabavite temu: ',\n'Iz odlomaka je\
-      \ tema',\n'\u017Delim znati temu. ',\n'Tema iz odlomaka: ',\n'Tema iz odlomaka:\
-      \ ',\n] %}\n{{context}}\n{{ seq | choice }}|||\n{{title | replace(\"_\", \"\
-      \ \")}}"
+    jinja: "{% set seq = [\n'Ovdje se radi o ',\n'o cemu se radi ',\n'Odlomak govori\
+      \ o ',\n'O \u010Demu je odlomak? ',\n'Dobiti temu: ',\n'Iz odlomka je tema',\n\
+      '\u017Delim znati temu. ',\n'Tema iz odlomka: ',\n'Tema iz odlomka: ',\n] %}\n\
+      {{context}}\n{{ seq | choice }}|||\n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -89,7 +88,7 @@ templates:
   7a44cd99-7420-4456-aaaa-34e2c81d1679: !Template
     answer_choices: null
     id: 7a44cd99-7420-4456-aaaa-34e2c81d1679
-    jinja: "{% if answers.text != [] %}\n\u0160to je pitanje koje bi dalo sljede\u0107\
+    jinja: "{% if answers.text != [] %}\nKoje je pitanje koje bi dalo sljede\u0107\
       i odgovor?\nOdgovor: {{answers.text[0]}};\nPitanje: |||\n{{question}}\n{% endif\
       \ %}\n"
     metadata: !TemplateMetadata
@@ -105,9 +104,9 @@ templates:
     id: 8bea1123-fd8d-4bac-96bf-b8a289ee74b3
     jinja: "{% set seq = [\n'Mo\u017Ee\u0161 li mi re\u0107i ',\n'Molim te reci mi\
       \ ',\n'Reci mi ',\n'Iz prolaza, ',\n'\u017Eelim znati ',\n'Htio bih pitati ',\n\
-      'Na koji je odgovor na: ',\n'Prona\u0111ite odgovor na: ',\n'Odgovor: ',\n'',\n\
+      'Koji je odgovor na: ',\n'Prona\u0111ite odgovor na: ',\n'Odgovor: ',\n'',\n\
       ] %}\n{{context}} {{ seq | choice }}{{question}}|||\n{% if answers.text == []\
-      \ %}\nOdgovor ne u kontekstu\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
+      \ %}\nOdgovorite ne u kontekstu\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: &id002 !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -134,13 +133,13 @@ templates:
 
       Pitanje: {{question}};
 
-      If you can''t find the answer, please respond "neodgovoran".
+      If you can''t find the answer, please respond "bez odgovora".
 
       Odgovor: |||
 
       {% if answers.text == [] %}
 
-      neodgovoran
+      bez odgovora
 
       {% else %}
 
@@ -173,9 +172,9 @@ templates:
     id: e1630107-8f5d-44ce-8ccd-6fa80da80328
     jinja: "{% set seq = [\n'Mo\u017Ee\u0161 li mi re\u0107i ',\n'Molim te reci mi\
       \ ',\n'Reci mi ',\n'Iz prolaza, ',\n'\u017Eelim znati ',\n'Htio bih pitati ',\n\
-      'Na koji je odgovor na: ',\n'Prona\u0111ite odgovor na: ',\n'Odgovor: ',\n'',\n\
+      'Koji je odgovor na: ',\n'Prona\u0111ite odgovor na: ',\n'Odgovor: ',\n'',\n\
       ] %}\n{{context}} {{ seq | choice }}{{question}} If you can't find the answer,\
-      \ please respond \"neodgovoran\". |||\n{% if answers.text == [] %}\nneodgovoran\n\
+      \ please respond \"bez odgovora\". |||\n{% if answers.text == [] %}\nbez odgovora\n\
       {% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: *id002
     name: Questions with Context - Without Prompt Keywords +unanswerable
@@ -184,9 +183,9 @@ templates:
   e2e41877-4794-4ff9-9f92-a2a85105e2a7: !Template
     answer_choices: Da ||| Ne
     id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
-    jinja: "Kontekst: {{context}}; \n\nPitanje: {{question}} \n\nJe li ovo pitanje\
-      \ odgovoreno? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n{% else\
-      \ %}\n{{answer_choices[1]}}\n{% endif %}"
+    jinja: "Kontekst: {{context}}; \n\nPitanje: {{question}} \n\nJe li na ovo pitanje\
+      \ mogu\u0107e odgovoriti? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n\
+      {% else %}\n{{answer_choices[1]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -197,10 +196,10 @@ templates:
   e51c23b9-5b10-4db3-a0d1-ba546830173d: !Template
     answer_choices: null
     id: e51c23b9-5b10-4db3-a0d1-ba546830173d
-    jinja: "{% set seq = [\n'Odredite temu para-odgovora. ',\n'Prona\u0111ite temu.\
-      \ ',\n'Koja je tema iz ovoga? ',\n] %}\n{% if answers.text != [] %}\n{{ seq\
-      \ | choice }}\nPitanje: {{question}};  Odgovor: {{answers.text[0]}}; Tema: |||\n\
-      {{title}}\n{% endif %}"
+    jinja: "{% set seq = [\n'Odredite temu para pitanje-odgovor. ',\n'Prona\u0111\
+      ite temu. ',\n'Koja je tema iz ovoga? ',\n] %}\n{% if answers.text != [] %}\n\
+      {{ seq | choice }}\nPitanje: {{question}};  Odgovor: {{answers.text[0]}}; Tema:\
+      \ |||\n{{title}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -213,8 +212,8 @@ templates:
   fdcf132e-6c70-4188-999e-93601ee8e089: !Template
     answer_choices: null
     id: fdcf132e-6c70-4188-999e-93601ee8e089
-    jinja: "O \u010Demu je sljede\u0107i odlomak?\n{{context}} |||\n{{title | replace(\"\
-      _\", \" \")}}"
+    jinja: "O \u010Demu govori sljede\u0107i odlomak?\n{{context}} |||\n{{title |\
+      \ replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

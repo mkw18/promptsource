@@ -6,7 +6,7 @@ templates:
     id: 17b83a3f-f748-42e6-9cdf-b2951dd8299d
     jinja: '{% set seq = [
 
-      ''Jawab pertanyaan tergantung pada konteksnya.'',
+      ''Menjawab pertanyaan tergantung pada konteksnya.'',
 
       ''Apa jawabannya?'',
 
@@ -23,7 +23,7 @@ templates:
 
       {% if answers.text == [] %}
 
-      Jawab Tidak dalam Konteks
+      Jawaban tidak sesuai konteks
 
       {% else %}
 
@@ -42,7 +42,7 @@ templates:
     id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
     jinja: '{% if answers.text != [] %}
 
-      Tentukan pertanyaan yang mungkin Anda minta untuk mendapatkan kembali jawaban
+      Tentukan pertanyaan yang mungkin Anda tanyakan untuk mendapatkan kembali jawaban
       berikut untuk konteks yang diberikan
 
       Konteks: {{context}};
@@ -71,15 +71,15 @@ templates:
 
       ''Tentang apakah ini? '',
 
-      ''Tentang apa paragrafnya? '',
+      ''Paragraf tentang apa? '',
 
       ''Dapatkan topik dari: '',
 
-      ''Dari bagian ini, dapatkan topiknya'',
+      ''Dari bagian itu, dapatkan topiknya'',
 
       ''Saya ingin tahu topiknya. '',
 
-      ''Topik dari bagian ini: '',
+      ''Topik dari perikop: '',
 
       ''Topik dari paragraf: '',
 
@@ -109,17 +109,17 @@ templates:
 
       ''Tentang apakah ini? '',
 
-      ''Paragrafnya tentang '',
+      ''Paragraf tersebut tentang '',
 
-      ''Tentang apa paragrafnya? '',
+      ''Paragraf tentang apa? '',
 
-      ''Dapatkan topiknya: '',
+      ''Dapatkan topik: '',
 
-      ''Dari bagian ini, topiknya adalah'',
+      ''Dari bagian tersebut, topiknya adalah'',
 
       ''Saya ingin tahu topiknya. '',
 
-      ''Topik dari bagian ini: '',
+      ''Topik dari perikop: '',
 
       ''Topik dari paragraf: '',
 
@@ -195,7 +195,7 @@ templates:
 
       {% if answers.text == [] %}
 
-      Jawab Tidak dalam Konteks
+      Jawaban tidak sesuai konteks
 
       {% else %}
 
@@ -215,7 +215,7 @@ templates:
     id: b14c9843-fd56-42ff-817d-39e41963c847
     jinja: '{% set seq = [
 
-      ''Jawab pertanyaan tergantung pada konteksnya.'',
+      ''Menjawab pertanyaan tergantung pada konteksnya.'',
 
       ''Apa jawabannya?'',
 
@@ -228,13 +228,13 @@ templates:
 
       Pertanyaan: {{question}};
 
-      If you can''t find the answer, please respond "tidak bisa dijawab".
+      If you can''t find the answer, please respond "tak terjawab".
 
       Menjawab: |||
 
       {% if answers.text == [] %}
 
-      tidak bisa dijawab
+      tak terjawab
 
       {% else %}
 
@@ -290,11 +290,11 @@ templates:
       ] %}
 
       {{context}} {{ seq | choice }}{{question}} If you can''t find the answer, please
-      respond "tidak bisa dijawab". |||
+      respond "tak terjawab". |||
 
       {% if answers.text == [] %}
 
-      tidak bisa dijawab
+      tak terjawab
 
       {% else %}
 
@@ -309,7 +309,7 @@ templates:
     answer_choices: Ya ||| Tidak
     id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
     jinja: "Konteks: {{context}}; \n\nPertanyaan: {{question}} \n\nApakah pertanyaan\
-      \ ini dapat dijawab? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n\
+      \ ini bisa dijawab? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n\
       {% else %}\n{{answer_choices[1]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -323,7 +323,7 @@ templates:
     id: e51c23b9-5b10-4db3-a0d1-ba546830173d
     jinja: '{% set seq = [
 
-      ''Tentukan topik pasangan tanya jawab. '',
+      ''Tentukan topik dari pasangan tanya jawab. '',
 
       ''Temukan topiknya. '',
 
@@ -352,7 +352,7 @@ templates:
   fdcf132e-6c70-4188-999e-93601ee8e089: !Template
     answer_choices: null
     id: fdcf132e-6c70-4188-999e-93601ee8e089
-    jinja: 'Tentang apa bagian berikut ini?
+    jinja: 'Perikop berikut tentang apa?
 
       {{context}} |||
 

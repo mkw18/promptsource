@@ -4,11 +4,10 @@ templates:
   212fb8b1-8436-4f64-8f37-a9094fe029f4: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 212fb8b1-8436-4f64-8f37-a9094fe029f4
-    jinja: "{{ text }} \u524D\u306E\u6587\u3067\u306F\u3001\u4EE3\u540D\u8A5E\"{{\
-      \ span2_text.lower() }}\"\u306F{{ span1_text }}\u3092\u53C2\u7167\u3057\u3066\
-      \u3044\u307E\u3059\u304B\uFF1F \u306F\u3044\u3001\u3082\u3057\u304F\u306F\u3001\
-      \u3044\u3044\u3048\uFF1F ||| {% if label != -1 %}{{ answer_choices[label] }}{%\
-      \ endif %}"
+    jinja: "{{ text }} \u524D\u306E\u6587\u3067\u3001\u4EE3\u540D\u8A5E \"{{ span2_text.lower()\
+      \ }}\" \u306F {{ span1_text }} \u3092\u6307\u3057\u3066\u3044\u307E\u3059\u304B\
+      ? \u306F\u3044\u3001\u3082\u3057\u304F\u306F\u3001\u3044\u3044\u3048\uFF1F |||\
+      \ {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -19,10 +18,10 @@ templates:
   23361c5d-b67f-4c2a-9da7-16301c55d0e1: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
-    jinja: "{{ text }} \u3053\u3053\u3067\u3001\"{{ span2_text }}\"\u306B\u3088\u3063\
-      \u3066\u300C{{ span1_text }}\u300D\u3092\u610F\u5473\u3057\u307E\u3059\u3002\
-      \ \u306F\u3044\u3001\u3082\u3057\u304F\u306F\u3001\u3044\u3044\u3048\uFF1F |||\
-      \ {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{ text }} \u3053\u3053\u3067\u3001\"{{ span2_text }}\" \u306F\u300C{{\
+      \ span1_text }}\u300D\u3092\u610F\u5473\u3057\u307E\u3059\u3002 \u306F\u3044\
+      \u3001\u3082\u3057\u304F\u306F\u3001\u3044\u3044\u3048\uFF1F ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -62,10 +61,10 @@ templates:
   7482d24f-cf45-4013-b82d-369489fc958b: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 7482d24f-cf45-4013-b82d-369489fc958b
-    jinja: "{{ text }} \u3053\u3053\u3067\u3001\"{{ span2_text.lower() }}\"\u306F\
-      {{ span1_text }}\u306E\u7ACB\u5834\u3067\u3059\u304B\uFF1F \u306F\u3044\u3001\
-      \u3082\u3057\u304F\u306F\u3001\u3044\u3044\u3048\uFF1F ||| {% if label != -1\
-      \ %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{ text }} \u3053\u3053\u3067\u3001\"{{ span2_text.lower() }}\" \u306F\
+      \ {{ span1_text }} \u306E\u7565\u3067\u3059\u304B\uFF1F \u306F\u3044\u3001\u3082\
+      \u3057\u304F\u306F\u3001\u3044\u3044\u3048\uFF1F ||| {% if label != -1 %}{{\
+      \ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -76,10 +75,10 @@ templates:
   7d377293-d043-4b6c-8ec1-d61eaf14ec67: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 7d377293-d043-4b6c-8ec1-d61eaf14ec67
-    jinja: "\u901A\u8DEF\uFF1A {{ text }} \n\n\u8CEA\u554F\uFF1A\u4E0A\u306E\u7B87\
-      \u6240\u3067\u306F\u3001\u4EE3\u540D\u8A5E\"{{ span2_text }}\"\u306F{{ span1_text\
-      \ }}\u3092\u53C2\u7167\u3057\u3066\u3044\u307E\u3059\u304B\uFF1F\n\n\u7B54\u3048\
-      \uFF1A ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "\u901A\u8DEF\uFF1A {{ text }} \n\n\u8CEA\u554F: \u4E0A\u8A18\u306E\u6587\
+      \u7AE0\u3067\u3001\u4EE3\u540D\u8A5E \"{{ span2_text }}\" \u306F {{ span1_text\
+      \ }} \u3092\u6307\u3057\u3066\u3044\u307E\u3059\u304B?\n\n\u7B54\u3048\uFF1A\
+      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -90,11 +89,11 @@ templates:
   809eacd0-2f6c-4e3a-b52a-57c783879d36: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 809eacd0-2f6c-4e3a-b52a-57c783879d36
-    jinja: "{{ text }} \u524D\u306E\u6587\u3067\u306F\u3001\u4EE3\u540D\u8A5E\"{{\
-      \ span2_text }}\"\u3092\u300C{{ span1_text }}\u300D\u306B\u7F6E\u304D\u63DB\u3048\
-      \u308B\u3053\u3068\u304C\u3067\u304D\u307E\u3059\u304B\uFF1F \u306F\u3044\u3001\
-      \u3082\u3057\u304F\u306F\u3001\u3044\u3044\u3048\uFF1F ||| {% if label != -1\
-      \ %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{ text }} \u524D\u306E\u6587\u3067\u3001\u4EE3\u540D\u8A5E \"{{ span2_text\
+      \ }}\" \u3092\u300C{{ span1_text }}\u300D\u306B\u7F6E\u304D\u63DB\u3048\u308B\
+      \u3053\u3068\u306F\u3067\u304D\u307E\u3059\u304B? \u306F\u3044\u3001\u3082\u3057\
+      \u304F\u306F\u3001\u3044\u3044\u3048\uFF1F ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -122,10 +121,11 @@ templates:
   aae24b54-c3a7-4f69-8b77-f6dc115988f8: !Template
     answer_choices: "\u9593\u9055\u3044 ||| \u771F\u5B9F"
     id: aae24b54-c3a7-4f69-8b77-f6dc115988f8
-    jinja: "{{ text }} \n\u4E0A\u8A18\u306E\u901A\u8DEF\u3067\u306F\u3001\u4EE3\u540D\
-      \u8A5E\"{{ span2_text }}\"\u306F{{ span1_text }}\u3092\u6307\u3057\u307E\u3059\
-      \u3002 \u6B63\u3057\u3044\u304B\u9593\u9055\u3063\u3066\u3044\u308B\u304B\uFF1F\
-      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{ text }} \n\u4E0A\u8A18\u306E\u6587\u7AE0\u3067\u306F\u3001\u4EE3\u540D\
+      \u8A5E \"{{ span2_text }}\" \u306F {{ span1_text }} \u3092\u6307\u3057\u3066\
+      \u3044\u307E\u3059\u3002 \u6B63\u3057\u3044\u304B\u9593\u9055\u3063\u3066\u3044\
+      \u308B\u304B\uFF1F ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -137,12 +137,11 @@ templates:
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: d88f3e21-42dc-49a5-924d-69b764a14816
     jinja: "{{ text }} \n{% if span2_text.lower()  == \"they\" or span2_text.lower()\
-      \ == \"them\" %}\n\u8CEA\u554F\uFF1A \u8AB0\u307E\u305F\u306F\u4F55\u3067\u3042\
-      \u308B\u304B \"{{ span2_text.lower() }}\"\uFF1F {{ span1_text }}\uFF1F\n{% else\
-      \ %}\n\u8CEA\u554F\uFF1A \u8AB0\u307E\u305F\u306F\u4F55\u306A\u306E\u304B \"\
-      {{ span2_text.lower() }}\"\uFF1F {{ span1_text }}\u3067\u3059\u304B\uFF1F\n\
-      {% endif %}\n\u7B54\u3048\uFF1A ||| {% if label != -1 %}{{ answer_choices[label]\
-      \ }}{% endif %}"
+      \ == \"them\" %}\n\u8CEA\u554F\uFF1A \u8AB0\u307E\u305F\u306F\u4F55\u3067\u3059\
+      \u304B \"{{ span2_text.lower() }}\"\uFF1F {{ span1_text }}\uFF1F\n{% else %}\n\
+      \u8CEA\u554F\uFF1A \u8AB0\u307E\u305F\u306F\u4F55\u3067\u3059\u304B \"{{ span2_text.lower()\
+      \ }}\"\uFF1F {{ span1_text }}\u3067\u3059\u304B\uFF1F\n{% endif %}\n\u7B54\u3048\
+      \uFF1A ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

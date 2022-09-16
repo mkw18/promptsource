@@ -31,8 +31,8 @@ templates:
     answer_choices: Ne ||| Da
     id: 611d13dc-d414-4b9b-9204-e4f325e859e7
     jinja: "Doma\u0107a zada\u0107a\n\nOdlu\u010Dite koristi li se rije\u010D \"{{word}}\"\
-      \ s istim zna\u010Denjem u dvije sljede\u0107e re\u010Denice. Odgovor da ili\
-      \ ne.\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      \ s istim zna\u010Denjem u dvije sljede\u0107e re\u010Denice. Odgovorite s da\
+      \ ili ne.\n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -42,9 +42,9 @@ templates:
     name: grammar_homework
     reference: ''
   725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
-    answer_choices: "La\u017Ean ||| Pravi"
+    answer_choices: "la\u017Eno ||| Pravi"
     id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
-    jinja: "Re\u010Denica a: {{sentence1}}\nRe\u010Denica b: {{sentence2}}\n\n\"{{word}}\"\
+    jinja: "Re\u010Denica A: {{sentence1}}\nRe\u010Denica B: {{sentence2}}\n\n\"{{word}}\"\
       \ ima sli\u010Dno zna\u010Denje u re\u010Denicama A i B. Istina ili la\u017E\
       ?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -79,9 +79,10 @@ templates:
   ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
     answer_choices: Ne ||| Da
     id: ce8b5a93-1841-4897-84db-b100f1c84f4b
-    jinja: "Re\u010Denica 1: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\n\nUtvrdite\
-      \ koristi li se rije\u010D \"{{word}}\" u istom smislu u obje re\u010Denice.\
-      \ Da ili ne?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    jinja: "1. re\u010Denica: {{sentence1}}\nRe\u010Denica 2: {{sentence2}}\n\nUtvrdite\
+      \ koristi li se rije\u010D \"{{word}}\" u istom zna\u010Denju u obje re\u010D\
+      enice. Da ili ne?\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -93,8 +94,8 @@ templates:
     answer_choices: Ne ||| Da
     id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
     jinja: "Utvrdite koristi li se rije\u010D '{{word}}' na isti na\u010Din u dvije\
-      \ re\u010Denice u nastavku. \n{{sentence1}}\n{{sentence2}}\n||| {% if label\
-      \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+      \ re\u010Denice ispod. \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n\
+      {{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -105,8 +106,8 @@ templates:
   d9e1db2a-ab0b-4621-bb41-01d5788d3873: !Template
     answer_choices: Ne ||| Da
     id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
-    jinja: "{{sentence1}}\n{{sentence2}}\nPitanje: Koristi li se rije\u010D '{{word}}'\
-      \ u istom smislu u dvije gore navedene re\u010Denice? Da ne?\n||| {% if label\
+    jinja: "{{sentence1}}\n{{sentence2}}\nPitanje: Je li rije\u010D '{{word}}' kori\u0161\
+      tena u istom zna\u010Denju u gornje dvije re\u010Denice? Da ne?\n||| {% if label\
       \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -120,7 +121,7 @@ templates:
     answer_choices: Ne ||| Da
     id: dd2080cf-3117-49ba-9aff-c988a21fdb69
     jinja: "Rije\u010D \"{{word}}\" ima vi\u0161e zna\u010Denja. Ima li isto zna\u010D\
-      enje u re\u010Denicama 1 i 2? Da ili ne?\n\nRe\u010Denica 1: {{sentence1}}\n\
+      enje u 1. i 2. re\u010Denici? Da ili ne?\n\n1. re\u010Denica: {{sentence1}}\n\
       Re\u010Denica 2: {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -133,8 +134,8 @@ templates:
   f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
     answer_choices: Ne ||| Da
     id: f934a96d-fe4d-4075-aa47-5595b9a604c7
-    jinja: "{{sentence1}}\n{{sentence2}}\nSli\u010Dan osje\u0107aj {{word}}?\n|||\
-      \ {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    jinja: "{{sentence1}}\n{{sentence2}}\nSli\u010Dan smisao {{word}}?\n||| {% if\
+      \ label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

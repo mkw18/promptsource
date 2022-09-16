@@ -4,9 +4,9 @@ templates:
   5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
-    jinja: "Soru: {{question}}\n\nSoruyu cevaplamak i\xE7in {{\"a\"}} ve {{\"b\"}}\
-      \ kullanmay\u0131n, bunun yerine \"{{answer_choices[0]}}\" ve \"{{answer_choices[1]}}\"\
-      \ aras\u0131nda se\xE7im yap\u0131n.\n|||\n{{answer_choices[answer_index]}}"
+    jinja: "Soru: {{question}}\n\nSoruyu yan\u0131tlamak i\xE7in {{\"A\"}} ve {{\"\
+      B\"}} tu\u015Flar\u0131n\u0131 kullanmay\u0131n, bunun yerine \"{{answer_choices[0]}}\"\
+      \ ve \"{{answer_choices[1]}}\" aras\u0131ndan se\xE7im yap\u0131n.\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -18,8 +18,7 @@ templates:
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
     jinja: "\u0130\u015Fte bir mant\u0131k testi: {{question}}\n\n\"{{answer_choices[0]}}\"\
-      \ ve \"{{answer_choices[1]}}\" aras\u0131ndaki cevab\u0131 se\xE7in.\n|||\n\
-      {{answer_choices[answer_index]}}"
+      \ ile \"{{answer_choices[1]}}\" aras\u0131nda bir cevap se\xE7in.\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -31,8 +30,8 @@ templates:
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 63c58389-605a-42b9-85a6-a2586a954a92
     jinja: "\u0130\u015Fte k\u0131sa bir hikaye: {{question}}.\n\n\"{{answer_choices[0]}}\"\
-      \ ve \"{{answer_choices[1]}}\" aras\u0131ndaki en duyarl\u0131 cevap nedir?\n\
-      |||\n{{answer_choices[answer_index]}}"
+      \ ile \"{{answer_choices[1]}}\" aras\u0131ndaki en mant\u0131kl\u0131 cevap\
+      \ nedir?\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -43,8 +42,8 @@ templates:
   73a7adbb-41b1-4b4d-b378-d7e17d030a6f: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 73a7adbb-41b1-4b4d-b378-d7e17d030a6f
-    jinja: "\"{{answer_choices[0]}}\" ve \"{{answer_choices[1]}}\" aras\u0131nda se\xE7\
-      im yap\u0131n.\nSoru: {{question}}\n|||\n{{answer_choices[answer_index]}}"
+    jinja: "\"{{answer_choices[0]}}\" ve \"{{answer_choices[1]}}\" aras\u0131ndan\
+      \ se\xE7im yap\u0131n.\nSoru: {{question}}\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -57,7 +56,7 @@ templates:
     id: 92013fab-5387-44d4-bf0f-e29a31bcafb6
     jinja: "\xD6\u011Frencilerimin mant\u0131\u011F\u0131n\u0131 test ediyorum.\n\"\
       {{answer_choices[0]}}\" ve \"{{answer_choices[1]}}\" aras\u0131nda se\xE7meleri\
-      \ gereken cevap nedir?\nMant\u0131k Testi: {{question}}\n|||\n{{answer_choices[answer_index]}}"
+      \ gereken cevap nedir?\nMant\u0131k testi: {{question}}\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

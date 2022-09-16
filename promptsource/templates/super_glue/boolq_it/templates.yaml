@@ -2,7 +2,7 @@ dataset: super_glue
 subset: boolq_it
 templates:
   3e386463-1715-4578-9cba-07d11a0d3b61: !Template
-    answer_choices: Falso ||| True
+    answer_choices: Falso ||| Vero
     id: 3e386463-1715-4578-9cba-07d11a0d3b61
     jinja: 'Passaggio: {{passage}}
 
@@ -49,7 +49,7 @@ templates:
   7cf7acdf-e3a2-459f-a3e8-2e2d27dd6aa5: !Template
     answer_choices: "No ||| s\xEC"
     id: 7cf7acdf-e3a2-459f-a3e8-2e2d27dd6aa5
-    jinja: "Testo: {{passage}}\n\nRispondi alla seguente domanda S\xEC/No: {{question}}?\
+    jinja: "Testo: {{passage}}\n\nRispondi alla seguente domanda s\xEC/no: {{question}}?\
       \ S\xEC o no? |||\n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif\
       \ %}"
     metadata: !TemplateMetadata
@@ -74,9 +74,8 @@ templates:
   922d3e87-ac58-4731-84d1-f0a40e47afb5: !Template
     answer_choices: "No ||| s\xEC"
     id: 922d3e87-ac58-4731-84d1-f0a40e47afb5
-    jinja: "ESAME\n1. Rispondi per s\xEC o no.\n\nDocumento: {{passage}}\nDomanda:\
-      \ {{question}}? ||| \n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif\
-      \ %}"
+    jinja: "ESAME\n1. Rispondi s\xEC o no.\n\nDocumento: {{passage}}\nDomanda: {{question}}?\
+      \ ||| \n{% if label != -1 %}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -87,7 +86,7 @@ templates:
   9a1bf459-8047-437c-9def-f21e960429cc: !Template
     answer_choices: "No ||| s\xEC"
     id: 9a1bf459-8047-437c-9def-f21e960429cc
-    jinja: 'Basato sul seguente passaggio, {{ question }}? {{ passage }}
+    jinja: 'Sulla base del seguente passaggio, {{ question }}? {{ passage }}
 
 
       |||
@@ -105,9 +104,9 @@ templates:
     name: based on the following passage
     reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
   9f4c6b0a-437b-40c0-b467-db4b7218d38d: !Template
-    answer_choices: Falso ||| True
+    answer_choices: Falso ||| Vero
     id: 9f4c6b0a-437b-40c0-b467-db4b7218d38d
-    jinja: 'Esercizio: Leggi il testo e rispondi alla domanda per vero o falso.
+    jinja: 'Esercizio: leggi il testo e rispondi alla domanda con Vero o Falso.
 
 
       Testo: {{passage}}
@@ -131,7 +130,7 @@ templates:
     id: b2b3cb60-d6e3-491c-a09a-8201e13e417e
     jinja: '{{ passage }}
 
-      Basato sul passaggio precedente, {{ question }}? ||| {% if label != -1 %}{{
+      Sulla base del passaggio precedente, {{ question }}? ||| {% if label != -1 %}{{
       answer_choices[label] }}
 
       {% endif %}'
@@ -143,7 +142,7 @@ templates:
     name: based on the previous passage
     reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
   eb78772c-e81e-4b8a-a77b-b75efd1c212a: !Template
-    answer_choices: Falso ||| True
+    answer_choices: Falso ||| Vero
     id: eb78772c-e81e-4b8a-a77b-b75efd1c212a
     jinja: '{{passage}}
 

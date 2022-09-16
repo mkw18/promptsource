@@ -4,11 +4,11 @@ templates:
   14e73f39-a0d1-44c2-b9a4-4e48f9f1608e: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
-    jinja: "\u300C{{word}}\u300D\u3068\u3044\u3046\u8A00\u8449\u306F\u3001\u3053\u308C\
-      \u30892\u3064\u306E\u6587\u7AE0\u3067\u540C\u3058\u610F\u5473\u3092\u6301\u3063\
-      \u3066\u3044\u307E\u3059\u304B\uFF1F \u306F\u3044\u30FB\u3044\u3044\u3048\uFF1F\
-      \n{{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
-      {% endif %}"
+    jinja: "\u300C{{word}}\u300D\u3068\u3044\u3046\u5358\u8A9E\u306F\u3001\u3053\u308C\
+      \u3089 2 \u3064\u306E\u6587\u3067\u540C\u3058\u610F\u5473\u3092\u6301\u3063\u3066\
+      \u3044\u307E\u3059\u304B? \u306F\u3044\u30FB\u3044\u3044\u3048\uFF1F\n{{sentence1}}\n\
+      {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -19,10 +19,10 @@ templates:
   3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
-    jinja: "\u300C{{word}}\u300D\u3068\u3044\u3046\u8A00\u8449\u306F\u3001\u3053\u308C\
-      \u30892\u3064\u306E\u6587\u7AE0\u3067\u540C\u3058\u610F\u5473\u3092\u6301\u3063\
-      \u3066\u3044\u307E\u3059\u304B\uFF1F\n{{sentence1}}\n{{sentence2}}\n||| {% if\
-      \ label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    jinja: "\u300C{{word}}\u300D\u3068\u3044\u3046\u5358\u8A9E\u306F\u3001\u3053\u308C\
+      \u3089 2 \u3064\u306E\u6587\u3067\u540C\u3058\u610F\u5473\u3092\u6301\u3063\u3066\
+      \u3044\u307E\u3059\u304B?\n{{sentence1}}\n{{sentence2}}\n||| {% if label !=\
+      \ -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -33,12 +33,13 @@ templates:
   611d13dc-d414-4b9b-9204-e4f325e859e7: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: 611d13dc-d414-4b9b-9204-e4f325e859e7
-    jinja: "\u5BBF\u984C\n\n\u300C{{word}}\u300D\u3068\u3044\u3046\u8A00\u8449\u304C\
-      \u3001\u6B21\u306E2\u3064\u306E\u6587\u3067\u540C\u3058\u610F\u5473\u3067\u4F7F\
-      \u7528\u3055\u308C\u3066\u3044\u308B\u304B\u3069\u3046\u304B\u3092\u6C7A\u5B9A\
-      \u3057\u307E\u3059\u3002 \u306F\u3044\u307E\u305F\u306F\u3044\u3044\u3048\u3067\
-      \u7B54\u3048\u307E\u3059\u3002\n{{sentence1}}\n{{sentence2}}\n||| {% if label\
-      \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    jinja: "\u5BBF\u984C\n\n\u6B21\u306E 2 \u3064\u306E\u6587\u3067\u3001\u300C{{word}}\u300D\
+      \u3068\u3044\u3046\u5358\u8A9E\u304C\u540C\u3058\u610F\u5473\u3067\u4F7F\u7528\
+      \u3055\u308C\u3066\u3044\u308B\u304B\u3069\u3046\u304B\u3092\u5224\u65AD\u3057\
+      \u3066\u304F\u3060\u3055\u3044\u3002 \u306F\u3044\u307E\u305F\u306F\u3044\u3044\
+      \u3048\u3067\u7B54\u3048\u3066\u304F\u3060\u3055\u3044\u3002\n{{sentence1}}\n\
+      {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -49,11 +50,11 @@ templates:
   725b5ed0-7728-4890-95a4-a74cb7ae1bb4: !Template
     answer_choices: "\u9593\u9055\u3044 ||| \u771F\u5B9F"
     id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
-    jinja: "\u6587A\uFF1A {{sentence1}}\n\u6587B\uFF1A {{sentence2}}\n\n\u300C{{word}}\u300D\
-      \u306F\u3001\u6587A\u3068B\u3067\u3082\u540C\u69D8\u306E\u610F\u5473\u3092\u6301\
-      \u3063\u3066\u3044\u307E\u3059\u3002 \u6B63\u3057\u3044\u304B\u9593\u9055\u3063\
-      \u3066\u3044\u308B\u304B\uFF1F\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
-      {% endif %}"
+    jinja: "\u6587 A: {{sentence1}}\n\u6587 B: {{sentence2}}\n\n\u300C{{word}}\u300D\
+      \u306F\u6587 A \u3068\u6587 B \u3067\u540C\u69D8\u306E\u610F\u5473\u3092\u6301\
+      \u3061\u307E\u3059\u3002 \u6B63\u3057\u3044\u304B\u9593\u9055\u3063\u3066\u3044\
+      \u308B\u304B\uFF1F\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -77,11 +78,11 @@ templates:
   ce8b5a93-1841-4897-84db-b100f1c84f4b: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: ce8b5a93-1841-4897-84db-b100f1c84f4b
-    jinja: "\u65871\uFF1A {{sentence1}}\n\u65872\uFF1A {{sentence2}}\n\n\u300C{{word}}\u300D\
-      \u3068\u3044\u3046\u5358\u8A9E\u304C\u4E21\u65B9\u306E\u6587\u3067\u540C\u3058\
-      \u610F\u5473\u3067\u4F7F\u7528\u3055\u308C\u308B\u304B\u3069\u3046\u304B\u3092\
-      \u6C7A\u5B9A\u3057\u307E\u3059\u3002 \u306F\u3044\u3001\u3082\u3057\u304F\u306F\
-      \u3001\u3044\u3044\u3048\uFF1F\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+    jinja: "\u6587 1: {{sentence1}}\n\u6587 2: {{sentence2}}\n\n\u5358\u8A9E\u300C\
+      {{word}}\u300D\u304C\u4E21\u65B9\u306E\u6587\u3067\u540C\u3058\u610F\u5473\u3067\
+      \u4F7F\u7528\u3055\u308C\u3066\u3044\u308B\u304B\u3069\u3046\u304B\u3092\u5224\
+      \u65AD\u3057\u307E\u3059\u3002 \u306F\u3044\u3001\u3082\u3057\u304F\u306F\u3001\
+      \u3044\u3044\u3048\uFF1F\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -93,11 +94,11 @@ templates:
   cfbc1637-10b8-4f20-a31c-55292f3cebd0: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
-    jinja: "\u4EE5\u4E0B\u306E2\u3064\u306E\u6587\u3067\u300C{{word}}\u300D\u3068\u3044\
-      \u3046\u5358\u8A9E\u304C\u540C\u3058\u65B9\u6CD5\u3067\u4F7F\u7528\u3055\u308C\
-      \u308B\u304B\u3069\u3046\u304B\u3092\u5224\u65AD\u3057\u307E\u3059\u3002 \n\
-      {{sentence1}}\n{{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
-      {% endif %}"
+    jinja: "\u4EE5\u4E0B\u306E 2 \u3064\u306E\u6587\u3067\u300C{{word}}\u300D\u3068\
+      \u3044\u3046\u5358\u8A9E\u304C\u540C\u3058\u3088\u3046\u306B\u4F7F\u7528\u3055\
+      \u308C\u3066\u3044\u308B\u304B\u3069\u3046\u304B\u3092\u5224\u65AD\u3057\u3066\
+      \u304F\u3060\u3055\u3044\u3002 \n{{sentence1}}\n{{sentence2}}\n||| {% if label\
+      \ != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -109,10 +110,10 @@ templates:
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
     jinja: "{{sentence1}}\n{{sentence2}}\n\u8CEA\u554F\uFF1A \u300C{{word}}\u300D\u3068\
-      \u3044\u3046\u8A00\u8449\u306F\u3001\u4E0A\u8A18\u306E2\u3064\u306E\u6587\u3067\
-      \u540C\u3058\u610F\u5473\u3067\u4F7F\u7528\u3055\u308C\u3066\u3044\u307E\u3059\
-      \u304B\uFF1F \u306F\u3044\u30FB\u3044\u3044\u3048\uFF1F\n||| {% if label !=\
-      \ -1%}\n{{answer_choices[label]}}\n{% endif %}"
+      \u3044\u3046\u5358\u8A9E\u306F\u3001\u4E0A\u306E 2 \u3064\u306E\u6587\u3067\u540C\
+      \u3058\u610F\u5473\u3067\u4F7F\u7528\u3055\u308C\u3066\u3044\u307E\u3059\u304B\
+      ? \u306F\u3044\u30FB\u3044\u3044\u3048\uFF1F\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -125,10 +126,10 @@ templates:
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: dd2080cf-3117-49ba-9aff-c988a21fdb69
     jinja: "\u300C{{word}}\u300D\u3068\u3044\u3046\u8A00\u8449\u306B\u306F\u8907\u6570\
-      \u306E\u610F\u5473\u304C\u3042\u308A\u307E\u3059\u3002 \u6587\u7AE01\u30682\u3067\
-      \u540C\u3058\u610F\u5473\u304C\u3042\u308A\u307E\u3059\u304B\uFF1F \u306F\u3044\
-      \u3001\u3082\u3057\u304F\u306F\u3001\u3044\u3044\u3048\uFF1F\n\n\u65871\uFF1A\
-      \ {{sentence1}}\n\u65872\uFF1A {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
+      \u306E\u610F\u5473\u304C\u3042\u308A\u307E\u3059\u3002 1\u6587\u76EE\u30682\u6587\
+      \u76EE\u306F\u540C\u3058\u610F\u5473\u3067\u3059\u304B\uFF1F \u306F\u3044\u3001\
+      \u3082\u3057\u304F\u306F\u3001\u3044\u3044\u3048\uFF1F\n\n\u6587 1: {{sentence1}}\n\
+      \u6587 2: {{sentence2}}\n||| {% if label != -1%}\n{{answer_choices[label]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -140,8 +141,8 @@ templates:
   f934a96d-fe4d-4075-aa47-5595b9a604c7: !Template
     answer_choices: "\u3044\u3044\u3048 ||| \u306F\u3044"
     id: f934a96d-fe4d-4075-aa47-5595b9a604c7
-    jinja: "{{sentence1}}\n{{sentence2}}\n{{word}}\u306E\u540C\u69D8\u306E\u611F\u899A\
-      \uFF1F\n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
+    jinja: "{{sentence1}}\n{{sentence2}}\n{{word}}\u306B\u4F3C\u305F\u611F\u899A\uFF1F\
+      \n||| {% if label != -1%}\n{{answer_choices[label]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

@@ -2,10 +2,10 @@ dataset: paws
 subset: labeled_final_et
 templates:
   0be7cecd-b427-4ec9-9b0e-666d6dae0063: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
     jinja: "Tehke kindlaks, kas j\xE4rgmised kaks lauset parafraseerivad \xFCksteist\
-      \ v\xF5i mitte.\nLause 1: {{sentence1}}\nLause 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
+      \ v\xF5i mitte.\n1. lause: {{sentence1}}\n2. lause: {{sentence2}}\n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -14,10 +14,10 @@ templates:
     name: task_description-no-label
     reference: Generalized prompt format, task_description-input.
   472fe5eb-b499-4952-a930-f72f4ca9ed43: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
-    jinja: "Lause 1: {{sentence1}}\nLause 2: {{sentence2}}\nK\xFCsimus: kas lause\
-      \ 1. ja lause 2 v\xE4ljendavad sama t\xE4hendust?Jah v\xF5i ei? \n||| \n{{answer_choices[label]}}"
+    jinja: "1. lause: {{sentence1}}\n2. lause: {{sentence2}}\nK\xFCsimus: Kas 1. ja\
+      \ 2. lause v\xE4ljendavad sama t\xE4hendust? Jah v\xF5i ei? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -26,7 +26,7 @@ templates:
     name: Meaning
     reference: Natural question
   4c8d4e4c-eae4-45f6-bdf0-d132ae198d09: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
     jinja: "{{sentence1}}\nKas see on j\xE4rgmise lause parafraas?\n{{sentence2}}?\n\
       ||| \n{{answer_choices[label]}}"
@@ -38,10 +38,10 @@ templates:
     name: context-question-no-label
     reference: Generalized prompt format, context-question without any label
   678400f8-1a5c-4a40-b5ef-abeaa41e20ec: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
-    jinja: "Lause 1: {{sentence1}}\nLause 2: {{sentence2}}\nK\xDCSIMUS: Kas me saame\
-      \ lause 1 \xFCmber kirjutada lausega 2? \n||| \n{{answer_choices[label]}}"
+    jinja: "1. lause: {{sentence1}}\n2. lause: {{sentence2}}\nK\xFCsimus: Kas saame\
+      \ 1. lause \xFCmber kirjutada lauseks 2? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -50,7 +50,7 @@ templates:
     name: Rewrite-no-label
     reference: Natural Question without label
   7c205a61-64d4-4673-bb8e-bfa77562eede: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: 7c205a61-64d4-4673-bb8e-bfa77562eede
     jinja: "{{sentence1}}\nKas see on j\xE4rgmise lause parafraas?\n{{sentence2}}?\n\
       Jah v\xF5i ei.\n||| \n{{answer_choices[label]}}"
@@ -62,10 +62,10 @@ templates:
     name: context-question
     reference: Generalized prompt format, context-question
   8c259e88-7646-4a50-a4ca-90393920f281: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: 8c259e88-7646-4a50-a4ca-90393920f281
-    jinja: "Lause 1: {{sentence1}}\nLause 2: {{sentence2}}\nK\xFCsimus: kas lause\
-      \ 1 parafraas lause 2?Jah v\xF5i ei? \n||| \n{{answer_choices[label]}}"
+    jinja: "1. lause: {{sentence1}}\n2. lause: {{sentence2}}\nK\xFCsimus: Kas 1. lause\
+      \ parafraseerib 2. lauset? Jah v\xF5i ei? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -76,7 +76,7 @@ templates:
   a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
     answer_choices: null
     id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
-    jinja: "{% if label == 1 %} \nParafraseeri lauset: {{sentence1}} \n||| \n{{sentence2}}\
+    jinja: "{% if label == 1 %} \nParafraseerige lause: {{sentence1}} \n||| \n{{sentence2}}\
       \ \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -87,10 +87,10 @@ templates:
     name: paraphrase-task
     reference: Create a generative paraphrase task
   a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
-    jinja: "Lause 1: {{sentence1}}\nLause 2: {{sentence2}}\nK\xFCsimus: kas lause\
-      \ 1 parafraas lause 2? \n||| \n{{answer_choices[label]}}"
+    jinja: "1. lause: {{sentence1}}\n2. lause: {{sentence2}}\nK\xFCsimus: Kas 1. lause\
+      \ parafraseerib 2. lauset? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -99,10 +99,10 @@ templates:
     name: Concatenation-no-label
     reference: Concatenation of sentence 1 and sentence 2 without any label
   d5239f5f-2014-47c9-a0c1-4896f76f82a4: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
-    jinja: "Lause 1: {{sentence1}}\nLause 2: {{sentence2}}\nK\xFCsimus: kas lause\
-      \ 1. ja lause 2 v\xE4ljendavad sama t\xE4hendust? \n||| \n{{answer_choices[label]}}"
+    jinja: "1. lause: {{sentence1}}\n2. lause: {{sentence2}}\nK\xFCsimus: Kas 1. ja\
+      \ 2. lause v\xE4ljendavad sama t\xE4hendust? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -113,7 +113,7 @@ templates:
   d9911dad-75fe-4506-9843-3a46ba5e49be: !Template
     answer_choices: "Vale ||| T\xF5si"
     id: d9911dad-75fe-4506-9843-3a46ba5e49be
-    jinja: "{{sentence1}} K\xFCsimus: {{sentence2}} \xD5ige v\xF5i vale? \n||| \n\
+    jinja: "{{sentence1}} k\xFCsimus: {{sentence2}} \xD5ige v\xF5i vale? \n||| \n\
       {{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -123,10 +123,10 @@ templates:
     name: PAWS-ANLI GPT3
     reference: ANLI prompt format from Table G7 in the GPT3 paper
   dd52359b-dc56-4241-8179-c98c636f0335: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: dd52359b-dc56-4241-8179-c98c636f0335
-    jinja: "Lause 1: {{sentence1}}\nLause 2: {{sentence2}}\nK\xDCSIMUS: Kas me saame\
-      \ lause 1 \xFCmber kirjutada lausega 2?Jah v\xF5i ei? \n||| \n{{answer_choices[label]}}"
+    jinja: "1. lause: {{sentence1}}\n2. lause: {{sentence2}}\nK\xFCsimus: Kas saame\
+      \ 1. lause \xFCmber kirjutada lauseks 2? Jah v\xF5i ei? \n||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -135,10 +135,10 @@ templates:
     name: Rewrite
     reference: Natural Question
   f0866713-c59a-4c5d-a307-95e80a935f99: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: f0866713-c59a-4c5d-a307-95e80a935f99
-    jinja: "{{sentence1}} K\xFCsimus: {{sentence2}} Parafrase v\xF5i mitte?\n||| \n\
-      {{answer_choices[label]}}"
+    jinja: "{{sentence1}} k\xFCsimus: {{sentence2}} Parafraseerida v\xF5i mitte?\n\
+      ||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

@@ -2,7 +2,7 @@ dataset: super_glue
 subset: cb_bg
 templates:
   2e76cd0f-68ca-4f03-83ed-11cf15b25a84: !Template
-    answer_choices: "\u0414\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
+    answer_choices: "\u0434\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
       \u0438"
     id: 2e76cd0f-68ca-4f03-83ed-11cf15b25a84
     jinja: "\u0414\u0430 \u043F\u0440\u0435\u0434\u043F\u043E\u043B\u043E\u0436\u0438\
@@ -18,7 +18,7 @@ templates:
     name: can we infer
     reference: Webson & Pavlick 2021
   358860fd-61ad-45fd-92a6-a72ca9107ebc: !Template
-    answer_choices: "\u0414\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
+    answer_choices: "\u0434\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
       \u0438"
     id: 358860fd-61ad-45fd-92a6-a72ca9107ebc
     jinja: "{{premise}} \u0412\u044A\u0437 \u043E\u0441\u043D\u043E\u0432\u0430 \u043D\
@@ -37,15 +37,15 @@ templates:
   3f43a599-ffdb-490e-8952-c0ce41dd4621: !Template
     answer_choices: "\u0412\u044F\u0440\u043D\u043E ||| \u041D\u0435\u0432\u044F\u0440\
       \u043D\u043E ||| \u041D\u0435\u0443\u0431\u0435\u0434\u0438\u0442\u0435\u043B\
-      \u043D\u043E"
+      \u0435\u043D"
     id: 3f43a599-ffdb-490e-8952-c0ce41dd4621
     jinja: "{{premise}} \u0412\u044A\u0437 \u043E\u0441\u043D\u043E\u0432\u0430 \u043D\
       \u0430 \u0442\u0430\u0437\u0438 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\
-      \u0438\u044F \u043B\u0438 \u0435 \u0442\u0432\u044A\u0440\u0434\u0435\u043D\u0438\
-      \u0435\u0442\u043E: \"{{hypothesis}}\" {{\"\u0432\u044F\u0440\u043D\u043E\"\
-      }}, {{\"\u043D\u0435\u0432\u044F\u0440\u043D\u043E\"}}, \u0438\u043B\u0438 {{\"\
-      \u043D\u0435\u0443\u0431\u0435\u0434\u0438\u0442\u0435\u043B\u0435\u043D\"}}?\
-      \ ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+      \u0438\u044F \u0442\u0432\u044A\u0440\u0434\u0435\u043D\u0438\u0435\u0442\u043E\
+      : \u201E{{hypothesis}}\u201C {{\"\u0432\u044F\u0440\u043D\u043E\"}} \u043B\u0438\
+      \ \u0435, {{\"\u043D\u0435\u0432\u044F\u0440\u043D\u043E\"}} \u0438\u043B\u0438\
+      \ {{\"\u043D\u0435\u0443\u0431\u0435\u0434\u0438\u0442\u0435\u043B\u043D\u043E\
+      \"}}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -54,7 +54,7 @@ templates:
     name: claim true/false/inconclusive
     reference: Sanh et al. 2021
   404eed25-558a-4d39-9515-7de46d60d4e0: !Template
-    answer_choices: "\u0414\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
+    answer_choices: "\u0434\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
       \u0438"
     id: 404eed25-558a-4d39-9515-7de46d60d4e0
     jinja: "\u041A\u0430\u0442\u043E \u0441\u0435 \u0438\u043C\u0430 \u043F\u0440\u0435\
@@ -70,12 +70,12 @@ templates:
     name: does it follow that
     reference: Sanh et al. 2021
   5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260: !Template
-    answer_choices: "\u0414\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
+    answer_choices: "\u0434\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
       \u0438"
     id: 5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260
     jinja: "{{premise}} \u041E\u043F\u0440\u0430\u0432\u0434\u0430\u043D\u0438 \u043B\
-      \u0438 \u0441\u043C\u0435, \u043A\u0430\u0437\u0432\u0430\u0439\u043A\u0438\
-      , \u0447\u0435 \"{{hypothesis}}\"? \u0414\u0430, \u043D\u0435, \u0438\u043B\u0438\
+      \u0438 \u0441\u043C\u0435 \u0434\u0430 \u043A\u0430\u0436\u0435\u043C, \u0447\
+      \u0435 \u201E{{hypothesis}}\u201C? \u0414\u0430, \u043D\u0435, \u0438\u043B\u0438\
       \ \u043C\u043E\u0436\u0435 \u0431\u0438? ||| {% if label !=-1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
@@ -91,10 +91,10 @@ templates:
     id: 6b0c6191-183d-4731-8050-ab17c909335c
     jinja: "\u0414\u0430 \u043F\u0440\u0435\u0434\u043F\u043E\u043B\u043E\u0436\u0438\
       \u043C, \u0447\u0435 \u0435 \u0432\u044F\u0440\u043D\u043E, \u0447\u0435 {{premise}}\
-      \ \u0422\u043E\u0433\u0430\u0432\u0430 \u0435 \"{{hypothesis}}\" {{\"\u0432\u0438\
-      \u043D\u0430\u0433\u0438\"}}, {{\"\u043F\u043E\u043D\u044F\u043A\u043E\u0433\
-      \u0430\"}}, \u0438\u043B\u0438 {{\"\u043D\u0438\u043A\u043E\u0433\u0430\"}}\
-      \ \u0432\u044F\u0440\u043D\u043E? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ \u0422\u043E\u0433\u0430\u0432\u0430 \u0432\u044F\u0440\u043D\u043E \u043B\
+      \u0438 \u0435 \u201E{{hypothesis}}\u201C {{\"\u0432\u0438\u043D\u0430\u0433\u0438\
+      \"}}, {{\"\u043F\u043E\u043D\u044F\u043A\u043E\u0433\u0430\"}} \u0438\u043B\u0438\
+      \ {{\"\u043D\u0438\u043A\u043E\u0433\u0430\"}}? ||| {% if label !=-1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -108,9 +108,10 @@ templates:
       \u043D\u043E ||| \u041D\u0438\u0442\u043E \u0435\u0434\u043D\u043E\u0442\u043E"
     id: 75db2bc2-3caa-4956-9653-13c7dd6255df
     jinja: "{{premise}}\n\u0412\u044A\u043F\u0440\u043E\u0441: {{hypothesis}} \u0412\
-      \u044F\u0440\u043D\u043E, \u043D\u0435\u0432\u044F\u0440\u043D\u043E, \u0438\
-      \u043B\u0438 \u043D\u0438\u0442\u043E \u0435\u0434\u043D\u043E\u0442\u043E?\
-      \ ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+      \u044F\u0440\u043D\u043E, \u043D\u0435\u0432\u044F\u0440\u043D\u043E \u0438\u043B\
+      \u0438 \u043D\u0438\u0442\u043E \u0435\u0434\u043D\u043E \u043E\u0442 \u0434\
+      \u0432\u0435\u0442\u0435? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -125,11 +126,11 @@ templates:
     id: 87237a07-7cce-470a-80ac-3e5e3a5283ba
     jinja: "{{premise}} \n\n\u0418\u043C\u0430\u0439\u043A\u0438 \u043F\u0440\u0435\
       \u0434\u0432\u0438\u0434 \u0433\u043E\u0440\u043D\u0438\u044F \u0442\u0435\u043A\
-      \u0441\u0442, \u043F\u043E\u043C\u0438\u0441\u043B\u0435\u0442\u0435: {{hypothesis}}\
-      \ \u0422\u043E\u0432\u0430 \u043B\u0438 \u0435 {{\"\u0432\u0438\u043D\u0430\u0433\
-      \u0438\"}}, {{\"\u043F\u043E\u043D\u044F\u043A\u043E\u0433\u0430\"}}, \u0438\
-      \u043B\u0438 {{\"\u043D\u0438\u043A\u043E\u0433\u0430\"}} \u043F\u0440\u0430\
-      \u0432\u0438\u043B\u043D\u043E? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \u0441\u0442, \u043F\u043E\u043C\u0438\u0441\u043B\u0435\u0442\u0435 \u0437\u0430\
+      : {{hypothesis}} \u041F\u0440\u0430\u0432\u0438\u043B\u043D\u043E \u043B\u0438\
+      \ \u0435 \u0442\u043E\u0432\u0430 {{\"\u0432\u0438\u043D\u0430\u0433\u0438\"\
+      }}, {{\"\u043F\u043E\u043D\u044F\u043A\u043E\u0433\u0430\"}} \u0438\u043B\u0438\
+      \ {{\"\u043D\u0438\u043A\u043E\u0433\u0430\"}}? ||| {% if label !=-1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -139,13 +140,14 @@ templates:
     name: consider always/sometimes/never
     reference: Sanh et al. 2021
   8798b8a4-1f59-4c72-9c1b-3e3044a7462a: !Template
-    answer_choices: "\u0414\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
+    answer_choices: "\u0434\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
       \u0438"
     id: 8798b8a4-1f59-4c72-9c1b-3e3044a7462a
-    jinja: "\u0414\u0430\u0434\u0435\u043D\u043E {{premise}} \u0412\u044F\u0440\u043D\
-      \u043E \u043B\u0438 \u0435, \u0447\u0435 \"{{hypothesis}}\"? \u0414\u0430, \u043D\
-      \u0435, \u0438\u043B\u0438 \u043C\u043E\u0436\u0435 \u0431\u0438? ||| {% if\
-      \ label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "\u0434\u0430\u0434\u0435\u043D\u0438 {{premise}} \u0413\u0430\u0440\u0430\
+      \u043D\u0442\u0438\u0440\u0430\u043D\u043E \u043B\u0438 \u0435 \u0432\u044F\u0440\
+      \u043D\u043E, \u0447\u0435 \"{{hypothesis}}\"? \u0414\u0430, \u043D\u0435, \u0438\
+      \u043B\u0438 \u043C\u043E\u0436\u0435 \u0431\u0438? ||| {% if label !=-1 %}{{\
+      \ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -154,7 +156,7 @@ templates:
     name: guaranteed true
     reference: Webson & Pavlick 2021
   8e3b8d3d-1362-47dc-922a-82c03f965989: !Template
-    answer_choices: "\u0414\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
+    answer_choices: "\u0434\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
       \u0438"
     id: 8e3b8d3d-1362-47dc-922a-82c03f965989
     jinja: "\u041A\u0430\u0442\u043E \u0441\u0435 \u0438\u043C\u0430 \u043F\u0440\u0435\
@@ -178,11 +180,11 @@ templates:
     id: 90ab1002-093c-4e54-b48f-626655e36b65
     jinja: "\u0414\u0430 \u043F\u0440\u0438\u0435\u043C\u0435\u043C, \u0447\u0435\
       \ \u0435 \u0432\u044F\u0440\u043D\u043E, \u0447\u0435 {{premise}} \n\n\u0421\
-      \u043B\u0435\u0434\u043E\u0432\u0430\u0442\u0435\u043B\u043D\u043E, \"{{hypothesis}}\"\
+      \u043B\u0435\u0434\u043E\u0432\u0430\u0442\u0435\u043B\u043D\u043E \u201E{{hypothesis}}\u201C\
       \ \u0435 {{\"\u0433\u0430\u0440\u0430\u043D\u0442\u0438\u0440\u0430\u043D\u043E\
-      \"}}, {{\"\u0432\u044A\u0437\u043C\u043E\u0436\u043D\u043E\"}}, \u0438\u043B\
-      \u0438 {{\"\u043D\u0435\u0432\u044A\u0437\u043C\u043E\u0436\u043D\u043E\"}}?\
-      \ ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+      \"}}, {{\"\u0432\u044A\u0437\u043C\u043E\u0436\u043D\u043E\"}} \u0438\u043B\u0438\
+      \ {{\"\u043D\u0435\u0432\u044A\u0437\u043C\u043E\u0436\u043D\u043E\"}}? |||\
+      \ {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -191,7 +193,7 @@ templates:
     name: guaranteed/possible/impossible
     reference: Sanh et al. 2021
   a485d120-6eef-4ff6-8684-42df1639b101: !Template
-    answer_choices: "\u0414\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
+    answer_choices: "\u0434\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
       \u0438"
     id: a485d120-6eef-4ff6-8684-42df1639b101
     jinja: "{{premise}} \n\n\u0412\u044A\u043F\u0440\u043E\u0441: \u0422\u043E\u0432\
@@ -209,13 +211,13 @@ templates:
   bee62bfa-5307-4e1c-97b2-2ad2f7bcb179: !Template
     answer_choices: "\u041F\u0440\u0430\u0432\u0438\u043B\u043D\u043E ||| \u041D\u0435\
       \u043F\u0440\u0430\u0432\u0438\u043B\u043D\u043E ||| \u041D\u0435\u0443\u0431\
-      \u0435\u0434\u0438\u0442\u0435\u043B\u043D\u043E"
+      \u0435\u0434\u0438\u0442\u0435\u043B\u0435\u043D"
     id: bee62bfa-5307-4e1c-97b2-2ad2f7bcb179
-    jinja: "{{premise}} \u0418\u0437\u043F\u043E\u043B\u0437\u0432\u0430\u043D\u0435\
-      \u0442\u043E \u0441\u0430\u043C\u043E \u043D\u0430 \u0433\u043E\u0440\u043D\u043E\
-      \u0442\u043E \u043E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0438 \u0442\u043E\
-      \u0432\u0430, \u043A\u043E\u0435\u0442\u043E \u0437\u043D\u0430\u0435\u0442\u0435\
-      \ \u0437\u0430 \u0441\u0432\u0435\u0442\u0430, \"{{hypothesis}}\" \u043E\u043F\
+    jinja: "{{premise}} \u0418\u0437\u043F\u043E\u043B\u0437\u0432\u0430\u0439\u043A\
+      \u0438 \u0441\u0430\u043C\u043E \u0433\u043E\u0440\u043D\u043E\u0442\u043E \u043E\
+      \u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0438 \u0442\u043E\u0432\u0430,\
+      \ \u043A\u043E\u0435\u0442\u043E \u0437\u043D\u0430\u0435\u0442\u0435 \u0437\
+      \u0430 \u0441\u0432\u0435\u0442\u0430, \u201E{{hypothesis}}\u201C \u043E\u043F\
       \u0440\u0435\u0434\u0435\u043B\u0435\u043D\u043E \u0435 \u043F\u0440\u0430\u0432\
       \u0438\u043B\u043D\u043E, \u043D\u0435\u043F\u0440\u0430\u0432\u0438\u043B\u043D\
       \u043E \u0438\u043B\u0438 \u043D\u0435\u0443\u0431\u0435\u0434\u0438\u0442\u0435\
@@ -229,10 +231,10 @@ templates:
     name: MNLI crowdsource
     reference: Adapted from Williams et al. 2018's instructions to crowdsourcing workers.
   e503b148-8e6c-43b5-9ed6-312794c54d9b: !Template
-    answer_choices: "\u0414\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
+    answer_choices: "\u0434\u0430 ||| \u041D\u0435 ||| \u041C\u043E\u0436\u0435 \u0431\
       \u0438"
     id: e503b148-8e6c-43b5-9ed6-312794c54d9b
-    jinja: "\u0414\u0430\u0434\u0435\u043D\u043E {{premise}} \u0422\u0440\u044F\u0431\
+    jinja: "\u0434\u0430\u0434\u0435\u043D\u0438 {{premise}} \u0422\u0440\u044F\u0431\
       \u0432\u0430 \u043B\u0438 \u0434\u0430 \u043F\u0440\u0438\u0435\u043C\u0435\u043C\
       , \u0447\u0435 \"{{hypothesis}}\" \u0435 \u0432\u044F\u0440\u043D\u043E? \u0414\
       \u0430, \u043D\u0435, \u0438\u043B\u0438 \u043C\u043E\u0436\u0435 \u0431\u0438\
@@ -247,16 +249,16 @@ templates:
   ea56b7f3-6e07-45bc-b619-c527eac4a41b: !Template
     answer_choices: "\u0412\u044F\u0440\u043D\u043E ||| \u041D\u0435\u0432\u044F\u0440\
       \u043D\u043E ||| \u041D\u0435\u0443\u0431\u0435\u0434\u0438\u0442\u0435\u043B\
-      \u043D\u043E"
+      \u0435\u043D"
     id: ea56b7f3-6e07-45bc-b619-c527eac4a41b
-    jinja: "\u0412\u0437\u0435\u043C\u0435\u0442\u0435 \u0441\u043B\u0435\u0434\u043D\
-      \u043E\u0442\u043E \u043A\u0430\u0442\u043E \u0438\u0441\u0442\u0438\u043D\u0430\
-      : {{premise}}\n\u0422\u043E\u0433\u0430\u0432\u0430 \u0441\u043B\u0435\u0434\
-      \u043D\u043E\u0442\u043E \u0442\u0432\u044A\u0440\u0434\u0435\u043D\u0438\u0435\
-      : \"{{hypothesis}}\" \u0435 {{\"\u0432\u044F\u0440\u043D\u043E\"}}, {{\"\u043D\
-      \u0435\u0432\u044F\u0440\u043D\u043E\"}}, \u0438\u043B\u0438 {{\"\u043D\u0435\
-      \u0443\u0431\u0435\u0434\u0438\u0442\u0435\u043B\u0435\u043D\"}}? ||| {% if\
-      \ label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "\u041F\u0440\u0438\u0435\u043C\u0435\u0442\u0435 \u0441\u043B\u0435\u0434\
+      \u043D\u043E\u0442\u043E \u0437\u0430 \u0438\u0441\u0442\u0438\u043D\u0430:\
+      \ {{premise}}\n\u0421\u043B\u0435\u0434 \u0442\u043E\u0432\u0430 \u0441\u043B\
+      \u0435\u0434\u043D\u043E\u0442\u043E \u0438\u0437\u044F\u0432\u043B\u0435\u043D\
+      \u0438\u0435: \u201E{{hypothesis}}\u201C \u0435 {{\"\u0432\u044F\u0440\u043D\
+      \u043E\"}}, {{\"\u043D\u0435\u0432\u044F\u0440\u043D\u043E\"}} \u0438\u043B\u0438\
+      \ {{\"\u043D\u0435\u0443\u0431\u0435\u0434\u0438\u0442\u0435\u043B\u0435\u043D\
+      \"}}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

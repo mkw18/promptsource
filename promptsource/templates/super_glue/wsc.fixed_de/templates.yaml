@@ -17,7 +17,7 @@ templates:
   23361c5d-b67f-4c2a-9da7-16301c55d0e1: !Template
     answer_choices: Nein ||| Ja
     id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
-    jinja: '{{ text }} Hier von "{{ span2_text }}" bedeuten sie "{{ span1_text }}".
+    jinja: '{{ text }} Hier meinen sie mit "{{ span2_text }}" "{{ span1_text }}".
       Ja oder Nein? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -42,9 +42,9 @@ templates:
   4b3e29cc-ccb8-4e4c-a845-4935ca29cf34: !Template
     answer_choices: Nein ||| Ja
     id: 4b3e29cc-ccb8-4e4c-a845-4935ca29cf34
-    jinja: '{{ text }} Ich denke, sie bedeuten "{{ text.split(" ")[span2_index:] |
-      join(" ") | replace(span2_text, span1_text) }}" Ja oder Nein? ||| {% if label
-      != -1 %}{{ answer_choices[label] }}{% endif %}'
+    jinja: '{{ text }} Ich denke, sie meinen "{{ text.split(" ")[span2_index:] | join("
+      ") | replace(span2_text, span1_text) }}" Ja oder Nein? ||| {% if label != -1
+      %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -55,7 +55,7 @@ templates:
   7482d24f-cf45-4013-b82d-369489fc958b: !Template
     answer_choices: Nein ||| Ja
     id: 7482d24f-cf45-4013-b82d-369489fc958b
-    jinja: "{{ text }} Hier steht \"{{ span2_text.lower() }}\" f\xFCr {{ span1_text\
+    jinja: "{{ text }} Steht hier \"{{ span2_text.lower() }}\" f\xFCr {{ span1_text\
       \ }}? Ja oder Nein? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
       \ %}"
     metadata: !TemplateMetadata
@@ -68,7 +68,7 @@ templates:
   7d377293-d043-4b6c-8ec1-d61eaf14ec67: !Template
     answer_choices: Nein ||| Ja
     id: 7d377293-d043-4b6c-8ec1-d61eaf14ec67
-    jinja: "Passage: {{ text }} \n\nFrage: In der obigen Passage bezieht sich das\
+    jinja: "Passage: {{ text }} \n\nFrage: Bezieht sich in der obigen Passage das\
       \ Pronomen \"{{ span2_text }}\" auf {{ span1_text }}?\n\nAntworten: ||| {% if\
       \ label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
@@ -81,7 +81,7 @@ templates:
   809eacd0-2f6c-4e3a-b52a-57c783879d36: !Template
     answer_choices: Nein ||| Ja
     id: 809eacd0-2f6c-4e3a-b52a-57c783879d36
-    jinja: '{{ text }} Kann das Pronomen im vorherigen Satz "{{ span2_text }}" durch
+    jinja: '{{ text }} Kann im vorherigen Satz das Pronomen "{{ span2_text }}" durch
       "{{ span1_text }}" ersetzt werden? Ja oder Nein? ||| {% if label != -1 %}{{
       answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata

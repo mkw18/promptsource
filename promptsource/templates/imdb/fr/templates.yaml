@@ -2,10 +2,10 @@ dataset: imdb
 subset: fr
 templates:
   02ff2949-0f45-4d97-941e-6fa4c0afbc2d: !Template
-    answer_choices: negative ||| positive
+    answer_choices: "n\xE9gatif ||| positif"
     id: 02ff2949-0f45-4d97-941e-6fa4c0afbc2d
-    jinja: La critique de film suivante exprime quel sentiment? {{text}} ||| {{ answer_choices
-      [label] }}
+    jinja: "La critique de film suivante exprime quel sentiment\_? {{text}} ||| {{\
+      \ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -16,8 +16,8 @@ templates:
   2351d12a-e630-4d19-8b41-e199266e38f7: !Template
     answer_choices: mal ||| bien
     id: 2351d12a-e630-4d19-8b41-e199266e38f7
-    jinja: "{{text}} Le critique a-t-il trouv\xE9 ce film {{\"Bon ou Mauvais\"}}?\
-      \ ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} Le critique a-t-il trouv\xE9 ce film {{\"Bon ou Mauvais\"}}\_\
+      ? ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -26,10 +26,10 @@ templates:
     name: Reviewer Opinion bad good choices
     reference: ''
   5f372fb1-795a-47b6-8ddf-c4fd1579e76a: !Template
-    answer_choices: negative ||| positive
+    answer_choices: "n\xE9gatif ||| positif"
     id: 5f372fb1-795a-47b6-8ddf-c4fd1579e76a
-    jinja: "{{text}} \nCette revue est-elle {{\"positif ou n\xE9gatif\"}}? ||| \n\
-      {{answer_choices[label] }}"
+    jinja: "{{text}} \nCet avis est-il {{\"positif ou n\xE9gatif\"}}\_? ||| \n{{answer_choices[label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -38,9 +38,9 @@ templates:
     name: 'Sentiment with choices '
     reference: ''
   866474a5-1498-46b7-bfee-ac0c5160707f: !Template
-    answer_choices: negative ||| positive
+    answer_choices: "n\xE9gatif ||| positif"
     id: 866474a5-1498-46b7-bfee-ac0c5160707f
-    jinja: '{{text}} Que pense le spectateur du film? ||| {{ answer_choices [label]
+    jinja: '{{text}} Que pense le spectateur du film ? ||| {{ answer_choices [label]
       }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -50,10 +50,10 @@ templates:
     name: Reviewer Sentiment Feeling
     reference: ''
   96538f30-f2c1-430e-8fc6-936a16966d9c: !Template
-    answer_choices: negative ||| positive
+    answer_choices: "n\xE9gatif ||| positif"
     id: 96538f30-f2c1-430e-8fc6-936a16966d9c
-    jinja: "{{text}} Quel sentiment l'exprime l'\xE9crivain pour le film? ||| {{ answer_choices\
-      \ [label] }}"
+    jinja: "{{text}} Quel sentiment l'\xE9crivain exprime-t-il pour le film? ||| {{\
+      \ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -62,7 +62,7 @@ templates:
     name: Writer Expressed Sentiment
     reference: ''
   af51297c-38a3-4d6c-a8b5-04b1243d7443: !Template
-    answer_choices: negative ||| positive
+    answer_choices: "n\xE9gatif ||| positif"
     id: af51297c-38a3-4d6c-a8b5-04b1243d7443
     jinja: "{{text}} Le sentiment exprim\xE9 pour le film est ||| {{ answer_choices\
       \ [label] }}"
@@ -74,9 +74,9 @@ templates:
     name: Movie Expressed Sentiment
     reference: ''
   b93b74ac-fe95-40b4-9610-318b46ab820f: !Template
-    answer_choices: negative ||| positive
+    answer_choices: "n\xE9gatif ||| positif"
     id: b93b74ac-fe95-40b4-9610-318b46ab820f
-    jinja: "{{text}} Quel est le sentiment exprim\xE9 dans ce texte? ||| {{ answer_choices\
+    jinja: "{{text}} Quel est le sentiment exprim\xE9 dans ce texte ? ||| {{ answer_choices\
       \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -86,9 +86,10 @@ templates:
     name: Text Expressed Sentiment
     reference: ''
   b9b5d79d-f0b3-4bec-a724-f585db3e93ff: !Template
-    answer_choices: negative ||| positive
+    answer_choices: "n\xE9gatif ||| positif"
     id: b9b5d79d-f0b3-4bec-a724-f585db3e93ff
-    jinja: '{{text}} Ce n''est certainement pas une revue ||| {{ answer_choices [1-label]}}.'
+    jinja: '{{text}} Ce n''est certainement pas une critique ||| {{ answer_choices
+      [1-label]}}.'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -99,7 +100,7 @@ templates:
   bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9: !Template
     answer_choices: Non ||| Oui
     id: bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9
-    jinja: "{{text}} Le critique a-t-il appr\xE9ci\xE9 le film? ||| {{ answer_choices\
+    jinja: "{{text}} Le critique a-t-il appr\xE9ci\xE9 le film\_? ||| {{ answer_choices\
       \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -109,9 +110,9 @@ templates:
     name: Reviewer Enjoyment Yes No
     reference: ''
   c70d1687-2421-49a2-9553-91b8bac4cfbe: !Template
-    answer_choices: negative ||| positive
+    answer_choices: "n\xE9gatif ||| positif"
     id: c70d1687-2421-49a2-9553-91b8bac4cfbe
-    jinja: "{{text}} Quel est le sentiment exprim\xE9 par le critique du film? |||\
+    jinja: "{{text}} Quel est le sentiment exprim\xE9 par le critique du film\_? |||\
       \ {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -121,9 +122,9 @@ templates:
     name: Reviewer Expressed Sentiment
     reference: ''
   e01970ab-42c0-4e6e-a08f-4940d889ef37: !Template
-    answer_choices: "Ils n'aimaient pas \xE7a! ||| Ils ont ador\xE9"
+    answer_choices: "Ils n'ont pas aim\xE9 \xE7a ! ||| Ils ont ador\xE9"
     id: e01970ab-42c0-4e6e-a08f-4940d889ef37
-    jinja: '{{text}} Que pense le critique du film? ||| {{ answer_choices [label]
+    jinja: '{{text}} Que pense le critique du film ? ||| {{ answer_choices [label]
       }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false

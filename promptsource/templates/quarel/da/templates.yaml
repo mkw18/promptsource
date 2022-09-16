@@ -4,7 +4,7 @@ templates:
   5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5904fd73-b1ee-4f89-b7bc-b0fe8cc07c66
-    jinja: "Sp\xF8rgsm\xE5l: {{question}}\n\nBrug ikke {{\"a\"}} og {{\"b\"}} til\
+    jinja: "Sp\xF8rgsm\xE5l: {{question}}\n\nBrug ikke {{\"A\"}} og {{\"B\"}} til\
       \ at besvare sp\xF8rgsm\xE5let, men v\xE6lg i stedet mellem \"{{answer_choices[0]}}\"\
       \ og \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
@@ -17,7 +17,7 @@ templates:
   5b5f9d29-0ad5-4bb9-831a-11fcb115c10d: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
-    jinja: "Her er en logisk test: {{question}}\n\nV\xE6lg svaret mellem \"{{answer_choices[0]}}\"\
+    jinja: "Her er en logiktest: {{question}}\n\nV\xE6lg svaret mellem \"{{answer_choices[0]}}\"\
       \ og \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -29,10 +29,10 @@ templates:
   63c58389-605a-42b9-85a6-a2586a954a92: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 63c58389-605a-42b9-85a6-a2586a954a92
-    jinja: 'Her er en novelle: {{question}}.
+    jinja: 'Her er en kort historie: {{question}}.
 
 
-      Hvad er det mest sensiske svar mellem "{{answer_choices[0]}}" og "{{answer_choices[1]}}"?
+      Hvad er det mest fornuftige svar mellem "{{answer_choices[0]}}" og "{{answer_choices[1]}}"?
 
       |||
 
@@ -59,8 +59,8 @@ templates:
   92013fab-5387-44d4-bf0f-e29a31bcafb6: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 92013fab-5387-44d4-bf0f-e29a31bcafb6
-    jinja: "Jeg tester mine studerendes logik.\nHvad er svaret, de skal v\xE6lge mellem\
-      \ \"{{answer_choices[0]}}\" og \"{{answer_choices[1]}}\"?\nLogik test: {{question}}\n\
+    jinja: "Jeg tester mine elevers logik.\nHvad er svaret, de skal v\xE6lge mellem\
+      \ \"{{answer_choices[0]}}\" og \"{{answer_choices[1]}}\"?\nLogisk test: {{question}}\n\
       |||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

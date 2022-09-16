@@ -2,9 +2,9 @@ dataset: imdb
 subset: es
 templates:
   02ff2949-0f45-4d97-941e-6fa4c0afbc2d: !Template
-    answer_choices: negative ||| positive
+    answer_choices: negativo ||| positivo
     id: 02ff2949-0f45-4d97-941e-6fa4c0afbc2d
-    jinja: "La siguiente revisi\xF3n de la pel\xEDcula expresa qu\xE9 sentimiento?\
+    jinja: "\xBFQu\xE9 sentimiento expresa la siguiente rese\xF1a de la pel\xEDcula?\
       \ {{text}} ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -14,7 +14,7 @@ templates:
     name: Movie Expressed Sentiment 2
     reference: ''
   2351d12a-e630-4d19-8b41-e199266e38f7: !Template
-    answer_choices: bad ||| good
+    answer_choices: malo ||| bueno
     id: 2351d12a-e630-4d19-8b41-e199266e38f7
     jinja: "{{text}} \xBFEl cr\xEDtico encontr\xF3 esta pel\xEDcula {{\"bueno o malo\"\
       }}? ||| {{ answer_choices [label] }}"
@@ -26,10 +26,10 @@ templates:
     name: Reviewer Opinion bad good choices
     reference: ''
   5f372fb1-795a-47b6-8ddf-c4fd1579e76a: !Template
-    answer_choices: negative ||| positive
+    answer_choices: negativo ||| positivo
     id: 5f372fb1-795a-47b6-8ddf-c4fd1579e76a
-    jinja: "{{text}} \n\xBFEs esta revisi\xF3n {{\"positivo o negativo\"}}? ||| \n\
-      {{answer_choices[label] }}"
+    jinja: "{{text}} \n\xBFEsta rese\xF1a es {{\"positivo o negativo\"}}? ||| \n{{answer_choices[label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -38,10 +38,10 @@ templates:
     name: 'Sentiment with choices '
     reference: ''
   866474a5-1498-46b7-bfee-ac0c5160707f: !Template
-    answer_choices: negative ||| positive
+    answer_choices: negativo ||| positivo
     id: 866474a5-1498-46b7-bfee-ac0c5160707f
-    jinja: "{{text}} \xBFC\xF3mo se siente el espectador sobre la pel\xEDcula? |||\
-      \ {{ answer_choices [label] }}"
+    jinja: "{{text}} \xBFC\xF3mo se siente el espectador acerca de la pel\xEDcula?\
+      \ ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -50,9 +50,9 @@ templates:
     name: Reviewer Sentiment Feeling
     reference: ''
   96538f30-f2c1-430e-8fc6-936a16966d9c: !Template
-    answer_choices: negative ||| positive
+    answer_choices: negativo ||| positivo
     id: 96538f30-f2c1-430e-8fc6-936a16966d9c
-    jinja: "{{text}} \xBFQu\xE9 sentimiento expresa el escritor para la pel\xEDcula?\
+    jinja: "{{text}} \xBFQu\xE9 sentimiento expresa el escritor por la pel\xEDcula?\
       \ ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -62,9 +62,9 @@ templates:
     name: Writer Expressed Sentiment
     reference: ''
   af51297c-38a3-4d6c-a8b5-04b1243d7443: !Template
-    answer_choices: negative ||| positive
+    answer_choices: negativo ||| positivo
     id: af51297c-38a3-4d6c-a8b5-04b1243d7443
-    jinja: "{{text}} El sentimiento expresado para la pel\xEDcula es ||| {{ answer_choices\
+    jinja: "{{text}} El sentimiento expresado por la pel\xEDcula es ||| {{ answer_choices\
       \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -74,7 +74,7 @@ templates:
     name: Movie Expressed Sentiment
     reference: ''
   b93b74ac-fe95-40b4-9610-318b46ab820f: !Template
-    answer_choices: negative ||| positive
+    answer_choices: negativo ||| positivo
     id: b93b74ac-fe95-40b4-9610-318b46ab820f
     jinja: "{{text}} \xBFCu\xE1l es el sentimiento expresado en este texto? ||| {{\
       \ answer_choices [label] }}"
@@ -86,9 +86,9 @@ templates:
     name: Text Expressed Sentiment
     reference: ''
   b9b5d79d-f0b3-4bec-a724-f585db3e93ff: !Template
-    answer_choices: negative ||| positive
+    answer_choices: negativo ||| positivo
     id: b9b5d79d-f0b3-4bec-a724-f585db3e93ff
-    jinja: "{{text}} Esta definitivamente no es una revisi\xF3n ||| {{ answer_choices\
+    jinja: "{{text}} Esta definitivamente no es una revisi\xF3n de ||| {{ answer_choices\
       \ [1-label]}}."
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -110,7 +110,7 @@ templates:
     name: Reviewer Enjoyment Yes No
     reference: ''
   c70d1687-2421-49a2-9553-91b8bac4cfbe: !Template
-    answer_choices: negative ||| positive
+    answer_choices: negativo ||| positivo
     id: c70d1687-2421-49a2-9553-91b8bac4cfbe
     jinja: "{{text}} \xBFCu\xE1l es el sentimiento expresado por el cr\xEDtico de\
       \ la pel\xEDcula? ||| {{ answer_choices [label] }}"
@@ -124,8 +124,8 @@ templates:
   e01970ab-42c0-4e6e-a08f-4940d889ef37: !Template
     answer_choices: "\xA1No les gust\xF3! ||| Ellos lo amaron"
     id: e01970ab-42c0-4e6e-a08f-4940d889ef37
-    jinja: "{{text}} \xBFC\xF3mo se siente el cr\xEDtico sobre la pel\xEDcula? |||\
-      \ {{ answer_choices [label] }}"
+    jinja: "{{text}} \xBFC\xF3mo se siente el cr\xEDtico acerca de la pel\xEDcula?\
+      \ ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

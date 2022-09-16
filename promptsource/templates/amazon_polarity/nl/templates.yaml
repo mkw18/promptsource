@@ -21,7 +21,7 @@ templates:
   3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
     answer_choices: Nee ||| Ja
     id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
-    jinja: 'Zou de gebruiker op basis van deze review dit product aanbevelen?
+    jinja: 'Zou de gebruiker dit product op basis van deze beoordeling aanbevelen?
 
       ===
 
@@ -41,7 +41,7 @@ templates:
   592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
     answer_choices: Nee ||| Ja
     id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
-    jinja: 'Is deze productbeoordeling positief?
+    jinja: 'Is deze productreview positief?
 
       Titel: {{title}}
 
@@ -94,7 +94,7 @@ templates:
   9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
     answer_choices: Negatief ||| Positief
     id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
-    jinja: 'Is er een negatieve of positieve toon voor deze productreview?
+    jinja: 'Is er een negatieve of positieve toon aan deze productrecensie?
 
       ===
 
@@ -115,8 +115,8 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
     answer_choices: ontevreden ||| tevreden
     id: b13369e8-0500-4e93-90d4-8e6814bfb97b
-    jinja: 'Hier is een recensie achtergelaten door een klant op een product.Zou je
-      zeggen dat hij {{answer_choices[1]}} of {{answer_choices[0]}} was?
+    jinja: 'Hier is een recensie achtergelaten door een klant over een product. Zou
+      je zeggen dat hij {{answer_choices[1]}} of {{answer_choices[0]}} was?
 
       Titel: {{title}}
 
@@ -135,11 +135,11 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
     answer_choices: kleiner worden ||| toenemen
     id: b13369e8-0500-4e93-90d4-8e6814bfb98b
-    jinja: 'U overweegt om een product te kopen.Je kijkt naar de beoordelingen.Zou
-      de volgende beoordeling {{answer_choices[0]}} of {{answer_choices[1]}} de kansen
+    jinja: 'U overweegt een product te kopen. Je kijkt naar de recensies. Zou de volgende
+      beoordeling {{answer_choices[0]}} of {{answer_choices[1]}} de kans vergroten
       dat u het product koopt?
 
-      Review titel: {{title}}
+      Titel recensie: {{title}}
 
       Product review: {{content}}
 
@@ -154,14 +154,14 @@ templates:
     name: would_you_buy
     reference: ''
   b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
-    answer_choices: onfilms ||| flatterend
+    answer_choices: niet vleiend ||| vleiend
     id: b13369e8-0500-4e93-90d4-8e6814bfb99b
     jinja: 'Titel: {{title}}
 
       Product review: {{content}}
 
-      Zou u zeggen dat deze review het product weergeeft in een {{answer_choices[1]}}
-      of {{answer_choices[0]}} licht?
+      Zou u zeggen dat deze recensie het product in een {{answer_choices[1]}} of {{answer_choices[0]}}
+      licht laat zien?
 
       |||
 

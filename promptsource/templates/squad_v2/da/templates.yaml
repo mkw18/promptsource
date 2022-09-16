@@ -19,9 +19,9 @@ templates:
     answer_choices: null
     id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
     jinja: "{% if answers.text != [] %}\nBestem det sp\xF8rgsm\xE5l, du m\xE5ske har\
-      \ bedt om at f\xE5 tilbage f\xF8lgende svar til den givne kontekst\nSammenh\xE6\
-      ng: {{context}};\nSvar: {{answers.text[0]}};\nSp\xF8rgsm\xE5l: |||\n{{question}}\n\
-      {% endif %}\n"
+      \ stillet for at f\xE5 det f\xF8lgende svar tilbage for den givne kontekst\n\
+      Sammenh\xE6ng: {{context}};\nSvar: {{answers.text[0]}};\nSp\xF8rgsm\xE5l: |||\n\
+      {{question}}\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -34,9 +34,9 @@ templates:
     answer_choices: null
     id: 20064b80-e4d0-41b7-9135-92c0077d5044
     jinja: "{% set seq = [\n'Hvad drejer det sig om? ',\n'Hvad handler afsnittet om?\
-      \ ',\n'F\xE5 emnet fra: ',\n'Fra passagen skal du f\xE5 emnet',\n'Jeg vil gerne\
-      \ vide emnet. ',\n'Emne fra passagen: ',\n'Emne fra afsnit: ',\n] %}\n{{ seq\
-      \ | choice }}\n{{context}} |||\n{{title | replace(\"_\", \" \")}}"
+      \ ',\n'F\xE5 emnet fra: ',\n'F\xE5 emnet fra passagen',\n'Jeg vil gerne vide\
+      \ emnet. ',\n'Emne fra passagen: ',\n'Emne fra afsnittet: ',\n] %}\n{{ seq |\
+      \ choice }}\n{{context}} |||\n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -50,11 +50,11 @@ templates:
   338cc143-361e-4796-b035-31fb2201c49f: !Template
     answer_choices: null
     id: 338cc143-361e-4796-b035-31fb2201c49f
-    jinja: "{% set seq = [\n'Dette handler om ',\n'Hvad drejer det sig om? ',\n'Afsnittet\
-      \ handler om ',\n'Hvad handler afsnittet om? ',\n'F\xE5 emnet: ',\n'Fra passagen\
-      \ er emnet',\n'Jeg vil gerne vide emnet. ',\n'Emne fra passagen: ',\n'Emne fra\
-      \ afsnit: ',\n] %}\n{{context}}\n{{ seq | choice }}|||\n{{title | replace(\"\
-      _\", \" \")}}"
+    jinja: "{% set seq = [\n'Det her handler om ',\n'Hvad drejer det sig om? ',\n\
+      'Paragraffen handler om ',\n'Hvad handler afsnittet om? ',\n'F\xE5 emnet: ',\n\
+      'Ud fra passagen er emnet',\n'Jeg vil gerne vide emnet. ',\n'Emne fra passagen:\
+      \ ',\n'Emne fra afsnittet: ',\n] %}\n{{context}}\n{{ seq | choice }}|||\n{{title\
+      \ | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -101,8 +101,8 @@ templates:
     jinja: "{% set seq = [\n'Besvar sp\xF8rgsm\xE5let afh\xE6ngigt af konteksten.',\n\
       'Hvad er svaret?',\n] %}\n\n{{ seq | choice }}\nSammenh\xE6ng: {{context}};\n\
       Sp\xF8rgsm\xE5l: {{question}};\nIf you can't find the answer, please respond\
-      \ \"ubesvarelig\".\nSvar: |||\n{% if answers.text == [] %}\nubesvarelig\n{%\
-      \ else %}\n{{answers.text[0]}}\n{% endif %}"
+      \ \"ubesvaret\".\nSvar: |||\n{% if answers.text == [] %}\nubesvaret\n{% else\
+      \ %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: *id001
     name: Questions with Context +unanswerable
     reference: Given context and question, give answer
@@ -131,7 +131,7 @@ templates:
       'Fort\xE6l mig ',\n'Fra passagen, ',\n'jeg vil vide ',\n'jeg vil gerne sp\xF8\
       rge ',\n'Hvad er svaret p\xE5: ',\n'Find svaret p\xE5: ',\n'Svar: ',\n'',\n\
       ] %}\n{{context}} {{ seq | choice }}{{question}} If you can't find the answer,\
-      \ please respond \"ubesvarelig\". |||\n{% if answers.text == [] %}\nubesvarelig\n\
+      \ please respond \"ubesvaret\". |||\n{% if answers.text == [] %}\nubesvaret\n\
       {% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: *id002
     name: Questions with Context - Without Prompt Keywords +unanswerable
@@ -140,8 +140,8 @@ templates:
   e2e41877-4794-4ff9-9f92-a2a85105e2a7: !Template
     answer_choices: Ja ||| ingen
     id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
-    jinja: "Sammenh\xE6ng: {{context}}; \n\nSp\xF8rgsm\xE5l: {{question}} \n\nEr dette\
-      \ sp\xF8rgsm\xE5l svarbart? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n\
+    jinja: "Sammenh\xE6ng: {{context}}; \n\nSp\xF8rgsm\xE5l: {{question}} \n\nKan\
+      \ dette sp\xF8rgsm\xE5l besvares? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n\
       {% else %}\n{{answer_choices[1]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -153,7 +153,7 @@ templates:
   e51c23b9-5b10-4db3-a0d1-ba546830173d: !Template
     answer_choices: null
     id: e51c23b9-5b10-4db3-a0d1-ba546830173d
-    jinja: "{% set seq = [\n'Bestem emnet for sp\xF8rgsm\xE5l-svar-paret. ',\n'Find\
+    jinja: "{% set seq = [\n'Bestem emnet for sp\xF8rgsm\xE5l-svar-parret. ',\n'Find\
       \ emnet. ',\n'Hvad er emnet fra dette? ',\n] %}\n{% if answers.text != [] %}\n\
       {{ seq | choice }}\nSp\xF8rgsm\xE5l: {{question}};  Svar: {{answers.text[0]}};\
       \ Emne: |||\n{{title}}\n{% endif %}"

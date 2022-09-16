@@ -4,8 +4,8 @@ templates:
   02ff2949-0f45-4d97-941e-6fa4c0afbc2d: !Template
     answer_choices: Negativ ||| positiv
     id: 02ff2949-0f45-4d97-941e-6fa4c0afbc2d
-    jinja: "Die folgende Filmbewertung dr\xFCckt welches Gef\xFChl aus? {{text}} |||\
-      \ {{ answer_choices [label] }}"
+    jinja: "Welche Stimmung dr\xFCckt die folgende Filmkritik aus? {{text}} ||| {{\
+      \ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -16,7 +16,7 @@ templates:
   2351d12a-e630-4d19-8b41-e199266e38f7: !Template
     answer_choices: Schlecht ||| gut
     id: 2351d12a-e630-4d19-8b41-e199266e38f7
-    jinja: '{{text}} Hat der Rezensent diesen Film gefunden {{"gut oder schlecht"}}?
+    jinja: '{{text}} Hat der Rezensent diesen Film {{"gut oder schlecht"}} gefunden?
       ||| {{ answer_choices [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -28,7 +28,7 @@ templates:
   5f372fb1-795a-47b6-8ddf-c4fd1579e76a: !Template
     answer_choices: Negativ ||| positiv
     id: 5f372fb1-795a-47b6-8ddf-c4fd1579e76a
-    jinja: "{{text}} \nIst diese Rezension {{\"positiv oder negativ\"}}? ||| \n{{answer_choices[label]\
+    jinja: "{{text}} \nIst diese Bewertung {{\"positiv oder negativ\"}}? ||| \n{{answer_choices[label]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -40,8 +40,8 @@ templates:
   866474a5-1498-46b7-bfee-ac0c5160707f: !Template
     answer_choices: Negativ ||| positiv
     id: 866474a5-1498-46b7-bfee-ac0c5160707f
-    jinja: "{{text}} Wie f\xFChlt sich der Betrachter \xFCber den Film? ||| {{ answer_choices\
-      \ [label] }}"
+    jinja: '{{text}} Wie empfindet der Zuschauer den Film? ||| {{ answer_choices [label]
+      }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -52,8 +52,8 @@ templates:
   96538f30-f2c1-430e-8fc6-936a16966d9c: !Template
     answer_choices: Negativ ||| positiv
     id: 96538f30-f2c1-430e-8fc6-936a16966d9c
-    jinja: "{{text}} Welches Gef\xFChl dr\xFCckt der Schriftsteller f\xFCr den Film\
-      \ aus? ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} Welche Gef\xFChle dr\xFCckt der Autor f\xFCr den Film aus? |||\
+      \ {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -64,8 +64,8 @@ templates:
   af51297c-38a3-4d6c-a8b5-04b1243d7443: !Template
     answer_choices: Negativ ||| positiv
     id: af51297c-38a3-4d6c-a8b5-04b1243d7443
-    jinja: "{{text}} Das f\xFCr den Film zum Ausdruck gebrachte Gef\xFChl ist |||\
-      \ {{ answer_choices [label] }}"
+    jinja: "{{text}} Die f\xFCr den Film ausgedr\xFCckte Stimmung ist ||| {{ answer_choices\
+      \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -76,8 +76,8 @@ templates:
   b93b74ac-fe95-40b4-9610-318b46ab820f: !Template
     answer_choices: Negativ ||| positiv
     id: b93b74ac-fe95-40b4-9610-318b46ab820f
-    jinja: "{{text}} Was ist das Gef\xFChl in diesem Text? ||| {{ answer_choices [label]\
-      \ }}"
+    jinja: "{{text}} Welche Stimmung dr\xFCckt dieser Text aus? ||| {{ answer_choices\
+      \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -88,7 +88,8 @@ templates:
   b9b5d79d-f0b3-4bec-a724-f585db3e93ff: !Template
     answer_choices: Negativ ||| positiv
     id: b9b5d79d-f0b3-4bec-a724-f585db3e93ff
-    jinja: '{{text}} Dies ist definitiv keine ||| {{ answer_choices [1-label]}} -Richtung.'
+    jinja: '{{text}} Dies ist definitiv keine Bewertung von ||| {{ answer_choices
+      [1-label]}}.'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -111,8 +112,8 @@ templates:
   c70d1687-2421-49a2-9553-91b8bac4cfbe: !Template
     answer_choices: Negativ ||| positiv
     id: c70d1687-2421-49a2-9553-91b8bac4cfbe
-    jinja: "{{text}} Was ist das Gef\xFChl, das der Rezensent f\xFCr den Film zum\
-      \ Ausdruck bringt? ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} Welche Meinung dr\xFCckt der Rezensent f\xFCr den Film aus? |||\
+      \ {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -121,10 +122,10 @@ templates:
     name: Reviewer Expressed Sentiment
     reference: ''
   e01970ab-42c0-4e6e-a08f-4940d889ef37: !Template
-    answer_choices: Sie mochten es nicht! ||| Sie liebten es
+    answer_choices: Das gefiel ihnen nicht! ||| Sie liebten es
     id: e01970ab-42c0-4e6e-a08f-4940d889ef37
-    jinja: "{{text}} Wie f\xFChlt sich der Rezensent \xFCber den Film? ||| {{ answer_choices\
-      \ [label] }}"
+    jinja: '{{text}} Wie findet der Rezensent den Film? ||| {{ answer_choices [label]
+      }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

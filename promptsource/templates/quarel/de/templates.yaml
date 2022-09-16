@@ -17,7 +17,7 @@ templates:
   5b5f9d29-0ad5-4bb9-831a-11fcb115c10d: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 5b5f9d29-0ad5-4bb9-831a-11fcb115c10d
-    jinja: "Hier ist ein Logiktest: {{question}}\n\nW\xE4hlen Sie die Antwort zwischen\
+    jinja: "Hier ein Logiktest: {{question}}\n\nW\xE4hlen Sie die Antwort zwischen\
       \ \"{{answer_choices[0]}}\" und \"{{answer_choices[1]}}\".\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -29,14 +29,9 @@ templates:
   63c58389-605a-42b9-85a6-a2586a954a92: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 63c58389-605a-42b9-85a6-a2586a954a92
-    jinja: 'Hier ist eine Kurzgeschichte: {{question}}.
-
-
-      Was ist die sinnvollste Antwort zwischen "{{answer_choices[0]}}" und "{{answer_choices[1]}}"?
-
-      |||
-
-      {{answer_choices[answer_index]}}'
+    jinja: "Hier ist eine Kurzgeschichte: {{question}}.\n\nWas ist die vern\xFCnftigste\
+      \ Antwort zwischen \"{{answer_choices[0]}}\" und \"{{answer_choices[1]}}\"?\n\
+      |||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -59,9 +54,9 @@ templates:
   92013fab-5387-44d4-bf0f-e29a31bcafb6: !Template
     answer_choices: '{{world_literals.world1[0]}} ||| {{world_literals.world2[0]}}'
     id: 92013fab-5387-44d4-bf0f-e29a31bcafb6
-    jinja: "Ich teste die Logik meiner Sch\xFCler.\nWas ist die Antwort, die sie zwischen\
-      \ \"{{answer_choices[0]}}\" und \"{{answer_choices[1]}}\" w\xE4hlen sollten?\n\
-      Logiktest: {{question}}\n|||\n{{answer_choices[answer_index]}}"
+    jinja: "Ich teste die Logik meiner Sch\xFCler.\nWelche Antwort sollten sie zwischen\
+      \ \"{{answer_choices[0]}}\" und \"{{answer_choices[1]}}\" w\xE4hlen?\nLogiktest:\
+      \ {{question}}\n|||\n{{answer_choices[answer_index]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

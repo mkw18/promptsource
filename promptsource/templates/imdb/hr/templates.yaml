@@ -4,7 +4,7 @@ templates:
   02ff2949-0f45-4d97-941e-6fa4c0afbc2d: !Template
     answer_choices: negativan ||| pozitivan
     id: 02ff2949-0f45-4d97-941e-6fa4c0afbc2d
-    jinja: "Sljede\u0107i pregled filma izra\u017Eava Kakve osje\u0107aje? {{text}}\
+    jinja: "Koji osje\u0107aj izra\u017Eava sljede\u0107a filmska recenzija? {{text}}\
       \ ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -28,7 +28,7 @@ templates:
   5f372fb1-795a-47b6-8ddf-c4fd1579e76a: !Template
     answer_choices: negativan ||| pozitivan
     id: 5f372fb1-795a-47b6-8ddf-c4fd1579e76a
-    jinja: "{{text}} \nJe li ovaj pregled {{\"Pozitivan ili negativan\"}}? ||| \n\
+    jinja: "{{text}} \nJe li ovo recenzija {{\"pozitivno ili negativno\"}}? ||| \n\
       {{answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -40,8 +40,8 @@ templates:
   866474a5-1498-46b7-bfee-ac0c5160707f: !Template
     answer_choices: negativan ||| pozitivan
     id: 866474a5-1498-46b7-bfee-ac0c5160707f
-    jinja: "{{text}} Kako se gledatelj osje\u0107a zbog filma? ||| {{ answer_choices\
-      \ [label] }}"
+    jinja: "{{text}} Kako gledatelj do\u017Eivljava film? ||| {{ answer_choices [label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -52,7 +52,7 @@ templates:
   96538f30-f2c1-430e-8fc6-936a16966d9c: !Template
     answer_choices: negativan ||| pozitivan
     id: 96538f30-f2c1-430e-8fc6-936a16966d9c
-    jinja: "{{text}} Kakvo je osje\u0107anje pisac izra\u017Eava za film? ||| {{ answer_choices\
+    jinja: "{{text}} Kakve osje\u0107aje pisac izra\u017Eava prema filmu? ||| {{ answer_choices\
       \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -64,8 +64,8 @@ templates:
   af51297c-38a3-4d6c-a8b5-04b1243d7443: !Template
     answer_choices: negativan ||| pozitivan
     id: af51297c-38a3-4d6c-a8b5-04b1243d7443
-    jinja: "{{text}} Osje\u0107aji izra\u017Eeni za film je ||| {{ answer_choices\
-      \ [label] }}"
+    jinja: "{{text}} Osje\u0107aj izra\u017Een za film je ||| {{ answer_choices [label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -76,7 +76,7 @@ templates:
   b93b74ac-fe95-40b4-9610-318b46ab820f: !Template
     answer_choices: negativan ||| pozitivan
     id: b93b74ac-fe95-40b4-9610-318b46ab820f
-    jinja: "{{text}} Koji je osje\u0107aj izra\u017Een u ovom tekstu? ||| {{ answer_choices\
+    jinja: "{{text}} Kakav je osje\u0107aj izra\u017Een u ovom tekstu? ||| {{ answer_choices\
       \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -88,7 +88,7 @@ templates:
   b9b5d79d-f0b3-4bec-a724-f585db3e93ff: !Template
     answer_choices: negativan ||| pozitivan
     id: b9b5d79d-f0b3-4bec-a724-f585db3e93ff
-    jinja: '{{text}} Ovo definitivno nije recenzija ||| {{ answer_choices [1-label]}}.'
+    jinja: '{{text}} Ovo definitivno nije ||| {{ answer_choices [1-label]}} recenzija.'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -111,8 +111,8 @@ templates:
   c70d1687-2421-49a2-9553-91b8bac4cfbe: !Template
     answer_choices: negativan ||| pozitivan
     id: c70d1687-2421-49a2-9553-91b8bac4cfbe
-    jinja: "{{text}} Koji je osje\u0107aj koji recenzent izra\u017Eava za film? |||\
-      \ {{ answer_choices [label] }}"
+    jinja: "{{text}} Kakvo je mi\u0161ljenje o filmu izrazio recenzent? ||| {{ answer_choices\
+      \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -123,8 +123,7 @@ templates:
   e01970ab-42c0-4e6e-a08f-4940d889ef37: !Template
     answer_choices: Nije im se svidjelo! ||| Svidjelo im se
     id: e01970ab-42c0-4e6e-a08f-4940d889ef37
-    jinja: "{{text}} Kako se recenzent osje\u0107a zbog filma? ||| {{ answer_choices\
-      \ [label] }}"
+    jinja: '{{text}} Kako recenzent misli o filmu? ||| {{ answer_choices [label] }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

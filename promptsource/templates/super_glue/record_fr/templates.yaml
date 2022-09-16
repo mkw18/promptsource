@@ -4,8 +4,8 @@ templates:
   014b669e-2e3b-40ce-bdde-418966c7d666: !Template
     answer_choices: '{{ entities | join("|||") }}'
     id: 014b669e-2e3b-40ce-bdde-418966c7d666
-    jinja: "{{ passage }} \n{{ query }} \nLequel est le \"{{\"@placeholder\"}}\"?\
-      \ {{ entities | join(\", \") }}? ||| {% if ( answers | length ) > 0 %} {{ answers\
+    jinja: "{{ passage }} \n{{ query }} \nLequel est le \"{{\"@placeholder\"}}\"\_\
+      ? {{ entities | join(\", \") }}? ||| {% if ( answers | length ) > 0 %} {{ answers\
       \ | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -50,7 +50,7 @@ templates:
     id: 24c267d4-359e-40a9-83d2-bff904d63b09
     jinja: "Sommaire:\n\n- {{ passage.split(\"@highlight\")[1:] | join(\"\\n- \")\
       \ }} \n\nArticle:\n\n{{ passage.split(\"@highlight\")[0] }}\n\nMaintenant que\
-      \ vous avez lu l'article, veuillez \xE9crire une nouvelle phrase \xE0 y ajouter.\n\
+      \ vous avez lu l'article, veuillez \xE9crire une nouvelle phrase \xE0 ajouter.\n\
       \n||| {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\",\
       \ answers | choice) }} {% endif %}"
     metadata: !TemplateMetadata
@@ -109,8 +109,8 @@ templates:
     answer_choices: '{{ entities | join("|||") }}'
     id: 91555c1c-c1e4-469b-a2a4-fc952ce1a145
     jinja: "{{ passage }} \n{{ query }} \nDans la question ci-dessus, le \"{{\"@placeholder\"\
-      }}\" repr\xE9sente ||| {% if ( answers | length ) > 0 %}{{ answers | choice\
-      \ }}{% endif %}"
+      }}\" signifie ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}{%\
+      \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -123,7 +123,7 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 94577b75-2eac-4eae-b367-3b413c4188c6
-    jinja: "Apr\xE8s avoir lu l'article, \xE9crivez une autre phrase pour y ajouter.\n\
+    jinja: "Apr\xE8s avoir lu l'article, \xE9crivez une autre phrase \xE0 ajouter.\n\
       {{ passage | replace(\"@highlight\", \"\\n- \") }}\n\n||| {% if ( answers |\
       \ length ) > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}{%\
       \ endif %}\n"
@@ -139,10 +139,10 @@ templates:
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
       }}'
     id: 9579b54e-4f0f-4e43-8907-af57112cc857
-    jinja: "Veuillez lire l'article de presse suivant et \xE9crire une autre phrase\
-      \ \xE0 y ajouter.\n\n{{ passage | replace(\"@highlight\", \"\\n- \") }} \n |||\
-      \ {% if ( answers | length ) > 0 %}{{ query | replace(\"@placeholder\", answers\
-      \ | choice) }} {% endif %}\n"
+    jinja: "Veuillez lire l'article suivant et \xE9crire une autre phrase \xE0 ajouter.\n\
+      \n{{ passage | replace(\"@highlight\", \"\\n- \") }} \n ||| {% if ( answers\
+      \ | length ) > 0 %}{{ query | replace(\"@placeholder\", answers | choice) }}\
+      \ {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -154,7 +154,7 @@ templates:
     answer_choices: '{{ entities | join("|||") }}'
     id: 99dd38ce-32f3-4d58-93c5-59821002b9cc
     jinja: "{{ passage }} \n{{ query }} \nQue pourrait \xEAtre le \"{{\"@placeholder\"\
-      }}\"? {{ entities | join(\", \") }}? ||| {% if ( answers | length ) > 0 %}{{\
+      }}\"\_? {{ entities | join(\", \") }}? ||| {% if ( answers | length ) > 0 %}{{\
       \ answers | choice }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -166,9 +166,9 @@ templates:
   9b688cf3-28bf-4f33-94cf-e73e4fa8c608: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: 9b688cf3-28bf-4f33-94cf-e73e4fa8c608
-    jinja: "{{ passage }}\n{{ query }}\n\nJ'essaie de d\xE9cider ce que signifie \"\
-      {{\"@placeholder\"}}\" dans le texte pr\xE9c\xE9dent.\nAide en choisissant une\
-      \ option entre:\n- {{ entities | join(\"\\n- \") }}\n||| {% if ( answers | length\
+    jinja: "{{ passage }}\n{{ query }}\n\nJ'essaie de d\xE9cider ce que \"{{\"@placeholder\"\
+      }}\" signifie dans le texte pr\xE9c\xE9dent.\nAidez en choisissant une option\
+      \ entre :\n- {{ entities | join(\"\\n- \") }}\n||| {% if ( answers | length\
       \ ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -196,7 +196,7 @@ templates:
       }}'
     id: a99a92e0-e1ee-4ec3-a38a-3be4303ba017
     jinja: "{{ passage.split(\"@highlight\")[0] }}\n\nPoints forts:\n\n- {{ passage.split(\"\
-      @highlight\")[1:] | join(\"\\n- \") }} \n\nVeuillez r\xE9diger un point culminant\
+      @highlight\")[1:] | join(\"\\n- \") }} \n\nVeuillez \xE9crire un point culminant\
       \ suppl\xE9mentaire.\n ||| {% if ( answers | length ) > 0 %}- {{ query | replace(\"\
       @placeholder\", answers | choice) }} {% endif %}\n"
     metadata: !TemplateMetadata
@@ -209,7 +209,7 @@ templates:
   d3fce74e-0d9d-404a-a009-9ebbf5794c2c: !Template
     answer_choices: '{{entities | join("|||")}}'
     id: d3fce74e-0d9d-404a-a009-9ebbf5794c2c
-    jinja: "Exercer: Extraire du texte L'entit\xE9 correcte \xE0 laquelle \"{{\"@placeholder\"\
+    jinja: "Exercer: Extrayez du texte l'entit\xE9 correcte \xE0 laquelle \"{{\"@placeholder\"\
       }}\" fait r\xE9f\xE9rence.\n\n{{ passage }}\n{{ query }}\n||| {% if ( answers\
       \ | length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -223,8 +223,8 @@ templates:
     answer_choices: '{{entities | join("|||")}}'
     id: de5b635e-c2f4-40bb-81ac-650f1b45564b
     jinja: "{{ passage }}\n{{ query }}\n\nChoisissez une option, \"{{\"@placeholder\"\
-      }}\" fait r\xE9f\xE9rence \xE0:\n- {{answer_choices | join(\"\\n- \")}}\n|||\
-      \ {% if ( answers | length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
+      }}\" fait r\xE9f\xE9rence \xE0\_:\n- {{answer_choices | join(\"\\n- \")}}\n\
+      ||| {% if ( answers | length ) > 0 %}\n{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -267,8 +267,8 @@ templates:
     answer_choices: '{{ entities | join("|||") }}'
     id: e68d13c5-df75-4de0-b59e-f2eaf4af6ce7
     jinja: "{{ passage }} \n{{ query }} \nPouvez-vous comprendre ce que signifie le\
-      \ \"{{\"@placeholder\"}}\"? \xC7a veut dire ||| {% if ( answers | length ) >\
-      \ 0 %}{{ answers | choice }}{% endif %}"
+      \ \"{{\"@placeholder\"}}\"\_? \xC7a veut dire ||| {% if ( answers | length )\
+      \ > 0 %}{{ answers | choice }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

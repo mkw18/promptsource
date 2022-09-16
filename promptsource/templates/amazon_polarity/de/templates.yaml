@@ -21,8 +21,8 @@ templates:
   3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
     answer_choices: Nein ||| Ja
     id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
-    jinja: "W\xFCrde der Benutzer basierend auf dieser \xDCberpr\xFCfung dieses Produkt\
-      \ empfehlen?\n===\nRezension: {{content}}\nAntworten: |||\n{{answer_choices[label]}}"
+    jinja: "W\xFCrde der Benutzer dieses Produkt basierend auf dieser Bewertung weiterempfehlen?\n\
+      ===\nRezension: {{content}}\nAntworten: |||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -34,8 +34,15 @@ templates:
   592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
     answer_choices: Nein ||| Ja
     id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
-    jinja: "Ist diese Produkt\xFCberpr\xFCfung positiv?\nTitel: {{title}}\nRezension:\
-      \ {{content}}\nAntworten: |||\n{{answer_choices[label]}}"
+    jinja: 'Ist diese Produktbewertung positiv?
+
+      Titel: {{title}}
+
+      Rezension: {{content}}
+
+      Antworten: |||
+
+      {{answer_choices[label]}}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -46,8 +53,13 @@ templates:
   745b9c05-10df-4a7e-81ad-1b88cefcb166: !Template
     answer_choices: Ja ||| Nein
     id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
-    jinja: "Titel: {{title}}\nRezension: {{content}}\nIst diese Produkt\xFCberpr\xFC\
-      fung negativ?|||\n{{answer_choices[label]}}"
+    jinja: 'Titel: {{title}}
+
+      Rezension: {{content}}
+
+      Ist diese Produktbewertung negativ?|||
+
+      {{answer_choices[label]}}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -58,8 +70,13 @@ templates:
   8abb5377-5dd3-4402-92a5-0d81adb6a325: !Template
     answer_choices: Negativ ||| Positiv
     id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
-    jinja: "Titel: {{title}}\nRezension: {{content}}\nVermittelt diese Produkt\xFC\
-      berpr\xFCfung eine negative oder positive Stimmung?|||\n{{answer_choices[label]}}"
+    jinja: 'Titel: {{title}}
+
+      Rezension: {{content}}
+
+      Vermittelt diese Produktbewertung eine negative oder positive Stimmung?|||
+
+      {{answer_choices[label]}}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -70,8 +87,17 @@ templates:
   9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
     answer_choices: Negativ ||| Positiv
     id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
-    jinja: "Gibt es einen negativen oder positiven Ton f\xFCr diese Produkt\xFCberpr\xFC\
-      fung?\n===\nTitel: {{title}}\nRezension: {{content}}\nAntworten: |||\n{{answer_choices[label]}}"
+    jinja: 'Gibt es einen negativen oder positiven Ton in dieser Produktbewertung?
+
+      ===
+
+      Titel: {{title}}
+
+      Rezension: {{content}}
+
+      Antworten: |||
+
+      {{answer_choices[label]}}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -82,8 +108,8 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
     answer_choices: unzufrieden ||| befriedigt
     id: b13369e8-0500-4e93-90d4-8e6814bfb97b
-    jinja: "Hier ist eine \xDCberpr\xFCfung, die ein Kunden auf einem Produkt hinterlassen\
-      \ hat.W\xFCrden Sie sagen, er war {{answer_choices[1]}} oder {{answer_choices[0]}}?\n\
+    jinja: "Hier ist eine Bewertung, die ein Kunde zu einem Produkt abgegeben hat.\
+      \ W\xFCrden Sie sagen, er war {{answer_choices[1]}} oder {{answer_choices[0]}}?\n\
       Titel: {{title}}\nRezension: {{content}}\n|||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -95,9 +121,9 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
     answer_choices: Verringerung ||| Zunahme
     id: b13369e8-0500-4e93-90d4-8e6814bfb98b
-    jinja: "Sie \xFCberlegen, ob Sie ein Produkt kaufen sollen.Sie schauen sich die\
-      \ Bewertungen an.W\xFCrde die folgende Rezension {{answer_choices[0]}} oder\
-      \ {{answer_choices[1]}} die Chancen, dass Sie das Produkt kaufen, w\xFCrden?\n\
+    jinja: "Sie \xFCberlegen, ob Sie ein Produkt kaufen m\xF6chten. Sie schauen sich\
+      \ die Bewertungen an. W\xFCrden Sie im Folgenden {{answer_choices[0]}} oder\
+      \ {{answer_choices[1]}} die Chancen bewerten, dass Sie das Produkt kaufen?\n\
       Titel der Bewertung: {{title}}\nProduktbewertung: {{content}}\n|||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -110,8 +136,8 @@ templates:
     answer_choices: wenig schmeichelhaft ||| schmeichelhaft
     id: b13369e8-0500-4e93-90d4-8e6814bfb99b
     jinja: "Titel: {{title}}\nProduktbewertung: {{content}}\nW\xFCrden Sie sagen,\
-      \ dass diese Bewertung das Produkt in einem {{answer_choices[1]}} oder {{answer_choices[0]}}\
-      \ Licht zeigt?\n|||\n{{answer_choices[label]}} "
+      \ dass diese Bewertung das Produkt in einem {{answer_choices[1]}}- oder {{answer_choices[0]}}-Licht\
+      \ darstellt?\n|||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

@@ -5,8 +5,8 @@ templates:
     answer_choices: Oui ||| Non
     id: 2b52a83c-0021-41fe-b44c-5aaa076d71a2
     jinja: "{{premise}} En utilisant uniquement la description ci-dessus et ce que\
-      \ vous savez sur le monde, est \"{{hypothesis}}\" d\xE9finitivement correct?\
-      \ Oui ou non? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+      \ vous savez du monde, est-ce que \"{{hypothesis}}\" est vraiment correct\_\
+      ? Oui ou non? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -17,8 +17,8 @@ templates:
   2d0d63da-ffcf-4f6e-941a-b8da922be43e: !Template
     answer_choices: Oui ||| Non
     id: 2d0d63da-ffcf-4f6e-941a-b8da922be43e
-    jinja: Given {{premise}} Est-il garanti que "{{hypothesis}}"? Oui ou non? |||
-      {% if label != -1 %}{{ answer_choices[label] }}{% endif %}
+    jinja: "Donn\xE9 {{premise}} Est-il garanti vrai que \"{{hypothesis}}\"\_? Oui\
+      \ ou non? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -29,8 +29,8 @@ templates:
   4163e6f1-1a83-4c73-b867-02eb7ac80316: !Template
     answer_choices: Oui ||| Non
     id: 4163e6f1-1a83-4c73-b867-02eb7ac80316
-    jinja: "Supposer {{premise}} Pouvons-nous d\xE9duire que \"{{hypothesis}}\"? Oui\
-      \ ou non? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "Supposer {{premise}} Pouvons-nous d\xE9duire que \"{{hypothesis}}\"\_\
+      ? Oui ou non? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -55,8 +55,8 @@ templates:
   9e078fb4-505b-413c-bb5e-3cd16ddcf5d7: !Template
     answer_choices: Oui ||| Non
     id: 9e078fb4-505b-413c-bb5e-3cd16ddcf5d7
-    jinja: "{{premise}} \n\nQuestion: Cela implique-t-il que \"{{hypothesis}}\"? Oui\
-      \ ou non? ||| {% if label != -1 %}{{answer_choices[label]}}{% endif %}"
+    jinja: "{{premise}} \n\nQuestion: Cela implique-t-il que \"{{hypothesis}}\"\_\
+      ? Oui ou non? ||| {% if label != -1 %}{{answer_choices[label]}}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -67,8 +67,8 @@ templates:
   b8dc85c6-28b6-4340-979a-8e77c2a0dde8: !Template
     answer_choices: Oui ||| Non
     id: b8dc85c6-28b6-4340-979a-8e77c2a0dde8
-    jinja: Given {{premise}} Devrions-nous supposer que "{{hypothesis}}" est vrai?
-      Oui ou non? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}
+    jinja: "Donn\xE9 {{premise}} Doit-on supposer que \"{{hypothesis}}\" est vrai\_\
+      ? Oui ou non? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -79,8 +79,8 @@ templates:
   e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff: !Template
     answer_choices: Oui ||| Non
     id: e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff
-    jinja: "\xC9tant donn\xE9 que {{premise}} Suit-il que {{hypothesis}} Oui ou non?\
-      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "\xC9tant donn\xE9 que {{premise}} S'ensuit-il que {{hypothesis}} Oui ou\
+      \ non? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -91,8 +91,8 @@ templates:
   ed1f4b75-8826-4852-9bd6-aedf368678f5: !Template
     answer_choices: Oui ||| Non
     id: ed1f4b75-8826-4852-9bd6-aedf368678f5
-    jinja: "{{premise}} Sur la base du passage pr\xE9c\xE9dent, est-il vrai que \"\
-      {{hypothesis}}\"? Oui ou non? ||| {% if label != -1 %}{{ answer_choices[label]\
+    jinja: "{{premise}} D'apr\xE8s le passage pr\xE9c\xE9dent, est-il vrai que \"\
+      {{hypothesis}}\"\_? Oui ou non? ||| {% if label != -1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -104,8 +104,8 @@ templates:
   ee0ce095-122a-4509-bf0b-33d1495295f7: !Template
     answer_choices: Oui ||| Non
     id: ee0ce095-122a-4509-bf0b-33d1495295f7
-    jinja: "{{premise}} Sommes-nous justifi\xE9s de dire que \"{{hypothesis}}\"? Oui\
-      \ ou non? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} Sommes-nous justifi\xE9s de dire que \"{{hypothesis}}\"\_\
+      ? Oui ou non? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -117,7 +117,7 @@ templates:
     answer_choices: Oui ||| Non
     id: fb4f8144-37f5-4977-88da-37a5d0bfd0e8
     jinja: "\xC9tant donn\xE9 que {{premise}} Par cons\xE9quent, il doit \xEAtre vrai\
-      \ que \"{{hypothesis}}\"? Oui ou non? ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ que \"{{hypothesis}}\"\_? Oui ou non? ||| {% if label != -1 %}{{ answer_choices[label]\
       \ }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

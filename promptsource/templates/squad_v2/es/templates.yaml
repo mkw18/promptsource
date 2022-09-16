@@ -4,10 +4,10 @@ templates:
   17b83a3f-f748-42e6-9cdf-b2951dd8299d: !Template
     answer_choices: null
     id: 17b83a3f-f748-42e6-9cdf-b2951dd8299d
-    jinja: "{% set seq = [\n'Responda la pregunta dependiendo del contexto.',\n'\xBF\
-      Cual es la respuesta?',\n] %}\n\n{{ seq | choice }}\nContexto: {{context}};\n\
-      Pregunta: {{question}};\nResponder: |||\n{% if answers.text == [] %}\nResponder\
-      \ no en contexto\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
+    jinja: "{% set seq = [\n'Contesta la pregunta seg\xFAn el contexto.',\n'\xBFCual\
+      \ es la respuesta?',\n] %}\n\n{{ seq | choice }}\nContexto: {{context}};\nPregunta:\
+      \ {{question}};\nResponder: |||\n{% if answers.text == [] %}\nRespuesta no en\
+      \ contexto\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
     metadata: &id001 !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -19,7 +19,7 @@ templates:
     answer_choices: null
     id: 189dcc58-fd13-4771-ad03-7879a61c7ab7
     jinja: "{% if answers.text != [] %}\nDetermine la pregunta que podr\xEDa haber\
-      \ pedido para recuperar la siguiente respuesta para el contexto dado\nContexto:\
+      \ hecho para obtener la siguiente respuesta para el contexto dado\nContexto:\
       \ {{context}};\nResponder: {{answers.text[0]}};\nPregunta: |||\n{{question}}\n\
       {% endif %}\n"
     metadata: !TemplateMetadata
@@ -33,8 +33,8 @@ templates:
   20064b80-e4d0-41b7-9135-92c0077d5044: !Template
     answer_choices: null
     id: 20064b80-e4d0-41b7-9135-92c0077d5044
-    jinja: "{% set seq = [\n'\xBFDe qu\xE9 se trata esto? ',\n'\xBFDe qu\xE9 se trata\
-      \ el p\xE1rrafo? ',\n'Obtenga el tema de: ',\n'Desde el pasaje, obtenga el tema',\n\
+    jinja: "{% set seq = [\n'\xBFDe qu\xE9 se trata esto? ',\n'\xBFDe qu\xE9 trata\
+      \ el p\xE1rrafo? ',\n'Obtener el tema de: ',\n'Del pasaje, saca el tema',\n\
       'Quiero saber el tema. ',\n'Tema del pasaje: ',\n'Tema del p\xE1rrafo: ',\n\
       ] %}\n{{ seq | choice }}\n{{context}} |||\n{{title | replace(\"_\", \" \")}}"
     metadata: !TemplateMetadata
@@ -51,7 +51,7 @@ templates:
     answer_choices: null
     id: 338cc143-361e-4796-b035-31fb2201c49f
     jinja: "{% set seq = [\n'Esto es sobre ',\n'\xBFDe qu\xE9 se trata esto? ',\n\
-      'El p\xE1rrafo es sobre ',\n'\xBFDe qu\xE9 se trata el p\xE1rrafo? ',\n'Obtenga\
+      'El p\xE1rrafo trata sobre ',\n'\xBFDe qu\xE9 trata el p\xE1rrafo? ',\n'Obtener\
       \ el tema: ',\n'Del pasaje, el tema es',\n'Quiero saber el tema. ',\n'Tema del\
       \ pasaje: ',\n'Tema del p\xE1rrafo: ',\n] %}\n{{context}}\n{{ seq | choice }}|||\n\
       {{title | replace(\"_\", \" \")}}"
@@ -82,11 +82,41 @@ templates:
   8bea1123-fd8d-4bac-96bf-b8a289ee74b3: !Template
     answer_choices: null
     id: 8bea1123-fd8d-4bac-96bf-b8a289ee74b3
-    jinja: "{% set seq = [\n'Usted pude decirme ',\n'Por favor dime ',\n'Dime ',\n\
-      'Del pasaje, ',\n'quiero saber ',\n'Quiero preguntar ',\n'\xBFCu\xE1l es la\
-      \ respuesta a: ',\n'Encuentra la respuesta a: ',\n'Responder: ',\n'',\n] %}\n\
-      {{context}} {{ seq | choice }}{{question}}|||\n{% if answers.text == [] %}\n\
-      Responder no en contexto\n{% else %}\n{{answers.text[0]}}\n{% endif %}"
+    jinja: '{% set seq = [
+
+      ''Usted pude decirme '',
+
+      ''Por favor dime '',
+
+      ''Dime '',
+
+      ''Del pasaje, '',
+
+      ''quiero saber '',
+
+      ''Quiero preguntar '',
+
+      ''Cual es la respuesta a: '',
+
+      ''Encuentre la respuesta a: '',
+
+      ''Responder: '',
+
+      '''',
+
+      ] %}
+
+      {{context}} {{ seq | choice }}{{question}}|||
+
+      {% if answers.text == [] %}
+
+      Respuesta no en contexto
+
+      {% else %}
+
+      {{answers.text[0]}}
+
+      {% endif %}'
     metadata: &id002 !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -98,9 +128,9 @@ templates:
   b14c9843-fd56-42ff-817d-39e41963c847: !Template
     answer_choices: null
     id: b14c9843-fd56-42ff-817d-39e41963c847
-    jinja: "{% set seq = [\n'Responda la pregunta dependiendo del contexto.',\n'\xBF\
-      Cual es la respuesta?',\n] %}\n\n{{ seq | choice }}\nContexto: {{context}};\n\
-      Pregunta: {{question}};\nIf you can't find the answer, please respond \"incontestable\"\
+    jinja: "{% set seq = [\n'Contesta la pregunta seg\xFAn el contexto.',\n'\xBFCual\
+      \ es la respuesta?',\n] %}\n\n{{ seq | choice }}\nContexto: {{context}};\nPregunta:\
+      \ {{question}};\nIf you can't find the answer, please respond \"incontestable\"\
       .\nResponder: |||\n{% if answers.text == [] %}\nincontestable\n{% else %}\n\
       {{answers.text[0]}}\n{% endif %}"
     metadata: *id001
@@ -127,12 +157,42 @@ templates:
   e1630107-8f5d-44ce-8ccd-6fa80da80328: !Template
     answer_choices: null
     id: e1630107-8f5d-44ce-8ccd-6fa80da80328
-    jinja: "{% set seq = [\n'Usted pude decirme ',\n'Por favor dime ',\n'Dime ',\n\
-      'Del pasaje, ',\n'quiero saber ',\n'Quiero preguntar ',\n'\xBFCu\xE1l es la\
-      \ respuesta a: ',\n'Encuentra la respuesta a: ',\n'Responder: ',\n'',\n] %}\n\
-      {{context}} {{ seq | choice }}{{question}} If you can't find the answer, please\
-      \ respond \"incontestable\". |||\n{% if answers.text == [] %}\nincontestable\n\
-      {% else %}\n{{answers.text[0]}}\n{% endif %}"
+    jinja: '{% set seq = [
+
+      ''Usted pude decirme '',
+
+      ''Por favor dime '',
+
+      ''Dime '',
+
+      ''Del pasaje, '',
+
+      ''quiero saber '',
+
+      ''Quiero preguntar '',
+
+      ''Cual es la respuesta a: '',
+
+      ''Encuentre la respuesta a: '',
+
+      ''Responder: '',
+
+      '''',
+
+      ] %}
+
+      {{context}} {{ seq | choice }}{{question}} If you can''t find the answer, please
+      respond "incontestable". |||
+
+      {% if answers.text == [] %}
+
+      incontestable
+
+      {% else %}
+
+      {{answers.text[0]}}
+
+      {% endif %}'
     metadata: *id002
     name: Questions with Context - Without Prompt Keywords +unanswerable
     reference: Given context and question, give answer. No keywords to delineate context
@@ -140,8 +200,8 @@ templates:
   e2e41877-4794-4ff9-9f92-a2a85105e2a7: !Template
     answer_choices: "s\xED ||| no"
     id: e2e41877-4794-4ff9-9f92-a2a85105e2a7
-    jinja: "Contexto: {{context}}; \n\nPregunta: {{question}} \n\n\xBFEsta pregunta\
-      \ es responsable? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n\
+    jinja: "Contexto: {{context}}; \n\nPregunta: {{question}} \n\n\xBFSe puede responder\
+      \ esta pregunta? ||| \n{% if answers.text != [] %}\n{{answer_choices[0]}}\n\
       {% else %}\n{{answer_choices[1]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -153,10 +213,10 @@ templates:
   e51c23b9-5b10-4db3-a0d1-ba546830173d: !Template
     answer_choices: null
     id: e51c23b9-5b10-4db3-a0d1-ba546830173d
-    jinja: "{% set seq = [\n'Determine el tema del par de preguntas y respuestas.\
-      \ ',\n'Encuentra el tema. ',\n'\xBFCu\xE1l es el tema de esto? ',\n] %}\n{%\
-      \ if answers.text != [] %}\n{{ seq | choice }}\nPregunta: {{question}};  Responder:\
-      \ {{answers.text[0]}}; Tema: |||\n{{title}}\n{% endif %}"
+    jinja: "{% set seq = [\n'Determine el tema del par pregunta-respuesta. ',\n'Encuentra\
+      \ el tema. ',\n'\xBFCu\xE1l es el tema de esto? ',\n] %}\n{% if answers.text\
+      \ != [] %}\n{{ seq | choice }}\nPregunta: {{question}};  Responder: {{answers.text[0]}};\
+      \ Tema: |||\n{{title}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -169,8 +229,8 @@ templates:
   fdcf132e-6c70-4188-999e-93601ee8e089: !Template
     answer_choices: null
     id: fdcf132e-6c70-4188-999e-93601ee8e089
-    jinja: "\xBFDe qu\xE9 se trata el siguiente pasaje?\n{{context}} |||\n{{title\
-      \ | replace(\"_\", \" \")}}"
+    jinja: "\xBFDe qu\xE9 trata el siguiente pasaje?\n{{context}} |||\n{{title | replace(\"\
+      _\", \" \")}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

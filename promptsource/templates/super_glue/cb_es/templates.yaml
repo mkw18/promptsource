@@ -4,9 +4,8 @@ templates:
   2e76cd0f-68ca-4f03-83ed-11cf15b25a84: !Template
     answer_choices: "S\xED ||| No ||| Quiz\xE1s"
     id: 2e76cd0f-68ca-4f03-83ed-11cf15b25a84
-    jinja: "Suponer {{premise}} \xBFPodemos inferir eso \"{{hypothesis}}\"? S\xED\
-      , no, o tal vez? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif\
-      \ %} "
+    jinja: "Suponer {{premise}} \xBFPodemos inferir que \"{{hypothesis}}\"? \xBFS\xED\
+      , no o tal vez? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -18,7 +17,7 @@ templates:
     answer_choices: "S\xED ||| No ||| Quiz\xE1s"
     id: 358860fd-61ad-45fd-92a6-a72ca9107ebc
     jinja: "{{premise}} Basado en el pasaje anterior, \xBFes cierto que \"{{hypothesis}}\"\
-      ? S\xED, no, o tal vez? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      ? \xBFS\xED, no o tal vez? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
       \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -30,9 +29,9 @@ templates:
   3f43a599-ffdb-490e-8952-c0ce41dd4621: !Template
     answer_choices: Verdadero ||| Falso ||| Poco concluyente
     id: 3f43a599-ffdb-490e-8952-c0ce41dd4621
-    jinja: "{{premise}} Basado en esa informaci\xF3n, es la afirmaci\xF3n: \"{{hypothesis}}\"\
-      \ {{\"verdadero\"}}, {{\"false\"}} o {{\"inconclusiva\"}}? ||| {% if label !=-1\
-      \ %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} Seg\xFAn esa informaci\xF3n, \xBFla afirmaci\xF3n es: \"{{hypothesis}}\"\
+      \ {{\"verdadero\"}}, {{\"falso\"}} o {{\"no concluyente\"}}? ||| {% if label\
+      \ !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -43,8 +42,8 @@ templates:
   404eed25-558a-4d39-9515-7de46d60d4e0: !Template
     answer_choices: "S\xED ||| No ||| Quiz\xE1s"
     id: 404eed25-558a-4d39-9515-7de46d60d4e0
-    jinja: "Dado que {{premise}} \xBFSigue que {{hypothesis}} S\xED, no, o tal vez?\
-      \ ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "Dado que {{premise}} \xBFSe sigue que {{hypothesis}} \xBFS\xED, no o tal\
+      \ vez? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -56,7 +55,7 @@ templates:
     answer_choices: "S\xED ||| No ||| Quiz\xE1s"
     id: 5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260
     jinja: "{{premise}} \xBFEstamos justificados al decir que \"{{hypothesis}}\"?\
-      \ S\xED, no, o tal vez? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ \xBFS\xED, no o tal vez? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
       \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -68,9 +67,9 @@ templates:
   6b0c6191-183d-4731-8050-ab17c909335c: !Template
     answer_choices: Siempre ||| Nunca ||| Algunas veces
     id: 6b0c6191-183d-4731-8050-ab17c909335c
-    jinja: Supongamos que es cierto que {{premise}} Entonces, es "{{hypothesis}}"
-      {{"siempre"}}, {{"a veces"}}, o {{"nunca"}} verdadero? ||| {% if label !=-1
-      %}{{ answer_choices[label] }}{% endif %}
+    jinja: "Supongamos que es cierto que {{premise}} Entonces, \xBFes \"{{hypothesis}}\"\
+      \ {{\"siempre\"}}, {{\"a veces\"}} o {{\"nunca\"}} verdadero? ||| {% if label\
+      \ !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -81,7 +80,7 @@ templates:
   75db2bc2-3caa-4956-9653-13c7dd6255df: !Template
     answer_choices: Verdadero ||| Falso ||| Ninguno de los dos
     id: 75db2bc2-3caa-4956-9653-13c7dd6255df
-    jinja: "{{premise}}\nPregunta: {{hypothesis}} \xBFVerdadero, falso o ninguno?\
+    jinja: "{{premise}}\nPregunta: {{hypothesis}} \xBFVerdadero, Falso o Ninguno?\
       \ ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -95,8 +94,8 @@ templates:
     answer_choices: Siempre ||| Nunca ||| Algunas veces
     id: 87237a07-7cce-470a-80ac-3e5e3a5283ba
     jinja: "{{premise}} \n\nTeniendo en cuenta el texto anterior, considere: {{hypothesis}}\
-      \ \xBFEs esto {{\"siempre\"}}, {{\"a veces\"}}, o {{\"nunca\"}} correcto? |||\
-      \ {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+      \ \xBFEs {{\"siempre\"}}, {{\"a veces\"}} o {{\"nunca\"}} correcto? ||| {% if\
+      \ label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -107,9 +106,9 @@ templates:
   8798b8a4-1f59-4c72-9c1b-3e3044a7462a: !Template
     answer_choices: "S\xED ||| No ||| Quiz\xE1s"
     id: 8798b8a4-1f59-4c72-9c1b-3e3044a7462a
-    jinja: "Given {{premise}} \xBFEst\xE1 garantizado que es cierto que \"{{hypothesis}}\"\
-      ? S\xED, no, o tal vez? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
-      \ endif %}"
+    jinja: "Dado {{premise}} \xBFSe garantiza que \"{{hypothesis}}\" es cierto? \xBF\
+      S\xED, no o tal vez? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -120,8 +119,8 @@ templates:
   8e3b8d3d-1362-47dc-922a-82c03f965989: !Template
     answer_choices: "S\xED ||| No ||| Quiz\xE1s"
     id: 8e3b8d3d-1362-47dc-922a-82c03f965989
-    jinja: "Dado que {{premise}} Por lo tanto, debe ser cierto que \"{{hypothesis}}\"\
-      ? S\xED, no, o tal vez? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+    jinja: "Dado que {{premise}} Por lo tanto, \xBFdebe ser cierto que \"{{hypothesis}}\"\
+      ? \xBFS\xED, no o tal vez? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
       \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -131,10 +130,10 @@ templates:
     name: must be true
     reference: Sanh et al. 2021
   90ab1002-093c-4e54-b48f-626655e36b65: !Template
-    answer_choices: Guaranteed ||| Imposible ||| Posible
+    answer_choices: garantizado ||| Imposible ||| Posible
     id: 90ab1002-093c-4e54-b48f-626655e36b65
-    jinja: "Suponga que es cierto que {{premise}} \n\nPor lo tanto, \"{{hypothesis}}\"\
-      \ es {{\"garantizado\"}}, {{\"posible\"}} o {{\"imposible\"}}? ||| {% if label\
+    jinja: "Supongamos que es cierto que {{premise}} \n\nPor lo tanto, \"{{hypothesis}}\"\
+      \ es {{\"garantizado\"}}, {{\"posible\"}} o {{\"imposible\"}}. ||| {% if label\
       \ !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -146,8 +145,9 @@ templates:
   a485d120-6eef-4ff6-8684-42df1639b101: !Template
     answer_choices: "S\xED ||| No ||| Quiz\xE1s"
     id: a485d120-6eef-4ff6-8684-42df1639b101
-    jinja: "{{premise}} \n\nPregunta: \xBFEsto implica que \"{{hypothesis}}\"? S\xED\
-      , no, o tal vez? ||| {% if label !=-1 %}{{answer_choices[label]}}{% endif %}"
+    jinja: "{{premise}} \n\nPregunta: \xBFEsto implica que \"{{hypothesis}}\"? \xBF\
+      S\xED, no o tal vez? ||| {% if label !=-1 %}{{answer_choices[label]}}{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -156,11 +156,11 @@ templates:
     name: does this imply
     reference: Sanh et al. 2021
   bee62bfa-5307-4e1c-97b2-2ad2f7bcb179: !Template
-    answer_choices: Correct ||| Incorrect ||| Poco concluyente
+    answer_choices: Correcto ||| Incorrecto ||| Poco concluyente
     id: bee62bfa-5307-4e1c-97b2-2ad2f7bcb179
-    jinja: "{{premise}} Usar solo la descripci\xF3n anterior y lo que sabe sobre el\
-      \ mundo, \"{{hypothesis}}\" es definitivamente correcto, incorrecto o no concluyente?\
-      \ ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} Usando solo la descripci\xF3n anterior y lo que sabe sobre\
+      \ el mundo, \"{{hypothesis}}\" es definitivamente correcto, incorrecto o no\
+      \ concluyente. ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -171,9 +171,9 @@ templates:
   e503b148-8e6c-43b5-9ed6-312794c54d9b: !Template
     answer_choices: "S\xED ||| No ||| Quiz\xE1s"
     id: e503b148-8e6c-43b5-9ed6-312794c54d9b
-    jinja: "Given {{premise}} \xBFDeber\xEDamos suponer que \"{{hypothesis}}\" es\
-      \ verdadero? S\xED, no, o tal vez? ||| {% if label !=-1 %}{{ answer_choices[label]\
-      \ }}{% endif %}"
+    jinja: "Dado {{premise}} \xBFDeber\xEDamos suponer que \"{{hypothesis}}\" es cierto?\
+      \ \xBFS\xED, no o tal vez? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -184,8 +184,8 @@ templates:
   ea56b7f3-6e07-45bc-b619-c527eac4a41b: !Template
     answer_choices: Verdadero ||| Falso ||| Poco concluyente
     id: ea56b7f3-6e07-45bc-b619-c527eac4a41b
-    jinja: "Tome lo siguiente como verdad: {{premise}}\nLuego la siguiente declaraci\xF3\
-      n: \"{{hypothesis}}\" es {{\"verdadero\"}}, {{\"falso\"}} o {{\"inconclusivo\"\
+    jinja: "Toma como verdad lo siguiente: {{premise}}\nLuego la siguiente declaraci\xF3\
+      n: \xBF\"{{hypothesis}}\" es {{\"verdadero\"}}, {{\"falso\"}} o {{\"no concluyente\"\
       }}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

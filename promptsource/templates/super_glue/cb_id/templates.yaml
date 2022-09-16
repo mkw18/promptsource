@@ -17,7 +17,7 @@ templates:
   358860fd-61ad-45fd-92a6-a72ca9107ebc: !Template
     answer_choices: Ya ||| Tidak ||| Mungkin
     id: 358860fd-61ad-45fd-92a6-a72ca9107ebc
-    jinja: '{{premise}} Berdasarkan bagian sebelumnya, apakah benar bahwa "{{hypothesis}}"?
+    jinja: '{{premise}} Berdasarkan paragraf sebelumnya, apakah benar bahwa "{{hypothesis}}"?
       Ya, tidak, atau mungkin? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%
       endif %}'
     metadata: !TemplateMetadata
@@ -28,9 +28,9 @@ templates:
     name: based on the previous passage
     reference: "Adapted from the BoolQ prompts in Schick & Sch\xFCtze 2021."
   3f43a599-ffdb-490e-8952-c0ce41dd4621: !Template
-    answer_choices: BENAR ||| PALSU ||| Tidak meyakinkan
+    answer_choices: BENAR ||| PALSU ||| tidak meyakinkan
     id: 3f43a599-ffdb-490e-8952-c0ce41dd4621
-    jinja: '{{premise}} Berdasarkan informasi itu, adalah klaim: "{{hypothesis}}"
+    jinja: '{{premise}} Berdasarkan informasi tersebut, apakah klaim: "{{hypothesis}}"
       {{"BENAR"}}, {{"Salah"}}, atau {{"tidak meyakinkan"}}? ||| {% if label !=-1
       %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
@@ -43,7 +43,7 @@ templates:
   404eed25-558a-4d39-9515-7de46d60d4e0: !Template
     answer_choices: Ya ||| Tidak ||| Mungkin
     id: 404eed25-558a-4d39-9515-7de46d60d4e0
-    jinja: Mengingat bahwa {{premise}} Apakah itu mengikuti {{hypothesis}} Ya, tidak,
+    jinja: Mengingat bahwa {{premise}} Apakah ini mengikuti {{hypothesis}} Ya, tidak,
       atau mungkin? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -55,7 +55,7 @@ templates:
   5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260: !Template
     answer_choices: Ya ||| Tidak ||| Mungkin
     id: 5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260
-    jinja: '{{premise}} Apakah kita dibenarkan dalam mengatakan bahwa "{{hypothesis}}"?
+    jinja: '{{premise}} Apakah kita dibenarkan mengatakan bahwa "{{hypothesis}}"?
       Ya, tidak, atau mungkin? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%
       endif %}'
     metadata: !TemplateMetadata
@@ -68,8 +68,8 @@ templates:
   6b0c6191-183d-4731-8050-ab17c909335c: !Template
     answer_choices: Selalu ||| Tidak pernah ||| Kadang-kadang
     id: 6b0c6191-183d-4731-8050-ab17c909335c
-    jinja: Misalkan memang benar {{premise}} Lalu, adalah "{{hypothesis}}" {{"selalu"}},
-      {{"kadang -kadang"}}, atau {{"tidak pernah"}} benar? ||| {% if label !=-1 %}{{
+    jinja: Anggaplah benar bahwa {{premise}} Lalu, apakah "{{hypothesis}}" {{"selalu"}},
+      {{"kadang-kadang"}}, atau {{"tidak pernah"}} benar? ||| {% if label !=-1 %}{{
       answer_choices[label] }}{% endif %}
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -83,8 +83,8 @@ templates:
     id: 75db2bc2-3caa-4956-9653-13c7dd6255df
     jinja: '{{premise}}
 
-      Pertanyaan: {{hypothesis}} Benar, salah, atau keduanya? ||| {% if label !=-1
-      %}{{ answer_choices[label] }}{% endif %}'
+      Pertanyaan: {{hypothesis}} Benar, Salah, atau Tidak Keduanya? ||| {% if label
+      !=-1 %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -96,9 +96,9 @@ templates:
   87237a07-7cce-470a-80ac-3e5e3a5283ba: !Template
     answer_choices: Selalu ||| Tidak pernah ||| Kadang-kadang
     id: 87237a07-7cce-470a-80ac-3e5e3a5283ba
-    jinja: "{{premise}} \n\nIngatlah teks di atas, pertimbangkan: {{hypothesis}} Apakah\
-      \ ini {{\"selalu\"}}, {{\"kadang -kadang\"}}, atau {{\"tidak pernah\"}} benar?\
-      \ ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} \n\nDengan mengingat teks di atas, pertimbangkan: {{hypothesis}}\
+      \ Apakah ini {{\"selalu\"}}, {{\"kadang-kadang\"}}, atau {{\"tidak pernah\"\
+      }} benar? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -122,7 +122,7 @@ templates:
   8e3b8d3d-1362-47dc-922a-82c03f965989: !Template
     answer_choices: Ya ||| Tidak ||| Mungkin
     id: 8e3b8d3d-1362-47dc-922a-82c03f965989
-    jinja: Mengingat bahwa {{premise}} Oleh karena itu, pasti benar bahwa "{{hypothesis}}"?
+    jinja: Mengingat bahwa {{premise}} Oleh karena itu, harus benar bahwa "{{hypothesis}}"?
       Ya, tidak, atau mungkin? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%
       endif %}
     metadata: !TemplateMetadata
@@ -135,9 +135,9 @@ templates:
   90ab1002-093c-4e54-b48f-626655e36b65: !Template
     answer_choices: Terjamin ||| Mustahil ||| Mungkin
     id: 90ab1002-093c-4e54-b48f-626655e36b65
-    jinja: "Asumsikan itu benar {{premise}} \n\nOleh karena itu, \"{{hypothesis}}\"\
-      \ adalah {{\"dijamin\"}}, {{\"mungkin\"}}, atau {{\"mustahil\"}}? ||| {% if\
-      \ label !=-1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "Anggaplah benar bahwa {{premise}} \n\nOleh karena itu, \"{{hypothesis}}\"\
+      \ adalah {{\"dijamin\"}}, {{\"mungkin\"}}, atau {{\"tidak mungkin\"}}? ||| {%\
+      \ if label !=-1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -159,9 +159,9 @@ templates:
     name: does this imply
     reference: Sanh et al. 2021
   bee62bfa-5307-4e1c-97b2-2ad2f7bcb179: !Template
-    answer_choices: Benar ||| Salah ||| Tidak meyakinkan
+    answer_choices: Benar ||| Salah ||| tidak meyakinkan
     id: bee62bfa-5307-4e1c-97b2-2ad2f7bcb179
-    jinja: '{{premise}} Menggunakan hanya deskripsi di atas dan apa yang Anda ketahui
+    jinja: '{{premise}} Hanya menggunakan deskripsi di atas dan apa yang Anda ketahui
       tentang dunia, "{{hypothesis}}" pasti benar, salah, atau tidak meyakinkan? |||
       {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}'
     metadata: !TemplateMetadata
@@ -185,13 +185,13 @@ templates:
     name: should assume
     reference: Webson & Pavlick 2021
   ea56b7f3-6e07-45bc-b619-c527eac4a41b: !Template
-    answer_choices: BENAR ||| PALSU ||| Tidak meyakinkan
+    answer_choices: BENAR ||| PALSU ||| tidak meyakinkan
     id: ea56b7f3-6e07-45bc-b619-c527eac4a41b
-    jinja: 'Ambil yang berikut sebagai kebenaran: {{premise}}
+    jinja: 'Ambil yang berikut ini sebagai kebenaran: {{premise}}
 
       Kemudian pernyataan berikut: "{{hypothesis}}" adalah {{"BENAR"}}, {{"Salah"}},
-      atau {{"conconfclusive"}}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%
-      endif %}'
+      atau {{"tidak meyakinkan"}}? ||| {% if label !=-1 %}{{ answer_choices[label]
+      }}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

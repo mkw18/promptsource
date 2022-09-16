@@ -4,8 +4,8 @@ templates:
   02ff2949-0f45-4d97-941e-6fa4c0afbc2d: !Template
     answer_choices: olumsuz ||| pozitif
     id: 02ff2949-0f45-4d97-941e-6fa4c0afbc2d
-    jinja: "A\u015Fa\u011F\u0131daki film incelemesi hangi d\xFC\u015F\xFCnceyi ifade\
-      \ ediyor? {{text}} ||| {{ answer_choices [label] }}"
+    jinja: "A\u015Fa\u011F\u0131daki film incelemesi hangi duyguyu ifade ediyor? {{text}}\
+      \ ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -16,8 +16,8 @@ templates:
   2351d12a-e630-4d19-8b41-e199266e38f7: !Template
     answer_choices: "k\xF6t\xFC ||| iyi"
     id: 2351d12a-e630-4d19-8b41-e199266e38f7
-    jinja: "{{text}} \u0130nceleme bu filmi {{\"\u0130yi ya da k\xF6t\xFC\"}} buldu\
-      \ mu? ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} \u0130ncelemeyi yapan ki\u015Fi bu filmi {{\"\u0130yi ya da k\xF6\
+      t\xFC\"}} buldu mu? ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -28,7 +28,7 @@ templates:
   5f372fb1-795a-47b6-8ddf-c4fd1579e76a: !Template
     answer_choices: olumsuz ||| pozitif
     id: 5f372fb1-795a-47b6-8ddf-c4fd1579e76a
-    jinja: "{{text}} \nBu inceleme {{\"olumlu veya olumsuz\"}}? ||| \n{{answer_choices[label]\
+    jinja: "{{text}} \nBu inceleme {{\"olumlu veya olumsuz\"}} m\u0131? ||| \n{{answer_choices[label]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -52,8 +52,8 @@ templates:
   96538f30-f2c1-430e-8fc6-936a16966d9c: !Template
     answer_choices: olumsuz ||| pozitif
     id: 96538f30-f2c1-430e-8fc6-936a16966d9c
-    jinja: "{{text}} Yazar film i\xE7in hangi d\xFC\u015F\xFCnceyi ifade ediyor? |||\
-      \ {{ answer_choices [label] }}"
+    jinja: "{{text}} Yazar film i\xE7in hangi duygular\u0131 ifade ediyor? ||| {{\
+      \ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -64,7 +64,7 @@ templates:
   af51297c-38a3-4d6c-a8b5-04b1243d7443: !Template
     answer_choices: olumsuz ||| pozitif
     id: af51297c-38a3-4d6c-a8b5-04b1243d7443
-    jinja: "{{text}} Film i\xE7in ifade edilen duygu ||| {{ answer_choices [label]\
+    jinja: "{{text}} Film i\xE7in ifade edilen duygu, ||| {{ answer_choices [label]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -100,8 +100,8 @@ templates:
   bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9: !Template
     answer_choices: Numara ||| Evet
     id: bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9
-    jinja: "{{text}} G\xF6zden ge\xE7iren filmin tad\u0131n\u0131 \xE7\u0131kard\u0131\
-      \ m\u0131? ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} Ele\u015Ftirmen filmi be\u011Fendi mi? ||| {{ answer_choices\
+      \ [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -112,8 +112,8 @@ templates:
   c70d1687-2421-49a2-9553-91b8bac4cfbe: !Template
     answer_choices: olumsuz ||| pozitif
     id: c70d1687-2421-49a2-9553-91b8bac4cfbe
-    jinja: "{{text}} Film i\xE7in g\xF6zden ge\xE7iren taraf\u0131ndan ifade edilen\
-      \ duygu nedir? ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} Film i\xE7in ele\u015Ftirmen taraf\u0131ndan ifade edilen duygu\
+      \ nedir? ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -124,8 +124,8 @@ templates:
   e01970ab-42c0-4e6e-a08f-4940d889ef37: !Template
     answer_choices: "Be\u011Fenmediler! ||| Sevdiler"
     id: e01970ab-42c0-4e6e-a08f-4940d889ef37
-    jinja: "{{text}} G\xF6zden ge\xE7iren film hakk\u0131nda ne d\xFC\u015F\xFCn\xFC\
-      yor? ||| {{ answer_choices [label] }}"
+    jinja: "{{text}} Ele\u015Ftirmen film hakk\u0131nda ne d\xFC\u015F\xFCn\xFCyor?\
+      \ ||| {{ answer_choices [label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:

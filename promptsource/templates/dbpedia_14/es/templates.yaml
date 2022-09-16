@@ -3,14 +3,14 @@ subset: es
 templates:
   824ecb55-ecad-40c2-8033-f2fa0add2ddf: !Template
     answer_choices: "Compa\xF1\xEDa ||| Instituci\xF3n educativa ||| Artista ||| Atleta\
-      \ ||| Titular de la Oficina ||| Media de transporte ||| Edificio ||| Lugar natural\
-      \ ||| Village ||| Animal ||| Planta ||| \xC1lbum ||| Pel\xEDcula ||| Trabajo\
+      \ ||| Titular de la Oficina ||| Medio de transporte ||| Edificio ||| Paraje\
+      \ Natural ||| Aldea ||| Animal ||| Planta ||| \xC1lbum ||| Pel\xEDcula ||| Trabajo\
       \ escrito"
     id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
-    jinja: "{{content}} Dada una lista de categor\xEDas: {{\"Compa\xF1\xEDa, instituci\xF3\
-      n educativa, artista, atleta, titular de la oficina, media de transporte, construcci\xF3\
-      n, lugar natural, aldea, animal, planta, \xE1lbum, cine o trabajo escrito\"\
-      }}, \xBFa qu\xE9 categor\xEDa pertenece el p\xE1rrafo? ||| {{ answer_choices[label]\
+    jinja: "{{content}} Dada una lista de categor\xEDas: {{\"empresa, instituci\xF3\
+      n educativa, artista, atleta, funcionario, medio de transporte, edificio, lugar\
+      \ natural, pueblo, animal, planta, \xE1lbum, pel\xEDcula u obra escrita\"}},\
+      \ \xBFa qu\xE9 categor\xEDa pertenece el p\xE1rrafo? ||| {{ answer_choices[label]\
       \ }}\n\n"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -21,14 +21,14 @@ templates:
     reference: ''
   8eda7e71-6734-486f-b883-e99d3f14c0bf: !Template
     answer_choices: "Compa\xF1\xEDa ||| Instituci\xF3n educativa ||| Artista ||| Atleta\
-      \ ||| Titular de la Oficina ||| Media de transporte ||| Edificio ||| Lugar natural\
-      \ ||| Aldea ||| Animal ||| Planta ||| \xC1lbum ||| Pel\xEDcula ||| Trabajo escrito"
+      \ ||| Titular de la Oficina ||| Medio de transporte ||| Edificio ||| Paraje\
+      \ Natural ||| Aldea ||| Animal ||| Planta ||| \xC1lbum ||| Pel\xEDcula ||| Trabajo\
+      \ escrito"
     id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
-    jinja: "Elija una categor\xEDa para el siguiente texto.Las opciones son - {{\"\
-      Compa\xF1\xEDa, instituci\xF3n educativa, artista, atleta, titular de la oficina,\
-      \ media de transporte, construcci\xF3n, lugar natural, aldea, animal, planta,\
-      \ \xE1lbum, cine o trabajo escrito\"}}. {{title}} - {{content}} ||| {{ answer_choices[label]\
-      \ }}"
+    jinja: "Elija una categor\xEDa para el siguiente texto. Las opciones son - {{\"\
+      empresa, instituci\xF3n educativa, artista, atleta, funcionario, medio de transporte,\
+      \ edificio, lugar natural, pueblo, animal, planta, \xE1lbum, pel\xEDcula u obra\
+      \ escrita\"}}. {{title}} - {{content}} ||| {{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -37,15 +37,16 @@ templates:
     name: pick_one_category_for_the_following_text
     reference: ''
   9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67: !Template
-    answer_choices: "Compa\xF1\xEDa ||| Educational Institution ||| Artista ||| Atleta\
-      \ ||| Titular de la Oficina ||| Media de transporte ||| Edificio ||| Lugar natural\
-      \ ||| Aldea ||| Animal ||| Planta ||| \xC1lbum ||| Film ||| Trabajo escrito"
+    answer_choices: "Compa\xF1\xEDa ||| Instituci\xF3n educativa ||| Artista ||| Atleta\
+      \ ||| Titular de la Oficina ||| Medio de transporte ||| Edificio ||| Paraje\
+      \ Natural ||| Aldea ||| Animal ||| Planta ||| \xC1lbum ||| Pel\xEDcula ||| Trabajo\
+      \ escrito"
     id: 9dfa5d15-96bc-41ee-ad89-4f8df5c4ff67
-    jinja: "{{title}} - {{content}} Dada una opci\xF3n de categor\xEDas {{\"Compa\xF1\
-      \xEDa, instituci\xF3n educativa, artista, atleta, titular de la oficina, media\
-      \ de transporte, construcci\xF3n, lugar natural, aldea, animal, planta, \xE1\
-      lbum, cine o trabajo escrito\"}}, \xBFel texto se refiere a cu\xE1l? ||| {{\
-      \ answer_choices[label] }}"
+    jinja: "{{title}} - {{content}} Dada una selecci\xF3n de categor\xEDas {{\"empresa,\
+      \ instituci\xF3n educativa, artista, atleta, funcionario, medio de transporte,\
+      \ edificio, lugar natural, pueblo, animal, planta, \xE1lbum, pel\xEDcula u obra\
+      \ escrita\"}}, \xBFa cu\xE1l se refiere el texto? ||| {{ answer_choices[label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -54,14 +55,15 @@ templates:
     name: 'given_a_choice_of_categories '
     reference: ''
   f72fa410-3278-4f62-91f0-f9edf4a4e792: !Template
-    answer_choices: "Company ||| Instituci\xF3n educativa ||| Artista ||| Atleta |||\
-      \ Titular de la Oficina ||| Mean Of Transportation ||| Edificio ||| Lugar natural\
-      \ ||| Aldea ||| Animal ||| Planta ||| \xC1lbum ||| Pel\xEDcula ||| Trabajo escrito"
+    answer_choices: "Compa\xF1\xEDa ||| Instituci\xF3n educativa ||| Artista ||| Atleta\
+      \ ||| Titular de la Oficina ||| Medio de transporte ||| Edificio ||| Paraje\
+      \ Natural ||| Aldea ||| Animal ||| Planta ||| \xC1lbum ||| Pel\xEDcula ||| Trabajo\
+      \ escrito"
     id: f72fa410-3278-4f62-91f0-f9edf4a4e792
-    jinja: "\"{{title}}\", dada una lista de categor\xEDas: {{\"Compa\xF1\xEDa, instituci\xF3\
-      n educativa, artista, atleta, titular de la oficina, media de transporte, construcci\xF3\
-      n, lugar natural, aldea, animal, planta, \xE1lbum, cine o trabajo escrito\"\
-      }}, \xBFa qu\xE9 categor\xEDa pertenece el t\xEDtulo? ||| {{ answer_choices[label]\
+    jinja: "\"{{title}}\", dada una lista de categor\xEDas: {{\"empresa, instituci\xF3\
+      n educativa, artista, atleta, funcionario, medio de transporte, edificio, lugar\
+      \ natural, pueblo, animal, planta, \xE1lbum, pel\xEDcula u obra escrita\"}},\
+      \ \xBFa qu\xE9 categor\xEDa pertenece el t\xEDtulo? ||| {{ answer_choices[label]\
       \ }}\n\n"
     metadata: !TemplateMetadata
       choices_in_prompt: true

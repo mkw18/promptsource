@@ -10,7 +10,7 @@ templates:
 
       Domanda: {{question}}
 
-      Options: {{"A"}}: {{options.0}}
+      Opzioni: {{"A"}}: {{options.0}}
 
       {{"B"}}: {{options.1}}
 
@@ -31,13 +31,13 @@ templates:
   1a68b62e-404c-4037-baec-7e20cb4c3f6b: !Template
     answer_choices: '{{ options | join("|||") }}'
     id: 1a68b62e-404c-4037-baec-7e20cb4c3f6b
-    jinja: 'Read the following article and answer the question.
+    jinja: 'Leggi il seguente articolo e rispondi alla domanda.
 
       Articolo: {{article}}
 
       Domanda: {{question}}
 
-      Answer:
+      Risposta:
 
       |||
 
@@ -53,7 +53,7 @@ templates:
     answer_choices: "s\xEC ||| No"
     id: 2e7f5fff-518e-4100-90f9-cca094b11e95
     jinja: "{% set candidate = [\"A\", \"B\", \"C\", \"D\"] | choice %}\nArticolo:\
-      \ {{article}}\nDomanda: {{question}}\ns\xEC or no, is the answer \"{{ [options.0,options.1,options.2,options.3][{\"\
+      \ {{article}}\nDomanda: {{question}}\nS\xEC o no, \xE8 la risposta \"{{ [options.0,options.1,options.2,options.3][{\"\
       A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\"?\n|||\n{% if candidate == answer\
       \ %}\ns\xEC\n{% else %}\nNo\n{% endif %}"
     metadata: !TemplateMetadata
@@ -112,11 +112,11 @@ templates:
   9aedaa07-b815-4a35-890b-6100f00706aa: !Template
     answer_choices: null
     id: 9aedaa07-b815-4a35-890b-6100f00706aa
-    jinja: "Scrivi una domanda multi-scelta per il seguente articolo, con le scelte\
-      \ e la risposta fornite:\nArticolo: {{article}}\nOpzioni:\n{{\"A\"}} {{options.0}}\n\
-      {{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\n\
-      Risposta:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"A\":0,\"\
-      B\":1,\"C\":2,\"D\":3}[answer]] }}\nDomanda: \n|||\n{{question}}"
+    jinja: "Scrivi una domanda a scelta multipla per il seguente articolo, con le\
+      \ scelte e la risposta fornite:\nArticolo: {{article}}\nOpzioni:\n{{\"A\"}}\
+      \ {{options.0}}\n{{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}}\
+      \ {{options.3}}\nRisposta:\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"\
+      A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\nDomanda: \n|||\n{{question}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -128,10 +128,10 @@ templates:
   af4869c4-35af-4644-86d9-27843ca4efd5: !Template
     answer_choices: null
     id: af4869c4-35af-4644-86d9-27843ca4efd5
-    jinja: "Scrivi una domanda multi-scelta per il seguente articolo:\nArticle: {{article}}\n\
-      |||\nQuestion: \n{{question}}\nOptions:\n{{\"A\"}} {{options.0}}\n{{\"B\"}}\
-      \ {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\nAnswer:\n\
-      {{answer}}"
+    jinja: "Scrivi una domanda a scelta multipla per il seguente articolo:\nArticolo:\
+      \ {{article}}\n|||\nDomanda: \n{{question}}\nOpzioni:\n{{\"A\"}} {{options.0}}\n\
+      {{\"B\"}} {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\n\
+      Risposta:\n{{answer}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -148,7 +148,7 @@ templates:
 
       Articolo: {{article}}
 
-      Question: {{question}}
+      Domanda: {{question}}
 
       Opzioni: {{"A"}}: {{options.0}}
 

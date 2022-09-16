@@ -21,7 +21,7 @@ templates:
 
       {% if label_coarse == 5 %}
 
-      Questa domanda sta chiedendo {{'', ''.join(answer_choices)}}?
+      Questa domanda richiede {{'', ''.join(answer_choices)}}?
 
       {{text}}
 
@@ -40,7 +40,7 @@ templates:
   309bf243-2185-4090-ac66-a24f44d89966: !Template
     answer_choices: "codice ||| contare ||| Data ||| distanza ||| prezzo ||| ordine\
       \ ||| periodo di tempo ||| percentuale ||| velocit\xE0 ||| temperatura ||| taglia\
-      \ ||| il peso ||| Altro numero"
+      \ ||| il peso ||| altro numero"
     id: 309bf243-2185-4090-ac66-a24f44d89966
     jinja: '{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,
       35:8, 41:9, 32:10, 45:11, 14:12} %}
@@ -50,7 +50,7 @@ templates:
       {{text}}
 
 
-      Questa domanda sta chiedendo {{'', ''.join(answer_choices)}}?
+      Questa domanda richiede {{'', ''.join(answer_choices)}}?
 
       |||
 
@@ -66,7 +66,7 @@ templates:
     reference: Fine grained labels with coarse-label `NUM`, context provided first
   3aff84f3-e478-4598-abe8-40aa24cec1fa: !Template
     answer_choices: "un animale ||| un organo del corpo ||| un colore ||| pezzo creativo\
-      \ ||| moneta ||| disease or medicine ||| evento ||| cibo ||| strumento musicale\
+      \ ||| moneta ||| malattia o medicina ||| evento ||| cibo ||| strumento musicale\
       \ ||| linguaggio ||| lettera ||| pianta ||| Prodotto ||| religione ||| sport\
       \ ||| sostanza ||| simbolo ||| tecnica ||| termine ||| veicolo ||| parola |||\
       \ altra entit\xE0"
@@ -77,7 +77,7 @@ templates:
 
       {% if label_coarse == 1 %}
 
-      Questa domanda sta chiedendo {{'', ''.join(answer_choices)}}?
+      Questa domanda richiede {{'', ''.join(answer_choices)}}?
 
       {{text}}
 
@@ -94,16 +94,16 @@ templates:
     name: fine_grained_ENTY
     reference: Fine grained labels with coarse-label `ENTY`, context after question
   43a188a2-b6dd-46a7-af2e-81a64b90b92a: !Template
-    answer_choices: "codice ||| contare ||| date ||| distanza ||| prezzo ||| ordine\
-      \ ||| period of time ||| percentuale ||| velocit\xE0 ||| temperatura ||| taglia\
-      \ ||| il peso ||| Altro numero"
+    answer_choices: "codice ||| contare ||| Data ||| distanza ||| prezzo ||| ordine\
+      \ ||| periodo di tempo ||| percentuale ||| velocit\xE0 ||| temperatura ||| taglia\
+      \ ||| il peso ||| altro numero"
     id: 43a188a2-b6dd-46a7-af2e-81a64b90b92a
     jinja: '{% set label_mapping = {39:0, 13:1, 8:2, 40:3, 25:4, 43:5, 27:6, 38:7,
       35:8, 41:9, 32:10, 45:11, 14:12} %}
 
       {% if label_coarse == 4 %}
 
-      Questa domanda sta chiedendo {{'', ''.join(answer_choices)}}?
+      Questa domanda richiede {{'', ''.join(answer_choices)}}?
 
       {{text}}
 
@@ -126,7 +126,7 @@ templates:
     jinja: 'Domanda: {{text}}
 
 
-      Descriptors: {{'', ''.join(answer_choices)}}
+      Descrittori: {{'', ''.join(answer_choices)}}
 
 
       Miglior descrittore?
@@ -142,9 +142,9 @@ templates:
     name: pick_the_best_descriptor
     reference: ''
   71090d59-dd02-4cbd-8032-ad86179b9bd4: !Template
-    answer_choices: "Manner ||| Pezzo creativo ||| Animale ||| Espressione abbreviata\
+    answer_choices: "Maniera ||| Pezzo creativo ||| Animale ||| Espressione abbreviata\
       \ ||| Individuale ||| Gruppo ||| Titolo ||| definizione ||| Data ||| Motivo\
-      \ ||| Evento ||| Stato ||| Descrizione ||| Contare ||| Other ||| Lettera |||\
+      \ ||| Evento ||| Stato ||| Descrizione ||| Contare ||| Altro ||| Lettera |||\
       \ Religione ||| Cibo ||| Contarery ||| Colore ||| Termine ||| Citt\xE0 ||| Organo\
       \ del corpo ||| Malattia o medicina ||| Montagna ||| Prezzo ||| Prodotto |||\
       \ Periodo ||| Sostanza ||| Sport ||| Pianta ||| Tecnica ||| Dimensione ||| Strumento\
@@ -155,7 +155,7 @@ templates:
     jinja: '{{text}}
 
 
-      Cosa chiede questa domanda?
+      Che cosa chiede questa domanda?
 
       |||
 
@@ -177,7 +177,7 @@ templates:
       {{text}}
 
 
-      Questa domanda sta chiedendo {{'', ''.join(answer_choices)}}?
+      Questa domanda richiede {{'', ''.join(answer_choices)}}?
 
       |||
 
@@ -206,13 +206,13 @@ templates:
     name: which_category_best_describes
     reference: ''
   7a9e6f3c-1dee-45b0-a315-1badaf59a7b8: !Template
-    answer_choices: definizione ||| descrizione ||| modo d'azione ||| Motivo
+    answer_choices: definizione ||| descrizione ||| modo di agire ||| Motivo
     id: 7a9e6f3c-1dee-45b0-a315-1badaf59a7b8
     jinja: '{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}
 
       {% if label_coarse == 0 %}
 
-      Questa domanda sta chiedendo {{'', ''.join(answer_choices)}}?
+      Questa domanda richiede {{'', ''.join(answer_choices)}}?
 
       {{text}}
 
@@ -248,10 +248,10 @@ templates:
     name: trec1
     reference: Context then prompt
   93a06e72-2c15-4f8a-a46c-6a10919c4ea4: !Template
-    answer_choices: abbreviazione ||| Espressione abbreviata
+    answer_choices: abbreviazione ||| espressione abbreviata
     id: 93a06e72-2c15-4f8a-a46c-6a10919c4ea4
     jinja: "{% set label_mapping={34:0, 3:1} %} \n{% if label_coarse == 2 %}\nQuesta\
-      \ domanda sta chiedendo un {{', '.join(answer_choices)}}?\n{{text}}\n|||\n{{answer_choices[label_mapping[label_fine]]\
+      \ domanda richiede un {{', '.join(answer_choices)}}?\n{{text}}\n|||\n{{answer_choices[label_mapping[label_fine]]\
       \ }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -261,10 +261,10 @@ templates:
     name: fine_grained_ABBR
     reference: Fine grained labels with coarse-label `ABBR`, context after question
   a0096044-3b4c-4c80-b139-25eac8fe692a: !Template
-    answer_choices: abbreviazione ||| Espressione abbreviata
+    answer_choices: abbreviazione ||| espressione abbreviata
     id: a0096044-3b4c-4c80-b139-25eac8fe692a
     jinja: "{% set label_mapping = {34:0, 3:1} %} \n{% if label_coarse == 2 %}\n{{text}}\n\
-      \nQuesta domanda sta chiedendo un {{', '.join(answer_choices)}}?\n|||\n{{ answer_choices\
+      \nQuesta domanda richiede un {{', '.join(answer_choices)}}?\n|||\n{{ answer_choices\
       \ [label_mapping[label_fine]] }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -277,7 +277,7 @@ templates:
     answer_choices: "Descrizione ||| Entit\xE0 ||| Abbreviazione ||| Persona ||| Quantit\xE0\
       \ ||| Posizione"
     id: aad2def1-b694-40ee-9c26-3d1cf5c577da
-    jinja: 'La seguente domanda sta facendo su {{'', ''.join(answer_choices)}}?
+    jinja: 'La seguente domanda riguarda {{'', ''.join(answer_choices)}}?
 
 
       {{text}}
@@ -299,7 +299,7 @@ templates:
 
       {% if label_coarse == 3 %}
 
-      Questa domanda sta chiedendo {{'', ''.join(answer_choices)}}?
+      Questa domanda richiede {{'', ''.join(answer_choices)}}?
 
       {{text}}
 
@@ -318,7 +318,7 @@ templates:
   cfa8fde0-8320-4050-8d6e-7619ab14adea: !Template
     answer_choices: "Maniera ||| Pezzo creativo ||| Animale ||| Espressione abbreviata\
       \ ||| Individuale ||| Gruppo ||| Titolo ||| definizione ||| Data ||| Motivo\
-      \ ||| Evento ||| Stato ||| Descrizione ||| Contare ||| Other ||| Lettera |||\
+      \ ||| Evento ||| Stato ||| Descrizione ||| Contare ||| Altro ||| Lettera |||\
       \ Religione ||| Cibo ||| Contarery ||| Colore ||| Termine ||| Citt\xE0 ||| Organo\
       \ del corpo ||| Malattia o medicina ||| Montagna ||| Prezzo ||| Prodotto |||\
       \ Periodo ||| Sostanza ||| Sport ||| Pianta ||| Tecnica ||| Dimensione ||| Strumento\
@@ -326,7 +326,7 @@ templates:
       \ Codice ||| Distanza ||| Temperatura ||| Simbolo ||| Ordine ||| Veicolo |||\
       \ Il peso ||| Moneta"
     id: cfa8fde0-8320-4050-8d6e-7619ab14adea
-    jinja: 'Cosa chiede questa domanda?
+    jinja: 'Che cosa chiede questa domanda?
 
 
       {{text}}
@@ -351,7 +351,7 @@ templates:
       {{text}}
 
 
-      Questa domanda sta chiedendo {{'', ''.join(answer_choices)}}?
+      Questa domanda richiede {{'', ''.join(answer_choices)}}?
 
       |||
 
@@ -364,7 +364,7 @@ templates:
     name: fine_grained_HUM_context_first
     reference: Fine grained labels with coarse-label `HUM`, context provided first
   fa588c55-5c69-4fd0-a0b1-edbfa092f710: !Template
-    answer_choices: definizione ||| descrizione ||| modo d'azione ||| Motivo
+    answer_choices: definizione ||| descrizione ||| modo di agire ||| Motivo
     id: fa588c55-5c69-4fd0-a0b1-edbfa092f710
     jinja: '{% set label_mapping={0:2, 7:1,  12:0, 9:3} %}
 
@@ -373,7 +373,7 @@ templates:
       {{text}}
 
 
-      Questa domanda sta chiedendo {{'', ''.join(answer_choices)}}?
+      Questa domanda richiede {{'', ''.join(answer_choices)}}?
 
       |||
 

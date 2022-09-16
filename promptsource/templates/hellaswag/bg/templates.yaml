@@ -4,9 +4,9 @@ templates:
   00caa8cb-7f67-43bc-9e90-fc1d5d329432: !Template
     answer_choices: '{{endings | join(" ||| ")}}'
     id: 00caa8cb-7f67-43bc-9e90-fc1d5d329432
-    jinja: "\u041F\u043E\u043F\u044A\u043B\u043D\u0435\u0442\u0435 \u043E\u043F\u0438\
+    jinja: "\u0414\u043E\u043F\u044A\u043B\u043D\u0435\u0442\u0435 \u043E\u043F\u0438\
       \u0441\u0430\u043D\u0438\u0435\u0442\u043E \u0441 \u043F\u043E\u0434\u0445\u043E\
-      \u0434\u044F\u0449 \u043A\u0440\u0430\u0439:\n\u041F\u044A\u0440\u0432\u043E\
+      \u0434\u044F\u0449 \u043A\u0440\u0430\u0439:\n\u043F\u044A\u0440\u0432\u043E\
       , {{ ctx_a.lower() }} \u0422\u043E\u0433\u0430\u0432\u0430, {{ ctx_b.lower()\
       \ }} ...\n\n(a) {{ answer_choices[0] }}\n\n(b) {{ answer_choices[1] }}\n\n(c)\
       \ {{ answer_choices[2] }}\n\n(d) {{ answer_choices[3] }}\n|||\n{{ answer_choices[label\
@@ -50,9 +50,9 @@ templates:
     answer_choices: null
     id: 4ebf22a1-2d23-426c-a083-b43fc8567687
     jinja: "{{ctx}} {{endings[label | int()]}}\n\u041C\u043E\u0436\u0435\u0442\u0435\
-      \ \u043B\u0438 \u0434\u0430 \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\
-      \u0446\u0438\u0440\u0430\u0442\u0435 \u0442\u0435\u043C\u0430\u0442\u0430 \u043D\
-      \u0430 \u0430\u0431\u0437\u0430\u0446\u0430? \n|||\n{{activity_label}}"
+      \ \u043B\u0438 \u0434\u0430 \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0438\
+      \u0442\u0435 \u0442\u0435\u043C\u0430\u0442\u0430 \u043D\u0430 \u043F\u0430\u0440\
+      \u0430\u0433\u0440\u0430\u0444\u0430? \n|||\n{{activity_label}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -66,22 +66,21 @@ templates:
     id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
     jinja: "{% set prompts = [\n'\u041C\u043E\u0436\u0435\u0442\u0435 \u043B\u0438\
       \ \u0434\u0430 \u0438\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u043F\u0440\
-      \u0430\u0432\u0438\u043B\u043D\u0438\u044F \u043A\u0440\u0430\u0439 \u0437\u0430\
+      \u0430\u0432\u0438\u043B\u043D\u0438\u044F \u043A\u0440\u0430\u0439 \u043D\u0430\
       \ \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435\u0442\u043E: ',\n'\u0417\
-      \u0430\u0434\u0430\u0447\u0430\u0442\u0430 \u0435 \u0434\u0430 \u0441\u0435\
-      \ \u0433\u0435\u043D\u0435\u0440\u0438\u0440\u0430 \u043A\u0440\u0430\u044F\
-      \ \u043D\u0430 \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435\u0442\u043E\
-      : ',\n'\u041A\u0430\u043A \u0441\u0432\u044A\u0440\u0448\u0432\u0430 \u0442\u043E\
-      \u0432\u0430 \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435? ',\n'\u041E\
-      \u0442 \u0441\u043F\u0438\u0441\u044A\u043A\u0430 \u0441 \u043E\u043A\u043E\u043D\
-      \u0447\u0430\u043D\u0438\u044F\u0442\u0430, \u043E\u043F\u0438\u0441\u0430\u043D\
-      \u0438 \u043F\u043E -\u0434\u043E\u043B\u0443, \u043A\u0430\u043A\u044A\u0432\
-      \ \u043A\u0440\u0430\u0439 \u0438\u043C\u0430 \u043D\u0430\u0439 -\u0433\u043E\
-      \u043B\u044F\u043C \u0441\u043C\u0438\u0441\u044A\u043B \u0437\u0430 \u0438\u0437\
-      \u0440\u0435\u0447\u0435\u043D\u0438\u0435\u0442\u043E ',]\n%}\n{{prompts |\
-      \ choice}}\n{{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\
-      \n(c)  {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices\
-      \ [label | int()]}}"
+      \u0430\u0434\u0430\u0447\u0430\u0442\u0430 \u0435 \u0434\u0430 \u0433\u0435\u043D\
+      \u0435\u0440\u0438\u0440\u0430\u0442\u0435 \u043A\u0440\u0430\u044F \u043D\u0430\
+      \ \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435\u0442\u043E: ',\n'\u041A\
+      \u0430\u043A \u0437\u0430\u0432\u044A\u0440\u0448\u0432\u0430 \u0442\u043E\u0432\
+      \u0430 \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435? ',\n'\u041E\u0442\
+      \ \u0441\u043F\u0438\u0441\u044A\u043A\u0430 \u0441 \u043E\u043A\u043E\u043D\
+      \u0447\u0430\u043D\u0438\u044F, \u043E\u043F\u0438\u0441\u0430\u043D\u0438 \u043F\
+      \u043E-\u0434\u043E\u043B\u0443, \u043A\u043E\u0439 \u043A\u0440\u0430\u0439\
+      \ \u0438\u043C\u0430 \u043D\u0430\u0439-\u0433\u043E\u043B\u044F\u043C \u0441\
+      \u043C\u0438\u0441\u044A\u043B \u0437\u0430 \u0438\u0437\u0440\u0435\u0447\u0435\
+      \u043D\u0438\u0435\u0442\u043E ',]\n%}\n{{prompts | choice}}\n{{ctx}}\n\n(a)\
+      \  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\
+      \n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices [label | int()]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -90,14 +89,14 @@ templates:
     name: Randomized prompts template
     reference: Original task template with randomized prompt template
   663470b8-3fab-449c-84ab-6c4738da51b3: !Template
-    answer_choices: "\u0414\u0430 ||| \u041D\u0435"
+    answer_choices: "\u0434\u0430 ||| \u041D\u0435"
     id: 663470b8-3fab-449c-84ab-6c4738da51b3
-    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\n\u041F\u043E\u043C\u0438\u0441\
-      \u043B\u0435\u0442\u0435 \u0437\u0430 \u0441\u043B\u0435\u0434\u043D\u043E\u0442\
+    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\n\u0420\u0430\u0437\u0433\u043B\
+      \u0435\u0434\u0430\u0439\u0442\u0435 \u0441\u043B\u0435\u0434\u043D\u043E\u0442\
       \u043E \u043E\u043F\u0438\u0441\u0430\u043D\u0438\u0435: {{ ctx_a }}\n\u0421\
-      \u043B\u0435\u0434\u043D\u043E\u0442\u043E \u043B\u0438 \u0435 \u043F\u043E\u0434\
-      \u0445\u043E\u0434\u044F\u0449\u043E \u043F\u0440\u043E\u0434\u044A\u043B\u0436\
-      \u0435\u043D\u0438\u0435?\n{{ ctx_b }} {{ endings[instance] }}\n\u0414\u0430\
+      \u043B\u0435\u0434\u043D\u043E\u0442\u043E \u043F\u043E\u0434\u0445\u043E\u0434\
+      \u044F\u0449\u043E \u043F\u0440\u043E\u0434\u044A\u043B\u0436\u0435\u043D\u0438\
+      \u0435 \u043B\u0438 \u0435?\n{{ ctx_b }} {{ endings[instance] }}\n\u0414\u0430\
       \ \u0438\u043B\u0438 \u043D\u0435?\n||| \n{% if label  == instance | string()\
       \ %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n{% endif %}"
     metadata: !TemplateMetadata
@@ -110,13 +109,13 @@ templates:
   6e9f8d7d-9016-45bc-b997-c42aeb2dc944: !Template
     answer_choices: '{{endings | join("|||")}}'
     id: 6e9f8d7d-9016-45bc-b997-c42aeb2dc944
-    jinja: "\u041A\u0430\u043A \u0441\u0432\u044A\u0440\u0448\u0432\u0430 \u0442\u043E\
-      \u0432\u0430 \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435?\n{{ctx}}\n\
-      \n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\
-      \n(d)  {{answer_choices[3]}}\n\n\u0421\u044A\u0432\u0435\u0442: \u0422\u0435\
-      \u043C\u0430\u0442\u0430 \u043D\u0430 \u0438\u0437\u0440\u0435\u0447\u0435\u043D\
-      \u0438\u0435\u0442\u043E \u0435 {{activity_label}}\n|||\n{{answer_choices [label\
-      \ | int()]}}"
+    jinja: "\u041A\u0430\u043A \u0437\u0430\u0432\u044A\u0440\u0448\u0432\u0430 \u0442\
+      \u043E\u0432\u0430 \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435?\n\
+      {{ctx}}\n\n(a)  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c) \
+      \ {{answer_choices[2]}}\n\n(d)  {{answer_choices[3]}}\n\n\u0423\u043F\u044A\u0442\
+      \u0432\u0430\u043D\u0435: \u0442\u0435\u043C\u0430\u0442\u0430 \u043D\u0430\
+      \ \u0438\u0437\u0440\u0435\u0447\u0435\u043D\u0438\u0435\u0442\u043E \u0435\
+      \ {{activity_label}}\n|||\n{{answer_choices [label | int()]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -139,16 +138,16 @@ templates:
     name: Open-ended start
     reference: Template asks the model to generate a premise or start for the ending
   d95b81c4-5db7-44c1-926e-c7222c896a32: !Template
-    answer_choices: "\u0414\u0430 ||| \u041D\u0435"
+    answer_choices: "\u0434\u0430 ||| \u041D\u0435"
     id: d95b81c4-5db7-44c1-926e-c7222c896a32
-    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\n\u041F\u043E\u043C\u0438\u0441\
-      \u043B\u0435\u0442\u0435 \u0437\u0430 \u0441\u043B\u0435\u0434\u043D\u0438\u044F\
+    jinja: "{% set instance = [0, 1, 2, 3] | choice %}\n\u0420\u0430\u0437\u0433\u043B\
+      \u0435\u0434\u0430\u0439\u0442\u0435 \u0441\u043B\u0435\u0434\u043D\u0438\u044F\
       \ \u0442\u0435\u043A\u0441\u0442: {{ ctx_b }} {{ endings[instance] }}\n\u041F\
       \u043E\u0434\u0445\u043E\u0434\u044F\u0449\u043E \u043B\u0438 \u0435 \u043F\u0440\
-      \u043E\u0434\u044A\u043B\u0436\u0435\u043D\u0438\u0435 \u043D\u0430 \u0441\u043B\
-      \u0435\u0434\u043D\u0438\u044F \u0442\u0435\u043A\u0441\u0442: \n{{ ctx_a }}\
-      \ ?\n\u0414\u0430 \u0438\u043B\u0438 \u043D\u0435?\n||| \n{% if label  == instance\
-      \ | string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n\
+      \u043E\u0434\u044A\u043B\u0436\u0435\u043D\u0438\u0435\u0442\u043E \u043D\u0430\
+      \ \u0441\u043B\u0435\u0434\u043D\u0438\u044F \u0442\u0435\u043A\u0441\u0442\
+      : \n{{ ctx_a }} ?\n\u0414\u0430 \u0438\u043B\u0438 \u043D\u0435?\n||| \n{% if\
+      \ label  == instance | string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -163,11 +162,11 @@ templates:
       \ \u041A\u0440\u0430\u0439 3 ||| \u041A\u0440\u0430\u0439 4"
     id: db8b1c25-f2db-4604-b8fc-f93d69d6fae7
     jinja: "{{ ctx }}...\n\u041A\u0430\u043A \u0432\u0435\u0440\u043E\u044F\u0442\u043D\
-      \u043E \u0435 \u043E\u043F\u0438\u0441\u0430\u043D\u0438\u0435\u0442\u043E?\n\
-      \n\u041A\u0440\u0430\u0439 1: {{ endings[0] }}\n\n\u041A\u0440\u0430\u0439 2:\
-      \ {{ endings[1] }}\n\n\u041A\u0440\u0430\u0439 3: {{ endings[2] }}\n\n\u041A\
-      \u0440\u0430\u0439 4: {{ endings[3] }}\n||| {{ answer_choices[label | int()]\
-      \ }}"
+      \u043E \u0437\u0430\u0432\u044A\u0440\u0448\u0432\u0430 \u043E\u043F\u0438\u0441\
+      \u0430\u043D\u0438\u0435\u0442\u043E?\n\n\u041A\u0440\u0430\u0439 1: {{ endings[0]\
+      \ }}\n\n\u041A\u0440\u0430\u0439 2: {{ endings[1] }}\n\n\u041A\u0440\u0430\u0439\
+      \ 3: {{ endings[2] }}\n\n\u041A\u0440\u0430\u0439 4: {{ endings[3] }}\n||| {{\
+      \ answer_choices[label | int()] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -179,12 +178,13 @@ templates:
     answer_choices: "\u041A\u0440\u0430\u0439 1 ||| \u041A\u0440\u0430\u0439 2 |||\
       \ \u041A\u0440\u0430\u0439 3 ||| \u041A\u0440\u0430\u0439 4"
     id: def77598-682f-48de-b187-55db4d390f07
-    jinja: "\u0410\u043A\u043E \u0437\u0430\u043F\u043E\u0447\u0432\u0430 \u043E\u043F\
-      \u0438\u0441\u0430\u043D\u0438\u0435 \u043D\u0430 \u0441\u0438\u0442\u0443\u0430\
-      \u0446\u0438\u044F: {{ ctx }}... Then how\ndoes it continue? \n\n\u041A\u0440\
-      \u0430\u0439 1: {{ endings[0] }}\n\n\u041A\u0440\u0430\u0439 2: {{ endings[1]\
-      \ }}\n\n\u041A\u0440\u0430\u0439 3: {{ endings[2] }}\n\n\u041A\u0440\u0430\u0439\
-      \ 4: {{ endings[3] }}\n|||{{answer_choices[label | int()] }}"
+    jinja: "\u0410\u043A\u043E \u043E\u043F\u0438\u0441\u0430\u043D\u0438\u0435\u0442\
+      \u043E \u043D\u0430 \u0434\u0430\u0434\u0435\u043D\u0430 \u0441\u0438\u0442\u0443\
+      \u0430\u0446\u0438\u044F \u0437\u0430\u043F\u043E\u0447\u0432\u0430 \u0442\u0430\
+      \u043A\u0430: {{ ctx }}... Then how\ndoes it continue? \n\n\u041A\u0440\u0430\
+      \u0439 1: {{ endings[0] }}\n\n\u041A\u0440\u0430\u0439 2: {{ endings[1] }}\n\
+      \n\u041A\u0440\u0430\u0439 3: {{ endings[2] }}\n\n\u041A\u0440\u0430\u0439 4:\
+      \ {{ endings[3] }}\n|||{{answer_choices[label | int()] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

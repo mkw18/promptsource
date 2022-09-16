@@ -6,7 +6,7 @@ templates:
     id: 00caa8cb-7f67-43bc-9e90-fc1d5d329432
     jinja: 'Completa la descrizione con un finale appropriato:
 
-      First, {{ ctx_a.lower() }} Quindi, {{ ctx_b.lower() }} ...
+      Primo, {{ ctx_a.lower() }} Quindi, {{ ctx_b.lower() }} ...
 
 
       (a) {{ answer_choices[0] }}
@@ -61,7 +61,7 @@ templates:
   4ebf22a1-2d23-426c-a083-b43fc8567687: !Template
     answer_choices: null
     id: 4ebf22a1-2d23-426c-a083-b43fc8567687
-    jinja: "{{ctx}} {{endings[label | int()]}}\nRiesci a identificare l'argomento\
+    jinja: "{{ctx}} {{endings[label | int()]}}\nRiuscite a identificare l'argomento\
       \ del paragrafo? \n|||\n{{activity_label}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -74,9 +74,9 @@ templates:
   52fbd075-46cb-49fb-a41b-00a0f4a60285: !Template
     answer_choices: '{{endings | join(" ||| ") }}'
     id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
-    jinja: "{% set prompts = [\n'Puoi scegliere il finale corretto per la frase: ',\n\
-      'L''attivit\xE0 \xE8 generare il finale per la frase: ',\n'Come finisce questa\
-      \ frase? ',\n'Dall''elenco dei finali descritti di seguito, ci\xF2 che il finale\
+    jinja: "{% set prompts = [\n'Puoi scegliere la desinenza corretta per la frase:\
+      \ ',\n'Il compito \xE8 generare la desinenza per la frase: ',\n'Come finisce\
+      \ questa frase? ',\n'Dall'elenco di desinenze descritte di seguito, quale finale\
       \ ha pi\xF9 senso per la frase ',]\n%}\n{{prompts | choice}}\n{{ctx}}\n\n(a)\
       \  {{answer_choices[0]}}\n\n(b)  {{answer_choices[1]}}\n\n(c)  {{answer_choices[2]}}\n\
       \n(d)  {{answer_choices[3]}}\n|||\n{{answer_choices [label | int()]}}"
@@ -91,8 +91,8 @@ templates:
     answer_choices: "s\xEC ||| No"
     id: 663470b8-3fab-449c-84ab-6c4738da51b3
     jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nConsidera la seguente descrizione:\
-      \ {{ ctx_a }}\n\xC8 seguente una continuazione appropriata?\n{{ ctx_b }} {{\
-      \ endings[instance] }}\nS\xEC o no?\n||| \n{% if label  == instance | string()\
+      \ {{ ctx_a }}\nLa seguente \xE8 una continuazione appropriata?\n{{ ctx_b }}\
+      \ {{ endings[instance] }}\nS\xEC o no?\n||| \n{% if label  == instance | string()\
       \ %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -137,8 +137,8 @@ templates:
     answer_choices: "s\xEC ||| No"
     id: d95b81c4-5db7-44c1-926e-c7222c896a32
     jinja: "{% set instance = [0, 1, 2, 3] | choice %}\nConsidera il seguente testo:\
-      \ {{ ctx_b }} {{ endings[instance] }}\n\xC8 una continuazione appropriata del\
-      \ seguente testo: \n{{ ctx_a }} ?\nS\xEC o no?\n||| \n{% if label  == instance\
+      \ {{ ctx_b }} {{ endings[instance] }}\n\xC8 un'appropriata continuazione del\
+      \ testo seguente: \n{{ ctx_a }} ?\nS\xEC o no?\n||| \n{% if label  == instance\
       \ | string() %}\n{{answer_choices[0]}}\n{% else %} \n{{answer_choices[1]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -150,7 +150,7 @@ templates:
     reference: The template randomly selects a continuation and checks if the continuation
       is appropriate for the given premise.
   db8b1c25-f2db-4604-b8fc-f93d69d6fae7: !Template
-    answer_choices: Finale 1 ||| Finale 2 ||| Finale 3 ||| Finale 4
+    answer_choices: Fine 1 ||| Fine 2 ||| Fine 3 ||| Fine 4
     id: db8b1c25-f2db-4604-b8fc-f93d69d6fae7
     jinja: '{{ ctx }}...
 
@@ -177,12 +177,12 @@ templates:
     name: how_ends
     reference: ''
   def77598-682f-48de-b187-55db4d390f07: !Template
-    answer_choices: Finale 1 ||| Finale 2 ||| Finale 3 ||| Finale 4
+    answer_choices: Fine 1 ||| Fine 2 ||| Fine 3 ||| Fine 4
     id: def77598-682f-48de-b187-55db4d390f07
-    jinja: "Se inizia una descrizione di una situazione in questo modo: {{ ctx }}...\
-      \ Then how\ndoes it continue? \n\nFinale 1: {{ endings[0] }}\n\nFinale 2: {{\
-      \ endings[1] }}\n\nFinale 3: {{ endings[2] }}\n\nFinale 4: {{ endings[3] }}\n\
-      |||{{answer_choices[label | int()] }}"
+    jinja: "Se la descrizione di una situazione inizia cos\xEC: {{ ctx }}... Then\
+      \ how\ndoes it continue? \n\nFinale 1: {{ endings[0] }}\n\nFinale 2: {{ endings[1]\
+      \ }}\n\nFinale 3: {{ endings[2] }}\n\nFinale 4: {{ endings[3] }}\n|||{{answer_choices[label\
+      \ | int()] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

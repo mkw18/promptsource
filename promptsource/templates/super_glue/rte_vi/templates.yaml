@@ -5,9 +5,9 @@ templates:
     answer_choices: "\u0110\xFAng ||| Kh\xF4ng"
     id: 2b52a83c-0021-41fe-b44c-5aaa076d71a2
     jinja: "{{premise}} Ch\u1EC9 s\u1EED d\u1EE5ng m\xF4 t\u1EA3 \u1EDF tr\xEAn v\xE0\
-      \ nh\u1EEFng g\xEC b\u1EA1n bi\u1EBFt v\u1EC1 th\u1EBF gi\u1EDBi, l\xE0 \"{{hypothesis}}\"\
-      \ ch\u1EAFc ch\u1EAFn \u0111\xFAng kh\xF4ng? C\xF3 hay kh\xF4ng? ||| {% if label\
-      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
+      \ nh\u1EEFng g\xEC b\u1EA1n bi\u1EBFt v\u1EC1 th\u1EBF gi\u1EDBi, \"{{hypothesis}}\"\
+      \ c\xF3 ch\u1EAFc ch\u1EAFn ch\xEDnh x\xE1c kh\xF4ng? C\xF3 hay kh\xF4ng? |||\
+      \ {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -18,9 +18,9 @@ templates:
   2d0d63da-ffcf-4f6e-941a-b8da922be43e: !Template
     answer_choices: "\u0110\xFAng ||| Kh\xF4ng"
     id: 2d0d63da-ffcf-4f6e-941a-b8da922be43e
-    jinja: "\u0110\u01B0\u1EE3c {{premise}} C\xF3 ph\u1EA3i s\u1EF1 th\u1EADt l\xE0\
-      \ \"{{hypothesis}}\" kh\xF4ng? C\xF3 hay kh\xF4ng? ||| {% if label != -1 %}{{\
-      \ answer_choices[label] }}{% endif %}"
+    jinja: "\u0110\u01B0\u1EE3c {{premise}} C\xF3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng\
+      \ \"{{hypothesis}}\" \u0111\xFAng kh\xF4ng? C\xF3 hay kh\xF4ng? ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -69,9 +69,9 @@ templates:
   b8dc85c6-28b6-4340-979a-8e77c2a0dde8: !Template
     answer_choices: "\u0110\xFAng ||| Kh\xF4ng"
     id: b8dc85c6-28b6-4340-979a-8e77c2a0dde8
-    jinja: "\u0110\u01B0\u1EE3c {{premise}} Ch\xFAng ta c\xF3 n\xEAn gi\u1EA3 s\u1EED\
-      \ r\u1EB1ng \"{{hypothesis}}\" l\xE0 \u0111\xFAng kh\xF4ng? C\xF3 hay kh\xF4\
-      ng? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "\u0110\u01B0\u1EE3c {{premise}} Ch\xFAng ta c\xF3 n\xEAn gi\u1EA3 \u0111\
+      \u1ECBnh r\u1EB1ng \"{{hypothesis}}\" l\xE0 \u0111\xFAng kh\xF4ng? C\xF3 hay\
+      \ kh\xF4ng? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -82,9 +82,9 @@ templates:
   e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff: !Template
     answer_choices: "\u0110\xFAng ||| Kh\xF4ng"
     id: e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff
-    jinja: "Cho r\u1EB1ng {{premise}} N\xF3 c\xF3 theo \u0111\xF3 {{hypothesis}} C\xF3\
-      \ hay kh\xF4ng? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
-      \ %}"
+    jinja: "Cho r\u1EB1ng {{premise}} N\xF3 c\xF3 tu\xE2n theo \u0111i\u1EC1u \u0111\
+      \xF3 kh\xF4ng {{hypothesis}} C\xF3 hay kh\xF4ng? ||| {% if label != -1 %}{{\
+      \ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -108,9 +108,9 @@ templates:
   ee0ce095-122a-4509-bf0b-33d1495295f7: !Template
     answer_choices: "\u0110\xFAng ||| Kh\xF4ng"
     id: ee0ce095-122a-4509-bf0b-33d1495295f7
-    jinja: "{{premise}} C\xF3 ph\u1EA3i ch\xFAng ta \u0111\xE3 bi\u1EC7n minh khi\
-      \ n\xF3i r\u1EB1ng \"{{hypothesis}}\"? C\xF3 hay kh\xF4ng? ||| {% if label !=\
-      \ -1 %}{{ answer_choices[label] }}{% endif %}"
+    jinja: "{{premise}} Ch\xFAng ta c\xF3 ch\xEDnh \u0111\xE1ng khi n\xF3i r\u1EB1\
+      ng \"{{hypothesis}}\" kh\xF4ng? C\xF3 hay kh\xF4ng? ||| {% if label != -1 %}{{\
+      \ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -121,9 +121,9 @@ templates:
   fb4f8144-37f5-4977-88da-37a5d0bfd0e8: !Template
     answer_choices: "\u0110\xFAng ||| Kh\xF4ng"
     id: fb4f8144-37f5-4977-88da-37a5d0bfd0e8
-    jinja: "Cho r\u1EB1ng {{premise}} Do \u0111\xF3, ph\u1EA3i \u0111\xFAng l\xE0\
-      \ \"{{hypothesis}}\"? C\xF3 hay kh\xF4ng? ||| {% if label != -1 %}{{ answer_choices[label]\
-      \ }}{% endif %}"
+    jinja: "Cho r\u1EB1ng {{premise}} V\xEC v\u1EADy, n\xF3 ph\u1EA3i l\xE0 s\u1EF1\
+      \ th\u1EADt r\u1EB1ng \"{{hypothesis}}\"? C\xF3 hay kh\xF4ng? ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:

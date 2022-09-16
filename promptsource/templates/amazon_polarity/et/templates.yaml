@@ -14,10 +14,10 @@ templates:
     name: Is_this_review
     reference: ''
   3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
-    jinja: "Kas kasutaja soovitaks selle arvustuse p\xF5hjal seda toodet?\n===\n\xDC\
-      levaade: {{content}}\nVastus: |||\n{{answer_choices[label]}}"
+    jinja: "Kas kasutaja soovitaks seda toodet selle \xFClevaate p\xF5hjal?\n===\n\
+      \xDClevaade: {{content}}\nVastus: |||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       metrics:
@@ -27,9 +27,9 @@ templates:
     reference: 'Reformulation equivalent to sent analysis: would the user recommend
       this product?'
   592caf8f-f8ff-426a-a61b-b7e95ed510b6: !Template
-    answer_choices: Mitte ||| Jah
+    answer_choices: Ei ||| Jah
     id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
-    jinja: "Kas see toote \xFClevaade on positiivne?\nPealkiri: {{title}}\n\xDClevaade:\
+    jinja: "Kas see toote\xFClevaade on positiivne?\nPealkiri: {{title}}\n\xDClevaade:\
       \ {{content}}\nVastus: |||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -39,7 +39,7 @@ templates:
     name: Is_this_product_review_positive
     reference: ''
   745b9c05-10df-4a7e-81ad-1b88cefcb166: !Template
-    answer_choices: Jah ||| Mitte
+    answer_choices: Jah ||| Ei
     id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
     jinja: "Pealkiri: {{title}}\n\xDClevaade: {{content}}\nKas see toote \xFClevaade\
       \ on negatiivne?|||\n{{answer_choices[label]}}"
@@ -54,7 +54,7 @@ templates:
     answer_choices: Negatiivne ||| Positiivne
     id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
     jinja: "Pealkiri: {{title}}\n\xDClevaade: {{content}}\nKas see toote\xFClevaade\
-      \ annab edasi negatiivse v\xF5i positiivse sentimendi?|||\n{{answer_choices[label]}}"
+      \ v\xE4ljendab negatiivset v\xF5i positiivset meeleolu?|||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -65,7 +65,7 @@ templates:
   9df70cdf-f8ed-4e79-8e2f-b4668058d637: !Template
     answer_choices: Negatiivne ||| Positiivne
     id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
-    jinja: "Kas sellel toote\xFClevaatel on negatiivne v\xF5i positiivne toon?\n===\n\
+    jinja: "Kas sellel tootearvustusel on negatiivne v\xF5i positiivne toon?\n===\n\
       Pealkiri: {{title}}\n\xDClevaade: {{content}}\nVastus: |||\n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -77,9 +77,9 @@ templates:
   b13369e8-0500-4e93-90d4-8e6814bfb97b: !Template
     answer_choices: rahulolematu ||| rahuldatud
     id: b13369e8-0500-4e93-90d4-8e6814bfb97b
-    jinja: "Siin on \xFClevaade, mille klient on toote kohta j\xE4tnud.Kas te \xFC\
-      tleksite, et ta oli {{answer_choices[1]}} v\xF5i {{answer_choices[0]}}?\nPealkiri:\
-      \ {{title}}\n\xDClevaade: {{content}}\n|||\n{{answer_choices[label]}} "
+    jinja: "Siin on kliendi poolt toote kohta j\xE4etud arvustus. Kas te \xFCtleksite,\
+      \ et ta oli {{answer_choices[1]}} v\xF5i {{answer_choices[0]}}?\nPealkiri: {{title}}\n\
+      \xDClevaade: {{content}}\n|||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -88,12 +88,11 @@ templates:
     name: user_satisfied
     reference: ''
   b13369e8-0500-4e93-90d4-8e6814bfb98b: !Template
-    answer_choices: "v\xE4henemine ||| suurendama"
+    answer_choices: "v\xE4henema ||| suurendama"
     id: b13369e8-0500-4e93-90d4-8e6814bfb98b
-    jinja: "Kaalute, kas osta toodet.Vaatad arvustusi.Kas j\xE4rgmine \xFClevaade\
-      \ {{answer_choices[0]}} v\xF5i {{answer_choices[1]}} on v\xF5imalused toote\
-      \ ostmiseks?\n\xDClevaate pealkiri: {{title}}\nToote \xFClevaade: {{content}}\n\
-      |||\n{{answer_choices[label]}} "
+    jinja: "Kaaluge, kas osta toode. Vaatad arvustusi. Kas j\xE4rgmine hindab {{answer_choices[0]}}\
+      \ v\xF5i {{answer_choices[1]}} t\xF5en\xE4osust, et te toote ostate?\nArvustuse\
+      \ pealkiri: {{title}}\nToote \xFClevaade: {{content}}\n|||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
       metrics:
@@ -102,10 +101,10 @@ templates:
     name: would_you_buy
     reference: ''
   b13369e8-0500-4e93-90d4-8e6814bfb99b: !Template
-    answer_choices: lakkamatu ||| meelitav
+    answer_choices: meelitamatu ||| meelitav
     id: b13369e8-0500-4e93-90d4-8e6814bfb99b
     jinja: "Pealkiri: {{title}}\nToote \xFClevaade: {{content}}\nKas te \xFCtleksite,\
-      \ et see \xFClevaade kujutab toodet {{answer_choices[1]}} v\xF5i {{answer_choices[0]}}\
+      \ et see arvustus kujutab toodet {{answer_choices[1]}} v\xF5i {{answer_choices[0]}}\
       \ valguses?\n|||\n{{answer_choices[label]}} "
     metadata: !TemplateMetadata
       choices_in_prompt: true
